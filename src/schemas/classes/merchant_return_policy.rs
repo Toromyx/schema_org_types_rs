@@ -1,0 +1,271 @@
+use super::*;
+/// A MerchantReturnPolicy provides information about product return policies associated with an [[Organization]], [[Product]], or [[Offer]].
+///
+/// https://schema.org/MerchantReturnPolicy
+#[cfg_attr(feature = "derive-debug", derive(Debug))]
+#[cfg_attr(feature = "derive-clone", derive(Clone))]
+#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
+pub struct MerchantReturnPolicy {
+    #[cfg(any(
+        feature = "additional-property-property-schema",
+        feature = "general-schema-section"
+    ))]
+    #[cfg_attr(feature = "serde", serde(rename = "additionalProperty"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    pub r#additional_property: Vec<AdditionalPropertyProperty>,
+    #[cfg(any(
+        feature = "additional-type-property-schema",
+        feature = "general-schema-section"
+    ))]
+    #[cfg_attr(feature = "serde", serde(rename = "additionalType"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    pub r#additional_type: Vec<AdditionalTypeProperty>,
+    #[cfg(any(
+        feature = "alternate-name-property-schema",
+        feature = "general-schema-section"
+    ))]
+    #[cfg_attr(feature = "serde", serde(rename = "alternateName"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    pub r#alternate_name: Vec<AlternateNameProperty>,
+    #[cfg(any(
+        feature = "applicable-country-property-schema",
+        feature = "pending-schema-section"
+    ))]
+    #[cfg_attr(feature = "serde", serde(rename = "applicableCountry"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    pub r#applicable_country: Vec<ApplicableCountryProperty>,
+    #[cfg(any(
+        feature = "customer-remorse-return-fees-property-schema",
+        feature = "pending-schema-section"
+    ))]
+    #[cfg_attr(feature = "serde", serde(rename = "customerRemorseReturnFees"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    pub r#customer_remorse_return_fees: Vec<CustomerRemorseReturnFeesProperty>,
+    #[cfg(any(
+        feature = "customer-remorse-return-label-source-property-schema",
+        feature = "pending-schema-section"
+    ))]
+    #[cfg_attr(feature = "serde", serde(rename = "customerRemorseReturnLabelSource"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    pub r#customer_remorse_return_label_source: Vec<CustomerRemorseReturnLabelSourceProperty>,
+    #[cfg(any(
+        feature = "customer-remorse-return-shipping-fees-amount-property-schema",
+        feature = "pending-schema-section"
+    ))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(rename = "customerRemorseReturnShippingFeesAmount")
+    )]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    pub r#customer_remorse_return_shipping_fees_amount:
+        Vec<CustomerRemorseReturnShippingFeesAmountProperty>,
+    #[cfg(any(
+        feature = "description-property-schema",
+        feature = "general-schema-section"
+    ))]
+    #[cfg_attr(feature = "serde", serde(rename = "description"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    pub r#description: Vec<DescriptionProperty>,
+    #[cfg(any(
+        feature = "disambiguating-description-property-schema",
+        feature = "general-schema-section"
+    ))]
+    #[cfg_attr(feature = "serde", serde(rename = "disambiguatingDescription"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+    #[cfg(any(
+        feature = "identifier-property-schema",
+        feature = "general-schema-section"
+    ))]
+    #[cfg_attr(feature = "serde", serde(rename = "identifier"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    pub r#identifier: Vec<IdentifierProperty>,
+    #[cfg(any(feature = "image-property-schema", feature = "general-schema-section"))]
+    #[cfg_attr(feature = "serde", serde(rename = "image"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    pub r#image: Vec<ImageProperty>,
+    #[cfg(any(
+        feature = "in-store-returns-offered-property-schema",
+        feature = "pending-schema-section"
+    ))]
+    #[cfg_attr(feature = "serde", serde(rename = "inStoreReturnsOffered"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    pub r#in_store_returns_offered: Vec<InStoreReturnsOfferedProperty>,
+    #[cfg(any(
+        feature = "item-condition-property-schema",
+        feature = "general-schema-section"
+    ))]
+    #[cfg_attr(feature = "serde", serde(rename = "itemCondition"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    pub r#item_condition: Vec<ItemConditionProperty>,
+    #[cfg(any(
+        feature = "item-defect-return-fees-property-schema",
+        feature = "pending-schema-section"
+    ))]
+    #[cfg_attr(feature = "serde", serde(rename = "itemDefectReturnFees"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    pub r#item_defect_return_fees: Vec<ItemDefectReturnFeesProperty>,
+    #[cfg(any(
+        feature = "item-defect-return-label-source-property-schema",
+        feature = "pending-schema-section"
+    ))]
+    #[cfg_attr(feature = "serde", serde(rename = "itemDefectReturnLabelSource"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    pub r#item_defect_return_label_source: Vec<ItemDefectReturnLabelSourceProperty>,
+    #[cfg(any(
+        feature = "item-defect-return-shipping-fees-amount-property-schema",
+        feature = "pending-schema-section"
+    ))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(rename = "itemDefectReturnShippingFeesAmount")
+    )]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    pub r#item_defect_return_shipping_fees_amount: Vec<ItemDefectReturnShippingFeesAmountProperty>,
+    #[cfg(any(
+        feature = "main-entity-of-page-property-schema",
+        feature = "general-schema-section"
+    ))]
+    #[cfg_attr(feature = "serde", serde(rename = "mainEntityOfPage"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+    #[cfg(any(
+        feature = "merchant-return-days-property-schema",
+        feature = "pending-schema-section"
+    ))]
+    #[cfg_attr(feature = "serde", serde(rename = "merchantReturnDays"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    pub r#merchant_return_days: Vec<MerchantReturnDaysProperty>,
+    #[cfg(any(
+        feature = "merchant-return-link-property-schema",
+        feature = "pending-schema-section"
+    ))]
+    #[cfg_attr(feature = "serde", serde(rename = "merchantReturnLink"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    pub r#merchant_return_link: Vec<MerchantReturnLinkProperty>,
+    #[cfg(any(feature = "name-property-schema", feature = "general-schema-section"))]
+    #[cfg_attr(feature = "serde", serde(rename = "name"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    pub r#name: Vec<NameProperty>,
+    #[cfg(any(
+        feature = "potential-action-property-schema",
+        feature = "general-schema-section"
+    ))]
+    #[cfg_attr(feature = "serde", serde(rename = "potentialAction"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    pub r#potential_action: Vec<PotentialActionProperty>,
+    #[cfg(any(
+        feature = "refund-type-property-schema",
+        feature = "pending-schema-section"
+    ))]
+    #[cfg_attr(feature = "serde", serde(rename = "refundType"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    pub r#refund_type: Vec<RefundTypeProperty>,
+    #[cfg(any(
+        feature = "restocking-fee-property-schema",
+        feature = "pending-schema-section"
+    ))]
+    #[cfg_attr(feature = "serde", serde(rename = "restockingFee"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    pub r#restocking_fee: Vec<RestockingFeeProperty>,
+    #[cfg(any(
+        feature = "return-fees-property-schema",
+        feature = "pending-schema-section"
+    ))]
+    #[cfg_attr(feature = "serde", serde(rename = "returnFees"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    pub r#return_fees: Vec<ReturnFeesProperty>,
+    #[cfg(any(
+        feature = "return-label-source-property-schema",
+        feature = "pending-schema-section"
+    ))]
+    #[cfg_attr(feature = "serde", serde(rename = "returnLabelSource"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    pub r#return_label_source: Vec<ReturnLabelSourceProperty>,
+    #[cfg(any(
+        feature = "return-method-property-schema",
+        feature = "pending-schema-section"
+    ))]
+    #[cfg_attr(feature = "serde", serde(rename = "returnMethod"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    pub r#return_method: Vec<ReturnMethodProperty>,
+    #[cfg(any(
+        feature = "return-policy-category-property-schema",
+        feature = "pending-schema-section"
+    ))]
+    #[cfg_attr(feature = "serde", serde(rename = "returnPolicyCategory"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    pub r#return_policy_category: Vec<ReturnPolicyCategoryProperty>,
+    #[cfg(any(
+        feature = "return-policy-country-property-schema",
+        feature = "pending-schema-section"
+    ))]
+    #[cfg_attr(feature = "serde", serde(rename = "returnPolicyCountry"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    pub r#return_policy_country: Vec<ReturnPolicyCountryProperty>,
+    #[cfg(any(
+        feature = "return-policy-seasonal-override-property-schema",
+        feature = "pending-schema-section"
+    ))]
+    #[cfg_attr(feature = "serde", serde(rename = "returnPolicySeasonalOverride"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    pub r#return_policy_seasonal_override: Vec<ReturnPolicySeasonalOverrideProperty>,
+    #[cfg(any(
+        feature = "return-shipping-fees-amount-property-schema",
+        feature = "pending-schema-section"
+    ))]
+    #[cfg_attr(feature = "serde", serde(rename = "returnShippingFeesAmount"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    pub r#return_shipping_fees_amount: Vec<ReturnShippingFeesAmountProperty>,
+    #[cfg(any(
+        feature = "same-as-property-schema",
+        feature = "general-schema-section"
+    ))]
+    #[cfg_attr(feature = "serde", serde(rename = "sameAs"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    pub r#same_as: Vec<SameAsProperty>,
+    #[cfg(any(
+        feature = "subject-of-property-schema",
+        feature = "general-schema-section"
+    ))]
+    #[cfg_attr(feature = "serde", serde(rename = "subjectOf"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    pub r#subject_of: Vec<SubjectOfProperty>,
+    #[cfg(any(feature = "url-property-schema", feature = "general-schema-section"))]
+    #[cfg_attr(feature = "serde", serde(rename = "url"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    pub r#url: Vec<UrlProperty>,
+}

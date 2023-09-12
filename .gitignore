@@ -1,0 +1,6 @@
+# main crate
+/target
+/Cargo.lock
+
+# generator crate
+/generator/target

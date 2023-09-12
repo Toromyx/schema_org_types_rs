@@ -1,0 +1,48 @@
+[package]
+name = "schema_org_types_generator"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.71"
+license = "MIT"
+
+[dependencies.const_format]
+version = "^0.2.31"
+
+[dependencies.convert_case]
+version = "^0.6.0"
+
+[dependencies.derivative]
+version = "^2.2"
+
+[dependencies.indicatif]
+version = "^0.17.6"
+
+[dependencies.oxigraph]
+version = "^0.3.19"
+
+[dependencies.prettyplease]
+version = "0.2.15"
+
+[dependencies.quote]
+version = "^1.0"
+default-features = false
+
+[dependencies.rayon]
+version = "^1.7"
+
+[dependencies.reqwest]
+version = "^0.11.20"
+default-features = false
+features = ["rustls-tls", "gzip"]
+
+[dependencies.strum]
+version = "^0.25.0"
+features = ["derive"]
+
+[dependencies.syn]
+version = "^2.0"
+features = ["full", "extra-traits"]
+
+[dependencies.tokio]
+version = "^1.29"
+features = ["full"]
