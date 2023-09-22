@@ -5,6 +5,7 @@ version = "0.1.0"
 edition = "2021"
 rust-version = "1.60"
 license = "MIT"
+repository = "https://github.com/Toromyx/schema_org_types_rs"
 
 [dependencies.serde]
 version = "^1.0.184"
