@@ -20,7 +20,7 @@
 //!   - enabled by *all-schema-sections*
 //! - `derive-all` — add all derives on the schemas
 //!   - enables *derive-debug*, *derive-clone*
-//! - `derive-debug` — derive [`Debug`] for the schemas
+//! - `derive-debug` — derive [`Debug`] for the schemas; this needs a `#![recursion_limit = "512"]` in your crate
 //!   - enabled by *derive-all*
 //! - `derive-clone` — derive [`Clone`] for the schemas
 //!   - enabled by *derive-all*
