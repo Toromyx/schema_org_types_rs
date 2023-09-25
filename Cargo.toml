@@ -10,6 +10,10 @@ exclude = [
     "rustfmt.toml",
 ]
 
+# https://docs.rs/about/metadata
+[package.metadata.docs.rs]
+all-features = true
+
 [dependencies.serde]
 version = "^1.0.184"
 optional = true
