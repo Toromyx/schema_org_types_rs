@@ -2,14 +2,20 @@ use super::*;
 /// The eventAttendanceMode of an event indicates whether it occurs online, offline, or a mix.
 ///
 /// https://schema.org/eventAttendanceMode
-#[cfg_attr(feature = "derive-debug", derive(Debug))]
-#[cfg_attr(feature = "derive-clone", derive(Clone))]
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[cfg_attr(feature = "serde", serde(untagged))]
+#[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
+#[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
+#[cfg_attr(
+    any(feature = "serde", doc),
+    derive(serde::Serialize, serde::Deserialize)
+)]
+#[cfg_attr(any(feature = "serde", doc), serde(untagged))]
 pub enum EventAttendanceModeProperty {
     #[cfg(any(
-        feature = "event-attendance-mode-enumeration-schema",
-        feature = "pending-schema-section"
+        any(
+            feature = "event-attendance-mode-enumeration-schema",
+            feature = "pending-schema-section"
+        ),
+        doc
     ))]
     EventAttendanceModeEnumeration(EventAttendanceModeEnumeration),
 }

@@ -8,6 +8,7 @@ use rayon::prelude::*;
 
 use crate::{
     doc_lines::DocLines,
+    feature::Feature,
     read::map_schema_name,
     schema::{ReferencedSchema, Schema},
     schema_section::SchemaSection,
@@ -95,14 +96,11 @@ impl ToTokens for Class {
             .properties
             .iter()
             .map(|ReferencedSchema { label, section }| {
-                let feature_gate = {
-                    let schema_feature_name = format!(
-                        "{}-property-schema",
-                        label.to_case(Case::Kebab)
-                    );
-                    let section_feature_name = section.feature_name();
-                    quote!(#[cfg(any(feature = #schema_feature_name, feature = #section_feature_name))])
-                };
+                let feature = Feature::Any(vec![
+                    Feature::Name(format!("{}-property-schema", label.to_case(Case::Kebab))),
+                    Feature::Name(section.feature_name().to_string()),
+                ]);
+                let feature_gate = feature.feature_gate();
                 let serde_rename = serde_rename(label);
                 let serde_default = serde_default();
                 let serde_skip_serializing_if_empty = serde_skip_serializing_if("Vec::is_empty");
@@ -123,8 +121,8 @@ impl ToTokens for Class {
         tokens.append_all(quote!(
             use super::*;
             #doc_lines
-            #[cfg_attr(feature = "derive-debug", derive(Debug))]
-            #[cfg_attr(feature = "derive-clone", derive(Clone))]
+            #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
+            #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
             #serde_derive
             pub struct #name {
                 #(#fields),*

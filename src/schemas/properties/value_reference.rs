@@ -2,37 +2,61 @@ use super::*;
 /// A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
 ///
 /// https://schema.org/valueReference
-#[cfg_attr(feature = "derive-debug", derive(Debug))]
-#[cfg_attr(feature = "derive-clone", derive(Clone))]
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[cfg_attr(feature = "serde", serde(untagged))]
+#[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
+#[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
+#[cfg_attr(
+    any(feature = "serde", doc),
+    derive(serde::Serialize, serde::Deserialize)
+)]
+#[cfg_attr(any(feature = "serde", doc), serde(untagged))]
 pub enum ValueReferenceProperty {
-    #[cfg(any(feature = "defined-term-schema", feature = "pending-schema-section"))]
+    #[cfg(any(
+        any(feature = "defined-term-schema", feature = "pending-schema-section"),
+        doc
+    ))]
     DefinedTerm(DefinedTerm),
-    #[cfg(any(feature = "enumeration-schema", feature = "general-schema-section"))]
+    #[cfg(any(
+        any(feature = "enumeration-schema", feature = "general-schema-section"),
+        doc
+    ))]
     Enumeration(Enumeration),
     #[cfg(any(
-        feature = "measurement-type-enumeration-schema",
-        feature = "pending-schema-section"
+        any(
+            feature = "measurement-type-enumeration-schema",
+            feature = "pending-schema-section"
+        ),
+        doc
     ))]
     MeasurementTypeEnumeration(MeasurementTypeEnumeration),
-    #[cfg(any(feature = "property-value-schema", feature = "general-schema-section"))]
+    #[cfg(any(
+        any(feature = "property-value-schema", feature = "general-schema-section"),
+        doc
+    ))]
     PropertyValue(PropertyValue),
     #[cfg(any(
-        feature = "qualitative-value-schema",
-        feature = "general-schema-section"
+        any(
+            feature = "qualitative-value-schema",
+            feature = "general-schema-section"
+        ),
+        doc
     ))]
     QualitativeValue(QualitativeValue),
     #[cfg(any(
-        feature = "quantitative-value-schema",
-        feature = "general-schema-section"
+        any(
+            feature = "quantitative-value-schema",
+            feature = "general-schema-section"
+        ),
+        doc
     ))]
     QuantitativeValue(QuantitativeValue),
     #[cfg(any(
-        feature = "structured-value-schema",
-        feature = "general-schema-section"
+        any(
+            feature = "structured-value-schema",
+            feature = "general-schema-section"
+        ),
+        doc
     ))]
     StructuredValue(StructuredValue),
-    #[cfg(any(feature = "text-schema", feature = "general-schema-section"))]
+    #[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
     Text(Text),
 }

@@ -2,14 +2,20 @@ use super::*;
 /// The warranty promise(s) included in the offer.
 ///
 /// https://schema.org/warrantyPromise
-#[cfg_attr(feature = "derive-debug", derive(Debug))]
-#[cfg_attr(feature = "derive-clone", derive(Clone))]
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[cfg_attr(feature = "serde", serde(untagged))]
+#[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
+#[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
+#[cfg_attr(
+    any(feature = "serde", doc),
+    derive(serde::Serialize, serde::Deserialize)
+)]
+#[cfg_attr(any(feature = "serde", doc), serde(untagged))]
 pub enum WarrantyPromiseProperty {
     #[cfg(any(
-        feature = "warranty-promise-schema",
-        feature = "general-schema-section"
+        any(
+            feature = "warranty-promise-schema",
+            feature = "general-schema-section"
+        ),
+        doc
     ))]
     WarrantyPromise(WarrantyPromise),
 }

@@ -1,9 +1,12 @@
 /// A diet restricted to certain foods or preparations for cultural, religious, health or lifestyle reasons.
 ///
 /// https://schema.org/RestrictedDiet
-#[cfg_attr(feature = "derive-debug", derive(Debug))]
-#[cfg_attr(feature = "derive-clone", derive(Clone))]
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
+#[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
+#[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
+#[cfg_attr(
+    any(feature = "serde", doc),
+    derive(serde::Serialize, serde::Deserialize)
+)]
 pub enum RestrictedDiet {
     /// A diet appropriate for people with diabetes.
     ///

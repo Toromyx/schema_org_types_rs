@@ -1,9 +1,12 @@
 /// Design models for observational medical studies. Enumerated type.
 ///
 /// https://schema.org/MedicalObservationalStudyDesign
-#[cfg_attr(feature = "derive-debug", derive(Debug))]
-#[cfg_attr(feature = "derive-clone", derive(Clone))]
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
+#[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
+#[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
+#[cfg_attr(
+    any(feature = "serde", doc),
+    derive(serde::Serialize, serde::Deserialize)
+)]
 pub enum MedicalObservationalStudyDesign {
     /// A case series (also known as a clinical series) is a medical research study that tracks patients with a known exposure given similar treatment or examines their medical records for exposure and outcome. A case series can be retrospective or prospective and usually involves a smaller number of patients than the more powerful case-control studies or randomized controlled trials. Case series may be consecutive or non-consecutive, depending on whether all cases presenting to the reporting authors over a period of time were included, or only a selection.
     ///

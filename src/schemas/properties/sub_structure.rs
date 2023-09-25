@@ -2,14 +2,20 @@ use super::*;
 /// Component (sub-)structure(s) that comprise this anatomical structure.
 ///
 /// https://schema.org/subStructure
-#[cfg_attr(feature = "derive-debug", derive(Debug))]
-#[cfg_attr(feature = "derive-clone", derive(Clone))]
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[cfg_attr(feature = "serde", serde(untagged))]
+#[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
+#[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
+#[cfg_attr(
+    any(feature = "serde", doc),
+    derive(serde::Serialize, serde::Deserialize)
+)]
+#[cfg_attr(any(feature = "serde", doc), serde(untagged))]
 pub enum SubStructureProperty {
     #[cfg(any(
-        feature = "anatomical-structure-schema",
-        feature = "health-lifesci-schema-section"
+        any(
+            feature = "anatomical-structure-schema",
+            feature = "health-lifesci-schema-section"
+        ),
+        doc
     ))]
     AnatomicalStructure(AnatomicalStructure),
 }

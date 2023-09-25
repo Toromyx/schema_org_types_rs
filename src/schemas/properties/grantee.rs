@@ -2,17 +2,32 @@ use super::*;
 /// The person, organization, contact point, or audience that has been granted this permission.
 ///
 /// https://schema.org/grantee
-#[cfg_attr(feature = "derive-debug", derive(Debug))]
-#[cfg_attr(feature = "derive-clone", derive(Clone))]
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[cfg_attr(feature = "serde", serde(untagged))]
+#[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
+#[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
+#[cfg_attr(
+    any(feature = "serde", doc),
+    derive(serde::Serialize, serde::Deserialize)
+)]
+#[cfg_attr(any(feature = "serde", doc), serde(untagged))]
 pub enum GranteeProperty {
-    #[cfg(any(feature = "audience-schema", feature = "general-schema-section"))]
+    #[cfg(any(
+        any(feature = "audience-schema", feature = "general-schema-section"),
+        doc
+    ))]
     Audience(Audience),
-    #[cfg(any(feature = "contact-point-schema", feature = "general-schema-section"))]
+    #[cfg(any(
+        any(feature = "contact-point-schema", feature = "general-schema-section"),
+        doc
+    ))]
     ContactPoint(ContactPoint),
-    #[cfg(any(feature = "organization-schema", feature = "general-schema-section"))]
+    #[cfg(any(
+        any(feature = "organization-schema", feature = "general-schema-section"),
+        doc
+    ))]
     Organization(Organization),
-    #[cfg(any(feature = "person-schema", feature = "general-schema-section"))]
+    #[cfg(any(
+        any(feature = "person-schema", feature = "general-schema-section"),
+        doc
+    ))]
     Person(Person),
 }

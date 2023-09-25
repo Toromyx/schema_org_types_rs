@@ -4,11 +4,14 @@ use super::*;
 /// areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.
 ///
 /// https://schema.org/spatialCoverage
-#[cfg_attr(feature = "derive-debug", derive(Debug))]
-#[cfg_attr(feature = "derive-clone", derive(Clone))]
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[cfg_attr(feature = "serde", serde(untagged))]
+#[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
+#[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
+#[cfg_attr(
+    any(feature = "serde", doc),
+    derive(serde::Serialize, serde::Deserialize)
+)]
+#[cfg_attr(any(feature = "serde", doc), serde(untagged))]
 pub enum SpatialCoverageProperty {
-    #[cfg(any(feature = "place-schema", feature = "general-schema-section"))]
+    #[cfg(any(any(feature = "place-schema", feature = "general-schema-section"), doc))]
     Place(Place),
 }

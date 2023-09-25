@@ -7,11 +7,17 @@ use super::*;
 /// or seasons.
 ///
 /// https://schema.org/eventSchedule
-#[cfg_attr(feature = "derive-debug", derive(Debug))]
-#[cfg_attr(feature = "derive-clone", derive(Clone))]
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[cfg_attr(feature = "serde", serde(untagged))]
+#[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
+#[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
+#[cfg_attr(
+    any(feature = "serde", doc),
+    derive(serde::Serialize, serde::Deserialize)
+)]
+#[cfg_attr(any(feature = "serde", doc), serde(untagged))]
 pub enum EventScheduleProperty {
-    #[cfg(any(feature = "schedule-schema", feature = "pending-schema-section"))]
+    #[cfg(any(
+        any(feature = "schedule-schema", feature = "pending-schema-section"),
+        doc
+    ))]
     Schedule(Schedule),
 }

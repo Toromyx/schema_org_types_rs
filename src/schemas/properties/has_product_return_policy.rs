@@ -2,14 +2,20 @@ use super::*;
 /// Indicates a ProductReturnPolicy that may be applicable.
 ///
 /// https://schema.org/hasProductReturnPolicy
-#[cfg_attr(feature = "derive-debug", derive(Debug))]
-#[cfg_attr(feature = "derive-clone", derive(Clone))]
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[cfg_attr(feature = "serde", serde(untagged))]
+#[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
+#[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
+#[cfg_attr(
+    any(feature = "serde", doc),
+    derive(serde::Serialize, serde::Deserialize)
+)]
+#[cfg_attr(any(feature = "serde", doc), serde(untagged))]
 pub enum HasProductReturnPolicyProperty {
     #[cfg(any(
-        feature = "product-return-policy-schema",
-        feature = "attic-schema-section"
+        any(
+            feature = "product-return-policy-schema",
+            feature = "attic-schema-section"
+        ),
+        doc
     ))]
     ProductReturnPolicy(ProductReturnPolicy),
 }

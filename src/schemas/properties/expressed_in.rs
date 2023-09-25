@@ -2,23 +2,38 @@ use super::*;
 /// Tissue, organ, biological sample, etc in which activity of this gene has been observed experimentally. For example brain, digestive system.
 ///
 /// https://schema.org/expressedIn
-#[cfg_attr(feature = "derive-debug", derive(Debug))]
-#[cfg_attr(feature = "derive-clone", derive(Clone))]
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[cfg_attr(feature = "serde", serde(untagged))]
+#[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
+#[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
+#[cfg_attr(
+    any(feature = "serde", doc),
+    derive(serde::Serialize, serde::Deserialize)
+)]
+#[cfg_attr(any(feature = "serde", doc), serde(untagged))]
 pub enum ExpressedInProperty {
     #[cfg(any(
-        feature = "anatomical-structure-schema",
-        feature = "health-lifesci-schema-section"
+        any(
+            feature = "anatomical-structure-schema",
+            feature = "health-lifesci-schema-section"
+        ),
+        doc
     ))]
     AnatomicalStructure(AnatomicalStructure),
     #[cfg(any(
-        feature = "anatomical-system-schema",
-        feature = "health-lifesci-schema-section"
+        any(
+            feature = "anatomical-system-schema",
+            feature = "health-lifesci-schema-section"
+        ),
+        doc
     ))]
     AnatomicalSystem(AnatomicalSystem),
-    #[cfg(any(feature = "bio-chem-entity-schema", feature = "pending-schema-section"))]
+    #[cfg(any(
+        any(feature = "bio-chem-entity-schema", feature = "pending-schema-section"),
+        doc
+    ))]
     BioChemEntity(BioChemEntity),
-    #[cfg(any(feature = "defined-term-schema", feature = "pending-schema-section"))]
+    #[cfg(any(
+        any(feature = "defined-term-schema", feature = "pending-schema-section"),
+        doc
+    ))]
     DefinedTerm(DefinedTerm),
 }

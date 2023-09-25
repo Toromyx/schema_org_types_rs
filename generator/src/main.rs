@@ -8,7 +8,7 @@ use schema_feature::SchemaFeature;
 use write::{write_features, write_schemas};
 
 mod doc_lines;
-mod feature_gate;
+mod feature;
 mod read;
 mod schema;
 mod schema_feature;

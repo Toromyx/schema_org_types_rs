@@ -2,13 +2,16 @@ use super::*;
 /// The [[observationAbout]] property identifies an entity, often a [[Place]], associated with an [[Observation]].
 ///
 /// https://schema.org/observationAbout
-#[cfg_attr(feature = "derive-debug", derive(Debug))]
-#[cfg_attr(feature = "derive-clone", derive(Clone))]
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[cfg_attr(feature = "serde", serde(untagged))]
+#[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
+#[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
+#[cfg_attr(
+    any(feature = "serde", doc),
+    derive(serde::Serialize, serde::Deserialize)
+)]
+#[cfg_attr(any(feature = "serde", doc), serde(untagged))]
 pub enum ObservationAboutProperty {
-    #[cfg(any(feature = "place-schema", feature = "general-schema-section"))]
+    #[cfg(any(any(feature = "place-schema", feature = "general-schema-section"), doc))]
     Place(Place),
-    #[cfg(any(feature = "thing-schema", feature = "general-schema-section"))]
+    #[cfg(any(any(feature = "thing-schema", feature = "general-schema-section"), doc))]
     Thing(Thing),
 }

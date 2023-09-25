@@ -1,9 +1,12 @@
 /// The status of an Action.
 ///
 /// https://schema.org/ActionStatusType
-#[cfg_attr(feature = "derive-debug", derive(Debug))]
-#[cfg_attr(feature = "derive-clone", derive(Clone))]
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
+#[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
+#[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
+#[cfg_attr(
+    any(feature = "serde", doc),
+    derive(serde::Serialize, serde::Deserialize)
+)]
 pub enum ActionStatusType {
     /// An in-progress action (e.g., while watching the movie, or driving to a location).
     ///

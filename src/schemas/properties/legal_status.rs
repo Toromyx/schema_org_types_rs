@@ -2,21 +2,30 @@ use super::*;
 /// The drug or supplement's legal status, including any controlled substance schedules that apply.
 ///
 /// https://schema.org/legalStatus
-#[cfg_attr(feature = "derive-debug", derive(Debug))]
-#[cfg_attr(feature = "derive-clone", derive(Clone))]
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[cfg_attr(feature = "serde", serde(untagged))]
+#[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
+#[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
+#[cfg_attr(
+    any(feature = "serde", doc),
+    derive(serde::Serialize, serde::Deserialize)
+)]
+#[cfg_attr(any(feature = "serde", doc), serde(untagged))]
 pub enum LegalStatusProperty {
     #[cfg(any(
-        feature = "drug-legal-status-schema",
-        feature = "health-lifesci-schema-section"
+        any(
+            feature = "drug-legal-status-schema",
+            feature = "health-lifesci-schema-section"
+        ),
+        doc
     ))]
     DrugLegalStatus(DrugLegalStatus),
     #[cfg(any(
-        feature = "medical-enumeration-schema",
-        feature = "health-lifesci-schema-section"
+        any(
+            feature = "medical-enumeration-schema",
+            feature = "health-lifesci-schema-section"
+        ),
+        doc
     ))]
     MedicalEnumeration(MedicalEnumeration),
-    #[cfg(any(feature = "text-schema", feature = "general-schema-section"))]
+    #[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
     Text(Text),
 }

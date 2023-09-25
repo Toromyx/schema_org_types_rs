@@ -6,11 +6,17 @@ use super::*;
 /// In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.
 ///
 /// https://schema.org/countryOfOrigin
-#[cfg_attr(feature = "derive-debug", derive(Debug))]
-#[cfg_attr(feature = "derive-clone", derive(Clone))]
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[cfg_attr(feature = "serde", serde(untagged))]
+#[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
+#[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
+#[cfg_attr(
+    any(feature = "serde", doc),
+    derive(serde::Serialize, serde::Deserialize)
+)]
+#[cfg_attr(any(feature = "serde", doc), serde(untagged))]
 pub enum CountryOfOriginProperty {
-    #[cfg(any(feature = "country-schema", feature = "general-schema-section"))]
+    #[cfg(any(
+        any(feature = "country-schema", feature = "general-schema-section"),
+        doc
+    ))]
     Country(Country),
 }

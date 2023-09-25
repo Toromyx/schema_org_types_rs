@@ -2,20 +2,29 @@ use super::*;
 /// The variableMeasured property can indicate (repeated as necessary) the  variables that are measured in some dataset, either described as text or as pairs of identifier and description using PropertyValue, or more explicitly as a [[StatisticalVariable]].
 ///
 /// https://schema.org/variableMeasured
-#[cfg_attr(feature = "derive-debug", derive(Debug))]
-#[cfg_attr(feature = "derive-clone", derive(Clone))]
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[cfg_attr(feature = "serde", serde(untagged))]
+#[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
+#[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
+#[cfg_attr(
+    any(feature = "serde", doc),
+    derive(serde::Serialize, serde::Deserialize)
+)]
+#[cfg_attr(any(feature = "serde", doc), serde(untagged))]
 pub enum VariableMeasuredProperty {
-    #[cfg(any(feature = "property-schema", feature = "meta-schema-section"))]
+    #[cfg(any(any(feature = "property-schema", feature = "meta-schema-section"), doc))]
     Property(Property),
-    #[cfg(any(feature = "property-value-schema", feature = "general-schema-section"))]
+    #[cfg(any(
+        any(feature = "property-value-schema", feature = "general-schema-section"),
+        doc
+    ))]
     PropertyValue(PropertyValue),
     #[cfg(any(
-        feature = "statistical-variable-schema",
-        feature = "pending-schema-section"
+        any(
+            feature = "statistical-variable-schema",
+            feature = "pending-schema-section"
+        ),
+        doc
     ))]
     StatisticalVariable(StatisticalVariable),
-    #[cfg(any(feature = "text-schema", feature = "general-schema-section"))]
+    #[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
     Text(Text),
 }

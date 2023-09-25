@@ -1,9 +1,12 @@
 /// Enumerates types (or dimensions) of a person's body measurements, for example for fitting of clothes.
 ///
 /// https://schema.org/BodyMeasurementTypeEnumeration
-#[cfg_attr(feature = "derive-debug", derive(Debug))]
-#[cfg_attr(feature = "derive-clone", derive(Clone))]
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
+#[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
+#[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
+#[cfg_attr(
+    any(feature = "serde", doc),
+    derive(serde::Serialize, serde::Deserialize)
+)]
 pub enum BodyMeasurementTypeEnumeration {
     /// Arm length (measured between arms/shoulder line intersection and the prominent wrist bone). Used, for example, to fit shirts.
     ///

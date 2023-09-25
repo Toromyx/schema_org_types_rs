@@ -1,9 +1,12 @@
 /// Enumerates different price types, for example list price, invoice price, and sale price.
 ///
 /// https://schema.org/PriceTypeEnumeration
-#[cfg_attr(feature = "derive-debug", derive(Debug))]
-#[cfg_attr(feature = "derive-clone", derive(Clone))]
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
+#[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
+#[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
+#[cfg_attr(
+    any(feature = "serde", doc),
+    derive(serde::Serialize, serde::Deserialize)
+)]
 pub enum PriceTypeEnumeration {
     /// Represents the invoice price of an offered product.
     ///

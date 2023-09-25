@@ -1,9 +1,12 @@
 /// Systems of medical practice.
 ///
 /// https://schema.org/MedicineSystem
-#[cfg_attr(feature = "derive-debug", derive(Debug))]
-#[cfg_attr(feature = "derive-clone", derive(Clone))]
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
+#[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
+#[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
+#[cfg_attr(
+    any(feature = "serde", doc),
+    derive(serde::Serialize, serde::Deserialize)
+)]
 pub enum MedicineSystem {
     /// A system of medicine that originated in India over thousands of years and that focuses on integrating and balancing the body, mind, and spirit.
     ///

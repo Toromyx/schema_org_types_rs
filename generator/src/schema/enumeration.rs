@@ -93,8 +93,8 @@ impl ToTokens for Enumeration {
         let variants = &self.variants;
         tokens.append_all(quote!(
             #doc_lines
-            #[cfg_attr(feature = "derive-debug", derive(Debug))]
-            #[cfg_attr(feature = "derive-clone", derive(Clone))]
+            #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
+            #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
             #serde_derive
             pub enum #name {
                 #(#variants),*

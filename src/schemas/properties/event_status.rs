@@ -2,14 +2,20 @@ use super::*;
 /// An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.
 ///
 /// https://schema.org/eventStatus
-#[cfg_attr(feature = "derive-debug", derive(Debug))]
-#[cfg_attr(feature = "derive-clone", derive(Clone))]
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[cfg_attr(feature = "serde", serde(untagged))]
+#[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
+#[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
+#[cfg_attr(
+    any(feature = "serde", doc),
+    derive(serde::Serialize, serde::Deserialize)
+)]
+#[cfg_attr(any(feature = "serde", doc), serde(untagged))]
 pub enum EventStatusProperty {
     #[cfg(any(
-        feature = "event-status-type-schema",
-        feature = "general-schema-section"
+        any(
+            feature = "event-status-type-schema",
+            feature = "general-schema-section"
+        ),
+        doc
     ))]
     EventStatusType(EventStatusType),
 }

@@ -2,14 +2,20 @@ use super::*;
 /// The type(s) of customers for which the given offer is valid.
 ///
 /// https://schema.org/eligibleCustomerType
-#[cfg_attr(feature = "derive-debug", derive(Debug))]
-#[cfg_attr(feature = "derive-clone", derive(Clone))]
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[cfg_attr(feature = "serde", serde(untagged))]
+#[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
+#[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
+#[cfg_attr(
+    any(feature = "serde", doc),
+    derive(serde::Serialize, serde::Deserialize)
+)]
+#[cfg_attr(any(feature = "serde", doc), serde(untagged))]
 pub enum EligibleCustomerTypeProperty {
     #[cfg(any(
-        feature = "business-entity-type-schema",
-        feature = "general-schema-section"
+        any(
+            feature = "business-entity-type-schema",
+            feature = "general-schema-section"
+        ),
+        doc
     ))]
     BusinessEntityType(BusinessEntityType),
 }

@@ -1,9 +1,12 @@
 /// USNonprofitType: Non-profit organization type originating from the United States.
 ///
 /// https://schema.org/USNonprofitType
-#[cfg_attr(feature = "derive-debug", derive(Debug))]
-#[cfg_attr(feature = "derive-clone", derive(Clone))]
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
+#[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
+#[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
+#[cfg_attr(
+    any(feature = "serde", doc),
+    derive(serde::Serialize, serde::Deserialize)
+)]
 pub enum UsNonprofitType {
     /// Nonprofit501a: Non-profit type referring to Farmers’ Cooperative Associations.
     ///

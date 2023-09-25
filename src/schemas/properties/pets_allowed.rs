@@ -2,13 +2,19 @@ use super::*;
 /// Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
 ///
 /// https://schema.org/petsAllowed
-#[cfg_attr(feature = "derive-debug", derive(Debug))]
-#[cfg_attr(feature = "derive-clone", derive(Clone))]
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[cfg_attr(feature = "serde", serde(untagged))]
+#[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
+#[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
+#[cfg_attr(
+    any(feature = "serde", doc),
+    derive(serde::Serialize, serde::Deserialize)
+)]
+#[cfg_attr(any(feature = "serde", doc), serde(untagged))]
 pub enum PetsAllowedProperty {
-    #[cfg(any(feature = "boolean-schema", feature = "general-schema-section"))]
+    #[cfg(any(
+        any(feature = "boolean-schema", feature = "general-schema-section"),
+        doc
+    ))]
     Boolean(Boolean),
-    #[cfg(any(feature = "text-schema", feature = "general-schema-section"))]
+    #[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
     Text(Text),
 }

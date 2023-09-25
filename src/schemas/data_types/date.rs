@@ -2,12 +2,15 @@ use super::*;
 /// A date value in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
 ///
 /// https://schema.org/Date
-#[cfg_attr(feature = "derive-debug", derive(Debug))]
-#[cfg_attr(feature = "derive-clone", derive(Clone))]
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
+#[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
+#[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
+#[cfg_attr(
+    any(feature = "serde", doc),
+    derive(serde::Serialize, serde::Deserialize)
+)]
 pub struct Date(
     #[cfg_attr(
-        feature = "serde",
+        any(feature = "serde", doc),
         serde(with = "serde_with::As::<serde_with::DisplayFromStr>")
     )]
     pub crate::date_types::Date,

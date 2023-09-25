@@ -2,14 +2,20 @@ use super::*;
 /// The hours during which this service or contact is available.
 ///
 /// https://schema.org/hoursAvailable
-#[cfg_attr(feature = "derive-debug", derive(Debug))]
-#[cfg_attr(feature = "derive-clone", derive(Clone))]
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[cfg_attr(feature = "serde", serde(untagged))]
+#[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
+#[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
+#[cfg_attr(
+    any(feature = "serde", doc),
+    derive(serde::Serialize, serde::Deserialize)
+)]
+#[cfg_attr(any(feature = "serde", doc), serde(untagged))]
 pub enum HoursAvailableProperty {
     #[cfg(any(
-        feature = "opening-hours-specification-schema",
-        feature = "general-schema-section"
+        any(
+            feature = "opening-hours-specification-schema",
+            feature = "general-schema-section"
+        ),
+        doc
     ))]
     OpeningHoursSpecification(OpeningHoursSpecification),
 }

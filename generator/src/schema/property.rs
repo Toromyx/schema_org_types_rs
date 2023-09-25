@@ -8,6 +8,7 @@ use rayon::prelude::*;
 
 use crate::{
     doc_lines::DocLines,
+    feature::Feature,
     read::map_schema_name,
     schema::{ReferencedSchema, Schema},
     schema_section::SchemaSection,
@@ -89,24 +90,27 @@ impl ToTokens for Property {
         let name =
             TokenStream::from_str(&format!("{}Property", self.name.to_case(Case::UpperCamel)))
                 .unwrap();
-        let variants = self.values.iter().map(|ReferencedSchema { label, section }| {
-            let value_upper_camel =
-                TokenStream::from_str(&label.to_case(Case::UpperCamel)).unwrap();
-            let feature_gate = {
-                let schema_feature_name = format!("{}-schema", label.to_case(Case::Kebab));
-                let section_feature_name = section.feature_name();
-                quote!(#[cfg(any(feature = #schema_feature_name, feature = #section_feature_name))])
-            };
-            quote!(
-                #feature_gate
-                #value_upper_camel(#value_upper_camel)
-            )
-        });
+        let variants = self
+            .values
+            .iter()
+            .map(|ReferencedSchema { label, section }| {
+                let value_upper_camel =
+                    TokenStream::from_str(&label.to_case(Case::UpperCamel)).unwrap();
+                let feature = Feature::Any(vec![
+                    Feature::Name(format!("{}-schema", label.to_case(Case::Kebab))),
+                    Feature::Name(section.feature_name().to_string()),
+                ]);
+                let feature_gate = feature.feature_gate();
+                quote!(
+                    #feature_gate
+                    #value_upper_camel(#value_upper_camel)
+                )
+            });
         tokens.append_all(quote! (
             use super::*;
             #doc_lines
-            #[cfg_attr(feature = "derive-debug", derive(Debug))]
-            #[cfg_attr(feature = "derive-clone", derive(Clone))]
+            #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
+            #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
             #serde_derive
             #serde_untagged
             pub enum #name {

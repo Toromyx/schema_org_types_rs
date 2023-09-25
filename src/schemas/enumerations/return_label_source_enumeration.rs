@@ -1,9 +1,12 @@
 /// Enumerates several types of return labels for product returns.
 ///
 /// https://schema.org/ReturnLabelSourceEnumeration
-#[cfg_attr(feature = "derive-debug", derive(Debug))]
-#[cfg_attr(feature = "derive-clone", derive(Clone))]
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
+#[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
+#[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
+#[cfg_attr(
+    any(feature = "serde", doc),
+    derive(serde::Serialize, serde::Deserialize)
+)]
 pub enum ReturnLabelSourceEnumeration {
     /// Indicated that creating a return label is the responsibility of the customer.
     ///

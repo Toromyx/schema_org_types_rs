@@ -2,13 +2,22 @@ use super::*;
 /// The artist that performed this album or recording.
 ///
 /// https://schema.org/byArtist
-#[cfg_attr(feature = "derive-debug", derive(Debug))]
-#[cfg_attr(feature = "derive-clone", derive(Clone))]
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[cfg_attr(feature = "serde", serde(untagged))]
+#[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
+#[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
+#[cfg_attr(
+    any(feature = "serde", doc),
+    derive(serde::Serialize, serde::Deserialize)
+)]
+#[cfg_attr(any(feature = "serde", doc), serde(untagged))]
 pub enum ByArtistProperty {
-    #[cfg(any(feature = "music-group-schema", feature = "general-schema-section"))]
+    #[cfg(any(
+        any(feature = "music-group-schema", feature = "general-schema-section"),
+        doc
+    ))]
     MusicGroup(MusicGroup),
-    #[cfg(any(feature = "person-schema", feature = "general-schema-section"))]
+    #[cfg(any(
+        any(feature = "person-schema", feature = "general-schema-section"),
+        doc
+    ))]
     Person(Person),
 }

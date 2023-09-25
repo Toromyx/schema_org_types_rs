@@ -2,11 +2,14 @@ use super::*;
 /// The date at which the program stops collecting applications for the next enrollment cycle.
 ///
 /// https://schema.org/applicationDeadline
-#[cfg_attr(feature = "derive-debug", derive(Debug))]
-#[cfg_attr(feature = "derive-clone", derive(Clone))]
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[cfg_attr(feature = "serde", serde(untagged))]
+#[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
+#[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
+#[cfg_attr(
+    any(feature = "serde", doc),
+    derive(serde::Serialize, serde::Deserialize)
+)]
+#[cfg_attr(any(feature = "serde", doc), serde(untagged))]
 pub enum ApplicationDeadlineProperty {
-    #[cfg(any(feature = "date-schema", feature = "general-schema-section"))]
+    #[cfg(any(any(feature = "date-schema", feature = "general-schema-section"), doc))]
     Date(Date),
 }

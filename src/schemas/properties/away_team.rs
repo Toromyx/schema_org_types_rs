@@ -2,13 +2,22 @@ use super::*;
 /// The away team in a sports event.
 ///
 /// https://schema.org/awayTeam
-#[cfg_attr(feature = "derive-debug", derive(Debug))]
-#[cfg_attr(feature = "derive-clone", derive(Clone))]
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[cfg_attr(feature = "serde", serde(untagged))]
+#[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
+#[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
+#[cfg_attr(
+    any(feature = "serde", doc),
+    derive(serde::Serialize, serde::Deserialize)
+)]
+#[cfg_attr(any(feature = "serde", doc), serde(untagged))]
 pub enum AwayTeamProperty {
-    #[cfg(any(feature = "person-schema", feature = "general-schema-section"))]
+    #[cfg(any(
+        any(feature = "person-schema", feature = "general-schema-section"),
+        doc
+    ))]
     Person(Person),
-    #[cfg(any(feature = "sports-team-schema", feature = "general-schema-section"))]
+    #[cfg(any(
+        any(feature = "sports-team-schema", feature = "general-schema-section"),
+        doc
+    ))]
     SportsTeam(SportsTeam),
 }

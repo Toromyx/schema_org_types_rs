@@ -2,14 +2,20 @@ use super::*;
 /// The type of return fees for returns of defect products.
 ///
 /// https://schema.org/itemDefectReturnFees
-#[cfg_attr(feature = "derive-debug", derive(Debug))]
-#[cfg_attr(feature = "derive-clone", derive(Clone))]
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[cfg_attr(feature = "serde", serde(untagged))]
+#[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
+#[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
+#[cfg_attr(
+    any(feature = "serde", doc),
+    derive(serde::Serialize, serde::Deserialize)
+)]
+#[cfg_attr(any(feature = "serde", doc), serde(untagged))]
 pub enum ItemDefectReturnFeesProperty {
     #[cfg(any(
-        feature = "return-fees-enumeration-schema",
-        feature = "pending-schema-section"
+        any(
+            feature = "return-fees-enumeration-schema",
+            feature = "pending-schema-section"
+        ),
+        doc
     ))]
     ReturnFeesEnumeration(ReturnFeesEnumeration),
 }

@@ -6,15 +6,21 @@ use super::*;
 /// Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
 ///
 /// https://schema.org/temporalCoverage
-#[cfg_attr(feature = "derive-debug", derive(Debug))]
-#[cfg_attr(feature = "derive-clone", derive(Clone))]
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[cfg_attr(feature = "serde", serde(untagged))]
+#[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
+#[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
+#[cfg_attr(
+    any(feature = "serde", doc),
+    derive(serde::Serialize, serde::Deserialize)
+)]
+#[cfg_attr(any(feature = "serde", doc), serde(untagged))]
 pub enum TemporalCoverageProperty {
-    #[cfg(any(feature = "date-time-schema", feature = "general-schema-section"))]
+    #[cfg(any(
+        any(feature = "date-time-schema", feature = "general-schema-section"),
+        doc
+    ))]
     DateTime(DateTime),
-    #[cfg(any(feature = "text-schema", feature = "general-schema-section"))]
+    #[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
     Text(Text),
-    #[cfg(any(feature = "url-schema", feature = "general-schema-section"))]
+    #[cfg(any(any(feature = "url-schema", feature = "general-schema-section"), doc))]
     Url(Url),
 }

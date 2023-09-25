@@ -1,9 +1,12 @@
 /// Level of evidence for a medical guideline. Enumerated type.
 ///
 /// https://schema.org/MedicalEvidenceLevel
-#[cfg_attr(feature = "derive-debug", derive(Debug))]
-#[cfg_attr(feature = "derive-clone", derive(Clone))]
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
+#[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
+#[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
+#[cfg_attr(
+    any(feature = "serde", doc),
+    derive(serde::Serialize, serde::Deserialize)
+)]
 pub enum MedicalEvidenceLevel {
     /// Data derived from multiple randomized clinical trials or meta-analyses.
     ///

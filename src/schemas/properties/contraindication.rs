@@ -2,16 +2,22 @@ use super::*;
 /// A contraindication for this therapy.
 ///
 /// https://schema.org/contraindication
-#[cfg_attr(feature = "derive-debug", derive(Debug))]
-#[cfg_attr(feature = "derive-clone", derive(Clone))]
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[cfg_attr(feature = "serde", serde(untagged))]
+#[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
+#[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
+#[cfg_attr(
+    any(feature = "serde", doc),
+    derive(serde::Serialize, serde::Deserialize)
+)]
+#[cfg_attr(any(feature = "serde", doc), serde(untagged))]
 pub enum ContraindicationProperty {
     #[cfg(any(
-        feature = "medical-contraindication-schema",
-        feature = "health-lifesci-schema-section"
+        any(
+            feature = "medical-contraindication-schema",
+            feature = "health-lifesci-schema-section"
+        ),
+        doc
     ))]
     MedicalContraindication(MedicalContraindication),
-    #[cfg(any(feature = "text-schema", feature = "general-schema-section"))]
+    #[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
     Text(Text),
 }

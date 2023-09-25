@@ -84,8 +84,8 @@ impl ToTokens for DataType {
         tokens.append_all(quote!(
             use super::*;
             #doc_lines
-            #[cfg_attr(feature = "derive-debug", derive(Debug))]
-            #[cfg_attr(feature = "derive-clone", derive(Clone))]
+            #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
+            #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
             #serde_derive
             pub struct #name(#field_attribute pub #rust_type);
 

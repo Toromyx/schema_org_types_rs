@@ -2,11 +2,17 @@ use super::*;
 /// A sub property of instrument. The diet used in this action.
 ///
 /// https://schema.org/diet
-#[cfg_attr(feature = "derive-debug", derive(Debug))]
-#[cfg_attr(feature = "derive-clone", derive(Clone))]
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[cfg_attr(feature = "serde", serde(untagged))]
+#[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
+#[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
+#[cfg_attr(
+    any(feature = "serde", doc),
+    derive(serde::Serialize, serde::Deserialize)
+)]
+#[cfg_attr(any(feature = "serde", doc), serde(untagged))]
 pub enum DietProperty {
-    #[cfg(any(feature = "diet-schema", feature = "health-lifesci-schema-section"))]
+    #[cfg(any(
+        any(feature = "diet-schema", feature = "health-lifesci-schema-section"),
+        doc
+    ))]
     Diet(Diet),
 }

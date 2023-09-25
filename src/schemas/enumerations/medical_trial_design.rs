@@ -1,9 +1,12 @@
 /// Design models for medical trials. Enumerated type.
 ///
 /// https://schema.org/MedicalTrialDesign
-#[cfg_attr(feature = "derive-debug", derive(Debug))]
-#[cfg_attr(feature = "derive-clone", derive(Clone))]
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
+#[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
+#[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
+#[cfg_attr(
+    any(feature = "serde", doc),
+    derive(serde::Serialize, serde::Deserialize)
+)]
 pub enum MedicalTrialDesign {
     /// A trial design in which neither the researcher nor the patient knows the details of the treatment the patient was randomly assigned to.
     ///

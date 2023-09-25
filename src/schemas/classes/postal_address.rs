@@ -2,220 +2,394 @@ use super::*;
 /// The mailing address.
 ///
 /// https://schema.org/PostalAddress
-#[cfg_attr(feature = "derive-debug", derive(Debug))]
-#[cfg_attr(feature = "derive-clone", derive(Clone))]
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
+#[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
+#[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
+#[cfg_attr(
+    any(feature = "serde", doc),
+    derive(serde::Serialize, serde::Deserialize)
+)]
 pub struct PostalAddress {
     #[cfg(any(
-        feature = "additional-type-property-schema",
-        feature = "general-schema-section"
+        any(
+            feature = "additional-type-property-schema",
+            feature = "general-schema-section"
+        ),
+        doc
     ))]
-    #[cfg_attr(feature = "serde", serde(rename = "additionalType"))]
-    #[cfg_attr(feature = "serde", serde(default))]
-    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(any(feature = "serde", doc), serde(rename = "additionalType"))]
+    #[cfg_attr(any(feature = "serde", doc), serde(default))]
+    #[cfg_attr(
+        any(feature = "serde", doc),
+        serde(skip_serializing_if = "Vec::is_empty")
+    )]
     pub r#additional_type: Vec<AdditionalTypeProperty>,
     #[cfg(any(
-        feature = "address-country-property-schema",
-        feature = "general-schema-section"
+        any(
+            feature = "address-country-property-schema",
+            feature = "general-schema-section"
+        ),
+        doc
     ))]
-    #[cfg_attr(feature = "serde", serde(rename = "addressCountry"))]
-    #[cfg_attr(feature = "serde", serde(default))]
-    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(any(feature = "serde", doc), serde(rename = "addressCountry"))]
+    #[cfg_attr(any(feature = "serde", doc), serde(default))]
+    #[cfg_attr(
+        any(feature = "serde", doc),
+        serde(skip_serializing_if = "Vec::is_empty")
+    )]
     pub r#address_country: Vec<AddressCountryProperty>,
     #[cfg(any(
-        feature = "address-locality-property-schema",
-        feature = "general-schema-section"
+        any(
+            feature = "address-locality-property-schema",
+            feature = "general-schema-section"
+        ),
+        doc
     ))]
-    #[cfg_attr(feature = "serde", serde(rename = "addressLocality"))]
-    #[cfg_attr(feature = "serde", serde(default))]
-    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(any(feature = "serde", doc), serde(rename = "addressLocality"))]
+    #[cfg_attr(any(feature = "serde", doc), serde(default))]
+    #[cfg_attr(
+        any(feature = "serde", doc),
+        serde(skip_serializing_if = "Vec::is_empty")
+    )]
     pub r#address_locality: Vec<AddressLocalityProperty>,
     #[cfg(any(
-        feature = "address-region-property-schema",
-        feature = "general-schema-section"
+        any(
+            feature = "address-region-property-schema",
+            feature = "general-schema-section"
+        ),
+        doc
     ))]
-    #[cfg_attr(feature = "serde", serde(rename = "addressRegion"))]
-    #[cfg_attr(feature = "serde", serde(default))]
-    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(any(feature = "serde", doc), serde(rename = "addressRegion"))]
+    #[cfg_attr(any(feature = "serde", doc), serde(default))]
+    #[cfg_attr(
+        any(feature = "serde", doc),
+        serde(skip_serializing_if = "Vec::is_empty")
+    )]
     pub r#address_region: Vec<AddressRegionProperty>,
     #[cfg(any(
-        feature = "alternate-name-property-schema",
-        feature = "general-schema-section"
+        any(
+            feature = "alternate-name-property-schema",
+            feature = "general-schema-section"
+        ),
+        doc
     ))]
-    #[cfg_attr(feature = "serde", serde(rename = "alternateName"))]
-    #[cfg_attr(feature = "serde", serde(default))]
-    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(any(feature = "serde", doc), serde(rename = "alternateName"))]
+    #[cfg_attr(any(feature = "serde", doc), serde(default))]
+    #[cfg_attr(
+        any(feature = "serde", doc),
+        serde(skip_serializing_if = "Vec::is_empty")
+    )]
     pub r#alternate_name: Vec<AlternateNameProperty>,
     #[cfg(any(
-        feature = "area-served-property-schema",
-        feature = "general-schema-section"
+        any(
+            feature = "area-served-property-schema",
+            feature = "general-schema-section"
+        ),
+        doc
     ))]
-    #[cfg_attr(feature = "serde", serde(rename = "areaServed"))]
-    #[cfg_attr(feature = "serde", serde(default))]
-    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(any(feature = "serde", doc), serde(rename = "areaServed"))]
+    #[cfg_attr(any(feature = "serde", doc), serde(default))]
+    #[cfg_attr(
+        any(feature = "serde", doc),
+        serde(skip_serializing_if = "Vec::is_empty")
+    )]
     pub r#area_served: Vec<AreaServedProperty>,
     #[cfg(any(
-        feature = "available-language-property-schema",
-        feature = "general-schema-section"
+        any(
+            feature = "available-language-property-schema",
+            feature = "general-schema-section"
+        ),
+        doc
     ))]
-    #[cfg_attr(feature = "serde", serde(rename = "availableLanguage"))]
-    #[cfg_attr(feature = "serde", serde(default))]
-    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(any(feature = "serde", doc), serde(rename = "availableLanguage"))]
+    #[cfg_attr(any(feature = "serde", doc), serde(default))]
+    #[cfg_attr(
+        any(feature = "serde", doc),
+        serde(skip_serializing_if = "Vec::is_empty")
+    )]
     pub r#available_language: Vec<AvailableLanguageProperty>,
     #[cfg(any(
-        feature = "contact-option-property-schema",
-        feature = "general-schema-section"
+        any(
+            feature = "contact-option-property-schema",
+            feature = "general-schema-section"
+        ),
+        doc
     ))]
-    #[cfg_attr(feature = "serde", serde(rename = "contactOption"))]
-    #[cfg_attr(feature = "serde", serde(default))]
-    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(any(feature = "serde", doc), serde(rename = "contactOption"))]
+    #[cfg_attr(any(feature = "serde", doc), serde(default))]
+    #[cfg_attr(
+        any(feature = "serde", doc),
+        serde(skip_serializing_if = "Vec::is_empty")
+    )]
     pub r#contact_option: Vec<ContactOptionProperty>,
     #[cfg(any(
-        feature = "contact-type-property-schema",
-        feature = "general-schema-section"
+        any(
+            feature = "contact-type-property-schema",
+            feature = "general-schema-section"
+        ),
+        doc
     ))]
-    #[cfg_attr(feature = "serde", serde(rename = "contactType"))]
-    #[cfg_attr(feature = "serde", serde(default))]
-    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(any(feature = "serde", doc), serde(rename = "contactType"))]
+    #[cfg_attr(any(feature = "serde", doc), serde(default))]
+    #[cfg_attr(
+        any(feature = "serde", doc),
+        serde(skip_serializing_if = "Vec::is_empty")
+    )]
     pub r#contact_type: Vec<ContactTypeProperty>,
     #[cfg(any(
-        feature = "description-property-schema",
-        feature = "general-schema-section"
+        any(
+            feature = "description-property-schema",
+            feature = "general-schema-section"
+        ),
+        doc
     ))]
-    #[cfg_attr(feature = "serde", serde(rename = "description"))]
-    #[cfg_attr(feature = "serde", serde(default))]
-    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(any(feature = "serde", doc), serde(rename = "description"))]
+    #[cfg_attr(any(feature = "serde", doc), serde(default))]
+    #[cfg_attr(
+        any(feature = "serde", doc),
+        serde(skip_serializing_if = "Vec::is_empty")
+    )]
     pub r#description: Vec<DescriptionProperty>,
     #[cfg(any(
-        feature = "disambiguating-description-property-schema",
-        feature = "general-schema-section"
+        any(
+            feature = "disambiguating-description-property-schema",
+            feature = "general-schema-section"
+        ),
+        doc
     ))]
-    #[cfg_attr(feature = "serde", serde(rename = "disambiguatingDescription"))]
-    #[cfg_attr(feature = "serde", serde(default))]
-    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        any(feature = "serde", doc),
+        serde(rename = "disambiguatingDescription")
+    )]
+    #[cfg_attr(any(feature = "serde", doc), serde(default))]
+    #[cfg_attr(
+        any(feature = "serde", doc),
+        serde(skip_serializing_if = "Vec::is_empty")
+    )]
     pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
-    #[cfg(any(feature = "email-property-schema", feature = "general-schema-section"))]
-    #[cfg_attr(feature = "serde", serde(rename = "email"))]
-    #[cfg_attr(feature = "serde", serde(default))]
-    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg(any(
+        any(feature = "email-property-schema", feature = "general-schema-section"),
+        doc
+    ))]
+    #[cfg_attr(any(feature = "serde", doc), serde(rename = "email"))]
+    #[cfg_attr(any(feature = "serde", doc), serde(default))]
+    #[cfg_attr(
+        any(feature = "serde", doc),
+        serde(skip_serializing_if = "Vec::is_empty")
+    )]
     pub r#email: Vec<EmailProperty>,
     #[cfg(any(
-        feature = "fax-number-property-schema",
-        feature = "general-schema-section"
+        any(
+            feature = "fax-number-property-schema",
+            feature = "general-schema-section"
+        ),
+        doc
     ))]
-    #[cfg_attr(feature = "serde", serde(rename = "faxNumber"))]
-    #[cfg_attr(feature = "serde", serde(default))]
-    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(any(feature = "serde", doc), serde(rename = "faxNumber"))]
+    #[cfg_attr(any(feature = "serde", doc), serde(default))]
+    #[cfg_attr(
+        any(feature = "serde", doc),
+        serde(skip_serializing_if = "Vec::is_empty")
+    )]
     pub r#fax_number: Vec<FaxNumberProperty>,
     #[cfg(any(
-        feature = "hours-available-property-schema",
-        feature = "general-schema-section"
+        any(
+            feature = "hours-available-property-schema",
+            feature = "general-schema-section"
+        ),
+        doc
     ))]
-    #[cfg_attr(feature = "serde", serde(rename = "hoursAvailable"))]
-    #[cfg_attr(feature = "serde", serde(default))]
-    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(any(feature = "serde", doc), serde(rename = "hoursAvailable"))]
+    #[cfg_attr(any(feature = "serde", doc), serde(default))]
+    #[cfg_attr(
+        any(feature = "serde", doc),
+        serde(skip_serializing_if = "Vec::is_empty")
+    )]
     pub r#hours_available: Vec<HoursAvailableProperty>,
     #[cfg(any(
-        feature = "identifier-property-schema",
-        feature = "general-schema-section"
+        any(
+            feature = "identifier-property-schema",
+            feature = "general-schema-section"
+        ),
+        doc
     ))]
-    #[cfg_attr(feature = "serde", serde(rename = "identifier"))]
-    #[cfg_attr(feature = "serde", serde(default))]
-    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(any(feature = "serde", doc), serde(rename = "identifier"))]
+    #[cfg_attr(any(feature = "serde", doc), serde(default))]
+    #[cfg_attr(
+        any(feature = "serde", doc),
+        serde(skip_serializing_if = "Vec::is_empty")
+    )]
     pub r#identifier: Vec<IdentifierProperty>,
-    #[cfg(any(feature = "image-property-schema", feature = "general-schema-section"))]
-    #[cfg_attr(feature = "serde", serde(rename = "image"))]
-    #[cfg_attr(feature = "serde", serde(default))]
-    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg(any(
+        any(feature = "image-property-schema", feature = "general-schema-section"),
+        doc
+    ))]
+    #[cfg_attr(any(feature = "serde", doc), serde(rename = "image"))]
+    #[cfg_attr(any(feature = "serde", doc), serde(default))]
+    #[cfg_attr(
+        any(feature = "serde", doc),
+        serde(skip_serializing_if = "Vec::is_empty")
+    )]
     pub r#image: Vec<ImageProperty>,
     #[cfg(any(
-        feature = "main-entity-of-page-property-schema",
-        feature = "general-schema-section"
+        any(
+            feature = "main-entity-of-page-property-schema",
+            feature = "general-schema-section"
+        ),
+        doc
     ))]
-    #[cfg_attr(feature = "serde", serde(rename = "mainEntityOfPage"))]
-    #[cfg_attr(feature = "serde", serde(default))]
-    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(any(feature = "serde", doc), serde(rename = "mainEntityOfPage"))]
+    #[cfg_attr(any(feature = "serde", doc), serde(default))]
+    #[cfg_attr(
+        any(feature = "serde", doc),
+        serde(skip_serializing_if = "Vec::is_empty")
+    )]
     pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
-    #[cfg(any(feature = "name-property-schema", feature = "general-schema-section"))]
-    #[cfg_attr(feature = "serde", serde(rename = "name"))]
-    #[cfg_attr(feature = "serde", serde(default))]
-    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg(any(
+        any(feature = "name-property-schema", feature = "general-schema-section"),
+        doc
+    ))]
+    #[cfg_attr(any(feature = "serde", doc), serde(rename = "name"))]
+    #[cfg_attr(any(feature = "serde", doc), serde(default))]
+    #[cfg_attr(
+        any(feature = "serde", doc),
+        serde(skip_serializing_if = "Vec::is_empty")
+    )]
     pub r#name: Vec<NameProperty>,
     #[cfg(any(
-        feature = "post-office-box-number-property-schema",
-        feature = "general-schema-section"
+        any(
+            feature = "post-office-box-number-property-schema",
+            feature = "general-schema-section"
+        ),
+        doc
     ))]
-    #[cfg_attr(feature = "serde", serde(rename = "postOfficeBoxNumber"))]
-    #[cfg_attr(feature = "serde", serde(default))]
-    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(any(feature = "serde", doc), serde(rename = "postOfficeBoxNumber"))]
+    #[cfg_attr(any(feature = "serde", doc), serde(default))]
+    #[cfg_attr(
+        any(feature = "serde", doc),
+        serde(skip_serializing_if = "Vec::is_empty")
+    )]
     pub r#post_office_box_number: Vec<PostOfficeBoxNumberProperty>,
     #[cfg(any(
-        feature = "postal-code-property-schema",
-        feature = "general-schema-section"
+        any(
+            feature = "postal-code-property-schema",
+            feature = "general-schema-section"
+        ),
+        doc
     ))]
-    #[cfg_attr(feature = "serde", serde(rename = "postalCode"))]
-    #[cfg_attr(feature = "serde", serde(default))]
-    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(any(feature = "serde", doc), serde(rename = "postalCode"))]
+    #[cfg_attr(any(feature = "serde", doc), serde(default))]
+    #[cfg_attr(
+        any(feature = "serde", doc),
+        serde(skip_serializing_if = "Vec::is_empty")
+    )]
     pub r#postal_code: Vec<PostalCodeProperty>,
     #[cfg(any(
-        feature = "potential-action-property-schema",
-        feature = "general-schema-section"
+        any(
+            feature = "potential-action-property-schema",
+            feature = "general-schema-section"
+        ),
+        doc
     ))]
-    #[cfg_attr(feature = "serde", serde(rename = "potentialAction"))]
-    #[cfg_attr(feature = "serde", serde(default))]
-    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(any(feature = "serde", doc), serde(rename = "potentialAction"))]
+    #[cfg_attr(any(feature = "serde", doc), serde(default))]
+    #[cfg_attr(
+        any(feature = "serde", doc),
+        serde(skip_serializing_if = "Vec::is_empty")
+    )]
     pub r#potential_action: Vec<PotentialActionProperty>,
     #[cfg(any(
-        feature = "product-supported-property-schema",
-        feature = "general-schema-section"
+        any(
+            feature = "product-supported-property-schema",
+            feature = "general-schema-section"
+        ),
+        doc
     ))]
-    #[cfg_attr(feature = "serde", serde(rename = "productSupported"))]
-    #[cfg_attr(feature = "serde", serde(default))]
-    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(any(feature = "serde", doc), serde(rename = "productSupported"))]
+    #[cfg_attr(any(feature = "serde", doc), serde(default))]
+    #[cfg_attr(
+        any(feature = "serde", doc),
+        serde(skip_serializing_if = "Vec::is_empty")
+    )]
     pub r#product_supported: Vec<ProductSupportedProperty>,
     #[cfg(any(
-        feature = "same-as-property-schema",
-        feature = "general-schema-section"
+        any(
+            feature = "same-as-property-schema",
+            feature = "general-schema-section"
+        ),
+        doc
     ))]
-    #[cfg_attr(feature = "serde", serde(rename = "sameAs"))]
-    #[cfg_attr(feature = "serde", serde(default))]
-    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(any(feature = "serde", doc), serde(rename = "sameAs"))]
+    #[cfg_attr(any(feature = "serde", doc), serde(default))]
+    #[cfg_attr(
+        any(feature = "serde", doc),
+        serde(skip_serializing_if = "Vec::is_empty")
+    )]
     pub r#same_as: Vec<SameAsProperty>,
     #[cfg(any(
-        feature = "service-area-property-schema",
-        feature = "general-schema-section"
+        any(
+            feature = "service-area-property-schema",
+            feature = "general-schema-section"
+        ),
+        doc
     ))]
-    #[cfg_attr(feature = "serde", serde(rename = "serviceArea"))]
-    #[cfg_attr(feature = "serde", serde(default))]
-    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(any(feature = "serde", doc), serde(rename = "serviceArea"))]
+    #[cfg_attr(any(feature = "serde", doc), serde(default))]
+    #[cfg_attr(
+        any(feature = "serde", doc),
+        serde(skip_serializing_if = "Vec::is_empty")
+    )]
     pub r#service_area: Vec<ServiceAreaProperty>,
     #[cfg(any(
-        feature = "street-address-property-schema",
-        feature = "general-schema-section"
+        any(
+            feature = "street-address-property-schema",
+            feature = "general-schema-section"
+        ),
+        doc
     ))]
-    #[cfg_attr(feature = "serde", serde(rename = "streetAddress"))]
-    #[cfg_attr(feature = "serde", serde(default))]
-    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(any(feature = "serde", doc), serde(rename = "streetAddress"))]
+    #[cfg_attr(any(feature = "serde", doc), serde(default))]
+    #[cfg_attr(
+        any(feature = "serde", doc),
+        serde(skip_serializing_if = "Vec::is_empty")
+    )]
     pub r#street_address: Vec<StreetAddressProperty>,
     #[cfg(any(
-        feature = "subject-of-property-schema",
-        feature = "general-schema-section"
+        any(
+            feature = "subject-of-property-schema",
+            feature = "general-schema-section"
+        ),
+        doc
     ))]
-    #[cfg_attr(feature = "serde", serde(rename = "subjectOf"))]
-    #[cfg_attr(feature = "serde", serde(default))]
-    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(any(feature = "serde", doc), serde(rename = "subjectOf"))]
+    #[cfg_attr(any(feature = "serde", doc), serde(default))]
+    #[cfg_attr(
+        any(feature = "serde", doc),
+        serde(skip_serializing_if = "Vec::is_empty")
+    )]
     pub r#subject_of: Vec<SubjectOfProperty>,
     #[cfg(any(
-        feature = "telephone-property-schema",
-        feature = "general-schema-section"
+        any(
+            feature = "telephone-property-schema",
+            feature = "general-schema-section"
+        ),
+        doc
     ))]
-    #[cfg_attr(feature = "serde", serde(rename = "telephone"))]
-    #[cfg_attr(feature = "serde", serde(default))]
-    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(any(feature = "serde", doc), serde(rename = "telephone"))]
+    #[cfg_attr(any(feature = "serde", doc), serde(default))]
+    #[cfg_attr(
+        any(feature = "serde", doc),
+        serde(skip_serializing_if = "Vec::is_empty")
+    )]
     pub r#telephone: Vec<TelephoneProperty>,
-    #[cfg(any(feature = "url-property-schema", feature = "general-schema-section"))]
-    #[cfg_attr(feature = "serde", serde(rename = "url"))]
-    #[cfg_attr(feature = "serde", serde(default))]
-    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg(any(
+        any(feature = "url-property-schema", feature = "general-schema-section"),
+        doc
+    ))]
+    #[cfg_attr(any(feature = "serde", doc), serde(rename = "url"))]
+    #[cfg_attr(any(feature = "serde", doc), serde(default))]
+    #[cfg_attr(
+        any(feature = "serde", doc),
+        serde(skip_serializing_if = "Vec::is_empty")
+    )]
     pub r#url: Vec<UrlProperty>,
 }

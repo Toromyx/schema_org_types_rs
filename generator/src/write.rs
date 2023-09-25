@@ -11,7 +11,7 @@ use quote::{__private::TokenStream, quote, ToTokens};
 use rayon::prelude::*;
 
 use crate::{
-    feature_gate::FeatureGate,
+    feature::Feature,
     schema::{
         class::Class, data_type::DataType, enumeration::Enumeration, property::Property, Schema,
     },
@@ -53,7 +53,8 @@ trait ToModuleString {
 impl<T: Schema> ToModuleString for &[T] {
     fn to_module_string(&self) -> String {
         let schema_mods_and_pub_uses = self.iter().map(|schema| {
-            let feature_gate = schema.feature_gate();
+            let feature = Feature::from(schema);
+            let feature_gate = feature.feature_gate();
             let module_name =
                 TokenStream::from_str(&format!("r#{}", schema.name().to_case(Case::Snake)))
                     .unwrap();

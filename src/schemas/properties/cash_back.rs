@@ -2,13 +2,22 @@ use super::*;
 /// A cardholder benefit that pays the cardholder a small percentage of their net expenditures.
 ///
 /// https://schema.org/cashBack
-#[cfg_attr(feature = "derive-debug", derive(Debug))]
-#[cfg_attr(feature = "derive-clone", derive(Clone))]
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[cfg_attr(feature = "serde", serde(untagged))]
+#[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
+#[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
+#[cfg_attr(
+    any(feature = "serde", doc),
+    derive(serde::Serialize, serde::Deserialize)
+)]
+#[cfg_attr(any(feature = "serde", doc), serde(untagged))]
 pub enum CashBackProperty {
-    #[cfg(any(feature = "boolean-schema", feature = "general-schema-section"))]
+    #[cfg(any(
+        any(feature = "boolean-schema", feature = "general-schema-section"),
+        doc
+    ))]
     Boolean(Boolean),
-    #[cfg(any(feature = "number-schema", feature = "general-schema-section"))]
+    #[cfg(any(
+        any(feature = "number-schema", feature = "general-schema-section"),
+        doc
+    ))]
     Number(Number),
 }
