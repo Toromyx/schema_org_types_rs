@@ -1,7 +1,7 @@
 use super::*;
 /// The vasculature the lymphatic structure runs, or efferents, to.
 ///
-/// https://schema.org/runsTo
+/// <https://schema.org/runsTo>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

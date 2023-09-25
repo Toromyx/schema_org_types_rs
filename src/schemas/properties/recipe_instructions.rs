@@ -1,7 +1,7 @@
 use super::*;
 /// A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
 ///
-/// https://schema.org/recipeInstructions
+/// <https://schema.org/recipeInstructions>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

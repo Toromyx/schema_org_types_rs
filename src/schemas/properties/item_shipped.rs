@@ -1,7 +1,7 @@
 use super::*;
 /// Item(s) being shipped.
 ///
-/// https://schema.org/itemShipped
+/// <https://schema.org/itemShipped>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

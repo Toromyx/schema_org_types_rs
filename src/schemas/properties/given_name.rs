@@ -1,7 +1,7 @@
 use super::*;
 /// Given name. In the U.S., the first name of a Person.
 ///
-/// https://schema.org/givenName
+/// <https://schema.org/givenName>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

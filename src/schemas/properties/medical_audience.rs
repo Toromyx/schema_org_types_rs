@@ -1,7 +1,7 @@
 use super::*;
 /// Medical audience for page.
 ///
-/// https://schema.org/medicalAudience
+/// <https://schema.org/medicalAudience>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

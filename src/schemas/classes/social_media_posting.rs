@@ -1,7 +1,7 @@
 use super::*;
 /// A post to a social media platform, including blog posts, tweets, Facebook posts, etc.
 ///
-/// https://schema.org/SocialMediaPosting
+/// <https://schema.org/SocialMediaPosting>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// A School District is an administrative area for the administration of schools.
 ///
-/// https://schema.org/SchoolDistrict
+/// <https://schema.org/SchoolDistrict>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

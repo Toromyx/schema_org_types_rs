@@ -1,7 +1,7 @@
 use super::*;
 /// A tourist information center.
 ///
-/// https://schema.org/TouristInformationCenter
+/// <https://schema.org/TouristInformationCenter>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

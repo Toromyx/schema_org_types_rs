@@ -1,7 +1,7 @@
 use super::*;
 /// A collection or bound volume of maps, charts, plates or tables, physical or in media form illustrating any subject.
 ///
-/// https://schema.org/Atlas
+/// <https://schema.org/Atlas>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

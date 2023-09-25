@@ -1,7 +1,7 @@
 use super::*;
 /// The basic containment relation between a place and another that it contains.
 ///
-/// https://schema.org/containsPlace
+/// <https://schema.org/containsPlace>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

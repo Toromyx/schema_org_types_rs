@@ -1,7 +1,7 @@
 use super::*;
 /// A financial aid type or program which students may use to pay for tuition or fees associated with the program.
 ///
-/// https://schema.org/financialAidEligible
+/// <https://schema.org/financialAidEligible>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

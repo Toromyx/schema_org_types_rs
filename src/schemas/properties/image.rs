@@ -1,7 +1,7 @@
 use super::*;
 /// An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
 ///
-/// https://schema.org/image
+/// <https://schema.org/image>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

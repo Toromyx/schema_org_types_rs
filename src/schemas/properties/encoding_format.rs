@@ -5,7 +5,7 @@ use super::*;
 ///
 /// Unregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.
 ///
-/// https://schema.org/encodingFormat
+/// <https://schema.org/encodingFormat>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

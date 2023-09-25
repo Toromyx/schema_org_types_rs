@@ -1,7 +1,7 @@
 use super::*;
 /// A stage of a medical condition, such as 'Stage IIIa'.
 ///
-/// https://schema.org/MedicalConditionStage
+/// <https://schema.org/MedicalConditionStage>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

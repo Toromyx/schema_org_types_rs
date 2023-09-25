@@ -1,7 +1,7 @@
 use super::*;
 /// A retail good store.
 ///
-/// https://schema.org/Store
+/// <https://schema.org/Store>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

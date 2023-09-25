@@ -6,7 +6,7 @@ use super::*;
 /// At this time, Schema.org does not define any types of relationship between claims. This is a natural area for future exploration.
 ///
 ///
-/// https://schema.org/Claim
+/// <https://schema.org/Claim>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

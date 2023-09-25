@@ -1,7 +1,7 @@
 use super::*;
 /// A [[DefinedTermSet]] that contains this term.
 ///
-/// https://schema.org/inDefinedTermSet
+/// <https://schema.org/inDefinedTermSet>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

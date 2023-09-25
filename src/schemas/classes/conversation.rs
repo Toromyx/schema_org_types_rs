@@ -1,7 +1,7 @@
 use super::*;
 /// One or more messages between organizations or people on a particular topic. Individual messages can be linked to the conversation with isPartOf or hasPart properties.
 ///
-/// https://schema.org/Conversation
+/// <https://schema.org/Conversation>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

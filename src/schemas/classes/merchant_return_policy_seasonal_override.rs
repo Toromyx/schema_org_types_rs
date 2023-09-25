@@ -1,7 +1,7 @@
 use super::*;
 /// A seasonal override of a return policy, for example used for holidays.
 ///
-/// https://schema.org/MerchantReturnPolicySeasonalOverride
+/// <https://schema.org/MerchantReturnPolicySeasonalOverride>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

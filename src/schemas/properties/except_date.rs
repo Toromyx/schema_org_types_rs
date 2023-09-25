@@ -4,7 +4,7 @@ use super::*;
 /// should be excluded from the schedule. If an exception is specified as a [[Date]] then any event that is scheduled for that 24 hour period should be
 /// excluded from the schedule. This allows a whole day to be excluded from the schedule without having to itemise every scheduled event.
 ///
-/// https://schema.org/exceptDate
+/// <https://schema.org/exceptDate>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

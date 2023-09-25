@@ -5,7 +5,7 @@ use super::*;
 ///
 /// The property values can be expressed either as unstructured text (repeated as necessary), or if ordered, as a list (in which case the most positive is at the beginning of the list).
 ///
-/// https://schema.org/positiveNotes
+/// <https://schema.org/positiveNotes>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

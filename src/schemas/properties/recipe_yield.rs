@@ -1,7 +1,7 @@
 use super::*;
 /// The quantity produced by the recipe (for example, number of people served, number of servings, etc).
 ///
-/// https://schema.org/recipeYield
+/// <https://schema.org/recipeYield>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

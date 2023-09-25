@@ -1,7 +1,7 @@
 use super::*;
 /// The act of participating in exertive activity for the purposes of improving health and fitness.
 ///
-/// https://schema.org/ExerciseAction
+/// <https://schema.org/ExerciseAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

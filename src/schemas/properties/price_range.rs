@@ -1,7 +1,7 @@
 use super::*;
 /// The price range of the business, for example ```$$$```.
 ///
-/// https://schema.org/priceRange
+/// <https://schema.org/priceRange>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

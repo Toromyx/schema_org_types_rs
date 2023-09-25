@@ -1,7 +1,7 @@
 use super::*;
 /// The modulation (e.g. FM, AM, etc) used by a particular broadcast service.
 ///
-/// https://schema.org/broadcastSignalModulation
+/// <https://schema.org/broadcastSignalModulation>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

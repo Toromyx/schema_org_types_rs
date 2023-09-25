@@ -1,7 +1,7 @@
 use super::*;
 /// Tissue, organ, biological sample, etc in which activity of this gene has been observed experimentally. For example brain, digestive system.
 ///
-/// https://schema.org/expressedIn
+/// <https://schema.org/expressedIn>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

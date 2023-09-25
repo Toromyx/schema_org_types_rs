@@ -1,7 +1,7 @@
 use super::*;
 /// Information about disease prevention.
 ///
-/// https://schema.org/diseasePreventionInfo
+/// <https://schema.org/diseasePreventionInfo>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

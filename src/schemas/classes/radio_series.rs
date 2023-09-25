@@ -1,7 +1,7 @@
 use super::*;
 /// CreativeWorkSeries dedicated to radio broadcast and associated online delivery.
 ///
-/// https://schema.org/RadioSeries
+/// <https://schema.org/RadioSeries>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

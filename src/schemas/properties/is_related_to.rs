@@ -1,7 +1,7 @@
 use super::*;
 /// A pointer to another, somehow related product (or multiple products).
 ///
-/// https://schema.org/isRelatedTo
+/// <https://schema.org/isRelatedTo>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

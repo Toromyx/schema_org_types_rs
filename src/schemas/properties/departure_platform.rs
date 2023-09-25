@@ -1,7 +1,7 @@
 use super::*;
 /// The platform from which the train departs.
 ///
-/// https://schema.org/departurePlatform
+/// <https://schema.org/departurePlatform>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

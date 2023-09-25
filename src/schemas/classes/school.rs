@@ -1,7 +1,7 @@
 use super::*;
 /// A school.
 ///
-/// https://schema.org/School
+/// <https://schema.org/School>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

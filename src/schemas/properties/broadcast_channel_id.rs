@@ -1,7 +1,7 @@
 use super::*;
 /// The unique address by which the BroadcastService can be identified in a provider lineup. In US, this is typically a number.
 ///
-/// https://schema.org/broadcastChannelId
+/// <https://schema.org/broadcastChannelId>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// Event type: Business event.
 ///
-/// https://schema.org/BusinessEvent
+/// <https://schema.org/BusinessEvent>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// The telephone number.
 ///
-/// https://schema.org/telephone
+/// <https://schema.org/telephone>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

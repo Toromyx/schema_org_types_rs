@@ -1,7 +1,7 @@
 use super::*;
 /// A sub property of location. The course where this action was taken.
 ///
-/// https://schema.org/exerciseCourse
+/// <https://schema.org/exerciseCourse>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

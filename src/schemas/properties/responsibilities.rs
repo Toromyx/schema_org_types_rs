@@ -1,7 +1,7 @@
 use super::*;
 /// Responsibilities associated with this role or Occupation.
 ///
-/// https://schema.org/responsibilities
+/// <https://schema.org/responsibilities>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

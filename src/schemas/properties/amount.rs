@@ -1,7 +1,7 @@
 use super::*;
 /// The amount of money.
 ///
-/// https://schema.org/amount
+/// <https://schema.org/amount>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

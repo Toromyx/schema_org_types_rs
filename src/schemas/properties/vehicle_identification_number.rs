@@ -1,7 +1,7 @@
 use super::*;
 /// The Vehicle Identification Number (VIN) is a unique serial number used by the automotive industry to identify individual motor vehicles.
 ///
-/// https://schema.org/vehicleIdentificationNumber
+/// <https://schema.org/vehicleIdentificationNumber>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

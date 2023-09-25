@@ -1,7 +1,7 @@
 use super::*;
 /// A component of the human body circulatory system comprised of an intricate network of hollow tubes that transport blood throughout the entire body.
 ///
-/// https://schema.org/Vessel
+/// <https://schema.org/Vessel>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

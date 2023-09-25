@@ -1,7 +1,7 @@
 use super::*;
 /// Date on which this guideline's recommendation was made.
 ///
-/// https://schema.org/guidelineDate
+/// <https://schema.org/guidelineDate>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

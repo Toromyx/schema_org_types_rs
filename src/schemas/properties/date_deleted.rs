@@ -1,7 +1,7 @@
 use super::*;
 /// The datetime the item was removed from the DataFeed.
 ///
-/// https://schema.org/dateDeleted
+/// <https://schema.org/dateDeleted>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

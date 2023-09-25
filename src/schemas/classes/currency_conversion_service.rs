@@ -1,7 +1,7 @@
 use super::*;
 /// A service to convert funds from one currency to another currency.
 ///
-/// https://schema.org/CurrencyConversionService
+/// <https://schema.org/CurrencyConversionService>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// Any anatomical structure which pertains to the soft nervous tissue functioning as the coordinating center of sensation and intellectual and nervous activity.
 ///
-/// https://schema.org/BrainStructure
+/// <https://schema.org/BrainStructure>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

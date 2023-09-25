@@ -1,7 +1,7 @@
 use super::*;
 /// Real or fictional location of the game (or part of game).
 ///
-/// https://schema.org/gameLocation
+/// <https://schema.org/gameLocation>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

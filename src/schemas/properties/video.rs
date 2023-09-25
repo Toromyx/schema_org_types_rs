@@ -1,7 +1,7 @@
 use super::*;
 /// An embedded video object.
 ///
-/// https://schema.org/video
+/// <https://schema.org/video>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

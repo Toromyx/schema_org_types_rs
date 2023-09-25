@@ -1,7 +1,7 @@
 use super::*;
 /// A medical guideline related to this entity.
 ///
-/// https://schema.org/guideline
+/// <https://schema.org/guideline>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// The act of intentionally disregarding the object. An agent ignores an object.
 ///
-/// https://schema.org/IgnoreAction
+/// <https://schema.org/IgnoreAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

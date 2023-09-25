@@ -1,7 +1,7 @@
 use super::*;
 /// Indicates some accommodation that this floor plan describes.
 ///
-/// https://schema.org/isPlanForApartment
+/// <https://schema.org/isPlanForApartment>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

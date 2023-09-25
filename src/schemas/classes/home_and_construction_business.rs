@@ -1,7 +1,7 @@
 use super::*;
 /// A construction business.\n\nA HomeAndConstructionBusiness is a [[LocalBusiness]] that provides services around homes and buildings.\n\nAs a [[LocalBusiness]] it can be described as a [[provider]] of one or more [[Service]]\(s).
 ///
-/// https://schema.org/HomeAndConstructionBusiness
+/// <https://schema.org/HomeAndConstructionBusiness>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

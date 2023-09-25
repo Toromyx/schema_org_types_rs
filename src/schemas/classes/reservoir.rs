@@ -1,7 +1,7 @@
 use super::*;
 /// A reservoir of water, typically an artificially created lake, like the Lake Kariba reservoir.
 ///
-/// https://schema.org/Reservoir
+/// <https://schema.org/Reservoir>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// (Eventually to be defined as) a supertype of GeoShape designed to accommodate definitions from Geo-Spatial best practices.
 ///
-/// https://schema.org/GeospatialGeometry
+/// <https://schema.org/GeospatialGeometry>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

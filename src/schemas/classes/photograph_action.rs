@@ -1,7 +1,7 @@
 use super::*;
 /// The act of capturing still images of objects using a camera.
 ///
-/// https://schema.org/PhotographAction
+/// <https://schema.org/PhotographAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

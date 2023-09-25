@@ -1,7 +1,7 @@
 use super::*;
 /// A notary.
 ///
-/// https://schema.org/Notary
+/// <https://schema.org/Notary>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
 ///
-/// https://schema.org/suggestedGender
+/// <https://schema.org/suggestedGender>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

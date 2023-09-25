@@ -1,7 +1,7 @@
 use super::*;
 /// The International Standard Recording Code for the recording.
 ///
-/// https://schema.org/isrcCode
+/// <https://schema.org/isrcCode>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

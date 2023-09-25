@@ -1,7 +1,7 @@
 use super::*;
 /// A class, also often called a 'Type'; equivalent to rdfs:Class.
 ///
-/// https://schema.org/Class
+/// <https://schema.org/Class>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

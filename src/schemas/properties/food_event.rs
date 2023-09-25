@@ -1,7 +1,7 @@
 use super::*;
 /// A sub property of location. The specific food event where the action occurred.
 ///
-/// https://schema.org/foodEvent
+/// <https://schema.org/foodEvent>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

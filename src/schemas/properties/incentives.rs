@@ -1,7 +1,7 @@
 use super::*;
 /// Description of bonus and commission compensation aspects of the job.
 ///
-/// https://schema.org/incentives
+/// <https://schema.org/incentives>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

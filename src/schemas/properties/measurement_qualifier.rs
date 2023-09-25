@@ -1,7 +1,7 @@
 use super::*;
 /// Provides additional qualification to an observation. For example, a GDP observation measures the Nominal value.
 ///
-/// https://schema.org/measurementQualifier
+/// <https://schema.org/measurementQualifier>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// An employment agency.
 ///
-/// https://schema.org/EmploymentAgency
+/// <https://schema.org/EmploymentAgency>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

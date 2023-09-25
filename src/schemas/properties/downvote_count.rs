@@ -1,7 +1,7 @@
 use super::*;
 /// The number of downvotes this question, answer or comment has received from the community.
 ///
-/// https://schema.org/downvoteCount
+/// <https://schema.org/downvoteCount>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// The vasculature the lymphatic structure originates, or afferents, from.
 ///
-/// https://schema.org/originatesFrom
+/// <https://schema.org/originatesFrom>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

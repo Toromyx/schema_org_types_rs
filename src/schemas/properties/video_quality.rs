@@ -1,7 +1,7 @@
 use super::*;
 /// The quality of the video.
 ///
-/// https://schema.org/videoQuality
+/// <https://schema.org/videoQuality>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

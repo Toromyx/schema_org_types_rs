@@ -1,7 +1,7 @@
 use super::*;
 /// Information about the engine of the vehicle. A vehicle can have multiple engines represented by multiple engine specification entities.
 ///
-/// https://schema.org/EngineSpecification
+/// <https://schema.org/EngineSpecification>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

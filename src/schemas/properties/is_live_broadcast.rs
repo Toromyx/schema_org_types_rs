@@ -1,7 +1,7 @@
 use super::*;
 /// True if the broadcast is of a live event.
 ///
-/// https://schema.org/isLiveBroadcast
+/// <https://schema.org/isLiveBroadcast>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

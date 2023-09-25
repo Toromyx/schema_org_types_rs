@@ -1,7 +1,7 @@
 use super::*;
 /// Upcoming or past event associated with this place, organization, or action.
 ///
-/// https://schema.org/event
+/// <https://schema.org/event>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

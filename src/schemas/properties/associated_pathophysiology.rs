@@ -1,7 +1,7 @@
 use super::*;
 /// If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.
 ///
-/// https://schema.org/associatedPathophysiology
+/// <https://schema.org/associatedPathophysiology>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

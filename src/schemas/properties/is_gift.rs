@@ -1,7 +1,7 @@
 use super::*;
 /// Indicates whether the offer was accepted as a gift for someone other than the buyer.
 ///
-/// https://schema.org/isGift
+/// <https://schema.org/isGift>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

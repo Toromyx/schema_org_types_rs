@@ -1,7 +1,7 @@
 use super::*;
 /// A [[NewsArticle]] expressing an open call by a [[NewsMediaOrganization]] asking the public for input, insights, clarifications, anecdotes, documentation, etc., on an issue, for reporting purposes.
 ///
-/// https://schema.org/AskPublicNewsArticle
+/// <https://schema.org/AskPublicNewsArticle>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

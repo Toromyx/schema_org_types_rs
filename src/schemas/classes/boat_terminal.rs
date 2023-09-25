@@ -1,7 +1,7 @@
 use super::*;
 /// A terminal for boats, ships, and other water vessels.
 ///
-/// https://schema.org/BoatTerminal
+/// <https://schema.org/BoatTerminal>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

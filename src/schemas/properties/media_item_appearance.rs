@@ -1,7 +1,7 @@
 use super::*;
 /// In the context of a [[MediaReview]], indicates specific media item(s) that are grouped using a [[MediaReviewItem]].
 ///
-/// https://schema.org/mediaItemAppearance
+/// <https://schema.org/mediaItemAppearance>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

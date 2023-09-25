@@ -1,7 +1,7 @@
 use super::*;
 /// The BroadcastService offered on this channel.
 ///
-/// https://schema.org/providesBroadcastService
+/// <https://schema.org/providesBroadcastService>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

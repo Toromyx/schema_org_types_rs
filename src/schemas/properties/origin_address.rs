@@ -1,7 +1,7 @@
 use super::*;
 /// Shipper's address.
 ///
-/// https://schema.org/originAddress
+/// <https://schema.org/originAddress>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

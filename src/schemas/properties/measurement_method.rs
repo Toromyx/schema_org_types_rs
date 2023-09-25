@@ -1,7 +1,7 @@
 use super::*;
 /// A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
 ///
-/// https://schema.org/measurementMethod
+/// <https://schema.org/measurementMethod>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

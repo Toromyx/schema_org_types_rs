@@ -1,7 +1,7 @@
 use super::*;
 /// The audience eligible for this service.
 ///
-/// https://schema.org/serviceAudience
+/// <https://schema.org/serviceAudience>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

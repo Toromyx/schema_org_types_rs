@@ -1,7 +1,7 @@
 use super::*;
 /// The latest date the package may arrive.
 ///
-/// https://schema.org/expectedArrivalUntil
+/// <https://schema.org/expectedArrivalUntil>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

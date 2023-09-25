@@ -1,7 +1,7 @@
 use super::*;
 /// The website to access the service.
 ///
-/// https://schema.org/serviceUrl
+/// <https://schema.org/serviceUrl>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

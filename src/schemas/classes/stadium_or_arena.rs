@@ -1,7 +1,7 @@
 use super::*;
 /// A stadium.
 ///
-/// https://schema.org/StadiumOrArena
+/// <https://schema.org/StadiumOrArena>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

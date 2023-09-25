@@ -1,7 +1,7 @@
 use super::*;
 /// Whether the provider is accepting new patients.
 ///
-/// https://schema.org/isAcceptingNewPatients
+/// <https://schema.org/isAcceptingNewPatients>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

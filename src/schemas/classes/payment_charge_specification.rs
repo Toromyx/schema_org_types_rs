@@ -1,7 +1,7 @@
 use super::*;
 /// The costs of settling the payment using a particular payment method.
 ///
-/// https://schema.org/PaymentChargeSpecification
+/// <https://schema.org/PaymentChargeSpecification>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

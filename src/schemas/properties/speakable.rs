@@ -14,7 +14,7 @@ use super::*;
 /// we define a supporting type, [[SpeakableSpecification]]  which is defined to be a possible value of the *speakable* property.
 ///
 ///
-/// https://schema.org/speakable
+/// <https://schema.org/speakable>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

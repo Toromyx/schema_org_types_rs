@@ -1,7 +1,7 @@
 use super::*;
 /// A business that provides Heating, Ventilation and Air Conditioning services.
 ///
-/// https://schema.org/HVACBusiness
+/// <https://schema.org/HVACBusiness>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

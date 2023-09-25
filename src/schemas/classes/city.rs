@@ -1,7 +1,7 @@
 use super::*;
 /// A city or town.
 ///
-/// https://schema.org/City
+/// <https://schema.org/City>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

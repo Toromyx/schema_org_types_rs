@@ -1,7 +1,7 @@
 use super::*;
 /// The framework to which the resource being described is aligned.
 ///
-/// https://schema.org/educationalFramework
+/// <https://schema.org/educationalFramework>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// The act of stopping or deactivating a device or application (e.g. stopping a timer or turning off a flashlight).
 ///
-/// https://schema.org/DeactivateAction
+/// <https://schema.org/DeactivateAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

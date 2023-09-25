@@ -1,7 +1,7 @@
 use super::*;
 /// Any rule set or interactive tool for estimating the risk of developing a complication or condition.
 ///
-/// https://schema.org/MedicalRiskEstimator
+/// <https://schema.org/MedicalRiskEstimator>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

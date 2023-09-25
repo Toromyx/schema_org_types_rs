@@ -1,7 +1,7 @@
 use super::*;
 /// A product provided to consumers and businesses by financial institutions such as banks, insurance companies, brokerage firms, consumer finance companies, and investment companies which comprise the financial services industry.
 ///
-/// https://schema.org/FinancialProduct
+/// <https://schema.org/FinancialProduct>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

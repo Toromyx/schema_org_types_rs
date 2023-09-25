@@ -1,7 +1,7 @@
 use super::*;
 /// The frequency in MHz and the modulation used for a particular BroadcastService.
 ///
-/// https://schema.org/BroadcastFrequencySpecification
+/// <https://schema.org/BroadcastFrequencySpecification>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// A Category code contained in this code set.
 ///
-/// https://schema.org/hasCategoryCode
+/// <https://schema.org/hasCategoryCode>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

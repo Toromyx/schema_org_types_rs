@@ -1,7 +1,7 @@
 use super::*;
 /// Party placing the order or paying the invoice.
 ///
-/// https://schema.org/customer
+/// <https://schema.org/customer>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

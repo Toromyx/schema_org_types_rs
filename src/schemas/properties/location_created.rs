@@ -1,7 +1,7 @@
 use super::*;
 /// The location where the CreativeWork was created, which may not be the same as the location depicted in the CreativeWork.
 ///
-/// https://schema.org/locationCreated
+/// <https://schema.org/locationCreated>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

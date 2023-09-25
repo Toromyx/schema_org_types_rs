@@ -1,7 +1,7 @@
 use super::*;
 /// This is the [[Action]] of navigating to a specific [[startOffset]] timestamp within a [[VideoObject]], typically represented with a URL template structure.
 ///
-/// https://schema.org/SeekToAction
+/// <https://schema.org/SeekToAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

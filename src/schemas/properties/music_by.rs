@@ -1,7 +1,7 @@
 use super::*;
 /// The composer of the soundtrack.
 ///
-/// https://schema.org/musicBy
+/// <https://schema.org/musicBy>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

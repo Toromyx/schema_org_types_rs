@@ -1,7 +1,7 @@
 use super::*;
 /// The current status of the reservation.
 ///
-/// https://schema.org/reservationStatus
+/// <https://schema.org/reservationStatus>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

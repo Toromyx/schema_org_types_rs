@@ -1,7 +1,7 @@
 use super::*;
 /// The number or type of airbags in the vehicle.
 ///
-/// https://schema.org/numberOfAirbags
+/// <https://schema.org/numberOfAirbags>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

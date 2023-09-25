@@ -1,7 +1,7 @@
 use super::*;
 /// The act of responding instinctively and emotionally to an object, expressing a sentiment.
 ///
-/// https://schema.org/ReactAction
+/// <https://schema.org/ReactAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// The number of credits or units awarded by a Course or required to complete an EducationalOccupationalProgram.
 ///
-/// https://schema.org/numberOfCredits
+/// <https://schema.org/numberOfCredits>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

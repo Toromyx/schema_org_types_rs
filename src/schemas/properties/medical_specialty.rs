@@ -1,7 +1,7 @@
 use super::*;
 /// A medical specialty of the provider.
 ///
-/// https://schema.org/medicalSpecialty
+/// <https://schema.org/medicalSpecialty>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

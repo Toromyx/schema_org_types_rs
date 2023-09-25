@@ -1,7 +1,7 @@
 use super::*;
 /// Typical or recommended followup care after the procedure is performed.
 ///
-/// https://schema.org/followup
+/// <https://schema.org/followup>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

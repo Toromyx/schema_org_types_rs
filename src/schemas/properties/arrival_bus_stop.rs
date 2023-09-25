@@ -1,7 +1,7 @@
 use super::*;
 /// The stop or station from which the bus arrives.
 ///
-/// https://schema.org/arrivalBusStop
+/// <https://schema.org/arrivalBusStop>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

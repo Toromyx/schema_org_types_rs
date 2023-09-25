@@ -1,7 +1,7 @@
 use super::*;
 /// The total financial value of the person as calculated by subtracting assets from liabilities.
 ///
-/// https://schema.org/netWorth
+/// <https://schema.org/netWorth>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

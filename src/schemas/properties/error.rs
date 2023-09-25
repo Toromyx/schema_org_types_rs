@@ -1,7 +1,7 @@
 use super::*;
 /// For failed actions, more information on the cause of the failure.
 ///
-/// https://schema.org/error
+/// <https://schema.org/error>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

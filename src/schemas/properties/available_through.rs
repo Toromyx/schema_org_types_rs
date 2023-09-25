@@ -1,7 +1,7 @@
 use super::*;
 /// After this date, the item will no longer be available for pickup.
 ///
-/// https://schema.org/availableThrough
+/// <https://schema.org/availableThrough>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// Prerequisites for enrolling in the program.
 ///
-/// https://schema.org/programPrerequisites
+/// <https://schema.org/programPrerequisites>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

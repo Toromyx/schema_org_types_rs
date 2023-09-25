@@ -1,7 +1,7 @@
 use super::*;
 /// Event type: Children's event.
 ///
-/// https://schema.org/ChildrensEvent
+/// <https://schema.org/ChildrensEvent>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

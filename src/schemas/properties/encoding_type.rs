@@ -1,7 +1,7 @@
 use super::*;
 /// The supported encoding type(s) for an EntryPoint request.
 ///
-/// https://schema.org/encodingType
+/// <https://schema.org/encodingType>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

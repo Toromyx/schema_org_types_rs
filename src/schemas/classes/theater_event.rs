@@ -1,7 +1,7 @@
 use super::*;
 /// Event type: Theater performance.
 ///
-/// https://schema.org/TheaterEvent
+/// <https://schema.org/TheaterEvent>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

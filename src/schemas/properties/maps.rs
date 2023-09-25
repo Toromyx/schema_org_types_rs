@@ -1,7 +1,7 @@
 use super::*;
 /// A URL to a map of the place.
 ///
-/// https://schema.org/maps
+/// <https://schema.org/maps>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

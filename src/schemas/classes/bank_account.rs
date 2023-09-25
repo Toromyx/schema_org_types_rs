@@ -1,7 +1,7 @@
 use super::*;
 /// A product or service offered by a bank whereby one may deposit, withdraw or transfer money and in some cases be paid interest.
 ///
-/// https://schema.org/BankAccount
+/// <https://schema.org/BankAccount>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

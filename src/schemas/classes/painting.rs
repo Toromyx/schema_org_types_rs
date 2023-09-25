@@ -1,7 +1,7 @@
 use super::*;
 /// A painting.
 ///
-/// https://schema.org/Painting
+/// <https://schema.org/Painting>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

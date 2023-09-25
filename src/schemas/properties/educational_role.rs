@@ -1,7 +1,7 @@
 use super::*;
 /// An educationalRole of an EducationalAudience.
 ///
-/// https://schema.org/educationalRole
+/// <https://schema.org/educationalRole>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

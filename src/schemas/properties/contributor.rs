@@ -1,7 +1,7 @@
 use super::*;
 /// A secondary contributor to the CreativeWork or Event.
 ///
-/// https://schema.org/contributor
+/// <https://schema.org/contributor>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

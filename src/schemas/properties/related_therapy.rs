@@ -1,7 +1,7 @@
 use super::*;
 /// A medical therapy related to this anatomy.
 ///
-/// https://schema.org/relatedTherapy
+/// <https://schema.org/relatedTherapy>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

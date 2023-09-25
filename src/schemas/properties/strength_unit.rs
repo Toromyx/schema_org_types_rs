@@ -1,7 +1,7 @@
 use super::*;
 /// The units of an active ingredient's strength, e.g. mg.
 ///
-/// https://schema.org/strengthUnit
+/// <https://schema.org/strengthUnit>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

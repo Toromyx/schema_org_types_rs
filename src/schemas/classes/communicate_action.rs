@@ -1,7 +1,7 @@
 use super::*;
 /// The act of conveying information to another person via a communication medium (instrument) such as speech, email, or telephone conversation.
 ///
-/// https://schema.org/CommunicateAction
+/// <https://schema.org/CommunicateAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// A work performed in some event, for example a play performed in a TheaterEvent.
 ///
-/// https://schema.org/workPerformed
+/// <https://schema.org/workPerformed>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

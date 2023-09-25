@@ -1,7 +1,7 @@
 use super::*;
 /// The time at which the UserComment was made.
 ///
-/// https://schema.org/commentTime
+/// <https://schema.org/commentTime>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

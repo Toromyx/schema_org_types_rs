@@ -1,7 +1,7 @@
 use super::*;
 /// Disease associated to this BioChemEntity. Such disease can be a MedicalCondition or a URL. If you want to add an evidence supporting the association, please use PropertyValue.
 ///
-/// https://schema.org/associatedDisease
+/// <https://schema.org/associatedDisease>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

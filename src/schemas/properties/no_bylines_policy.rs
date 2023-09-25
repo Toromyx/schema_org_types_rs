@@ -1,7 +1,7 @@
 use super::*;
 /// For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement explaining when authors of articles are not named in bylines.
 ///
-/// https://schema.org/noBylinesPolicy
+/// <https://schema.org/noBylinesPolicy>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

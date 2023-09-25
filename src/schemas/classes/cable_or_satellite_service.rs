@@ -1,7 +1,7 @@
 use super::*;
 /// A service which provides access to media programming like TV or radio. Access may be via cable or satellite.
 ///
-/// https://schema.org/CableOrSatelliteService
+/// <https://schema.org/CableOrSatelliteService>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

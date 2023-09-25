@@ -1,7 +1,7 @@
 use super::*;
 /// The minimum payment required at this time.
 ///
-/// https://schema.org/minimumPaymentDue
+/// <https://schema.org/minimumPaymentDue>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

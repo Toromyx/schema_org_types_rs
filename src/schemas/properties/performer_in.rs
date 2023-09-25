@@ -1,7 +1,7 @@
 use super::*;
 /// Event that this person is a performer or participant in.
 ///
-/// https://schema.org/performerIn
+/// <https://schema.org/performerIn>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

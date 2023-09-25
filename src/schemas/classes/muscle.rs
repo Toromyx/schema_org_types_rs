@@ -1,7 +1,7 @@
 use super::*;
 /// A muscle is an anatomical structure consisting of a contractile form of tissue that animals use to effect movement.
 ///
-/// https://schema.org/Muscle
+/// <https://schema.org/Muscle>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

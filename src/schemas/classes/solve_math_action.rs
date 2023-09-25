@@ -1,7 +1,7 @@
 use super::*;
 /// The action that takes in a math expression and directs users to a page potentially capable of solving/simplifying that expression.
 ///
-/// https://schema.org/SolveMathAction
+/// <https://schema.org/SolveMathAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

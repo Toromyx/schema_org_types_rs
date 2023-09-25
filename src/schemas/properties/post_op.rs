@@ -1,7 +1,7 @@
 use super::*;
 /// A description of the postoperative procedures, care, and/or followups for this device.
 ///
-/// https://schema.org/postOp
+/// <https://schema.org/postOp>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

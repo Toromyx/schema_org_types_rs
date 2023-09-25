@@ -3,7 +3,7 @@ use super::*;
 /// This includes identifying the day(s) of the week or month when the recurring event will take place, in addition to its start and end time. Schedules may also
 /// have start and end dates to indicate when they are active, e.g. to define a limited calendar of events.
 ///
-/// https://schema.org/Schedule
+/// <https://schema.org/Schedule>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

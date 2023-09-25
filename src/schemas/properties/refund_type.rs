@@ -1,7 +1,7 @@
 use super::*;
 /// A refund type, from an enumerated list.
 ///
-/// https://schema.org/refundType
+/// <https://schema.org/refundType>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

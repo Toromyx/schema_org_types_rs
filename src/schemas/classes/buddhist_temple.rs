@@ -1,7 +1,7 @@
 use super::*;
 /// A Buddhist temple.
 ///
-/// https://schema.org/BuddhistTemple
+/// <https://schema.org/BuddhistTemple>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

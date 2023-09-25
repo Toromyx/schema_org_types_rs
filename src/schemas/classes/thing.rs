@@ -1,7 +1,7 @@
 use super::*;
 /// The most generic type of item.
 ///
-/// https://schema.org/Thing
+/// <https://schema.org/Thing>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

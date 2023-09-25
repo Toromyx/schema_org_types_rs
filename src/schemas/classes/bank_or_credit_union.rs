@@ -1,7 +1,7 @@
 use super::*;
 /// Bank or credit union.
 ///
-/// https://schema.org/BankOrCreditUnion
+/// <https://schema.org/BankOrCreditUnion>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// Medical expert advice related to the plan.
 ///
-/// https://schema.org/expertConsiderations
+/// <https://schema.org/expertConsiderations>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

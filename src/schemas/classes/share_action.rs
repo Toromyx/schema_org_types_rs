@@ -1,7 +1,7 @@
 use super::*;
 /// The act of distributing content to people for their amusement or edification.
 ///
-/// https://schema.org/ShareAction
+/// <https://schema.org/ShareAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

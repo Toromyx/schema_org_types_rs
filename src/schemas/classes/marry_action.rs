@@ -1,7 +1,7 @@
 use super::*;
 /// The act of marrying a person.
 ///
-/// https://schema.org/MarryAction
+/// <https://schema.org/MarryAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// An intangible type to be applied to any archive content, carrying with it a set of properties required to describe archival items and collections.
 ///
-/// https://schema.org/ArchiveComponent
+/// <https://schema.org/ArchiveComponent>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -2,7 +2,7 @@ use super::*;
 /// The floor level for an [[Accommodation]] in a multi-storey building. Since counting
 /// systems [vary internationally](https://en.wikipedia.org/wiki/Storey#Consecutive_number_floor_designations), the local system should be used where possible.
 ///
-/// https://schema.org/floorLevel
+/// <https://schema.org/floorLevel>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

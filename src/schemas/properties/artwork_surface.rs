@@ -1,7 +1,7 @@
 use super::*;
 /// The supporting materials for the artwork, e.g. Canvas, Paper, Wood, Board, etc.
 ///
-/// https://schema.org/artworkSurface
+/// <https://schema.org/artworkSurface>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

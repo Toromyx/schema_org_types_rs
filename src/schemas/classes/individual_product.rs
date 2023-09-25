@@ -1,7 +1,7 @@
 use super::*;
 /// A single, identifiable product instance (e.g. a laptop with a particular serial number).
 ///
-/// https://schema.org/IndividualProduct
+/// <https://schema.org/IndividualProduct>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

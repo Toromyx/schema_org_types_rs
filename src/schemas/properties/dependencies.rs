@@ -1,7 +1,7 @@
 use super::*;
 /// Prerequisites needed to fulfill steps in article.
 ///
-/// https://schema.org/dependencies
+/// <https://schema.org/dependencies>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// Description of what changed in this version.
 ///
-/// https://schema.org/releaseNotes
+/// <https://schema.org/releaseNotes>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

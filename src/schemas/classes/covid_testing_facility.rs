@@ -5,7 +5,7 @@ use super::*;
 /// about that place, e.g. contact info, address, opening hours. Note that in an emergency, such information may not always be reliable.
 ///
 ///
-/// https://schema.org/CovidTestingFacility
+/// <https://schema.org/CovidTestingFacility>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

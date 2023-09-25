@@ -1,7 +1,7 @@
 use super::*;
 /// The time when the live blog will stop covering the Event. Note that coverage may continue after the Event concludes.
 ///
-/// https://schema.org/coverageEndTime
+/// <https://schema.org/coverageEndTime>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

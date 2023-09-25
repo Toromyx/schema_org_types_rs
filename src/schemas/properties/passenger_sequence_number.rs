@@ -1,7 +1,7 @@
 use super::*;
 /// The passenger's sequence number as assigned by the airline.
 ///
-/// https://schema.org/passengerSequenceNumber
+/// <https://schema.org/passengerSequenceNumber>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

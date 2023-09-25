@@ -1,7 +1,7 @@
 use super::*;
 /// The tier(s) of drugs offered by this formulary or insurance plan.
 ///
-/// https://schema.org/healthPlanDrugTier
+/// <https://schema.org/healthPlanDrugTier>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

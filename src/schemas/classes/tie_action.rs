@@ -1,7 +1,7 @@
 use super::*;
 /// The act of reaching a draw in a competitive activity.
 ///
-/// https://schema.org/TieAction
+/// <https://schema.org/TieAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

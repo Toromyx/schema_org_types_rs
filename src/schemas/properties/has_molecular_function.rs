@@ -1,7 +1,7 @@
 use super::*;
 /// Molecular function performed by this BioChemEntity; please use PropertyValue if you want to include any evidence.
 ///
-/// https://schema.org/hasMolecularFunction
+/// <https://schema.org/hasMolecularFunction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// A short radio program or a segment/part of a radio program.
 ///
-/// https://schema.org/RadioClip
+/// <https://schema.org/RadioClip>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

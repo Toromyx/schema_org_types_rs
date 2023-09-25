@@ -4,7 +4,7 @@ use super::*;
 /// a URL indicating the type of the property, either pointing to an external vocabulary, or a Web resource that describes the property (e.g. a glossary entry).
 /// Standards bodies should promote a standard prefix for the identifiers of properties from their standards.
 ///
-/// https://schema.org/propertyID
+/// <https://schema.org/propertyID>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

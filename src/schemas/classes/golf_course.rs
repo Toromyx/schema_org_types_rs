@@ -1,7 +1,7 @@
 use super::*;
 /// A golf course.
 ///
-/// https://schema.org/GolfCourse
+/// <https://schema.org/GolfCourse>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

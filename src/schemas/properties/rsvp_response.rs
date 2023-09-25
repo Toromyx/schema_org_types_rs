@@ -1,7 +1,7 @@
 use super::*;
 /// The response (yes, no, maybe) to the RSVP.
 ///
-/// https://schema.org/rsvpResponse
+/// <https://schema.org/rsvpResponse>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// A florist.
 ///
-/// https://schema.org/Florist
+/// <https://schema.org/Florist>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// A store that sells reading glasses and similar devices for improving vision.
 ///
-/// https://schema.org/Optician
+/// <https://schema.org/Optician>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

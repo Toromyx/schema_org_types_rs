@@ -1,7 +1,7 @@
 use super::*;
 /// Date of death.
 ///
-/// https://schema.org/deathDate
+/// <https://schema.org/deathDate>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

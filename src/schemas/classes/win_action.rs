@@ -1,7 +1,7 @@
 use super::*;
 /// The act of achieving victory in a competitive activity.
 ///
-/// https://schema.org/WinAction
+/// <https://schema.org/WinAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// The place where the person died.
 ///
-/// https://schema.org/deathPlace
+/// <https://schema.org/deathPlace>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

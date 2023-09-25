@@ -1,7 +1,7 @@
 use super::*;
 /// The number of attendee places for an event that remain unallocated.
 ///
-/// https://schema.org/remainingAttendeeCapacity
+/// <https://schema.org/remainingAttendeeCapacity>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

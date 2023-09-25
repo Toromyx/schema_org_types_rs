@@ -1,7 +1,7 @@
 use super::*;
 /// A resource from which this work is derived or from which it is a modification or adaptation.
 ///
-/// https://schema.org/isBasedOn
+/// <https://schema.org/isBasedOn>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

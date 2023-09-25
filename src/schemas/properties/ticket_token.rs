@@ -1,7 +1,7 @@
 use super::*;
 /// Reference to an asset (e.g., Barcode, QR code image or PDF) usable for entrance.
 ///
-/// https://schema.org/ticketToken
+/// <https://schema.org/ticketToken>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

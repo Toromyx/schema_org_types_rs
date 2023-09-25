@@ -1,7 +1,7 @@
 use super::*;
 /// The area to which the artery supplies blood.
 ///
-/// https://schema.org/supplyTo
+/// <https://schema.org/supplyTo>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

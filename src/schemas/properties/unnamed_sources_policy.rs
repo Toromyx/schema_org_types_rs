@@ -1,7 +1,7 @@
 use super::*;
 /// For an [[Organization]] (typically a [[NewsMediaOrganization]]), a statement about policy on use of unnamed sources and the decision process required.
 ///
-/// https://schema.org/unnamedSourcesPolicy
+/// <https://schema.org/unnamedSourcesPolicy>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

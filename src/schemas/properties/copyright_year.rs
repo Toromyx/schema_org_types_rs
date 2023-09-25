@@ -1,7 +1,7 @@
 use super::*;
 /// The year during which the claimed copyright for the CreativeWork was first asserted.
 ///
-/// https://schema.org/copyrightYear
+/// <https://schema.org/copyrightYear>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

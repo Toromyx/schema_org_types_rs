@@ -1,7 +1,7 @@
 use super::*;
 /// The average rating based on multiple ratings or reviews.
 ///
-/// https://schema.org/AggregateRating
+/// <https://schema.org/AggregateRating>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

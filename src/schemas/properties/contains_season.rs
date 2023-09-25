@@ -1,7 +1,7 @@
 use super::*;
 /// A season that is part of the media series.
 ///
-/// https://schema.org/containsSeason
+/// <https://schema.org/containsSeason>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

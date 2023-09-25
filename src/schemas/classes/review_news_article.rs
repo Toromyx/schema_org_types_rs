@@ -1,7 +1,7 @@
 use super::*;
 /// A [[NewsArticle]] and [[CriticReview]] providing a professional critic's assessment of a service, product, performance, or artistic or literary work.
 ///
-/// https://schema.org/ReviewNewsArticle
+/// <https://schema.org/ReviewNewsArticle>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

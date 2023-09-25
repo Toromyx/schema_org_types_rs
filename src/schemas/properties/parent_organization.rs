@@ -1,7 +1,7 @@
 use super::*;
 /// The larger organization that this organization is a [[subOrganization]] of, if any.
 ///
-/// https://schema.org/parentOrganization
+/// <https://schema.org/parentOrganization>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

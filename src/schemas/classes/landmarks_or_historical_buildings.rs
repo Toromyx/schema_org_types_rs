@@ -1,7 +1,7 @@
 use super::*;
 /// An historical landmark or building.
 ///
-/// https://schema.org/LandmarksOrHistoricalBuildings
+/// <https://schema.org/LandmarksOrHistoricalBuildings>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// Indicates the design and body style of the vehicle (e.g. station wagon, hatchback, etc.).
 ///
-/// https://schema.org/bodyType
+/// <https://schema.org/bodyType>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

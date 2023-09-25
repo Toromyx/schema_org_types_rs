@@ -1,7 +1,7 @@
 use super::*;
 /// The anatomical location at which two or more bones make contact.
 ///
-/// https://schema.org/Joint
+/// <https://schema.org/Joint>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

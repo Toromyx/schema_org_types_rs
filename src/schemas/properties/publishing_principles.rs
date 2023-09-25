@@ -4,7 +4,7 @@ use super::*;
 /// While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
 ///
 ///
-/// https://schema.org/publishingPrinciples
+/// <https://schema.org/publishingPrinciples>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

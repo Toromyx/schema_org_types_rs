@@ -1,7 +1,7 @@
 use super::*;
 /// A role played by the BioChemEntity within a biological context.
 ///
-/// https://schema.org/biologicalRole
+/// <https://schema.org/biologicalRole>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

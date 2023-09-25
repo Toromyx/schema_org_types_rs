@@ -1,7 +1,7 @@
 use super::*;
 /// A movie theater.
 ///
-/// https://schema.org/MovieTheater
+/// <https://schema.org/MovieTheater>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

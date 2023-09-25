@@ -14,7 +14,7 @@ use super::*;
 /// Region = state, canton, prefecture, autonomous community...
 ///
 ///
-/// https://schema.org/DefinedRegion
+/// <https://schema.org/DefinedRegion>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

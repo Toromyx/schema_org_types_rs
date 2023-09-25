@@ -1,7 +1,7 @@
 use super::*;
 /// Whether the coinsurance applies before or after deductible, etc. TODO: Is this a closed set?
 ///
-/// https://schema.org/healthPlanCoinsuranceOption
+/// <https://schema.org/healthPlanCoinsuranceOption>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// The act of editing by adding an object to a collection.
 ///
-/// https://schema.org/AddAction
+/// <https://schema.org/AddAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// This type covers computer programming languages such as Scheme and Lisp, as well as other language-like computer representations. Natural languages are best represented with the [[Language]] type.
 ///
-/// https://schema.org/ComputerLanguage
+/// <https://schema.org/ComputerLanguage>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

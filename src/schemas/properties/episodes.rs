@@ -1,7 +1,7 @@
 use super::*;
 /// An episode of a TV/radio series or season.
 ///
-/// https://schema.org/episodes
+/// <https://schema.org/episodes>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

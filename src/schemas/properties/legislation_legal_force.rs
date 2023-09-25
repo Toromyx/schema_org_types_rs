@@ -1,7 +1,7 @@
 use super::*;
 /// Whether the legislation is currently in force, not in force, or partially in force.
 ///
-/// https://schema.org/legislationLegalForce
+/// <https://schema.org/legislationLegalForce>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

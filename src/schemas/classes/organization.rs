@@ -1,7 +1,7 @@
 use super::*;
 /// An organization such as a school, NGO, corporation, club, etc.
 ///
-/// https://schema.org/Organization
+/// <https://schema.org/Organization>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

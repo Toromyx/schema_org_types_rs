@@ -1,7 +1,7 @@
 use super::*;
 /// A single feed providing structured information about one or more entities or topics.
 ///
-/// https://schema.org/DataFeed
+/// <https://schema.org/DataFeed>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

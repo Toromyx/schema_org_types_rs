@@ -1,7 +1,7 @@
 use super::*;
 /// The number of episodes in this season or series.
 ///
-/// https://schema.org/numberOfEpisodes
+/// <https://schema.org/numberOfEpisodes>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

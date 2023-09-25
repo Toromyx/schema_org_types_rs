@@ -1,7 +1,7 @@
 use super::*;
 /// Specifies specific carrier(s) requirements for the application (e.g. an application may only work on a specific carrier network).
 ///
-/// https://schema.org/carrierRequirements
+/// <https://schema.org/carrierRequirements>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

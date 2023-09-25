@@ -1,7 +1,7 @@
 use super::*;
 /// A CreativeWork such as an image, video, or audio clip shared as part of this posting.
 ///
-/// https://schema.org/sharedContent
+/// <https://schema.org/sharedContent>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

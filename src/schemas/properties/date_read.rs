@@ -1,7 +1,7 @@
 use super::*;
 /// The date/time at which the message has been read by the recipient if a single recipient exists.
 ///
-/// https://schema.org/dateRead
+/// <https://schema.org/dateRead>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

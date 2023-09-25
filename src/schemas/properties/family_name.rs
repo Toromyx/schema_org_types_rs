@@ -1,7 +1,7 @@
 use super::*;
 /// Family name. In the U.S., the last name of a Person.
 ///
-/// https://schema.org/familyName
+/// <https://schema.org/familyName>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

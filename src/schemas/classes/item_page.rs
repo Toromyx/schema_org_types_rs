@@ -1,7 +1,7 @@
 use super::*;
 /// A page devoted to a single item, such as a particular product or hotel.
 ///
-/// https://schema.org/ItemPage
+/// <https://schema.org/ItemPage>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

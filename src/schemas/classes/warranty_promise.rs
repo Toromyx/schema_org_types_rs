@@ -1,7 +1,7 @@
 use super::*;
 /// A structured value representing the duration and scope of services that will be provided to a customer free of charge in case of a defect or malfunction of a product.
 ///
-/// https://schema.org/WarrantyPromise
+/// <https://schema.org/WarrantyPromise>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

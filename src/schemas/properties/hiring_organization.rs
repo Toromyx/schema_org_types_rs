@@ -1,7 +1,7 @@
 use super::*;
 /// Organization or Person offering the job position.
 ///
-/// https://schema.org/hiringOrganization
+/// <https://schema.org/hiringOrganization>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

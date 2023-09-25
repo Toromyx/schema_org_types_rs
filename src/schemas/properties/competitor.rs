@@ -1,7 +1,7 @@
 use super::*;
 /// A competitor in a sports event.
 ///
-/// https://schema.org/competitor
+/// <https://schema.org/competitor>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

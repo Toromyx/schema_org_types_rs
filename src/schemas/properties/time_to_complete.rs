@@ -1,7 +1,7 @@
 use super::*;
 /// The expected length of time to complete the program if attending full-time.
 ///
-/// https://schema.org/timeToComplete
+/// <https://schema.org/timeToComplete>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

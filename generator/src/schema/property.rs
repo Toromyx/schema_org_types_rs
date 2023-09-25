@@ -46,6 +46,14 @@ impl Schema for Property {
         &self.name
     }
 
+    fn description(&self) -> &String {
+        &self.description
+    }
+
+    fn iri(&self) -> &String {
+        &self.iri
+    }
+
     fn section(&self) -> &SchemaSection {
         &self.section
     }
@@ -80,11 +88,7 @@ impl Schema for Property {
 
 impl ToTokens for Property {
     fn to_tokens(&self, tokens: &mut TokenStream) {
-        let doc_lines = DocLines(vec![
-            self.description.clone(),
-            String::from(""),
-            self.iri.clone(),
-        ]);
+        let doc_lines = self.doc_lines_token_stream();
         let serde_derive = serde_derive();
         let serde_untagged = serde_untagged();
         let name =

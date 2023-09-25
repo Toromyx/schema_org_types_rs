@@ -1,7 +1,7 @@
 use super::*;
 /// Photographs of this place.
 ///
-/// https://schema.org/photos
+/// <https://schema.org/photos>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

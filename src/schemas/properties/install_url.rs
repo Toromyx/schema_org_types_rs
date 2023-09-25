@@ -1,7 +1,7 @@
 use super::*;
 /// URL at which the app may be installed, if different from the URL of the item.
 ///
-/// https://schema.org/installUrl
+/// <https://schema.org/installUrl>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

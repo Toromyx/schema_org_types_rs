@@ -1,7 +1,7 @@
 use super::*;
 /// The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
 ///
-/// https://schema.org/brand
+/// <https://schema.org/brand>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

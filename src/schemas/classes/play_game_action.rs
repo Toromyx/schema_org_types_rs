@@ -1,7 +1,7 @@
 use super::*;
 /// The act of playing a video game.
 ///
-/// https://schema.org/PlayGameAction
+/// <https://schema.org/PlayGameAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

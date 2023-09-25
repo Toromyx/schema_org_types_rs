@@ -1,7 +1,7 @@
 use super::*;
 /// A sub property of participant. The loser of the action.
 ///
-/// https://schema.org/loser
+/// <https://schema.org/loser>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

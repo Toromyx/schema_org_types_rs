@@ -1,6 +1,6 @@
 /// An enumeration of genders.
 ///
-/// https://schema.org/GenderType
+/// <https://schema.org/GenderType>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(
@@ -10,10 +10,10 @@
 pub enum GenderType {
     /// The female gender.
     ///
-    /// https://schema.org/Female
+    /// <https://schema.org/Female>
     Female,
     /// The male gender.
     ///
-    /// https://schema.org/Male
+    /// <https://schema.org/Male>
     Male,
 }

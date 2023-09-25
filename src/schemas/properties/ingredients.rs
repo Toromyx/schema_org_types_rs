@@ -1,7 +1,7 @@
 use super::*;
 /// A single ingredient used in the recipe, e.g. sugar, flour or garlic.
 ///
-/// https://schema.org/ingredients
+/// <https://schema.org/ingredients>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

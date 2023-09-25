@@ -1,7 +1,7 @@
 use super::*;
 /// TODO.
 ///
-/// https://schema.org/healthPlanDrugOption
+/// <https://schema.org/healthPlanDrugOption>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// A bowling alley.
 ///
-/// https://schema.org/BowlingAlley
+/// <https://schema.org/BowlingAlley>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

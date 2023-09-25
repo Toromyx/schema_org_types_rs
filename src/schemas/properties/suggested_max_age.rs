@@ -1,7 +1,7 @@
 use super::*;
 /// Maximum recommended age in years for the audience or user.
 ///
-/// https://schema.org/suggestedMaxAge
+/// <https://schema.org/suggestedMaxAge>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

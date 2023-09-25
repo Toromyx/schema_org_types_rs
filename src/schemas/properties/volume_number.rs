@@ -1,7 +1,7 @@
 use super::*;
 /// Identifies the volume of publication or multi-part work; for example, "iii" or "2".
 ///
-/// https://schema.org/volumeNumber
+/// <https://schema.org/volumeNumber>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

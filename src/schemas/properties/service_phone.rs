@@ -1,7 +1,7 @@
 use super::*;
 /// The phone number to use to access the service.
 ///
-/// https://schema.org/servicePhone
+/// <https://schema.org/servicePhone>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

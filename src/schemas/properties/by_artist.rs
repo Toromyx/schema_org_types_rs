@@ -1,7 +1,7 @@
 use super::*;
 /// The artist that performed this album or recording.
 ///
-/// https://schema.org/byArtist
+/// <https://schema.org/byArtist>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

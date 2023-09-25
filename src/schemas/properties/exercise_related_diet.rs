@@ -1,7 +1,7 @@
 use super::*;
 /// A sub property of instrument. The diet used in this action.
 ///
-/// https://schema.org/exerciseRelatedDiet
+/// <https://schema.org/exerciseRelatedDiet>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

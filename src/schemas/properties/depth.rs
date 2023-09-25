@@ -1,7 +1,7 @@
 use super::*;
 /// The depth of the item.
 ///
-/// https://schema.org/depth
+/// <https://schema.org/depth>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

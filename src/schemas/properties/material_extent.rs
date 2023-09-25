@@ -1,7 +1,7 @@
 use super::*;
 /// The quantity of the materials being described or an expression of the physical space they occupy.
 ///
-/// https://schema.org/materialExtent
+/// <https://schema.org/materialExtent>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

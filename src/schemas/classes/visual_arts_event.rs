@@ -1,7 +1,7 @@
 use super::*;
 /// Event type: Visual arts event.
 ///
-/// https://schema.org/VisualArtsEvent
+/// <https://schema.org/VisualArtsEvent>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// The number of the column in which the NewsArticle appears in the print edition.
 ///
-/// https://schema.org/printColumn
+/// <https://schema.org/printColumn>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

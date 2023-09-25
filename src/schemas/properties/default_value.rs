@@ -1,7 +1,7 @@
 use super::*;
 /// The default value of the input.  For properties that expect a literal, the default is a literal value, for properties that expect an object, it's an ID reference to one of the current values.
 ///
-/// https://schema.org/defaultValue
+/// <https://schema.org/defaultValue>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

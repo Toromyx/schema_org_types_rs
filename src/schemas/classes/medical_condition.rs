@@ -1,7 +1,7 @@
 use super::*;
 /// Any condition of the human body that affects the normal functioning of a person, whether physically or mentally. Includes diseases, injuries, disabilities, disorders, syndromes, etc.
 ///
-/// https://schema.org/MedicalCondition
+/// <https://schema.org/MedicalCondition>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

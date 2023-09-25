@@ -1,7 +1,7 @@
 use super::*;
 /// The name of the bus (e.g. Bolt Express).
 ///
-/// https://schema.org/busName
+/// <https://schema.org/busName>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

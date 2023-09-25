@@ -1,7 +1,7 @@
 use super::*;
 /// Indicates data describing a hospital, e.g. a CDC [[CDCPMDRecord]] or as some kind of [[Dataset]].
 ///
-/// https://schema.org/healthcareReportingData
+/// <https://schema.org/healthcareReportingData>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

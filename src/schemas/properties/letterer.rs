@@ -1,7 +1,7 @@
 use super::*;
 /// The individual who adds lettering, including speech balloons and sound effects, to artwork.
 ///
-/// https://schema.org/letterer
+/// <https://schema.org/letterer>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

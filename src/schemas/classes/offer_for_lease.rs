@@ -4,7 +4,7 @@ use super::*;
 /// background on the underlying concepts.
 ///
 ///
-/// https://schema.org/OfferForLease
+/// <https://schema.org/OfferForLease>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

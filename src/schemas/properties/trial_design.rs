@@ -1,7 +1,7 @@
 use super::*;
 /// Specifics about the trial design (enumerated).
 ///
-/// https://schema.org/trialDesign
+/// <https://schema.org/trialDesign>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

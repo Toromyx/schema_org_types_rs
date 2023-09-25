@@ -1,7 +1,7 @@
 use super::*;
 /// Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
 ///
-/// https://schema.org/acquireLicensePage
+/// <https://schema.org/acquireLicensePage>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

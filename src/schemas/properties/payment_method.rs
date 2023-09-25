@@ -1,7 +1,7 @@
 use super::*;
 /// The name of the credit card or other method of payment for the order.
 ///
-/// https://schema.org/paymentMethod
+/// <https://schema.org/paymentMethod>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

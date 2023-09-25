@@ -1,7 +1,7 @@
 use super::*;
 /// Amount of shipping costs for defect product returns. Applicable when property [[itemDefectReturnFees]] equals [[ReturnShippingFees]].
 ///
-/// https://schema.org/itemDefectReturnShippingFeesAmount
+/// <https://schema.org/itemDefectReturnShippingFeesAmount>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -9,7 +9,7 @@ use super::*;
 /// A [[ReportageNewsArticle]] which goes deeper into analysis can also be marked with an additional type of [[AnalysisNewsArticle]].
 ///
 ///
-/// https://schema.org/ReportageNewsArticle
+/// <https://schema.org/ReportageNewsArticle>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

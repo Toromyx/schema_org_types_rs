@@ -6,7 +6,7 @@ use super::*;
 /// Examples of funding agencies include ERC, REA, NIH, Bill and Melinda Gates Foundation, ...
 ///
 ///
-/// https://schema.org/FundingAgency
+/// <https://schema.org/FundingAgency>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

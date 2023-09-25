@@ -1,7 +1,7 @@
 use super::*;
 /// A picture or diagram made with a pencil, pen, or crayon rather than paint.
 ///
-/// https://schema.org/Drawing
+/// <https://schema.org/Drawing>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// The opening hours of a certain place.
 ///
-/// https://schema.org/openingHoursSpecification
+/// <https://schema.org/openingHoursSpecification>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

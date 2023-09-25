@@ -1,7 +1,7 @@
 use super::*;
 /// A person attending the event.
 ///
-/// https://schema.org/attendees
+/// <https://schema.org/attendees>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// A doctor's office.
 ///
-/// https://schema.org/Physician
+/// <https://schema.org/Physician>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

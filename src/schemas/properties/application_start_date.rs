@@ -1,7 +1,7 @@
 use super::*;
 /// The date at which the program begins collecting applications for the next enrollment cycle.
 ///
-/// https://schema.org/applicationStartDate
+/// <https://schema.org/applicationStartDate>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

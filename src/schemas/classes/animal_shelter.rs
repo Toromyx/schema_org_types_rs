@@ -1,7 +1,7 @@
 use super::*;
 /// Animal shelter.
 ///
-/// https://schema.org/AnimalShelter
+/// <https://schema.org/AnimalShelter>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

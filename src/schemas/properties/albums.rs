@@ -1,7 +1,7 @@
 use super::*;
 /// A collection of music albums.
 ///
-/// https://schema.org/albums
+/// <https://schema.org/albums>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

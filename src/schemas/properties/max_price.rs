@@ -1,7 +1,7 @@
 use super::*;
 /// The highest price if the price is a range.
 ///
-/// https://schema.org/maxPrice
+/// <https://schema.org/maxPrice>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

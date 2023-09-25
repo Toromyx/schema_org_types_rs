@@ -1,7 +1,7 @@
 use super::*;
 /// A single message from a sender to one or more organizations or people.
 ///
-/// https://schema.org/Message
+/// <https://schema.org/Message>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

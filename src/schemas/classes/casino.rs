@@ -1,7 +1,7 @@
 use super::*;
 /// A casino.
 ///
-/// https://schema.org/Casino
+/// <https://schema.org/Casino>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

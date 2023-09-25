@@ -1,7 +1,7 @@
 use super::*;
 /// An indication for a medical therapy that has been formally specified or approved by a regulatory body that regulates use of the therapy; for example, the US FDA approves indications for most drugs in the US.
 ///
-/// https://schema.org/ApprovedIndication
+/// <https://schema.org/ApprovedIndication>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

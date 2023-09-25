@@ -1,7 +1,7 @@
 use super::*;
 /// A contraindication for this therapy.
 ///
-/// https://schema.org/contraindication
+/// <https://schema.org/contraindication>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

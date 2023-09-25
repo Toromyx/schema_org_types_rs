@@ -6,7 +6,7 @@ use super::*;
 /// [[Schedule]], this avoids any ambiguity for clients using the data. The property might have repeated values to specify different schedules, e.g. for different months
 /// or seasons.
 ///
-/// https://schema.org/eventSchedule
+/// <https://schema.org/eventSchedule>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

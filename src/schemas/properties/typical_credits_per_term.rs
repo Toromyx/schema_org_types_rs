@@ -1,7 +1,7 @@
 use super::*;
 /// The number of credits or units a full-time student would be expected to take in 1 term however 'term' is defined by the institution.
 ///
-/// https://schema.org/typicalCreditsPerTerm
+/// <https://schema.org/typicalCreditsPerTerm>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

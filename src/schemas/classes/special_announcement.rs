@@ -36,7 +36,7 @@ use super::*;
 /// media type information, e.g. "application/rss+xml" or "application/atom+xml".
 ///
 ///
-/// https://schema.org/SpecialAnnouncement
+/// <https://schema.org/SpecialAnnouncement>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

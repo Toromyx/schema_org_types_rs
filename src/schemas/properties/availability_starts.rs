@@ -1,7 +1,7 @@
 use super::*;
 /// The beginning of the availability of the product or service included in the offer.
 ///
-/// https://schema.org/availabilityStarts
+/// <https://schema.org/availabilityStarts>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

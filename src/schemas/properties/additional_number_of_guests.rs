@@ -1,7 +1,7 @@
 use super::*;
 /// If responding yes, the number of guests who will attend in addition to the invitee.
 ///
-/// https://schema.org/additionalNumberOfGuests
+/// <https://schema.org/additionalNumberOfGuests>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

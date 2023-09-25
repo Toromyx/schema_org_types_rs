@@ -1,7 +1,7 @@
 use super::*;
 /// A bridge.
 ///
-/// https://schema.org/Bridge
+/// <https://schema.org/Bridge>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

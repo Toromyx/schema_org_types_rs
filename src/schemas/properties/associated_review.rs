@@ -1,7 +1,7 @@
 use super::*;
 /// An associated [[Review]].
 ///
-/// https://schema.org/associatedReview
+/// <https://schema.org/associatedReview>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

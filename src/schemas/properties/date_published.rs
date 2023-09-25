@@ -1,7 +1,7 @@
 use super::*;
 /// Date of first broadcast/publication.
 ///
-/// https://schema.org/datePublished
+/// <https://schema.org/datePublished>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

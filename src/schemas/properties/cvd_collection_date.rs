@@ -1,7 +1,7 @@
 use super::*;
 /// collectiondate - Date for which patient counts are reported.
 ///
-/// https://schema.org/cvdCollectionDate
+/// <https://schema.org/cvdCollectionDate>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

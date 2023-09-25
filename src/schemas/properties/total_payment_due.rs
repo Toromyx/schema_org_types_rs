@@ -1,7 +1,7 @@
 use super::*;
 /// The total amount due.
 ///
-/// https://schema.org/totalPaymentDue
+/// <https://schema.org/totalPaymentDue>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

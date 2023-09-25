@@ -1,7 +1,7 @@
 use super::*;
 /// A musical group, such as a band, an orchestra, or a choir. Can also be a solo musician.
 ///
-/// https://schema.org/MusicGroup
+/// <https://schema.org/MusicGroup>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

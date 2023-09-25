@@ -1,7 +1,7 @@
 use super::*;
 /// A loan in which property or real estate is used as collateral. (A loan securitized against some real estate.)
 ///
-/// https://schema.org/MortgageLoan
+/// <https://schema.org/MortgageLoan>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

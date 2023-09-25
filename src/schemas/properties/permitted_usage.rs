@@ -1,7 +1,7 @@
 use super::*;
 /// Indications regarding the permitted usage of the accommodation.
 ///
-/// https://schema.org/permittedUsage
+/// <https://schema.org/permittedUsage>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

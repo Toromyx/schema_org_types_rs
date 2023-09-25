@@ -1,7 +1,7 @@
 use super::*;
 /// The name of the train (e.g. The Orient Express).
 ///
-/// https://schema.org/trainName
+/// <https://schema.org/trainName>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

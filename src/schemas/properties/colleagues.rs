@@ -1,7 +1,7 @@
 use super::*;
 /// A colleague of the person.
 ///
-/// https://schema.org/colleagues
+/// <https://schema.org/colleagues>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

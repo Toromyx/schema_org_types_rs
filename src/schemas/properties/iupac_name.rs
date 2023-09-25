@@ -1,7 +1,7 @@
 use super::*;
 /// Systematic method of naming chemical compounds as recommended by the International Union of Pure and Applied Chemistry (IUPAC).
 ///
-/// https://schema.org/iupacName
+/// <https://schema.org/iupacName>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

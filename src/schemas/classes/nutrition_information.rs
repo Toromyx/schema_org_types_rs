@@ -1,7 +1,7 @@
 use super::*;
 /// Nutritional information about the recipe.
 ///
-/// https://schema.org/NutritionInformation
+/// <https://schema.org/NutritionInformation>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

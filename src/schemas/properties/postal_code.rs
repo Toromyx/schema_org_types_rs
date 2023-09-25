@@ -1,7 +1,7 @@
 use super::*;
 /// The postal code. For example, 94043.
 ///
-/// https://schema.org/postalCode
+/// <https://schema.org/postalCode>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

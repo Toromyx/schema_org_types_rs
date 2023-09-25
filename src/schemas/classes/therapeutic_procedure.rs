@@ -1,7 +1,7 @@
 use super::*;
 /// A medical procedure intended primarily for therapeutic purposes, aimed at improving a health condition.
 ///
-/// https://schema.org/TherapeuticProcedure
+/// <https://schema.org/TherapeuticProcedure>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

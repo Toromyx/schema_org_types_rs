@@ -1,7 +1,7 @@
 use super::*;
 /// numbedsocc - HOSPITAL INPATIENT BED OCCUPANCY: Total number of staffed inpatient beds that are occupied.
 ///
-/// https://schema.org/cvdNumBedsOcc
+/// <https://schema.org/cvdNumBedsOcc>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

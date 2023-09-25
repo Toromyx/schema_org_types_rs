@@ -1,7 +1,7 @@
 use super::*;
 /// The product that this structured value is referring to.
 ///
-/// https://schema.org/typeOfGood
+/// <https://schema.org/typeOfGood>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

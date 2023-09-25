@@ -1,7 +1,7 @@
 use super::*;
 /// The high level platform(s) where the Action can be performed for the given URL. To specify a specific application or operating system instance, use actionApplication.
 ///
-/// https://schema.org/actionPlatform
+/// <https://schema.org/actionPlatform>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

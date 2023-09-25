@@ -14,7 +14,7 @@ use super::*;
 /// it may also sometimes prove useful to describe a longer-term series as an Event.
 ///
 ///
-/// https://schema.org/EventSeries
+/// <https://schema.org/EventSeries>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

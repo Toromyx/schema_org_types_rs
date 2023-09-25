@@ -1,7 +1,7 @@
 use super::*;
 /// The WebSite or SoftwareApplication where the interactions took place.
 ///
-/// https://schema.org/interactionService
+/// <https://schema.org/interactionService>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

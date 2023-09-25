@@ -1,7 +1,7 @@
 use super::*;
 /// The type of tissue sample required for the test.
 ///
-/// https://schema.org/tissueSample
+/// <https://schema.org/tissueSample>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// A StupidType for testing.
 ///
-/// https://schema.org/StupidType
+/// <https://schema.org/StupidType>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// The frequency in MHz for a particular broadcast.
 ///
-/// https://schema.org/broadcastFrequencyValue
+/// <https://schema.org/broadcastFrequencyValue>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

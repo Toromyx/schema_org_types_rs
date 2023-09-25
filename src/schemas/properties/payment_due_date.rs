@@ -1,7 +1,7 @@
 use super::*;
 /// The date that payment is due.
 ///
-/// https://schema.org/paymentDueDate
+/// <https://schema.org/paymentDueDate>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

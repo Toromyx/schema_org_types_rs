@@ -1,7 +1,7 @@
 use super::*;
 /// Identifier of the flight's departure gate.
 ///
-/// https://schema.org/departureGate
+/// <https://schema.org/departureGate>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// The act of installing an application.
 ///
-/// https://schema.org/InstallAction
+/// <https://schema.org/InstallAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

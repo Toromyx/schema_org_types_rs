@@ -1,7 +1,7 @@
 use super::*;
 /// A person who reads (performs) the audiobook.
 ///
-/// https://schema.org/readBy
+/// <https://schema.org/readBy>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

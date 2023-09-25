@@ -1,7 +1,7 @@
 use super::*;
 /// Tracking url for the parcel delivery.
 ///
-/// https://schema.org/trackingUrl
+/// <https://schema.org/trackingUrl>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

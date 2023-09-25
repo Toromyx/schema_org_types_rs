@@ -1,7 +1,7 @@
 use super::*;
 /// The person's spouse.
 ///
-/// https://schema.org/spouse
+/// <https://schema.org/spouse>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

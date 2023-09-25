@@ -1,7 +1,7 @@
 use super::*;
 /// The number of grams of unsaturated fat.
 ///
-/// https://schema.org/unsaturatedFatContent
+/// <https://schema.org/unsaturatedFatContent>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

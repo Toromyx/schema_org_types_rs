@@ -1,7 +1,7 @@
 use super::*;
 /// Closest parent taxon of the taxon in question.
 ///
-/// https://schema.org/parentTaxon
+/// <https://schema.org/parentTaxon>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

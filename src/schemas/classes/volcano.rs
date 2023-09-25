@@ -1,7 +1,7 @@
 use super::*;
 /// A volcano, like Fujisan.
 ///
-/// https://schema.org/Volcano
+/// <https://schema.org/Volcano>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

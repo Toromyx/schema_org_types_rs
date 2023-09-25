@@ -3,7 +3,7 @@ use super::*;
 /// described directly as a [[Dataset]], or the specific [[Observation]]s in the dataset. When a [[WebContent]] URL is
 /// provided, the page indicated might also contain more such markup.
 ///
-/// https://schema.org/diseaseSpreadStatistics
+/// <https://schema.org/diseaseSpreadStatistics>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

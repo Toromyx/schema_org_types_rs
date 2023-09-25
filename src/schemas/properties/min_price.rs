@@ -1,7 +1,7 @@
 use super::*;
 /// The lowest price if the price is a range.
 ///
-/// https://schema.org/minPrice
+/// <https://schema.org/minPrice>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

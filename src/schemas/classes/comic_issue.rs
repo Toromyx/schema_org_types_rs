@@ -6,7 +6,7 @@ use super::*;
 /// series to which the issue belongs; the issue number; and the variant
 /// description of the issue (if any).
 ///
-/// https://schema.org/ComicIssue
+/// <https://schema.org/ComicIssue>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

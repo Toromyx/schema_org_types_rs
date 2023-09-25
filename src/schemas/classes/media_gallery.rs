@@ -1,7 +1,7 @@
 use super::*;
 /// Web page type: Media gallery page. A mixed-media page that can contain media such as images, videos, and other multimedia.
 ///
-/// https://schema.org/MediaGallery
+/// <https://schema.org/MediaGallery>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

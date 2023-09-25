@@ -2,7 +2,7 @@ use super::*;
 /// Accountancy business.\n\nAs a [[LocalBusiness]] it can be described as a [[provider]] of one or more [[Service]]\(s).
 ///
 ///
-/// https://schema.org/AccountingService
+/// <https://schema.org/AccountingService>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

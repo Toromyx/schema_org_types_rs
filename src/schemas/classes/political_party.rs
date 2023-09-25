@@ -1,7 +1,7 @@
 use super::*;
 /// Organization: Political Party.
 ///
-/// https://schema.org/PoliticalParty
+/// <https://schema.org/PoliticalParty>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

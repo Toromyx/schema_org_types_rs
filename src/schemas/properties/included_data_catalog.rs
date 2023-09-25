@@ -1,7 +1,7 @@
 use super::*;
 /// A data catalog which contains this dataset (this property was previously 'catalog', preferred name is now 'includedInDataCatalog').
 ///
-/// https://schema.org/includedDataCatalog
+/// <https://schema.org/includedDataCatalog>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

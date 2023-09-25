@@ -1,7 +1,7 @@
 use super::*;
 /// A medical procedure involving an incision with instruments; performed for diagnose, or therapeutic purposes.
 ///
-/// https://schema.org/SurgicalProcedure
+/// <https://schema.org/SurgicalProcedure>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

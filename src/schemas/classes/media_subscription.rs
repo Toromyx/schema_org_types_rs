@@ -1,7 +1,7 @@
 use super::*;
 /// A subscription which allows a user to access media including audio, video, books, etc.
 ///
-/// https://schema.org/MediaSubscription
+/// <https://schema.org/MediaSubscription>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

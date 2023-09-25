@@ -1,7 +1,7 @@
 use super::*;
 /// A lake (for example, Lake Pontrachain).
 ///
-/// https://schema.org/LakeBodyOfWater
+/// <https://schema.org/LakeBodyOfWater>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

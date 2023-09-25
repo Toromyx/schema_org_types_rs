@@ -1,7 +1,7 @@
 use super::*;
 /// The type of a bank account.
 ///
-/// https://schema.org/bankAccountType
+/// <https://schema.org/bankAccountType>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

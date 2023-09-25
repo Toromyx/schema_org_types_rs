@@ -1,7 +1,7 @@
 use super::*;
 /// The result produced in the action. E.g. John wrote *a book*.
 ///
-/// https://schema.org/result
+/// <https://schema.org/result>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

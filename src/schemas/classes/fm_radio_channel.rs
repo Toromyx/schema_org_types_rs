@@ -1,7 +1,7 @@
 use super::*;
 /// A radio channel that uses FM.
 ///
-/// https://schema.org/FMRadioChannel
+/// <https://schema.org/FMRadioChannel>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

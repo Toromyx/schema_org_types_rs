@@ -1,7 +1,7 @@
 use super::*;
 /// A description of the job location (e.g. TELECOMMUTE for telecommute jobs).
 ///
-/// https://schema.org/jobLocationType
+/// <https://schema.org/jobLocationType>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

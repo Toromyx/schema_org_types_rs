@@ -1,7 +1,7 @@
 use super::*;
 /// A permit issued by a government agency.
 ///
-/// https://schema.org/GovernmentPermit
+/// <https://schema.org/GovernmentPermit>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

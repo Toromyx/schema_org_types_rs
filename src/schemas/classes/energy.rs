@@ -1,7 +1,7 @@
 use super::*;
 /// Properties that take Energy as values are of the form '&lt;Number&gt; &lt;Energy unit of measure&gt;'.
 ///
-/// https://schema.org/Energy
+/// <https://schema.org/Energy>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

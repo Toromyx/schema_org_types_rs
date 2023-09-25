@@ -1,7 +1,7 @@
 use super::*;
 /// The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
 ///
-/// https://schema.org/eligibleQuantity
+/// <https://schema.org/eligibleQuantity>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

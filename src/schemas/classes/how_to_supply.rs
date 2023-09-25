@@ -1,7 +1,7 @@
 use super::*;
 /// A supply consumed when performing the instructions for how to achieve a result.
 ///
-/// https://schema.org/HowToSupply
+/// <https://schema.org/HowToSupply>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

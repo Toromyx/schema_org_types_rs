@@ -1,7 +1,7 @@
 use super::*;
 /// Defines the number of times a recurring [[Event]] will take place.
 ///
-/// https://schema.org/repeatCount
+/// <https://schema.org/repeatCount>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

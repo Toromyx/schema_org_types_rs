@@ -7,7 +7,7 @@ use super::*;
 /// endorsement rating is particularly useful in the absence of numeric scales as it helps consumers understand that the rating is broadly positive.
 ///
 ///
-/// https://schema.org/EndorsementRating
+/// <https://schema.org/EndorsementRating>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

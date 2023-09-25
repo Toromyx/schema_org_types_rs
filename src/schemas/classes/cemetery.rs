@@ -1,7 +1,7 @@
 use super::*;
 /// A graveyard.
 ///
-/// https://schema.org/Cemetery
+/// <https://schema.org/Cemetery>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

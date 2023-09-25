@@ -1,7 +1,7 @@
 use super::*;
 /// The Organization responsible for authenticating the user's subscription. For example, many media apps require a cable/satellite provider to authenticate your subscription before playing media.
 ///
-/// https://schema.org/authenticator
+/// <https://schema.org/authenticator>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

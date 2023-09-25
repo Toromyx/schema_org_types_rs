@@ -1,7 +1,7 @@
 use super::*;
 /// A Research Organization (e.g. scientific institute, research company).
 ///
-/// https://schema.org/ResearchOrganization
+/// <https://schema.org/ResearchOrganization>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

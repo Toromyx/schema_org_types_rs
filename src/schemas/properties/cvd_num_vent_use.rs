@@ -1,7 +1,7 @@
 use super::*;
 /// numventuse - MECHANICAL VENTILATORS IN USE: Total number of ventilators in use.
 ///
-/// https://schema.org/cvdNumVentUse
+/// <https://schema.org/cvdNumVentUse>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

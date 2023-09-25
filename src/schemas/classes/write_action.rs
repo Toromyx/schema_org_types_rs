@@ -1,7 +1,7 @@
 use super::*;
 /// The act of authoring written creative content.
 ///
-/// https://schema.org/WriteAction
+/// <https://schema.org/WriteAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// A trip or journey. An itinerary of visits to one or more places.
 ///
-/// https://schema.org/Trip
+/// <https://schema.org/Trip>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

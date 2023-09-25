@@ -1,7 +1,7 @@
 use super::*;
 /// The number of screens in the movie theater.
 ///
-/// https://schema.org/screenCount
+/// <https://schema.org/screenCount>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

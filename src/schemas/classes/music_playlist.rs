@@ -1,7 +1,7 @@
 use super::*;
 /// A collection of music tracks in playlist form.
 ///
-/// https://schema.org/MusicPlaylist
+/// <https://schema.org/MusicPlaylist>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

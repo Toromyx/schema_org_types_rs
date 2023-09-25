@@ -1,7 +1,7 @@
 use super::*;
 /// A public swimming pool.
 ///
-/// https://schema.org/PublicSwimmingPool
+/// <https://schema.org/PublicSwimmingPool>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

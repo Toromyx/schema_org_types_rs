@@ -1,7 +1,7 @@
 use super::*;
 /// The place where the product was assembled.
 ///
-/// https://schema.org/countryOfAssembly
+/// <https://schema.org/countryOfAssembly>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

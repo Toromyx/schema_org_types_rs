@@ -1,7 +1,7 @@
 use super::*;
 /// A sub-grouping of steps in the instructions for how to achieve a result (e.g. steps for making a pie crust within a pie recipe).
 ///
-/// https://schema.org/HowToSection
+/// <https://schema.org/HowToSection>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

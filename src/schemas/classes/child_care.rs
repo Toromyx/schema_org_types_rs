@@ -1,7 +1,7 @@
 use super::*;
 /// A Childcare center.
 ///
-/// https://schema.org/ChildCare
+/// <https://schema.org/ChildCare>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

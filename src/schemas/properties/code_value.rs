@@ -1,7 +1,7 @@
 use super::*;
 /// A short textual code that uniquely identifies the value.
 ///
-/// https://schema.org/codeValue
+/// <https://schema.org/codeValue>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

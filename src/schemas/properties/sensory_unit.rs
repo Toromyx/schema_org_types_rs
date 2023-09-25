@@ -1,7 +1,7 @@
 use super::*;
 /// The neurological pathway extension that inputs and sends information to the brain or spinal cord.
 ///
-/// https://schema.org/sensoryUnit
+/// <https://schema.org/sensoryUnit>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// The act of generating a comment about a subject.
 ///
-/// https://schema.org/CommentAction
+/// <https://schema.org/CommentAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// What type of code sample: full (compile ready) solution, code snippet, inline code, scripts, template.
 ///
-/// https://schema.org/sampleType
+/// <https://schema.org/sampleType>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

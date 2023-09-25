@@ -1,7 +1,7 @@
 use super::*;
 /// A child of the person.
 ///
-/// https://schema.org/children
+/// <https://schema.org/children>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// Any physical manifestation of a person's medical condition discoverable by objective diagnostic tests or physical examination.
 ///
-/// https://schema.org/MedicalSign
+/// <https://schema.org/MedicalSign>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

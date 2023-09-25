@@ -1,7 +1,7 @@
 use super::*;
 /// The act of inserting at the beginning if an ordered collection.
 ///
-/// https://schema.org/PrependAction
+/// <https://schema.org/PrependAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

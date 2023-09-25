@@ -1,7 +1,7 @@
 use super::*;
 /// A sub property of recipient. The recipient who was directly sent the message.
 ///
-/// https://schema.org/toRecipient
+/// <https://schema.org/toRecipient>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

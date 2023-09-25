@@ -1,7 +1,7 @@
 use super::*;
 /// An indication for treating an underlying condition, symptom, etc.
 ///
-/// https://schema.org/TreatmentIndication
+/// <https://schema.org/TreatmentIndication>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

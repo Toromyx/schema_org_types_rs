@@ -1,7 +1,7 @@
 use super::*;
 /// Type of software application, e.g. 'Game, Multimedia'.
 ///
-/// https://schema.org/applicationCategory
+/// <https://schema.org/applicationCategory>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

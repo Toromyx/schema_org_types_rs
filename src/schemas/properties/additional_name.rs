@@ -1,7 +1,7 @@
 use super::*;
 /// An additional name for a Person, can be used for a middle name.
 ///
-/// https://schema.org/additionalName
+/// <https://schema.org/additionalName>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

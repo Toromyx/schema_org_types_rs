@@ -1,7 +1,7 @@
 use super::*;
 /// How often one should engage in the activity.
 ///
-/// https://schema.org/activityFrequency
+/// <https://schema.org/activityFrequency>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

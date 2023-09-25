@@ -1,7 +1,7 @@
 use super::*;
 /// The type of boarding policy used by the airline (e.g. zone-based or group-based).
 ///
-/// https://schema.org/boardingPolicy
+/// <https://schema.org/boardingPolicy>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

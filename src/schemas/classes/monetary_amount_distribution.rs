@@ -1,7 +1,7 @@
 use super::*;
 /// A statistical distribution of monetary amounts.
 ///
-/// https://schema.org/MonetaryAmountDistribution
+/// <https://schema.org/MonetaryAmountDistribution>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

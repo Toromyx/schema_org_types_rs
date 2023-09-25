@@ -1,7 +1,7 @@
 use super::*;
 /// Indicates the approximate radius of a GeoCircle (metres unless indicated otherwise via Distance notation).
 ///
-/// https://schema.org/geoRadius
+/// <https://schema.org/geoRadius>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

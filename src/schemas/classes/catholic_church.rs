@@ -1,7 +1,7 @@
 use super::*;
 /// A Catholic church.
 ///
-/// https://schema.org/CatholicChurch
+/// <https://schema.org/CatholicChurch>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -3,7 +3,7 @@ use super::*;
 /// unifying title, for example "The Amazing Spider-Man" or "Groo the
 /// Wanderer".
 ///
-/// https://schema.org/ComicSeries
+/// <https://schema.org/ComicSeries>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

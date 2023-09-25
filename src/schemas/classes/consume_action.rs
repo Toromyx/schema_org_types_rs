@@ -1,7 +1,7 @@
 use super::*;
 /// The act of ingesting information/resources/food.
 ///
-/// https://schema.org/ConsumeAction
+/// <https://schema.org/ConsumeAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

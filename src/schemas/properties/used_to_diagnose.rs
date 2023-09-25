@@ -1,7 +1,7 @@
 use super::*;
 /// A condition the test is used to diagnose.
 ///
-/// https://schema.org/usedToDiagnose
+/// <https://schema.org/usedToDiagnose>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

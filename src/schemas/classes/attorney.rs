@@ -1,7 +1,7 @@
 use super::*;
 /// Professional service: Attorney. \n\nThis type is deprecated - [[LegalService]] is more inclusive and less ambiguous.
 ///
-/// https://schema.org/Attorney
+/// <https://schema.org/Attorney>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

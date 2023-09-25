@@ -1,7 +1,7 @@
 use super::*;
 /// Boolean: True or False.
 ///
-/// https://schema.org/Boolean
+/// <https://schema.org/Boolean>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

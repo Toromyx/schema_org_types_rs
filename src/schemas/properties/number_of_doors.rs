@@ -1,7 +1,7 @@
 use super::*;
 /// The number of doors.\n\nTypical unit code(s): C62
 ///
-/// https://schema.org/numberOfDoors
+/// <https://schema.org/numberOfDoors>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

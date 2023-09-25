@@ -1,7 +1,7 @@
 use super::*;
 /// The location in which the status applies.
 ///
-/// https://schema.org/applicableLocation
+/// <https://schema.org/applicableLocation>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

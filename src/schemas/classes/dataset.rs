@@ -1,7 +1,7 @@
 use super::*;
 /// A body of structured information describing some topic(s) of interest.
 ///
-/// https://schema.org/Dataset
+/// <https://schema.org/Dataset>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

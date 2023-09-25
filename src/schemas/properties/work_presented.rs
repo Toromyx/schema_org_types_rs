@@ -1,7 +1,7 @@
 use super::*;
 /// The movie presented during this event.
 ///
-/// https://schema.org/workPresented
+/// <https://schema.org/workPresented>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// Specifies the Person who edited the CreativeWork.
 ///
-/// https://schema.org/editor
+/// <https://schema.org/editor>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

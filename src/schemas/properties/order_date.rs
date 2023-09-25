@@ -1,7 +1,7 @@
 use super::*;
 /// Date order was placed.
 ///
-/// https://schema.org/orderDate
+/// <https://schema.org/orderDate>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

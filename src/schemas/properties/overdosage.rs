@@ -1,7 +1,7 @@
 use super::*;
 /// Any information related to overdose on a drug, including signs or symptoms, treatments, contact information for emergency response.
 ///
-/// https://schema.org/overdosage
+/// <https://schema.org/overdosage>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

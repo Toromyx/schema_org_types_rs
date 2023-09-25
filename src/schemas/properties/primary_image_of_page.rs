@@ -1,7 +1,7 @@
 use super::*;
 /// Indicates the main image on the page.
 ///
-/// https://schema.org/primaryImageOfPage
+/// <https://schema.org/primaryImageOfPage>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

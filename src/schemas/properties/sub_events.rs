@@ -1,7 +1,7 @@
 use super::*;
 /// Events that are a part of this event. For example, a conference event includes many presentations, each subEvents of the conference.
 ///
-/// https://schema.org/subEvents
+/// <https://schema.org/subEvents>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

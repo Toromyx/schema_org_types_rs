@@ -1,7 +1,7 @@
 use super::*;
 /// Indicates if use of the media require a subscription  (either paid or free). Allowed values are ```true``` or ```false``` (note that an earlier version had 'yes', 'no').
 ///
-/// https://schema.org/requiresSubscription
+/// <https://schema.org/requiresSubscription>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// A media episode (e.g. TV, radio, video game) which can be part of a series or season.
 ///
-/// https://schema.org/Episode
+/// <https://schema.org/Episode>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

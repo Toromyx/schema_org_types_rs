@@ -1,7 +1,7 @@
 use super::*;
 /// For a [[NewsMediaOrganization]], a statement on coverage priorities, including any public agenda or stance on issues.
 ///
-/// https://schema.org/missionCoveragePrioritiesPolicy
+/// <https://schema.org/missionCoveragePrioritiesPolicy>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

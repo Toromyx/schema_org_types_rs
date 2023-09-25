@@ -1,7 +1,7 @@
 use super::*;
 /// A creative work that this work is an example/instance/realization/derivation of.
 ///
-/// https://schema.org/exampleOfWork
+/// <https://schema.org/exampleOfWork>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

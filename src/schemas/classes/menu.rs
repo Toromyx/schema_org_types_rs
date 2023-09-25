@@ -1,7 +1,7 @@
 use super::*;
 /// A structured representation of food or drink items available from a FoodEstablishment.
 ///
-/// https://schema.org/Menu
+/// <https://schema.org/Menu>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

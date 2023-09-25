@@ -1,7 +1,7 @@
 use super::*;
 /// A MerchantReturnPolicy provides information about product return policies associated with an [[Organization]], [[Product]], or [[Offer]].
 ///
-/// https://schema.org/MerchantReturnPolicy
+/// <https://schema.org/MerchantReturnPolicy>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

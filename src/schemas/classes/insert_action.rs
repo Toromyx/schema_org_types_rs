@@ -1,7 +1,7 @@
 use super::*;
 /// The act of adding at a specific location in an ordered collection.
 ///
-/// https://schema.org/InsertAction
+/// <https://schema.org/InsertAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

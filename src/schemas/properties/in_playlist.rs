@@ -1,7 +1,7 @@
 use super::*;
 /// The playlist to which this recording belongs.
 ///
-/// https://schema.org/inPlaylist
+/// <https://schema.org/inPlaylist>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// A secondary title of the CreativeWork.
 ///
-/// https://schema.org/alternativeHeadline
+/// <https://schema.org/alternativeHeadline>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

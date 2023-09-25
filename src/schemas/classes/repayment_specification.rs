@@ -1,7 +1,7 @@
 use super::*;
 /// A structured value representing repayment.
 ///
-/// https://schema.org/RepaymentSpecification
+/// <https://schema.org/RepaymentSpecification>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

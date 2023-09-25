@@ -1,7 +1,7 @@
 use super::*;
 /// Indicates an OfferCatalog listing for this Organization, Person, or Service.
 ///
-/// https://schema.org/hasOfferCatalog
+/// <https://schema.org/hasOfferCatalog>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

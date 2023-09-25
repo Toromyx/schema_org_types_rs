@@ -1,7 +1,7 @@
 use super::*;
 /// Length of time to engage in the activity.
 ///
-/// https://schema.org/activityDuration
+/// <https://schema.org/activityDuration>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

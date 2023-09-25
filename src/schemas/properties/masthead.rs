@@ -1,7 +1,7 @@
 use super::*;
 /// For a [[NewsMediaOrganization]], a link to the masthead page or a page listing top editorial management.
 ///
-/// https://schema.org/masthead
+/// <https://schema.org/masthead>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

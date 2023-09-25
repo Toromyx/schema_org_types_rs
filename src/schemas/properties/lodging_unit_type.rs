@@ -1,7 +1,7 @@
 use super::*;
 /// Textual description of the unit type (including suite vs. room, size of bed, etc.).
 ///
-/// https://schema.org/lodgingUnitType
+/// <https://schema.org/lodgingUnitType>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

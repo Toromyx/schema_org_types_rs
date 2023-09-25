@@ -1,7 +1,7 @@
 use super::*;
 /// A unique identifier for the reservation.
 ///
-/// https://schema.org/reservationId
+/// <https://schema.org/reservationId>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

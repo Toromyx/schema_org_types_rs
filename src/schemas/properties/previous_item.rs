@@ -1,7 +1,7 @@
 use super::*;
 /// A link to the ListItem that precedes the current one.
 ///
-/// https://schema.org/previousItem
+/// <https://schema.org/previousItem>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

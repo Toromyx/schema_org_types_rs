@@ -1,7 +1,7 @@
 use super::*;
 /// Whether or not a property is mutable.  Default is false. Specifying this for a property that also has a value makes it act similar to a "hidden" input in an HTML form.
 ///
-/// https://schema.org/readonlyValue
+/// <https://schema.org/readonlyValue>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

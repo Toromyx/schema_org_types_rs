@@ -1,7 +1,7 @@
 use super::*;
 /// A video game is an electronic game that involves human interaction with a user interface to generate visual feedback on a video device.
 ///
-/// https://schema.org/VideoGame
+/// <https://schema.org/VideoGame>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

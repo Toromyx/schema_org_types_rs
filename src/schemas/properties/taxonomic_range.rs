@@ -1,7 +1,7 @@
 use super::*;
 /// The taxonomic grouping of the organism that expresses, encodes, or in some way related to the BioChemEntity.
 ///
-/// https://schema.org/taxonomicRange
+/// <https://schema.org/taxonomicRange>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

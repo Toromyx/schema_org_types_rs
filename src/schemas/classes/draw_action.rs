@@ -1,7 +1,7 @@
 use super::*;
 /// The act of producing a visual/graphical representation of an object, typically with a pen/pencil and paper as instruments.
 ///
-/// https://schema.org/DrawAction
+/// <https://schema.org/DrawAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

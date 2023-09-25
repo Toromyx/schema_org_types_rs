@@ -5,7 +5,7 @@ use super::*;
 ///
 /// Note also that this is a definition for how to include GTINs in Schema.org data, and not a definition of GTINs in general - see the GS1 documentation for authoritative details.
 ///
-/// https://schema.org/gtin
+/// <https://schema.org/gtin>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

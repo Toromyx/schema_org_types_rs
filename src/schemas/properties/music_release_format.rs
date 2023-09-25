@@ -1,7 +1,7 @@
 use super::*;
 /// Format of this release (the type of recording media used, i.e. compact disc, digital media, LP, etc.).
 ///
-/// https://schema.org/musicReleaseFormat
+/// <https://schema.org/musicReleaseFormat>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

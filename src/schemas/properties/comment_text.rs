@@ -1,7 +1,7 @@
 use super::*;
 /// The text of the UserComment.
 ///
-/// https://schema.org/commentText
+/// <https://schema.org/commentText>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

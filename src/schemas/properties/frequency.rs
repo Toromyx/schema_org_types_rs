@@ -1,7 +1,7 @@
 use super::*;
 /// How often the dose is taken, e.g. 'daily'.
 ///
-/// https://schema.org/frequency
+/// <https://schema.org/frequency>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

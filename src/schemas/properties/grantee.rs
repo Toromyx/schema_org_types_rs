@@ -1,7 +1,7 @@
 use super::*;
 /// The person, organization, contact point, or audience that has been granted this permission.
 ///
-/// https://schema.org/grantee
+/// <https://schema.org/grantee>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

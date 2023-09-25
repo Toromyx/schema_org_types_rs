@@ -1,7 +1,7 @@
 use super::*;
 /// The class of drug this belongs to (e.g., statins).
 ///
-/// https://schema.org/drugClass
+/// <https://schema.org/drugClass>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

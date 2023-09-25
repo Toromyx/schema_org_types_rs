@@ -1,7 +1,7 @@
 use super::*;
 /// The type of a loan or credit.
 ///
-/// https://schema.org/loanType
+/// <https://schema.org/loanType>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

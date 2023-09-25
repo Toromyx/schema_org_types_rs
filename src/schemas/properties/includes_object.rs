@@ -1,7 +1,7 @@
 use super::*;
 /// This links to a node or nodes indicating the exact quantity of the products included in  an [[Offer]] or [[ProductCollection]].
 ///
-/// https://schema.org/includesObject
+/// <https://schema.org/includesObject>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

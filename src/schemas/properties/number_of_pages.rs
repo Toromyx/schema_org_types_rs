@@ -1,7 +1,7 @@
 use super::*;
 /// The number of pages in the book.
 ///
-/// https://schema.org/numberOfPages
+/// <https://schema.org/numberOfPages>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

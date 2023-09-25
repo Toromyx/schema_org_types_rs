@@ -1,7 +1,7 @@
 use super::*;
 /// Destination(s) ( [[Place]] ) that make up a trip. For a trip where destination order is important use [[ItemList]] to specify that order (see examples).
 ///
-/// https://schema.org/itinerary
+/// <https://schema.org/itinerary>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

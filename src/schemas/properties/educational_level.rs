@@ -1,7 +1,7 @@
 use super::*;
 /// The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
 ///
-/// https://schema.org/educationalLevel
+/// <https://schema.org/educationalLevel>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// ICAO identifier for an airport.
 ///
-/// https://schema.org/icaoCode
+/// <https://schema.org/icaoCode>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

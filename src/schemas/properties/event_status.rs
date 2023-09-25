@@ -1,7 +1,7 @@
 use super::*;
 /// An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.
 ///
-/// https://schema.org/eventStatus
+/// <https://schema.org/eventStatus>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

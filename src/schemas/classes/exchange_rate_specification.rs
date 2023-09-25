@@ -1,7 +1,7 @@
 use super::*;
 /// A structured value representing exchange rate.
 ///
-/// https://schema.org/ExchangeRateSpecification
+/// <https://schema.org/ExchangeRateSpecification>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

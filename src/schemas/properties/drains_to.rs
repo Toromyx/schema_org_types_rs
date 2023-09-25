@@ -1,7 +1,7 @@
 use super::*;
 /// The vasculature that the vein drains into.
 ///
-/// https://schema.org/drainsTo
+/// <https://schema.org/drainsTo>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

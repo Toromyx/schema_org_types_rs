@@ -1,7 +1,7 @@
 use super::*;
 /// Location in the body of the anatomical structure.
 ///
-/// https://schema.org/bodyLocation
+/// <https://schema.org/bodyLocation>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// A ProductReturnPolicy provides information about product return policies associated with an [[Organization]] or [[Product]].
 ///
-/// https://schema.org/ProductReturnPolicy
+/// <https://schema.org/ProductReturnPolicy>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// The address for accessing the service by mail.
 ///
-/// https://schema.org/servicePostalAddress
+/// <https://schema.org/servicePostalAddress>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// A technical article - Example: How-to (task) topics, step-by-step, procedural troubleshooting, specifications, etc.
 ///
-/// https://schema.org/TechArticle
+/// <https://schema.org/TechArticle>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

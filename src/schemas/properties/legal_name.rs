@@ -1,7 +1,7 @@
 use super::*;
 /// The official name of the organization, e.g. the registered company name.
 ///
-/// https://schema.org/legalName
+/// <https://schema.org/legalName>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

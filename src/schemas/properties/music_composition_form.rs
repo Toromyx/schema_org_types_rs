@@ -1,7 +1,7 @@
 use super::*;
 /// The type of composition (e.g. overture, sonata, symphony, etc.).
 ///
-/// https://schema.org/musicCompositionForm
+/// <https://schema.org/musicCompositionForm>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// A sub property of instrument. The query used on this action.
 ///
-/// https://schema.org/query
+/// <https://schema.org/query>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

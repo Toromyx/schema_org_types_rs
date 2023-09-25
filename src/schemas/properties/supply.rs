@@ -1,7 +1,7 @@
 use super::*;
 /// A sub-property of instrument. A supply consumed when performing instructions or a direction.
 ///
-/// https://schema.org/supply
+/// <https://schema.org/supply>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

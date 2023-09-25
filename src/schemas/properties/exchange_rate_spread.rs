@@ -1,7 +1,7 @@
 use super::*;
 /// The difference between the price at which a broker or other intermediary buys and sells foreign currency.
 ///
-/// https://schema.org/exchangeRateSpread
+/// <https://schema.org/exchangeRateSpread>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

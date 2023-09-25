@@ -1,7 +1,7 @@
 use super::*;
 /// Text value being annotated.
 ///
-/// https://schema.org/textValue
+/// <https://schema.org/textValue>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

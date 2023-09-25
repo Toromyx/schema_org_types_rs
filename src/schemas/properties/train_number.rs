@@ -1,7 +1,7 @@
 use super::*;
 /// The unique identifier for the train.
 ///
-/// https://schema.org/trainNumber
+/// <https://schema.org/trainNumber>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

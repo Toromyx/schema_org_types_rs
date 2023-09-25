@@ -1,7 +1,7 @@
 use super::*;
 /// The trailer of a movie or TV/radio series, season, episode, etc.
 ///
-/// https://schema.org/trailer
+/// <https://schema.org/trailer>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

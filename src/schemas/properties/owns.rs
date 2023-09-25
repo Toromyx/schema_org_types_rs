@@ -1,7 +1,7 @@
 use super::*;
 /// Products owned by the organization or person.
 ///
-/// https://schema.org/owns
+/// <https://schema.org/owns>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

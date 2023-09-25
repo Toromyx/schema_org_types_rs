@@ -1,7 +1,7 @@
 use super::*;
 /// The act of participating in performance arts.
 ///
-/// https://schema.org/PerformAction
+/// <https://schema.org/PerformAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

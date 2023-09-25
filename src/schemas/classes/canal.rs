@@ -1,7 +1,7 @@
 use super::*;
 /// A canal, like the Panama Canal.
 ///
-/// https://schema.org/Canal
+/// <https://schema.org/Canal>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

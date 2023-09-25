@@ -2,7 +2,7 @@ use super::*;
 /// Indicates (by URL or string) a particular version of a schema used in some CreativeWork. This property was created primarily to
 /// indicate the use of a specific schema.org release, e.g. ```10.0``` as a simple string, or more explicitly via URL, ```https://schema.org/docs/releases.html#v10.0```. There may be situations in which other schemas might usefully be referenced this way, e.g. ```http://dublincore.org/specifications/dublin-core/dces/1999-07-02/``` but this has not been carefully explored in the community.
 ///
-/// https://schema.org/schemaVersion
+/// <https://schema.org/schemaVersion>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

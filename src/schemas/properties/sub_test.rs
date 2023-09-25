@@ -1,7 +1,7 @@
 use super::*;
 /// A component test of the panel.
 ///
-/// https://schema.org/subTest
+/// <https://schema.org/subTest>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

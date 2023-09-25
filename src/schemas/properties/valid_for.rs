@@ -1,7 +1,7 @@
 use super::*;
 /// The duration of validity of a permit or similar thing.
 ///
-/// https://schema.org/validFor
+/// <https://schema.org/validFor>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

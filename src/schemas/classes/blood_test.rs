@@ -1,7 +1,7 @@
 use super::*;
 /// A medical test performed on a sample of a patient's blood.
 ///
-/// https://schema.org/BloodTest
+/// <https://schema.org/BloodTest>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

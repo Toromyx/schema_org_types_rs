@@ -1,7 +1,7 @@
 use super::*;
 /// A service provided by a government organization, e.g. food stamps, veterans benefits, etc.
 ///
-/// https://schema.org/GovernmentService
+/// <https://schema.org/GovernmentService>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

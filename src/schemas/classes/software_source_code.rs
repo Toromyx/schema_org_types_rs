@@ -1,7 +1,7 @@
 use super::*;
 /// Computer programming source code. Example: Full (compile ready) solutions, code snippet samples, scripts, templates.
 ///
-/// https://schema.org/SoftwareSourceCode
+/// <https://schema.org/SoftwareSourceCode>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

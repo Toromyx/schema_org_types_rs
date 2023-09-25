@@ -1,7 +1,7 @@
 use super::*;
 /// A specific dosing schedule for a drug or supplement.
 ///
-/// https://schema.org/DoseSchedule
+/// <https://schema.org/DoseSchedule>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

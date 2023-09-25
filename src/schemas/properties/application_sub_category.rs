@@ -1,7 +1,7 @@
 use super::*;
 /// Subcategory of the application, e.g. 'Arcade Game'.
 ///
-/// https://schema.org/applicationSubCategory
+/// <https://schema.org/applicationSubCategory>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

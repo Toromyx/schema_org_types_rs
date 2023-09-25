@@ -1,7 +1,7 @@
 use super::*;
 /// A sub property of location. The final location of the object or the agent after the action.
 ///
-/// https://schema.org/toLocation
+/// <https://schema.org/toLocation>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

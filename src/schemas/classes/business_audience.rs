@@ -1,7 +1,7 @@
 use super::*;
 /// A set of characteristics belonging to businesses, e.g. who compose an item's target audience.
 ///
-/// https://schema.org/BusinessAudience
+/// <https://schema.org/BusinessAudience>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// The [[observationAbout]] property identifies an entity, often a [[Place]], associated with an [[Observation]].
 ///
-/// https://schema.org/observationAbout
+/// <https://schema.org/observationAbout>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

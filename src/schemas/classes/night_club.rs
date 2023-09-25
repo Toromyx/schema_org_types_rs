@@ -1,7 +1,7 @@
 use super::*;
 /// A nightclub or discotheque.
 ///
-/// https://schema.org/NightClub
+/// <https://schema.org/NightClub>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

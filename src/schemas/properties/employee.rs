@@ -1,7 +1,7 @@
 use super::*;
 /// Someone working for this organization.
 ///
-/// https://schema.org/employee
+/// <https://schema.org/employee>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

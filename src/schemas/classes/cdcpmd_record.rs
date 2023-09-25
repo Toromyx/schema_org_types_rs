@@ -4,7 +4,7 @@ use super::*;
 /// definitions used as the source here.
 ///
 ///
-/// https://schema.org/CDCPMDRecord
+/// <https://schema.org/CDCPMDRecord>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

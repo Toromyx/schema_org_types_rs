@@ -1,7 +1,7 @@
 use super::*;
 /// Any complaint sensed and expressed by the patient (therefore defined as subjective)  like stomachache, lower-back pain, or fatigue.
 ///
-/// https://schema.org/MedicalSymptom
+/// <https://schema.org/MedicalSymptom>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

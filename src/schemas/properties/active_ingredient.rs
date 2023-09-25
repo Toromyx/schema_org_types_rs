@@ -1,7 +1,7 @@
 use super::*;
 /// An active ingredient, typically chemical compounds and/or biologic substances.
 ///
-/// https://schema.org/activeIngredient
+/// <https://schema.org/activeIngredient>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

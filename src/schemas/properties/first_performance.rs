@@ -1,7 +1,7 @@
 use super::*;
 /// The date and place the work was first performed.
 ///
-/// https://schema.org/firstPerformance
+/// <https://schema.org/firstPerformance>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

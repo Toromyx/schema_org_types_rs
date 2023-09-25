@@ -1,7 +1,7 @@
 use super::*;
 /// The kind of aircraft (e.g., "Boeing 747").
 ///
-/// https://schema.org/aircraft
+/// <https://schema.org/aircraft>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

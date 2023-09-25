@@ -1,7 +1,7 @@
 use super::*;
 /// A datasheet or vendor specification of a product (in the sense of a prototypical description).
 ///
-/// https://schema.org/ProductModel
+/// <https://schema.org/ProductModel>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// Type of app development: phone, Metro style, desktop, XBox, etc.
 ///
-/// https://schema.org/targetPlatform
+/// <https://schema.org/targetPlatform>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

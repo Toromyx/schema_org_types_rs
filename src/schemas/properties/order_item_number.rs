@@ -1,7 +1,7 @@
 use super::*;
 /// The identifier of the order item.
 ///
-/// https://schema.org/orderItemNumber
+/// <https://schema.org/orderItemNumber>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

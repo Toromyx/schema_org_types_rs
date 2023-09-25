@@ -16,13 +16,19 @@ pub struct EnumerationVariant {
     pub name: String,
 }
 
+impl DocLines for EnumerationVariant {
+    fn doc_lines(&self) -> Vec<String> {
+        vec![
+            self.description.clone(),
+            "".to_string(),
+            format!("<{}>", self.iri),
+        ]
+    }
+}
+
 impl ToTokens for EnumerationVariant {
     fn to_tokens(&self, tokens: &mut TokenStream) {
-        let doc_lines = DocLines(vec![
-            self.description.clone(),
-            String::from(""),
-            self.iri.clone(),
-        ]);
+        let doc_lines = self.doc_lines_token_stream();
         let name = TokenStream::from_str(&self.name.to_case(Case::UpperCamel)).unwrap();
         tokens.append_all(quote!(
             #doc_lines

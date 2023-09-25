@@ -1,7 +1,7 @@
 use super::*;
 /// The cuisine of the restaurant.
 ///
-/// https://schema.org/servesCuisine
+/// <https://schema.org/servesCuisine>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

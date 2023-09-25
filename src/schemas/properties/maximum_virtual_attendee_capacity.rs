@@ -1,7 +1,7 @@
 use super::*;
 /// The maximum virtual attendee capacity of an [[Event]] whose [[eventAttendanceMode]] is [[OnlineEventAttendanceMode]] (or the online aspects, in the case of a [[MixedEventAttendanceMode]]).
 ///
-/// https://schema.org/maximumVirtualAttendeeCapacity
+/// <https://schema.org/maximumVirtualAttendeeCapacity>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

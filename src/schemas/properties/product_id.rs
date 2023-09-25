@@ -1,7 +1,7 @@
 use super::*;
 /// The product identifier, such as ISBN. For example: ``` meta itemprop="productID" content="isbn:123-456-789" ```.
 ///
-/// https://schema.org/productID
+/// <https://schema.org/productID>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

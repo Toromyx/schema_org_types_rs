@@ -1,7 +1,7 @@
 use super::*;
 /// The productReturnDays property indicates the number of days (from purchase) within which relevant product return policy is applicable.
 ///
-/// https://schema.org/productReturnDays
+/// <https://schema.org/productReturnDays>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

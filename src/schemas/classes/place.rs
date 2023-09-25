@@ -1,7 +1,7 @@
 use super::*;
 /// Entities that have a somewhat fixed, physical extension.
 ///
-/// https://schema.org/Place
+/// <https://schema.org/Place>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// The price for the delivery of an offer using a particular delivery method.
 ///
-/// https://schema.org/DeliveryChargeSpecification
+/// <https://schema.org/DeliveryChargeSpecification>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// The legal availability status of a medical drug.
 ///
-/// https://schema.org/DrugLegalStatus
+/// <https://schema.org/DrugLegalStatus>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

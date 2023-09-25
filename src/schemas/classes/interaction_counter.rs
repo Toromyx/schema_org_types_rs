@@ -1,7 +1,7 @@
 use super::*;
 /// A summary of how users have interacted with this CreativeWork. In most cases, authors will use a subtype to specify the specific type of interaction.
 ///
-/// https://schema.org/InteractionCounter
+/// <https://schema.org/InteractionCounter>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

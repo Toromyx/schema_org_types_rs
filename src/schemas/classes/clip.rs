@@ -1,7 +1,7 @@
 use super::*;
 /// A short TV or radio program or a segment/part of a program.
 ///
-/// https://schema.org/Clip
+/// <https://schema.org/Clip>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

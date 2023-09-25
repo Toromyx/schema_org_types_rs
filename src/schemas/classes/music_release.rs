@@ -1,7 +1,7 @@
 use super::*;
 /// A MusicRelease is a specific release of a music album.
 ///
-/// https://schema.org/MusicRelease
+/// <https://schema.org/MusicRelease>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// A cardholder benefit that pays the cardholder a small percentage of their net expenditures.
 ///
-/// https://schema.org/cashBack
+/// <https://schema.org/cashBack>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

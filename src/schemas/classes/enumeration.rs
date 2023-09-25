@@ -1,7 +1,7 @@
 use super::*;
 /// Lists or enumerations—for example, a list of cuisines or music genres, etc.
 ///
-/// https://schema.org/Enumeration
+/// <https://schema.org/Enumeration>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

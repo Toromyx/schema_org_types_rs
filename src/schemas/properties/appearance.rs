@@ -1,7 +1,7 @@
 use super::*;
 /// Indicates an occurrence of a [[Claim]] in some [[CreativeWork]].
 ///
-/// https://schema.org/appearance
+/// <https://schema.org/appearance>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

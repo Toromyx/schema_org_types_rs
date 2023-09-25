@@ -1,7 +1,7 @@
 use super::*;
 /// The airport where the flight terminates.
 ///
-/// https://schema.org/arrivalAirport
+/// <https://schema.org/arrivalAirport>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

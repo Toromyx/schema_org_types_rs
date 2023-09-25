@@ -1,7 +1,7 @@
 use super::*;
 /// A middle school (typically for children aged around 11-14, although this varies somewhat).
 ///
-/// https://schema.org/MiddleSchool
+/// <https://schema.org/MiddleSchool>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

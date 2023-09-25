@@ -1,7 +1,7 @@
 use super::*;
 /// The number of passengers that can be seated in the vehicle, both in terms of the physical space available, and in terms of limitations set by law.\n\nTypical unit code(s): C62 for persons.
 ///
-/// https://schema.org/vehicleSeatingCapacity
+/// <https://schema.org/vehicleSeatingCapacity>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

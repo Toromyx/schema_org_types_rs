@@ -1,7 +1,7 @@
 use super::*;
 /// The 14-character, HIOS-generated Plan ID number. (Plan IDs must be unique, even across different markets.)
 ///
-/// https://schema.org/healthPlanId
+/// <https://schema.org/healthPlanId>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

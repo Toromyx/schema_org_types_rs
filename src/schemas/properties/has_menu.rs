@@ -1,7 +1,7 @@
 use super::*;
 /// Either the actual menu as a structured representation, as text, or a URL of the menu.
 ///
-/// https://schema.org/hasMenu
+/// <https://schema.org/hasMenu>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

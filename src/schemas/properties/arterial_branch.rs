@@ -1,7 +1,7 @@
 use super::*;
 /// The branches that comprise the arterial structure.
 ///
-/// https://schema.org/arterialBranch
+/// <https://schema.org/arterialBranch>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// The item that is being reviewed/rated.
 ///
-/// https://schema.org/itemReviewed
+/// <https://schema.org/itemReviewed>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

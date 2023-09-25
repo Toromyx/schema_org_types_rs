@@ -1,7 +1,7 @@
 use super::*;
 /// Subcellular location where this BioChemEntity is located; please use PropertyValue if you want to include any evidence.
 ///
-/// https://schema.org/isLocatedInSubcellularLocation
+/// <https://schema.org/isLocatedInSubcellularLocation>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

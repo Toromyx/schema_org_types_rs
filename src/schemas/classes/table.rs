@@ -1,7 +1,7 @@
 use super::*;
 /// A table on a Web page.
 ///
-/// https://schema.org/Table
+/// <https://schema.org/Table>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

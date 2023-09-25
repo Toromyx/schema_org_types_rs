@@ -1,7 +1,7 @@
 use super::*;
 /// A kind of lodging business that focuses on renting single properties for limited time.
 ///
-/// https://schema.org/VacationRental
+/// <https://schema.org/VacationRental>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

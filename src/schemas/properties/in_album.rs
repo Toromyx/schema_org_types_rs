@@ -1,7 +1,7 @@
 use super::*;
 /// The album to which this recording belongs.
 ///
-/// https://schema.org/inAlbum
+/// <https://schema.org/inAlbum>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

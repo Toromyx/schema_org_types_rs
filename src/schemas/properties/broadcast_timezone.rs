@@ -1,7 +1,7 @@
 use super::*;
 /// The timezone in [ISO 8601 format](http://en.wikipedia.org/wiki/ISO_8601) for which the service bases its broadcasts.
 ///
-/// https://schema.org/broadcastTimezone
+/// <https://schema.org/broadcastTimezone>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

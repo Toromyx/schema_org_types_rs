@@ -1,7 +1,7 @@
 use super::*;
 /// The page on which the work starts; for example "135" or "xiii".
 ///
-/// https://schema.org/pageStart
+/// <https://schema.org/pageStart>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

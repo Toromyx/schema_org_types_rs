@@ -1,7 +1,7 @@
 use super::*;
 /// The number of the item ordered. If the property is not set, assume the quantity is one.
 ///
-/// https://schema.org/orderQuantity
+/// <https://schema.org/orderQuantity>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

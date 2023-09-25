@@ -1,7 +1,7 @@
 use super::*;
 /// Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
 ///
-/// https://schema.org/translator
+/// <https://schema.org/translator>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

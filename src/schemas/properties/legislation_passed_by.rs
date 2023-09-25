@@ -1,7 +1,7 @@
 use super::*;
 /// The person or organization that originally passed or made the law: typically parliament (for primary legislation) or government (for secondary legislation). This indicates the "legal author" of the law, as opposed to its physical author.
 ///
-/// https://schema.org/legislationPassedBy
+/// <https://schema.org/legislationPassedBy>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

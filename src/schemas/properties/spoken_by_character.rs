@@ -1,7 +1,7 @@
 use super::*;
 /// The (e.g. fictional) character, Person or Organization to whom the quotation is attributed within the containing CreativeWork.
 ///
-/// https://schema.org/spokenByCharacter
+/// <https://schema.org/spokenByCharacter>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

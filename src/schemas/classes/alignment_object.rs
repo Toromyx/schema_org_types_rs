@@ -3,7 +3,7 @@ use super::*;
 ///
 /// Should not be used where the nature of the alignment can be described using a simple property, for example to express that a resource [[teaches]] or [[assesses]] a competency.
 ///
-/// https://schema.org/AlignmentObject
+/// <https://schema.org/AlignmentObject>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// Type of ordering (e.g. Ascending, Descending, Unordered).
 ///
-/// https://schema.org/itemListOrder
+/// <https://schema.org/itemListOrder>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

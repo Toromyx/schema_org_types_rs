@@ -1,7 +1,7 @@
 use super::*;
 /// A license document that applies to this structured data, typically indicated by URL.
 ///
-/// https://schema.org/sdLicense
+/// <https://schema.org/sdLicense>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// The neurological pathway that originates the neurons.
 ///
-/// https://schema.org/sourcedFrom
+/// <https://schema.org/sourcedFrom>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

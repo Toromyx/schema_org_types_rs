@@ -1,7 +1,7 @@
 use super::*;
 /// The order is being paid as part of the referenced Invoice.
 ///
-/// https://schema.org/partOfInvoice
+/// <https://schema.org/partOfInvoice>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

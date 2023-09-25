@@ -1,7 +1,7 @@
 use super::*;
 /// A television station.
 ///
-/// https://schema.org/TelevisionStation
+/// <https://schema.org/TelevisionStation>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

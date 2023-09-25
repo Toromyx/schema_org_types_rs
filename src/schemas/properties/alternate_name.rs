@@ -1,7 +1,7 @@
 use super::*;
 /// An alias for the item.
 ///
-/// https://schema.org/alternateName
+/// <https://schema.org/alternateName>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

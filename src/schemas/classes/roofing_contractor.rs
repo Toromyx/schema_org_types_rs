@@ -1,7 +1,7 @@
 use super::*;
 /// A roofing contractor.
 ///
-/// https://schema.org/RoofingContractor
+/// <https://schema.org/RoofingContractor>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// The weight of the product or person.
 ///
-/// https://schema.org/weight
+/// <https://schema.org/weight>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

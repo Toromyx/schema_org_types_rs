@@ -1,7 +1,7 @@
 use super::*;
 /// An agent inspects, determines, investigates, inquires, or examines an object's accuracy, quality, condition, or state.
 ///
-/// https://schema.org/CheckAction
+/// <https://schema.org/CheckAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

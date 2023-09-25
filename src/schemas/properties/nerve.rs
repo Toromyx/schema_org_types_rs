@@ -1,7 +1,7 @@
 use super::*;
 /// The underlying innervation associated with the muscle.
 ///
-/// https://schema.org/nerve
+/// <https://schema.org/nerve>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

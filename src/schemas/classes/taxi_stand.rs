@@ -1,7 +1,7 @@
 use super::*;
 /// A taxi stand.
 ///
-/// https://schema.org/TaxiStand
+/// <https://schema.org/TaxiStand>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

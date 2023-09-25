@@ -1,7 +1,7 @@
 use super::*;
 /// The current status of the order.
 ///
-/// https://schema.org/orderStatus
+/// <https://schema.org/orderStatus>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

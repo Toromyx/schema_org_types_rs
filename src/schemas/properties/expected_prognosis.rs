@@ -1,7 +1,7 @@
 use super::*;
 /// The likely outcome in either the short term or long term of the medical condition.
 ///
-/// https://schema.org/expectedPrognosis
+/// <https://schema.org/expectedPrognosis>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

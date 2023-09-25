@@ -1,7 +1,7 @@
 use super::*;
 /// A textual description of known damages, both repaired and unrepaired.
 ///
-/// https://schema.org/knownVehicleDamages
+/// <https://schema.org/knownVehicleDamages>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

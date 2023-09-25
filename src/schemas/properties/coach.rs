@@ -1,7 +1,7 @@
 use super::*;
 /// A person that acts in a coaching role for a sports team.
 ///
-/// https://schema.org/coach
+/// <https://schema.org/coach>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

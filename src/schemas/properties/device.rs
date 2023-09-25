@@ -1,7 +1,7 @@
 use super::*;
 /// Device required to run the application. Used in cases where a specific make/model is required to run the application.
 ///
-/// https://schema.org/device
+/// <https://schema.org/device>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// A patient-reported or observed dosing schedule for a drug or supplement.
 ///
-/// https://schema.org/ReportedDoseSchedule
+/// <https://schema.org/ReportedDoseSchedule>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// A spreadsheet file.
 ///
-/// https://schema.org/SpreadsheetDigitalDocument
+/// <https://schema.org/SpreadsheetDigitalDocument>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

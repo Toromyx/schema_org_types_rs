@@ -1,7 +1,7 @@
 use super::*;
 /// People or organizations that have reviewed the content on this web page for accuracy and/or completeness.
 ///
-/// https://schema.org/reviewedBy
+/// <https://schema.org/reviewedBy>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// The composition this track is a recording of.
 ///
-/// https://schema.org/recordingOf
+/// <https://schema.org/recordingOf>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// A media object that encodes this CreativeWork.
 ///
-/// https://schema.org/encodings
+/// <https://schema.org/encodings>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// The Person's occupation. For past professions, use Role for expressing dates.
 ///
-/// https://schema.org/hasOccupation
+/// <https://schema.org/hasOccupation>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

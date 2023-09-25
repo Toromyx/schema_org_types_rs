@@ -1,7 +1,7 @@
 use super::*;
 /// Web applications.
 ///
-/// https://schema.org/WebApplication
+/// <https://schema.org/WebApplication>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

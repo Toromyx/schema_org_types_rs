@@ -1,7 +1,7 @@
 use super::*;
 /// A piece of sculpture.
 ///
-/// https://schema.org/Sculpture
+/// <https://schema.org/Sculpture>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// A lodging business, such as a motel, hotel, or inn.
 ///
-/// https://schema.org/LodgingBusiness
+/// <https://schema.org/LodgingBusiness>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

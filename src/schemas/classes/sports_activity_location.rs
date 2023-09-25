@@ -1,7 +1,7 @@
 use super::*;
 /// A sports location, such as a playing field.
 ///
-/// https://schema.org/SportsActivityLocation
+/// <https://schema.org/SportsActivityLocation>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

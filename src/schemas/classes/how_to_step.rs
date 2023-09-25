@@ -1,7 +1,7 @@
 use super::*;
 /// A step in the instructions for how to achieve a result. It is an ordered list with HowToDirection and/or HowToTip items.
 ///
-/// https://schema.org/HowToStep
+/// <https://schema.org/HowToStep>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

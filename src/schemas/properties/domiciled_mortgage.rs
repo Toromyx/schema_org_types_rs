@@ -1,7 +1,7 @@
 use super::*;
 /// Whether borrower is a resident of the jurisdiction where the property is located.
 ///
-/// https://schema.org/domiciledMortgage
+/// <https://schema.org/domiciledMortgage>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// Maximal age of the child.
 ///
-/// https://schema.org/childMaxAge
+/// <https://schema.org/childMaxAge>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

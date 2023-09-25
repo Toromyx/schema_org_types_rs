@@ -1,7 +1,7 @@
 use super::*;
 /// The act of resuming a device or application which was formerly paused (e.g. resume music playback or resume a timer).
 ///
-/// https://schema.org/ResumeAction
+/// <https://schema.org/ResumeAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

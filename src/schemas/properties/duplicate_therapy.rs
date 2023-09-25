@@ -1,7 +1,7 @@
 use super::*;
 /// A therapy that duplicates or overlaps this one.
 ///
-/// https://schema.org/duplicateTherapy
+/// <https://schema.org/duplicateTherapy>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

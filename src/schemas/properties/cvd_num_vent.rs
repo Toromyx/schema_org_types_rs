@@ -1,7 +1,7 @@
 use super::*;
 /// numvent - MECHANICAL VENTILATORS: Total number of ventilators available.
 ///
-/// https://schema.org/cvdNumVent
+/// <https://schema.org/cvdNumVent>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// A profession, may involve prolonged training and/or a formal qualification.
 ///
-/// https://schema.org/Occupation
+/// <https://schema.org/Occupation>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

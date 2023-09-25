@@ -1,7 +1,7 @@
 use super::*;
 /// A sub property of result. The Comment created or sent as a result of this action.
 ///
-/// https://schema.org/resultComment
+/// <https://schema.org/resultComment>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

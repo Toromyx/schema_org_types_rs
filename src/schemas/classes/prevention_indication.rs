@@ -1,7 +1,7 @@
 use super::*;
 /// An indication for preventing an underlying condition, symptom, etc.
 ///
-/// https://schema.org/PreventionIndication
+/// <https://schema.org/PreventionIndication>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

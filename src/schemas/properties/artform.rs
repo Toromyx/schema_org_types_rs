@@ -1,7 +1,7 @@
 use super::*;
 /// e.g. Painting, Drawing, Sculpture, Print, Photograph, Assemblage, Collage, etc.
 ///
-/// https://schema.org/artform
+/// <https://schema.org/artform>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

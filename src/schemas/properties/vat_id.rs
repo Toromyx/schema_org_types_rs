@@ -1,7 +1,7 @@
 use super::*;
 /// The Value-added Tax ID of the organization or person.
 ///
-/// https://schema.org/vatID
+/// <https://schema.org/vatID>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

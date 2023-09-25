@@ -1,7 +1,7 @@
 use super::*;
 /// A scholarly article.
 ///
-/// https://schema.org/ScholarlyArticle
+/// <https://schema.org/ScholarlyArticle>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

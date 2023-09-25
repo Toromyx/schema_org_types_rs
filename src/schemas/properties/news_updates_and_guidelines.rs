@@ -1,7 +1,7 @@
 use super::*;
 /// Indicates a page with news updates and guidelines. This could often be (but is not required to be) the main page containing [[SpecialAnnouncement]] markup on a site.
 ///
-/// https://schema.org/newsUpdatesAndGuidelines
+/// <https://schema.org/newsUpdatesAndGuidelines>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

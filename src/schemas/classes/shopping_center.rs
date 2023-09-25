@@ -1,7 +1,7 @@
 use super::*;
 /// A shopping center or mall.
 ///
-/// https://schema.org/ShoppingCenter
+/// <https://schema.org/ShoppingCenter>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

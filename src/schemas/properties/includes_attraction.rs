@@ -1,7 +1,7 @@
 use super::*;
 /// Attraction located at destination.
 ///
-/// https://schema.org/includesAttraction
+/// <https://schema.org/includesAttraction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

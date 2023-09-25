@@ -1,7 +1,7 @@
 use super::*;
 /// A book, document, or piece of music written by hand rather than typed or printed.
 ///
-/// https://schema.org/Manuscript
+/// <https://schema.org/Manuscript>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

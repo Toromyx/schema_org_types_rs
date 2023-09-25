@@ -1,7 +1,7 @@
 use super::*;
 /// An embedded audio object.
 ///
-/// https://schema.org/audio
+/// <https://schema.org/audio>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

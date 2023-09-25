@@ -1,7 +1,7 @@
 use super::*;
 /// The act of expressing a preference from a fixed/finite/structured set of choices/options.
 ///
-/// https://schema.org/VoteAction
+/// <https://schema.org/VoteAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

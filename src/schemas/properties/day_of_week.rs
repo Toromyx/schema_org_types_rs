@@ -1,7 +1,7 @@
 use super::*;
 /// The day of the week for which these opening hours are valid.
 ///
-/// https://schema.org/dayOfWeek
+/// <https://schema.org/dayOfWeek>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

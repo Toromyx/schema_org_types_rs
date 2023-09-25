@@ -1,7 +1,7 @@
 use super::*;
 /// The release date of a product or product model. This can be used to distinguish the exact variant of a product.
 ///
-/// https://schema.org/releaseDate
+/// <https://schema.org/releaseDate>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

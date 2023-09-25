@@ -1,7 +1,7 @@
 use super::*;
 /// ATM/cash machine.
 ///
-/// https://schema.org/AutomatedTeller
+/// <https://schema.org/AutomatedTeller>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

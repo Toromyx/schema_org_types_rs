@@ -1,7 +1,7 @@
 use super::*;
 /// Identifies a price component (for example, a line item on an invoice), part of the total price for an offer.
 ///
-/// https://schema.org/priceComponentType
+/// <https://schema.org/priceComponentType>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

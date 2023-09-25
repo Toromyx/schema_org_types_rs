@@ -1,7 +1,7 @@
 use super::*;
 /// The 10th percentile value.
 ///
-/// https://schema.org/percentile10
+/// <https://schema.org/percentile10>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

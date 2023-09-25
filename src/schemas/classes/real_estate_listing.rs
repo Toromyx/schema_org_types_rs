@@ -3,7 +3,7 @@ use super::*;
 /// The [[RealEstateListing]] type itself represents the overall listing, as manifested in some [[WebPage]].
 ///
 ///
-/// https://schema.org/RealEstateListing
+/// <https://schema.org/RealEstateListing>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// A service for a vehicle for hire with a driver for local travel. Fares are usually calculated based on distance traveled.
 ///
-/// https://schema.org/TaxiService
+/// <https://schema.org/TaxiService>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

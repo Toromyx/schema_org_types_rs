@@ -1,7 +1,7 @@
 use super::*;
 /// A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
 ///
-/// https://schema.org/category
+/// <https://schema.org/category>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

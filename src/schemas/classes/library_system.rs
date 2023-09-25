@@ -1,7 +1,7 @@
 use super::*;
 /// A [[LibrarySystem]] is a collaborative system amongst several libraries.
 ///
-/// https://schema.org/LibrarySystem
+/// <https://schema.org/LibrarySystem>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

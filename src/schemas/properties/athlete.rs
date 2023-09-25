@@ -1,7 +1,7 @@
 use super::*;
 /// A person that acts as performing member of a sports team; a player as opposed to a coach.
 ///
-/// https://schema.org/athlete
+/// <https://schema.org/athlete>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

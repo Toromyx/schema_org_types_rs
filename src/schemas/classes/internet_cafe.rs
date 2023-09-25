@@ -1,7 +1,7 @@
 use super::*;
 /// An internet cafe.
 ///
-/// https://schema.org/InternetCafe
+/// <https://schema.org/InternetCafe>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

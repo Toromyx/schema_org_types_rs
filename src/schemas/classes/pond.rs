@@ -1,7 +1,7 @@
 use super::*;
 /// A pond.
 ///
-/// https://schema.org/Pond
+/// <https://schema.org/Pond>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// A means for accessing a service, e.g. a government office location, web site, or phone number.
 ///
-/// https://schema.org/ServiceChannel
+/// <https://schema.org/ServiceChannel>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// The act of swallowing liquids.
 ///
-/// https://schema.org/DrinkAction
+/// <https://schema.org/DrinkAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

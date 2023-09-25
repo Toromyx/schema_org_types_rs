@@ -1,7 +1,7 @@
 use super::*;
 /// The individual reservations included in the package. Typically a repeated property.
 ///
-/// https://schema.org/subReservation
+/// <https://schema.org/subReservation>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// Minimal age of the child.
 ///
-/// https://schema.org/childMinAge
+/// <https://schema.org/childMinAge>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

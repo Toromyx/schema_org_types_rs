@@ -1,7 +1,7 @@
 use super::*;
 /// The estimated salary earned while in the program.
 ///
-/// https://schema.org/trainingSalary
+/// <https://schema.org/trainingSalary>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

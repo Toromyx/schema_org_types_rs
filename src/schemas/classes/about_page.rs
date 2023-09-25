@@ -1,7 +1,7 @@
 use super::*;
 /// Web page type: About page.
 ///
-/// https://schema.org/AboutPage
+/// <https://schema.org/AboutPage>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

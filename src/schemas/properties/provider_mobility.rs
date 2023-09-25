@@ -1,7 +1,7 @@
 use super::*;
 /// Indicates the mobility of a provided service (e.g. 'static', 'dynamic').
 ///
-/// https://schema.org/providerMobility
+/// <https://schema.org/providerMobility>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

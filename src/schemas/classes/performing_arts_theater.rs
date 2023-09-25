@@ -1,7 +1,7 @@
 use super::*;
 /// A theater or other performing art center.
 ///
-/// https://schema.org/PerformingArtsTheater
+/// <https://schema.org/PerformingArtsTheater>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

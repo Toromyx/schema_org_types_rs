@@ -1,6 +1,6 @@
 /// Used to indicate whether a product is EnergyStar certified.
 ///
-/// https://schema.org/EnergyStarEnergyEfficiencyEnumeration
+/// <https://schema.org/EnergyStarEnergyEfficiencyEnumeration>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(
@@ -10,6 +10,6 @@
 pub enum EnergyStarEnergyEfficiencyEnumeration {
     /// Represents EnergyStar certification.
     ///
-    /// https://schema.org/EnergyStarCertified
+    /// <https://schema.org/EnergyStarCertified>
     EnergyStarCertified,
 }

@@ -1,7 +1,7 @@
 use super::*;
 /// The act of downloading an object.
 ///
-/// https://schema.org/DownloadAction
+/// <https://schema.org/DownloadAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

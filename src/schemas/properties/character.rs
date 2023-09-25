@@ -1,7 +1,7 @@
 use super::*;
 /// Fictional person connected with a creative work.
 ///
-/// https://schema.org/character
+/// <https://schema.org/character>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

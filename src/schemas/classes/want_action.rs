@@ -1,7 +1,7 @@
 use super::*;
 /// The act of expressing a desire about the object. An agent wants an object.
 ///
-/// https://schema.org/WantAction
+/// <https://schema.org/WantAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

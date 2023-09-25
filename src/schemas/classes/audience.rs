@@ -1,7 +1,7 @@
 use super::*;
 /// Intended audience for an item, i.e. the group for whom the item was created.
 ///
-/// https://schema.org/Audience
+/// <https://schema.org/Audience>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// Represents the length and pace of a course, expressed as a [[Schedule]].
 ///
-/// https://schema.org/courseSchedule
+/// <https://schema.org/courseSchedule>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

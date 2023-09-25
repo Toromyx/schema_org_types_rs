@@ -1,7 +1,7 @@
 use super::*;
 /// The blood vessel that carries blood from the heart to the muscle.
 ///
-/// https://schema.org/bloodSupply
+/// <https://schema.org/bloodSupply>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

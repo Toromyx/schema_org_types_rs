@@ -1,7 +1,7 @@
 use super::*;
 /// Number of players on the server.
 ///
-/// https://schema.org/playersOnline
+/// <https://schema.org/playersOnline>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

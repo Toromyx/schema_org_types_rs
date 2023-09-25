@@ -1,7 +1,7 @@
 use super::*;
 /// Alumni of an organization.
 ///
-/// https://schema.org/alumni
+/// <https://schema.org/alumni>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

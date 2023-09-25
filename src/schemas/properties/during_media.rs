@@ -1,7 +1,7 @@
 use super::*;
 /// A media object representing the circumstances while performing this direction.
 ///
-/// https://schema.org/duringMedia
+/// <https://schema.org/duringMedia>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

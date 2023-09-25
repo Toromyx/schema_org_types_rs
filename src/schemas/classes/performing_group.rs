@@ -1,7 +1,7 @@
 use super::*;
 /// A performance group, such as a band, an orchestra, or a circus.
 ///
-/// https://schema.org/PerformingGroup
+/// <https://schema.org/PerformingGroup>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

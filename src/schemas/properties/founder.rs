@@ -1,7 +1,7 @@
 use super::*;
 /// A person who founded this organization.
 ///
-/// https://schema.org/founder
+/// <https://schema.org/founder>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

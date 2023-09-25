@@ -1,7 +1,7 @@
 use super::*;
 /// A sub property of object. The person or organization being followed.
 ///
-/// https://schema.org/followee
+/// <https://schema.org/followee>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

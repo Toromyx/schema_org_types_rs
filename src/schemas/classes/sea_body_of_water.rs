@@ -1,7 +1,7 @@
 use super::*;
 /// A sea (for example, the Caspian sea).
 ///
-/// https://schema.org/SeaBodyOfWater
+/// <https://schema.org/SeaBodyOfWater>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

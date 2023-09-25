@@ -3,7 +3,7 @@ use super::*;
 /// unit of a comic, including the interior stories, covers, and backmatter. Most
 /// comics have at least two stories: a cover (ComicCoverArt) and an interior story.
 ///
-/// https://schema.org/ComicStory
+/// <https://schema.org/ComicStory>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

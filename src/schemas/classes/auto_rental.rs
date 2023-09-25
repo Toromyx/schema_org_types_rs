@@ -1,7 +1,7 @@
 use super::*;
 /// A car rental business.
 ///
-/// https://schema.org/AutoRental
+/// <https://schema.org/AutoRental>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

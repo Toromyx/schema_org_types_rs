@@ -1,7 +1,7 @@
 use super::*;
 /// Structured values are used when the value of a property has a more complex structure than simply being a textual value or a reference to another thing.
 ///
-/// https://schema.org/StructuredValue
+/// <https://schema.org/StructuredValue>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

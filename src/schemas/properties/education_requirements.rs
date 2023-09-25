@@ -1,7 +1,7 @@
 use super::*;
 /// Educational background needed for the position or Occupation.
 ///
-/// https://schema.org/educationRequirements
+/// <https://schema.org/educationRequirements>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

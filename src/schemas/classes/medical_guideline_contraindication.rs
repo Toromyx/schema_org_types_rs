@@ -1,7 +1,7 @@
 use super::*;
 /// A guideline contraindication that designates a process as harmful and where quality of the data supporting the contraindication is sound.
 ///
-/// https://schema.org/MedicalGuidelineContraindication
+/// <https://schema.org/MedicalGuidelineContraindication>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

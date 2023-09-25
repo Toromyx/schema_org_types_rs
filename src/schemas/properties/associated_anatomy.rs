@@ -1,7 +1,7 @@
 use super::*;
 /// The anatomy of the underlying organ system or structures associated with this entity.
 ///
-/// https://schema.org/associatedAnatomy
+/// <https://schema.org/associatedAnatomy>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

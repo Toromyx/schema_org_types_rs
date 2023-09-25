@@ -1,7 +1,7 @@
 use super::*;
 /// A short summary of the specific claims reviewed in a ClaimReview.
 ///
-/// https://schema.org/claimReviewed
+/// <https://schema.org/claimReviewed>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

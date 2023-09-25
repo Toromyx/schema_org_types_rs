@@ -1,7 +1,7 @@
 use super::*;
 /// A wholesale store.
 ///
-/// https://schema.org/WholesaleStore
+/// <https://schema.org/WholesaleStore>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

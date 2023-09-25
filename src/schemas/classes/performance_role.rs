@@ -1,7 +1,7 @@
 use super::*;
 /// A PerformanceRole is a Role that some entity places with regard to a theatrical performance, e.g. in a Movie, TVSeries etc.
 ///
-/// https://schema.org/PerformanceRole
+/// <https://schema.org/PerformanceRole>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

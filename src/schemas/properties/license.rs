@@ -1,7 +1,7 @@
 use super::*;
 /// A license document that applies to this content, typically indicated by URL.
 ///
-/// https://schema.org/license
+/// <https://schema.org/license>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

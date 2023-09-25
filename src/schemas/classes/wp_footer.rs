@@ -1,7 +1,7 @@
 use super::*;
 /// The footer section of the page.
 ///
-/// https://schema.org/WPFooter
+/// <https://schema.org/WPFooter>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// The post office box number for PO box addresses.
 ///
-/// https://schema.org/postOfficeBoxNumber
+/// <https://schema.org/postOfficeBoxNumber>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

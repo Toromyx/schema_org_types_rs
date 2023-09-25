@@ -3,7 +3,7 @@ use super::*;
 /// in a medium other than pencils or digital line art--for example, if the
 /// primary artwork is done in watercolors or digital paints.
 ///
-/// https://schema.org/artist
+/// <https://schema.org/artist>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

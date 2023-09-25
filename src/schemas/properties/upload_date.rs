@@ -1,7 +1,7 @@
 use super::*;
 /// Date when this media object was uploaded to this site.
 ///
-/// https://schema.org/uploadDate
+/// <https://schema.org/uploadDate>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

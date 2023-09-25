@@ -1,7 +1,7 @@
 use super::*;
 /// The type of return fees for purchased products (for any return reason).
 ///
-/// https://schema.org/returnFees
+/// <https://schema.org/returnFees>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// The person who wrote the words.
 ///
-/// https://schema.org/lyricist
+/// <https://schema.org/lyricist>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

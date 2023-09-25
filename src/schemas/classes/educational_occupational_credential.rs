@@ -1,7 +1,7 @@
 use super::*;
 /// An educational or occupational credential. A diploma, academic degree, certification, qualification, badge, etc., that may be awarded to a person or other entity that meets the requirements defined by the credentialer.
 ///
-/// https://schema.org/EducationalOccupationalCredential
+/// <https://schema.org/EducationalOccupationalCredential>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

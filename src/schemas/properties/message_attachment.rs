@@ -1,7 +1,7 @@
 use super::*;
 /// A CreativeWork attached to the message.
 ///
-/// https://schema.org/messageAttachment
+/// <https://schema.org/messageAttachment>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

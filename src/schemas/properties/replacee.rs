@@ -1,7 +1,7 @@
 use super::*;
 /// A sub property of object. The object that is being replaced.
 ///
-/// https://schema.org/replacee
+/// <https://schema.org/replacee>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

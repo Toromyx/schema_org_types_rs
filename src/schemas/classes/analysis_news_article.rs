@@ -1,7 +1,7 @@
 use super::*;
 /// An AnalysisNewsArticle is a [[NewsArticle]] that, while based on factual reporting, incorporates the expertise of the author/producer, offering interpretations and conclusions.
 ///
-/// https://schema.org/AnalysisNewsArticle
+/// <https://schema.org/AnalysisNewsArticle>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

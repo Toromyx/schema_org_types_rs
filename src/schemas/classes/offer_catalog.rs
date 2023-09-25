@@ -1,7 +1,7 @@
 use super::*;
 /// An OfferCatalog is an ItemList that contains related Offers and/or further OfferCatalogs that are offeredBy the same provider.
 ///
-/// https://schema.org/OfferCatalog
+/// <https://schema.org/OfferCatalog>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

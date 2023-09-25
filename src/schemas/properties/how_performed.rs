@@ -1,7 +1,7 @@
 use super::*;
 /// How the procedure is performed.
 ///
-/// https://schema.org/howPerformed
+/// <https://schema.org/howPerformed>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

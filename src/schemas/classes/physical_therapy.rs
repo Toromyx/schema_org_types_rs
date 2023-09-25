@@ -1,7 +1,7 @@
 use super::*;
 /// A process of progressive physical care and rehabilitation aimed at improving a health condition.
 ///
-/// https://schema.org/PhysicalTherapy
+/// <https://schema.org/PhysicalTherapy>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

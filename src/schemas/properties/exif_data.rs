@@ -1,7 +1,7 @@
 use super::*;
 /// exif data for this object.
 ///
-/// https://schema.org/exifData
+/// <https://schema.org/exifData>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// Indicates a BioChemEntity that is (in some sense) a part of this BioChemEntity.
 ///
-/// https://schema.org/isPartOfBioChemEntity
+/// <https://schema.org/isPartOfBioChemEntity>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

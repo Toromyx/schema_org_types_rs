@@ -1,7 +1,7 @@
 use super::*;
 /// An event venue.
 ///
-/// https://schema.org/EventVenue
+/// <https://schema.org/EventVenue>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

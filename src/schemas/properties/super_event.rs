@@ -1,7 +1,7 @@
 use super::*;
 /// An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent.
 ///
-/// https://schema.org/superEvent
+/// <https://schema.org/superEvent>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

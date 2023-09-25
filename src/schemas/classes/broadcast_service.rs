@@ -1,7 +1,7 @@
 use super::*;
 /// A delivery service through which content is provided via broadcast over the air or online.
 ///
-/// https://schema.org/BroadcastService
+/// <https://schema.org/BroadcastService>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

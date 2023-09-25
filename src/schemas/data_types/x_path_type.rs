@@ -1,7 +1,7 @@
 use super::*;
 /// Text representing an XPath (typically but not necessarily version 1.0).
 ///
-/// https://schema.org/XPathType
+/// <https://schema.org/XPathType>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

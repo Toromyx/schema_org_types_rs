@@ -1,7 +1,7 @@
 use super::*;
 /// A podcast is an episodic series of digital audio or video files which a user can download and listen to.
 ///
-/// https://schema.org/PodcastSeries
+/// <https://schema.org/PodcastSeries>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

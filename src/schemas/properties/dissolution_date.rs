@@ -1,7 +1,7 @@
 use super::*;
 /// The date that this organization was dissolved.
 ///
-/// https://schema.org/dissolutionDate
+/// <https://schema.org/dissolutionDate>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

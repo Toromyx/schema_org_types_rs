@@ -1,7 +1,7 @@
 use super::*;
 /// Indicates if this web page element is the main subject of the page.
 ///
-/// https://schema.org/mainContentOfPage
+/// <https://schema.org/mainContentOfPage>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

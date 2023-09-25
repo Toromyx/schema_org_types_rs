@@ -1,7 +1,7 @@
 use super::*;
 /// Used to describe a seat, such as a reserved seat in an event reservation.
 ///
-/// https://schema.org/Seat
+/// <https://schema.org/Seat>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

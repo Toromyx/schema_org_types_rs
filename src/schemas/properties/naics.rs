@@ -1,7 +1,7 @@
 use super::*;
 /// The North American Industry Classification System (NAICS) code for a particular organization or business person.
 ///
-/// https://schema.org/naics
+/// <https://schema.org/naics>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// A class of medical drugs, e.g., statins. Classes can represent general pharmacological class, common mechanisms of action, common physiological effects, etc.
 ///
-/// https://schema.org/DrugClass
+/// <https://schema.org/DrugClass>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

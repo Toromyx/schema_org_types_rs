@@ -1,7 +1,7 @@
 use super::*;
 /// A slogan or motto associated with the item.
 ///
-/// https://schema.org/slogan
+/// <https://schema.org/slogan>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

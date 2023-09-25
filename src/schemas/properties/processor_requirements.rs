@@ -1,7 +1,7 @@
 use super::*;
 /// Processor architecture required to run the application (e.g. IA64).
 ///
-/// https://schema.org/processorRequirements
+/// <https://schema.org/processorRequirements>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// Indicates the primary entity described in some page or other CreativeWork.
 ///
-/// https://schema.org/mainEntity
+/// <https://schema.org/mainEntity>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

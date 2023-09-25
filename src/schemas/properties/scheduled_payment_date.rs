@@ -1,7 +1,7 @@
 use super::*;
 /// The date the invoice is scheduled to be paid.
 ///
-/// https://schema.org/scheduledPaymentDate
+/// <https://schema.org/scheduledPaymentDate>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

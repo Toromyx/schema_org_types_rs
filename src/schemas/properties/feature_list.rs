@@ -1,7 +1,7 @@
 use super::*;
 /// Features or modules provided by this application (and possibly required by other applications).
 ///
-/// https://schema.org/featureList
+/// <https://schema.org/featureList>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

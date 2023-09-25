@@ -1,7 +1,7 @@
 use super::*;
 /// Characteristics of the population for which this is intended, or which typically uses it, e.g. 'adults'.
 ///
-/// https://schema.org/targetPopulation
+/// <https://schema.org/targetPopulation>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

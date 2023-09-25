@@ -1,7 +1,7 @@
 use super::*;
 /// A sub property of recipient. The recipient copied on a message.
 ///
-/// https://schema.org/ccRecipient
+/// <https://schema.org/ccRecipient>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

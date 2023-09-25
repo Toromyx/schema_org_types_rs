@@ -1,7 +1,7 @@
 use super::*;
 /// Anatomical systems or structures that relate to the superficial anatomy.
 ///
-/// https://schema.org/relatedAnatomy
+/// <https://schema.org/relatedAnatomy>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

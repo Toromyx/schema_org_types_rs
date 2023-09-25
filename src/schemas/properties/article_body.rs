@@ -1,7 +1,7 @@
 use super::*;
 /// The actual body of the article.
 ///
-/// https://schema.org/articleBody
+/// <https://schema.org/articleBody>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

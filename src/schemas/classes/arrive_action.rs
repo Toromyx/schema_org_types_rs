@@ -1,7 +1,7 @@
 use super::*;
 /// The act of arriving at a place. An agent arrives at a destination from a fromLocation, optionally with participants.
 ///
-/// https://schema.org/ArriveAction
+/// <https://schema.org/ArriveAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

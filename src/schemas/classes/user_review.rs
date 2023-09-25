@@ -1,7 +1,7 @@
 use super::*;
 /// A review created by an end-user (e.g. consumer, purchaser, attendee etc.), in contrast with [[CriticReview]].
 ///
-/// https://schema.org/UserReview
+/// <https://schema.org/UserReview>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

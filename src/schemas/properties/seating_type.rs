@@ -1,7 +1,7 @@
 use super::*;
 /// The type/class of the seat.
 ///
-/// https://schema.org/seatingType
+/// <https://schema.org/seatingType>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// Contact details for further information relevant to this job posting.
 ///
-/// https://schema.org/applicationContact
+/// <https://schema.org/applicationContact>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

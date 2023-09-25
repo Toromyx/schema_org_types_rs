@@ -1,7 +1,7 @@
 use super::*;
 /// The bitrate of the media object.
 ///
-/// https://schema.org/bitrate
+/// <https://schema.org/bitrate>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

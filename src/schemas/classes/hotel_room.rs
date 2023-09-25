@@ -1,7 +1,7 @@
 use super::*;
 ///
 ///
-/// https://schema.org/HotelRoom
+/// <https://schema.org/HotelRoom>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -4,7 +4,7 @@ use super::*;
 /// The center of the circle can be indicated via the 'geoMidpoint' property, or more approximately using 'address', 'postalCode'.
 ///
 ///
-/// https://schema.org/GeoCircle
+/// <https://schema.org/GeoCircle>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

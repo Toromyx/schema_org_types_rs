@@ -1,7 +1,7 @@
 use super::*;
 /// A possible treatment to address this condition, sign or symptom.
 ///
-/// https://schema.org/possibleTreatment
+/// <https://schema.org/possibleTreatment>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

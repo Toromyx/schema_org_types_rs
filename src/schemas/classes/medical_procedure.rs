@@ -1,7 +1,7 @@
 use super::*;
 /// A process of care used in either a diagnostic, therapeutic, preventive or palliative capacity that relies on invasive (surgical), non-invasive, or other techniques.
 ///
-/// https://schema.org/MedicalProcedure
+/// <https://schema.org/MedicalProcedure>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

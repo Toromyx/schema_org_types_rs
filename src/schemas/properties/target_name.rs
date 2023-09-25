@@ -1,7 +1,7 @@
 use super::*;
 /// The name of a node in an established educational framework.
 ///
-/// https://schema.org/targetName
+/// <https://schema.org/targetName>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// A pointer to the organization or person making the offer.
 ///
-/// https://schema.org/offeredBy
+/// <https://schema.org/offeredBy>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

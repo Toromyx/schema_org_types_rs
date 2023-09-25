@@ -5,7 +5,7 @@ use super::*;
 /// See also the dedicated [document on the use of schema.org for marking up hotels and other forms of accommodations](/docs/hotels.html).
 ///
 ///
-/// https://schema.org/Campground
+/// <https://schema.org/Campground>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// The tier(s) for this network.
 ///
-/// https://schema.org/healthPlanNetworkTier
+/// <https://schema.org/healthPlanNetworkTier>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

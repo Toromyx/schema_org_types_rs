@@ -1,7 +1,7 @@
 use super::*;
 /// The name given to how bone physically connects to each other.
 ///
-/// https://schema.org/structuralClass
+/// <https://schema.org/structuralClass>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

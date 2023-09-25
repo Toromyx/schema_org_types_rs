@@ -1,7 +1,7 @@
 use super::*;
 /// An update to the LiveBlog.
 ///
-/// https://schema.org/liveBlogUpdate
+/// <https://schema.org/liveBlogUpdate>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

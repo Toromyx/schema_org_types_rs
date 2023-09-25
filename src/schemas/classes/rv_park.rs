@@ -1,7 +1,7 @@
 use super::*;
 /// A place offering space for "Recreational Vehicles", Caravans, mobile homes and the like.
 ///
-/// https://schema.org/RVPark
+/// <https://schema.org/RVPark>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

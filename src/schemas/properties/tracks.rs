@@ -1,7 +1,7 @@
 use super::*;
 /// A music recording (track)&#x2014;usually a single song.
 ///
-/// https://schema.org/tracks
+/// <https://schema.org/tracks>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

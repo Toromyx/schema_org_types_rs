@@ -1,7 +1,7 @@
 use super::*;
 /// An agent orders an object/product/service to be delivered/sent.
 ///
-/// https://schema.org/OrderAction
+/// <https://schema.org/OrderAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

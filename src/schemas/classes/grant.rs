@@ -7,7 +7,7 @@ use super::*;
 /// The amount of a [[Grant]] is represented using [[amount]] as a [[MonetaryAmount]].
 ///
 ///
-/// https://schema.org/Grant
+/// <https://schema.org/Grant>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

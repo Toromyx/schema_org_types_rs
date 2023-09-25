@@ -1,7 +1,7 @@
 use super::*;
 /// A food service, like breakfast, lunch, or dinner.
 ///
-/// https://schema.org/FoodService
+/// <https://schema.org/FoodService>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// An organization with archival holdings. An organization which keeps and preserves archival material and typically makes it accessible to the public.
 ///
-/// https://schema.org/ArchiveOrganization
+/// <https://schema.org/ArchiveOrganization>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

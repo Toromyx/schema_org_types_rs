@@ -1,7 +1,7 @@
 use super::*;
 /// A unique instance of a television BroadcastService on a CableOrSatelliteService lineup.
 ///
-/// https://schema.org/TelevisionChannel
+/// <https://schema.org/TelevisionChannel>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

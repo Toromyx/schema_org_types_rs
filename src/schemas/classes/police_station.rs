@@ -1,7 +1,7 @@
 use super::*;
 /// A police station.
 ///
-/// https://schema.org/PoliceStation
+/// <https://schema.org/PoliceStation>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

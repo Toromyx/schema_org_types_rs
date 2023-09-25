@@ -1,7 +1,7 @@
 use super::*;
 /// Any medical imaging modality typically used for diagnostic purposes.
 ///
-/// https://schema.org/ImagingTest
+/// <https://schema.org/ImagingTest>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

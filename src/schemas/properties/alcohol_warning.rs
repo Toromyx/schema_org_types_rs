@@ -1,7 +1,7 @@
 use super::*;
 /// Any precaution, guidance, contraindication, etc. related to consumption of alcohol while taking this drug.
 ///
-/// https://schema.org/alcoholWarning
+/// <https://schema.org/alcoholWarning>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

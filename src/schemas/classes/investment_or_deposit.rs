@@ -1,7 +1,7 @@
 use super::*;
 /// A type of financial product that typically requires the client to transfer funds to a financial service in return for potential beneficial financial return.
 ///
-/// https://schema.org/InvestmentOrDeposit
+/// <https://schema.org/InvestmentOrDeposit>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

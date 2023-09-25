@@ -1,7 +1,7 @@
 use super::*;
 /// The value of the dose, e.g. 500.
 ///
-/// https://schema.org/doseValue
+/// <https://schema.org/doseValue>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

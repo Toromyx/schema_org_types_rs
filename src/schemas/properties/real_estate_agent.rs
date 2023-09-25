@@ -1,7 +1,7 @@
 use super::*;
 /// A sub property of participant. The real estate agent involved in the action.
 ///
-/// https://schema.org/realEstateAgent
+/// <https://schema.org/realEstateAgent>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

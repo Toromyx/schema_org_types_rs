@@ -1,7 +1,7 @@
 use super::*;
 /// An agent bookmarks/flags/labels/tags/marks an object.
 ///
-/// https://schema.org/BookmarkAction
+/// <https://schema.org/BookmarkAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

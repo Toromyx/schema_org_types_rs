@@ -1,7 +1,7 @@
 use super::*;
 /// An organization that this person is affiliated with. For example, a school/university, a club, or a team.
 ///
-/// https://schema.org/affiliation
+/// <https://schema.org/affiliation>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// A mountain, like Mount Whitney or Mount Everest.
 ///
-/// https://schema.org/Mountain
+/// <https://schema.org/Mountain>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

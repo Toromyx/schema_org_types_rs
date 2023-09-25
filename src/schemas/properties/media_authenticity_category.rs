@@ -1,7 +1,7 @@
 use super::*;
 /// Indicates a MediaManipulationRatingEnumeration classification of a media object (in the context of how it was published or shared).
 ///
-/// https://schema.org/mediaAuthenticityCategory
+/// <https://schema.org/mediaAuthenticityCategory>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

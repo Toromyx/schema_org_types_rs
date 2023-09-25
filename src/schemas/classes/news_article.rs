@@ -4,7 +4,7 @@ use super::*;
 /// A more detailed overview of [schema.org News markup](/docs/news.html) is also available.
 ///
 ///
-/// https://schema.org/NewsArticle
+/// <https://schema.org/NewsArticle>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// An entry point, within some Web-based protocol.
 ///
-/// https://schema.org/EntryPoint
+/// <https://schema.org/EntryPoint>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

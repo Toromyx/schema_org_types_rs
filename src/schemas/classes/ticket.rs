@@ -1,7 +1,7 @@
 use super::*;
 /// Used to describe a ticket to an event, a flight, a bus ride, etc.
 ///
-/// https://schema.org/Ticket
+/// <https://schema.org/Ticket>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

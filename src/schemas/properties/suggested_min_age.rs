@@ -1,7 +1,7 @@
 use super::*;
 /// Minimum recommended age in years for the audience or user.
 ///
-/// https://schema.org/suggestedMinAge
+/// <https://schema.org/suggestedMinAge>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

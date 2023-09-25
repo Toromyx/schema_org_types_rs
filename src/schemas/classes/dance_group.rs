@@ -1,7 +1,7 @@
 use super::*;
 /// A dance group&#x2014;for example, the Alvin Ailey Dance Theater or Riverdance.
 ///
-/// https://schema.org/DanceGroup
+/// <https://schema.org/DanceGroup>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

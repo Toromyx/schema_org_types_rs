@@ -1,7 +1,7 @@
 use super::*;
 /// A river (for example, the broad majestic Shannon).
 ///
-/// https://schema.org/RiverBodyOfWater
+/// <https://schema.org/RiverBodyOfWater>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

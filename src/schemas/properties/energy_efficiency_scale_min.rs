@@ -1,7 +1,7 @@
 use super::*;
 /// Specifies the least energy efficient class on the regulated EU energy consumption scale for the product category a product belongs to. For example, energy consumption for televisions placed on the market after January 1, 2020 is scaled from D to A+++.
 ///
-/// https://schema.org/energyEfficiencyScaleMin
+/// <https://schema.org/energyEfficiencyScaleMin>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

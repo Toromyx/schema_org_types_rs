@@ -1,7 +1,7 @@
 use super::*;
 /// A person (alive, dead, undead, or fictional).
 ///
-/// https://schema.org/Person
+/// <https://schema.org/Person>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

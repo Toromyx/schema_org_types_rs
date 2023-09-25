@@ -1,7 +1,7 @@
 use super::*;
 /// A Service to transfer funds from a person or organization to a beneficiary person or organization.
 ///
-/// https://schema.org/PaymentService
+/// <https://schema.org/PaymentService>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

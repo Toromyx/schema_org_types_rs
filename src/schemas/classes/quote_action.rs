@@ -1,7 +1,7 @@
 use super::*;
 /// An agent quotes/estimates/appraises an object/product/service with a price at a location/store.
 ///
-/// https://schema.org/QuoteAction
+/// <https://schema.org/QuoteAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

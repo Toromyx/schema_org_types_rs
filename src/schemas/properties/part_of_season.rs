@@ -1,7 +1,7 @@
 use super::*;
 /// The season to which this episode belongs.
 ///
-/// https://schema.org/partOfSeason
+/// <https://schema.org/partOfSeason>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

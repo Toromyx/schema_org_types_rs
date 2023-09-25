@@ -1,7 +1,7 @@
 use super::*;
 /// Indicates whether the book is an abridged edition.
 ///
-/// https://schema.org/abridged
+/// <https://schema.org/abridged>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

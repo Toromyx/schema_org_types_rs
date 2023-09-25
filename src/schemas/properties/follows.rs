@@ -1,7 +1,7 @@
 use super::*;
 /// The most generic uni-directional social relation.
 ///
-/// https://schema.org/follows
+/// <https://schema.org/follows>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

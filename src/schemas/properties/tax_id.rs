@@ -1,7 +1,7 @@
 use super::*;
 /// The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
 ///
-/// https://schema.org/taxID
+/// <https://schema.org/taxID>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

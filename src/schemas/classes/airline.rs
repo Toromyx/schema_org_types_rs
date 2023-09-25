@@ -1,7 +1,7 @@
 use super::*;
 /// An organization that provides flights for passengers.
 ///
-/// https://schema.org/Airline
+/// <https://schema.org/Airline>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

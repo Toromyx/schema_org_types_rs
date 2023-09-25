@@ -1,7 +1,7 @@
 use super::*;
 /// Specifies an applicable return policy (from an enumeration).
 ///
-/// https://schema.org/returnPolicyCategory
+/// <https://schema.org/returnPolicyCategory>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

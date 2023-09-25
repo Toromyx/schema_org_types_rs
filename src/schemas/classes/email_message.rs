@@ -1,7 +1,7 @@
 use super::*;
 /// An email message.
 ///
-/// https://schema.org/EmailMessage
+/// <https://schema.org/EmailMessage>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

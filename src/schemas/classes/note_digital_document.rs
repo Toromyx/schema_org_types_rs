@@ -1,7 +1,7 @@
 use super::*;
 /// A file containing a note, primarily for the author.
 ///
-/// https://schema.org/NoteDigitalDocument
+/// <https://schema.org/NoteDigitalDocument>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

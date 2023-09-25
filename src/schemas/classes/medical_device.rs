@@ -1,7 +1,7 @@
 use super::*;
 /// Any object used in a medical capacity, such as to diagnose or treat a patient.
 ///
-/// https://schema.org/MedicalDevice
+/// <https://schema.org/MedicalDevice>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

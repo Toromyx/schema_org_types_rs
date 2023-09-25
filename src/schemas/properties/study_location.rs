@@ -1,7 +1,7 @@
 use super::*;
 /// The location in which the study is taking/took place.
 ///
-/// https://schema.org/studyLocation
+/// <https://schema.org/studyLocation>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

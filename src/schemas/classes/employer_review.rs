@@ -1,7 +1,7 @@
 use super::*;
 /// An [[EmployerReview]] is a review of an [[Organization]] regarding its role as an employer, written by a current or former employee of that organization.
 ///
-/// https://schema.org/EmployerReview
+/// <https://schema.org/EmployerReview>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

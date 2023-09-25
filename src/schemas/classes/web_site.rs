@@ -1,7 +1,7 @@
 use super::*;
 /// A WebSite is a set of related web pages and other items typically served from a single web domain and accessible via URLs.
 ///
-/// https://schema.org/WebSite
+/// <https://schema.org/WebSite>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

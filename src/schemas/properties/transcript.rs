@@ -1,7 +1,7 @@
 use super::*;
 /// If this MediaObject is an AudioObject or VideoObject, the transcript of that object.
 ///
-/// https://schema.org/transcript
+/// <https://schema.org/transcript>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

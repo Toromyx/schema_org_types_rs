@@ -1,7 +1,7 @@
 use super::*;
 /// The party holding the legal copyright to the CreativeWork.
 ///
-/// https://schema.org/copyrightHolder
+/// <https://schema.org/copyrightHolder>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

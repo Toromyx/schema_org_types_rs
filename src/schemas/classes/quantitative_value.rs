@@ -1,7 +1,7 @@
 use super::*;
 /// A point value or interval for product characteristics and other purposes.
 ///
-/// https://schema.org/QuantitativeValue
+/// <https://schema.org/QuantitativeValue>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

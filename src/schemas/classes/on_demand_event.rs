@@ -1,7 +1,7 @@
 use super::*;
 /// A publication event, e.g. catch-up TV or radio podcast, during which a program is available on-demand.
 ///
-/// https://schema.org/OnDemandEvent
+/// <https://schema.org/OnDemandEvent>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

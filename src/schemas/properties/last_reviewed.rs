@@ -1,7 +1,7 @@
 use super::*;
 /// Date on which the content on this web page was last reviewed for accuracy and/or completeness.
 ///
-/// https://schema.org/lastReviewed
+/// <https://schema.org/lastReviewed>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

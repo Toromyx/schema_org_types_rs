@@ -1,7 +1,7 @@
 use super::*;
 /// A set of requirements that must be fulfilled in order to perform an Action.
 ///
-/// https://schema.org/ActionAccessSpecification
+/// <https://schema.org/ActionAccessSpecification>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

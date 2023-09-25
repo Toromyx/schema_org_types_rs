@@ -1,7 +1,7 @@
 use super::*;
 /// Position of the clip within an ordered group of clips.
 ///
-/// https://schema.org/clipNumber
+/// <https://schema.org/clipNumber>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

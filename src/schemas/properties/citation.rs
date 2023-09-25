@@ -1,7 +1,7 @@
 use super::*;
 /// A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.
 ///
-/// https://schema.org/citation
+/// <https://schema.org/citation>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

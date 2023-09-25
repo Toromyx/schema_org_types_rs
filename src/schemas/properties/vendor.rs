@@ -1,7 +1,7 @@
 use super::*;
 /// 'vendor' is an earlier term for 'seller'.
 ///
-/// https://schema.org/vendor
+/// <https://schema.org/vendor>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

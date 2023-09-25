@@ -1,7 +1,7 @@
 use super::*;
 /// The range of temporal applicability of a dataset, e.g. for a 2011 census dataset, the year 2011 (in ISO 8601 time interval format).
 ///
-/// https://schema.org/datasetTimeInterval
+/// <https://schema.org/datasetTimeInterval>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

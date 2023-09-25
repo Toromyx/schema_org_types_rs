@@ -1,7 +1,7 @@
 use super::*;
 /// An award won by or for this item.
 ///
-/// https://schema.org/award
+/// <https://schema.org/award>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

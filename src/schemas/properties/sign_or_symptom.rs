@@ -1,7 +1,7 @@
 use super::*;
 /// A sign or symptom of this condition. Signs are objective or physically observable manifestations of the medical condition while symptoms are the subjective experience of the medical condition.
 ///
-/// https://schema.org/signOrSymptom
+/// <https://schema.org/signOrSymptom>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

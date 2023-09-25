@@ -1,7 +1,7 @@
 use super::*;
 /// A day spa.
 ///
-/// https://schema.org/DaySpa
+/// <https://schema.org/DaySpa>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

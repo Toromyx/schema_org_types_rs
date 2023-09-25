@@ -1,7 +1,7 @@
 use super::*;
 /// The title of the job.
 ///
-/// https://schema.org/title
+/// <https://schema.org/title>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

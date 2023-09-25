@@ -1,7 +1,7 @@
 use super::*;
 /// A moving company.
 ///
-/// https://schema.org/MovingCompany
+/// <https://schema.org/MovingCompany>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

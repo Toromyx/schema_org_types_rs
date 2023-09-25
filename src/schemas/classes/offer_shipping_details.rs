@@ -12,7 +12,7 @@ use super::*;
 /// E.g. Cheaper and slower: $5 in 5-7 days
 /// or Fast and expensive: $15 in 1-2 days.
 ///
-/// https://schema.org/OfferShippingDetails
+/// <https://schema.org/OfferShippingDetails>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// A legislative building&#x2014;for example, the state capitol.
 ///
-/// https://schema.org/LegislativeBuilding
+/// <https://schema.org/LegislativeBuilding>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

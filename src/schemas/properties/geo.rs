@@ -1,7 +1,7 @@
 use super::*;
 /// The geo coordinates of the place.
 ///
-/// https://schema.org/geo
+/// <https://schema.org/geo>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

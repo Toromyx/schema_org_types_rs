@@ -1,7 +1,7 @@
 use super::*;
 /// A means of accessing the service (e.g. a phone bank, a web site, a location, etc.).
 ///
-/// https://schema.org/availableChannel
+/// <https://schema.org/availableChannel>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

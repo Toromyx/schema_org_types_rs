@@ -1,7 +1,7 @@
 use super::*;
 /// The type of educational or occupational program. For example, classroom, internship, alternance, etc.
 ///
-/// https://schema.org/programType
+/// <https://schema.org/programType>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

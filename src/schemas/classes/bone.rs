@@ -1,7 +1,7 @@
 use super::*;
 /// Rigid connective tissue that comprises up the skeletal structure of the human body.
 ///
-/// https://schema.org/Bone
+/// <https://schema.org/Bone>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// Any membership in a frequent flyer, hotel loyalty program, etc. being applied to the reservation.
 ///
-/// https://schema.org/programMembershipUsed
+/// <https://schema.org/programMembershipUsed>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

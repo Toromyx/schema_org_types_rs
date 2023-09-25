@@ -1,7 +1,7 @@
 use super::*;
 /// The typical working hours for this job (e.g. 1st shift, night shift, 8am-5pm).
 ///
-/// https://schema.org/workHours
+/// <https://schema.org/workHours>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

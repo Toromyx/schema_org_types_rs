@@ -1,7 +1,7 @@
 use super::*;
 /// The empirical formula is the simplest whole number ratio of all the atoms in a molecule.
 ///
-/// https://schema.org/molecularFormula
+/// <https://schema.org/molecularFormula>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

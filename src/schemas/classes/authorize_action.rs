@@ -1,7 +1,7 @@
 use super::*;
 /// The act of granting permission to an object.
 ///
-/// https://schema.org/AuthorizeAction
+/// <https://schema.org/AuthorizeAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

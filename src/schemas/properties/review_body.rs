@@ -1,7 +1,7 @@
 use super::*;
 /// The actual body of the review.
 ///
-/// https://schema.org/reviewBody
+/// <https://schema.org/reviewBody>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

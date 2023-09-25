@@ -1,7 +1,7 @@
 use super::*;
 /// One of the continents (for example, Europe or Africa).
 ///
-/// https://schema.org/Continent
+/// <https://schema.org/Continent>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

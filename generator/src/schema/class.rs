@@ -46,6 +46,14 @@ impl Schema for Class {
         &self.name
     }
 
+    fn description(&self) -> &String {
+        &self.description
+    }
+
+    fn iri(&self) -> &String {
+        &self.iri
+    }
+
     fn section(&self) -> &SchemaSection {
         &self.section
     }
@@ -85,11 +93,7 @@ impl Schema for Class {
 
 impl ToTokens for Class {
     fn to_tokens(&self, tokens: &mut TokenStream) {
-        let doc_lines = DocLines(vec![
-            self.description.clone(),
-            String::from(""),
-            self.iri.clone(),
-        ]);
+        let doc_lines = self.doc_lines_token_stream();
         let serde_derive = serde_derive();
         let name = TokenStream::from_str(&self.name.to_case(Case::UpperCamel)).unwrap();
         let fields = self

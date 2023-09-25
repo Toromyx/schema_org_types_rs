@@ -1,7 +1,7 @@
 use super::*;
 /// Strength of the guideline's recommendation (e.g. 'class I').
 ///
-/// https://schema.org/recommendationStrength
+/// <https://schema.org/recommendationStrength>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

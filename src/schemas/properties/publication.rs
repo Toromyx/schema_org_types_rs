@@ -1,7 +1,7 @@
 use super::*;
 /// A publication event associated with the item.
 ///
-/// https://schema.org/publication
+/// <https://schema.org/publication>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

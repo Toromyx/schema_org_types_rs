@@ -1,7 +1,7 @@
 use super::*;
 /// The URL at which a reply may be posted to the specified UserComment.
 ///
-/// https://schema.org/replyToUrl
+/// <https://schema.org/replyToUrl>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

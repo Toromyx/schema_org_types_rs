@@ -1,7 +1,7 @@
 use super::*;
 /// The organization issuing the ticket or permit.
 ///
-/// https://schema.org/issuedBy
+/// <https://schema.org/issuedBy>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// Link to the repository where the un-compiled, human readable code and related code is located (SVN, GitHub, CodePlex).
 ///
-/// https://schema.org/codeRepository
+/// <https://schema.org/codeRepository>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

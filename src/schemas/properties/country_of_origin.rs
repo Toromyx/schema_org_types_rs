@@ -5,7 +5,7 @@ use super::*;
 ///
 /// In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.
 ///
-/// https://schema.org/countryOfOrigin
+/// <https://schema.org/countryOfOrigin>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

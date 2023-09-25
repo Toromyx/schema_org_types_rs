@@ -1,7 +1,7 @@
 use super::*;
 /// Description of benefits associated with the job.
 ///
-/// https://schema.org/benefits
+/// <https://schema.org/benefits>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

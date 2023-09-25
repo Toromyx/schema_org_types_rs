@@ -1,7 +1,7 @@
 use super::*;
 /// The delivery method(s) available for this offer.
 ///
-/// https://schema.org/availableDeliveryMethod
+/// <https://schema.org/availableDeliveryMethod>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

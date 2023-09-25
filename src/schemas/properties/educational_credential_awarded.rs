@@ -1,7 +1,7 @@
 use super::*;
 /// A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course or program.
 ///
-/// https://schema.org/educationalCredentialAwarded
+/// <https://schema.org/educationalCredentialAwarded>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

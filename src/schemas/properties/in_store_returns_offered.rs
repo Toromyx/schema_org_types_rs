@@ -1,7 +1,7 @@
 use super::*;
 /// Are in-store returns offered? (For more advanced return methods use the [[returnMethod]] property.)
 ///
-/// https://schema.org/inStoreReturnsOffered
+/// <https://schema.org/inStoreReturnsOffered>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

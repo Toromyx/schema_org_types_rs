@@ -1,7 +1,7 @@
 use super::*;
 /// Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
 ///
-/// https://schema.org/potentialAction
+/// <https://schema.org/potentialAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

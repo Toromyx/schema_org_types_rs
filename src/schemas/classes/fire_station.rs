@@ -1,7 +1,7 @@
 use super::*;
 /// A fire station. With firemen.
 ///
-/// https://schema.org/FireStation
+/// <https://schema.org/FireStation>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

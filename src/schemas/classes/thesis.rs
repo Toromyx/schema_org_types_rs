@@ -1,7 +1,7 @@
 use super::*;
 /// A thesis or dissertation document submitted in support of candidature for an academic degree or professional qualification.
 ///
-/// https://schema.org/Thesis
+/// <https://schema.org/Thesis>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

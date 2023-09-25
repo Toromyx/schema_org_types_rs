@@ -1,7 +1,7 @@
 use super::*;
 /// The act of committing to/adopting an object.\n\nRelated actions:\n\n* [[RejectAction]]: The antonym of AcceptAction.
 ///
-/// https://schema.org/AcceptAction
+/// <https://schema.org/AcceptAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

@@ -1,7 +1,7 @@
 use super::*;
 /// Quiz: A test of knowledge, skills and abilities.
 ///
-/// https://schema.org/Quiz
+/// <https://schema.org/Quiz>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

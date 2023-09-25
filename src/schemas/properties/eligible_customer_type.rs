@@ -1,7 +1,7 @@
 use super::*;
 /// The type(s) of customers for which the given offer is valid.
 ///
-/// https://schema.org/eligibleCustomerType
+/// <https://schema.org/eligibleCustomerType>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(

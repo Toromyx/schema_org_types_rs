@@ -1,7 +1,7 @@
 use super::*;
 /// The act of capturing sound and moving images on film, video, or digitally.
 ///
-/// https://schema.org/FilmAction
+/// <https://schema.org/FilmAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
 #[cfg_attr(
