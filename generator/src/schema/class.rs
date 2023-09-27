@@ -118,8 +118,8 @@ impl ToTokens for Class {
         tokens.append_all(quote!(
             use super::*;
             #doc_lines
-            #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
-            #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
+            #[cfg_attr(feature = "derive-debug", derive(Debug))]
+            #[cfg_attr(feature = "derive-clone", derive(Clone))]
             #serde_derive
             pub struct #name {
                 #(#fields),*

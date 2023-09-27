@@ -1,11 +1,8 @@
 use super::*;
 /// <https://schema.org/PropertyValueSpecification>
-#[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
-#[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
-#[cfg_attr(
-    any(feature = "serde", doc),
-    derive(serde::Serialize, serde::Deserialize)
-)]
+#[cfg_attr(feature = "derive-debug", derive(Debug))]
+#[cfg_attr(feature = "derive-clone", derive(Clone))]
+#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 pub struct PropertyValueSpecification {
     #[cfg(any(
         any(
@@ -14,12 +11,9 @@ pub struct PropertyValueSpecification {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "additionalType"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "additionalType"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#additional_type: Vec<AdditionalTypeProperty>,
     #[cfg(any(
         any(
@@ -28,12 +22,9 @@ pub struct PropertyValueSpecification {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "alternateName"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "alternateName"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#alternate_name: Vec<AlternateNameProperty>,
     #[cfg(any(
         any(
@@ -42,12 +33,9 @@ pub struct PropertyValueSpecification {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "defaultValue"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "defaultValue"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#default_value: Vec<DefaultValueProperty>,
     #[cfg(any(
         any(
@@ -56,12 +44,9 @@ pub struct PropertyValueSpecification {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "description"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "description"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#description: Vec<DescriptionProperty>,
     #[cfg(any(
         any(
@@ -70,15 +55,9 @@ pub struct PropertyValueSpecification {
         ),
         doc
     ))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(rename = "disambiguatingDescription")
-    )]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "disambiguatingDescription"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
     #[cfg(any(
         any(
@@ -87,23 +66,17 @@ pub struct PropertyValueSpecification {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "identifier"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "identifier"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#identifier: Vec<IdentifierProperty>,
     #[cfg(any(
         any(feature = "image-property-schema", feature = "general-schema-section"),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "image"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "image"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#image: Vec<ImageProperty>,
     #[cfg(any(
         any(
@@ -112,12 +85,9 @@ pub struct PropertyValueSpecification {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "mainEntityOfPage"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "mainEntityOfPage"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
     #[cfg(any(
         any(
@@ -126,12 +96,9 @@ pub struct PropertyValueSpecification {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "maxValue"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "maxValue"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#max_value: Vec<MaxValueProperty>,
     #[cfg(any(
         any(
@@ -140,12 +107,9 @@ pub struct PropertyValueSpecification {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "minValue"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "minValue"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#min_value: Vec<MinValueProperty>,
     #[cfg(any(
         any(
@@ -154,23 +118,17 @@ pub struct PropertyValueSpecification {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "multipleValues"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "multipleValues"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#multiple_values: Vec<MultipleValuesProperty>,
     #[cfg(any(
         any(feature = "name-property-schema", feature = "general-schema-section"),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "name"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "name"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#name: Vec<NameProperty>,
     #[cfg(any(
         any(
@@ -179,12 +137,9 @@ pub struct PropertyValueSpecification {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "potentialAction"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "potentialAction"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#potential_action: Vec<PotentialActionProperty>,
     #[cfg(any(
         any(
@@ -193,12 +148,9 @@ pub struct PropertyValueSpecification {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "readonlyValue"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "readonlyValue"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#readonly_value: Vec<ReadonlyValueProperty>,
     #[cfg(any(
         any(
@@ -207,12 +159,9 @@ pub struct PropertyValueSpecification {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "sameAs"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "sameAs"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#same_as: Vec<SameAsProperty>,
     #[cfg(any(
         any(
@@ -221,12 +170,9 @@ pub struct PropertyValueSpecification {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "stepValue"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "stepValue"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#step_value: Vec<StepValueProperty>,
     #[cfg(any(
         any(
@@ -235,23 +181,17 @@ pub struct PropertyValueSpecification {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "subjectOf"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "subjectOf"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#subject_of: Vec<SubjectOfProperty>,
     #[cfg(any(
         any(feature = "url-property-schema", feature = "general-schema-section"),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "url"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "url"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#url: Vec<UrlProperty>,
     #[cfg(any(
         any(
@@ -260,12 +200,9 @@ pub struct PropertyValueSpecification {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "valueMaxLength"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "valueMaxLength"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#value_max_length: Vec<ValueMaxLengthProperty>,
     #[cfg(any(
         any(
@@ -274,12 +211,9 @@ pub struct PropertyValueSpecification {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "valueMinLength"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "valueMinLength"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#value_min_length: Vec<ValueMinLengthProperty>,
     #[cfg(any(
         any(
@@ -288,12 +222,9 @@ pub struct PropertyValueSpecification {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "valueName"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "valueName"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#value_name: Vec<ValueNameProperty>,
     #[cfg(any(
         any(
@@ -302,12 +233,9 @@ pub struct PropertyValueSpecification {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "valuePattern"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "valuePattern"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#value_pattern: Vec<ValuePatternProperty>,
     #[cfg(any(
         any(
@@ -316,11 +244,8 @@ pub struct PropertyValueSpecification {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "valueRequired"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "valueRequired"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#value_required: Vec<ValueRequiredProperty>,
 }

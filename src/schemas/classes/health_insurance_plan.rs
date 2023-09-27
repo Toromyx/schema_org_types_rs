@@ -1,11 +1,8 @@
 use super::*;
 /// <https://schema.org/HealthInsurancePlan>
-#[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
-#[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
-#[cfg_attr(
-    any(feature = "serde", doc),
-    derive(serde::Serialize, serde::Deserialize)
-)]
+#[cfg_attr(feature = "derive-debug", derive(Debug))]
+#[cfg_attr(feature = "derive-clone", derive(Clone))]
+#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 pub struct HealthInsurancePlan {
     #[cfg(any(
         any(
@@ -14,12 +11,9 @@ pub struct HealthInsurancePlan {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "additionalType"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "additionalType"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#additional_type: Vec<AdditionalTypeProperty>,
     #[cfg(any(
         any(
@@ -28,12 +22,9 @@ pub struct HealthInsurancePlan {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "alternateName"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "alternateName"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#alternate_name: Vec<AlternateNameProperty>,
     #[cfg(any(
         any(
@@ -42,12 +33,9 @@ pub struct HealthInsurancePlan {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "benefitsSummaryUrl"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "benefitsSummaryUrl"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#benefits_summary_url: Vec<BenefitsSummaryUrlProperty>,
     #[cfg(any(
         any(
@@ -56,12 +44,9 @@ pub struct HealthInsurancePlan {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "contactPoint"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "contactPoint"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#contact_point: Vec<ContactPointProperty>,
     #[cfg(any(
         any(
@@ -70,12 +55,9 @@ pub struct HealthInsurancePlan {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "description"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "description"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#description: Vec<DescriptionProperty>,
     #[cfg(any(
         any(
@@ -84,15 +66,9 @@ pub struct HealthInsurancePlan {
         ),
         doc
     ))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(rename = "disambiguatingDescription")
-    )]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "disambiguatingDescription"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
     #[cfg(any(
         any(
@@ -101,12 +77,9 @@ pub struct HealthInsurancePlan {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "healthPlanDrugOption"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "healthPlanDrugOption"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#health_plan_drug_option: Vec<HealthPlanDrugOptionProperty>,
     #[cfg(any(
         any(
@@ -115,12 +88,9 @@ pub struct HealthInsurancePlan {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "healthPlanDrugTier"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "healthPlanDrugTier"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#health_plan_drug_tier: Vec<HealthPlanDrugTierProperty>,
     #[cfg(any(
         any(
@@ -129,12 +99,9 @@ pub struct HealthInsurancePlan {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "healthPlanId"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "healthPlanId"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#health_plan_id: Vec<HealthPlanIdProperty>,
     #[cfg(any(
         any(
@@ -143,12 +110,9 @@ pub struct HealthInsurancePlan {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "healthPlanMarketingUrl"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "healthPlanMarketingUrl"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#health_plan_marketing_url: Vec<HealthPlanMarketingUrlProperty>,
     #[cfg(any(
         any(
@@ -157,23 +121,17 @@ pub struct HealthInsurancePlan {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "identifier"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "identifier"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#identifier: Vec<IdentifierProperty>,
     #[cfg(any(
         any(feature = "image-property-schema", feature = "general-schema-section"),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "image"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "image"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#image: Vec<ImageProperty>,
     #[cfg(any(
         any(
@@ -182,15 +140,9 @@ pub struct HealthInsurancePlan {
         ),
         doc
     ))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(rename = "includesHealthPlanFormulary")
-    )]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "includesHealthPlanFormulary"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#includes_health_plan_formulary: Vec<IncludesHealthPlanFormularyProperty>,
     #[cfg(any(
         any(
@@ -199,15 +151,9 @@ pub struct HealthInsurancePlan {
         ),
         doc
     ))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(rename = "includesHealthPlanNetwork")
-    )]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "includesHealthPlanNetwork"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#includes_health_plan_network: Vec<IncludesHealthPlanNetworkProperty>,
     #[cfg(any(
         any(
@@ -216,23 +162,17 @@ pub struct HealthInsurancePlan {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "mainEntityOfPage"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "mainEntityOfPage"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
     #[cfg(any(
         any(feature = "name-property-schema", feature = "general-schema-section"),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "name"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "name"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#name: Vec<NameProperty>,
     #[cfg(any(
         any(
@@ -241,12 +181,9 @@ pub struct HealthInsurancePlan {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "potentialAction"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "potentialAction"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#potential_action: Vec<PotentialActionProperty>,
     #[cfg(any(
         any(
@@ -255,12 +192,9 @@ pub struct HealthInsurancePlan {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "sameAs"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "sameAs"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#same_as: Vec<SameAsProperty>,
     #[cfg(any(
         any(
@@ -269,23 +203,17 @@ pub struct HealthInsurancePlan {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "subjectOf"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "subjectOf"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#subject_of: Vec<SubjectOfProperty>,
     #[cfg(any(
         any(feature = "url-property-schema", feature = "general-schema-section"),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "url"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "url"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#url: Vec<UrlProperty>,
     #[cfg(any(
         any(
@@ -294,14 +222,8 @@ pub struct HealthInsurancePlan {
         ),
         doc
     ))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(rename = "usesHealthPlanIdStandard")
-    )]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "usesHealthPlanIdStandard"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#uses_health_plan_id_standard: Vec<UsesHealthPlanIdStandardProperty>,
 }

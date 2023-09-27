@@ -1,22 +1,16 @@
 use super::*;
 /// <https://schema.org/DigitalDocument>
-#[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
-#[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
-#[cfg_attr(
-    any(feature = "serde", doc),
-    derive(serde::Serialize, serde::Deserialize)
-)]
+#[cfg_attr(feature = "derive-debug", derive(Debug))]
+#[cfg_attr(feature = "derive-clone", derive(Clone))]
+#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 pub struct DigitalDocument {
     #[cfg(any(
         any(feature = "about-property-schema", feature = "general-schema-section"),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "about"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "about"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#about: Vec<AboutProperty>,
     #[cfg(any(
         any(
@@ -25,12 +19,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "abstract"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "abstract"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#abstract: Vec<AbstractProperty>,
     #[cfg(any(
         any(
@@ -39,12 +30,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "accessMode"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "accessMode"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#access_mode: Vec<AccessModeProperty>,
     #[cfg(any(
         any(
@@ -53,12 +41,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "accessModeSufficient"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "accessModeSufficient"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#access_mode_sufficient: Vec<AccessModeSufficientProperty>,
     #[cfg(any(
         any(
@@ -67,12 +52,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "accessibilityAPI"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "accessibilityAPI"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#accessibility_api: Vec<AccessibilityApiProperty>,
     #[cfg(any(
         any(
@@ -81,12 +63,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "accessibilityControl"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "accessibilityControl"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#accessibility_control: Vec<AccessibilityControlProperty>,
     #[cfg(any(
         any(
@@ -95,12 +74,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "accessibilityFeature"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "accessibilityFeature"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#accessibility_feature: Vec<AccessibilityFeatureProperty>,
     #[cfg(any(
         any(
@@ -109,12 +85,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "accessibilityHazard"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "accessibilityHazard"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#accessibility_hazard: Vec<AccessibilityHazardProperty>,
     #[cfg(any(
         any(
@@ -123,12 +96,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "accessibilitySummary"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "accessibilitySummary"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#accessibility_summary: Vec<AccessibilitySummaryProperty>,
     #[cfg(any(
         any(
@@ -137,12 +107,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "accountablePerson"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "accountablePerson"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#accountable_person: Vec<AccountablePersonProperty>,
     #[cfg(any(
         any(
@@ -151,12 +118,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "acquireLicensePage"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "acquireLicensePage"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#acquire_license_page: Vec<AcquireLicensePageProperty>,
     #[cfg(any(
         any(
@@ -165,12 +129,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "additionalType"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "additionalType"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#additional_type: Vec<AdditionalTypeProperty>,
     #[cfg(any(
         any(
@@ -179,12 +140,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "aggregateRating"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "aggregateRating"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#aggregate_rating: Vec<AggregateRatingProperty>,
     #[cfg(any(
         any(
@@ -193,12 +151,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "alternateName"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "alternateName"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#alternate_name: Vec<AlternateNameProperty>,
     #[cfg(any(
         any(
@@ -207,12 +162,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "alternativeHeadline"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "alternativeHeadline"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#alternative_headline: Vec<AlternativeHeadlineProperty>,
     #[cfg(any(
         any(
@@ -221,12 +173,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "archivedAt"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "archivedAt"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#archived_at: Vec<ArchivedAtProperty>,
     #[cfg(any(
         any(
@@ -235,12 +184,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "assesses"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "assesses"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#assesses: Vec<AssessesProperty>,
     #[cfg(any(
         any(
@@ -249,12 +195,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "associatedMedia"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "associatedMedia"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#associated_media: Vec<AssociatedMediaProperty>,
     #[cfg(any(
         any(
@@ -263,56 +206,41 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "audience"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "audience"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#audience: Vec<AudienceProperty>,
     #[cfg(any(
         any(feature = "audio-property-schema", feature = "general-schema-section"),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "audio"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "audio"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#audio: Vec<AudioProperty>,
     #[cfg(any(
         any(feature = "author-property-schema", feature = "general-schema-section"),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "author"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "author"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#author: Vec<AuthorProperty>,
     #[cfg(any(
         any(feature = "award-property-schema", feature = "general-schema-section"),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "award"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "award"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#award: Vec<AwardProperty>,
     #[cfg(any(
         any(feature = "awards-property-schema", feature = "general-schema-section"),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "awards"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "awards"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#awards: Vec<AwardsProperty>,
     #[cfg(any(
         any(
@@ -321,12 +249,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "character"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "character"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#character: Vec<CharacterProperty>,
     #[cfg(any(
         any(
@@ -335,12 +260,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "citation"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "citation"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#citation: Vec<CitationProperty>,
     #[cfg(any(
         any(
@@ -349,12 +271,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "comment"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "comment"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#comment: Vec<CommentProperty>,
     #[cfg(any(
         any(
@@ -363,12 +282,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "commentCount"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "commentCount"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#comment_count: Vec<CommentCountProperty>,
     #[cfg(any(
         any(
@@ -377,12 +293,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "conditionsOfAccess"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "conditionsOfAccess"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#conditions_of_access: Vec<ConditionsOfAccessProperty>,
     #[cfg(any(
         any(
@@ -391,12 +304,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "contentLocation"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "contentLocation"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#content_location: Vec<ContentLocationProperty>,
     #[cfg(any(
         any(
@@ -405,12 +315,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "contentRating"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "contentRating"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#content_rating: Vec<ContentRatingProperty>,
     #[cfg(any(
         any(
@@ -419,12 +326,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "contentReferenceTime"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "contentReferenceTime"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#content_reference_time: Vec<ContentReferenceTimeProperty>,
     #[cfg(any(
         any(
@@ -433,12 +337,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "contributor"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "contributor"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#contributor: Vec<ContributorProperty>,
     #[cfg(any(
         any(
@@ -447,12 +348,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "copyrightHolder"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "copyrightHolder"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#copyright_holder: Vec<CopyrightHolderProperty>,
     #[cfg(any(
         any(
@@ -461,12 +359,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "copyrightNotice"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "copyrightNotice"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#copyright_notice: Vec<CopyrightNoticeProperty>,
     #[cfg(any(
         any(
@@ -475,12 +370,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "copyrightYear"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "copyrightYear"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#copyright_year: Vec<CopyrightYearProperty>,
     #[cfg(any(
         any(
@@ -489,12 +381,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "correction"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "correction"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#correction: Vec<CorrectionProperty>,
     #[cfg(any(
         any(
@@ -503,12 +392,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "countryOfOrigin"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "countryOfOrigin"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#country_of_origin: Vec<CountryOfOriginProperty>,
     #[cfg(any(
         any(
@@ -517,12 +403,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "creativeWorkStatus"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "creativeWorkStatus"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#creative_work_status: Vec<CreativeWorkStatusProperty>,
     #[cfg(any(
         any(
@@ -531,12 +414,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "creator"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "creator"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#creator: Vec<CreatorProperty>,
     #[cfg(any(
         any(
@@ -545,12 +425,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "creditText"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "creditText"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#credit_text: Vec<CreditTextProperty>,
     #[cfg(any(
         any(
@@ -559,12 +436,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "dateCreated"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "dateCreated"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#date_created: Vec<DateCreatedProperty>,
     #[cfg(any(
         any(
@@ -573,12 +447,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "dateModified"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "dateModified"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#date_modified: Vec<DateModifiedProperty>,
     #[cfg(any(
         any(
@@ -587,12 +458,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "datePublished"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "datePublished"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#date_published: Vec<DatePublishedProperty>,
     #[cfg(any(
         any(
@@ -601,12 +469,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "description"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "description"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#description: Vec<DescriptionProperty>,
     #[cfg(any(
         any(
@@ -615,15 +480,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(rename = "disambiguatingDescription")
-    )]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "disambiguatingDescription"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
     #[cfg(any(
         any(
@@ -632,12 +491,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "discussionUrl"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "discussionUrl"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#discussion_url: Vec<DiscussionUrlProperty>,
     #[cfg(any(
         any(
@@ -646,23 +502,17 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "editEIDR"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "editEIDR"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#edit_eidr: Vec<EditEidrProperty>,
     #[cfg(any(
         any(feature = "editor-property-schema", feature = "general-schema-section"),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "editor"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "editor"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#editor: Vec<EditorProperty>,
     #[cfg(any(
         any(
@@ -671,12 +521,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "educationalAlignment"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "educationalAlignment"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#educational_alignment: Vec<EducationalAlignmentProperty>,
     #[cfg(any(
         any(
@@ -685,12 +532,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "educationalLevel"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "educationalLevel"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#educational_level: Vec<EducationalLevelProperty>,
     #[cfg(any(
         any(
@@ -699,12 +543,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "educationalUse"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "educationalUse"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#educational_use: Vec<EducationalUseProperty>,
     #[cfg(any(
         any(
@@ -713,12 +554,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "encoding"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "encoding"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#encoding: Vec<EncodingProperty>,
     #[cfg(any(
         any(
@@ -727,12 +565,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "encodingFormat"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "encodingFormat"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#encoding_format: Vec<EncodingFormatProperty>,
     #[cfg(any(
         any(
@@ -741,12 +576,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "encodings"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "encodings"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#encodings: Vec<EncodingsProperty>,
     #[cfg(any(
         any(
@@ -755,12 +587,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "exampleOfWork"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "exampleOfWork"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#example_of_work: Vec<ExampleOfWorkProperty>,
     #[cfg(any(
         any(
@@ -769,12 +598,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "expires"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "expires"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#expires: Vec<ExpiresProperty>,
     #[cfg(any(
         any(
@@ -783,23 +609,17 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "fileFormat"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "fileFormat"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#file_format: Vec<FileFormatProperty>,
     #[cfg(any(
         any(feature = "funder-property-schema", feature = "general-schema-section"),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "funder"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "funder"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#funder: Vec<FunderProperty>,
     #[cfg(any(
         any(
@@ -808,23 +628,17 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "funding"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "funding"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#funding: Vec<FundingProperty>,
     #[cfg(any(
         any(feature = "genre-property-schema", feature = "general-schema-section"),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "genre"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "genre"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#genre: Vec<GenreProperty>,
     #[cfg(any(
         any(
@@ -833,15 +647,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(rename = "hasDigitalDocumentPermission")
-    )]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "hasDigitalDocumentPermission"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#has_digital_document_permission: Vec<HasDigitalDocumentPermissionProperty>,
     #[cfg(any(
         any(
@@ -850,12 +658,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "hasPart"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "hasPart"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#has_part: Vec<HasPartProperty>,
     #[cfg(any(
         any(
@@ -864,12 +669,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "headline"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "headline"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#headline: Vec<HeadlineProperty>,
     #[cfg(any(
         any(
@@ -878,23 +680,17 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "identifier"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "identifier"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#identifier: Vec<IdentifierProperty>,
     #[cfg(any(
         any(feature = "image-property-schema", feature = "general-schema-section"),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "image"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "image"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#image: Vec<ImageProperty>,
     #[cfg(any(
         any(
@@ -903,12 +699,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "inLanguage"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "inLanguage"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#in_language: Vec<InLanguageProperty>,
     #[cfg(any(
         any(
@@ -917,12 +710,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "interactionStatistic"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "interactionStatistic"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#interaction_statistic: Vec<InteractionStatisticProperty>,
     #[cfg(any(
         any(
@@ -931,12 +721,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "interactivityType"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "interactivityType"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#interactivity_type: Vec<InteractivityTypeProperty>,
     #[cfg(any(
         any(
@@ -945,12 +732,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "interpretedAsClaim"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "interpretedAsClaim"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#interpreted_as_claim: Vec<InterpretedAsClaimProperty>,
     #[cfg(any(
         any(
@@ -959,12 +743,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "isAccessibleForFree"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "isAccessibleForFree"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#is_accessible_for_free: Vec<IsAccessibleForFreeProperty>,
     #[cfg(any(
         any(
@@ -973,12 +754,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "isBasedOn"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "isBasedOn"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#is_based_on: Vec<IsBasedOnProperty>,
     #[cfg(any(
         any(
@@ -987,12 +765,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "isBasedOnUrl"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "isBasedOnUrl"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#is_based_on_url: Vec<IsBasedOnUrlProperty>,
     #[cfg(any(
         any(
@@ -1001,12 +776,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "isFamilyFriendly"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "isFamilyFriendly"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#is_family_friendly: Vec<IsFamilyFriendlyProperty>,
     #[cfg(any(
         any(
@@ -1015,12 +787,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "isPartOf"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "isPartOf"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#is_part_of: Vec<IsPartOfProperty>,
     #[cfg(any(
         any(
@@ -1029,12 +798,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "keywords"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "keywords"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#keywords: Vec<KeywordsProperty>,
     #[cfg(any(
         any(
@@ -1043,12 +809,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "learningResourceType"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "learningResourceType"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#learning_resource_type: Vec<LearningResourceTypeProperty>,
     #[cfg(any(
         any(
@@ -1057,12 +820,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "license"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "license"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#license: Vec<LicenseProperty>,
     #[cfg(any(
         any(
@@ -1071,12 +831,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "locationCreated"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "locationCreated"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#location_created: Vec<LocationCreatedProperty>,
     #[cfg(any(
         any(
@@ -1085,12 +842,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "mainEntity"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "mainEntity"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#main_entity: Vec<MainEntityProperty>,
     #[cfg(any(
         any(
@@ -1099,12 +853,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "mainEntityOfPage"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "mainEntityOfPage"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
     #[cfg(any(
         any(
@@ -1113,12 +864,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "maintainer"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "maintainer"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#maintainer: Vec<MaintainerProperty>,
     #[cfg(any(
         any(
@@ -1127,12 +875,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "material"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "material"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#material: Vec<MaterialProperty>,
     #[cfg(any(
         any(
@@ -1141,12 +886,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "materialExtent"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "materialExtent"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#material_extent: Vec<MaterialExtentProperty>,
     #[cfg(any(
         any(
@@ -1155,34 +897,25 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "mentions"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "mentions"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#mentions: Vec<MentionsProperty>,
     #[cfg(any(
         any(feature = "name-property-schema", feature = "general-schema-section"),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "name"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "name"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#name: Vec<NameProperty>,
     #[cfg(any(
         any(feature = "offers-property-schema", feature = "general-schema-section"),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "offers"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "offers"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#offers: Vec<OffersProperty>,
     #[cfg(any(
         any(
@@ -1191,12 +924,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "pattern"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "pattern"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#pattern: Vec<PatternProperty>,
     #[cfg(any(
         any(
@@ -1205,12 +935,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "position"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "position"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#position: Vec<PositionProperty>,
     #[cfg(any(
         any(
@@ -1219,12 +946,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "potentialAction"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "potentialAction"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#potential_action: Vec<PotentialActionProperty>,
     #[cfg(any(
         any(
@@ -1233,12 +957,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "producer"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "producer"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#producer: Vec<ProducerProperty>,
     #[cfg(any(
         any(
@@ -1247,12 +968,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "provider"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "provider"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#provider: Vec<ProviderProperty>,
     #[cfg(any(
         any(
@@ -1261,12 +979,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "publication"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "publication"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#publication: Vec<PublicationProperty>,
     #[cfg(any(
         any(
@@ -1275,12 +990,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "publisher"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "publisher"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#publisher: Vec<PublisherProperty>,
     #[cfg(any(
         any(
@@ -1289,12 +1001,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "publisherImprint"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "publisherImprint"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#publisher_imprint: Vec<PublisherImprintProperty>,
     #[cfg(any(
         any(
@@ -1303,12 +1012,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "publishingPrinciples"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "publishingPrinciples"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#publishing_principles: Vec<PublishingPrinciplesProperty>,
     #[cfg(any(
         any(
@@ -1317,12 +1023,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "recordedAt"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "recordedAt"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#recorded_at: Vec<RecordedAtProperty>,
     #[cfg(any(
         any(
@@ -1331,23 +1034,17 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "releasedEvent"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "releasedEvent"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#released_event: Vec<ReleasedEventProperty>,
     #[cfg(any(
         any(feature = "review-property-schema", feature = "general-schema-section"),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "review"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "review"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#review: Vec<ReviewProperty>,
     #[cfg(any(
         any(
@@ -1356,12 +1053,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "reviews"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "reviews"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#reviews: Vec<ReviewsProperty>,
     #[cfg(any(
         any(
@@ -1370,12 +1064,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "sameAs"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "sameAs"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#same_as: Vec<SameAsProperty>,
     #[cfg(any(
         any(
@@ -1384,12 +1075,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "schemaVersion"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "schemaVersion"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#schema_version: Vec<SchemaVersionProperty>,
     #[cfg(any(
         any(
@@ -1398,12 +1086,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "sdDatePublished"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "sdDatePublished"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#sd_date_published: Vec<SdDatePublishedProperty>,
     #[cfg(any(
         any(
@@ -1412,12 +1097,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "sdLicense"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "sdLicense"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#sd_license: Vec<SdLicenseProperty>,
     #[cfg(any(
         any(
@@ -1426,23 +1108,17 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "sdPublisher"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "sdPublisher"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#sd_publisher: Vec<SdPublisherProperty>,
     #[cfg(any(
         any(feature = "size-property-schema", feature = "pending-schema-section"),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "size"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "size"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#size: Vec<SizeProperty>,
     #[cfg(any(
         any(
@@ -1451,12 +1127,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "sourceOrganization"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "sourceOrganization"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#source_organization: Vec<SourceOrganizationProperty>,
     #[cfg(any(
         any(
@@ -1465,12 +1138,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "spatial"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "spatial"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#spatial: Vec<SpatialProperty>,
     #[cfg(any(
         any(
@@ -1479,12 +1149,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "spatialCoverage"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "spatialCoverage"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#spatial_coverage: Vec<SpatialCoverageProperty>,
     #[cfg(any(
         any(
@@ -1493,12 +1160,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "sponsor"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "sponsor"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#sponsor: Vec<SponsorProperty>,
     #[cfg(any(
         any(
@@ -1507,12 +1171,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "subjectOf"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "subjectOf"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#subject_of: Vec<SubjectOfProperty>,
     #[cfg(any(
         any(
@@ -1521,12 +1182,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "teaches"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "teaches"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#teaches: Vec<TeachesProperty>,
     #[cfg(any(
         any(
@@ -1535,12 +1193,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "temporal"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "temporal"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#temporal: Vec<TemporalProperty>,
     #[cfg(any(
         any(
@@ -1549,23 +1204,17 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "temporalCoverage"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "temporalCoverage"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#temporal_coverage: Vec<TemporalCoverageProperty>,
     #[cfg(any(
         any(feature = "text-property-schema", feature = "general-schema-section"),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "text"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "text"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#text: Vec<TextProperty>,
     #[cfg(any(
         any(
@@ -1574,12 +1223,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "thumbnail"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "thumbnail"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#thumbnail: Vec<ThumbnailProperty>,
     #[cfg(any(
         any(
@@ -1588,12 +1234,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "thumbnailUrl"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "thumbnailUrl"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#thumbnail_url: Vec<ThumbnailUrlProperty>,
     #[cfg(any(
         any(
@@ -1602,12 +1245,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "timeRequired"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "timeRequired"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#time_required: Vec<TimeRequiredProperty>,
     #[cfg(any(
         any(
@@ -1616,12 +1256,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "translationOfWork"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "translationOfWork"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#translation_of_work: Vec<TranslationOfWorkProperty>,
     #[cfg(any(
         any(
@@ -1630,12 +1267,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "translator"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "translator"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#translator: Vec<TranslatorProperty>,
     #[cfg(any(
         any(
@@ -1644,23 +1278,17 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "typicalAgeRange"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "typicalAgeRange"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#typical_age_range: Vec<TypicalAgeRangeProperty>,
     #[cfg(any(
         any(feature = "url-property-schema", feature = "general-schema-section"),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "url"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "url"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#url: Vec<UrlProperty>,
     #[cfg(any(
         any(
@@ -1669,12 +1297,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "usageInfo"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "usageInfo"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#usage_info: Vec<UsageInfoProperty>,
     #[cfg(any(
         any(
@@ -1683,23 +1308,17 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "version"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "version"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#version: Vec<VersionProperty>,
     #[cfg(any(
         any(feature = "video-property-schema", feature = "general-schema-section"),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "video"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "video"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#video: Vec<VideoProperty>,
     #[cfg(any(
         any(
@@ -1708,12 +1327,9 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "workExample"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "workExample"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#work_example: Vec<WorkExampleProperty>,
     #[cfg(any(
         any(
@@ -1722,11 +1338,8 @@ pub struct DigitalDocument {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "workTranslation"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "workTranslation"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#work_translation: Vec<WorkTranslationProperty>,
 }

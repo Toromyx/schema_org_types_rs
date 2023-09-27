@@ -1,11 +1,8 @@
 use super::*;
 /// <https://schema.org/FlightReservation>
-#[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
-#[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
-#[cfg_attr(
-    any(feature = "serde", doc),
-    derive(serde::Serialize, serde::Deserialize)
-)]
+#[cfg_attr(feature = "derive-debug", derive(Debug))]
+#[cfg_attr(feature = "derive-clone", derive(Clone))]
+#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 pub struct FlightReservation {
     #[cfg(any(
         any(
@@ -14,12 +11,9 @@ pub struct FlightReservation {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "additionalType"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "additionalType"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#additional_type: Vec<AdditionalTypeProperty>,
     #[cfg(any(
         any(
@@ -28,12 +22,9 @@ pub struct FlightReservation {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "alternateName"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "alternateName"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#alternate_name: Vec<AlternateNameProperty>,
     #[cfg(any(
         any(
@@ -42,12 +33,9 @@ pub struct FlightReservation {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "boardingGroup"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "boardingGroup"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#boarding_group: Vec<BoardingGroupProperty>,
     #[cfg(any(
         any(
@@ -56,12 +44,9 @@ pub struct FlightReservation {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "bookingAgent"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "bookingAgent"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#booking_agent: Vec<BookingAgentProperty>,
     #[cfg(any(
         any(
@@ -70,23 +55,17 @@ pub struct FlightReservation {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "bookingTime"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "bookingTime"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#booking_time: Vec<BookingTimeProperty>,
     #[cfg(any(
         any(feature = "broker-property-schema", feature = "general-schema-section"),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "broker"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "broker"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#broker: Vec<BrokerProperty>,
     #[cfg(any(
         any(
@@ -95,12 +74,9 @@ pub struct FlightReservation {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "description"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "description"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#description: Vec<DescriptionProperty>,
     #[cfg(any(
         any(
@@ -109,15 +85,9 @@ pub struct FlightReservation {
         ),
         doc
     ))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(rename = "disambiguatingDescription")
-    )]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "disambiguatingDescription"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
     #[cfg(any(
         any(
@@ -126,23 +96,17 @@ pub struct FlightReservation {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "identifier"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "identifier"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#identifier: Vec<IdentifierProperty>,
     #[cfg(any(
         any(feature = "image-property-schema", feature = "general-schema-section"),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "image"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "image"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#image: Vec<ImageProperty>,
     #[cfg(any(
         any(
@@ -151,12 +115,9 @@ pub struct FlightReservation {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "mainEntityOfPage"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "mainEntityOfPage"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
     #[cfg(any(
         any(
@@ -165,23 +126,17 @@ pub struct FlightReservation {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "modifiedTime"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "modifiedTime"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#modified_time: Vec<ModifiedTimeProperty>,
     #[cfg(any(
         any(feature = "name-property-schema", feature = "general-schema-section"),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "name"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "name"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#name: Vec<NameProperty>,
     #[cfg(any(
         any(
@@ -190,12 +145,9 @@ pub struct FlightReservation {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "passengerPriorityStatus"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "passengerPriorityStatus"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#passenger_priority_status: Vec<PassengerPriorityStatusProperty>,
     #[cfg(any(
         any(
@@ -204,12 +156,9 @@ pub struct FlightReservation {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "passengerSequenceNumber"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "passengerSequenceNumber"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#passenger_sequence_number: Vec<PassengerSequenceNumberProperty>,
     #[cfg(any(
         any(
@@ -218,12 +167,9 @@ pub struct FlightReservation {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "potentialAction"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "potentialAction"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#potential_action: Vec<PotentialActionProperty>,
     #[cfg(any(
         any(
@@ -232,12 +178,9 @@ pub struct FlightReservation {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "priceCurrency"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "priceCurrency"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#price_currency: Vec<PriceCurrencyProperty>,
     #[cfg(any(
         any(
@@ -246,12 +189,9 @@ pub struct FlightReservation {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "programMembershipUsed"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "programMembershipUsed"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#program_membership_used: Vec<ProgramMembershipUsedProperty>,
     #[cfg(any(
         any(
@@ -260,12 +200,9 @@ pub struct FlightReservation {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "provider"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "provider"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#provider: Vec<ProviderProperty>,
     #[cfg(any(
         any(
@@ -274,12 +211,9 @@ pub struct FlightReservation {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "reservationFor"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "reservationFor"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#reservation_for: Vec<ReservationForProperty>,
     #[cfg(any(
         any(
@@ -288,12 +222,9 @@ pub struct FlightReservation {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "reservationId"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "reservationId"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#reservation_id: Vec<ReservationIdProperty>,
     #[cfg(any(
         any(
@@ -302,12 +233,9 @@ pub struct FlightReservation {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "reservationStatus"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "reservationStatus"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#reservation_status: Vec<ReservationStatusProperty>,
     #[cfg(any(
         any(
@@ -316,12 +244,9 @@ pub struct FlightReservation {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "reservedTicket"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "reservedTicket"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#reserved_ticket: Vec<ReservedTicketProperty>,
     #[cfg(any(
         any(
@@ -330,12 +255,9 @@ pub struct FlightReservation {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "sameAs"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "sameAs"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#same_as: Vec<SameAsProperty>,
     #[cfg(any(
         any(
@@ -344,12 +266,9 @@ pub struct FlightReservation {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "securityScreening"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "securityScreening"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#security_screening: Vec<SecurityScreeningProperty>,
     #[cfg(any(
         any(
@@ -358,12 +277,9 @@ pub struct FlightReservation {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "subjectOf"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "subjectOf"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#subject_of: Vec<SubjectOfProperty>,
     #[cfg(any(
         any(
@@ -372,12 +288,9 @@ pub struct FlightReservation {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "totalPrice"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "totalPrice"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#total_price: Vec<TotalPriceProperty>,
     #[cfg(any(
         any(
@@ -386,22 +299,16 @@ pub struct FlightReservation {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "underName"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "underName"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#under_name: Vec<UnderNameProperty>,
     #[cfg(any(
         any(feature = "url-property-schema", feature = "general-schema-section"),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "url"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "url"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#url: Vec<UrlProperty>,
 }

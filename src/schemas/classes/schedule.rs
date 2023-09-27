@@ -1,11 +1,8 @@
 use super::*;
 /// <https://schema.org/Schedule>
-#[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
-#[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
-#[cfg_attr(
-    any(feature = "serde", doc),
-    derive(serde::Serialize, serde::Deserialize)
-)]
+#[cfg_attr(feature = "derive-debug", derive(Debug))]
+#[cfg_attr(feature = "derive-clone", derive(Clone))]
+#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 pub struct Schedule {
     #[cfg(any(
         any(
@@ -14,12 +11,9 @@ pub struct Schedule {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "additionalType"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "additionalType"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#additional_type: Vec<AdditionalTypeProperty>,
     #[cfg(any(
         any(
@@ -28,23 +22,17 @@ pub struct Schedule {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "alternateName"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "alternateName"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#alternate_name: Vec<AlternateNameProperty>,
     #[cfg(any(
         any(feature = "by-day-property-schema", feature = "pending-schema-section"),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "byDay"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "byDay"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#by_day: Vec<ByDayProperty>,
     #[cfg(any(
         any(
@@ -53,12 +41,9 @@ pub struct Schedule {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "byMonth"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "byMonth"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#by_month: Vec<ByMonthProperty>,
     #[cfg(any(
         any(
@@ -67,12 +52,9 @@ pub struct Schedule {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "byMonthDay"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "byMonthDay"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#by_month_day: Vec<ByMonthDayProperty>,
     #[cfg(any(
         any(
@@ -81,12 +63,9 @@ pub struct Schedule {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "byMonthWeek"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "byMonthWeek"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#by_month_week: Vec<ByMonthWeekProperty>,
     #[cfg(any(
         any(
@@ -95,12 +74,9 @@ pub struct Schedule {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "description"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "description"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#description: Vec<DescriptionProperty>,
     #[cfg(any(
         any(
@@ -109,15 +85,9 @@ pub struct Schedule {
         ),
         doc
     ))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(rename = "disambiguatingDescription")
-    )]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "disambiguatingDescription"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
     #[cfg(any(
         any(
@@ -126,12 +96,9 @@ pub struct Schedule {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "duration"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "duration"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#duration: Vec<DurationProperty>,
     #[cfg(any(
         any(
@@ -140,12 +107,9 @@ pub struct Schedule {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "endDate"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "endDate"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#end_date: Vec<EndDateProperty>,
     #[cfg(any(
         any(
@@ -154,12 +118,9 @@ pub struct Schedule {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "endTime"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "endTime"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#end_time: Vec<EndTimeProperty>,
     #[cfg(any(
         any(
@@ -168,12 +129,9 @@ pub struct Schedule {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "exceptDate"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "exceptDate"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#except_date: Vec<ExceptDateProperty>,
     #[cfg(any(
         any(
@@ -182,23 +140,17 @@ pub struct Schedule {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "identifier"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "identifier"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#identifier: Vec<IdentifierProperty>,
     #[cfg(any(
         any(feature = "image-property-schema", feature = "general-schema-section"),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "image"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "image"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#image: Vec<ImageProperty>,
     #[cfg(any(
         any(
@@ -207,23 +159,17 @@ pub struct Schedule {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "mainEntityOfPage"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "mainEntityOfPage"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
     #[cfg(any(
         any(feature = "name-property-schema", feature = "general-schema-section"),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "name"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "name"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#name: Vec<NameProperty>,
     #[cfg(any(
         any(
@@ -232,12 +178,9 @@ pub struct Schedule {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "potentialAction"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "potentialAction"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#potential_action: Vec<PotentialActionProperty>,
     #[cfg(any(
         any(
@@ -246,12 +189,9 @@ pub struct Schedule {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "repeatCount"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "repeatCount"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#repeat_count: Vec<RepeatCountProperty>,
     #[cfg(any(
         any(
@@ -260,12 +200,9 @@ pub struct Schedule {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "repeatFrequency"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "repeatFrequency"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#repeat_frequency: Vec<RepeatFrequencyProperty>,
     #[cfg(any(
         any(
@@ -274,12 +211,9 @@ pub struct Schedule {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "sameAs"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "sameAs"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#same_as: Vec<SameAsProperty>,
     #[cfg(any(
         any(
@@ -288,12 +222,9 @@ pub struct Schedule {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "scheduleTimezone"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "scheduleTimezone"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#schedule_timezone: Vec<ScheduleTimezoneProperty>,
     #[cfg(any(
         any(
@@ -302,12 +233,9 @@ pub struct Schedule {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "startDate"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "startDate"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#start_date: Vec<StartDateProperty>,
     #[cfg(any(
         any(
@@ -316,12 +244,9 @@ pub struct Schedule {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "startTime"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "startTime"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#start_time: Vec<StartTimeProperty>,
     #[cfg(any(
         any(
@@ -330,22 +255,16 @@ pub struct Schedule {
         ),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "subjectOf"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "subjectOf"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#subject_of: Vec<SubjectOfProperty>,
     #[cfg(any(
         any(feature = "url-property-schema", feature = "general-schema-section"),
         doc
     ))]
-    #[cfg_attr(any(feature = "serde", doc), serde(rename = "url"))]
-    #[cfg_attr(any(feature = "serde", doc), serde(default))]
-    #[cfg_attr(
-        any(feature = "serde", doc),
-        serde(skip_serializing_if = "Vec::is_empty")
-    )]
+    #[cfg_attr(feature = "serde", serde(rename = "url"))]
+    #[cfg_attr(feature = "serde", serde(default))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     pub r#url: Vec<UrlProperty>,
 }

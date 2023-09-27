@@ -12,7 +12,9 @@ exclude = [
 
 # https://docs.rs/about/metadata
 [package.metadata.docs.rs]
-all-features = true
+features = [
+    "all-schema-sections",
+]
 
 [dependencies.serde]
 version = "^1.0.184"

@@ -6,7 +6,7 @@ fn serde_cfg() -> TokenStream {
 
 fn serde_cfg_attr(cfg_attr: TokenStream) -> TokenStream {
     let cfg = serde_cfg();
-    quote!(#[cfg_attr(any(#cfg, doc), #cfg_attr)])
+    quote!(#[cfg_attr(#cfg, #cfg_attr)])
 }
 
 pub fn serde_derive() -> TokenStream {
