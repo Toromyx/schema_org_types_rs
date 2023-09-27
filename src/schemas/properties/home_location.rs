@@ -1,6 +1,4 @@
 use super::*;
-/// A contact location for a person's residence.
-///
 /// <https://schema.org/homeLocation>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

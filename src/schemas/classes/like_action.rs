@@ -1,6 +1,4 @@
 use super::*;
-/// The act of expressing a positive sentiment about the object. An agent likes an object (a proposition, topic or theme) with participants.
-///
 /// <https://schema.org/LikeAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

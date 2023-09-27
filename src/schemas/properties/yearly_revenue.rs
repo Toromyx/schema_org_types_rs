@@ -1,6 +1,4 @@
 use super::*;
-/// The size of the business in annual revenue.
-///
 /// <https://schema.org/yearlyRevenue>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

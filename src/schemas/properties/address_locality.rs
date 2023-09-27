@@ -1,6 +1,4 @@
 use super::*;
-/// The locality in which the street address is, and which is in the region. For example, Mountain View.
-///
 /// <https://schema.org/addressLocality>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

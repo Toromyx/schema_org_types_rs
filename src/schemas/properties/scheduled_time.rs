@@ -1,6 +1,4 @@
 use super::*;
-/// The time the object is scheduled to.
-///
 /// <https://schema.org/scheduledTime>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

@@ -1,7 +1,4 @@
 use super::*;
-/// Defines the frequency at which [[Event]]s will occur according to a schedule [[Schedule]]. The intervals between
-/// events should be defined as a [[Duration]] of time.
-///
 /// <https://schema.org/repeatFrequency>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

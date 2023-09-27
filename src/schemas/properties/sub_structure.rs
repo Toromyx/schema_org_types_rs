@@ -1,6 +1,4 @@
 use super::*;
-/// Component (sub-)structure(s) that comprise this anatomical structure.
-///
 /// <https://schema.org/subStructure>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

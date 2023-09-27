@@ -1,6 +1,4 @@
 use super::*;
-/// One of the sections into which a book is divided. A chapter usually has a section number or a name.
-///
 /// <https://schema.org/Chapter>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

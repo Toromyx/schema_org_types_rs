@@ -1,6 +1,4 @@
 use super::*;
-/// A diagnostic test or procedure offered by this lab.
-///
 /// <https://schema.org/availableTest>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

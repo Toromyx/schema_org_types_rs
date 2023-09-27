@@ -1,6 +1,4 @@
 use super::*;
-/// Indicates a Web page or service by URL, for product return.
-///
 /// <https://schema.org/productReturnLink>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

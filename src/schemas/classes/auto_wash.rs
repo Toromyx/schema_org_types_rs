@@ -1,6 +1,4 @@
 use super::*;
-/// A car wash business.
-///
 /// <https://schema.org/AutoWash>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

@@ -1,6 +1,4 @@
 use super::*;
-/// Last postal code in the range (included). Needs to be after [[postalCodeBegin]].
-///
 /// <https://schema.org/postalCodeEnd>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

@@ -1,6 +1,4 @@
 use super::*;
-/// A tattoo parlor.
-///
 /// <https://schema.org/TattooParlor>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

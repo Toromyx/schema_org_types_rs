@@ -1,6 +1,4 @@
 use super::*;
-/// Typical preparation that a patient must undergo before having the procedure performed.
-///
 /// <https://schema.org/preparation>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

@@ -1,6 +1,4 @@
 use super::*;
-/// A posting that is part of this blog.
-///
 /// <https://schema.org/blogPost>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

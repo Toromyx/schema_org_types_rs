@@ -1,6 +1,4 @@
 use super::*;
-/// Another BioChemEntity encoded by this one.
-///
 /// <https://schema.org/encodesBioChemEntity>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

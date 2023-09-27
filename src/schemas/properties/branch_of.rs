@@ -1,6 +1,4 @@
 use super::*;
-/// The larger organization that this local business is a branch of, if any. Not to be confused with (anatomical) [[branch]].
-///
 /// <https://schema.org/branchOf>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

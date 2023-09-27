@@ -1,6 +1,4 @@
 use super::*;
-/// A media season, e.g. TV, radio, video game etc.
-///
 /// <https://schema.org/Season>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

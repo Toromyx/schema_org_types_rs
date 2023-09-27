@@ -1,6 +1,4 @@
 use super::*;
-/// A utility class that serves as the umbrella for a number of 'intangible' things in the medical space.
-///
 /// <https://schema.org/MedicalIntangible>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

@@ -1,6 +1,4 @@
 use super::*;
-/// A shop that sells alcoholic drinks such as wine, beer, whisky and other spirits.
-///
 /// <https://schema.org/LiquorStore>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

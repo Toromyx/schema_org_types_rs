@@ -1,6 +1,4 @@
 use super::*;
-/// The identifier of the transaction.
-///
 /// <https://schema.org/orderNumber>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

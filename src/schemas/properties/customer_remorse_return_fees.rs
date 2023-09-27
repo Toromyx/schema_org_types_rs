@@ -1,6 +1,4 @@
 use super::*;
-/// The type of return fees if the product is returned due to customer remorse.
-///
 /// <https://schema.org/customerRemorseReturnFees>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

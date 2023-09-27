@@ -1,6 +1,4 @@
 use super::*;
-/// The date on which the CreativeWork was created or the item was added to a DataFeed.
-///
 /// <https://schema.org/dateCreated>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

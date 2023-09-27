@@ -1,6 +1,4 @@
 use super::*;
-/// Link to a page containing [[ShippingRateSettings]] and [[DeliveryTimeSettings]] details.
-///
 /// <https://schema.org/shippingSettingsLink>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

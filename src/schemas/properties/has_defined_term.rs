@@ -1,6 +1,4 @@
 use super::*;
-/// A Defined Term contained in this term set.
-///
 /// <https://schema.org/hasDefinedTerm>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

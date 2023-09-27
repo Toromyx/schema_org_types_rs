@@ -1,6 +1,4 @@
 use super::*;
-/// Indicates that the vehicle meets the respective emission standard.
-///
 /// <https://schema.org/meetsEmissionStandard>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

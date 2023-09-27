@@ -1,6 +1,4 @@
 use super::*;
-/// A group of multiple reservations with common values for all sub-reservations.
-///
 /// <https://schema.org/ReservationPackage>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

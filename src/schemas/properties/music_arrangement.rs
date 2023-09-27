@@ -1,6 +1,4 @@
 use super::*;
-/// An arrangement derived from the composition.
-///
 /// <https://schema.org/musicArrangement>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

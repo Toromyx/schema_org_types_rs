@@ -1,6 +1,4 @@
 use super::*;
-/// A review of an item - for example, of a restaurant, movie, or store.
-///
 /// <https://schema.org/Review>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

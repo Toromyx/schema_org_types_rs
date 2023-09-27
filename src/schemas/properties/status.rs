@@ -1,6 +1,4 @@
 use super::*;
-/// The status of the study (enumerated).
-///
 /// <https://schema.org/status>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

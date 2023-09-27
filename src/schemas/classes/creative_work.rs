@@ -1,6 +1,4 @@
 use super::*;
-/// The most generic kind of creative work, including books, movies, photographs, software programs, etc.
-///
 /// <https://schema.org/CreativeWork>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

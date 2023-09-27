@@ -1,6 +1,4 @@
 use super::*;
-/// Disclosure about verification and fact-checking processes for a [[NewsMediaOrganization]] or other fact-checking [[Organization]].
-///
 /// <https://schema.org/verificationFactCheckingPolicy>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

@@ -1,6 +1,4 @@
 use super::*;
-/// An educational organization.
-///
 /// <https://schema.org/EducationalOrganization>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

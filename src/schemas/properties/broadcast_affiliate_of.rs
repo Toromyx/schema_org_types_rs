@@ -1,6 +1,4 @@
 use super::*;
-/// The media network(s) whose content is broadcast on this station.
-///
 /// <https://schema.org/broadcastAffiliateOf>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

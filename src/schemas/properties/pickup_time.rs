@@ -1,6 +1,4 @@
 use super::*;
-/// When a taxi will pick up a passenger or a rental car can be picked up.
-///
 /// <https://schema.org/pickupTime>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

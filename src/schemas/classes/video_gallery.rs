@@ -1,6 +1,4 @@
 use super::*;
-/// Web page type: Video gallery page.
-///
 /// <https://schema.org/VideoGallery>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

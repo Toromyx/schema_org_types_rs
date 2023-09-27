@@ -1,6 +1,4 @@
 use super::*;
-/// A code that identifies this [[DefinedTerm]] within a [[DefinedTermSet]]
-///
 /// <https://schema.org/termCode>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

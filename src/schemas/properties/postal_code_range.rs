@@ -1,6 +1,4 @@
 use super::*;
-/// A defined range of postal codes.
-///
 /// <https://schema.org/postalCodeRange>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

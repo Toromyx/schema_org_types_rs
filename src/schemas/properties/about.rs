@@ -1,6 +1,4 @@
 use super::*;
-/// The subject matter of the content.
-///
 /// <https://schema.org/about>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

@@ -1,6 +1,4 @@
 use super::*;
-/// The individual who draws the primary narrative artwork.
-///
 /// <https://schema.org/penciler>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

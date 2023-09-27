@@ -1,6 +1,4 @@
 use super::*;
-/// An alternative, closely-related condition typically considered later in the differential diagnosis process along with the signs that are used to distinguish it.
-///
 /// <https://schema.org/DDxElement>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

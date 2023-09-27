@@ -1,6 +1,4 @@
 use super::*;
-/// The person or organization who produced the work (e.g. music album, movie, TV/radio series etc.).
-///
 /// <https://schema.org/producer>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

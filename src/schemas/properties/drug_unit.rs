@@ -1,6 +1,4 @@
 use super::*;
-/// The unit in which the drug is measured, e.g. '5 mg tablet'.
-///
 /// <https://schema.org/drugUnit>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

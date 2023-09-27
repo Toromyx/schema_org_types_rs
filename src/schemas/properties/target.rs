@@ -1,6 +1,4 @@
 use super::*;
-/// Indicates a target EntryPoint, or url, for an Action.
-///
 /// <https://schema.org/target>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

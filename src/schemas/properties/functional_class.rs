@@ -1,6 +1,4 @@
 use super::*;
-/// The degree of mobility the joint allows.
-///
 /// <https://schema.org/functionalClass>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

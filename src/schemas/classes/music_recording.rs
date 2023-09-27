@@ -1,6 +1,4 @@
 use super::*;
-/// A music recording (track), usually a single song.
-///
 /// <https://schema.org/MusicRecording>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

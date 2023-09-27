@@ -1,6 +1,4 @@
 use super::*;
-/// The category of the recipe—for example, appetizer, entree, etc.
-///
 /// <https://schema.org/recipeCategory>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

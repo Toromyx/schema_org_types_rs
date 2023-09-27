@@ -1,6 +1,4 @@
 use super::*;
-/// The number of interactions for the CreativeWork using the WebSite or SoftwareApplication.
-///
 /// <https://schema.org/userInteractionCount>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

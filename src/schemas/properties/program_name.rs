@@ -1,6 +1,4 @@
 use super::*;
-/// The program providing the membership.
-///
 /// <https://schema.org/programName>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

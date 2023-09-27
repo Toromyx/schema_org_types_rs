@@ -1,6 +1,4 @@
 use super::*;
-/// An indicator as to whether a position is available for an immediate start.
-///
 /// <https://schema.org/jobImmediateStart>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

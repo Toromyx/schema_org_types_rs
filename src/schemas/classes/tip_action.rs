@@ -1,6 +1,4 @@
 use super::*;
-/// The act of giving money voluntarily to a beneficiary in recognition of services rendered.
-///
 /// <https://schema.org/TipAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

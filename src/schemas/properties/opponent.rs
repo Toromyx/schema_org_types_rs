@@ -1,6 +1,4 @@
 use super::*;
-/// A sub property of participant. The opponent on this action.
-///
 /// <https://schema.org/opponent>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

@@ -1,6 +1,4 @@
 use super::*;
-/// The production company or studio responsible for the item, e.g. series, video game, episode etc.
-///
 /// <https://schema.org/productionCompany>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

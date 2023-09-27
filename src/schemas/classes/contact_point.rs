@@ -1,6 +1,4 @@
 use super::*;
-/// A contact point&#x2014;for example, a Customer Complaints department.
-///
 /// <https://schema.org/ContactPoint>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

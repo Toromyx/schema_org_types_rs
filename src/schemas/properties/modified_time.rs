@@ -1,6 +1,4 @@
 use super::*;
-/// The date and time the reservation was modified.
-///
 /// <https://schema.org/modifiedTime>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

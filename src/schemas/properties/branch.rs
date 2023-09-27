@@ -1,6 +1,4 @@
 use super::*;
-/// The branches that delineate from the nerve bundle. Not to be confused with [[branchOf]].
-///
 /// <https://schema.org/branch>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

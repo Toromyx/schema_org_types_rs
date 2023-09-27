@@ -1,6 +1,4 @@
 use super::*;
-/// The number of tracks in this album or playlist.
-///
 /// <https://schema.org/numTracks>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

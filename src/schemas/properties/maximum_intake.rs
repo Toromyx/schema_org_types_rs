@@ -1,6 +1,4 @@
 use super::*;
-/// Recommended intake of this supplement for a given population as defined by a specific recommending authority.
-///
 /// <https://schema.org/maximumIntake>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

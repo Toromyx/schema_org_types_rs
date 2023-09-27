@@ -1,6 +1,4 @@
 use super::*;
-/// The location (e.g. civic structure, local business, etc.) where a person can go to access the service.
-///
 /// <https://schema.org/serviceLocation>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

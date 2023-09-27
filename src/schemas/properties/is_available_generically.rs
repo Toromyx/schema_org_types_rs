@@ -1,6 +1,4 @@
 use super::*;
-/// True if the drug is available in a generic form (regardless of name).
-///
 /// <https://schema.org/isAvailableGenerically>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

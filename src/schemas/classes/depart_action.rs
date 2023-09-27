@@ -1,6 +1,4 @@
 use super::*;
-/// The act of  departing from a place. An agent departs from a fromLocation for a destination, optionally with participants.
-///
 /// <https://schema.org/DepartAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

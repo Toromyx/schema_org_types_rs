@@ -1,6 +1,4 @@
 use super::*;
-/// This Review or Rating is relevant to this part or facet of the itemReviewed.
-///
 /// <https://schema.org/reviewAspect>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

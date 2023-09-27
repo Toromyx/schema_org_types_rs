@@ -1,6 +1,4 @@
 use super::*;
-/// The geographic coordinates of a place or event.
-///
 /// <https://schema.org/GeoCoordinates>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

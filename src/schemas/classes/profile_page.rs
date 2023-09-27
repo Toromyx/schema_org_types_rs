@@ -1,6 +1,4 @@
 use super::*;
-/// Web page type: Profile page.
-///
 /// <https://schema.org/ProfilePage>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

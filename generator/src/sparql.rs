@@ -24,7 +24,6 @@ const CLASSES_QUERY: &str = concatcp!(
 SELECT
     DISTINCT ?node
     ?label
-    ?comment
     ?section
 WHERE {
     ?node a rdfs:Class .
@@ -35,7 +34,6 @@ WHERE {
         ?node rdfs:subClassOf*/a schema:DataType .
     }
     ?node rdfs:label ?label .
-    ?node rdfs:comment ?comment .
     OPTIONAL { ?node schema:isPartOf ?section . }
 }
 "#
@@ -48,12 +46,10 @@ const PROPERTIES_QUERY: &str = concatcp!(
 SELECT
     DISTINCT ?node
     ?label
-    ?comment
     ?section
 WHERE {
     ?node a rdf:Property .
     ?node rdfs:label ?label .
-    ?node rdfs:comment ?comment .
     OPTIONAL { ?node schema:isPartOf ?section . }
 }
 "#
@@ -66,12 +62,10 @@ const ENUMERATIONS_QUERY: &str = concatcp!(
 SELECT
     DISTINCT ?node
     ?label
-    ?comment
     ?section
 WHERE {
     ?node rdfs:subClassOf*/rdfs:subClassOf schema:Enumeration .
     ?node rdfs:label ?label .
-    ?node rdfs:comment ?comment .
     OPTIONAL { ?node schema:isPartOf ?section . }
 }
 "#
@@ -84,12 +78,10 @@ const DATA_TYPES_QUERY: &str = concatcp!(
 SELECT
     DISTINCT ?node
     ?label
-    ?comment
     ?section
 WHERE {
     ?node rdfs:subClassOf*/a schema:DataType .
     ?node rdfs:label ?label .
-    ?node rdfs:comment ?comment .
     OPTIONAL { ?node schema:isPartOf ?section . }
 }
 "#
@@ -106,11 +98,6 @@ pub struct LabeledQuerySolution {
 }
 
 #[derive(Debug, Clone)]
-pub struct CommentedQuerySolution {
-    pub comment: String,
-}
-
-#[derive(Debug, Clone)]
 pub struct SectionedQuerySolution {
     pub section: SchemaSection,
 }
@@ -119,7 +106,6 @@ pub struct SectionedQuerySolution {
 pub struct SchemaQuerySolution {
     pub identifiable: IdentifiableQuerySolution,
     pub labeled: LabeledQuerySolution,
-    pub commented: CommentedQuerySolution,
 }
 
 #[derive(Debug, Clone)]
@@ -170,19 +156,6 @@ impl From<&QuerySolution> for LabeledQuerySolution {
     }
 }
 
-impl From<&QuerySolution> for CommentedQuerySolution {
-    fn from(value: &QuerySolution) -> Self {
-        Self {
-            comment: value
-                .get("comment")
-                .expect("The ?comment variable should exist within the query.")
-                .as_literal()
-                .value()
-                .to_string(),
-        }
-    }
-}
-
 impl From<&QuerySolution> for SectionedQuerySolution {
     fn from(value: &QuerySolution) -> Self {
         Self {
@@ -199,7 +172,6 @@ impl From<&QuerySolution> for SchemaQuerySolution {
         Self {
             identifiable: value.into(),
             labeled: value.into(),
-            commented: value.into(),
         }
     }
 }
@@ -372,11 +344,9 @@ WHERE {{
 SELECT
     ?node
     ?label
-    ?comment
 WHERE {{
     ?node a <{}> .
     ?node rdfs:label ?label .
-    ?node rdfs:comment ?comment .
 }}
 "#,
             PREFIXES, enumeration_iri

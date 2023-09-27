@@ -1,6 +1,4 @@
 use super::*;
-/// An honorific suffix following a Person's name such as M.D./PhD/MSCSW.
-///
 /// <https://schema.org/honorificSuffix>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

@@ -1,6 +1,4 @@
 use super::*;
-/// A structured value indicating the quantity, unit of measurement, and business function of goods included in a bundle offer.
-///
 /// <https://schema.org/TypeAndQuantityNode>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

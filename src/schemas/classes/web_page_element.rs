@@ -1,6 +1,4 @@
 use super::*;
-/// A web page element, like a table or an image.
-///
 /// <https://schema.org/WebPageElement>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

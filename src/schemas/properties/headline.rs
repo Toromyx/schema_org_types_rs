@@ -1,6 +1,4 @@
 use super::*;
-/// Headline of the article.
-///
 /// <https://schema.org/headline>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

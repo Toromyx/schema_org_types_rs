@@ -1,6 +1,4 @@
 use super::*;
-/// The type of permission granted the person, organization, or audience.
-///
 /// <https://schema.org/permissionType>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

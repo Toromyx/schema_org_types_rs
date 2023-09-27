@@ -1,6 +1,4 @@
 use super::*;
-/// A direction indicating a single action to do in the instructions for how to achieve a result.
-///
 /// <https://schema.org/HowToDirection>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

@@ -1,6 +1,4 @@
 use super::*;
-/// The opening hour of the place or service on the given day(s) of the week.
-///
 /// <https://schema.org/opens>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

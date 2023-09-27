@@ -1,6 +1,4 @@
 use super::*;
-/// A sub property of participant. The person that borrows the object being lent.
-///
 /// <https://schema.org/borrower>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

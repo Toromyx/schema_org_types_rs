@@ -1,6 +1,4 @@
 use super::*;
-/// The date the ticket was issued.
-///
 /// <https://schema.org/dateIssued>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

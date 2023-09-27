@@ -1,6 +1,4 @@
 use super::*;
-/// Web page type: Contact page.
-///
 /// <https://schema.org/ContactPage>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

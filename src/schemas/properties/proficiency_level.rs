@@ -1,6 +1,4 @@
 use super::*;
-/// Proficiency needed for this content; expected values: 'Beginner', 'Expert'.
-///
 /// <https://schema.org/proficiencyLevel>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

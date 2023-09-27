@@ -1,6 +1,4 @@
 use super::*;
-/// Event type: Social event.
-///
 /// <https://schema.org/SocialEvent>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

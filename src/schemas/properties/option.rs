@@ -1,6 +1,4 @@
 use super::*;
-/// A sub property of object. The options subject to this action.
-///
 /// <https://schema.org/option>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

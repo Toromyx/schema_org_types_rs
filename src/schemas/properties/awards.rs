@@ -1,6 +1,4 @@
 use super::*;
-/// Awards won by or for this item.
-///
 /// <https://schema.org/awards>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

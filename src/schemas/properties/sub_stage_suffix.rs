@@ -1,6 +1,4 @@
 use super::*;
-/// The substage, e.g. 'a' for Stage IIIa.
-///
 /// <https://schema.org/subStageSuffix>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

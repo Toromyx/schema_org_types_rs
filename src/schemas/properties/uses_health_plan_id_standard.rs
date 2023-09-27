@@ -1,6 +1,4 @@
 use super::*;
-/// The standard for interpreting the Plan ID. The preferred is "HIOS". See the Centers for Medicare & Medicaid Services for more details.
-///
 /// <https://schema.org/usesHealthPlanIdStandard>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

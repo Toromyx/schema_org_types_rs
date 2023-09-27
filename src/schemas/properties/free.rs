@@ -1,6 +1,4 @@
 use super::*;
-/// A flag to signal that the item, event, or place is accessible for free.
-///
 /// <https://schema.org/free>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

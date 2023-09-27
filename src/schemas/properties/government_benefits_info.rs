@@ -1,6 +1,4 @@
 use super::*;
-/// governmentBenefitsInfo provides information about government benefits associated with a SpecialAnnouncement.
-///
 /// <https://schema.org/governmentBenefitsInfo>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

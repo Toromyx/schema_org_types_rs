@@ -1,6 +1,4 @@
 use super::*;
-/// The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.
-///
 /// <https://schema.org/worstRating>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

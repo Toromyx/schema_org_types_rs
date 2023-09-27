@@ -1,6 +1,4 @@
 use super::*;
-/// Relates a property to a class that constitutes (one of) the expected type(s) for values of the property.
-///
 /// <https://schema.org/rangeIncludes>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

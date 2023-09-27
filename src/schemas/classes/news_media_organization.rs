@@ -1,6 +1,4 @@
 use super::*;
-/// A News/Media organization such as a newspaper or TV station.
-///
 /// <https://schema.org/NewsMediaOrganization>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

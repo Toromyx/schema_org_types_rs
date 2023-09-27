@@ -1,6 +1,4 @@
 use super::*;
-/// The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.
-///
 /// <https://schema.org/learningResourceType>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

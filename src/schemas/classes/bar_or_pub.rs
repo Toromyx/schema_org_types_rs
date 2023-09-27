@@ -1,6 +1,4 @@
 use super::*;
-/// A bar or pub.
-///
 /// <https://schema.org/BarOrPub>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

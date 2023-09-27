@@ -1,6 +1,4 @@
 use super::*;
-/// A material that something is made from, e.g. leather, wool, cotton, paper.
-///
 /// <https://schema.org/material>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

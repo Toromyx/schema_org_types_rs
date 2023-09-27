@@ -1,6 +1,4 @@
 use super::*;
-/// Indicates the date on which the current structured data was generated / published. Typically used alongside [[sdPublisher]]
-///
 /// <https://schema.org/sdDatePublished>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

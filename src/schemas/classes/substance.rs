@@ -1,6 +1,4 @@
 use super::*;
-/// Any matter of defined composition that has discrete existence, whose origin may be biological, mineral or chemical.
-///
 /// <https://schema.org/Substance>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

@@ -1,6 +1,4 @@
 use super::*;
-/// The place where a person lives.
-///
 /// <https://schema.org/Residence>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

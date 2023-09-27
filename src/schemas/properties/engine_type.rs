@@ -1,6 +1,4 @@
 use super::*;
-/// The type of engine or engines powering the vehicle.
-///
 /// <https://schema.org/engineType>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

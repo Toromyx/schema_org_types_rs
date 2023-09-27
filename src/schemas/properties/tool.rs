@@ -1,6 +1,4 @@
 use super::*;
-/// A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.
-///
 /// <https://schema.org/tool>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

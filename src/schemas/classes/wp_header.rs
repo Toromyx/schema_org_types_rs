@@ -1,6 +1,4 @@
 use super::*;
-/// The header section of the page.
-///
 /// <https://schema.org/WPHeader>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

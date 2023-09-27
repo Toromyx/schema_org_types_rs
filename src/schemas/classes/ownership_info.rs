@@ -1,6 +1,4 @@
 use super::*;
-/// A structured value providing information about when a certain organization or person owned a certain product.
-///
 /// <https://schema.org/OwnershipInfo>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

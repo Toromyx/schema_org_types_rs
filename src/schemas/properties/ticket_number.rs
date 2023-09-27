@@ -1,6 +1,4 @@
 use super::*;
-/// The unique identifier for the ticket.
-///
 /// <https://schema.org/ticketNumber>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

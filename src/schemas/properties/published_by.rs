@@ -1,6 +1,4 @@
 use super::*;
-/// An agent associated with the publication event.
-///
 /// <https://schema.org/publishedBy>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

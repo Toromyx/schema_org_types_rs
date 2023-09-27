@@ -1,6 +1,4 @@
 use super::*;
-/// Specifies the Person that is legally accountable for the CreativeWork.
-///
 /// <https://schema.org/accountablePerson>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

@@ -1,6 +1,4 @@
 use super::*;
-/// An list item, e.g. a step in a checklist or how-to description.
-///
 /// <https://schema.org/ListItem>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

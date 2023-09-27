@@ -1,6 +1,4 @@
 use super::*;
-/// An aggregate rating of an Organization related to its role as an employer.
-///
 /// <https://schema.org/EmployerAggregateRating>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

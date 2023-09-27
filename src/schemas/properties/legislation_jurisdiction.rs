@@ -1,6 +1,4 @@
 use super::*;
-/// The jurisdiction from which the legislation originates.
-///
 /// <https://schema.org/legislationJurisdiction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

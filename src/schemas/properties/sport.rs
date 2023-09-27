@@ -1,6 +1,4 @@
 use super::*;
-/// A type of sport (e.g. Baseball).
-///
 /// <https://schema.org/sport>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

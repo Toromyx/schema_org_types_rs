@@ -1,6 +1,4 @@
 use super::*;
-/// The eventAttendanceMode of an event indicates whether it occurs online, offline, or a mix.
-///
 /// <https://schema.org/eventAttendanceMode>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

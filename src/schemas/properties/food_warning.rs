@@ -1,6 +1,4 @@
 use super::*;
-/// Any precaution, guidance, contraindication, etc. related to consumption of specific foods while taking this drug.
-///
 /// <https://schema.org/foodWarning>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

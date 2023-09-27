@@ -1,6 +1,4 @@
 use super::*;
-/// The act of transferring/moving (abstract or concrete) animate or inanimate objects from one place to another.
-///
 /// <https://schema.org/TransferAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

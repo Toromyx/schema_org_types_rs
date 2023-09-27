@@ -1,6 +1,4 @@
 use super::*;
-/// The illustrator of the book.
-///
 /// <https://schema.org/illustrator>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

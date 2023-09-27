@@ -1,6 +1,4 @@
 use super::*;
-/// A medical condition associated with this anatomy.
-///
 /// <https://schema.org/relatedCondition>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

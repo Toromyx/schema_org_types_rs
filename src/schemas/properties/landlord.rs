@@ -1,6 +1,4 @@
 use super::*;
-/// A sub property of participant. The owner of the real estate property.
-///
 /// <https://schema.org/landlord>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

@@ -1,6 +1,4 @@
 use super::*;
-/// The act of accomplishing something via previous efforts. It is an instantaneous action rather than an ongoing process.
-///
 /// <https://schema.org/AchieveAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

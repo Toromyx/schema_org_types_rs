@@ -1,6 +1,4 @@
 use super::*;
-/// Event type: Exhibition event, e.g. at a museum, library, archive, tradeshow, ...
-///
 /// <https://schema.org/ExhibitionEvent>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

@@ -1,6 +1,4 @@
 use super::*;
-/// The billing address for the order.
-///
 /// <https://schema.org/billingAddress>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

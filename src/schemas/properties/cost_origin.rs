@@ -1,6 +1,4 @@
 use super::*;
-/// Additional details to capture the origin of the cost data. For example, 'Medicare Part B'.
-///
 /// <https://schema.org/costOrigin>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

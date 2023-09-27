@@ -1,6 +1,4 @@
 use super::*;
-/// A legal document such as an act, decree, bill, etc. (enforceable or not) or a component of a legal act (like an article).
-///
 /// <https://schema.org/Legislation>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

@@ -1,6 +1,4 @@
 use super::*;
-/// An auto parts store.
-///
 /// <https://schema.org/AutoPartsStore>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

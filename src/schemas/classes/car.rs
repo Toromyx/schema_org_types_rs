@@ -1,6 +1,4 @@
 use super::*;
-/// A car is a wheeled, self-powered motor vehicle used for transportation.
-///
 /// <https://schema.org/Car>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

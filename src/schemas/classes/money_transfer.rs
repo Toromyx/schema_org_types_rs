@@ -1,6 +1,4 @@
 use super::*;
-/// The act of transferring money from one place to another place. This may occur electronically or physically.
-///
 /// <https://schema.org/MoneyTransfer>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

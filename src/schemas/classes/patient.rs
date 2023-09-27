@@ -1,6 +1,4 @@
 use super::*;
-/// A patient is any person recipient of health care services.
-///
 /// <https://schema.org/Patient>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

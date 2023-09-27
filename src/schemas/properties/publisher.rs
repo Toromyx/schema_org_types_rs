@@ -1,6 +1,4 @@
 use super::*;
-/// The publisher of the creative work.
-///
 /// <https://schema.org/publisher>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

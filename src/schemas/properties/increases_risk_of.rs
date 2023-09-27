@@ -1,6 +1,4 @@
 use super::*;
-/// The condition, complication, etc. influenced by this factor.
-///
 /// <https://schema.org/increasesRiskOf>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

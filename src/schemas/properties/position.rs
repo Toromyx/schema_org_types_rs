@@ -1,6 +1,4 @@
 use super::*;
-/// The position of an item in a series or sequence of items.
-///
 /// <https://schema.org/position>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

@@ -1,6 +1,4 @@
 use super::*;
-/// A motorized bicycle is a bicycle with an attached motor used to power the vehicle, or to assist with pedaling.
-///
 /// <https://schema.org/MotorizedBicycle>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

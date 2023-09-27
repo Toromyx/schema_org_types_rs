@@ -1,6 +1,4 @@
 use super::*;
-/// A preventative therapy used to prevent an initial occurrence of the medical condition, such as vaccination.
-///
 /// <https://schema.org/primaryPrevention>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

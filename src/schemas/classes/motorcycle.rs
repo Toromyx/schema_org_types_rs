@@ -1,6 +1,4 @@
 use super::*;
-/// A motorcycle or motorbike is a single-track, two-wheeled motor vehicle.
-///
 /// <https://schema.org/Motorcycle>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

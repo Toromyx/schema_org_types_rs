@@ -1,6 +1,4 @@
 use super::*;
-/// Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
-///
 /// <https://schema.org/petsAllowed>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

@@ -1,6 +1,4 @@
 use super::*;
-/// The anatomical or organ system drained by this vessel; generally refers to a specific part of an organ.
-///
 /// <https://schema.org/regionDrained>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

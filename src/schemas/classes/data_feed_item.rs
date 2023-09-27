@@ -1,6 +1,4 @@
 use super::*;
-/// A single item within a larger data feed.
-///
 /// <https://schema.org/DataFeedItem>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

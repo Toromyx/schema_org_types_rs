@@ -1,6 +1,4 @@
 use super::*;
-/// If this NewsArticle appears in print, this field indicates the print section in which the article appeared.
-///
 /// <https://schema.org/printSection>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

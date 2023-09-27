@@ -1,6 +1,4 @@
 use super::*;
-/// The date/time at which the message was sent.
-///
 /// <https://schema.org/dateSent>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

@@ -1,6 +1,4 @@
 use super::*;
-/// Range of acceptable values for a typical patient, when applicable.
-///
 /// <https://schema.org/normalRange>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

@@ -1,6 +1,4 @@
 use super::*;
-/// The total number of students that have enrolled in the history of the course.
-///
 /// <https://schema.org/totalHistoricalEnrollment>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

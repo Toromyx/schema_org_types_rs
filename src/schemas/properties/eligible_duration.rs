@@ -1,6 +1,4 @@
 use super::*;
-/// The duration for which the given offer is valid.
-///
 /// <https://schema.org/eligibleDuration>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

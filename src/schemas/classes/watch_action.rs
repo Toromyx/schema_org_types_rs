@@ -1,6 +1,4 @@
 use super::*;
-/// The act of consuming dynamic/moving visual content.
-///
 /// <https://schema.org/WatchAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

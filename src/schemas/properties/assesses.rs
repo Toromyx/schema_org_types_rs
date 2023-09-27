@@ -1,6 +1,4 @@
 use super::*;
-/// The item being described is intended to assess the competency or learning outcome defined by the referenced term.
-///
 /// <https://schema.org/assesses>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

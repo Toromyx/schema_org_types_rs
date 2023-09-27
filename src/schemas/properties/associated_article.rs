@@ -1,6 +1,4 @@
 use super::*;
-/// A NewsArticle associated with the Media Object.
-///
 /// <https://schema.org/associatedArticle>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

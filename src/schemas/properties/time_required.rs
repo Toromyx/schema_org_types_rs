@@ -1,6 +1,4 @@
 use super::*;
-/// Approximate or typical time it usually takes to work with or through the content of this work for the typical or target audience.
-///
 /// <https://schema.org/timeRequired>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

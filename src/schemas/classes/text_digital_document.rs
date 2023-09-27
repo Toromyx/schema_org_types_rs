@@ -1,6 +1,4 @@
 use super::*;
-/// A file composed primarily of text.
-///
 /// <https://schema.org/TextDigitalDocument>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

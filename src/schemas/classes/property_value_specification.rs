@@ -1,6 +1,4 @@
 use super::*;
-/// A Property value specification.
-///
 /// <https://schema.org/PropertyValueSpecification>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

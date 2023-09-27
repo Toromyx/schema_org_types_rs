@@ -1,6 +1,4 @@
 use super::*;
-/// The start time of the clip expressed as the number of seconds from the beginning of the work.
-///
 /// <https://schema.org/startOffset>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

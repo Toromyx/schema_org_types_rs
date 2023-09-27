@@ -1,6 +1,4 @@
 use super::*;
-/// Actual bytes of the media object, for example the image file or video file.
-///
 /// <https://schema.org/contentUrl>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

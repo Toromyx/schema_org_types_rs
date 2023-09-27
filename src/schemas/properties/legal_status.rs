@@ -1,6 +1,4 @@
 use super::*;
-/// The drug or supplement's legal status, including any controlled substance schedules that apply.
-///
 /// <https://schema.org/legalStatus>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

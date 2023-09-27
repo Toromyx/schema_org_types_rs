@@ -1,6 +1,4 @@
 use super::*;
-/// The stage represented as a number, e.g. 3.
-///
 /// <https://schema.org/stageAsNumber>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

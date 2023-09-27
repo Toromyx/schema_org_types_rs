@@ -1,6 +1,4 @@
 use super::*;
-/// A relationship between two organizations where the first includes the second, e.g., as a subsidiary. See also: the more specific 'department' property.
-///
 /// <https://schema.org/subOrganization>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

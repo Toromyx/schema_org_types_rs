@@ -1,6 +1,4 @@
 use super::*;
-/// Storage requirements (free space required).
-///
 /// <https://schema.org/storageRequirements>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

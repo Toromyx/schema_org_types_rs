@@ -1,6 +1,4 @@
 use super::*;
-/// The edition of a video game.
-///
 /// <https://schema.org/gameEdition>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

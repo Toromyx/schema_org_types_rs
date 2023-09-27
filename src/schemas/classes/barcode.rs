@@ -1,6 +1,4 @@
 use super::*;
-/// An image of a visual machine-readable code such as a barcode or QR code.
-///
 /// <https://schema.org/Barcode>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

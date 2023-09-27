@@ -1,6 +1,4 @@
 use super::*;
-/// A medical test performed by a laboratory that typically involves examination of a tissue sample by a pathologist.
-///
 /// <https://schema.org/PathologyTest>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

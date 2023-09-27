@@ -1,6 +1,4 @@
 use super::*;
-/// A unique identifier for the membership.
-///
 /// <https://schema.org/membershipNumber>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

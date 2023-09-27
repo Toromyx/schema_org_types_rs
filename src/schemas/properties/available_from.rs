@@ -1,6 +1,4 @@
 use super::*;
-/// When the item is available for pickup from the store, locker, etc.
-///
 /// <https://schema.org/availableFrom>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

@@ -1,8 +1,4 @@
 use super::*;
-/// A sequential publication of comic stories under a
-/// unifying title, for example "The Amazing Spider-Man" or "Groo the
-/// Wanderer".
-///
 /// <https://schema.org/ComicSeries>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

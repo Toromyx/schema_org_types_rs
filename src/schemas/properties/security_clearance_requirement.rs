@@ -1,6 +1,4 @@
 use super::*;
-/// A description of any security clearance requirements of the job.
-///
 /// <https://schema.org/securityClearanceRequirement>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

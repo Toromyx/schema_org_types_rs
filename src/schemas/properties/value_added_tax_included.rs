@@ -1,6 +1,4 @@
 use super::*;
-/// Specifies whether the applicable value-added tax (VAT) is included in the price specification or not.
-///
 /// <https://schema.org/valueAddedTaxIncluded>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

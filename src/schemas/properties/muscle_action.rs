@@ -1,6 +1,4 @@
 use super::*;
-/// The movement the muscle generates.
-///
 /// <https://schema.org/muscleAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

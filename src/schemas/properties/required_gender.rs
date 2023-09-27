@@ -1,6 +1,4 @@
 use super::*;
-/// Audiences defined by a person's gender.
-///
 /// <https://schema.org/requiredGender>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

@@ -1,6 +1,4 @@
 use super::*;
-/// The row location of the reserved seat (e.g., B).
-///
 /// <https://schema.org/seatRow>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

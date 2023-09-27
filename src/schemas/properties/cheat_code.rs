@@ -1,6 +1,4 @@
 use super::*;
-/// Cheat codes to the game.
-///
 /// <https://schema.org/cheatCode>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

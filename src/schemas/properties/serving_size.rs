@@ -1,6 +1,4 @@
 use super::*;
-/// The serving size, in terms of the number of volume or mass.
-///
 /// <https://schema.org/servingSize>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

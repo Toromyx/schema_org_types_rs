@@ -1,6 +1,4 @@
 use super::*;
-/// ShippingDeliveryTime provides various pieces of information about delivery times for shipping.
-///
 /// <https://schema.org/ShippingDeliveryTime>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

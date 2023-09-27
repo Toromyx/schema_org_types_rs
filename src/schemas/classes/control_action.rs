@@ -1,6 +1,4 @@
 use super::*;
-/// An agent controls a device or application.
-///
 /// <https://schema.org/ControlAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

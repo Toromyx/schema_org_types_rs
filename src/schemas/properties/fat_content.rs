@@ -1,6 +1,4 @@
 use super::*;
-/// The number of grams of fat.
-///
 /// <https://schema.org/fatContent>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

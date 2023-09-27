@@ -1,6 +1,4 @@
 use super::*;
-/// Any part of the human body, typically a component of an anatomical system. Organs, tissues, and cells are all anatomical structures.
-///
 /// <https://schema.org/AnatomicalStructure>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

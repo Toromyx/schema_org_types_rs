@@ -1,6 +1,4 @@
 use super::*;
-/// A file containing slides or used for a presentation.
-///
 /// <https://schema.org/PresentationDigitalDocument>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

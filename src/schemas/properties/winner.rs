@@ -1,6 +1,4 @@
 use super::*;
-/// A sub property of participant. The winner of the action.
-///
 /// <https://schema.org/winner>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

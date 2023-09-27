@@ -1,6 +1,4 @@
 use super::*;
-/// Video game which is played on this server.
-///
 /// <https://schema.org/game>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

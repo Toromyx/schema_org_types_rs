@@ -1,6 +1,4 @@
 use super::*;
-/// A link to the ListItem that follows the current one.
-///
 /// <https://schema.org/nextItem>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

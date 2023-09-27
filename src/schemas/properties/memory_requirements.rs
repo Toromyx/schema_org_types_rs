@@ -1,6 +1,4 @@
 use super::*;
-/// Minimum memory requirements.
-///
 /// <https://schema.org/memoryRequirements>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

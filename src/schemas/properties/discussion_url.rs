@@ -1,6 +1,4 @@
 use super::*;
-/// A link to the page containing the comments of the CreativeWork.
-///
 /// <https://schema.org/discussionUrl>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

@@ -1,6 +1,4 @@
 use super::*;
-/// A financial product for the loaning of an amount of money, or line of credit, under agreed terms and charges.
-///
 /// <https://schema.org/LoanOrCredit>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

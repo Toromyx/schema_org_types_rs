@@ -1,6 +1,4 @@
 use super::*;
-/// A web page that provides medical information.
-///
 /// <https://schema.org/MedicalWebPage>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

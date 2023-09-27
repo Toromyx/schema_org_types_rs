@@ -1,6 +1,4 @@
 use super::*;
-/// An account that allows an investor to deposit funds and place investment orders with a licensed broker or brokerage firm.
-///
 /// <https://schema.org/BrokerageAccount>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

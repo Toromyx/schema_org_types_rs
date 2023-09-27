@@ -1,6 +1,4 @@
 use super::*;
-/// The earliest someone may check into a lodging establishment.
-///
 /// <https://schema.org/checkinTime>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

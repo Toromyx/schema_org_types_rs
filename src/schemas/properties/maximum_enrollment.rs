@@ -1,6 +1,4 @@
 use super::*;
-/// The maximum number of students who may be enrolled in the program.
-///
 /// <https://schema.org/maximumEnrollment>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

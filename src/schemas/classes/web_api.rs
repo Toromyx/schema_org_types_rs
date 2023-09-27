@@ -1,6 +1,4 @@
 use super::*;
-/// An application programming interface accessible over Web/Internet technologies.
-///
 /// <https://schema.org/WebAPI>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

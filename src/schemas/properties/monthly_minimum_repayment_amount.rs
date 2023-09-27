@@ -1,6 +1,4 @@
 use super::*;
-/// The minimum payment is the lowest amount of money that one is required to pay on a credit card statement each month.
-///
 /// <https://schema.org/monthlyMinimumRepaymentAmount>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

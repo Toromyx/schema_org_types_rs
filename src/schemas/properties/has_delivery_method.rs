@@ -1,6 +1,4 @@
 use super::*;
-/// Method used for delivery or shipping.
-///
 /// <https://schema.org/hasDeliveryMethod>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

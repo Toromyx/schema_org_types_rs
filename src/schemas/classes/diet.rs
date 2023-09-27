@@ -1,6 +1,4 @@
 use super::*;
-/// A strategy of regulating the intake of food to achieve or maintain a specific health-related goal.
-///
 /// <https://schema.org/Diet>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

@@ -1,6 +1,4 @@
 use super::*;
-/// A [[marginOfError]] for an [[Observation]].
-///
 /// <https://schema.org/marginOfError>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

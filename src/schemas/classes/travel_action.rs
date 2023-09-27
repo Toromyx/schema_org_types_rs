@@ -1,6 +1,4 @@
 use super::*;
-/// The act of traveling from a fromLocation to a destination by a specified mode of transport, optionally with participants.
-///
 /// <https://schema.org/TravelAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

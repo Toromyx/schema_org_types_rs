@@ -1,6 +1,4 @@
 use super::*;
-/// The class of infectious agent (bacteria, prion, etc.) that causes the disease.
-///
 /// <https://schema.org/infectiousAgentClass>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

@@ -1,6 +1,4 @@
 use super::*;
-/// A math solver which is capable of solving a subset of mathematical problems.
-///
 /// <https://schema.org/MathSolver>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

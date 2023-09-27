@@ -1,6 +1,4 @@
 use super::*;
-/// A music album.
-///
 /// <https://schema.org/album>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

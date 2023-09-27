@@ -1,6 +1,4 @@
 use super::*;
-/// A statistical distribution of values.
-///
 /// <https://schema.org/QuantitativeValueDistribution>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

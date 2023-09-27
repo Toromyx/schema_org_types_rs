@@ -1,6 +1,4 @@
 use super::*;
-/// A food or drink item listed in a menu or menu section.
-///
 /// <https://schema.org/MenuItem>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

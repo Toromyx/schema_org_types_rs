@@ -1,6 +1,4 @@
 use super::*;
-/// The 75th percentile value.
-///
 /// <https://schema.org/percentile75>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

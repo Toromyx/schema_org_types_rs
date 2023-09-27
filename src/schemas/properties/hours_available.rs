@@ -1,6 +1,4 @@
 use super::*;
-/// The hours during which this service or contact is available.
-///
 /// <https://schema.org/hoursAvailable>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

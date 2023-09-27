@@ -1,6 +1,4 @@
 use super::*;
-/// Event type: Music event.
-///
 /// <https://schema.org/MusicEvent>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

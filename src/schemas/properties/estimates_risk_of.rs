@@ -1,6 +1,4 @@
 use super::*;
-/// The condition, complication, or symptom whose risk is being estimated.
-///
 /// <https://schema.org/estimatesRiskOf>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

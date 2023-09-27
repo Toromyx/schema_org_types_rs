@@ -1,6 +1,4 @@
 use super::*;
-/// The organization or person from which the product was acquired.
-///
 /// <https://schema.org/acquiredFrom>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

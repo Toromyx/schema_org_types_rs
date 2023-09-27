@@ -1,6 +1,4 @@
 use super::*;
-/// Player type required&#x2014;for example, Flash or Silverlight.
-///
 /// <https://schema.org/playerType>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

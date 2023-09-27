@@ -1,6 +1,4 @@
 use super::*;
-/// Represents the collection of all sports organizations, including sports teams, governing bodies, and sports associations.
-///
 /// <https://schema.org/SportsOrganization>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

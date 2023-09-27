@@ -1,6 +1,4 @@
 use super::*;
-/// The act of asking someone to attend an event. Reciprocal of RsvpAction.
-///
 /// <https://schema.org/InviteAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

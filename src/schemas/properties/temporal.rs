@@ -1,7 +1,4 @@
 use super::*;
-/// The "temporal" property can be used in cases where more specific properties
-/// (e.g. [[temporalCoverage]], [[dateCreated]], [[dateModified]], [[datePublished]]) are not known to be appropriate.
-///
 /// <https://schema.org/temporal>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

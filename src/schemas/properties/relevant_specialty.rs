@@ -1,6 +1,4 @@
 use super::*;
-/// If applicable, a medical specialty in which this entity is relevant.
-///
 /// <https://schema.org/relevantSpecialty>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

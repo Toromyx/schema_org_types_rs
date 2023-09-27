@@ -1,6 +1,4 @@
 use super::*;
-/// The offer(s) -- e.g., product, quantity and price combinations -- included in the order.
-///
 /// <https://schema.org/acceptedOffer>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

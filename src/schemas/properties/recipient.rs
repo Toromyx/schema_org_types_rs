@@ -1,6 +1,4 @@
 use super::*;
-/// A sub property of participant. The participant who is at the receiving end of the action.
-///
 /// <https://schema.org/recipient>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

@@ -1,6 +1,4 @@
 use super::*;
-/// The catalog number for the release.
-///
 /// <https://schema.org/catalogNumber>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

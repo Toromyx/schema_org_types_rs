@@ -1,6 +1,4 @@
 use super::*;
-/// Indicates a [[Product]] that is a member of this [[ProductGroup]] (or [[ProductModel]]).
-///
 /// <https://schema.org/hasVariant>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

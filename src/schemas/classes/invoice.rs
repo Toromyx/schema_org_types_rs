@@ -1,6 +1,4 @@
 use super::*;
-/// A statement of the money due for goods or services; a bill.
-///
 /// <https://schema.org/Invoice>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

@@ -1,6 +1,4 @@
 use super::*;
-/// The words in the song.
-///
 /// <https://schema.org/lyrics>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

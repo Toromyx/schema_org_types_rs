@@ -1,6 +1,4 @@
 use super::*;
-/// A medical laboratory that offers on-site or off-site diagnostic services.
-///
 /// <https://schema.org/DiagnosticLab>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

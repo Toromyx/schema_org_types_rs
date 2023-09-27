@@ -1,6 +1,4 @@
 use super::*;
-/// A creative work with a visual storytelling format intended to be viewed online, particularly on mobile devices.
-///
 /// <https://schema.org/AmpStory>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

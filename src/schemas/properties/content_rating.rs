@@ -1,6 +1,4 @@
 use super::*;
-/// Official rating of a piece of content&#x2014;for example, 'MPAA PG-13'.
-///
 /// <https://schema.org/contentRating>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

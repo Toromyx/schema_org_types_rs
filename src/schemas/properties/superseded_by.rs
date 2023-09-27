@@ -1,6 +1,4 @@
 use super::*;
-/// Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
-///
 /// <https://schema.org/supersededBy>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

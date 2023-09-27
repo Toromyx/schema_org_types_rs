@@ -1,6 +1,4 @@
 use super::*;
-/// Specifying the health condition(s) of a patient, medical study, or other target audience.
-///
 /// <https://schema.org/healthCondition>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

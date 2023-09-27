@@ -1,6 +1,4 @@
 use super::*;
-/// A pointer to products or services offered by the organization or person.
-///
 /// <https://schema.org/makesOffer>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

@@ -1,6 +1,4 @@
 use super::*;
-/// The distance of the flight.
-///
 /// <https://schema.org/flightDistance>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

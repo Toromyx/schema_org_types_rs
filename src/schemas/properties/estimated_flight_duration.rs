@@ -1,6 +1,4 @@
 use super::*;
-/// The estimated time the flight will take.
-///
 /// <https://schema.org/estimatedFlightDuration>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

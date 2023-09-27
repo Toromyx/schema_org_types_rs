@@ -1,6 +1,4 @@
 use super::*;
-/// The artwork on the outer surface of a CreativeWork.
-///
 /// <https://schema.org/CoverArt>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

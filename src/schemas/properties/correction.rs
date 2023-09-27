@@ -1,6 +1,4 @@
 use super::*;
-/// Indicates a correction to a [[CreativeWork]], either via a [[CorrectionComment]], textually or in another document.
-///
 /// <https://schema.org/correction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

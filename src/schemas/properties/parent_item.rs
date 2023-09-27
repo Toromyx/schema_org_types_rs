@@ -1,6 +1,4 @@
 use super::*;
-/// The parent of a question, answer or item in general.
-///
 /// <https://schema.org/parentItem>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

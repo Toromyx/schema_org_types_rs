@@ -1,6 +1,4 @@
 use super::*;
-/// An over the air or online broadcast event.
-///
 /// <https://schema.org/BroadcastEvent>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

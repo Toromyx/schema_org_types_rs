@@ -1,6 +1,4 @@
 use super::*;
-/// The act of interacting with another person or organization.
-///
 /// <https://schema.org/InteractAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

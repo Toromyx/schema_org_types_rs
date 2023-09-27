@@ -1,6 +1,4 @@
 use super::*;
-/// Indicates the availability type of the game content associated with this action, such as whether it is a full version or a demo.
-///
 /// <https://schema.org/gameAvailabilityType>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

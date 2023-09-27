@@ -1,6 +1,4 @@
 use super::*;
-/// A body of water, such as a sea, ocean, or lake.
-///
 /// <https://schema.org/BodyOfWater>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

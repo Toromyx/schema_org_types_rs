@@ -1,6 +1,4 @@
 use super::*;
-/// A taxi.
-///
 /// <https://schema.org/Taxi>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

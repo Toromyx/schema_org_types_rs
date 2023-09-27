@@ -1,6 +1,4 @@
 use super::*;
-/// A shop that will buy, or lend money against the security of, personal possessions.
-///
 /// <https://schema.org/PawnShop>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

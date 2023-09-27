@@ -1,6 +1,4 @@
 use super::*;
-/// Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
-///
 /// <https://schema.org/hasPart>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

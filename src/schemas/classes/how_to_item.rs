@@ -1,6 +1,4 @@
 use super::*;
-/// An item used as either a tool or supply when performing the instructions for how to achieve a result.
-///
 /// <https://schema.org/HowToItem>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

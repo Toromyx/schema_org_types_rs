@@ -1,6 +1,4 @@
 use super::*;
-/// Any biological, chemical, or biochemical thing. For example: a protein; a gene; a chemical; a synthetic chemical.
-///
 /// <https://schema.org/BioChemEntity>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

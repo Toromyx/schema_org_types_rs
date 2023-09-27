@@ -1,6 +1,4 @@
 use super::*;
-/// A store that sells mobile phones and related accessories.
-///
 /// <https://schema.org/MobilePhoneStore>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

@@ -1,6 +1,4 @@
 use super::*;
-/// An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
-///
 /// <https://schema.org/seller>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

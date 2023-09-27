@@ -1,6 +1,4 @@
 use super::*;
-/// Any other drug related to this one, for example commonly-prescribed alternatives.
-///
 /// <https://schema.org/relatedDrug>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

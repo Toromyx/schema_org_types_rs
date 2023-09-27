@@ -1,6 +1,4 @@
 use super::*;
-/// A sub property of object. A question.
-///
 /// <https://schema.org/question>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

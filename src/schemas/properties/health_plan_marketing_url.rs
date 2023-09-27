@@ -1,6 +1,4 @@
 use super::*;
-/// The URL that goes directly to the plan brochure for the specific standard plan or plan variation.
-///
 /// <https://schema.org/healthPlanMarketingUrl>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

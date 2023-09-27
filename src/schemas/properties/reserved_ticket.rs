@@ -1,6 +1,4 @@
 use super::*;
-/// A ticket associated with the reservation.
-///
 /// <https://schema.org/reservedTicket>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

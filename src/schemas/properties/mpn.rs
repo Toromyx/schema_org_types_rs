@@ -1,6 +1,4 @@
 use super::*;
-/// The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
-///
 /// <https://schema.org/mpn>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

@@ -1,6 +1,4 @@
 use super::*;
-/// The edition of the print product in which the NewsArticle appears.
-///
 /// <https://schema.org/printEdition>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

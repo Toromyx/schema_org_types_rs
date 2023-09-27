@@ -1,6 +1,4 @@
 use super::*;
-/// The geographic area where a service or offered item is provided.
-///
 /// <https://schema.org/areaServed>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

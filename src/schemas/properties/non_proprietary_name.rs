@@ -1,6 +1,4 @@
 use super::*;
-/// The generic name of this drug or supplement.
-///
 /// <https://schema.org/nonProprietaryName>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

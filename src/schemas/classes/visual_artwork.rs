@@ -1,6 +1,4 @@
 use super::*;
-/// A work of art that is primarily visual in character.
-///
 /// <https://schema.org/VisualArtwork>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

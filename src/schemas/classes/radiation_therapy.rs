@@ -1,6 +1,4 @@
 use super::*;
-/// A process of care using radiation aimed at improving a health condition.
-///
 /// <https://schema.org/RadiationTherapy>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

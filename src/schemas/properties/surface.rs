@@ -1,6 +1,4 @@
 use super::*;
-/// A material used as a surface in some artwork, e.g. Canvas, Paper, Wood, Board, etc.
-///
 /// <https://schema.org/surface>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

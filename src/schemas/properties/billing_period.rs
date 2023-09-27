@@ -1,6 +1,4 @@
 use super::*;
-/// The time interval used to compute the invoice.
-///
 /// <https://schema.org/billingPeriod>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

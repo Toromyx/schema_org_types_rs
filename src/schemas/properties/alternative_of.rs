@@ -1,6 +1,4 @@
 use super::*;
-/// Another gene which is a variation of this one.
-///
 /// <https://schema.org/alternativeOf>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

@@ -1,6 +1,4 @@
 use super::*;
-/// The total number of forward gears available for the transmission system of the vehicle.\n\nTypical unit code(s): C62
-///
 /// <https://schema.org/numberOfForwardGears>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

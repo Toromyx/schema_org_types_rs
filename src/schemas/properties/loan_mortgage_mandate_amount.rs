@@ -1,6 +1,4 @@
 use super::*;
-/// Amount of mortgage mandate that can be converted into a proper mortgage at a later stage.
-///
 /// <https://schema.org/loanMortgageMandateAmount>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

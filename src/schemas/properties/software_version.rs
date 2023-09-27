@@ -1,6 +1,4 @@
 use super::*;
-/// Version of the software instance.
-///
 /// <https://schema.org/softwareVersion>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

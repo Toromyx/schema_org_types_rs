@@ -1,6 +1,4 @@
 use super::*;
-/// The date when the item is no longer valid.
-///
 /// <https://schema.org/validUntil>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

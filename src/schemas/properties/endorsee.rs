@@ -1,6 +1,4 @@
 use super::*;
-/// A sub property of participant. The person/organization being supported.
-///
 /// <https://schema.org/endorsee>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

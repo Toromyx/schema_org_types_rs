@@ -1,6 +1,4 @@
 use super::*;
-/// Strength of evidence of the data used to formulate the guideline (enumerated).
-///
 /// <https://schema.org/evidenceLevel>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

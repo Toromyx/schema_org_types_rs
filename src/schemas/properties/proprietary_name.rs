@@ -1,6 +1,4 @@
 use super::*;
-/// Proprietary name given to the diet plan, typically by its originator or creator.
-///
 /// <https://schema.org/proprietaryName>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

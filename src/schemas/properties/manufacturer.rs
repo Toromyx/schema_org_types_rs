@@ -1,6 +1,4 @@
 use super::*;
-/// The manufacturer of the product.
-///
 /// <https://schema.org/manufacturer>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

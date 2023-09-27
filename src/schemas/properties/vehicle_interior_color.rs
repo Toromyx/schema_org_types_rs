@@ -1,6 +1,4 @@
 use super::*;
-/// The color or color combination of the interior of the vehicle.
-///
 /// <https://schema.org/vehicleInteriorColor>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

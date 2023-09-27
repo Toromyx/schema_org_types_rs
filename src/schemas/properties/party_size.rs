@@ -1,6 +1,4 @@
 use super::*;
-/// Number of people the reservation should accommodate.
-///
 /// <https://schema.org/partySize>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

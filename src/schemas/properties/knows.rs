@@ -1,6 +1,4 @@
 use super::*;
-/// The most generic bi-directional social/work relation.
-///
 /// <https://schema.org/knows>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

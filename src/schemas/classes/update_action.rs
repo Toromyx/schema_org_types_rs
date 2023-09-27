@@ -1,6 +1,4 @@
 use super::*;
-/// The act of managing by changing/editing the state of the object.
-///
 /// <https://schema.org/UpdateAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

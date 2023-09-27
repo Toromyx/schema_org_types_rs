@@ -1,6 +1,4 @@
 use super::*;
-/// A government office&#x2014;for example, an IRS or DMV office.
-///
 /// <https://schema.org/GovernmentOffice>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

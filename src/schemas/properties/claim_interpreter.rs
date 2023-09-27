@@ -1,7 +1,4 @@
 use super::*;
-/// For a [[Claim]] interpreted from [[MediaObject]] content
-/// sed to indicate a claim contained, implied or refined from the content of a [[MediaObject]].
-///
 /// <https://schema.org/claimInterpreter>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

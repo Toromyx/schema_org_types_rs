@@ -1,6 +1,4 @@
 use super::*;
-/// The place where the Organization was founded.
-///
 /// <https://schema.org/foundingLocation>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

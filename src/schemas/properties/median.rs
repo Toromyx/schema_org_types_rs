@@ -1,6 +1,4 @@
 use super::*;
-/// The median value.
-///
 /// <https://schema.org/median>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

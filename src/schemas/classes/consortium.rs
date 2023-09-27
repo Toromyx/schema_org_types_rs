@@ -1,6 +1,4 @@
 use super::*;
-/// A Consortium is a membership [[Organization]] whose members are typically Organizations.
-///
 /// <https://schema.org/Consortium>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

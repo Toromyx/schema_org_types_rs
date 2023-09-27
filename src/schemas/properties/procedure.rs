@@ -1,6 +1,4 @@
 use super::*;
-/// A description of the procedure involved in setting up, using, and/or installing the device.
-///
 /// <https://schema.org/procedure>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

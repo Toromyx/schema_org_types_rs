@@ -1,6 +1,4 @@
 use super::*;
-/// A real-estate agent.
-///
 /// <https://schema.org/RealEstateAgent>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

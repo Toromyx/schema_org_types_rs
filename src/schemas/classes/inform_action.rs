@@ -1,6 +1,4 @@
 use super::*;
-/// The act of notifying someone of information pertinent to them, with no expectation of a response.
-///
 /// <https://schema.org/InformAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

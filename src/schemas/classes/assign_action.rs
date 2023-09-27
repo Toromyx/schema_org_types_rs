@@ -1,6 +1,4 @@
 use super::*;
-/// The act of allocating an action/event/task to some destination (someone or something).
-///
 /// <https://schema.org/AssignAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

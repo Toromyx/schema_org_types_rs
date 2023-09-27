@@ -1,6 +1,4 @@
 use super::*;
-/// The latest someone may check out of a lodging establishment.
-///
 /// <https://schema.org/checkoutTime>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

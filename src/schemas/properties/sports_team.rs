@@ -1,6 +1,4 @@
 use super::*;
-/// A sub property of participant. The sports team that participated on this action.
-///
 /// <https://schema.org/sportsTeam>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

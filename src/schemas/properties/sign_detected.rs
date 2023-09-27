@@ -1,6 +1,4 @@
 use super::*;
-/// A sign detected by the test.
-///
 /// <https://schema.org/signDetected>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

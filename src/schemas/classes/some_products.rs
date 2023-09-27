@@ -1,6 +1,4 @@
 use super::*;
-/// A placeholder for multiple similar products of the same kind.
-///
 /// <https://schema.org/SomeProducts>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

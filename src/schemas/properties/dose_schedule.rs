@@ -1,6 +1,4 @@
 use super::*;
-/// A dosing schedule for the drug for a given population, either observed, recommended, or maximum dose based on the type used.
-///
 /// <https://schema.org/doseSchedule>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

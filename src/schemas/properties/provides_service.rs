@@ -1,6 +1,4 @@
 use super::*;
-/// The service provided by this channel.
-///
 /// <https://schema.org/providesService>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

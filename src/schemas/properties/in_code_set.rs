@@ -1,6 +1,4 @@
 use super::*;
-/// A [[CategoryCodeSet]] that contains this category code.
-///
 /// <https://schema.org/inCodeSet>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

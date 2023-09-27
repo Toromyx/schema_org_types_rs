@@ -1,9 +1,4 @@
 use super::*;
-/// A CDCPMDRecord is a data structure representing a record in a CDC tabular data format
-/// used for hospital data reporting. See [documentation](/docs/cdc-covid.html) for details, and the linked CDC materials for authoritative
-/// definitions used as the source here.
-///
-///
 /// <https://schema.org/CDCPMDRecord>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

@@ -1,6 +1,4 @@
 use super::*;
-/// Whether prescriptions can be delivered by mail.
-///
 /// <https://schema.org/offersPrescriptionByMail>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

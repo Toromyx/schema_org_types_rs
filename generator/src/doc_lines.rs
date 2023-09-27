@@ -32,10 +32,6 @@ pub trait DocLines {
 
 impl<T: Schema> DocLines for T {
     fn doc_lines(&self) -> Vec<String> {
-        vec![
-            self.description().clone(),
-            "".to_string(),
-            format!("<{}>", self.iri()),
-        ]
+        vec![format!("<{}>", self.iri())]
     }
 }

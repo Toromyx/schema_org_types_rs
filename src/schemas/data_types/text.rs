@@ -1,6 +1,4 @@
 use super::*;
-/// Data type: Text.
-///
 /// <https://schema.org/Text>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

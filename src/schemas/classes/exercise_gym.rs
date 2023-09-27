@@ -1,6 +1,4 @@
 use super::*;
-/// A gym.
-///
 /// <https://schema.org/ExerciseGym>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

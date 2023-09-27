@@ -1,6 +1,4 @@
 use super::*;
-/// The date and time of giving up ownership on the product.
-///
 /// <https://schema.org/ownedThrough>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

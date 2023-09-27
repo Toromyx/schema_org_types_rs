@@ -1,6 +1,4 @@
 use super::*;
-/// The place and time the release was issued, expressed as a PublicationEvent.
-///
 /// <https://schema.org/releasedEvent>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

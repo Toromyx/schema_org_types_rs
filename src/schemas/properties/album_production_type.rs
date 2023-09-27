@@ -1,6 +1,4 @@
 use super::*;
-/// Classification of the album by its type of content: soundtrack, live album, studio album, etc.
-///
 /// <https://schema.org/albumProductionType>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

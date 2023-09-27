@@ -1,6 +1,4 @@
 use super::*;
-/// A BioChemEntity that is known to interact with this item.
-///
 /// <https://schema.org/bioChemInteraction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

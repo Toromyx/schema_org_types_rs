@@ -1,6 +1,4 @@
 use super::*;
-/// A pointer to another product (or multiple products) for which this product is a consumable.
-///
 /// <https://schema.org/isConsumableFor>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

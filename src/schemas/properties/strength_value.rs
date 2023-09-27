@@ -1,6 +1,4 @@
 use super::*;
-/// The value of an active ingredient's strength, e.g. 325.
-///
 /// <https://schema.org/strengthValue>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

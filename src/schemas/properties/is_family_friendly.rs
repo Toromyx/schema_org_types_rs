@@ -1,6 +1,4 @@
 use super::*;
-/// Indicates whether this content is family friendly.
-///
 /// <https://schema.org/isFamilyFriendly>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

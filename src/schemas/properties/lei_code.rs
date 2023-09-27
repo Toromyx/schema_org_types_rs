@@ -1,6 +1,4 @@
 use super::*;
-/// An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.
-///
 /// <https://schema.org/leiCode>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

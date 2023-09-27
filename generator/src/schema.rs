@@ -21,9 +21,6 @@ pub trait Schema {
     /// Get the name of this schema.
     fn name(&self) -> &String;
 
-    /// Get the description of this schema.
-    fn description(&self) -> &String;
-
     /// Get the IRI of this schema.
     fn iri(&self) -> &String;
 

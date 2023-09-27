@@ -1,6 +1,4 @@
 use super::*;
-/// The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).
-///
 /// <https://schema.org/videoFormat>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

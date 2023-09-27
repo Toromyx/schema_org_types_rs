@@ -1,6 +1,4 @@
 use super::*;
-/// The availability of this item&#x2014;for example In stock, Out of stock, Pre-order, etc.
-///
 /// <https://schema.org/availability>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

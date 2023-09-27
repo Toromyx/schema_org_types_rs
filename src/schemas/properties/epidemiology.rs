@@ -1,6 +1,4 @@
 use super::*;
-/// The characteristics of associated patients, such as age, gender, race etc.
-///
 /// <https://schema.org/epidemiology>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

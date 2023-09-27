@@ -1,6 +1,4 @@
 use super::*;
-/// The act of discovering/finding an object.
-///
 /// <https://schema.org/DiscoverAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

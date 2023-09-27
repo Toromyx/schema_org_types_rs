@@ -1,6 +1,4 @@
 use super::*;
-/// A restaurant.
-///
 /// <https://schema.org/Restaurant>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

@@ -1,6 +1,4 @@
 use super::*;
-/// Associated product/technology version. E.g., .NET Framework 4.5.
-///
 /// <https://schema.org/assemblyVersion>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

@@ -1,6 +1,4 @@
 use super::*;
-/// Description of the meals that will be provided or available for purchase.
-///
 /// <https://schema.org/mealService>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

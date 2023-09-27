@@ -1,6 +1,4 @@
 use super::*;
-/// A type of blood vessel that specifically carries lymph fluid unidirectionally toward the heart.
-///
 /// <https://schema.org/LymphaticVessel>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

@@ -1,6 +1,4 @@
 use super::*;
-/// The time when a passenger can check into the flight online.
-///
 /// <https://schema.org/webCheckinTime>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

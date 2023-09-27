@@ -1,6 +1,4 @@
 use super::*;
-/// 'bookingAgent' is an out-dated term indicating a 'broker' that serves as a booking agent.
-///
 /// <https://schema.org/bookingAgent>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

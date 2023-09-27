@@ -1,6 +1,4 @@
 use super::*;
-/// A playground.
-///
 /// <https://schema.org/Playground>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

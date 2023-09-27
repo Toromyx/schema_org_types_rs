@@ -1,6 +1,4 @@
 use super::*;
-/// An agent orders a (not yet released) object/product/service to be delivered/sent.
-///
 /// <https://schema.org/PreOrderAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

@@ -1,6 +1,4 @@
 use super::*;
-/// The number or other unique designator assigned to a Report by the publishing organization.
-///
 /// <https://schema.org/reportNumber>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

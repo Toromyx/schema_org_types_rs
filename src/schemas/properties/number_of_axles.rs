@@ -1,6 +1,4 @@
 use super::*;
-/// The number of axles.\n\nTypical unit code(s): C62
-///
 /// <https://schema.org/numberOfAxles>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

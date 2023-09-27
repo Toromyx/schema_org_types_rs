@@ -1,6 +1,4 @@
 use super::*;
-/// The type of bed to which the BedDetail refers, i.e. the type of bed available in the quantity indicated by quantity.
-///
 /// <https://schema.org/typeOfBed>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

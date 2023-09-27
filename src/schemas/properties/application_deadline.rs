@@ -1,6 +1,4 @@
 use super::*;
-/// The date at which the program stops collecting applications for the next enrollment cycle.
-///
 /// <https://schema.org/applicationDeadline>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

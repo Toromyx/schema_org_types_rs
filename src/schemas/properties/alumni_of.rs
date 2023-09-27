@@ -1,6 +1,4 @@
 use super::*;
-/// An organization that the person is an alumni of.
-///
 /// <https://schema.org/alumniOf>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

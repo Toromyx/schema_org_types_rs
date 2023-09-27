@@ -1,6 +1,4 @@
 use super::*;
-/// A dosage form in which this drug/supplement is available, e.g. 'tablet', 'suspension', 'injection'.
-///
 /// <https://schema.org/dosageForm>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

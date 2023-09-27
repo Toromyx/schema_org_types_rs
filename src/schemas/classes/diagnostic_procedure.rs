@@ -1,6 +1,4 @@
 use super::*;
-/// A medical procedure intended primarily for diagnostic, as opposed to therapeutic, purposes.
-///
 /// <https://schema.org/DiagnosticProcedure>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

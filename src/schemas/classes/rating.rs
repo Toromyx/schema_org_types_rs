@@ -1,6 +1,4 @@
 use super::*;
-/// A rating is an evaluation on a numeric scale, such as 1 to 5 stars.
-///
 /// <https://schema.org/Rating>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

@@ -1,6 +1,4 @@
 use super::*;
-/// All or part of a [[Dataset]] in downloadable form.
-///
 /// <https://schema.org/DataDownload>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

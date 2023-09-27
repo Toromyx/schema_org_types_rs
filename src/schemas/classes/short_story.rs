@@ -1,6 +1,4 @@
 use super::*;
-/// Short story or tale. A brief work of literature, usually written in narrative prose.
-///
 /// <https://schema.org/ShortStory>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

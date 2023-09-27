@@ -1,6 +1,4 @@
 use super::*;
-/// Password, PIN, or access code needed for delivery (e.g. from a locker).
-///
 /// <https://schema.org/accessCode>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

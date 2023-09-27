@@ -1,6 +1,4 @@
 use super::*;
-/// A service provided by an organization, e.g. delivery service, print services, etc.
-///
 /// <https://schema.org/Service>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

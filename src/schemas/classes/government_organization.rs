@@ -1,6 +1,4 @@
 use super::*;
-/// A governmental organization or agency.
-///
 /// <https://schema.org/GovernmentOrganization>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

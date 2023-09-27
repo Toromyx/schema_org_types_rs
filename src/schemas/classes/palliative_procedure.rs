@@ -1,6 +1,4 @@
 use super::*;
-/// A medical procedure intended primarily for palliative purposes, aimed at relieving the symptoms of an underlying health condition.
-///
 /// <https://schema.org/PalliativeProcedure>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

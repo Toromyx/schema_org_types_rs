@@ -1,6 +1,4 @@
 use super::*;
-/// A broadcast channel of a broadcast service.
-///
 /// <https://schema.org/hasBroadcastChannel>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

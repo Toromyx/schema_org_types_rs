@@ -1,6 +1,4 @@
 use super::*;
-/// The act of editing a recipient by replacing an old object with a new object.
-///
 /// <https://schema.org/ReplaceAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

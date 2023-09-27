@@ -1,6 +1,4 @@
 use super::*;
-/// If the file can be downloaded, URL to download the binary.
-///
 /// <https://schema.org/downloadUrl>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

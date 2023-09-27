@@ -1,6 +1,4 @@
 use super::*;
-/// A subject of the study, i.e. one of the medical conditions, therapies, devices, drugs, etc. investigated by the study.
-///
 /// <https://schema.org/studySubject>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

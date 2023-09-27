@@ -1,6 +1,4 @@
 use super::*;
-/// A video game series.
-///
 /// <https://schema.org/VideoGameSeries>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

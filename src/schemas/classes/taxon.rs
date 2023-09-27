@@ -1,6 +1,4 @@
 use super::*;
-/// A set of organisms asserted to represent a natural cohesive biological unit.
-///
 /// <https://schema.org/Taxon>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

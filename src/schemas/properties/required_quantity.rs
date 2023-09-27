@@ -1,6 +1,4 @@
 use super::*;
-/// The required quantity of the item(s).
-///
 /// <https://schema.org/requiredQuantity>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

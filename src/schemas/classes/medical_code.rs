@@ -1,6 +1,4 @@
 use super::*;
-/// A code for a medical entity.
-///
 /// <https://schema.org/MedicalCode>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

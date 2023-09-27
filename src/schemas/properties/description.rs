@@ -1,6 +1,4 @@
 use super::*;
-/// A description of the item.
-///
 /// <https://schema.org/description>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

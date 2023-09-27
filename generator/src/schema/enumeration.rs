@@ -25,8 +25,6 @@ use crate::{
 #[derivative(PartialEq, Eq, PartialOrd, Ord)]
 pub struct Enumeration {
     #[derivative(PartialEq = "ignore", PartialOrd = "ignore", Ord = "ignore")]
-    pub description: String,
-    #[derivative(PartialEq = "ignore", PartialOrd = "ignore", Ord = "ignore")]
     pub iri: String,
     pub name: String,
     #[derivative(PartialEq = "ignore", PartialOrd = "ignore", Ord = "ignore")]
@@ -46,10 +44,6 @@ impl Schema for Enumeration {
 
     fn name(&self) -> &String {
         &self.name
-    }
-
-    fn description(&self) -> &String {
-        &self.description
     }
 
     fn iri(&self) -> &String {
@@ -73,14 +67,12 @@ impl Schema for Enumeration {
             .enumeration_variant_labels_of_enumeration_query(&solution.schema.identifiable.iri)
             .into_par_iter()
             .map(|solution| EnumerationVariant {
-                description: solution.commented.comment,
                 iri: solution.identifiable.iri,
                 name: map_schema_name(solution.labeled.label),
             })
             .collect();
         variants.sort_unstable();
         Self {
-            description: solution.schema.commented.comment,
             iri: solution.schema.identifiable.iri,
             name: map_schema_name(solution.schema.labeled.label),
             variants,

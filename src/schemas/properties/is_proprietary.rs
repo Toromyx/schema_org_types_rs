@@ -1,6 +1,4 @@
 use super::*;
-/// True if this item's name is a proprietary/brand name (vs. generic name).
-///
 /// <https://schema.org/isProprietary>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

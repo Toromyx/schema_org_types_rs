@@ -1,6 +1,4 @@
 use super::*;
-/// A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
-///
 /// <https://schema.org/performer>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

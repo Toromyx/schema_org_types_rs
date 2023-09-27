@@ -1,6 +1,4 @@
 use super::*;
-/// The computer programming language.
-///
 /// <https://schema.org/programmingLanguage>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

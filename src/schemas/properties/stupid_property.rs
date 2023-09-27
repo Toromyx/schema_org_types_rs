@@ -1,6 +1,4 @@
 use super::*;
-/// This is a StupidProperty! - for testing only
-///
 /// <https://schema.org/stupidProperty>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

@@ -1,6 +1,4 @@
 use super::*;
-/// The job title of the person (for example, Financial Manager).
-///
 /// <https://schema.org/jobTitle>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

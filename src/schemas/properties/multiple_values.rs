@@ -1,6 +1,4 @@
 use super::*;
-/// Whether multiple values are allowed for the property.  Default is false.
-///
 /// <https://schema.org/multipleValues>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

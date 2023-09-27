@@ -1,6 +1,4 @@
 use super::*;
-/// The name of a character played in some acting or performing role, i.e. in a PerformanceRole.
-///
 /// <https://schema.org/characterName>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

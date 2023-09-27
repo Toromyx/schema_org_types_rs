@@ -1,6 +1,4 @@
 use super::*;
-/// A sibling of the person.
-///
 /// <https://schema.org/siblings>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

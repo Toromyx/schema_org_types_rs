@@ -1,6 +1,4 @@
 use super::*;
-/// The page on which the work ends; for example "138" or "xvi".
-///
 /// <https://schema.org/pageEnd>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

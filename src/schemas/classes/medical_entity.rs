@@ -1,6 +1,4 @@
 use super::*;
-/// The most generic type of entity related to health and the practice of medicine.
-///
 /// <https://schema.org/MedicalEntity>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

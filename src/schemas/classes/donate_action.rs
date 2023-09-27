@@ -1,6 +1,4 @@
 use super::*;
-/// The act of providing goods, services, or money without compensation, often for philanthropic reasons.
-///
 /// <https://schema.org/DonateAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

@@ -1,6 +1,4 @@
 use super::*;
-/// A broadcast service associated with the publication event.
-///
 /// <https://schema.org/publishedOn>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

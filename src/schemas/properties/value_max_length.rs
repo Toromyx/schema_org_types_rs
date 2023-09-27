@@ -1,6 +1,4 @@
 use super::*;
-/// Specifies the allowed range for number of characters in a literal value.
-///
 /// <https://schema.org/valueMaxLength>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

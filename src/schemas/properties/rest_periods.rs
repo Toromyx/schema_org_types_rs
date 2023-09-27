@@ -1,6 +1,4 @@
 use super::*;
-/// How often one should break from the activity.
-///
 /// <https://schema.org/restPeriods>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

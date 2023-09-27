@@ -1,6 +1,4 @@
 use super::*;
-/// The rate of coinsurance expressed as a number between 0.0 and 1.0.
-///
 /// <https://schema.org/healthPlanCoinsuranceRate>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

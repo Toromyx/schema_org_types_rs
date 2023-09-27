@@ -1,6 +1,4 @@
 use super::*;
-/// The release date of a vehicle model (often used to differentiate versions of the same make and model).
-///
 /// <https://schema.org/modelDate>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

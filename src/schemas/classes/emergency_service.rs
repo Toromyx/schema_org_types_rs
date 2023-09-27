@@ -1,6 +1,4 @@
 use super::*;
-/// An emergency service, such as a fire station or ER.
-///
 /// <https://schema.org/EmergencyService>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

@@ -1,6 +1,4 @@
 use super::*;
-/// Number of times one should repeat the activity.
-///
 /// <https://schema.org/repetitions>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

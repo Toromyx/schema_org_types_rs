@@ -1,6 +1,4 @@
 use super::*;
-/// An Organization (or ProgramMembership) to which this Person or Organization belongs.
-///
 /// <https://schema.org/memberOf>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

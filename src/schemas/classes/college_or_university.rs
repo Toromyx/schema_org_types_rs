@@ -1,6 +1,4 @@
 use super::*;
-/// A college, university, or other third-level educational institution.
-///
 /// <https://schema.org/CollegeOrUniversity>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

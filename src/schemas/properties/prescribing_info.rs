@@ -1,6 +1,4 @@
 use super::*;
-/// Link to prescribing information for the drug.
-///
 /// <https://schema.org/prescribingInfo>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

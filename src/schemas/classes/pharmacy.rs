@@ -1,6 +1,4 @@
 use super::*;
-/// A pharmacy or drugstore.
-///
 /// <https://schema.org/Pharmacy>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

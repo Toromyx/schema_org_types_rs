@@ -1,6 +1,4 @@
 use super::*;
-/// A software application designed specifically to work well on a mobile device such as a telephone.
-///
 /// <https://schema.org/MobileApplication>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

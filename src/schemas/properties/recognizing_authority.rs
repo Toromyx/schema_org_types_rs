@@ -1,6 +1,4 @@
 use super::*;
-/// If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
-///
 /// <https://schema.org/recognizingAuthority>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

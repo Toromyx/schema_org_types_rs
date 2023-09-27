@@ -1,6 +1,4 @@
 use super::*;
-/// The act of producing a painting, typically with paint and canvas as instruments.
-///
 /// <https://schema.org/PaintAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

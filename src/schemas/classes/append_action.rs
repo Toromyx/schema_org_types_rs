@@ -1,6 +1,4 @@
 use super::*;
-/// The act of inserting at the end if an ordered collection.
-///
 /// <https://schema.org/AppendAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

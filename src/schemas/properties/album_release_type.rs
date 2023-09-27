@@ -1,6 +1,4 @@
 use super::*;
-/// The kind of release which this album is: single, EP or album.
-///
 /// <https://schema.org/albumReleaseType>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

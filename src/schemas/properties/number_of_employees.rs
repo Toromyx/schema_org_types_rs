@@ -1,6 +1,4 @@
 use super::*;
-/// The number of employees in an organization, e.g. business.
-///
 /// <https://schema.org/numberOfEmployees>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

@@ -1,6 +1,4 @@
 use super::*;
-/// A listing that describes a job opening in a certain organization.
-///
 /// <https://schema.org/JobPosting>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

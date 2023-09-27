@@ -1,6 +1,4 @@
 use super::*;
-/// Thumbnail image for an image or video.
-///
 /// <https://schema.org/thumbnail>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

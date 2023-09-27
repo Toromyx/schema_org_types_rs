@@ -1,6 +1,4 @@
 use super::*;
-/// An electronic file or document.
-///
 /// <https://schema.org/DigitalDocument>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

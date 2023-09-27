@@ -1,6 +1,4 @@
 use super::*;
-/// A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.
-///
 /// <https://schema.org/Intangible>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

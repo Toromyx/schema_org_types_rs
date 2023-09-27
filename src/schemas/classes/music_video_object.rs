@@ -1,6 +1,4 @@
 use super::*;
-/// A music video file.
-///
 /// <https://schema.org/MusicVideoObject>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

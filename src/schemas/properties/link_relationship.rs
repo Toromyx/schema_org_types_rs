@@ -1,6 +1,4 @@
 use super::*;
-/// Indicates the relationship type of a Web link.
-///
 /// <https://schema.org/linkRelationship>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

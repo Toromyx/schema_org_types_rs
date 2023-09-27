@@ -1,6 +1,4 @@
 use super::*;
-/// The method of cooking, such as Frying, Steaming, ...
-///
 /// <https://schema.org/cookingMethod>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

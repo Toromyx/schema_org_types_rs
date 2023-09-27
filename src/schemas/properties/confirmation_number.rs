@@ -1,6 +1,4 @@
 use super::*;
-/// A number that confirms the given order or payment has been received.
-///
 /// <https://schema.org/confirmationNumber>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

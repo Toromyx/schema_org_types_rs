@@ -1,6 +1,4 @@
 use super::*;
-/// The act of planning the execution of an event/task/action/reservation/plan to a future date.
-///
 /// <https://schema.org/PlanAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

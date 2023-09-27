@@ -1,6 +1,4 @@
 use super::*;
-/// Description of skills and experience needed for the position or Occupation.
-///
 /// <https://schema.org/experienceRequirements>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

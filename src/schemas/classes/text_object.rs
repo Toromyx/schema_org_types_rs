@@ -1,6 +1,4 @@
 use super::*;
-/// A text file. The text can be unformatted or contain markup, html, etc.
-///
 /// <https://schema.org/TextObject>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

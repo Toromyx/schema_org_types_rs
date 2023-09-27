@@ -1,6 +1,4 @@
 use super::*;
-/// The current price of a currency.
-///
 /// <https://schema.org/currentExchangeRate>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

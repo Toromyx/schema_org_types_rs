@@ -1,6 +1,4 @@
 use super::*;
-/// The organization (airline, travelers' club, etc.) the membership is made with.
-///
 /// <https://schema.org/hostingOrganization>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

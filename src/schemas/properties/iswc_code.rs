@@ -1,6 +1,4 @@
 use super::*;
-/// The International Standard Musical Work Code for the composition.
-///
 /// <https://schema.org/iswcCode>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

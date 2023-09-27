@@ -1,6 +1,4 @@
 use super::*;
-/// The location in which the strength is available.
-///
 /// <https://schema.org/availableIn>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

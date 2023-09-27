@@ -1,6 +1,4 @@
 use super::*;
-/// Qualification, candidature, degree, application that Thesis supports.
-///
 /// <https://schema.org/inSupportOf>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

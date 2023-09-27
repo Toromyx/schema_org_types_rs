@@ -1,6 +1,4 @@
 use super::*;
-/// The section location of the reserved seat (e.g. Orchestra).
-///
 /// <https://schema.org/seatSection>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

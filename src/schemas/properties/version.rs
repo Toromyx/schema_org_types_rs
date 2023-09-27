@@ -1,6 +1,4 @@
 use super::*;
-/// The version of the CreativeWork embodied by a specified resource.
-///
 /// <https://schema.org/version>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

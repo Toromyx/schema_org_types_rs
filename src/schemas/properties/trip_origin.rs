@@ -1,6 +1,4 @@
 use super::*;
-/// The location of origin of the trip, prior to any destination(s).
-///
 /// <https://schema.org/tripOrigin>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

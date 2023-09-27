@@ -1,6 +1,4 @@
 use super::*;
-/// The muscle whose action counteracts the specified muscle.
-///
 /// <https://schema.org/antagonist>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

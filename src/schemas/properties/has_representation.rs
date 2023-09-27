@@ -1,6 +1,4 @@
 use super::*;
-/// A common representation such as a protein sequence or chemical structure for this entity. For images use schema.org/image.
-///
 /// <https://schema.org/hasRepresentation>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

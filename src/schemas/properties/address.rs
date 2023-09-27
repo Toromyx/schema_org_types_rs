@@ -1,6 +1,4 @@
 use super::*;
-/// Physical address of the item.
-///
 /// <https://schema.org/address>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

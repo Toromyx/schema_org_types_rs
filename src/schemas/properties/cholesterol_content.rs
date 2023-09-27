@@ -1,6 +1,4 @@
 use super::*;
-/// The number of milligrams of cholesterol.
-///
 /// <https://schema.org/cholesterolContent>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

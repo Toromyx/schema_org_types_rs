@@ -1,6 +1,4 @@
 use super::*;
-/// The act of applying an object to its intended purpose.
-///
 /// <https://schema.org/UseAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

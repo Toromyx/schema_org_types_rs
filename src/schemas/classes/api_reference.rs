@@ -1,6 +1,4 @@
 use super::*;
-/// Reference documentation for application programming interfaces (APIs).
-///
 /// <https://schema.org/APIReference>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

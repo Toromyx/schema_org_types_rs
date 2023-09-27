@@ -1,6 +1,4 @@
 use super::*;
-/// A medical test typically performed given this condition.
-///
 /// <https://schema.org/typicalTest>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

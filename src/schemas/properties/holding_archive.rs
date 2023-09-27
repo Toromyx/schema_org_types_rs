@@ -1,6 +1,4 @@
 use super::*;
-/// [[ArchiveOrganization]] that holds, keeps or maintains the [[ArchiveComponent]].
-///
 /// <https://schema.org/holdingArchive>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

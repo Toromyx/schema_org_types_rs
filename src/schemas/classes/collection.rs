@@ -1,6 +1,4 @@
 use super::*;
-/// A collection of items, e.g. creative works or products.
-///
 /// <https://schema.org/Collection>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

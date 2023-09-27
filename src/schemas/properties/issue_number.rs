@@ -1,6 +1,4 @@
 use super::*;
-/// Identifies the issue of publication; for example, "iii" or "2".
-///
 /// <https://schema.org/issueNumber>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

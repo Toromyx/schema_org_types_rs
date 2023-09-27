@@ -1,6 +1,4 @@
 use super::*;
-/// Attraction suitable for type(s) of tourist. E.g. children, visitors from a particular country, etc.
-///
 /// <https://schema.org/touristType>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

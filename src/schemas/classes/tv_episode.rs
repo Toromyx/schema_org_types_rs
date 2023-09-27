@@ -1,6 +1,4 @@
 use super::*;
-/// A TV episode which can be part of a series or season.
-///
 /// <https://schema.org/TVEpisode>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

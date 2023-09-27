@@ -1,6 +1,4 @@
 use super::*;
-/// A defence establishment, such as an army or navy base.
-///
 /// <https://schema.org/DefenceEstablishment>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

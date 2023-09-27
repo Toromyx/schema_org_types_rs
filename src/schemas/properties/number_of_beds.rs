@@ -1,6 +1,4 @@
 use super::*;
-/// The quantity of the given bed type available in the HotelRoom, Suite, House, or Apartment.
-///
 /// <https://schema.org/numberOfBeds>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

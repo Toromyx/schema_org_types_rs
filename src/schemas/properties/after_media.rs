@@ -1,6 +1,4 @@
 use super::*;
-/// A media object representing the circumstances after performing this direction.
-///
 /// <https://schema.org/afterMedia>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

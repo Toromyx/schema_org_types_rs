@@ -1,9 +1,4 @@
 use super::*;
-/// A NewsArticle is an article whose content reports news, or provides background context and supporting materials for understanding the news.
-///
-/// A more detailed overview of [schema.org News markup](/docs/news.html) is also available.
-///
-///
 /// <https://schema.org/NewsArticle>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

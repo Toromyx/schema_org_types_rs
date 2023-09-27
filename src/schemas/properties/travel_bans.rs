@@ -1,6 +1,4 @@
 use super::*;
-/// Information about travel bans, e.g. in the context of a pandemic.
-///
 /// <https://schema.org/travelBans>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

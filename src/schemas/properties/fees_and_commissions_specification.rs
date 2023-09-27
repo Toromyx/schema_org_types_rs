@@ -1,6 +1,4 @@
 use super::*;
-/// Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
-///
 /// <https://schema.org/feesAndCommissionsSpecification>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

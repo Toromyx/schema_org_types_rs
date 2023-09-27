@@ -1,6 +1,4 @@
 use super::*;
-/// A contact point for a person or organization.
-///
 /// <https://schema.org/contactPoint>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

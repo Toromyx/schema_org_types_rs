@@ -1,6 +1,4 @@
 use super::*;
-/// Indicates when shipping to a particular [[shippingDestination]] is not available.
-///
 /// <https://schema.org/doesNotShip>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

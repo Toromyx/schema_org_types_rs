@@ -1,6 +1,4 @@
 use super::*;
-/// The RxCUI drug identifier from RXNORM.
-///
 /// <https://schema.org/rxcui>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

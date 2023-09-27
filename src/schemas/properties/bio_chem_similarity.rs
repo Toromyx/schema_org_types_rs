@@ -1,6 +1,4 @@
 use super::*;
-/// A similar BioChemEntity, e.g., obtained by fingerprint similarity algorithms.
-///
 /// <https://schema.org/bioChemSimilarity>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

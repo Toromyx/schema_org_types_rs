@@ -1,6 +1,4 @@
 use super::*;
-/// A hospital with which the physician or office is affiliated.
-///
 /// <https://schema.org/hospitalAffiliation>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

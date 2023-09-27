@@ -1,6 +1,4 @@
 use super::*;
-/// A large, usually printed placard, bill, or announcement, often illustrated, that is posted to advertise or publicize something.
-///
 /// <https://schema.org/Poster>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

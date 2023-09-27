@@ -1,7 +1,4 @@
 use super::*;
-/// The "spatial" property can be used in cases when more specific properties
-/// (e.g. [[locationCreated]], [[spatialCoverage]], [[contentLocation]]) are not known to be appropriate.
-///
 /// <https://schema.org/spatial>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

@@ -1,6 +1,4 @@
 use super::*;
-/// The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
-///
 /// <https://schema.org/bestRating>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

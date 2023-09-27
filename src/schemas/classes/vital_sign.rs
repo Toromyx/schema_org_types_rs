@@ -1,6 +1,4 @@
 use super::*;
-/// Vital signs are measures of various physiological functions in order to assess the most basic body functions.
-///
 /// <https://schema.org/VitalSign>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

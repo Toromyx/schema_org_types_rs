@@ -1,6 +1,4 @@
 use super::*;
-/// A state or province of a country.
-///
 /// <https://schema.org/State>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

@@ -1,6 +1,4 @@
 use super::*;
-/// The category or type of pharmacy associated with this cost sharing.
-///
 /// <https://schema.org/healthPlanPharmacyCategory>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

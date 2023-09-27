@@ -1,6 +1,4 @@
 use super::*;
-/// The act of deliberately creating/producing/generating/building a result out of the agent.
-///
 /// <https://schema.org/CreateAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

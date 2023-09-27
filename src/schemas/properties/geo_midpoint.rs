@@ -1,6 +1,4 @@
 use super::*;
-/// Indicates the GeoCoordinates at the centre of a GeoShape, e.g. GeoCircle.
-///
 /// <https://schema.org/geoMidpoint>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

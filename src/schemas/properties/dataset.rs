@@ -1,6 +1,4 @@
 use super::*;
-/// A dataset contained in this catalog.
-///
 /// <https://schema.org/dataset>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

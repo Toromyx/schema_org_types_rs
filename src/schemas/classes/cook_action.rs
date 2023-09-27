@@ -1,6 +1,4 @@
 use super::*;
-/// The act of producing/preparing food.
-///
 /// <https://schema.org/CookAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

@@ -1,6 +1,4 @@
 use super::*;
-/// The act of organizing tasks/objects/events by associating resources to it.
-///
 /// <https://schema.org/AllocateAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

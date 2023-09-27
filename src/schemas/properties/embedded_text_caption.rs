@@ -1,6 +1,4 @@
 use super::*;
-/// Represents textual captioning from a [[MediaObject]], e.g. text of a 'meme'.
-///
 /// <https://schema.org/embeddedTextCaption>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

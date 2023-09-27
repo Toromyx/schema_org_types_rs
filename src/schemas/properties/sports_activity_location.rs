@@ -1,6 +1,4 @@
 use super::*;
-/// A sub property of location. The sports activity location where this action occurred.
-///
 /// <https://schema.org/sportsActivityLocation>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

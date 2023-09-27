@@ -1,6 +1,4 @@
 use super::*;
-/// Intended use of the BioChemEntity by humans.
-///
 /// <https://schema.org/potentialUse>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

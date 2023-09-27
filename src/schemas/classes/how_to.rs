@@ -1,6 +1,4 @@
 use super::*;
-/// Instructions that explain how to achieve a result by performing a sequence of steps.
-///
 /// <https://schema.org/HowTo>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

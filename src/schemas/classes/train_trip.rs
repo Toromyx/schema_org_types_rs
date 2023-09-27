@@ -1,6 +1,4 @@
 use super::*;
-/// A trip on a commercial train line.
-///
 /// <https://schema.org/TrainTrip>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

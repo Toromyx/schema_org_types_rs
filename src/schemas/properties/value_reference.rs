@@ -1,6 +1,4 @@
 use super::*;
-/// A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
-///
 /// <https://schema.org/valueReference>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

@@ -1,6 +1,4 @@
 use super::*;
-/// The CreativeWork that captured all or part of this Event.
-///
 /// <https://schema.org/recordedIn>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

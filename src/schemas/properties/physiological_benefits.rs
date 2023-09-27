@@ -1,6 +1,4 @@
 use super::*;
-/// Specific physiologic benefits associated to the plan.
-///
 /// <https://schema.org/physiologicalBenefits>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

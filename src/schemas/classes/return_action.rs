@@ -1,6 +1,4 @@
 use super::*;
-/// The act of returning to the origin that which was previously received (concrete objects) or taken (ownership).
-///
 /// <https://schema.org/ReturnAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

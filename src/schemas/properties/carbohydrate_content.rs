@@ -1,6 +1,4 @@
 use super::*;
-/// The number of grams of carbohydrates.
-///
 /// <https://schema.org/carbohydrateContent>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

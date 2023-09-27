@@ -1,6 +1,4 @@
 use super::*;
-/// The neurological pathway extension that involves muscle control.
-///
 /// <https://schema.org/nerveMotor>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

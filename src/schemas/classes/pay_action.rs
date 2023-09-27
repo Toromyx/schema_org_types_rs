@@ -1,6 +1,4 @@
 use super::*;
-/// An agent pays a price to a participant.
-///
 /// <https://schema.org/PayAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

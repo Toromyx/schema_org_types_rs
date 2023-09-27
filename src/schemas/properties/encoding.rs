@@ -1,6 +1,4 @@
 use super::*;
-/// A media object that encodes this CreativeWork. This property is a synonym for associatedMedia.
-///
 /// <https://schema.org/encoding>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

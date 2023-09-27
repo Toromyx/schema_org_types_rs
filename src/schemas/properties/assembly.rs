@@ -1,6 +1,4 @@
 use super::*;
-/// Library file name, e.g., mscorlib.dll, system.web.dll.
-///
 /// <https://schema.org/assembly>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

@@ -1,6 +1,4 @@
 use super::*;
-/// Target Operating System / Product to which the code applies.  If applies to several versions, just the product name can be used.
-///
 /// <https://schema.org/targetProduct>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

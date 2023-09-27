@@ -1,6 +1,4 @@
 use super::*;
-/// The act of starting or activating a device or application (e.g. starting a timer or turning on a flashlight).
-///
 /// <https://schema.org/ActivateAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

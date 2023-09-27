@@ -1,6 +1,4 @@
 use super::*;
-/// Information about getting tested (for a [[MedicalCondition]]), e.g. in the context of a pandemic.
-///
 /// <https://schema.org/gettingTestedInfo>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

@@ -1,6 +1,4 @@
 use super::*;
-/// The base salary of the job or of an employee in an EmployeeRole.
-///
 /// <https://schema.org/baseSalary>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

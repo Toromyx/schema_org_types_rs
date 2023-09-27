@@ -1,6 +1,4 @@
 use super::*;
-/// The act of momentarily pausing a device or application (e.g. pause music playback or pause a timer).
-///
 /// <https://schema.org/SuspendAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

@@ -1,6 +1,4 @@
 use super::*;
-/// People or organizations that endorse the plan.
-///
 /// <https://schema.org/endorsers>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

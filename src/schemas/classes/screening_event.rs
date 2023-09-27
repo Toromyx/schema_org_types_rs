@@ -1,6 +1,4 @@
 use super::*;
-/// A screening of a movie or other video.
-///
 /// <https://schema.org/ScreeningEvent>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

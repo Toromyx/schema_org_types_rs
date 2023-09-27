@@ -1,6 +1,4 @@
 use super::*;
-/// A series of movies. Included movies can be indicated with the hasPart property.
-///
 /// <https://schema.org/MovieSeries>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

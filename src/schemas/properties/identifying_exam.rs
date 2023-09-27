@@ -1,6 +1,4 @@
 use super::*;
-/// A physical examination that can identify this sign.
-///
 /// <https://schema.org/identifyingExam>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

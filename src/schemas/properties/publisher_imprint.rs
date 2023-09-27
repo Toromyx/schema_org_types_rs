@@ -1,6 +1,4 @@
 use super::*;
-/// The publishing division which published the comic.
-///
 /// <https://schema.org/publisherImprint>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

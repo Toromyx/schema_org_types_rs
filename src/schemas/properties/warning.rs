@@ -1,6 +1,4 @@
 use super::*;
-/// Any FDA or other warnings about the drug (text or URL).
-///
 /// <https://schema.org/warning>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

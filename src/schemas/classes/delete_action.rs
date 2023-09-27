@@ -1,6 +1,4 @@
 use super::*;
-/// The act of editing a recipient by removing one of its objects.
-///
 /// <https://schema.org/DeleteAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

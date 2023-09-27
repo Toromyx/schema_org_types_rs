@@ -1,6 +1,4 @@
 use super::*;
-/// The place(s) from which the offer can be obtained (e.g. store locations).
-///
 /// <https://schema.org/availableAtOrFrom>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

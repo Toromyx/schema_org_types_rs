@@ -1,6 +1,4 @@
 use super::*;
-/// The act of swallowing solid objects.
-///
 /// <https://schema.org/EatAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

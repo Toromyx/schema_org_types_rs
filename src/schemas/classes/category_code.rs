@@ -1,6 +1,4 @@
 use super::*;
-/// A Category Code.
-///
 /// <https://schema.org/CategoryCode>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

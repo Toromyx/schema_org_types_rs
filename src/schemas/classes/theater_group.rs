@@ -1,6 +1,4 @@
 use super::*;
-/// A theater group or company, for example, the Royal Shakespeare Company or Druid Theatre.
-///
 /// <https://schema.org/TheaterGroup>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

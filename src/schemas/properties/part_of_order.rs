@@ -1,6 +1,4 @@
 use super::*;
-/// The overall order the items in this delivery were included in.
-///
 /// <https://schema.org/partOfOrder>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

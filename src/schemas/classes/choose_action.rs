@@ -1,6 +1,4 @@
 use super::*;
-/// The act of expressing a preference from a set of options or a large or unbounded set of choices/options.
-///
 /// <https://schema.org/ChooseAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

@@ -1,6 +1,4 @@
 use super::*;
-/// The most generic familial relation.
-///
 /// <https://schema.org/relatedTo>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

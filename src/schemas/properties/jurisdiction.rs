@@ -1,6 +1,4 @@
 use super::*;
-/// Indicates a legal jurisdiction, e.g. of some legislation, or where some government service is based.
-///
 /// <https://schema.org/jurisdiction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

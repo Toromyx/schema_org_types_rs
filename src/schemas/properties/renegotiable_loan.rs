@@ -1,6 +1,4 @@
 use super::*;
-/// Whether the terms for payment of interest can be renegotiated during the life of the loan.
-///
 /// <https://schema.org/renegotiableLoan>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

@@ -1,6 +1,4 @@
 use super::*;
-/// The number of children staying in the unit.
-///
 /// <https://schema.org/numChildren>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

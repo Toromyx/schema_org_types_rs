@@ -1,6 +1,4 @@
 use super::*;
-/// Estimated processing time for the service using this channel.
-///
 /// <https://schema.org/processingTime>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

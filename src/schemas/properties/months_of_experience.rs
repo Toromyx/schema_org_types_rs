@@ -1,6 +1,4 @@
 use super::*;
-/// Indicates the minimal number of months of experience required for a position.
-///
 /// <https://schema.org/monthsOfExperience>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

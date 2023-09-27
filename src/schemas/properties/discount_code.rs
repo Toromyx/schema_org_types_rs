@@ -1,6 +1,4 @@
 use super::*;
-/// Code used to redeem a discount.
-///
 /// <https://schema.org/discountCode>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

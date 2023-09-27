@@ -1,6 +1,4 @@
 use super::*;
-/// The name of the application suite to which the application belongs (e.g. Excel belongs to Office).
-///
 /// <https://schema.org/applicationSuite>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

@@ -1,6 +1,4 @@
 use super::*;
-/// Cash, Credit Card, Cryptocurrency, Local Exchange Tradings System, etc.
-///
 /// <https://schema.org/paymentAccepted>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

@@ -1,6 +1,4 @@
 use super::*;
-/// Pregnancy category of this drug.
-///
 /// <https://schema.org/pregnancyCategory>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

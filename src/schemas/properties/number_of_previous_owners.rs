@@ -1,6 +1,4 @@
 use super::*;
-/// The number of owners of the vehicle, including the current one.\n\nTypical unit code(s): C62
-///
 /// <https://schema.org/numberOfPreviousOwners>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

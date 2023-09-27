@@ -1,6 +1,4 @@
 use super::*;
-/// A monetary grant.
-///
 /// <https://schema.org/MonetaryGrant>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

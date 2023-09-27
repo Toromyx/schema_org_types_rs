@@ -1,6 +1,4 @@
 use super::*;
-/// An item within a data feed. Data feeds may have many elements.
-///
 /// <https://schema.org/dataFeedElement>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

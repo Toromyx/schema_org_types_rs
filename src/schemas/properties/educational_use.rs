@@ -1,6 +1,4 @@
 use super::*;
-/// The purpose of a work in the context of education; for example, 'assignment', 'group work'.
-///
 /// <https://schema.org/educationalUse>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

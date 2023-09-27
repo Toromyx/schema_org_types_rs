@@ -1,6 +1,4 @@
 use super::*;
-/// Genre of the creative work, broadcast channel or group.
-///
 /// <https://schema.org/genre>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

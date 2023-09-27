@@ -1,6 +1,4 @@
 use super::*;
-/// The anatomical or organ system that this structure is part of.
-///
 /// <https://schema.org/partOfSystem>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

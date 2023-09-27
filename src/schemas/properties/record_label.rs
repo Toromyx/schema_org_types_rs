@@ -1,6 +1,4 @@
 use super::*;
-/// The label that issued the release.
-///
 /// <https://schema.org/recordLabel>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

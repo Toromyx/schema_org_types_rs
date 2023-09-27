@@ -1,6 +1,4 @@
 use super::*;
-/// Used to tag an item to be intended or suitable for consumption or use by adults only.
-///
 /// <https://schema.org/hasAdultConsideration>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

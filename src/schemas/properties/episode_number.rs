@@ -1,6 +1,4 @@
 use super::*;
-/// Position of the episode within an ordered group of episodes.
-///
 /// <https://schema.org/episodeNumber>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

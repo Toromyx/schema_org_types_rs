@@ -1,6 +1,4 @@
 use super::*;
-/// Other anatomical structures to which this structure is connected.
-///
 /// <https://schema.org/connectedTo>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

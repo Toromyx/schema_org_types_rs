@@ -1,6 +1,4 @@
 use super::*;
-/// A risk factor is anything that increases a person's likelihood of developing or contracting a disease, medical condition, or complication.
-///
 /// <https://schema.org/MedicalRiskFactor>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

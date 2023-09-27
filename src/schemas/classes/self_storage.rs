@@ -1,6 +1,4 @@
 use super::*;
-/// A self-storage facility.
-///
 /// <https://schema.org/SelfStorage>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

@@ -1,6 +1,4 @@
 use super::*;
-/// The place of attachment of a muscle, or what the muscle moves.
-///
 /// <https://schema.org/insertion>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

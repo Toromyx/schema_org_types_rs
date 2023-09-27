@@ -1,6 +1,4 @@
 use super::*;
-/// A [hackathon](https://en.wikipedia.org/wiki/Hackathon) event.
-///
 /// <https://schema.org/Hackathon>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

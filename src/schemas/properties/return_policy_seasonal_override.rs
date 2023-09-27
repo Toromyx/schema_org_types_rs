@@ -1,6 +1,4 @@
 use super::*;
-/// Seasonal override of a return policy.
-///
 /// <https://schema.org/returnPolicySeasonalOverride>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

@@ -1,6 +1,4 @@
 use super::*;
-/// The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.
-///
 /// <https://schema.org/creator>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

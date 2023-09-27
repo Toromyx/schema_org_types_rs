@@ -1,6 +1,4 @@
 use super::*;
-/// The expected progression of the condition if it is not treated and allowed to progress naturally.
-///
 /// <https://schema.org/naturalProgression>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

@@ -1,6 +1,4 @@
 use super::*;
-/// An answer offered to a question; perhaps correct, perhaps opinionated or wrong.
-///
 /// <https://schema.org/Answer>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

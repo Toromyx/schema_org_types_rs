@@ -1,6 +1,4 @@
 use super::*;
-/// Place of worship, such as a church, synagogue, or mosque.
-///
 /// <https://schema.org/PlaceOfWorship>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

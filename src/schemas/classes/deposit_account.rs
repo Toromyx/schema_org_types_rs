@@ -1,6 +1,4 @@
 use super::*;
-/// A type of Bank Account with a main purpose of depositing funds to gain interest or other benefits.
-///
 /// <https://schema.org/DepositAccount>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

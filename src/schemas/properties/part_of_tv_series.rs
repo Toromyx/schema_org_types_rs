@@ -1,6 +1,4 @@
 use super::*;
-/// The TV series to which this episode or season belongs.
-///
 /// <https://schema.org/partOfTVSeries>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

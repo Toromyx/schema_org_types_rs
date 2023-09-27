@@ -1,6 +1,4 @@
 use super::*;
-/// A waterfall, like Niagara.
-///
 /// <https://schema.org/Waterfall>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

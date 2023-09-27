@@ -1,6 +1,4 @@
 use super::*;
-/// The location of the reserved seat (e.g., 27).
-///
 /// <https://schema.org/seatNumber>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

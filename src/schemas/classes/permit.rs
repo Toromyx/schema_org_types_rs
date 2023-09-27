@@ -1,6 +1,4 @@
 use super::*;
-/// A permit issued by an organization, e.g. a parking pass.
-///
 /// <https://schema.org/Permit>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

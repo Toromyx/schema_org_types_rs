@@ -1,6 +1,4 @@
 use super::*;
-/// A set of defined terms, for example a set of categories or a classification scheme, a glossary, dictionary or enumeration.
-///
 /// <https://schema.org/DefinedTermSet>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

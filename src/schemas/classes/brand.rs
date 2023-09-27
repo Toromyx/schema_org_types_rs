@@ -1,6 +1,4 @@
 use super::*;
-/// A brand is a name used by an organization or business person for labeling a product, product group, or similar.
-///
 /// <https://schema.org/Brand>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

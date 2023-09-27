@@ -1,6 +1,4 @@
 use super::*;
-/// A thumbnail image relevant to the Thing.
-///
 /// <https://schema.org/thumbnailUrl>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

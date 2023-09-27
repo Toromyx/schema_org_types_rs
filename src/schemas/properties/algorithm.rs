@@ -1,6 +1,4 @@
 use super::*;
-/// The algorithm or rules to follow to compute the score.
-///
 /// <https://schema.org/algorithm>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

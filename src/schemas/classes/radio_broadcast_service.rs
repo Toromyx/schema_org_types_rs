@@ -1,6 +1,4 @@
 use super::*;
-/// A delivery service through which radio content is provided via broadcast over the air or online.
-///
 /// <https://schema.org/RadioBroadcastService>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

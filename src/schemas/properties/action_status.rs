@@ -1,6 +1,4 @@
 use super::*;
-/// Indicates the current disposition of the Action.
-///
 /// <https://schema.org/actionStatus>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

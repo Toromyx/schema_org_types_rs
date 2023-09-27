@@ -1,6 +1,4 @@
 use super::*;
-/// A single season of a podcast. Many podcasts do not break down into separate seasons. In that case, PodcastSeries should be used.
-///
 /// <https://schema.org/PodcastSeason>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

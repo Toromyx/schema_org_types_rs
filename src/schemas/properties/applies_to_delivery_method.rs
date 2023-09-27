@@ -1,6 +1,4 @@
 use super::*;
-/// The delivery method(s) to which the delivery charge or payment charge specification applies.
-///
 /// <https://schema.org/appliesToDeliveryMethod>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

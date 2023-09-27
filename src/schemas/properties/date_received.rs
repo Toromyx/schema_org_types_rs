@@ -1,6 +1,4 @@
 use super::*;
-/// The date/time the message was received if a single recipient exists.
-///
 /// <https://schema.org/dateReceived>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

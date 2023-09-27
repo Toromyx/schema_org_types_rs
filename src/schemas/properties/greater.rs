@@ -1,6 +1,4 @@
 use super::*;
-/// This ordering relation for qualitative values indicates that the subject is greater than the object.
-///
 /// <https://schema.org/greater>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

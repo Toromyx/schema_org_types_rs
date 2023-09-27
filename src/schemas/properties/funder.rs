@@ -1,6 +1,4 @@
 use super::*;
-/// A person or organization that supports (sponsors) something through some kind of financial contribution.
-///
 /// <https://schema.org/funder>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

@@ -23,8 +23,6 @@ use crate::{
 #[derivative(PartialEq, Eq, PartialOrd, Ord)]
 pub struct Class {
     #[derivative(PartialEq = "ignore", PartialOrd = "ignore", Ord = "ignore")]
-    pub description: String,
-    #[derivative(PartialEq = "ignore", PartialOrd = "ignore", Ord = "ignore")]
     pub iri: String,
     pub name: String,
     #[derivative(PartialEq = "ignore", PartialOrd = "ignore", Ord = "ignore")]
@@ -44,10 +42,6 @@ impl Schema for Class {
 
     fn name(&self) -> &String {
         &self.name
-    }
-
-    fn description(&self) -> &String {
-        &self.description
     }
 
     fn iri(&self) -> &String {
@@ -82,7 +76,6 @@ impl Schema for Class {
             .collect();
         properties.sort_unstable();
         Class {
-            description: solution.schema.commented.comment,
             iri: solution.schema.identifiable.iri,
             name: map_schema_name(solution.schema.labeled.label),
             properties,

@@ -1,6 +1,4 @@
 use super::*;
-/// A US-style health insurance plan, including PPOs, EPOs, and HMOs.
-///
 /// <https://schema.org/HealthInsurancePlan>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

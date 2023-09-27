@@ -1,6 +1,4 @@
 use super::*;
-/// 'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.
-///
 /// <https://schema.org/carrier>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

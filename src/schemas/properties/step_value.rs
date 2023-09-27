@@ -1,6 +1,4 @@
 use super::*;
-/// The stepValue attribute indicates the granularity that is expected (and required) of the value in a PropertyValueSpecification.
-///
 /// <https://schema.org/stepValue>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

@@ -1,6 +1,4 @@
 use super::*;
-/// The thing -- flight, event, restaurant, etc. being reserved.
-///
 /// <https://schema.org/reservationFor>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

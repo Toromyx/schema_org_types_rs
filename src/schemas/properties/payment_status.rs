@@ -1,6 +1,4 @@
 use super::*;
-/// The status of payment; whether the invoice has been paid or not.
-///
 /// <https://schema.org/paymentStatus>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

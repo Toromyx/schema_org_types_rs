@@ -1,6 +1,4 @@
 use super::*;
-/// Any collection of tests commonly ordered together.
-///
 /// <https://schema.org/MedicalTestPanel>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

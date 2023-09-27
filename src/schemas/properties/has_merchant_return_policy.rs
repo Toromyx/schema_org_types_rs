@@ -1,6 +1,4 @@
 use super::*;
-/// Specifies a MerchantReturnPolicy that may be applicable.
-///
 /// <https://schema.org/hasMerchantReturnPolicy>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

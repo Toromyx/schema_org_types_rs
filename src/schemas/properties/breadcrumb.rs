@@ -1,6 +1,4 @@
 use super::*;
-/// A set of links that can help a user understand and navigate a website hierarchy.
-///
 /// <https://schema.org/breadcrumb>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

@@ -1,6 +1,4 @@
 use super::*;
-/// Identifies the denominator variable when an observation represents a ratio or percentage.
-///
 /// <https://schema.org/measurementDenominator>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

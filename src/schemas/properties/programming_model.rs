@@ -1,6 +1,4 @@
 use super::*;
-/// Indicates whether API is managed or unmanaged.
-///
 /// <https://schema.org/programmingModel>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

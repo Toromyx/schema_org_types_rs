@@ -1,6 +1,4 @@
 use super::*;
-/// The price asked for a given offer by the respective organization or person.
-///
 /// <https://schema.org/UnitPriceSpecification>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

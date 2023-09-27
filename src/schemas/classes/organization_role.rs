@@ -1,6 +1,4 @@
 use super::*;
-/// A subclass of Role used to describe roles within organizations.
-///
 /// <https://schema.org/OrganizationRole>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

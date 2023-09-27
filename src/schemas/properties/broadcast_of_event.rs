@@ -1,6 +1,4 @@
 use super::*;
-/// The event being broadcast such as a sporting event or awards ceremony.
-///
 /// <https://schema.org/broadcastOfEvent>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

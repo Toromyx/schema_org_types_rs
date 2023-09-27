@@ -1,6 +1,4 @@
 use super::*;
-/// Server that provides game interaction in a multiplayer game.
-///
 /// <https://schema.org/GameServer>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

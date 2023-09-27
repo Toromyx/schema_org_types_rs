@@ -1,6 +1,4 @@
 use super::*;
-/// Information about public transport closures.
-///
 /// <https://schema.org/publicTransportClosuresInfo>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

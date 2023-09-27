@@ -1,6 +1,4 @@
 use super::*;
-/// Specifying a drug or medicine used in a medication procedure.
-///
 /// <https://schema.org/drug>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

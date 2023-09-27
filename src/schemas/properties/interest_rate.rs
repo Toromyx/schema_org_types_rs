@@ -1,6 +1,4 @@
 use super::*;
-/// The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
-///
 /// <https://schema.org/interestRate>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

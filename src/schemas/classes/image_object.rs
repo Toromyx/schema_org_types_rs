@@ -1,6 +1,4 @@
 use super::*;
-/// An image file.
-///
 /// <https://schema.org/ImageObject>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

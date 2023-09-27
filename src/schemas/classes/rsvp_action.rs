@@ -1,6 +1,4 @@
 use super::*;
-/// The act of notifying an event organizer as to whether you expect to attend the event.
-///
 /// <https://schema.org/RsvpAction>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

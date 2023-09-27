@@ -1,6 +1,4 @@
 use super::*;
-/// Runtime platform or script interpreter dependencies (example: Java v1, Python 2.3, .NET Framework 3.0).
-///
 /// <https://schema.org/runtimePlatform>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

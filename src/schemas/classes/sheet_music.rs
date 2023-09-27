@@ -1,6 +1,4 @@
 use super::*;
-/// Printed music, as opposed to performed or recorded music.
-///
 /// <https://schema.org/SheetMusic>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

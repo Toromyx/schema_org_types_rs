@@ -1,6 +1,4 @@
 use super::*;
-/// A number associated with a role in an organization, for example, the number on an athlete's jersey.
-///
 /// <https://schema.org/numberedPosition>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

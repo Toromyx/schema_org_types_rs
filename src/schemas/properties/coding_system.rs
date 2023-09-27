@@ -1,6 +1,4 @@
 use super::*;
-/// The coding system, e.g. 'ICD-10'.
-///
 /// <https://schema.org/codingSystem>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

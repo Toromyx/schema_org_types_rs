@@ -1,6 +1,4 @@
 use super::*;
-/// Type of employment (e.g. full-time, part-time, contract, temporary, seasonal, internship).
-///
 /// <https://schema.org/employmentType>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

@@ -1,6 +1,4 @@
 use super::*;
-/// Season dedicated to radio broadcast and associated online delivery.
-///
 /// <https://schema.org/RadioSeason>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

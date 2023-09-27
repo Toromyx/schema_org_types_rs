@@ -1,6 +1,4 @@
 use super::*;
-/// Specifies a regular expression for testing literal values according to the HTML spec.
-///
 /// <https://schema.org/valuePattern>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

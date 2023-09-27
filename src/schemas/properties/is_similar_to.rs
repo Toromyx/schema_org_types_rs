@@ -1,6 +1,4 @@
 use super::*;
-/// A pointer to another, functionally similar product (or multiple products).
-///
 /// <https://schema.org/isSimilarTo>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

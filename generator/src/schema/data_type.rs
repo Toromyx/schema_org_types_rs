@@ -22,8 +22,6 @@ use crate::{
 #[derivative(PartialEq, Eq, PartialOrd, Ord)]
 pub struct DataType {
     #[derivative(PartialEq = "ignore", PartialOrd = "ignore", Ord = "ignore")]
-    pub description: String,
-    #[derivative(PartialEq = "ignore", PartialOrd = "ignore", Ord = "ignore")]
     pub iri: String,
     pub name: String,
     #[derivative(PartialEq = "ignore", PartialOrd = "ignore", Ord = "ignore")]
@@ -43,10 +41,6 @@ impl Schema for DataType {
 
     fn name(&self) -> &String {
         &self.name
-    }
-
-    fn description(&self) -> &String {
-        &self.description
     }
 
     fn iri(&self) -> &String {
@@ -69,7 +63,6 @@ impl Schema for DataType {
         let transformable_type = store
             .transformable_data_type_label_of_data_type_query(&solution.schema.identifiable.iri);
         Self {
-            description: solution.schema.commented.comment,
             iri: solution.schema.identifiable.iri,
             name: map_schema_name(solution.schema.labeled.label),
             rust_type: RustType::from(transformable_type.label.as_str()),

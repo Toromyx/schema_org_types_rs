@@ -1,6 +1,4 @@
 use super::*;
-/// A set of characteristics describing parents, who can be interested in viewing some content.
-///
 /// <https://schema.org/ParentAudience>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

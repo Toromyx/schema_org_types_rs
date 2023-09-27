@@ -1,6 +1,4 @@
 use super::*;
-/// The quantity that results by performing instructions. For example, a paper airplane, 10 personalized candles.
-///
 /// <https://schema.org/yield>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

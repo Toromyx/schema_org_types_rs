@@ -1,6 +1,4 @@
 use super::*;
-/// A fact-checking review of claims made (or reported) in some creative work (referenced via itemReviewed).
-///
 /// <https://schema.org/ClaimReview>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

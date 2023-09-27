@@ -1,6 +1,4 @@
 use super::*;
-/// A line is a point-to-point path consisting of two or more points. A line is expressed as a series of two or more point objects separated by space.
-///
 /// <https://schema.org/line>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

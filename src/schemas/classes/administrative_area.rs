@@ -1,6 +1,4 @@
 use super::*;
-/// A geographical region, typically under the jurisdiction of a particular government.
-///
 /// <https://schema.org/AdministrativeArea>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

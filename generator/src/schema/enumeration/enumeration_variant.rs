@@ -10,19 +10,13 @@ use crate::doc_lines::DocLines;
 #[derivative(PartialEq, Eq, PartialOrd, Ord)]
 pub struct EnumerationVariant {
     #[derivative(PartialEq = "ignore", PartialOrd = "ignore", Ord = "ignore")]
-    pub description: String,
-    #[derivative(PartialEq = "ignore", PartialOrd = "ignore", Ord = "ignore")]
     pub iri: String,
     pub name: String,
 }
 
 impl DocLines for EnumerationVariant {
     fn doc_lines(&self) -> Vec<String> {
-        vec![
-            self.description.clone(),
-            "".to_string(),
-            format!("<{}>", self.iri),
-        ]
+        vec![format!("<{}>", self.iri)]
     }
 }
 

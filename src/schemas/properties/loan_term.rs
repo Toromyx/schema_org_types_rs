@@ -1,6 +1,4 @@
 use super::*;
-/// The duration of the loan or credit agreement.
-///
 /// <https://schema.org/loanTerm>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

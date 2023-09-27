@@ -1,6 +1,4 @@
 use super::*;
-/// A description of the employer, career opportunities and work environment for this position.
-///
 /// <https://schema.org/employerOverview>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

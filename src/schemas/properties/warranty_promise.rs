@@ -1,6 +1,4 @@
 use super::*;
-/// The warranty promise(s) included in the offer.
-///
 /// <https://schema.org/warrantyPromise>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

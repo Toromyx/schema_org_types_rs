@@ -1,6 +1,4 @@
 use super::*;
-/// Publication date of an online listing.
-///
 /// <https://schema.org/datePosted>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

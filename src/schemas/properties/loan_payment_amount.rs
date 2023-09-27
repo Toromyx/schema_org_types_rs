@@ -1,6 +1,4 @@
 use super::*;
-/// The amount of money to pay in a single payment.
-///
 /// <https://schema.org/loanPaymentAmount>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

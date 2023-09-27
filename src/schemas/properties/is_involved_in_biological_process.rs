@@ -1,6 +1,4 @@
 use super::*;
-/// Biological process this BioChemEntity is involved in; please use PropertyValue if you want to include any evidence.
-///
 /// <https://schema.org/isInvolvedInBiologicalProcess>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

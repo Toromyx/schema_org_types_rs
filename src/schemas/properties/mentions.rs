@@ -1,6 +1,4 @@
 use super::*;
-/// Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.
-///
 /// <https://schema.org/mentions>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

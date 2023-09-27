@@ -1,6 +1,4 @@
 use super::*;
-/// Where a rental car can be dropped off.
-///
 /// <https://schema.org/dropoffLocation>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

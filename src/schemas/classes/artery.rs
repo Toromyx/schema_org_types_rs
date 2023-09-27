@@ -1,6 +1,4 @@
 use super::*;
-/// A type of blood vessel that specifically carries blood away from the heart.
-///
 /// <https://schema.org/Artery>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

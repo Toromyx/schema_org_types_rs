@@ -1,6 +1,4 @@
 use super::*;
-/// A high school.
-///
 /// <https://schema.org/HighSchool>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

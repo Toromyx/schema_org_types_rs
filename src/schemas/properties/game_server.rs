@@ -1,6 +1,4 @@
 use super::*;
-/// The server on which  it is possible to play the game.
-///
 /// <https://schema.org/gameServer>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

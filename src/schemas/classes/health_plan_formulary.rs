@@ -1,6 +1,4 @@
 use super::*;
-/// For a given health insurance plan, the specification for costs and coverage of prescription drugs.
-///
 /// <https://schema.org/HealthPlanFormulary>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

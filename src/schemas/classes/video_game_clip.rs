@@ -1,6 +1,4 @@
 use super::*;
-/// A short segment/part of a video game.
-///
 /// <https://schema.org/VideoGameClip>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

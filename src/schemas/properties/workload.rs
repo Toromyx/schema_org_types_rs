@@ -1,6 +1,4 @@
 use super::*;
-/// Quantitative measure of the physiologic output of the exercise; also referred to as energy expenditure.
-///
 /// <https://schema.org/workload>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

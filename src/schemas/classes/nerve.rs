@@ -1,6 +1,4 @@
 use super::*;
-/// A common pathway for the electrochemical nerve impulses that are transmitted along each of the axons.
-///
 /// <https://schema.org/Nerve>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

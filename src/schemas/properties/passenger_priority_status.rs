@@ -1,6 +1,4 @@
 use super::*;
-/// The priority status assigned to a passenger for security or boarding (e.g. FastTrack or Priority).
-///
 /// <https://schema.org/passengerPriorityStatus>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

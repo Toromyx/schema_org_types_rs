@@ -1,6 +1,4 @@
 use super::*;
-/// The away team in a sports event.
-///
 /// <https://schema.org/awayTeam>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

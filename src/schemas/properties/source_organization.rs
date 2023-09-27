@@ -1,6 +1,4 @@
 use super::*;
-/// The Organization on whose behalf the creator was working.
-///
 /// <https://schema.org/sourceOrganization>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

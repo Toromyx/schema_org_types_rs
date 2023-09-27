@@ -1,6 +1,4 @@
 use super::*;
-/// A navigation element of the page.
-///
 /// <https://schema.org/SiteNavigationElement>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

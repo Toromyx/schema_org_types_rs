@@ -1,6 +1,4 @@
 use super::*;
-/// The payment method(s) accepted by seller for this offer.
-///
 /// <https://schema.org/acceptedPaymentMethod>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

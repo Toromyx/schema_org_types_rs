@@ -1,6 +1,4 @@
 use super::*;
-/// The number of words in the text of the Article.
-///
 /// <https://schema.org/wordCount>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

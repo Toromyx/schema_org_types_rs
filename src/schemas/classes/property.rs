@@ -1,6 +1,4 @@
 use super::*;
-/// A property, used to indicate attributes and relationships of some Thing; equivalent to rdf:Property.
-///
 /// <https://schema.org/Property>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]

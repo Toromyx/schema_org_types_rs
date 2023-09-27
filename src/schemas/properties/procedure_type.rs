@@ -1,6 +1,4 @@
 use super::*;
-/// The type of procedure, for example Surgical, Noninvasive, or Percutaneous.
-///
 /// <https://schema.org/procedureType>
 #[cfg_attr(any(feature = "derive-debug", doc), derive(Debug))]
 #[cfg_attr(any(feature = "derive-clone", doc), derive(Clone))]
