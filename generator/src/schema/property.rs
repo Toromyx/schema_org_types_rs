@@ -26,7 +26,7 @@ pub struct Property {
     pub iri: String,
     pub name: String,
     #[derivative(PartialEq = "ignore", PartialOrd = "ignore", Ord = "ignore")]
-    pub values: Vec<ReferencedSchema>,
+    pub variants: Vec<ReferencedSchema>,
     #[derivative(PartialEq = "ignore", PartialOrd = "ignore", Ord = "ignore")]
     pub section: SchemaSection,
 }
@@ -53,7 +53,7 @@ impl Schema for Property {
     }
 
     fn child_feature_names(&self) -> Vec<String> {
-        self.values
+        self.variants
             .iter()
             .map(|sectioned_label| format!("{}-schema", sectioned_label.name.to_case(Case::Kebab)))
             .collect()
@@ -64,16 +64,16 @@ impl Schema for Property {
     }
 
     fn from_solution(store: &Store, solution: SectionedSchemaQuerySolution) -> Self {
-        let mut values: Vec<ReferencedSchema> = store
+        let mut variants: Vec<ReferencedSchema> = store
             .variants_of_property_query(&solution.schema.identifiable.iri)
             .into_par_iter()
             .map(ReferencedSchema::from)
             .collect();
-        values.sort_unstable();
+        variants.sort_unstable();
         Self {
             iri: solution.schema.identifiable.iri,
             name: map_schema_name(solution.schema.labeled.label),
-            values,
+            variants,
             section: solution.sectioned.section,
         }
     }
@@ -88,11 +88,10 @@ impl ToTokens for Property {
             TokenStream::from_str(&format!("{}Property", self.name.to_case(Case::UpperCamel)))
                 .unwrap();
         let variants = self
-            .values
+            .variants
             .iter()
             .map(|ReferencedSchema { name, section, .. }| {
-                let value_upper_camel =
-                    TokenStream::from_str(&name.to_case(Case::UpperCamel)).unwrap();
+                let variant_name = TokenStream::from_str(&name.to_case(Case::UpperCamel)).unwrap();
                 let feature = Feature::Any(vec![
                     Feature::Name(format!("{}-schema", name.to_case(Case::Kebab))),
                     Feature::Name(section.feature_name().to_string()),
@@ -100,7 +99,7 @@ impl ToTokens for Property {
                 let feature_gate = feature.feature_gate();
                 quote!(
                     #feature_gate
-                    #value_upper_camel(#value_upper_camel)
+                    #variant_name(#variant_name)
                 )
             });
         tokens.append_all(quote! (
