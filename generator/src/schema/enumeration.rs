@@ -64,7 +64,7 @@ impl Schema for Enumeration {
 
     fn from_solution(store: &Store, solution: SectionedSchemaQuerySolution) -> Self {
         let mut variants: Vec<EnumerationVariant> = store
-            .enumeration_variant_labels_of_enumeration_query(&solution.schema.identifiable.iri)
+            .variants_of_enumeration_query(&solution.schema.identifiable.iri)
             .into_par_iter()
             .map(|solution| EnumerationVariant {
                 iri: solution.identifiable.iri,

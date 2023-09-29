@@ -65,7 +65,7 @@ impl Schema for Property {
 
     fn from_solution(store: &Store, solution: SectionedSchemaQuerySolution) -> Self {
         let mut values: Vec<ReferencedSchema> = store
-            .property_value_labels_of_property_query(&solution.schema.identifiable.iri)
+            .variants_of_property_query(&solution.schema.identifiable.iri)
             .into_par_iter()
             .map(ReferencedSchema::from)
             .collect();

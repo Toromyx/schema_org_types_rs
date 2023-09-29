@@ -202,16 +202,10 @@ pub trait SchemaQueries {
     fn properties_of_class_query(&self, class_iri: &str) -> Vec<SectionedSchemaQuerySolution>;
 
     /// Query for all value labels of a property.
-    fn property_value_labels_of_property_query(
-        &self,
-        property_iri: &str,
-    ) -> Vec<SectionedSchemaQuerySolution>;
+    fn variants_of_property_query(&self, property_iri: &str) -> Vec<SectionedSchemaQuerySolution>;
 
     /// Query for all enumeration variants of a specific enumeration.
-    fn enumeration_variant_labels_of_enumeration_query(
-        &self,
-        enumeration_iri: &str,
-    ) -> Vec<SchemaQuerySolution>;
+    fn variants_of_enumeration_query(&self, enumeration_iri: &str) -> Vec<SchemaQuerySolution>;
 
     /// Query for a transformable parent data type of another data type.
     ///
@@ -290,10 +284,7 @@ WHERE {{
             .collect()
     }
 
-    fn property_value_labels_of_property_query(
-        &self,
-        property_iri: &str,
-    ) -> Vec<SectionedSchemaQuerySolution> {
+    fn variants_of_property_query(&self, property_iri: &str) -> Vec<SectionedSchemaQuerySolution> {
         let query = format!(
             r#"
 {}
@@ -317,10 +308,7 @@ WHERE {{
             .collect()
     }
 
-    fn enumeration_variant_labels_of_enumeration_query(
-        &self,
-        enumeration_iri: &str,
-    ) -> Vec<SchemaQuerySolution> {
+    fn variants_of_enumeration_query(&self, enumeration_iri: &str) -> Vec<SchemaQuerySolution> {
         let query = format!(
             r#"
 {}
