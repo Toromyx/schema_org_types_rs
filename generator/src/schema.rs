@@ -1,10 +1,7 @@
 use derivative::Derivative;
 use oxigraph::store::Store;
 
-use crate::{
-    schema_section::SchemaSection,
-    sparql::{ReferencedSchemaQuerySolution, SectionedSchemaQuerySolution},
-};
+use crate::{schema_section::SchemaSection, sparql::SectionedSchemaQuerySolution};
 
 pub mod class;
 pub mod data_type;
@@ -40,15 +37,18 @@ pub trait Schema {
 #[derive(Debug, Clone, Derivative)]
 #[derivative(PartialEq, Eq, PartialOrd, Ord)]
 pub struct ReferencedSchema {
-    pub label: String,
+    #[derivative(PartialEq = "ignore", PartialOrd = "ignore", Ord = "ignore")]
+    pub iri: String,
+    pub name: String,
     #[derivative(PartialEq = "ignore", PartialOrd = "ignore", Ord = "ignore")]
     pub section: SchemaSection,
 }
 
-impl From<ReferencedSchemaQuerySolution> for ReferencedSchema {
-    fn from(value: ReferencedSchemaQuerySolution) -> Self {
+impl From<SectionedSchemaQuerySolution> for ReferencedSchema {
+    fn from(value: SectionedSchemaQuerySolution) -> Self {
         Self {
-            label: value.labeled.label,
+            iri: value.schema.identifiable.iri,
+            name: value.schema.labeled.label,
             section: value.sectioned.section,
         }
     }

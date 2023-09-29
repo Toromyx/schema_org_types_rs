@@ -12,7 +12,9 @@ use crate::{
     read::map_schema_name,
     schema::{ReferencedSchema, Schema},
     schema_section::SchemaSection,
-    serde_attributes::{serde_default, serde_derive, serde_rename, serde_skip_serializing_if},
+    serde_attributes::{
+        serde_alias, serde_as, serde_default, serde_derive, serde_rename, serde_skip_serializing_if,
+    },
     sparql::{SchemaQueries, SectionedSchemaQuerySolution},
 };
 
@@ -58,7 +60,7 @@ impl Schema for Class {
             .map(|sectioned_label| {
                 format!(
                     "{}-property-schema",
-                    sectioned_label.label.to_case(Case::Kebab)
+                    sectioned_label.name.to_case(Case::Kebab)
                 )
             })
             .collect()
@@ -70,7 +72,7 @@ impl Schema for Class {
 
     fn from_solution(store: &Store, solution: SectionedSchemaQuerySolution) -> Self {
         let mut properties: Vec<ReferencedSchema> = store
-            .property_labels_of_class_query(&solution.schema.identifiable.iri)
+            .properties_of_class_query(&solution.schema.identifiable.iri)
             .into_par_iter()
             .map(ReferencedSchema::from)
             .collect();
@@ -92,26 +94,32 @@ impl ToTokens for Class {
         let fields = self
             .properties
             .iter()
-            .map(|ReferencedSchema { label, section }| {
+            .map(|ReferencedSchema { iri, name, section }| {
                 let feature = Feature::Any(vec![
-                    Feature::Name(format!("{}-property-schema", label.to_case(Case::Kebab))),
+                    Feature::Name(format!("{}-property-schema", name.to_case(Case::Kebab))),
                     Feature::Name(section.feature_name().to_string()),
                 ]);
                 let feature_gate = feature.feature_gate();
-                let serde_rename = serde_rename(label);
+                let serde_rename = serde_rename(name);
+                let http_iri = iri.replacen("https", "http", 1);
+                let https_iri = http_iri.replacen("http", "https", 1);
+                let serde_aliases = &[serde_alias(&https_iri), serde_alias(&http_iri)];
                 let serde_default = serde_default();
                 let serde_skip_serializing_if_empty = serde_skip_serializing_if("Vec::is_empty");
+                let serde_as = serde_as("OneOrMany<_>");
                 let property = TokenStream::from_str(&format!(
                     "pub r#{}: Vec<{}Property>",
-                    label.to_case(Case::Snake),
-                    label.to_case(Case::UpperCamel)
+                    name.to_case(Case::Snake),
+                    name.to_case(Case::UpperCamel)
                 ))
                 .unwrap();
                 quote!(
                     #feature_gate
                     #serde_rename
+                    #(#serde_aliases)*
                     #serde_default
                     #serde_skip_serializing_if_empty
+                    #serde_as
                     #property
                 )
             });

@@ -1,6 +1,6 @@
 use quote::{__private::TokenStream, quote, ToTokens, TokenStreamExt};
 
-use crate::serde_attributes::serde_with;
+use crate::serde_attributes::serde_as;
 
 /// Represents the underlying rust types used in Schema.org types.
 #[derive(Debug, Clone)]
@@ -27,9 +27,9 @@ impl RustType {
             RustType::Boolean => None,
             RustType::Double => None,
             RustType::Long => None,
-            RustType::Date => Some(serde_with("serde_with::As::<serde_with::DisplayFromStr>")),
-            RustType::Time => Some(serde_with("serde_with::As::<serde_with::DisplayFromStr>")),
-            RustType::DateTime => Some(serde_with("serde_with::As::<serde_with::DisplayFromStr>")),
+            RustType::Date => Some(serde_as("DisplayFromStr")),
+            RustType::Time => Some(serde_as("DisplayFromStr")),
+            RustType::DateTime => Some(serde_as("DisplayFromStr")),
             RustType::String => None,
         }
     }

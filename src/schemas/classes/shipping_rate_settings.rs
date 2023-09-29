@@ -12,8 +12,14 @@ pub struct ShippingRateSettings {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "additionalType"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/additionalType"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/additionalType"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#additional_type: Vec<AdditionalTypeProperty>,
     #[cfg(any(
         any(
@@ -23,8 +29,14 @@ pub struct ShippingRateSettings {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "alternateName"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/alternateName"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/alternateName"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#alternate_name: Vec<AlternateNameProperty>,
     #[cfg(any(
         any(
@@ -34,8 +46,14 @@ pub struct ShippingRateSettings {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "description"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/description"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/description"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#description: Vec<DescriptionProperty>,
     #[cfg(any(
         any(
@@ -45,8 +63,20 @@ pub struct ShippingRateSettings {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "disambiguatingDescription"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(alias = "https://schema.org/disambiguatingDescription")
+    )]
+    #[cfg_attr(
+        feature = "serde",
+        serde(alias = "http://schema.org/disambiguatingDescription")
+    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
     #[cfg(any(
         any(
@@ -56,8 +86,14 @@ pub struct ShippingRateSettings {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "doesNotShip"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/doesNotShip"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/doesNotShip"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#does_not_ship: Vec<DoesNotShipProperty>,
     #[cfg(any(
         any(
@@ -67,8 +103,20 @@ pub struct ShippingRateSettings {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "freeShippingThreshold"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(alias = "https://schema.org/freeShippingThreshold")
+    )]
+    #[cfg_attr(
+        feature = "serde",
+        serde(alias = "http://schema.org/freeShippingThreshold")
+    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#free_shipping_threshold: Vec<FreeShippingThresholdProperty>,
     #[cfg(any(
         any(
@@ -78,16 +126,28 @@ pub struct ShippingRateSettings {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "identifier"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/identifier"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/identifier"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#identifier: Vec<IdentifierProperty>,
     #[cfg(any(
         any(feature = "image-property-schema", feature = "general-schema-section"),
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "image"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/image"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/image"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#image: Vec<ImageProperty>,
     #[cfg(any(
         any(
@@ -97,8 +157,20 @@ pub struct ShippingRateSettings {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "isUnlabelledFallback"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(alias = "https://schema.org/isUnlabelledFallback")
+    )]
+    #[cfg_attr(
+        feature = "serde",
+        serde(alias = "http://schema.org/isUnlabelledFallback")
+    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#is_unlabelled_fallback: Vec<IsUnlabelledFallbackProperty>,
     #[cfg(any(
         any(
@@ -108,16 +180,31 @@ pub struct ShippingRateSettings {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "mainEntityOfPage"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(alias = "https://schema.org/mainEntityOfPage")
+    )]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/mainEntityOfPage"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
     #[cfg(any(
         any(feature = "name-property-schema", feature = "general-schema-section"),
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "name"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/name"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/name"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#name: Vec<NameProperty>,
     #[cfg(any(
         any(
@@ -127,8 +214,14 @@ pub struct ShippingRateSettings {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "potentialAction"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/potentialAction"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/potentialAction"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#potential_action: Vec<PotentialActionProperty>,
     #[cfg(any(
         any(
@@ -138,8 +231,14 @@ pub struct ShippingRateSettings {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "sameAs"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/sameAs"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/sameAs"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#same_as: Vec<SameAsProperty>,
     #[cfg(any(
         any(
@@ -149,8 +248,20 @@ pub struct ShippingRateSettings {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "shippingDestination"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(alias = "https://schema.org/shippingDestination")
+    )]
+    #[cfg_attr(
+        feature = "serde",
+        serde(alias = "http://schema.org/shippingDestination")
+    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#shipping_destination: Vec<ShippingDestinationProperty>,
     #[cfg(any(
         any(
@@ -160,8 +271,14 @@ pub struct ShippingRateSettings {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "shippingLabel"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/shippingLabel"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/shippingLabel"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#shipping_label: Vec<ShippingLabelProperty>,
     #[cfg(any(
         any(
@@ -171,8 +288,14 @@ pub struct ShippingRateSettings {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "shippingRate"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/shippingRate"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/shippingRate"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#shipping_rate: Vec<ShippingRateProperty>,
     #[cfg(any(
         any(
@@ -182,15 +305,27 @@ pub struct ShippingRateSettings {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "subjectOf"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/subjectOf"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/subjectOf"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#subject_of: Vec<SubjectOfProperty>,
     #[cfg(any(
         any(feature = "url-property-schema", feature = "general-schema-section"),
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "url"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/url"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/url"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#url: Vec<UrlProperty>,
 }

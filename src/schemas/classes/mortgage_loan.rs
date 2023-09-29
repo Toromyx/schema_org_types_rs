@@ -12,8 +12,14 @@ pub struct MortgageLoan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "additionalType"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/additionalType"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/additionalType"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#additional_type: Vec<AdditionalTypeProperty>,
     #[cfg(any(
         any(
@@ -23,8 +29,14 @@ pub struct MortgageLoan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "aggregateRating"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/aggregateRating"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/aggregateRating"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#aggregate_rating: Vec<AggregateRatingProperty>,
     #[cfg(any(
         any(
@@ -34,16 +46,28 @@ pub struct MortgageLoan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "alternateName"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/alternateName"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/alternateName"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#alternate_name: Vec<AlternateNameProperty>,
     #[cfg(any(
         any(feature = "amount-property-schema", feature = "general-schema-section"),
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "amount"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/amount"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/amount"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#amount: Vec<AmountProperty>,
     #[cfg(any(
         any(
@@ -53,8 +77,20 @@ pub struct MortgageLoan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "annualPercentageRate"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(alias = "https://schema.org/annualPercentageRate")
+    )]
+    #[cfg_attr(
+        feature = "serde",
+        serde(alias = "http://schema.org/annualPercentageRate")
+    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#annual_percentage_rate: Vec<AnnualPercentageRateProperty>,
     #[cfg(any(
         any(
@@ -64,8 +100,14 @@ pub struct MortgageLoan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "areaServed"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/areaServed"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/areaServed"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#area_served: Vec<AreaServedProperty>,
     #[cfg(any(
         any(
@@ -75,8 +117,14 @@ pub struct MortgageLoan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "audience"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/audience"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/audience"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#audience: Vec<AudienceProperty>,
     #[cfg(any(
         any(
@@ -86,32 +134,59 @@ pub struct MortgageLoan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "availableChannel"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(alias = "https://schema.org/availableChannel")
+    )]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/availableChannel"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#available_channel: Vec<AvailableChannelProperty>,
     #[cfg(any(
         any(feature = "award-property-schema", feature = "general-schema-section"),
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "award"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/award"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/award"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#award: Vec<AwardProperty>,
     #[cfg(any(
         any(feature = "brand-property-schema", feature = "general-schema-section"),
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "brand"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/brand"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/brand"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#brand: Vec<BrandProperty>,
     #[cfg(any(
         any(feature = "broker-property-schema", feature = "general-schema-section"),
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "broker"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/broker"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/broker"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#broker: Vec<BrokerProperty>,
     #[cfg(any(
         any(
@@ -121,8 +196,14 @@ pub struct MortgageLoan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "category"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/category"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/category"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#category: Vec<CategoryProperty>,
     #[cfg(any(
         any(
@@ -132,8 +213,14 @@ pub struct MortgageLoan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "currency"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/currency"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/currency"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#currency: Vec<CurrencyProperty>,
     #[cfg(any(
         any(
@@ -143,8 +230,14 @@ pub struct MortgageLoan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "description"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/description"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/description"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#description: Vec<DescriptionProperty>,
     #[cfg(any(
         any(
@@ -154,8 +247,20 @@ pub struct MortgageLoan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "disambiguatingDescription"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(alias = "https://schema.org/disambiguatingDescription")
+    )]
+    #[cfg_attr(
+        feature = "serde",
+        serde(alias = "http://schema.org/disambiguatingDescription")
+    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
     #[cfg(any(
         any(
@@ -165,8 +270,20 @@ pub struct MortgageLoan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "domiciledMortgage"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(alias = "https://schema.org/domiciledMortgage")
+    )]
+    #[cfg_attr(
+        feature = "serde",
+        serde(alias = "http://schema.org/domiciledMortgage")
+    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#domiciled_mortgage: Vec<DomiciledMortgageProperty>,
     #[cfg(any(
         any(
@@ -176,8 +293,20 @@ pub struct MortgageLoan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "feesAndCommissionsSpecification"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(alias = "https://schema.org/feesAndCommissionsSpecification")
+    )]
+    #[cfg_attr(
+        feature = "serde",
+        serde(alias = "http://schema.org/feesAndCommissionsSpecification")
+    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#fees_and_commissions_specification: Vec<FeesAndCommissionsSpecificationProperty>,
     #[cfg(any(
         any(
@@ -187,8 +316,14 @@ pub struct MortgageLoan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "gracePeriod"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/gracePeriod"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/gracePeriod"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#grace_period: Vec<GracePeriodProperty>,
     #[cfg(any(
         any(
@@ -198,8 +333,14 @@ pub struct MortgageLoan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "hasOfferCatalog"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/hasOfferCatalog"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/hasOfferCatalog"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#has_offer_catalog: Vec<HasOfferCatalogProperty>,
     #[cfg(any(
         any(
@@ -209,8 +350,14 @@ pub struct MortgageLoan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "hoursAvailable"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/hoursAvailable"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/hoursAvailable"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#hours_available: Vec<HoursAvailableProperty>,
     #[cfg(any(
         any(
@@ -220,16 +367,28 @@ pub struct MortgageLoan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "identifier"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/identifier"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/identifier"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#identifier: Vec<IdentifierProperty>,
     #[cfg(any(
         any(feature = "image-property-schema", feature = "general-schema-section"),
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "image"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/image"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/image"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#image: Vec<ImageProperty>,
     #[cfg(any(
         any(
@@ -239,8 +398,14 @@ pub struct MortgageLoan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "interestRate"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/interestRate"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/interestRate"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#interest_rate: Vec<InterestRateProperty>,
     #[cfg(any(
         any(
@@ -250,8 +415,14 @@ pub struct MortgageLoan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "isRelatedTo"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/isRelatedTo"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/isRelatedTo"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#is_related_to: Vec<IsRelatedToProperty>,
     #[cfg(any(
         any(
@@ -261,8 +432,14 @@ pub struct MortgageLoan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "isSimilarTo"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/isSimilarTo"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/isSimilarTo"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#is_similar_to: Vec<IsSimilarToProperty>,
     #[cfg(any(
         any(
@@ -272,8 +449,20 @@ pub struct MortgageLoan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "loanMortgageMandateAmount"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(alias = "https://schema.org/loanMortgageMandateAmount")
+    )]
+    #[cfg_attr(
+        feature = "serde",
+        serde(alias = "http://schema.org/loanMortgageMandateAmount")
+    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#loan_mortgage_mandate_amount: Vec<LoanMortgageMandateAmountProperty>,
     #[cfg(any(
         any(
@@ -283,8 +472,20 @@ pub struct MortgageLoan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "loanRepaymentForm"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(alias = "https://schema.org/loanRepaymentForm")
+    )]
+    #[cfg_attr(
+        feature = "serde",
+        serde(alias = "http://schema.org/loanRepaymentForm")
+    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#loan_repayment_form: Vec<LoanRepaymentFormProperty>,
     #[cfg(any(
         any(
@@ -294,8 +495,14 @@ pub struct MortgageLoan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "loanTerm"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/loanTerm"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/loanTerm"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#loan_term: Vec<LoanTermProperty>,
     #[cfg(any(
         any(
@@ -305,16 +512,28 @@ pub struct MortgageLoan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "loanType"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/loanType"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/loanType"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#loan_type: Vec<LoanTypeProperty>,
     #[cfg(any(
         any(feature = "logo-property-schema", feature = "general-schema-section"),
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "logo"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/logo"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/logo"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#logo: Vec<LogoProperty>,
     #[cfg(any(
         any(
@@ -324,24 +543,45 @@ pub struct MortgageLoan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "mainEntityOfPage"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(alias = "https://schema.org/mainEntityOfPage")
+    )]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/mainEntityOfPage"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
     #[cfg(any(
         any(feature = "name-property-schema", feature = "general-schema-section"),
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "name"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/name"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/name"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#name: Vec<NameProperty>,
     #[cfg(any(
         any(feature = "offers-property-schema", feature = "general-schema-section"),
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "offers"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/offers"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/offers"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#offers: Vec<OffersProperty>,
     #[cfg(any(
         any(
@@ -351,8 +591,14 @@ pub struct MortgageLoan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "potentialAction"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/potentialAction"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/potentialAction"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#potential_action: Vec<PotentialActionProperty>,
     #[cfg(any(
         any(
@@ -362,8 +608,14 @@ pub struct MortgageLoan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "produces"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/produces"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/produces"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#produces: Vec<ProducesProperty>,
     #[cfg(any(
         any(
@@ -373,8 +625,14 @@ pub struct MortgageLoan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "provider"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/provider"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/provider"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#provider: Vec<ProviderProperty>,
     #[cfg(any(
         any(
@@ -384,8 +642,17 @@ pub struct MortgageLoan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "providerMobility"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(alias = "https://schema.org/providerMobility")
+    )]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/providerMobility"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#provider_mobility: Vec<ProviderMobilityProperty>,
     #[cfg(any(
         any(
@@ -395,8 +662,14 @@ pub struct MortgageLoan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "recourseLoan"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/recourseLoan"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/recourseLoan"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#recourse_loan: Vec<RecourseLoanProperty>,
     #[cfg(any(
         any(
@@ -406,8 +679,17 @@ pub struct MortgageLoan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "renegotiableLoan"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(alias = "https://schema.org/renegotiableLoan")
+    )]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/renegotiableLoan"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#renegotiable_loan: Vec<RenegotiableLoanProperty>,
     #[cfg(any(
         any(
@@ -417,16 +699,34 @@ pub struct MortgageLoan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "requiredCollateral"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(alias = "https://schema.org/requiredCollateral")
+    )]
+    #[cfg_attr(
+        feature = "serde",
+        serde(alias = "http://schema.org/requiredCollateral")
+    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#required_collateral: Vec<RequiredCollateralProperty>,
     #[cfg(any(
         any(feature = "review-property-schema", feature = "general-schema-section"),
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "review"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/review"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/review"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#review: Vec<ReviewProperty>,
     #[cfg(any(
         any(
@@ -436,8 +736,14 @@ pub struct MortgageLoan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "sameAs"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/sameAs"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/sameAs"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#same_as: Vec<SameAsProperty>,
     #[cfg(any(
         any(
@@ -447,8 +753,14 @@ pub struct MortgageLoan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "serviceArea"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/serviceArea"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/serviceArea"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#service_area: Vec<ServiceAreaProperty>,
     #[cfg(any(
         any(
@@ -458,8 +770,14 @@ pub struct MortgageLoan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "serviceAudience"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/serviceAudience"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/serviceAudience"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#service_audience: Vec<ServiceAudienceProperty>,
     #[cfg(any(
         any(
@@ -469,8 +787,14 @@ pub struct MortgageLoan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "serviceOutput"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/serviceOutput"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/serviceOutput"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#service_output: Vec<ServiceOutputProperty>,
     #[cfg(any(
         any(
@@ -480,16 +804,28 @@ pub struct MortgageLoan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "serviceType"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/serviceType"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/serviceType"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#service_type: Vec<ServiceTypeProperty>,
     #[cfg(any(
         any(feature = "slogan-property-schema", feature = "general-schema-section"),
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "slogan"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/slogan"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/slogan"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#slogan: Vec<SloganProperty>,
     #[cfg(any(
         any(
@@ -499,8 +835,14 @@ pub struct MortgageLoan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "subjectOf"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/subjectOf"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/subjectOf"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#subject_of: Vec<SubjectOfProperty>,
     #[cfg(any(
         any(
@@ -510,15 +852,27 @@ pub struct MortgageLoan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "termsOfService"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/termsOfService"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/termsOfService"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#terms_of_service: Vec<TermsOfServiceProperty>,
     #[cfg(any(
         any(feature = "url-property-schema", feature = "general-schema-section"),
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "url"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/url"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/url"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#url: Vec<UrlProperty>,
 }

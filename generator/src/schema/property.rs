@@ -55,7 +55,7 @@ impl Schema for Property {
     fn child_feature_names(&self) -> Vec<String> {
         self.values
             .iter()
-            .map(|sectioned_label| format!("{}-schema", sectioned_label.label.to_case(Case::Kebab)))
+            .map(|sectioned_label| format!("{}-schema", sectioned_label.name.to_case(Case::Kebab)))
             .collect()
     }
 
@@ -90,11 +90,11 @@ impl ToTokens for Property {
         let variants = self
             .values
             .iter()
-            .map(|ReferencedSchema { label, section }| {
+            .map(|ReferencedSchema { name, section, .. }| {
                 let value_upper_camel =
-                    TokenStream::from_str(&label.to_case(Case::UpperCamel)).unwrap();
+                    TokenStream::from_str(&name.to_case(Case::UpperCamel)).unwrap();
                 let feature = Feature::Any(vec![
-                    Feature::Name(format!("{}-schema", label.to_case(Case::Kebab))),
+                    Feature::Name(format!("{}-schema", name.to_case(Case::Kebab))),
                     Feature::Name(section.feature_name().to_string()),
                 ]);
                 let feature_gate = feature.feature_gate();

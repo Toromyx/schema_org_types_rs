@@ -13,7 +13,7 @@ exclude = [
 # https://docs.rs/about/metadata
 [package.metadata.docs.rs]
 features = [
-    "all-schema-sections",
+    "doc",
 ]
 
 [dependencies.serde]
@@ -28,15 +28,8 @@ optional = true
 [dependencies.speedate]
 version = "^0.12.0"
 
-[dev-dependencies.schema_org_types]
-path = "."
-features = [
-    "serde",
-    "date-schema",
-    "time-schema",
-    "date-time-schema",
-    "action-status-type-schema",
-]
+[dev-dependencies.pretty_assertions]
+version = "^1.4"
 
 [dev-dependencies.serde_json]
 version = "^1.0.107"
@@ -68,6 +61,16 @@ derive-clone = []
 serde = [
     "dep:serde",
     "dep:serde_with",
+]
+doc = [
+    "all-schema-sections",
+]
+test = [
+    "serde",
+    "date-schema",
+    "time-schema",
+    "date-time-schema",
+    "thing-schema",
 ]
 # generated features
 about-page-schema = [

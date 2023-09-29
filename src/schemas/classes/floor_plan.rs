@@ -12,8 +12,14 @@ pub struct FloorPlan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "additionalType"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/additionalType"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/additionalType"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#additional_type: Vec<AdditionalTypeProperty>,
     #[cfg(any(
         any(
@@ -23,8 +29,14 @@ pub struct FloorPlan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "alternateName"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/alternateName"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/alternateName"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#alternate_name: Vec<AlternateNameProperty>,
     #[cfg(any(
         any(
@@ -34,8 +46,14 @@ pub struct FloorPlan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "amenityFeature"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/amenityFeature"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/amenityFeature"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#amenity_feature: Vec<AmenityFeatureProperty>,
     #[cfg(any(
         any(
@@ -45,8 +63,14 @@ pub struct FloorPlan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "description"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/description"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/description"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#description: Vec<DescriptionProperty>,
     #[cfg(any(
         any(
@@ -56,8 +80,20 @@ pub struct FloorPlan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "disambiguatingDescription"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(alias = "https://schema.org/disambiguatingDescription")
+    )]
+    #[cfg_attr(
+        feature = "serde",
+        serde(alias = "http://schema.org/disambiguatingDescription")
+    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
     #[cfg(any(
         any(
@@ -67,8 +103,14 @@ pub struct FloorPlan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "floorSize"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/floorSize"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/floorSize"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#floor_size: Vec<FloorSizeProperty>,
     #[cfg(any(
         any(
@@ -78,16 +120,28 @@ pub struct FloorPlan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "identifier"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/identifier"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/identifier"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#identifier: Vec<IdentifierProperty>,
     #[cfg(any(
         any(feature = "image-property-schema", feature = "general-schema-section"),
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "image"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/image"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/image"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#image: Vec<ImageProperty>,
     #[cfg(any(
         any(
@@ -97,8 +151,20 @@ pub struct FloorPlan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "isPlanForApartment"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(alias = "https://schema.org/isPlanForApartment")
+    )]
+    #[cfg_attr(
+        feature = "serde",
+        serde(alias = "http://schema.org/isPlanForApartment")
+    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#is_plan_for_apartment: Vec<IsPlanForApartmentProperty>,
     #[cfg(any(
         any(
@@ -108,8 +174,14 @@ pub struct FloorPlan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "layoutImage"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/layoutImage"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/layoutImage"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#layout_image: Vec<LayoutImageProperty>,
     #[cfg(any(
         any(
@@ -119,16 +191,31 @@ pub struct FloorPlan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "mainEntityOfPage"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(alias = "https://schema.org/mainEntityOfPage")
+    )]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/mainEntityOfPage"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
     #[cfg(any(
         any(feature = "name-property-schema", feature = "general-schema-section"),
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "name"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/name"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/name"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#name: Vec<NameProperty>,
     #[cfg(any(
         any(
@@ -138,8 +225,20 @@ pub struct FloorPlan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "numberOfAccommodationUnits"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(alias = "https://schema.org/numberOfAccommodationUnits")
+    )]
+    #[cfg_attr(
+        feature = "serde",
+        serde(alias = "http://schema.org/numberOfAccommodationUnits")
+    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#number_of_accommodation_units: Vec<NumberOfAccommodationUnitsProperty>,
     #[cfg(any(
         any(
@@ -152,8 +251,20 @@ pub struct FloorPlan {
         feature = "serde",
         serde(rename = "numberOfAvailableAccommodationUnits")
     )]
+    #[cfg_attr(
+        feature = "serde",
+        serde(alias = "https://schema.org/numberOfAvailableAccommodationUnits")
+    )]
+    #[cfg_attr(
+        feature = "serde",
+        serde(alias = "http://schema.org/numberOfAvailableAccommodationUnits")
+    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#number_of_available_accommodation_units: Vec<NumberOfAvailableAccommodationUnitsProperty>,
     #[cfg(any(
         any(
@@ -163,8 +274,20 @@ pub struct FloorPlan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "numberOfBathroomsTotal"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(alias = "https://schema.org/numberOfBathroomsTotal")
+    )]
+    #[cfg_attr(
+        feature = "serde",
+        serde(alias = "http://schema.org/numberOfBathroomsTotal")
+    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#number_of_bathrooms_total: Vec<NumberOfBathroomsTotalProperty>,
     #[cfg(any(
         any(
@@ -174,8 +297,17 @@ pub struct FloorPlan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "numberOfBedrooms"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(alias = "https://schema.org/numberOfBedrooms")
+    )]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/numberOfBedrooms"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#number_of_bedrooms: Vec<NumberOfBedroomsProperty>,
     #[cfg(any(
         any(
@@ -185,8 +317,20 @@ pub struct FloorPlan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "numberOfFullBathrooms"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(alias = "https://schema.org/numberOfFullBathrooms")
+    )]
+    #[cfg_attr(
+        feature = "serde",
+        serde(alias = "http://schema.org/numberOfFullBathrooms")
+    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#number_of_full_bathrooms: Vec<NumberOfFullBathroomsProperty>,
     #[cfg(any(
         any(
@@ -196,8 +340,20 @@ pub struct FloorPlan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "numberOfPartialBathrooms"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(alias = "https://schema.org/numberOfPartialBathrooms")
+    )]
+    #[cfg_attr(
+        feature = "serde",
+        serde(alias = "http://schema.org/numberOfPartialBathrooms")
+    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#number_of_partial_bathrooms: Vec<NumberOfPartialBathroomsProperty>,
     #[cfg(any(
         any(
@@ -207,8 +363,14 @@ pub struct FloorPlan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "numberOfRooms"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/numberOfRooms"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/numberOfRooms"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#number_of_rooms: Vec<NumberOfRoomsProperty>,
     #[cfg(any(
         any(
@@ -218,8 +380,14 @@ pub struct FloorPlan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "petsAllowed"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/petsAllowed"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/petsAllowed"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#pets_allowed: Vec<PetsAllowedProperty>,
     #[cfg(any(
         any(
@@ -229,8 +397,14 @@ pub struct FloorPlan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "potentialAction"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/potentialAction"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/potentialAction"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#potential_action: Vec<PotentialActionProperty>,
     #[cfg(any(
         any(
@@ -240,8 +414,14 @@ pub struct FloorPlan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "sameAs"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/sameAs"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/sameAs"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#same_as: Vec<SameAsProperty>,
     #[cfg(any(
         any(
@@ -251,15 +431,27 @@ pub struct FloorPlan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "subjectOf"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/subjectOf"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/subjectOf"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#subject_of: Vec<SubjectOfProperty>,
     #[cfg(any(
         any(feature = "url-property-schema", feature = "general-schema-section"),
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "url"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/url"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/url"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#url: Vec<UrlProperty>,
 }

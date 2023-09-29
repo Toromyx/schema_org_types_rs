@@ -12,8 +12,14 @@ pub struct CdcpmdRecord {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "additionalType"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/additionalType"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/additionalType"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#additional_type: Vec<AdditionalTypeProperty>,
     #[cfg(any(
         any(
@@ -23,8 +29,14 @@ pub struct CdcpmdRecord {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "alternateName"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/alternateName"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/alternateName"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#alternate_name: Vec<AlternateNameProperty>,
     #[cfg(any(
         any(
@@ -34,8 +46,20 @@ pub struct CdcpmdRecord {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "cvdCollectionDate"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(alias = "https://schema.org/cvdCollectionDate")
+    )]
+    #[cfg_attr(
+        feature = "serde",
+        serde(alias = "http://schema.org/cvdCollectionDate")
+    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#cvd_collection_date: Vec<CvdCollectionDateProperty>,
     #[cfg(any(
         any(
@@ -45,8 +69,20 @@ pub struct CdcpmdRecord {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "cvdFacilityCounty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(alias = "https://schema.org/cvdFacilityCounty")
+    )]
+    #[cfg_attr(
+        feature = "serde",
+        serde(alias = "http://schema.org/cvdFacilityCounty")
+    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#cvd_facility_county: Vec<CvdFacilityCountyProperty>,
     #[cfg(any(
         any(
@@ -56,8 +92,14 @@ pub struct CdcpmdRecord {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "cvdFacilityId"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/cvdFacilityId"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/cvdFacilityId"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#cvd_facility_id: Vec<CvdFacilityIdProperty>,
     #[cfg(any(
         any(
@@ -67,8 +109,14 @@ pub struct CdcpmdRecord {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "cvdNumBeds"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/cvdNumBeds"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/cvdNumBeds"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#cvd_num_beds: Vec<CvdNumBedsProperty>,
     #[cfg(any(
         any(
@@ -78,8 +126,14 @@ pub struct CdcpmdRecord {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "cvdNumBedsOcc"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/cvdNumBedsOcc"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/cvdNumBedsOcc"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#cvd_num_beds_occ: Vec<CvdNumBedsOccProperty>,
     #[cfg(any(
         any(
@@ -89,8 +143,14 @@ pub struct CdcpmdRecord {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "cvdNumC19Died"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/cvdNumC19Died"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/cvdNumC19Died"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#cvd_num_c_19_died: Vec<CvdNumC19DiedProperty>,
     #[cfg(any(
         any(
@@ -100,8 +160,14 @@ pub struct CdcpmdRecord {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "cvdNumC19HOPats"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/cvdNumC19HOPats"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/cvdNumC19HOPats"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#cvd_num_c_19_ho_pats: Vec<CvdNumC19HoPatsProperty>,
     #[cfg(any(
         any(
@@ -111,8 +177,20 @@ pub struct CdcpmdRecord {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "cvdNumC19HospPats"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(alias = "https://schema.org/cvdNumC19HospPats")
+    )]
+    #[cfg_attr(
+        feature = "serde",
+        serde(alias = "http://schema.org/cvdNumC19HospPats")
+    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#cvd_num_c_19_hosp_pats: Vec<CvdNumC19HospPatsProperty>,
     #[cfg(any(
         any(
@@ -122,8 +200,20 @@ pub struct CdcpmdRecord {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "cvdNumC19MechVentPats"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(alias = "https://schema.org/cvdNumC19MechVentPats")
+    )]
+    #[cfg_attr(
+        feature = "serde",
+        serde(alias = "http://schema.org/cvdNumC19MechVentPats")
+    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#cvd_num_c_19_mech_vent_pats: Vec<CvdNumC19MechVentPatsProperty>,
     #[cfg(any(
         any(
@@ -133,8 +223,20 @@ pub struct CdcpmdRecord {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "cvdNumC19OFMechVentPats"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(alias = "https://schema.org/cvdNumC19OFMechVentPats")
+    )]
+    #[cfg_attr(
+        feature = "serde",
+        serde(alias = "http://schema.org/cvdNumC19OFMechVentPats")
+    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#cvd_num_c_19_of_mech_vent_pats: Vec<CvdNumC19OfMechVentPatsProperty>,
     #[cfg(any(
         any(
@@ -144,8 +246,20 @@ pub struct CdcpmdRecord {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "cvdNumC19OverflowPats"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(alias = "https://schema.org/cvdNumC19OverflowPats")
+    )]
+    #[cfg_attr(
+        feature = "serde",
+        serde(alias = "http://schema.org/cvdNumC19OverflowPats")
+    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#cvd_num_c_19_overflow_pats: Vec<CvdNumC19OverflowPatsProperty>,
     #[cfg(any(
         any(
@@ -155,8 +269,14 @@ pub struct CdcpmdRecord {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "cvdNumICUBeds"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/cvdNumICUBeds"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/cvdNumICUBeds"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#cvd_num_icu_beds: Vec<CvdNumIcuBedsProperty>,
     #[cfg(any(
         any(
@@ -166,8 +286,17 @@ pub struct CdcpmdRecord {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "cvdNumICUBedsOcc"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(alias = "https://schema.org/cvdNumICUBedsOcc")
+    )]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/cvdNumICUBedsOcc"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#cvd_num_icu_beds_occ: Vec<CvdNumIcuBedsOccProperty>,
     #[cfg(any(
         any(
@@ -177,8 +306,14 @@ pub struct CdcpmdRecord {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "cvdNumTotBeds"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/cvdNumTotBeds"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/cvdNumTotBeds"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#cvd_num_tot_beds: Vec<CvdNumTotBedsProperty>,
     #[cfg(any(
         any(
@@ -188,8 +323,14 @@ pub struct CdcpmdRecord {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "cvdNumVent"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/cvdNumVent"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/cvdNumVent"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#cvd_num_vent: Vec<CvdNumVentProperty>,
     #[cfg(any(
         any(
@@ -199,8 +340,14 @@ pub struct CdcpmdRecord {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "cvdNumVentUse"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/cvdNumVentUse"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/cvdNumVentUse"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#cvd_num_vent_use: Vec<CvdNumVentUseProperty>,
     #[cfg(any(
         any(
@@ -210,8 +357,14 @@ pub struct CdcpmdRecord {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "datePosted"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/datePosted"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/datePosted"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#date_posted: Vec<DatePostedProperty>,
     #[cfg(any(
         any(
@@ -221,8 +374,14 @@ pub struct CdcpmdRecord {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "description"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/description"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/description"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#description: Vec<DescriptionProperty>,
     #[cfg(any(
         any(
@@ -232,8 +391,20 @@ pub struct CdcpmdRecord {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "disambiguatingDescription"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(alias = "https://schema.org/disambiguatingDescription")
+    )]
+    #[cfg_attr(
+        feature = "serde",
+        serde(alias = "http://schema.org/disambiguatingDescription")
+    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
     #[cfg(any(
         any(
@@ -243,16 +414,28 @@ pub struct CdcpmdRecord {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "identifier"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/identifier"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/identifier"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#identifier: Vec<IdentifierProperty>,
     #[cfg(any(
         any(feature = "image-property-schema", feature = "general-schema-section"),
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "image"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/image"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/image"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#image: Vec<ImageProperty>,
     #[cfg(any(
         any(
@@ -262,16 +445,31 @@ pub struct CdcpmdRecord {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "mainEntityOfPage"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(alias = "https://schema.org/mainEntityOfPage")
+    )]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/mainEntityOfPage"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
     #[cfg(any(
         any(feature = "name-property-schema", feature = "general-schema-section"),
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "name"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/name"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/name"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#name: Vec<NameProperty>,
     #[cfg(any(
         any(
@@ -281,8 +479,14 @@ pub struct CdcpmdRecord {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "potentialAction"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/potentialAction"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/potentialAction"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#potential_action: Vec<PotentialActionProperty>,
     #[cfg(any(
         any(
@@ -292,8 +496,14 @@ pub struct CdcpmdRecord {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "sameAs"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/sameAs"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/sameAs"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#same_as: Vec<SameAsProperty>,
     #[cfg(any(
         any(
@@ -303,15 +513,27 @@ pub struct CdcpmdRecord {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "subjectOf"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/subjectOf"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/subjectOf"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#subject_of: Vec<SubjectOfProperty>,
     #[cfg(any(
         any(feature = "url-property-schema", feature = "general-schema-section"),
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "url"))]
+    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/url"))]
+    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/url"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+    #[cfg_attr(
+        feature = "serde",
+        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+    )]
     pub r#url: Vec<UrlProperty>,
 }

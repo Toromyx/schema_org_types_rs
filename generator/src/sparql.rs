@@ -185,21 +185,6 @@ impl From<&QuerySolution> for SectionedSchemaQuerySolution {
     }
 }
 
-#[derive(Debug, Clone)]
-pub struct ReferencedSchemaQuerySolution {
-    pub labeled: LabeledQuerySolution,
-    pub sectioned: SectionedQuerySolution,
-}
-
-impl From<&QuerySolution> for ReferencedSchemaQuerySolution {
-    fn from(value: &QuerySolution) -> Self {
-        ReferencedSchemaQuerySolution {
-            labeled: value.into(),
-            sectioned: value.into(),
-        }
-    }
-}
-
 pub trait SchemaQueries {
     /// Query for all classes, which are not an enumeration ot data type.
     fn classes_query(&self) -> Vec<SectionedSchemaQuerySolution>;
@@ -214,14 +199,13 @@ pub trait SchemaQueries {
     fn data_types_query(&self) -> Vec<SectionedSchemaQuerySolution>;
 
     /// Query for all properties of a type, including the properties of types the type is a subclass of.
-    fn property_labels_of_class_query(&self, class_iri: &str)
-    -> Vec<ReferencedSchemaQuerySolution>;
+    fn properties_of_class_query(&self, class_iri: &str) -> Vec<SectionedSchemaQuerySolution>;
 
     /// Query for all value labels of a property.
     fn property_value_labels_of_property_query(
         &self,
         property_iri: &str,
-    ) -> Vec<ReferencedSchemaQuerySolution>;
+    ) -> Vec<SectionedSchemaQuerySolution>;
 
     /// Query for all enumeration variants of a specific enumeration.
     fn enumeration_variant_labels_of_enumeration_query(
@@ -275,27 +259,25 @@ impl SchemaQueries for Store {
             .collect()
     }
 
-    fn property_labels_of_class_query(
-        &self,
-        class_iri: &str,
-    ) -> Vec<ReferencedSchemaQuerySolution> {
+    fn properties_of_class_query(&self, class_iri: &str) -> Vec<SectionedSchemaQuerySolution> {
         let query = format!(
             r#"
 {}
 SELECT DISTINCT
+    ?node
     ?label
     ?section
 WHERE {{
     {{
         <{}> rdfs:subClassOf* ?parent .
-        ?property schema:domainIncludes ?parent .
+        ?node schema:domainIncludes ?parent .
     }}
     UNION
     {{
-        ?property schema:domainIncludes <{}> .
+        ?node schema:domainIncludes <{}> .
     }}
-    ?property rdfs:label ?label .
-    OPTIONAL {{ ?property schema:isPartOf ?section . }}
+    ?node rdfs:label ?label .
+    OPTIONAL {{ ?node schema:isPartOf ?section . }}
 }}
 "#,
             PREFIXES, class_iri, class_iri
@@ -304,24 +286,25 @@ WHERE {{
             .unwrap()
             .into_solutions()
             .iter()
-            .map(ReferencedSchemaQuerySolution::from)
+            .map(SectionedSchemaQuerySolution::from)
             .collect()
     }
 
     fn property_value_labels_of_property_query(
         &self,
         property_iri: &str,
-    ) -> Vec<ReferencedSchemaQuerySolution> {
+    ) -> Vec<SectionedSchemaQuerySolution> {
         let query = format!(
             r#"
 {}
 SELECT
+    ?node
     ?label
     ?section
 WHERE {{
-    <{}> schema:rangeIncludes ?property_value .
-    ?property_value rdfs:label ?label .
-    OPTIONAL {{ ?property_value schema:isPartOf ?section . }}
+    <{}> schema:rangeIncludes ?node .
+    ?node rdfs:label ?label .
+    OPTIONAL {{ ?node schema:isPartOf ?section . }}
 }}
 "#,
             PREFIXES, property_iri
@@ -330,7 +313,7 @@ WHERE {{
             .unwrap()
             .into_solutions()
             .iter()
-            .map(ReferencedSchemaQuerySolution::from)
+            .map(SectionedSchemaQuerySolution::from)
             .collect()
     }
 
