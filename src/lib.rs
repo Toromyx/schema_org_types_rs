@@ -28,7 +28,7 @@
 //! ### Optional Dependencies
 //!
 //! - `serde` — enable serialization and deserialization via [serde](https://serde.rs/)
-//!   - enables *dep:serde*, *dep:serde_with*
+//!   - enables *dep:serde*, *dep:serde_with*, *json-number/serde*, *url/serde*
 //!
 //! ### Generated Features
 //!
@@ -47,6 +47,7 @@ mod schemas;
 pub use json_number;
 pub use schemas::*;
 pub use speedate;
+pub use url;
 
 #[cfg(test)]
 mod tests;

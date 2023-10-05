@@ -342,6 +342,7 @@ SELECT
 WHERE {{
     <{}> rdfs:subClassOf* ?transformable .
     VALUES ?transformable {{
+        schema:URL
         schema:DateTime
         schema:Date
         schema:Time

@@ -31,6 +31,9 @@ optional = true
 [dependencies.speedate]
 version = "^0.12.0"
 
+[dependencies.url]
+version = "^2.4"
+
 [dev-dependencies.pretty_assertions]
 version = "^1.4"
 
@@ -64,6 +67,8 @@ derive-clone = []
 serde = [
     "dep:serde",
     "dep:serde_with",
+    "json-number/serde",
+    "url/serde",
 ]
 doc = [
     "all-schema-sections",

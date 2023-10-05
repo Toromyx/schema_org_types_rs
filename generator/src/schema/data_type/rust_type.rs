@@ -25,6 +25,7 @@ impl RustType {
             RustType::Time => Some(serde_as("DisplayFromStr")),
             RustType::DateTime => Some(serde_as("DisplayFromStr")),
             RustType::String => None,
+            RustType::Url => None,
         }
     }
 }
@@ -53,6 +54,9 @@ impl ToTokens for RustType {
             RustType::String => {
                 quote!(String)
             }
+            RustType::Url => {
+                quote!(::url::Url)
+            }
         })
     }
 }
@@ -67,6 +71,7 @@ impl From<&str> for RustType {
             "Time" => Self::Time,
             "DateTime" => Self::DateTime,
             "Text" => Self::String,
+            "URL" => Self::Url,
             value => {
                 panic!(
                     "Tried to convert from the inconvertible schema.org data type \"{}\" to a rust type.",
