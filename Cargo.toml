@@ -16,6 +16,9 @@ features = [
     "doc",
 ]
 
+[dependencies.json-number]
+version = "^0.4.6"
+
 [dependencies.serde]
 version = "^1.0.184"
 optional = true

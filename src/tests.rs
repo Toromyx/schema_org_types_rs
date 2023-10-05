@@ -84,3 +84,14 @@ fn test_enumeration_serde() {
     let serialized_action_status_type = serde_json::to_value(action_status_type).unwrap();
     assert_eq!(serialized_action_status_type, target_json);
 }
+
+/// [`RatingCountProperty`] is a property which normally only allows [`Integer`].
+/// But since every property in schema.org will realistically be used with string values...
+#[test]
+fn test_answer_count_serde() {
+    let source_json = json!("1");
+    let target_json = json!(1);
+    let rating_count: RatingCountProperty = serde_json::from_value(source_json).unwrap();
+    let rating_count_value = serde_json::to_value(rating_count).unwrap();
+    assert_eq!(rating_count_value, target_json);
+}

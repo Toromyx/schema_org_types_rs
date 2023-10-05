@@ -41,8 +41,10 @@
 #![cfg_attr(doc, feature(doc_auto_cfg))]
 
 pub mod date_types;
+pub mod number_types;
 mod schemas;
 
+pub use json_number;
 pub use schemas::*;
 pub use speedate;
 

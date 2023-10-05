@@ -5,28 +5,22 @@ use crate::serde_attributes::serde_as;
 /// Represents the underlying rust types used in Schema.org types.
 #[derive(Debug, Clone)]
 pub enum RustType {
-    /// Equivalent to [`bool`].
     Boolean,
-    /// Equivalent to [`f64`].
-    Double,
-    /// Equivalent to [`i64`].
-    Long,
-    /// Equivalent to [`schema_org_types::date_types::Date`].
+    Number,
+    Integer,
     Date,
-    /// Equivalent to [`schema_org_types::date_types::Time`].
     Time,
-    /// Equivalent to [`schema_org_types::date_types::DateTime`].
     DateTime,
-    /// Equivalent to [`String`].
     String,
+    Url,
 }
 
 impl RustType {
     pub fn serde_attributes(&self) -> Option<TokenStream> {
         match self {
             RustType::Boolean => None,
-            RustType::Double => None,
-            RustType::Long => None,
+            RustType::Number => None,
+            RustType::Integer => None,
             RustType::Date => Some(serde_as("DisplayFromStr")),
             RustType::Time => Some(serde_as("DisplayFromStr")),
             RustType::DateTime => Some(serde_as("DisplayFromStr")),
@@ -41,11 +35,11 @@ impl ToTokens for RustType {
             RustType::Boolean => {
                 quote!(bool)
             }
-            RustType::Double => {
-                quote!(f64)
+            RustType::Number => {
+                quote!(crate::number_types::Number)
             }
-            RustType::Long => {
-                quote!(i64)
+            RustType::Integer => {
+                quote!(crate::number_types::Integer)
             }
             RustType::Date => {
                 quote!(crate::date_types::Date)
@@ -67,8 +61,8 @@ impl From<&str> for RustType {
     fn from(value: &str) -> Self {
         match value {
             "Boolean" => Self::Boolean,
-            "Number" => Self::Double,
-            "Integer" => Self::Long,
+            "Number" => Self::Number,
+            "Integer" => Self::Integer,
             "Date" => Self::Date,
             "Time" => Self::Time,
             "DateTime" => Self::DateTime,
