@@ -12,8 +12,8 @@ pub enum TaxonomicRangeProperty {
     DefinedTerm(DefinedTerm),
     #[cfg(any(any(feature = "taxon-schema", feature = "pending-schema-section"), doc))]
     Taxon(Taxon),
-    #[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
-    Text(Text),
     #[cfg(any(any(feature = "url-schema", feature = "general-schema-section"), doc))]
     Url(Url),
+    #[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
+    Text(Text),
 }

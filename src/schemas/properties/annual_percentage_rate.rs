@@ -6,11 +6,6 @@ use super::*;
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum AnnualPercentageRateProperty {
     #[cfg(any(
-        any(feature = "number-schema", feature = "general-schema-section"),
-        doc
-    ))]
-    Number(Number),
-    #[cfg(any(
         any(
             feature = "quantitative-value-schema",
             feature = "general-schema-section"
@@ -18,4 +13,9 @@ pub enum AnnualPercentageRateProperty {
         doc
     ))]
     QuantitativeValue(QuantitativeValue),
+    #[cfg(any(
+        any(feature = "number-schema", feature = "general-schema-section"),
+        doc
+    ))]
+    Number(Number),
 }

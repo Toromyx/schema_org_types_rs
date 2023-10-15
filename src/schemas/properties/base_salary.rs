@@ -11,11 +11,6 @@ pub enum BaseSalaryProperty {
     ))]
     MonetaryAmount(MonetaryAmount),
     #[cfg(any(
-        any(feature = "number-schema", feature = "general-schema-section"),
-        doc
-    ))]
-    Number(Number),
-    #[cfg(any(
         any(
             feature = "price-specification-schema",
             feature = "general-schema-section"
@@ -23,4 +18,9 @@ pub enum BaseSalaryProperty {
         doc
     ))]
     PriceSpecification(PriceSpecification),
+    #[cfg(any(
+        any(feature = "number-schema", feature = "general-schema-section"),
+        doc
+    ))]
+    Number(Number),
 }

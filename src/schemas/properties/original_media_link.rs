@@ -10,11 +10,11 @@ pub enum OriginalMediaLinkProperty {
         doc
     ))]
     MediaObject(MediaObject),
-    #[cfg(any(any(feature = "url-schema", feature = "general-schema-section"), doc))]
-    Url(Url),
     #[cfg(any(
         any(feature = "web-page-schema", feature = "general-schema-section"),
         doc
     ))]
     WebPage(WebPage),
+    #[cfg(any(any(feature = "url-schema", feature = "general-schema-section"), doc))]
+    Url(Url),
 }

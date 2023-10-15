@@ -6,11 +6,6 @@ use super::*;
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum NumAdultsProperty {
     #[cfg(any(
-        any(feature = "integer-schema", feature = "general-schema-section"),
-        doc
-    ))]
-    Integer(Integer),
-    #[cfg(any(
         any(
             feature = "quantitative-value-schema",
             feature = "general-schema-section"
@@ -18,4 +13,9 @@ pub enum NumAdultsProperty {
         doc
     ))]
     QuantitativeValue(QuantitativeValue),
+    #[cfg(any(
+        any(feature = "integer-schema", feature = "general-schema-section"),
+        doc
+    ))]
+    Integer(Integer),
 }

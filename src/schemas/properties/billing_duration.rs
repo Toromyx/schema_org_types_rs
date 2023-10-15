@@ -11,11 +11,6 @@ pub enum BillingDurationProperty {
     ))]
     Duration(Duration),
     #[cfg(any(
-        any(feature = "number-schema", feature = "general-schema-section"),
-        doc
-    ))]
-    Number(Number),
-    #[cfg(any(
         any(
             feature = "quantitative-value-schema",
             feature = "general-schema-section"
@@ -23,4 +18,9 @@ pub enum BillingDurationProperty {
         doc
     ))]
     QuantitativeValue(QuantitativeValue),
+    #[cfg(any(
+        any(feature = "number-schema", feature = "general-schema-section"),
+        doc
+    ))]
+    Number(Number),
 }

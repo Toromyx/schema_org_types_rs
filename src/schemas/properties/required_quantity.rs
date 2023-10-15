@@ -6,11 +6,6 @@ use super::*;
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum RequiredQuantityProperty {
     #[cfg(any(
-        any(feature = "number-schema", feature = "general-schema-section"),
-        doc
-    ))]
-    Number(Number),
-    #[cfg(any(
         any(
             feature = "quantitative-value-schema",
             feature = "general-schema-section"
@@ -18,6 +13,11 @@ pub enum RequiredQuantityProperty {
         doc
     ))]
     QuantitativeValue(QuantitativeValue),
+    #[cfg(any(
+        any(feature = "number-schema", feature = "general-schema-section"),
+        doc
+    ))]
+    Number(Number),
     #[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
     Text(Text),
 }

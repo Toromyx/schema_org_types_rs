@@ -1,4 +1,4 @@
-use std::str::FromStr;
+use std::{cmp::Ordering, str::FromStr};
 
 use convert_case::{Case, Casing};
 use derivative::Derivative;
@@ -9,7 +9,7 @@ use rayon::prelude::*;
 use crate::{
     doc_lines::DocLines,
     feature::Feature,
-    schema::{map_schema_name, ReferencedSchema, Schema},
+    schema::{data_type::rust_type::RustType, map_schema_name, ReferencedSchema, Schema},
     schema_section::SchemaSection,
     serde_attributes::{serde_derive, serde_untagged},
     sparql::{SchemaQueries, SchemaQuerySolution},
@@ -64,7 +64,39 @@ impl Schema for Property {
             .into_par_iter()
             .map(ReferencedSchema::from)
             .collect();
-        variants.sort_unstable();
+
+        #[derive(PartialEq, Eq, PartialOrd, Ord)]
+        enum VariantType {
+            Class,
+            Enumeration,
+            DataType,
+        }
+
+        impl VariantType {
+            fn from_variant(store: &Store, variant: &ReferencedSchema) -> Self {
+                if store.is_enumeration(&variant.iri) {
+                    return Self::Enumeration;
+                }
+                if store.is_data_type(&variant.iri) {
+                    return Self::DataType;
+                }
+                Self::Class
+            }
+        }
+
+        variants.sort_unstable_by(|variant, other| {
+            let variant_type = VariantType::from_variant(store, variant);
+            let other_type = VariantType::from_variant(store, other);
+            match variant_type.cmp(&other_type) {
+                Ordering::Less => Ordering::Less,
+                Ordering::Equal => match variant_type {
+                    VariantType::DataType => RustType::from(variant.name.as_str())
+                        .cmp(&RustType::from(other.name.as_str())),
+                    _ => variant.cmp(other),
+                },
+                Ordering::Greater => Ordering::Greater,
+            }
+        });
         Self {
             iri: solution.iri,
             name: map_schema_name(solution.label),

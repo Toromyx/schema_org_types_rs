@@ -7,8 +7,8 @@ use super::*;
 pub enum StatTypeProperty {
     #[cfg(any(any(feature = "property-schema", feature = "meta-schema-section"), doc))]
     Property(Property),
-    #[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
-    Text(Text),
     #[cfg(any(any(feature = "url-schema", feature = "general-schema-section"), doc))]
     Url(Url),
+    #[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
+    Text(Text),
 }

@@ -18,8 +18,8 @@ pub enum MeasurementTechniqueProperty {
         doc
     ))]
     MeasurementMethodEnum(MeasurementMethodEnum),
-    #[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
-    Text(Text),
     #[cfg(any(any(feature = "url-schema", feature = "general-schema-section"), doc))]
     Url(Url),
+    #[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
+    Text(Text),
 }

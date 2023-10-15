@@ -16,14 +16,6 @@ pub enum ValueReferenceProperty {
     ))]
     Enumeration(Enumeration),
     #[cfg(any(
-        any(
-            feature = "measurement-type-enumeration-schema",
-            feature = "pending-schema-section"
-        ),
-        doc
-    ))]
-    MeasurementTypeEnumeration(MeasurementTypeEnumeration),
-    #[cfg(any(
         any(feature = "property-value-schema", feature = "general-schema-section"),
         doc
     ))]
@@ -52,6 +44,14 @@ pub enum ValueReferenceProperty {
         doc
     ))]
     StructuredValue(StructuredValue),
+    #[cfg(any(
+        any(
+            feature = "measurement-type-enumeration-schema",
+            feature = "pending-schema-section"
+        ),
+        doc
+    ))]
+    MeasurementTypeEnumeration(MeasurementTypeEnumeration),
     #[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
     Text(Text),
 }

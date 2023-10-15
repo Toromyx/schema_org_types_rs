@@ -268,9 +268,9 @@ accepted-payment-method-property-schema = [
     "payment-method-schema",
 ]
 accepts-reservations-property-schema = [
+    "url-schema",
     "boolean-schema",
     "text-schema",
-    "url-schema",
 ]
 access-code-property-schema = [
     "text-schema",
@@ -572,13 +572,13 @@ action-application-property-schema = [
     "software-application-schema",
 ]
 action-option-property-schema = [
-    "text-schema",
     "thing-schema",
+    "text-schema",
 ]
 action-platform-property-schema = [
     "digital-platform-enumeration-schema",
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 action-schema = [
     "action-status-property-schema",
@@ -699,8 +699,8 @@ additional-property-property-schema = [
     "property-value-schema",
 ]
 additional-type-property-schema = [
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 additional-variable-property-schema = [
     "text-schema",
@@ -1178,8 +1178,8 @@ agree-action-schema = [
     "url-property-schema",
 ]
 aircraft-property-schema = [
-    "text-schema",
     "vehicle-schema",
+    "text-schema",
 ]
 airline-schema = [
     "actionable-feedback-policy-property-schema",
@@ -2024,8 +2024,8 @@ announcement-location-property-schema = [
     "local-business-schema",
 ]
 annual-percentage-rate-property-schema = [
-    "number-schema",
     "quantitative-value-schema",
+    "number-schema",
 ]
 answer-count-property-schema = [
     "integer-schema",
@@ -2491,8 +2491,8 @@ applicant-location-requirements-property-schema = [
     "administrative-area-schema",
 ]
 application-category-property-schema = [
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 application-contact-property-schema = [
     "contact-point-schema",
@@ -2507,8 +2507,8 @@ application-start-date-property-schema = [
     "date-schema",
 ]
 application-sub-category-property-schema = [
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 application-suite-property-schema = [
     "text-schema",
@@ -2879,8 +2879,8 @@ archive-organization-schema = [
     "vat-id-property-schema",
 ]
 archived-at-property-schema = [
-    "url-schema",
     "web-page-schema",
+    "url-schema",
 ]
 area-property-schema = [
     "place-schema",
@@ -2914,8 +2914,8 @@ arrival-terminal-property-schema = [
     "text-schema",
 ]
 arrival-time-property-schema = [
-    "date-time-schema",
     "time-schema",
+    "date-time-schema",
 ]
 arrive-action-schema = [
     "action-status-property-schema",
@@ -3068,8 +3068,8 @@ art-gallery-schema = [
     "vat-id-property-schema",
 ]
 art-medium-property-schema = [
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 arterial-branch-property-schema = [
     "anatomical-structure-schema",
@@ -3107,8 +3107,8 @@ artery-schema = [
     "url-property-schema",
 ]
 artform-property-schema = [
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 article-body-property-schema = [
     "text-schema",
@@ -3255,12 +3255,12 @@ artist-property-schema = [
     "person-schema",
 ]
 artwork-surface-property-schema = [
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 asin-property-schema = [
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 ask-action-schema = [
     "about-property-schema",
@@ -5241,16 +5241,16 @@ automotive-business-schema = [
 ]
 availability-ends-property-schema = [
     "date-schema",
-    "date-time-schema",
     "time-schema",
+    "date-time-schema",
 ]
 availability-property-schema = [
     "item-availability-schema",
 ]
 availability-starts-property-schema = [
     "date-schema",
-    "date-time-schema",
     "time-schema",
+    "date-time-schema",
 ]
 available-at-or-from-property-schema = [
     "place-schema",
@@ -5610,8 +5610,8 @@ bank-account-schema = [
     "url-property-schema",
 ]
 bank-account-type-property-schema = [
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 bank-or-credit-union-schema = [
     "actionable-feedback-policy-property-schema",
@@ -6006,8 +6006,8 @@ barcode-schema = [
 ]
 base-salary-property-schema = [
     "monetary-amount-schema",
-    "number-schema",
     "price-specification-schema",
+    "number-schema",
 ]
 bcc-recipient-property-schema = [
     "contact-point-schema",
@@ -6507,8 +6507,8 @@ billing-address-property-schema = [
 ]
 billing-duration-property-schema = [
     "duration-schema",
-    "number-schema",
     "quantitative-value-schema",
+    "number-schema",
 ]
 billing-increment-property-schema = [
     "number-schema",
@@ -7054,8 +7054,8 @@ body-of-water-schema = [
 ]
 body-type-property-schema = [
     "qualitative-value-schema",
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 bone-schema = [
     "additional-type-property-schema",
@@ -8045,8 +8045,8 @@ broadcast-frequency-specification-schema = [
     "url-property-schema",
 ]
 broadcast-frequency-value-property-schema = [
-    "number-schema",
     "quantitative-value-schema",
+    "number-schema",
 ]
 broadcast-of-event-property-schema = [
     "event-schema",
@@ -9511,10 +9511,10 @@ category-code-set-schema = [
 ]
 category-property-schema = [
     "category-code-schema",
-    "physical-activity-category-schema",
-    "text-schema",
     "thing-schema",
+    "physical-activity-category-schema",
     "url-schema",
+    "text-schema",
 ]
 catholic-church-schema = [
     "additional-property-property-schema",
@@ -9904,8 +9904,8 @@ check-out-action-schema = [
     "url-property-schema",
 ]
 checkin-time-property-schema = [
-    "date-time-schema",
     "time-schema",
+    "date-time-schema",
 ]
 checkout-page-schema = [
     "about-property-schema",
@@ -10048,8 +10048,8 @@ checkout-page-url-template-property-schema = [
     "text-schema",
 ]
 checkout-time-property-schema = [
-    "date-time-schema",
     "time-schema",
+    "date-time-schema",
 ]
 chemical-composition-property-schema = [
     "text-schema",
@@ -10213,8 +10213,8 @@ child-min-age-property-schema = [
 ]
 child-taxon-property-schema = [
     "taxon-schema",
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 children-property-schema = [
     "person-schema",
@@ -12570,8 +12570,8 @@ communicate-action-schema = [
 ]
 competency-required-property-schema = [
     "defined-term-schema",
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 competitor-property-schema = [
     "person-schema",
@@ -13855,8 +13855,8 @@ correction-comment-schema = [
 ]
 correction-property-schema = [
     "correction-comment-schema",
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 corrections-policy-property-schema = [
     "creative-work-schema",
@@ -13872,8 +13872,8 @@ cost-origin-property-schema = [
     "text-schema",
 ]
 cost-per-unit-property-schema = [
-    "number-schema",
     "qualitative-value-schema",
+    "number-schema",
     "text-schema",
 ]
 countries-not-supported-property-schema = [
@@ -14013,8 +14013,8 @@ course-instance-schema = [
     "work-performed-property-schema",
 ]
 course-mode-property-schema = [
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 course-prerequisites-property-schema = [
     "alignment-object-schema",
@@ -14927,8 +14927,8 @@ creator-property-schema = [
 ]
 credential-category-property-schema = [
     "defined-term-schema",
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 credit-card-schema = [
 ]
@@ -15694,8 +15694,8 @@ data-download-schema = [
 ]
 data-feed-element-property-schema = [
     "data-feed-item-schema",
-    "text-schema",
     "thing-schema",
+    "text-schema",
 ]
 data-feed-item-schema = [
     "additional-type-property-schema",
@@ -16214,8 +16214,8 @@ death-place-property-schema = [
     "place-schema",
 ]
 default-value-property-schema = [
-    "text-schema",
     "thing-schema",
+    "text-schema",
 ]
 defence-establishment-schema = [
     "additional-property-property-schema",
@@ -16930,8 +16930,8 @@ departure-terminal-property-schema = [
     "text-schema",
 ]
 departure-time-property-schema = [
-    "date-time-schema",
     "time-schema",
+    "date-time-schema",
 ]
 dependencies-property-schema = [
     "text-schema",
@@ -16986,8 +16986,8 @@ depth-property-schema = [
     "quantitative-value-schema",
 ]
 description-property-schema = [
-    "text-schema",
     "text-object-schema",
+    "text-schema",
 ]
 device-property-schema = [
     "text-schema",
@@ -17710,14 +17710,14 @@ discussion-url-property-schema = [
     "url-schema",
 ]
 disease-prevention-info-property-schema = [
-    "url-schema",
     "web-content-schema",
+    "url-schema",
 ]
 disease-spread-statistics-property-schema = [
     "dataset-schema",
     "observation-schema",
-    "url-schema",
     "web-content-schema",
+    "url-schema",
 ]
 dislike-action-schema = [
     "action-status-property-schema",
@@ -17946,8 +17946,8 @@ donate-action-schema = [
     "url-property-schema",
 ]
 door-time-property-schema = [
-    "date-time-schema",
     "time-schema",
+    "date-time-schema",
 ]
 dosage-form-property-schema = [
     "text-schema",
@@ -17985,8 +17985,8 @@ dose-unit-property-schema = [
     "text-schema",
 ]
 dose-value-property-schema = [
-    "number-schema",
     "qualitative-value-schema",
+    "number-schema",
 ]
 down-payment-property-schema = [
     "monetary-amount-schema",
@@ -18624,8 +18624,8 @@ eat-action-schema = [
     "url-property-schema",
 ]
 edit-eidr-property-schema = [
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 editor-property-schema = [
     "person-schema",
@@ -18717,16 +18717,16 @@ educational-audience-schema = [
 ]
 educational-credential-awarded-property-schema = [
     "educational-occupational-credential-schema",
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 educational-framework-property-schema = [
     "text-schema",
 ]
 educational-level-property-schema = [
     "defined-term-schema",
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 educational-occupational-credential-schema = [
     "about-property-schema",
@@ -19013,8 +19013,8 @@ educational-organization-schema = [
     "vat-id-property-schema",
 ]
 educational-program-mode-property-schema = [
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 educational-role-property-schema = [
     "text-schema",
@@ -20043,8 +20043,8 @@ encodes-creative-work-property-schema = [
     "creative-work-schema",
 ]
 encoding-format-property-schema = [
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 encoding-property-schema = [
     "media-object-schema",
@@ -20064,8 +20064,8 @@ end-offset-property-schema = [
     "number-schema",
 ]
 end-time-property-schema = [
-    "date-time-schema",
     "time-schema",
+    "date-time-schema",
 ]
 endorse-action-schema = [
     "action-status-property-schema",
@@ -20190,8 +20190,8 @@ engine-specification-schema = [
 ]
 engine-type-property-schema = [
     "qualitative-value-schema",
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 entertainment-business-property-schema = [
     "entertainment-business-schema",
@@ -21462,12 +21462,12 @@ fax-number-property-schema = [
     "text-schema",
 ]
 feature-list-property-schema = [
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 fees-and-commissions-specification-property-schema = [
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 festival-schema = [
     "about-property-schema",
@@ -21528,8 +21528,8 @@ fiber-content-property-schema = [
     "mass-schema",
 ]
 file-format-property-schema = [
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 file-size-property-schema = [
     "text-schema",
@@ -22453,8 +22453,8 @@ fuel-efficiency-property-schema = [
 ]
 fuel-type-property-schema = [
     "qualitative-value-schema",
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 functional-class-property-schema = [
     "medical-entity-schema",
@@ -22774,9 +22774,9 @@ game-location-property-schema = [
     "url-schema",
 ]
 game-platform-property-schema = [
-    "text-schema",
     "thing-schema",
     "url-schema",
+    "text-schema",
 ]
 game-play-mode-schema = [
 ]
@@ -23392,8 +23392,8 @@ general-contractor-schema = [
     "vat-id-property-schema",
 ]
 genre-property-schema = [
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 geo-circle-schema = [
     "additional-type-property-schema",
@@ -23541,8 +23541,8 @@ geospatial-geometry-schema = [
     "url-property-schema",
 ]
 getting-tested-info-property-schema = [
-    "url-schema",
     "web-content-schema",
+    "url-schema",
 ]
 give-action-schema = [
     "action-status-property-schema",
@@ -24185,8 +24185,8 @@ gtin-8-property-schema = [
     "text-schema",
 ]
 gtin-property-schema = [
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 guide-schema = [
     "about-property-schema",
@@ -24676,8 +24676,8 @@ has-menu-item-property-schema = [
 ]
 has-menu-property-schema = [
     "menu-schema",
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 has-menu-section-property-schema = [
     "menu-section-schema",
@@ -24707,8 +24707,8 @@ has-product-return-policy-property-schema = [
 ]
 has-representation-property-schema = [
     "property-value-schema",
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 has-variant-property-schema = [
     "product-schema",
@@ -27647,8 +27647,8 @@ ice-cream-shop-schema = [
 ]
 identifier-property-schema = [
     "property-value-schema",
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 identifying-exam-property-schema = [
     "physical-exam-schema",
@@ -28652,8 +28652,8 @@ interactivity-type-property-schema = [
     "text-schema",
 ]
 interest-rate-property-schema = [
-    "number-schema",
     "quantitative-value-schema",
+    "number-schema",
 ]
 internet-cafe-schema = [
     "actionable-feedback-policy-property-schema",
@@ -29049,8 +29049,8 @@ item-defect-return-shipping-fees-amount-property-schema = [
 ]
 item-list-element-property-schema = [
     "list-item-schema",
-    "text-schema",
     "thing-schema",
+    "text-schema",
 ]
 item-list-order-property-schema = [
     "item-list-order-type-schema",
@@ -29497,16 +29497,16 @@ jurisdiction-property-schema = [
 ]
 keywords-property-schema = [
     "defined-term-schema",
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 known-vehicle-damages-property-schema = [
     "text-schema",
 ]
 knows-about-property-schema = [
-    "text-schema",
     "thing-schema",
     "url-schema",
+    "text-schema",
 ]
 knows-language-property-schema = [
     "language-schema",
@@ -30036,8 +30036,8 @@ legislation-date-version-property-schema = [
     "date-schema",
 ]
 legislation-identifier-property-schema = [
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 legislation-jurisdiction-property-schema = [
     "administrative-area-schema",
@@ -31202,8 +31202,8 @@ loan-term-property-schema = [
     "quantitative-value-schema",
 ]
 loan-type-property-schema = [
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 local-business-schema = [
     "actionable-feedback-policy-property-schema",
@@ -31355,8 +31355,8 @@ location-feature-specification-schema = [
 location-property-schema = [
     "place-schema",
     "postal-address-schema",
-    "text-schema",
     "virtual-location-schema",
+    "text-schema",
 ]
 locksmith-schema = [
     "actionable-feedback-policy-property-schema",
@@ -32061,8 +32061,8 @@ material-extent-property-schema = [
 ]
 material-property-schema = [
     "product-schema",
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 math-expression-property-schema = [
     "solve-math-action-schema",
@@ -32257,8 +32257,8 @@ measurement-method-enum-schema = [
 measurement-method-property-schema = [
     "defined-term-schema",
     "measurement-method-enum-schema",
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 measurement-qualifier-property-schema = [
     "enumeration-schema",
@@ -32266,8 +32266,8 @@ measurement-qualifier-property-schema = [
 measurement-technique-property-schema = [
     "defined-term-schema",
     "measurement-method-enum-schema",
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 measurement-type-enumeration-schema = [
 ]
@@ -34301,8 +34301,8 @@ meeting-room-schema = [
 ]
 meets-emission-standard-property-schema = [
     "qualitative-value-schema",
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 member-of-property-schema = [
     "organization-schema",
@@ -34320,12 +34320,12 @@ membership-number-property-schema = [
     "text-schema",
 ]
 membership-points-earned-property-schema = [
-    "number-schema",
     "quantitative-value-schema",
+    "number-schema",
 ]
 memory-requirements-property-schema = [
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 mens-clothing-store-schema = [
     "actionable-feedback-policy-property-schema",
@@ -34472,8 +34472,8 @@ menu-item-schema = [
 ]
 menu-property-schema = [
     "menu-schema",
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 menu-schema = [
     "about-property-schema",
@@ -38574,8 +38574,8 @@ name-property-schema = [
     "text-schema",
 ]
 named-position-property-schema = [
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 nationality-property-schema = [
     "country-schema",
@@ -38586,8 +38586,8 @@ natural-progression-property-schema = [
 negative-notes-property-schema = [
     "item-list-schema",
     "list-item-schema",
-    "text-schema",
     "web-content-schema",
+    "text-schema",
 ]
 nerve-motor-property-schema = [
     "muscle-schema",
@@ -38859,8 +38859,8 @@ news-media-organization-schema = [
     "verification-fact-checking-policy-property-schema",
 ]
 news-updates-and-guidelines-property-schema = [
-    "url-schema",
     "web-content-schema",
+    "url-schema",
 ]
 newspaper-schema = [
     "about-property-schema",
@@ -39465,12 +39465,12 @@ nsn-property-schema = [
     "text-schema",
 ]
 num-adults-property-schema = [
-    "integer-schema",
     "quantitative-value-schema",
+    "integer-schema",
 ]
 num-children-property-schema = [
-    "integer-schema",
     "quantitative-value-schema",
+    "integer-schema",
 ]
 num-constraints-property-schema = [
     "integer-schema",
@@ -39489,26 +39489,26 @@ number-of-available-accommodation-units-property-schema = [
     "quantitative-value-schema",
 ]
 number-of-axles-property-schema = [
-    "number-schema",
     "quantitative-value-schema",
+    "number-schema",
 ]
 number-of-bathrooms-total-property-schema = [
     "integer-schema",
 ]
 number-of-bedrooms-property-schema = [
-    "number-schema",
     "quantitative-value-schema",
+    "number-schema",
 ]
 number-of-beds-property-schema = [
     "number-schema",
 ]
 number-of-credits-property-schema = [
-    "integer-schema",
     "structured-value-schema",
+    "integer-schema",
 ]
 number-of-doors-property-schema = [
-    "number-schema",
     "quantitative-value-schema",
+    "number-schema",
 ]
 number-of-employees-property-schema = [
     "quantitative-value-schema",
@@ -39517,8 +39517,8 @@ number-of-episodes-property-schema = [
     "integer-schema",
 ]
 number-of-forward-gears-property-schema = [
-    "number-schema",
     "quantitative-value-schema",
+    "number-schema",
 ]
 number-of-full-bathrooms-property-schema = [
     "number-schema",
@@ -39539,12 +39539,12 @@ number-of-players-property-schema = [
     "quantitative-value-schema",
 ]
 number-of-previous-owners-property-schema = [
-    "number-schema",
     "quantitative-value-schema",
+    "number-schema",
 ]
 number-of-rooms-property-schema = [
-    "number-schema",
     "quantitative-value-schema",
+    "number-schema",
 ]
 number-of-seasons-property-schema = [
     "integer-schema",
@@ -39661,8 +39661,8 @@ occupational-category-property-schema = [
 ]
 occupational-credential-awarded-property-schema = [
     "educational-occupational-credential-schema",
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 occupational-experience-requirements-schema = [
     "additional-type-property-schema",
@@ -40657,8 +40657,8 @@ optician-schema = [
     "vat-id-property-schema",
 ]
 option-property-schema = [
-    "text-schema",
     "thing-schema",
+    "text-schema",
 ]
 order-action-schema = [
     "action-status-property-schema",
@@ -40912,8 +40912,8 @@ original-media-context-description-property-schema = [
 ]
 original-media-link-property-schema = [
     "media-object-schema",
-    "url-schema",
     "web-page-schema",
+    "url-schema",
 ]
 originates-from-property-schema = [
     "vessel-schema",
@@ -41048,8 +41048,8 @@ owned-through-property-schema = [
 ownership-funding-info-property-schema = [
     "about-page-schema",
     "creative-work-schema",
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 ownership-info-schema = [
     "acquired-from-property-schema",
@@ -41338,8 +41338,8 @@ parent-service-property-schema = [
 ]
 parent-taxon-property-schema = [
     "taxon-schema",
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 parents-property-schema = [
     "person-schema",
@@ -41493,8 +41493,8 @@ participant-property-schema = [
     "person-schema",
 ]
 party-size-property-schema = [
-    "integer-schema",
     "quantitative-value-schema",
+    "integer-schema",
 ]
 passenger-priority-status-property-schema = [
     "qualitative-value-schema",
@@ -42840,8 +42840,8 @@ physical-exam-schema = [
 ]
 physical-requirement-property-schema = [
     "defined-term-schema",
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 physical-therapy-schema = [
     "additional-type-property-schema",
@@ -44205,8 +44205,8 @@ position-property-schema = [
 positive-notes-property-schema = [
     "item-list-schema",
     "list-item-schema",
-    "text-schema",
     "web-content-schema",
+    "text-schema",
 ]
 possible-complication-property-schema = [
     "text-schema",
@@ -45787,8 +45787,8 @@ project-schema = [
 pronounceable-text-schema = [
 ]
 property-id-property-schema = [
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 property-schema = [
     "additional-type-property-schema",
@@ -46116,8 +46116,8 @@ public-toilet-schema = [
     "url-property-schema",
 ]
 public-transport-closures-info-property-schema = [
-    "url-schema",
     "web-content-schema",
+    "url-schema",
 ]
 publication-event-schema = [
     "about-property-schema",
@@ -46686,8 +46686,8 @@ quantity-schema = [
     "url-property-schema",
 ]
 quarantine-guidelines-property-schema = [
-    "url-schema",
     "web-content-schema",
+    "url-schema",
 ]
 query-property-schema = [
     "text-schema",
@@ -48859,8 +48859,8 @@ release-date-property-schema = [
     "date-schema",
 ]
 release-notes-property-schema = [
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 release-of-property-schema = [
     "music-album-schema",
@@ -48969,8 +48969,8 @@ repeat-frequency-property-schema = [
     "text-schema",
 ]
 repetitions-property-schema = [
-    "number-schema",
     "quantitative-value-schema",
+    "number-schema",
 ]
 replace-action-schema = [
     "action-status-property-schema",
@@ -49351,8 +49351,8 @@ representative-of-page-property-schema = [
     "boolean-schema",
 ]
 required-collateral-property-schema = [
-    "text-schema",
     "thing-schema",
+    "text-schema",
 ]
 required-gender-property-schema = [
     "text-schema",
@@ -49364,17 +49364,17 @@ required-min-age-property-schema = [
     "integer-schema",
 ]
 required-quantity-property-schema = [
-    "number-schema",
     "quantitative-value-schema",
+    "number-schema",
     "text-schema",
 ]
 requirements-property-schema = [
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 requires-subscription-property-schema = [
-    "boolean-schema",
     "media-subscription-schema",
+    "boolean-schema",
 ]
 research-organization-schema = [
     "actionable-feedback-policy-property-schema",
@@ -50522,8 +50522,8 @@ river-body-of-water-schema = [
     "url-property-schema",
 ]
 role-name-property-schema = [
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 role-schema = [
     "additional-type-property-schema",
@@ -51122,8 +51122,8 @@ scheduled-time-property-schema = [
     "date-time-schema",
 ]
 schema-version-property-schema = [
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 scholarly-article-schema = [
     "about-property-schema",
@@ -51261,8 +51261,8 @@ scholarly-article-schema = [
     "work-translation-property-schema",
 ]
 school-closures-info-property-schema = [
-    "url-schema",
     "web-content-schema",
+    "url-schema",
 ]
 school-district-schema = [
     "additional-property-property-schema",
@@ -52110,8 +52110,8 @@ seat-section-property-schema = [
     "text-schema",
 ]
 seating-capacity-property-schema = [
-    "number-schema",
     "quantitative-value-schema",
+    "number-schema",
 ]
 seating-type-property-schema = [
     "qualitative-value-schema",
@@ -52121,8 +52121,8 @@ secondary-prevention-property-schema = [
     "medical-therapy-schema",
 ]
 security-clearance-requirement-property-schema = [
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 security-screening-property-schema = [
     "text-schema",
@@ -52347,8 +52347,8 @@ sender-property-schema = [
 ]
 sensory-requirement-property-schema = [
     "defined-term-schema",
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 sensory-unit-property-schema = [
     "anatomical-structure-schema",
@@ -53808,8 +53808,8 @@ software-help-property-schema = [
     "creative-work-schema",
 ]
 software-requirements-property-schema = [
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 software-source-code-schema = [
     "about-property-schema",
@@ -54244,8 +54244,8 @@ sponsor-property-schema = [
     "person-schema",
 ]
 sport-property-schema = [
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 sporting-goods-store-schema = [
     "actionable-feedback-policy-property-schema",
@@ -55103,13 +55103,13 @@ start-offset-property-schema = [
     "number-schema",
 ]
 start-time-property-schema = [
-    "date-time-schema",
     "time-schema",
+    "date-time-schema",
 ]
 stat-type-property-schema = [
     "property-schema",
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 state-schema = [
     "additional-property-property-schema",
@@ -55362,8 +55362,8 @@ steps-property-schema = [
     "text-schema",
 ]
 storage-requirements-property-schema = [
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 store-schema = [
     "actionable-feedback-policy-property-schema",
@@ -55830,8 +55830,8 @@ supporting-data-property-schema = [
     "data-feed-schema",
 ]
 surface-property-schema = [
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 surgical-procedure-schema = [
     "additional-type-property-schema",
@@ -56549,8 +56549,8 @@ taxi-stand-schema = [
 ]
 taxon-rank-property-schema = [
     "property-value-schema",
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 taxon-schema = [
     "additional-type-property-schema",
@@ -56573,8 +56573,8 @@ taxon-schema = [
 taxonomic-range-property-schema = [
     "defined-term-schema",
     "taxon-schema",
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 teaches-property-schema = [
     "defined-term-schema",
@@ -56859,9 +56859,9 @@ television-station-schema = [
     "vat-id-property-schema",
 ]
 temporal-coverage-property-schema = [
+    "url-schema",
     "date-time-schema",
     "text-schema",
-    "url-schema",
 ]
 temporal-property-schema = [
     "date-time-schema",
@@ -56992,8 +56992,8 @@ term-duration-property-schema = [
     "duration-schema",
 ]
 terms-of-service-property-schema = [
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 terms-per-year-property-schema = [
     "number-schema",
@@ -57623,8 +57623,8 @@ ticket-schema = [
     "url-property-schema",
 ]
 ticket-token-property-schema = [
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 ticketed-seat-property-schema = [
     "seat-schema",
@@ -57818,8 +57818,8 @@ tissue-sample-property-schema = [
     "text-schema",
 ]
 title-eidr-property-schema = [
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 title-property-schema = [
     "text-schema",
@@ -57860,8 +57860,8 @@ total-payment-due-property-schema = [
     "price-specification-schema",
 ]
 total-price-property-schema = [
-    "number-schema",
     "price-specification-schema",
+    "number-schema",
     "text-schema",
 ]
 total-time-property-schema = [
@@ -58652,8 +58652,8 @@ travel-agency-schema = [
     "vat-id-property-schema",
 ]
 travel-bans-property-schema = [
-    "url-schema",
     "web-content-schema",
+    "url-schema",
 ]
 treatment-indication-schema = [
     "additional-type-property-schema",
@@ -59304,8 +59304,8 @@ typical-age-range-property-schema = [
     "text-schema",
 ]
 typical-credits-per-term-property-schema = [
-    "integer-schema",
     "structured-value-schema",
+    "integer-schema",
 ]
 typical-test-property-schema = [
     "medical-test-schema",
@@ -59343,8 +59343,8 @@ under-name-property-schema = [
     "person-schema",
 ]
 unit-code-property-schema = [
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 unit-price-specification-schema = [
     "additional-type-property-schema",
@@ -60164,8 +60164,8 @@ uses-device-property-schema = [
     "medical-device-schema",
 ]
 uses-health-plan-id-standard-property-schema = [
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 utterances-property-schema = [
     "text-schema",
@@ -60328,19 +60328,19 @@ value-pattern-property-schema = [
     "text-schema",
 ]
 value-property-schema = [
+    "structured-value-schema",
     "boolean-schema",
     "number-schema",
-    "structured-value-schema",
     "text-schema",
 ]
 value-reference-property-schema = [
     "defined-term-schema",
     "enumeration-schema",
-    "measurement-type-enumeration-schema",
     "property-value-schema",
     "qualitative-value-schema",
     "quantitative-value-schema",
     "structured-value-schema",
+    "measurement-type-enumeration-schema",
     "text-schema",
 ]
 value-required-property-schema = [
@@ -60493,8 +60493,8 @@ vehicle-schema = [
     "width-property-schema",
 ]
 vehicle-seating-capacity-property-schema = [
-    "number-schema",
     "quantitative-value-schema",
+    "number-schema",
 ]
 vehicle-special-usage-property-schema = [
     "car-usage-type-schema",
@@ -60502,8 +60502,8 @@ vehicle-special-usage-property-schema = [
 ]
 vehicle-transmission-property-schema = [
     "qualitative-value-schema",
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 vein-schema = [
     "additional-type-property-schema",
@@ -61978,8 +61978,8 @@ want-action-schema = [
     "url-property-schema",
 ]
 warning-property-schema = [
-    "text-schema",
     "url-schema",
+    "text-schema",
 ]
 warranty-promise-property-schema = [
     "warranty-promise-schema",

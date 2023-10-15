@@ -12,8 +12,6 @@ pub enum LocationProperty {
         doc
     ))]
     PostalAddress(PostalAddress),
-    #[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
-    Text(Text),
     #[cfg(any(
         any(
             feature = "virtual-location-schema",
@@ -22,4 +20,6 @@ pub enum LocationProperty {
         doc
     ))]
     VirtualLocation(VirtualLocation),
+    #[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
+    Text(Text),
 }

@@ -1,9 +1,11 @@
+use std::cmp::Ordering;
+
 use quote::{__private::TokenStream, quote, ToTokens, TokenStreamExt};
 
 use crate::serde_attributes::serde_as;
 
 /// Represents the underlying rust types used in Schema.org types.
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, PartialEq, Eq)]
 pub enum RustType {
     Boolean,
     Number,
@@ -27,6 +29,31 @@ impl RustType {
             RustType::String => None,
             RustType::Url => None,
         }
+    }
+
+    fn order(&self) -> isize {
+        match self {
+            RustType::Boolean => 5,
+            RustType::Number => 7,
+            RustType::Integer => 6,
+            RustType::Date => 2,
+            RustType::Time => 3,
+            RustType::DateTime => 4,
+            RustType::String => 8,
+            RustType::Url => 1,
+        }
+    }
+}
+
+impl PartialOrd for RustType {
+    fn partial_cmp(&self, other: &Self) -> Option<Ordering> {
+        Some(self.cmp(other))
+    }
+}
+
+impl Ord for RustType {
+    fn cmp(&self, other: &Self) -> Ordering {
+        self.order().cmp(&other.order())
     }
 }
 

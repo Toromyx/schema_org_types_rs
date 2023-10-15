@@ -10,8 +10,8 @@ pub enum DataFeedElementProperty {
         doc
     ))]
     DataFeedItem(DataFeedItem),
-    #[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
-    Text(Text),
     #[cfg(any(any(feature = "thing-schema", feature = "general-schema-section"), doc))]
     Thing(Thing),
+    #[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
+    Text(Text),
 }
