@@ -1,5 +1,3 @@
-//! TODO doc
-
 #![allow(unused)]
 #![allow(clippy::enum_variant_names)]
 
