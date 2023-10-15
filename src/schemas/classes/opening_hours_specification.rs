@@ -12,8 +12,6 @@ pub struct OpeningHoursSpecification {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "additionalType"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/additionalType"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/additionalType"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -29,8 +27,6 @@ pub struct OpeningHoursSpecification {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "alternateName"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/alternateName"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/alternateName"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -43,8 +39,6 @@ pub struct OpeningHoursSpecification {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "closes"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/closes"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/closes"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -60,8 +54,6 @@ pub struct OpeningHoursSpecification {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "dayOfWeek"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/dayOfWeek"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/dayOfWeek"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -77,8 +69,6 @@ pub struct OpeningHoursSpecification {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "description"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/description"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/description"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -94,14 +84,6 @@ pub struct OpeningHoursSpecification {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "disambiguatingDescription"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/disambiguatingDescription")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/disambiguatingDescription")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -117,8 +99,6 @@ pub struct OpeningHoursSpecification {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "identifier"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/identifier"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/identifier"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -131,8 +111,6 @@ pub struct OpeningHoursSpecification {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "image"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/image"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/image"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -148,11 +126,6 @@ pub struct OpeningHoursSpecification {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "mainEntityOfPage"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/mainEntityOfPage")
-    )]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/mainEntityOfPage"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -165,8 +138,6 @@ pub struct OpeningHoursSpecification {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "name"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/name"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/name"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -179,8 +150,6 @@ pub struct OpeningHoursSpecification {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "opens"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/opens"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/opens"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -196,8 +165,6 @@ pub struct OpeningHoursSpecification {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "potentialAction"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/potentialAction"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/potentialAction"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -213,8 +180,6 @@ pub struct OpeningHoursSpecification {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "sameAs"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/sameAs"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/sameAs"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -230,8 +195,6 @@ pub struct OpeningHoursSpecification {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "subjectOf"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/subjectOf"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/subjectOf"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -244,8 +207,6 @@ pub struct OpeningHoursSpecification {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "url"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/url"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/url"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -261,8 +222,6 @@ pub struct OpeningHoursSpecification {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "validFrom"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/validFrom"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/validFrom"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -278,8 +237,6 @@ pub struct OpeningHoursSpecification {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "validThrough"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/validThrough"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/validThrough"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(

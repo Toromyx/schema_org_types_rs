@@ -12,14 +12,6 @@ pub struct GatedResidenceCommunity {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "accommodationFloorPlan"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/accommodationFloorPlan")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/accommodationFloorPlan")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -35,14 +27,6 @@ pub struct GatedResidenceCommunity {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "additionalProperty"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/additionalProperty")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/additionalProperty")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -58,8 +42,6 @@ pub struct GatedResidenceCommunity {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "additionalType"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/additionalType"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/additionalType"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -75,8 +57,6 @@ pub struct GatedResidenceCommunity {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "address"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/address"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/address"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -92,8 +72,6 @@ pub struct GatedResidenceCommunity {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "aggregateRating"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/aggregateRating"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/aggregateRating"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -109,8 +87,6 @@ pub struct GatedResidenceCommunity {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "alternateName"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/alternateName"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/alternateName"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -126,8 +102,6 @@ pub struct GatedResidenceCommunity {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "amenityFeature"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/amenityFeature"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/amenityFeature"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -143,8 +117,6 @@ pub struct GatedResidenceCommunity {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "branchCode"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/branchCode"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/branchCode"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -160,8 +132,6 @@ pub struct GatedResidenceCommunity {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "containedIn"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/containedIn"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/containedIn"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -177,11 +147,6 @@ pub struct GatedResidenceCommunity {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "containedInPlace"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/containedInPlace")
-    )]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/containedInPlace"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -197,8 +162,6 @@ pub struct GatedResidenceCommunity {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "containsPlace"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/containsPlace"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/containsPlace"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -214,8 +177,6 @@ pub struct GatedResidenceCommunity {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "description"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/description"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/description"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -231,14 +192,6 @@ pub struct GatedResidenceCommunity {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "disambiguatingDescription"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/disambiguatingDescription")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/disambiguatingDescription")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -251,8 +204,6 @@ pub struct GatedResidenceCommunity {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "event"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/event"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/event"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -265,8 +216,6 @@ pub struct GatedResidenceCommunity {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "events"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/events"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/events"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -282,8 +231,6 @@ pub struct GatedResidenceCommunity {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "faxNumber"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/faxNumber"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/faxNumber"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -296,8 +243,6 @@ pub struct GatedResidenceCommunity {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "geo"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/geo"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/geo"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -313,8 +258,6 @@ pub struct GatedResidenceCommunity {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "geoContains"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/geoContains"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/geoContains"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -330,8 +273,6 @@ pub struct GatedResidenceCommunity {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "geoCoveredBy"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/geoCoveredBy"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/geoCoveredBy"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -347,8 +288,6 @@ pub struct GatedResidenceCommunity {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "geoCovers"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/geoCovers"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/geoCovers"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -364,8 +303,6 @@ pub struct GatedResidenceCommunity {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "geoCrosses"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/geoCrosses"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/geoCrosses"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -381,8 +318,6 @@ pub struct GatedResidenceCommunity {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "geoDisjoint"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/geoDisjoint"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/geoDisjoint"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -398,8 +333,6 @@ pub struct GatedResidenceCommunity {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "geoEquals"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/geoEquals"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/geoEquals"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -415,8 +348,6 @@ pub struct GatedResidenceCommunity {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "geoIntersects"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/geoIntersects"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/geoIntersects"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -432,8 +363,6 @@ pub struct GatedResidenceCommunity {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "geoOverlaps"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/geoOverlaps"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/geoOverlaps"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -449,8 +378,6 @@ pub struct GatedResidenceCommunity {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "geoTouches"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/geoTouches"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/geoTouches"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -466,8 +393,6 @@ pub struct GatedResidenceCommunity {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "geoWithin"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/geoWithin"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/geoWithin"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -483,14 +408,6 @@ pub struct GatedResidenceCommunity {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "globalLocationNumber"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/globalLocationNumber")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/globalLocationNumber")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -506,14 +423,6 @@ pub struct GatedResidenceCommunity {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "hasDriveThroughService"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/hasDriveThroughService")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/hasDriveThroughService")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -529,8 +438,6 @@ pub struct GatedResidenceCommunity {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "hasMap"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/hasMap"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/hasMap"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -546,8 +453,6 @@ pub struct GatedResidenceCommunity {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "identifier"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/identifier"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/identifier"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -560,8 +465,6 @@ pub struct GatedResidenceCommunity {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "image"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/image"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/image"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -577,14 +480,6 @@ pub struct GatedResidenceCommunity {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "isAccessibleForFree"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/isAccessibleForFree")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/isAccessibleForFree")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -600,8 +495,6 @@ pub struct GatedResidenceCommunity {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "isicV4"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/isicV4"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/isicV4"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -617,8 +510,6 @@ pub struct GatedResidenceCommunity {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "keywords"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/keywords"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/keywords"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -634,8 +525,6 @@ pub struct GatedResidenceCommunity {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "latitude"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/latitude"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/latitude"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -648,8 +537,6 @@ pub struct GatedResidenceCommunity {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "logo"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/logo"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/logo"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -665,8 +552,6 @@ pub struct GatedResidenceCommunity {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "longitude"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/longitude"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/longitude"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -682,11 +567,6 @@ pub struct GatedResidenceCommunity {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "mainEntityOfPage"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/mainEntityOfPage")
-    )]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/mainEntityOfPage"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -699,8 +579,6 @@ pub struct GatedResidenceCommunity {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "map"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/map"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/map"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -713,8 +591,6 @@ pub struct GatedResidenceCommunity {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "maps"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/maps"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/maps"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -730,14 +606,6 @@ pub struct GatedResidenceCommunity {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "maximumAttendeeCapacity"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/maximumAttendeeCapacity")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/maximumAttendeeCapacity")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -750,8 +618,6 @@ pub struct GatedResidenceCommunity {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "name"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/name"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/name"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -767,14 +633,6 @@ pub struct GatedResidenceCommunity {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "openingHoursSpecification"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/openingHoursSpecification")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/openingHoursSpecification")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -787,8 +645,6 @@ pub struct GatedResidenceCommunity {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "photo"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/photo"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/photo"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -801,8 +657,6 @@ pub struct GatedResidenceCommunity {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "photos"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/photos"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/photos"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -818,8 +672,6 @@ pub struct GatedResidenceCommunity {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "potentialAction"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/potentialAction"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/potentialAction"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -835,8 +687,6 @@ pub struct GatedResidenceCommunity {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "publicAccess"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/publicAccess"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/publicAccess"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -849,8 +699,6 @@ pub struct GatedResidenceCommunity {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "review"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/review"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/review"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -866,8 +714,6 @@ pub struct GatedResidenceCommunity {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "reviews"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/reviews"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/reviews"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -883,8 +729,6 @@ pub struct GatedResidenceCommunity {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "sameAs"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/sameAs"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/sameAs"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -897,8 +741,6 @@ pub struct GatedResidenceCommunity {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "slogan"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/slogan"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/slogan"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -914,8 +756,6 @@ pub struct GatedResidenceCommunity {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "smokingAllowed"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/smokingAllowed"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/smokingAllowed"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -931,14 +771,6 @@ pub struct GatedResidenceCommunity {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "specialOpeningHoursSpecification"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/specialOpeningHoursSpecification")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/specialOpeningHoursSpecification")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -954,8 +786,6 @@ pub struct GatedResidenceCommunity {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "subjectOf"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/subjectOf"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/subjectOf"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -971,8 +801,6 @@ pub struct GatedResidenceCommunity {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "telephone"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/telephone"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/telephone"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -988,8 +816,6 @@ pub struct GatedResidenceCommunity {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "tourBookingPage"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/tourBookingPage"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/tourBookingPage"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1002,8 +828,6 @@ pub struct GatedResidenceCommunity {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "url"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/url"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/url"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(

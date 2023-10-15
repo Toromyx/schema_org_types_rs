@@ -12,8 +12,6 @@ pub struct ParcelDelivery {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "additionalType"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/additionalType"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/additionalType"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -29,8 +27,6 @@ pub struct ParcelDelivery {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "alternateName"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/alternateName"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/alternateName"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -46,8 +42,6 @@ pub struct ParcelDelivery {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "carrier"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/carrier"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/carrier"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -63,8 +57,6 @@ pub struct ParcelDelivery {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "deliveryAddress"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/deliveryAddress"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/deliveryAddress"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -80,8 +72,6 @@ pub struct ParcelDelivery {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "deliveryStatus"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/deliveryStatus"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/deliveryStatus"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -97,8 +87,6 @@ pub struct ParcelDelivery {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "description"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/description"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/description"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -114,14 +102,6 @@ pub struct ParcelDelivery {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "disambiguatingDescription"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/disambiguatingDescription")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/disambiguatingDescription")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -137,14 +117,6 @@ pub struct ParcelDelivery {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "expectedArrivalFrom"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/expectedArrivalFrom")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/expectedArrivalFrom")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -160,14 +132,6 @@ pub struct ParcelDelivery {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "expectedArrivalUntil"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/expectedArrivalUntil")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/expectedArrivalUntil")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -183,14 +147,6 @@ pub struct ParcelDelivery {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "hasDeliveryMethod"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/hasDeliveryMethod")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/hasDeliveryMethod")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -206,8 +162,6 @@ pub struct ParcelDelivery {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "identifier"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/identifier"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/identifier"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -220,8 +174,6 @@ pub struct ParcelDelivery {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "image"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/image"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/image"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -237,8 +189,6 @@ pub struct ParcelDelivery {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "itemShipped"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/itemShipped"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/itemShipped"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -254,11 +204,6 @@ pub struct ParcelDelivery {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "mainEntityOfPage"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/mainEntityOfPage")
-    )]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/mainEntityOfPage"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -271,8 +216,6 @@ pub struct ParcelDelivery {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "name"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/name"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/name"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -288,8 +231,6 @@ pub struct ParcelDelivery {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "originAddress"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/originAddress"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/originAddress"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -305,8 +246,6 @@ pub struct ParcelDelivery {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "partOfOrder"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/partOfOrder"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/partOfOrder"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -322,8 +261,6 @@ pub struct ParcelDelivery {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "potentialAction"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/potentialAction"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/potentialAction"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -339,8 +276,6 @@ pub struct ParcelDelivery {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "provider"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/provider"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/provider"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -356,8 +291,6 @@ pub struct ParcelDelivery {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "sameAs"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/sameAs"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/sameAs"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -373,8 +306,6 @@ pub struct ParcelDelivery {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "subjectOf"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/subjectOf"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/subjectOf"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -390,8 +321,6 @@ pub struct ParcelDelivery {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "trackingNumber"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/trackingNumber"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/trackingNumber"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -407,8 +336,6 @@ pub struct ParcelDelivery {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "trackingUrl"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/trackingUrl"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/trackingUrl"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -421,8 +348,6 @@ pub struct ParcelDelivery {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "url"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/url"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/url"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(

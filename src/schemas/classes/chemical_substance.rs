@@ -12,8 +12,6 @@ pub struct ChemicalSubstance {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "additionalType"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/additionalType"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/additionalType"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -29,8 +27,6 @@ pub struct ChemicalSubstance {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "alternateName"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/alternateName"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/alternateName"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -46,14 +42,6 @@ pub struct ChemicalSubstance {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "associatedDisease"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/associatedDisease")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/associatedDisease")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -69,14 +57,6 @@ pub struct ChemicalSubstance {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "bioChemInteraction"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/bioChemInteraction")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/bioChemInteraction")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -92,14 +72,6 @@ pub struct ChemicalSubstance {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "bioChemSimilarity"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/bioChemSimilarity")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/bioChemSimilarity")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -115,8 +87,6 @@ pub struct ChemicalSubstance {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "biologicalRole"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/biologicalRole"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/biologicalRole"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -132,14 +102,6 @@ pub struct ChemicalSubstance {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "chemicalComposition"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/chemicalComposition")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/chemicalComposition")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -155,8 +117,6 @@ pub struct ChemicalSubstance {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "chemicalRole"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/chemicalRole"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/chemicalRole"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -172,8 +132,6 @@ pub struct ChemicalSubstance {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "description"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/description"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/description"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -189,14 +147,6 @@ pub struct ChemicalSubstance {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "disambiguatingDescription"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/disambiguatingDescription")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/disambiguatingDescription")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -212,8 +162,6 @@ pub struct ChemicalSubstance {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "funding"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/funding"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/funding"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -229,14 +177,6 @@ pub struct ChemicalSubstance {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "hasBioChemEntityPart"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/hasBioChemEntityPart")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/hasBioChemEntityPart")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -252,14 +192,6 @@ pub struct ChemicalSubstance {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "hasMolecularFunction"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/hasMolecularFunction")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/hasMolecularFunction")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -275,14 +207,6 @@ pub struct ChemicalSubstance {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "hasRepresentation"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/hasRepresentation")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/hasRepresentation")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -298,8 +222,6 @@ pub struct ChemicalSubstance {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "identifier"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/identifier"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/identifier"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -312,8 +234,6 @@ pub struct ChemicalSubstance {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "image"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/image"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/image"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -329,14 +249,6 @@ pub struct ChemicalSubstance {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "isEncodedByBioChemEntity"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/isEncodedByBioChemEntity")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/isEncodedByBioChemEntity")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -352,14 +264,6 @@ pub struct ChemicalSubstance {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "isInvolvedInBiologicalProcess"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/isInvolvedInBiologicalProcess")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/isInvolvedInBiologicalProcess")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -375,14 +279,6 @@ pub struct ChemicalSubstance {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "isLocatedInSubcellularLocation"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/isLocatedInSubcellularLocation")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/isLocatedInSubcellularLocation")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -398,14 +294,6 @@ pub struct ChemicalSubstance {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "isPartOfBioChemEntity"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/isPartOfBioChemEntity")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/isPartOfBioChemEntity")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -421,11 +309,6 @@ pub struct ChemicalSubstance {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "mainEntityOfPage"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/mainEntityOfPage")
-    )]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/mainEntityOfPage"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -438,8 +321,6 @@ pub struct ChemicalSubstance {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "name"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/name"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/name"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -455,8 +336,6 @@ pub struct ChemicalSubstance {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "potentialAction"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/potentialAction"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/potentialAction"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -472,8 +351,6 @@ pub struct ChemicalSubstance {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "potentialUse"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/potentialUse"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/potentialUse"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -489,8 +366,6 @@ pub struct ChemicalSubstance {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "sameAs"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/sameAs"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/sameAs"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -506,8 +381,6 @@ pub struct ChemicalSubstance {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "subjectOf"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/subjectOf"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/subjectOf"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -523,8 +396,6 @@ pub struct ChemicalSubstance {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "taxonomicRange"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/taxonomicRange"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/taxonomicRange"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -537,8 +408,6 @@ pub struct ChemicalSubstance {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "url"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/url"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/url"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(

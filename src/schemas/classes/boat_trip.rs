@@ -12,8 +12,6 @@ pub struct BoatTrip {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "additionalType"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/additionalType"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/additionalType"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -29,8 +27,6 @@ pub struct BoatTrip {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "alternateName"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/alternateName"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/alternateName"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -46,14 +42,6 @@ pub struct BoatTrip {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "arrivalBoatTerminal"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/arrivalBoatTerminal")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/arrivalBoatTerminal")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -69,8 +57,6 @@ pub struct BoatTrip {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "arrivalTime"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/arrivalTime"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/arrivalTime"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -86,14 +72,6 @@ pub struct BoatTrip {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "departureBoatTerminal"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/departureBoatTerminal")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/departureBoatTerminal")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -109,8 +87,6 @@ pub struct BoatTrip {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "departureTime"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/departureTime"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/departureTime"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -126,8 +102,6 @@ pub struct BoatTrip {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "description"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/description"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/description"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -143,14 +117,6 @@ pub struct BoatTrip {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "disambiguatingDescription"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/disambiguatingDescription")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/disambiguatingDescription")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -166,8 +132,6 @@ pub struct BoatTrip {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "identifier"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/identifier"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/identifier"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -180,8 +144,6 @@ pub struct BoatTrip {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "image"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/image"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/image"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -197,8 +159,6 @@ pub struct BoatTrip {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "itinerary"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/itinerary"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/itinerary"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -214,11 +174,6 @@ pub struct BoatTrip {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "mainEntityOfPage"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/mainEntityOfPage")
-    )]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/mainEntityOfPage"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -231,8 +186,6 @@ pub struct BoatTrip {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "name"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/name"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/name"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -245,8 +198,6 @@ pub struct BoatTrip {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "offers"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/offers"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/offers"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -262,8 +213,6 @@ pub struct BoatTrip {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "partOfTrip"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/partOfTrip"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/partOfTrip"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -279,8 +228,6 @@ pub struct BoatTrip {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "potentialAction"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/potentialAction"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/potentialAction"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -296,8 +243,6 @@ pub struct BoatTrip {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "provider"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/provider"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/provider"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -313,8 +258,6 @@ pub struct BoatTrip {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "sameAs"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/sameAs"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/sameAs"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -330,8 +273,6 @@ pub struct BoatTrip {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "subTrip"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/subTrip"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/subTrip"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -347,8 +288,6 @@ pub struct BoatTrip {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "subjectOf"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/subjectOf"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/subjectOf"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -364,8 +303,6 @@ pub struct BoatTrip {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "tripOrigin"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/tripOrigin"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/tripOrigin"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -378,8 +315,6 @@ pub struct BoatTrip {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "url"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/url"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/url"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(

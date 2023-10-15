@@ -12,14 +12,6 @@ pub struct MerchantReturnPolicy {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "additionalProperty"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/additionalProperty")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/additionalProperty")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -35,8 +27,6 @@ pub struct MerchantReturnPolicy {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "additionalType"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/additionalType"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/additionalType"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -52,8 +42,6 @@ pub struct MerchantReturnPolicy {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "alternateName"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/alternateName"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/alternateName"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -69,14 +57,6 @@ pub struct MerchantReturnPolicy {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "applicableCountry"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/applicableCountry")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/applicableCountry")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -92,14 +72,6 @@ pub struct MerchantReturnPolicy {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "customerRemorseReturnFees"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/customerRemorseReturnFees")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/customerRemorseReturnFees")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -115,14 +87,6 @@ pub struct MerchantReturnPolicy {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "customerRemorseReturnLabelSource"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/customerRemorseReturnLabelSource")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/customerRemorseReturnLabelSource")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -141,14 +105,6 @@ pub struct MerchantReturnPolicy {
         feature = "serde",
         serde(rename = "customerRemorseReturnShippingFeesAmount")
     )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/customerRemorseReturnShippingFeesAmount")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/customerRemorseReturnShippingFeesAmount")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -165,8 +121,6 @@ pub struct MerchantReturnPolicy {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "description"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/description"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/description"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -182,14 +136,6 @@ pub struct MerchantReturnPolicy {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "disambiguatingDescription"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/disambiguatingDescription")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/disambiguatingDescription")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -205,8 +151,6 @@ pub struct MerchantReturnPolicy {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "identifier"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/identifier"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/identifier"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -219,8 +163,6 @@ pub struct MerchantReturnPolicy {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "image"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/image"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/image"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -236,14 +178,6 @@ pub struct MerchantReturnPolicy {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "inStoreReturnsOffered"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/inStoreReturnsOffered")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/inStoreReturnsOffered")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -259,8 +193,6 @@ pub struct MerchantReturnPolicy {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "itemCondition"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/itemCondition"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/itemCondition"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -276,14 +208,6 @@ pub struct MerchantReturnPolicy {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "itemDefectReturnFees"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/itemDefectReturnFees")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/itemDefectReturnFees")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -299,14 +223,6 @@ pub struct MerchantReturnPolicy {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "itemDefectReturnLabelSource"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/itemDefectReturnLabelSource")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/itemDefectReturnLabelSource")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -325,14 +241,6 @@ pub struct MerchantReturnPolicy {
         feature = "serde",
         serde(rename = "itemDefectReturnShippingFeesAmount")
     )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/itemDefectReturnShippingFeesAmount")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/itemDefectReturnShippingFeesAmount")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -348,11 +256,6 @@ pub struct MerchantReturnPolicy {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "mainEntityOfPage"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/mainEntityOfPage")
-    )]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/mainEntityOfPage"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -368,14 +271,6 @@ pub struct MerchantReturnPolicy {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "merchantReturnDays"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/merchantReturnDays")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/merchantReturnDays")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -391,14 +286,6 @@ pub struct MerchantReturnPolicy {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "merchantReturnLink"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/merchantReturnLink")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/merchantReturnLink")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -411,8 +298,6 @@ pub struct MerchantReturnPolicy {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "name"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/name"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/name"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -428,8 +313,6 @@ pub struct MerchantReturnPolicy {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "potentialAction"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/potentialAction"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/potentialAction"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -445,8 +328,6 @@ pub struct MerchantReturnPolicy {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "refundType"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/refundType"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/refundType"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -462,8 +343,6 @@ pub struct MerchantReturnPolicy {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "restockingFee"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/restockingFee"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/restockingFee"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -479,8 +358,6 @@ pub struct MerchantReturnPolicy {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "returnFees"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/returnFees"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/returnFees"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -496,14 +373,6 @@ pub struct MerchantReturnPolicy {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "returnLabelSource"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/returnLabelSource")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/returnLabelSource")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -519,8 +388,6 @@ pub struct MerchantReturnPolicy {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "returnMethod"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/returnMethod"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/returnMethod"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -536,14 +403,6 @@ pub struct MerchantReturnPolicy {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "returnPolicyCategory"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/returnPolicyCategory")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/returnPolicyCategory")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -559,14 +418,6 @@ pub struct MerchantReturnPolicy {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "returnPolicyCountry"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/returnPolicyCountry")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/returnPolicyCountry")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -582,14 +433,6 @@ pub struct MerchantReturnPolicy {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "returnPolicySeasonalOverride"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/returnPolicySeasonalOverride")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/returnPolicySeasonalOverride")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -605,14 +448,6 @@ pub struct MerchantReturnPolicy {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "returnShippingFeesAmount"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/returnShippingFeesAmount")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/returnShippingFeesAmount")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -628,8 +463,6 @@ pub struct MerchantReturnPolicy {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "sameAs"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/sameAs"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/sameAs"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -645,8 +478,6 @@ pub struct MerchantReturnPolicy {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "subjectOf"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/subjectOf"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/subjectOf"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -659,8 +490,6 @@ pub struct MerchantReturnPolicy {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "url"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/url"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/url"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(

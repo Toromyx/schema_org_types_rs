@@ -12,8 +12,6 @@ pub struct GeospatialGeometry {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "additionalType"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/additionalType"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/additionalType"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -29,8 +27,6 @@ pub struct GeospatialGeometry {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "alternateName"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/alternateName"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/alternateName"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -46,8 +42,6 @@ pub struct GeospatialGeometry {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "description"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/description"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/description"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -63,14 +57,6 @@ pub struct GeospatialGeometry {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "disambiguatingDescription"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/disambiguatingDescription")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/disambiguatingDescription")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -86,8 +72,6 @@ pub struct GeospatialGeometry {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "geoContains"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/geoContains"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/geoContains"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -103,8 +87,6 @@ pub struct GeospatialGeometry {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "geoCoveredBy"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/geoCoveredBy"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/geoCoveredBy"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -120,8 +102,6 @@ pub struct GeospatialGeometry {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "geoCovers"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/geoCovers"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/geoCovers"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -137,8 +117,6 @@ pub struct GeospatialGeometry {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "geoCrosses"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/geoCrosses"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/geoCrosses"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -154,8 +132,6 @@ pub struct GeospatialGeometry {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "geoDisjoint"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/geoDisjoint"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/geoDisjoint"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -171,8 +147,6 @@ pub struct GeospatialGeometry {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "geoEquals"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/geoEquals"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/geoEquals"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -188,8 +162,6 @@ pub struct GeospatialGeometry {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "geoIntersects"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/geoIntersects"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/geoIntersects"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -205,8 +177,6 @@ pub struct GeospatialGeometry {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "geoOverlaps"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/geoOverlaps"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/geoOverlaps"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -222,8 +192,6 @@ pub struct GeospatialGeometry {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "geoTouches"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/geoTouches"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/geoTouches"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -239,8 +207,6 @@ pub struct GeospatialGeometry {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "geoWithin"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/geoWithin"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/geoWithin"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -256,8 +222,6 @@ pub struct GeospatialGeometry {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "identifier"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/identifier"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/identifier"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -270,8 +234,6 @@ pub struct GeospatialGeometry {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "image"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/image"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/image"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -287,11 +249,6 @@ pub struct GeospatialGeometry {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "mainEntityOfPage"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/mainEntityOfPage")
-    )]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/mainEntityOfPage"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -304,8 +261,6 @@ pub struct GeospatialGeometry {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "name"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/name"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/name"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -321,8 +276,6 @@ pub struct GeospatialGeometry {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "potentialAction"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/potentialAction"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/potentialAction"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -338,8 +291,6 @@ pub struct GeospatialGeometry {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "sameAs"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/sameAs"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/sameAs"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -355,8 +306,6 @@ pub struct GeospatialGeometry {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "subjectOf"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/subjectOf"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/subjectOf"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -369,8 +318,6 @@ pub struct GeospatialGeometry {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "url"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/url"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/url"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(

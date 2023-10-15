@@ -21,10 +21,6 @@ pub fn serde_rename(name: &str) -> TokenStream {
     serde_cfg_attr(quote!(serde(rename = #name)))
 }
 
-pub fn serde_alias(alias: &str) -> TokenStream {
-    serde_cfg_attr(quote!(serde(alias = #alias)))
-}
-
 pub fn serde_default() -> TokenStream {
     serde_cfg_attr(quote!(serde(default)))
 }

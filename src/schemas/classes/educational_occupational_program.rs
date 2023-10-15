@@ -12,8 +12,6 @@ pub struct EducationalOccupationalProgram {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "additionalType"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/additionalType"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/additionalType"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -29,8 +27,6 @@ pub struct EducationalOccupationalProgram {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "alternateName"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/alternateName"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/alternateName"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -46,14 +42,6 @@ pub struct EducationalOccupationalProgram {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "applicationDeadline"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/applicationDeadline")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/applicationDeadline")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -69,14 +57,6 @@ pub struct EducationalOccupationalProgram {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "applicationStartDate"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/applicationStartDate")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/applicationStartDate")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -92,8 +72,6 @@ pub struct EducationalOccupationalProgram {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "dayOfWeek"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/dayOfWeek"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/dayOfWeek"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -109,8 +87,6 @@ pub struct EducationalOccupationalProgram {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "description"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/description"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/description"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -126,14 +102,6 @@ pub struct EducationalOccupationalProgram {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "disambiguatingDescription"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/disambiguatingDescription")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/disambiguatingDescription")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -149,14 +117,6 @@ pub struct EducationalOccupationalProgram {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "educationalCredentialAwarded"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/educationalCredentialAwarded")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/educationalCredentialAwarded")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -172,14 +132,6 @@ pub struct EducationalOccupationalProgram {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "educationalProgramMode"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/educationalProgramMode")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/educationalProgramMode")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -195,8 +147,6 @@ pub struct EducationalOccupationalProgram {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "endDate"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/endDate"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/endDate"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -212,14 +162,6 @@ pub struct EducationalOccupationalProgram {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "financialAidEligible"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/financialAidEligible")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/financialAidEligible")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -235,8 +177,6 @@ pub struct EducationalOccupationalProgram {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "hasCourse"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/hasCourse"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/hasCourse"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -252,8 +192,6 @@ pub struct EducationalOccupationalProgram {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "identifier"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/identifier"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/identifier"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -266,8 +204,6 @@ pub struct EducationalOccupationalProgram {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "image"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/image"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/image"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -283,11 +219,6 @@ pub struct EducationalOccupationalProgram {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "mainEntityOfPage"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/mainEntityOfPage")
-    )]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/mainEntityOfPage"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -303,14 +234,6 @@ pub struct EducationalOccupationalProgram {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "maximumEnrollment"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/maximumEnrollment")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/maximumEnrollment")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -323,8 +246,6 @@ pub struct EducationalOccupationalProgram {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "name"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/name"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/name"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -340,8 +261,6 @@ pub struct EducationalOccupationalProgram {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "numberOfCredits"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/numberOfCredits"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/numberOfCredits"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -357,14 +276,6 @@ pub struct EducationalOccupationalProgram {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "occupationalCategory"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/occupationalCategory")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/occupationalCategory")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -380,14 +291,6 @@ pub struct EducationalOccupationalProgram {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "occupationalCredentialAwarded"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/occupationalCredentialAwarded")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/occupationalCredentialAwarded")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -400,8 +303,6 @@ pub struct EducationalOccupationalProgram {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "offers"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/offers"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/offers"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -417,8 +318,6 @@ pub struct EducationalOccupationalProgram {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "potentialAction"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/potentialAction"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/potentialAction"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -434,14 +333,6 @@ pub struct EducationalOccupationalProgram {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "programPrerequisites"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/programPrerequisites")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/programPrerequisites")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -457,8 +348,6 @@ pub struct EducationalOccupationalProgram {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "programType"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/programType"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/programType"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -474,8 +363,6 @@ pub struct EducationalOccupationalProgram {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "provider"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/provider"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/provider"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -491,14 +378,6 @@ pub struct EducationalOccupationalProgram {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "salaryUponCompletion"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/salaryUponCompletion")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/salaryUponCompletion")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -514,8 +393,6 @@ pub struct EducationalOccupationalProgram {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "sameAs"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/sameAs"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/sameAs"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -531,8 +408,6 @@ pub struct EducationalOccupationalProgram {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "startDate"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/startDate"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/startDate"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -548,8 +423,6 @@ pub struct EducationalOccupationalProgram {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "subjectOf"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/subjectOf"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/subjectOf"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -565,8 +438,6 @@ pub struct EducationalOccupationalProgram {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "termDuration"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/termDuration"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/termDuration"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -582,8 +453,6 @@ pub struct EducationalOccupationalProgram {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "termsPerYear"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/termsPerYear"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/termsPerYear"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -599,8 +468,6 @@ pub struct EducationalOccupationalProgram {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "timeOfDay"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/timeOfDay"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/timeOfDay"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -616,8 +483,6 @@ pub struct EducationalOccupationalProgram {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "timeToComplete"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/timeToComplete"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/timeToComplete"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -633,8 +498,6 @@ pub struct EducationalOccupationalProgram {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "trainingSalary"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/trainingSalary"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/trainingSalary"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -650,14 +513,6 @@ pub struct EducationalOccupationalProgram {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "typicalCreditsPerTerm"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/typicalCreditsPerTerm")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/typicalCreditsPerTerm")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -670,8 +525,6 @@ pub struct EducationalOccupationalProgram {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "url"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/url"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/url"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(

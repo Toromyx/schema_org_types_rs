@@ -12,8 +12,6 @@ pub struct FoodEstablishmentReservation {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "additionalType"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/additionalType"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/additionalType"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -29,8 +27,6 @@ pub struct FoodEstablishmentReservation {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "alternateName"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/alternateName"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/alternateName"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -46,8 +42,6 @@ pub struct FoodEstablishmentReservation {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "bookingAgent"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/bookingAgent"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/bookingAgent"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -63,8 +57,6 @@ pub struct FoodEstablishmentReservation {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "bookingTime"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/bookingTime"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/bookingTime"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -77,8 +69,6 @@ pub struct FoodEstablishmentReservation {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "broker"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/broker"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/broker"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -94,8 +84,6 @@ pub struct FoodEstablishmentReservation {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "description"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/description"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/description"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -111,14 +99,6 @@ pub struct FoodEstablishmentReservation {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "disambiguatingDescription"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/disambiguatingDescription")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/disambiguatingDescription")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -134,8 +114,6 @@ pub struct FoodEstablishmentReservation {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "endTime"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/endTime"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/endTime"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -151,8 +129,6 @@ pub struct FoodEstablishmentReservation {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "identifier"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/identifier"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/identifier"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -165,8 +141,6 @@ pub struct FoodEstablishmentReservation {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "image"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/image"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/image"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -182,11 +156,6 @@ pub struct FoodEstablishmentReservation {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "mainEntityOfPage"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/mainEntityOfPage")
-    )]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/mainEntityOfPage"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -202,8 +171,6 @@ pub struct FoodEstablishmentReservation {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "modifiedTime"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/modifiedTime"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/modifiedTime"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -216,8 +183,6 @@ pub struct FoodEstablishmentReservation {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "name"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/name"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/name"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -233,8 +198,6 @@ pub struct FoodEstablishmentReservation {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "partySize"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/partySize"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/partySize"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -250,8 +213,6 @@ pub struct FoodEstablishmentReservation {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "potentialAction"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/potentialAction"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/potentialAction"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -267,8 +228,6 @@ pub struct FoodEstablishmentReservation {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "priceCurrency"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/priceCurrency"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/priceCurrency"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -284,14 +243,6 @@ pub struct FoodEstablishmentReservation {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "programMembershipUsed"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/programMembershipUsed")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/programMembershipUsed")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -307,8 +258,6 @@ pub struct FoodEstablishmentReservation {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "provider"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/provider"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/provider"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -324,8 +273,6 @@ pub struct FoodEstablishmentReservation {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "reservationFor"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/reservationFor"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/reservationFor"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -341,8 +288,6 @@ pub struct FoodEstablishmentReservation {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "reservationId"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/reservationId"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/reservationId"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -358,14 +303,6 @@ pub struct FoodEstablishmentReservation {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "reservationStatus"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/reservationStatus")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/reservationStatus")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -381,8 +318,6 @@ pub struct FoodEstablishmentReservation {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "reservedTicket"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/reservedTicket"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/reservedTicket"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -398,8 +333,6 @@ pub struct FoodEstablishmentReservation {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "sameAs"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/sameAs"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/sameAs"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -415,8 +348,6 @@ pub struct FoodEstablishmentReservation {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "startTime"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/startTime"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/startTime"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -432,8 +363,6 @@ pub struct FoodEstablishmentReservation {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "subjectOf"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/subjectOf"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/subjectOf"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -449,8 +378,6 @@ pub struct FoodEstablishmentReservation {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "totalPrice"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/totalPrice"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/totalPrice"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -466,8 +393,6 @@ pub struct FoodEstablishmentReservation {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "underName"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/underName"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/underName"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -480,8 +405,6 @@ pub struct FoodEstablishmentReservation {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "url"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/url"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/url"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(

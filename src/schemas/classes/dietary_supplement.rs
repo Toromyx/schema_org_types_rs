@@ -12,11 +12,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "activeIngredient"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/activeIngredient")
-    )]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/activeIngredient"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -32,14 +27,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "additionalProperty"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/additionalProperty")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/additionalProperty")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -55,8 +42,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "additionalType"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/additionalType"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/additionalType"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -72,8 +57,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "aggregateRating"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/aggregateRating"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/aggregateRating"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -89,8 +72,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "alternateName"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/alternateName"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/alternateName"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -103,8 +84,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "asin"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/asin"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/asin"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -120,8 +99,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "audience"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/audience"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/audience"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -134,8 +111,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "award"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/award"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/award"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -148,8 +123,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "awards"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/awards"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/awards"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -162,8 +135,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "brand"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/brand"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/brand"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -179,8 +150,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "category"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/category"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/category"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -196,8 +165,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "code"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/code"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/code"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -210,8 +177,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "color"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/color"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/color"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -227,14 +192,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "countryOfAssembly"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/countryOfAssembly")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/countryOfAssembly")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -250,14 +207,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "countryOfLastProcessing"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/countryOfLastProcessing")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/countryOfLastProcessing")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -273,8 +222,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "countryOfOrigin"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/countryOfOrigin"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/countryOfOrigin"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -287,8 +234,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "depth"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/depth"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/depth"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -304,8 +249,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "description"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/description"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/description"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -321,14 +264,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "disambiguatingDescription"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/disambiguatingDescription")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/disambiguatingDescription")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -344,8 +279,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "funding"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/funding"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/funding"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -358,8 +291,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "gtin"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/gtin"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/gtin"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -375,8 +306,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "gtin12"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/gtin12"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/gtin12"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -392,8 +321,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "gtin13"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/gtin13"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/gtin13"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -409,8 +336,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "gtin14"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/gtin14"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/gtin14"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -423,8 +348,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "gtin8"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/gtin8"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/gtin8"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -440,8 +363,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "guideline"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/guideline"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/guideline"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -457,14 +378,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "hasAdultConsideration"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/hasAdultConsideration")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/hasAdultConsideration")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -480,14 +393,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "hasEnergyConsumptionDetails"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/hasEnergyConsumptionDetails")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/hasEnergyConsumptionDetails")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -503,8 +408,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "hasMeasurement"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/hasMeasurement"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/hasMeasurement"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -520,14 +423,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "hasMerchantReturnPolicy"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/hasMerchantReturnPolicy")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/hasMerchantReturnPolicy")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -543,14 +438,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "hasProductReturnPolicy"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/hasProductReturnPolicy")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/hasProductReturnPolicy")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -563,8 +450,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "height"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/height"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/height"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -580,8 +465,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "identifier"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/identifier"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/identifier"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -594,8 +477,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "image"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/image"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/image"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -611,14 +492,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "inProductGroupWithID"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/inProductGroupWithID")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/inProductGroupWithID")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -634,14 +507,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "isAccessoryOrSparePartFor"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/isAccessoryOrSparePartFor")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/isAccessoryOrSparePartFor")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -657,8 +522,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "isConsumableFor"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/isConsumableFor"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/isConsumableFor"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -674,11 +537,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "isFamilyFriendly"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/isFamilyFriendly")
-    )]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/isFamilyFriendly"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -694,8 +552,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "isProprietary"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/isProprietary"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/isProprietary"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -711,8 +567,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "isRelatedTo"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/isRelatedTo"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/isRelatedTo"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -728,8 +582,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "isSimilarTo"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/isSimilarTo"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/isSimilarTo"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -745,8 +597,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "isVariantOf"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/isVariantOf"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/isVariantOf"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -762,8 +612,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "itemCondition"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/itemCondition"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/itemCondition"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -779,8 +627,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "keywords"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/keywords"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/keywords"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -796,8 +642,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "legalStatus"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/legalStatus"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/legalStatus"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -810,8 +654,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "logo"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/logo"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/logo"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -827,11 +669,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "mainEntityOfPage"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/mainEntityOfPage")
-    )]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/mainEntityOfPage"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -847,8 +684,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "manufacturer"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/manufacturer"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/manufacturer"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -864,8 +699,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "material"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/material"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/material"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -881,8 +714,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "maximumIntake"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/maximumIntake"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/maximumIntake"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -898,14 +729,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "mechanismOfAction"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/mechanismOfAction")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/mechanismOfAction")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -921,8 +744,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "medicineSystem"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/medicineSystem"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/medicineSystem"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -938,8 +759,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "mobileUrl"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/mobileUrl"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/mobileUrl"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -952,8 +771,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "model"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/model"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/model"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -966,8 +783,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "mpn"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/mpn"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/mpn"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -980,8 +795,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "name"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/name"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/name"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -997,8 +810,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "negativeNotes"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/negativeNotes"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/negativeNotes"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1014,14 +825,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "nonProprietaryName"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/nonProprietaryName")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/nonProprietaryName")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1034,8 +837,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "nsn"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/nsn"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/nsn"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1048,8 +849,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "offers"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/offers"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/offers"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1065,8 +864,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "pattern"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/pattern"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/pattern"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1082,8 +879,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "positiveNotes"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/positiveNotes"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/positiveNotes"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1099,8 +894,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "potentialAction"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/potentialAction"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/potentialAction"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1116,8 +909,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "productID"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/productID"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/productID"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1133,8 +924,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "productionDate"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/productionDate"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/productionDate"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1150,8 +939,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "proprietaryName"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/proprietaryName"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/proprietaryName"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1167,8 +954,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "purchaseDate"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/purchaseDate"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/purchaseDate"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1184,14 +969,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "recognizingAuthority"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/recognizingAuthority")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/recognizingAuthority")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1207,14 +984,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "recommendedIntake"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/recommendedIntake")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/recommendedIntake")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1230,8 +999,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "releaseDate"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/releaseDate"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/releaseDate"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1247,14 +1014,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "relevantSpecialty"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/relevantSpecialty")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/relevantSpecialty")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1267,8 +1026,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "review"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/review"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/review"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1284,8 +1041,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "reviews"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/reviews"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/reviews"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1301,14 +1056,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "safetyConsideration"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/safetyConsideration")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/safetyConsideration")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1324,8 +1071,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "sameAs"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/sameAs"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/sameAs"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1338,8 +1083,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "size"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/size"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/size"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1352,8 +1095,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "sku"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/sku"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/sku"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1366,8 +1107,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "slogan"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/slogan"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/slogan"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1383,8 +1122,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "study"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/study"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/study"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1400,8 +1137,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "subjectOf"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/subjectOf"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/subjectOf"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1417,11 +1152,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "targetPopulation"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/targetPopulation")
-    )]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/targetPopulation"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1434,8 +1164,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "url"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/url"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/url"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1448,8 +1176,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "weight"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/weight"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/weight"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1462,8 +1188,6 @@ pub struct DietarySupplement {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "width"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/width"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/width"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(

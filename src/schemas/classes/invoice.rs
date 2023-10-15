@@ -12,8 +12,6 @@ pub struct Invoice {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "accountId"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/accountId"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/accountId"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -29,8 +27,6 @@ pub struct Invoice {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "additionalType"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/additionalType"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/additionalType"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -46,8 +42,6 @@ pub struct Invoice {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "alternateName"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/alternateName"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/alternateName"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -63,8 +57,6 @@ pub struct Invoice {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "billingPeriod"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/billingPeriod"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/billingPeriod"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -77,8 +69,6 @@ pub struct Invoice {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "broker"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/broker"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/broker"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -94,8 +84,6 @@ pub struct Invoice {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "category"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/category"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/category"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -111,14 +99,6 @@ pub struct Invoice {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "confirmationNumber"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/confirmationNumber")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/confirmationNumber")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -134,8 +114,6 @@ pub struct Invoice {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "customer"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/customer"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/customer"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -151,8 +129,6 @@ pub struct Invoice {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "description"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/description"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/description"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -168,14 +144,6 @@ pub struct Invoice {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "disambiguatingDescription"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/disambiguatingDescription")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/disambiguatingDescription")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -191,8 +159,6 @@ pub struct Invoice {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "identifier"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/identifier"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/identifier"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -205,8 +171,6 @@ pub struct Invoice {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "image"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/image"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/image"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -222,11 +186,6 @@ pub struct Invoice {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "mainEntityOfPage"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/mainEntityOfPage")
-    )]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/mainEntityOfPage"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -242,14 +201,6 @@ pub struct Invoice {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "minimumPaymentDue"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/minimumPaymentDue")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/minimumPaymentDue")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -262,8 +213,6 @@ pub struct Invoice {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "name"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/name"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/name"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -279,8 +228,6 @@ pub struct Invoice {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "paymentDue"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/paymentDue"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/paymentDue"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -296,8 +243,6 @@ pub struct Invoice {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "paymentDueDate"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/paymentDueDate"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/paymentDueDate"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -313,8 +258,6 @@ pub struct Invoice {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "paymentMethod"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/paymentMethod"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/paymentMethod"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -330,8 +273,6 @@ pub struct Invoice {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "paymentMethodId"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/paymentMethodId"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/paymentMethodId"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -347,8 +288,6 @@ pub struct Invoice {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "paymentStatus"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/paymentStatus"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/paymentStatus"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -364,8 +303,6 @@ pub struct Invoice {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "potentialAction"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/potentialAction"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/potentialAction"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -381,8 +318,6 @@ pub struct Invoice {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "provider"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/provider"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/provider"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -398,8 +333,6 @@ pub struct Invoice {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "referencesOrder"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/referencesOrder"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/referencesOrder"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -415,8 +348,6 @@ pub struct Invoice {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "sameAs"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/sameAs"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/sameAs"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -432,14 +363,6 @@ pub struct Invoice {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "scheduledPaymentDate"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/scheduledPaymentDate")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/scheduledPaymentDate")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -455,8 +378,6 @@ pub struct Invoice {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "subjectOf"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/subjectOf"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/subjectOf"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -472,8 +393,6 @@ pub struct Invoice {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "totalPaymentDue"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/totalPaymentDue"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/totalPaymentDue"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -486,8 +405,6 @@ pub struct Invoice {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "url"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/url"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/url"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(

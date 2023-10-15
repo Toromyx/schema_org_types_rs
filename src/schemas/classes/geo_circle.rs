@@ -12,8 +12,6 @@ pub struct GeoCircle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "additionalType"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/additionalType"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/additionalType"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -29,8 +27,6 @@ pub struct GeoCircle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "address"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/address"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/address"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -46,8 +42,6 @@ pub struct GeoCircle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "addressCountry"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/addressCountry"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/addressCountry"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -63,8 +57,6 @@ pub struct GeoCircle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "alternateName"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/alternateName"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/alternateName"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -77,8 +69,6 @@ pub struct GeoCircle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "box"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/box"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/box"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -91,8 +81,6 @@ pub struct GeoCircle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "circle"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/circle"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/circle"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -108,8 +96,6 @@ pub struct GeoCircle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "description"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/description"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/description"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -125,14 +111,6 @@ pub struct GeoCircle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "disambiguatingDescription"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/disambiguatingDescription")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/disambiguatingDescription")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -148,8 +126,6 @@ pub struct GeoCircle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "elevation"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/elevation"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/elevation"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -165,8 +141,6 @@ pub struct GeoCircle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "geoMidpoint"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/geoMidpoint"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/geoMidpoint"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -182,8 +156,6 @@ pub struct GeoCircle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "geoRadius"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/geoRadius"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/geoRadius"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -199,8 +171,6 @@ pub struct GeoCircle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "identifier"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/identifier"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/identifier"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -213,8 +183,6 @@ pub struct GeoCircle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "image"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/image"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/image"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -227,8 +195,6 @@ pub struct GeoCircle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "line"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/line"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/line"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -244,11 +210,6 @@ pub struct GeoCircle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "mainEntityOfPage"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/mainEntityOfPage")
-    )]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/mainEntityOfPage"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -261,8 +222,6 @@ pub struct GeoCircle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "name"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/name"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/name"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -278,8 +237,6 @@ pub struct GeoCircle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "polygon"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/polygon"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/polygon"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -295,8 +252,6 @@ pub struct GeoCircle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "postalCode"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/postalCode"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/postalCode"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -312,8 +267,6 @@ pub struct GeoCircle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "potentialAction"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/potentialAction"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/potentialAction"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -329,8 +282,6 @@ pub struct GeoCircle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "sameAs"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/sameAs"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/sameAs"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -346,8 +297,6 @@ pub struct GeoCircle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "subjectOf"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/subjectOf"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/subjectOf"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -360,8 +309,6 @@ pub struct GeoCircle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "url"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/url"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/url"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(

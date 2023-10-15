@@ -12,8 +12,6 @@ pub struct TherapeuticProcedure {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "additionalType"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/additionalType"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/additionalType"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -29,8 +27,6 @@ pub struct TherapeuticProcedure {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "adverseOutcome"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/adverseOutcome"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/adverseOutcome"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -46,8 +42,6 @@ pub struct TherapeuticProcedure {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "alternateName"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/alternateName"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/alternateName"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -63,8 +57,6 @@ pub struct TherapeuticProcedure {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "bodyLocation"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/bodyLocation"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/bodyLocation"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -80,8 +72,6 @@ pub struct TherapeuticProcedure {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "code"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/code"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/code"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -97,8 +87,6 @@ pub struct TherapeuticProcedure {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "description"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/description"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/description"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -114,14 +102,6 @@ pub struct TherapeuticProcedure {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "disambiguatingDescription"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/disambiguatingDescription")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/disambiguatingDescription")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -137,8 +117,6 @@ pub struct TherapeuticProcedure {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "doseSchedule"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/doseSchedule"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/doseSchedule"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -154,8 +132,6 @@ pub struct TherapeuticProcedure {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "drug"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/drug"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/drug"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -171,8 +147,6 @@ pub struct TherapeuticProcedure {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "followup"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/followup"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/followup"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -188,8 +162,6 @@ pub struct TherapeuticProcedure {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "funding"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/funding"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/funding"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -205,8 +177,6 @@ pub struct TherapeuticProcedure {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "guideline"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/guideline"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/guideline"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -222,8 +192,6 @@ pub struct TherapeuticProcedure {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "howPerformed"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/howPerformed"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/howPerformed"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -239,8 +207,6 @@ pub struct TherapeuticProcedure {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "identifier"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/identifier"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/identifier"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -253,8 +219,6 @@ pub struct TherapeuticProcedure {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "image"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/image"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/image"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -270,8 +234,6 @@ pub struct TherapeuticProcedure {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "legalStatus"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/legalStatus"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/legalStatus"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -287,11 +249,6 @@ pub struct TherapeuticProcedure {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "mainEntityOfPage"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/mainEntityOfPage")
-    )]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/mainEntityOfPage"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -307,8 +264,6 @@ pub struct TherapeuticProcedure {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "medicineSystem"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/medicineSystem"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/medicineSystem"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -321,8 +276,6 @@ pub struct TherapeuticProcedure {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "name"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/name"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/name"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -338,8 +291,6 @@ pub struct TherapeuticProcedure {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "potentialAction"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/potentialAction"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/potentialAction"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -355,8 +306,6 @@ pub struct TherapeuticProcedure {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "preparation"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/preparation"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/preparation"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -372,8 +321,6 @@ pub struct TherapeuticProcedure {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "procedureType"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/procedureType"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/procedureType"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -389,14 +336,6 @@ pub struct TherapeuticProcedure {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "recognizingAuthority"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/recognizingAuthority")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/recognizingAuthority")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -412,14 +351,6 @@ pub struct TherapeuticProcedure {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "relevantSpecialty"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/relevantSpecialty")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/relevantSpecialty")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -435,8 +366,6 @@ pub struct TherapeuticProcedure {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "sameAs"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/sameAs"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/sameAs"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -452,8 +381,6 @@ pub struct TherapeuticProcedure {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "status"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/status"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/status"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -469,8 +396,6 @@ pub struct TherapeuticProcedure {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "study"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/study"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/study"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -486,8 +411,6 @@ pub struct TherapeuticProcedure {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "subjectOf"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/subjectOf"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/subjectOf"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -500,8 +423,6 @@ pub struct TherapeuticProcedure {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "url"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/url"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/url"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(

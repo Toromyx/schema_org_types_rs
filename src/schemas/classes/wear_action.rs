@@ -12,14 +12,6 @@ pub struct WearAction {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "actionAccessibilityRequirement"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/actionAccessibilityRequirement")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/actionAccessibilityRequirement")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -35,8 +27,6 @@ pub struct WearAction {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "actionStatus"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/actionStatus"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/actionStatus"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -52,8 +42,6 @@ pub struct WearAction {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "additionalType"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/additionalType"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/additionalType"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -66,8 +54,6 @@ pub struct WearAction {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "agent"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/agent"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/agent"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -83,8 +69,6 @@ pub struct WearAction {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "alternateName"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/alternateName"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/alternateName"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -100,8 +84,6 @@ pub struct WearAction {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "description"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/description"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/description"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -117,14 +99,6 @@ pub struct WearAction {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "disambiguatingDescription"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/disambiguatingDescription")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/disambiguatingDescription")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -140,8 +114,6 @@ pub struct WearAction {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "endTime"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/endTime"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/endTime"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -154,8 +126,6 @@ pub struct WearAction {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "error"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/error"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/error"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -171,14 +141,6 @@ pub struct WearAction {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "expectsAcceptanceOf"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/expectsAcceptanceOf")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/expectsAcceptanceOf")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -194,8 +156,6 @@ pub struct WearAction {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "identifier"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/identifier"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/identifier"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -208,8 +168,6 @@ pub struct WearAction {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "image"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/image"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/image"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -225,8 +183,6 @@ pub struct WearAction {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "instrument"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/instrument"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/instrument"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -242,8 +198,6 @@ pub struct WearAction {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "location"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/location"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/location"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -259,11 +213,6 @@ pub struct WearAction {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "mainEntityOfPage"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/mainEntityOfPage")
-    )]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/mainEntityOfPage"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -276,8 +225,6 @@ pub struct WearAction {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "name"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/name"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/name"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -290,8 +237,6 @@ pub struct WearAction {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "object"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/object"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/object"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -307,8 +252,6 @@ pub struct WearAction {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "participant"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/participant"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/participant"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -324,8 +267,6 @@ pub struct WearAction {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "potentialAction"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/potentialAction"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/potentialAction"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -341,8 +282,6 @@ pub struct WearAction {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "provider"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/provider"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/provider"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -355,8 +294,6 @@ pub struct WearAction {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "result"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/result"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/result"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -372,8 +309,6 @@ pub struct WearAction {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "sameAs"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/sameAs"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/sameAs"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -389,8 +324,6 @@ pub struct WearAction {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "startTime"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/startTime"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/startTime"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -406,8 +339,6 @@ pub struct WearAction {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "subjectOf"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/subjectOf"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/subjectOf"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -420,8 +351,6 @@ pub struct WearAction {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "target"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/target"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/target"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -434,8 +363,6 @@ pub struct WearAction {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "url"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/url"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/url"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(

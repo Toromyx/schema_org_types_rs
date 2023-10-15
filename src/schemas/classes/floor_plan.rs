@@ -12,8 +12,6 @@ pub struct FloorPlan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "additionalType"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/additionalType"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/additionalType"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -29,8 +27,6 @@ pub struct FloorPlan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "alternateName"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/alternateName"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/alternateName"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -46,8 +42,6 @@ pub struct FloorPlan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "amenityFeature"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/amenityFeature"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/amenityFeature"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -63,8 +57,6 @@ pub struct FloorPlan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "description"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/description"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/description"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -80,14 +72,6 @@ pub struct FloorPlan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "disambiguatingDescription"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/disambiguatingDescription")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/disambiguatingDescription")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -103,8 +87,6 @@ pub struct FloorPlan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "floorSize"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/floorSize"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/floorSize"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -120,8 +102,6 @@ pub struct FloorPlan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "identifier"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/identifier"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/identifier"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -134,8 +114,6 @@ pub struct FloorPlan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "image"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/image"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/image"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -151,14 +129,6 @@ pub struct FloorPlan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "isPlanForApartment"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/isPlanForApartment")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/isPlanForApartment")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -174,8 +144,6 @@ pub struct FloorPlan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "layoutImage"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/layoutImage"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/layoutImage"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -191,11 +159,6 @@ pub struct FloorPlan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "mainEntityOfPage"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/mainEntityOfPage")
-    )]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/mainEntityOfPage"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -208,8 +171,6 @@ pub struct FloorPlan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "name"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/name"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/name"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -225,14 +186,6 @@ pub struct FloorPlan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "numberOfAccommodationUnits"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/numberOfAccommodationUnits")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/numberOfAccommodationUnits")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -251,14 +204,6 @@ pub struct FloorPlan {
         feature = "serde",
         serde(rename = "numberOfAvailableAccommodationUnits")
     )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/numberOfAvailableAccommodationUnits")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/numberOfAvailableAccommodationUnits")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -274,14 +219,6 @@ pub struct FloorPlan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "numberOfBathroomsTotal"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/numberOfBathroomsTotal")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/numberOfBathroomsTotal")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -297,11 +234,6 @@ pub struct FloorPlan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "numberOfBedrooms"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/numberOfBedrooms")
-    )]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/numberOfBedrooms"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -317,14 +249,6 @@ pub struct FloorPlan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "numberOfFullBathrooms"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/numberOfFullBathrooms")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/numberOfFullBathrooms")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -340,14 +264,6 @@ pub struct FloorPlan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "numberOfPartialBathrooms"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/numberOfPartialBathrooms")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/numberOfPartialBathrooms")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -363,8 +279,6 @@ pub struct FloorPlan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "numberOfRooms"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/numberOfRooms"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/numberOfRooms"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -380,8 +294,6 @@ pub struct FloorPlan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "petsAllowed"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/petsAllowed"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/petsAllowed"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -397,8 +309,6 @@ pub struct FloorPlan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "potentialAction"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/potentialAction"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/potentialAction"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -414,8 +324,6 @@ pub struct FloorPlan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "sameAs"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/sameAs"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/sameAs"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -431,8 +339,6 @@ pub struct FloorPlan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "subjectOf"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/subjectOf"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/subjectOf"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -445,8 +351,6 @@ pub struct FloorPlan {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "url"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/url"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/url"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(

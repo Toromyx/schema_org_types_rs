@@ -12,8 +12,6 @@ pub struct JobPosting {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "additionalType"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/additionalType"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/additionalType"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -29,8 +27,6 @@ pub struct JobPosting {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "alternateName"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/alternateName"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/alternateName"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -46,14 +42,6 @@ pub struct JobPosting {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "applicantLocationRequirements"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/applicantLocationRequirements")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/applicantLocationRequirements")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -69,14 +57,6 @@ pub struct JobPosting {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "applicationContact"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/applicationContact")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/applicationContact")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -92,8 +72,6 @@ pub struct JobPosting {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "baseSalary"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/baseSalary"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/baseSalary"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -109,8 +87,6 @@ pub struct JobPosting {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "benefits"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/benefits"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/benefits"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -126,8 +102,6 @@ pub struct JobPosting {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "datePosted"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/datePosted"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/datePosted"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -143,8 +117,6 @@ pub struct JobPosting {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "description"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/description"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/description"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -160,8 +132,6 @@ pub struct JobPosting {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "directApply"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/directApply"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/directApply"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -177,14 +147,6 @@ pub struct JobPosting {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "disambiguatingDescription"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/disambiguatingDescription")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/disambiguatingDescription")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -200,14 +162,6 @@ pub struct JobPosting {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "educationRequirements"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/educationRequirements")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/educationRequirements")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -223,14 +177,6 @@ pub struct JobPosting {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "eligibilityToWorkRequirement"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/eligibilityToWorkRequirement")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/eligibilityToWorkRequirement")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -246,11 +192,6 @@ pub struct JobPosting {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "employerOverview"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/employerOverview")
-    )]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/employerOverview"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -266,8 +207,6 @@ pub struct JobPosting {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "employmentType"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/employmentType"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/employmentType"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -283,8 +222,6 @@ pub struct JobPosting {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "employmentUnit"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/employmentUnit"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/employmentUnit"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -300,8 +237,6 @@ pub struct JobPosting {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "estimatedSalary"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/estimatedSalary"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/estimatedSalary"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -317,14 +252,6 @@ pub struct JobPosting {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "experienceInPlaceOfEducation"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/experienceInPlaceOfEducation")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/experienceInPlaceOfEducation")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -340,14 +267,6 @@ pub struct JobPosting {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "experienceRequirements"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/experienceRequirements")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/experienceRequirements")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -363,14 +282,6 @@ pub struct JobPosting {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "hiringOrganization"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/hiringOrganization")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/hiringOrganization")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -386,8 +297,6 @@ pub struct JobPosting {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "identifier"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/identifier"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/identifier"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -400,8 +309,6 @@ pub struct JobPosting {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "image"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/image"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/image"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -417,14 +324,6 @@ pub struct JobPosting {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "incentiveCompensation"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/incentiveCompensation")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/incentiveCompensation")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -440,8 +339,6 @@ pub struct JobPosting {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "incentives"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/incentives"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/incentives"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -457,8 +354,6 @@ pub struct JobPosting {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "industry"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/industry"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/industry"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -474,8 +369,6 @@ pub struct JobPosting {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "jobBenefits"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/jobBenefits"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/jobBenefits"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -491,14 +384,6 @@ pub struct JobPosting {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "jobImmediateStart"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/jobImmediateStart")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/jobImmediateStart")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -514,8 +399,6 @@ pub struct JobPosting {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "jobLocation"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/jobLocation"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/jobLocation"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -531,8 +414,6 @@ pub struct JobPosting {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "jobLocationType"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/jobLocationType"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/jobLocationType"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -548,8 +429,6 @@ pub struct JobPosting {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "jobStartDate"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/jobStartDate"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/jobStartDate"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -565,11 +444,6 @@ pub struct JobPosting {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "mainEntityOfPage"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/mainEntityOfPage")
-    )]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/mainEntityOfPage"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -582,8 +456,6 @@ pub struct JobPosting {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "name"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/name"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/name"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -599,14 +471,6 @@ pub struct JobPosting {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "occupationalCategory"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/occupationalCategory")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/occupationalCategory")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -622,14 +486,6 @@ pub struct JobPosting {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "physicalRequirement"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/physicalRequirement")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/physicalRequirement")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -645,8 +501,6 @@ pub struct JobPosting {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "potentialAction"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/potentialAction"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/potentialAction"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -662,8 +516,6 @@ pub struct JobPosting {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "qualifications"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/qualifications"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/qualifications"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -679,14 +531,6 @@ pub struct JobPosting {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "relevantOccupation"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/relevantOccupation")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/relevantOccupation")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -702,11 +546,6 @@ pub struct JobPosting {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "responsibilities"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/responsibilities")
-    )]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/responsibilities"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -722,8 +561,6 @@ pub struct JobPosting {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "salaryCurrency"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/salaryCurrency"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/salaryCurrency"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -739,8 +576,6 @@ pub struct JobPosting {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "sameAs"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/sameAs"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/sameAs"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -756,14 +591,6 @@ pub struct JobPosting {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "securityClearanceRequirement"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/securityClearanceRequirement")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/securityClearanceRequirement")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -779,14 +606,6 @@ pub struct JobPosting {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "sensoryRequirement"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/sensoryRequirement")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/sensoryRequirement")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -799,8 +618,6 @@ pub struct JobPosting {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "skills"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/skills"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/skills"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -816,14 +633,6 @@ pub struct JobPosting {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "specialCommitments"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/specialCommitments")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/specialCommitments")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -839,8 +648,6 @@ pub struct JobPosting {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "subjectOf"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/subjectOf"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/subjectOf"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -853,8 +660,6 @@ pub struct JobPosting {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "title"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/title"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/title"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -870,11 +675,6 @@ pub struct JobPosting {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "totalJobOpenings"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/totalJobOpenings")
-    )]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/totalJobOpenings"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -887,8 +687,6 @@ pub struct JobPosting {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "url"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/url"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/url"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -904,8 +702,6 @@ pub struct JobPosting {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "validThrough"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/validThrough"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/validThrough"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -921,8 +717,6 @@ pub struct JobPosting {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "workHours"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/workHours"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/workHours"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(

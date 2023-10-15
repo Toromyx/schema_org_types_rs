@@ -12,8 +12,6 @@ pub struct AggregateRating {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "additionalType"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/additionalType"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/additionalType"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -29,8 +27,6 @@ pub struct AggregateRating {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "alternateName"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/alternateName"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/alternateName"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -43,8 +39,6 @@ pub struct AggregateRating {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "author"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/author"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/author"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -60,8 +54,6 @@ pub struct AggregateRating {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "bestRating"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/bestRating"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/bestRating"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -77,8 +69,6 @@ pub struct AggregateRating {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "description"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/description"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/description"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -94,14 +84,6 @@ pub struct AggregateRating {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "disambiguatingDescription"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/disambiguatingDescription")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/disambiguatingDescription")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -117,8 +99,6 @@ pub struct AggregateRating {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "identifier"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/identifier"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/identifier"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -131,8 +111,6 @@ pub struct AggregateRating {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "image"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/image"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/image"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -148,8 +126,6 @@ pub struct AggregateRating {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "itemReviewed"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/itemReviewed"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/itemReviewed"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -165,11 +141,6 @@ pub struct AggregateRating {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "mainEntityOfPage"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/mainEntityOfPage")
-    )]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/mainEntityOfPage"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -182,8 +153,6 @@ pub struct AggregateRating {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "name"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/name"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/name"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -199,8 +168,6 @@ pub struct AggregateRating {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "potentialAction"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/potentialAction"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/potentialAction"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -216,8 +183,6 @@ pub struct AggregateRating {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "ratingCount"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/ratingCount"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/ratingCount"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -233,14 +198,6 @@ pub struct AggregateRating {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "ratingExplanation"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/ratingExplanation")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/ratingExplanation")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -256,8 +213,6 @@ pub struct AggregateRating {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "ratingValue"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/ratingValue"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/ratingValue"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -273,8 +228,6 @@ pub struct AggregateRating {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "reviewAspect"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/reviewAspect"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/reviewAspect"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -290,8 +243,6 @@ pub struct AggregateRating {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "reviewCount"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/reviewCount"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/reviewCount"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -307,8 +258,6 @@ pub struct AggregateRating {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "sameAs"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/sameAs"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/sameAs"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -324,8 +273,6 @@ pub struct AggregateRating {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "subjectOf"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/subjectOf"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/subjectOf"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -338,8 +285,6 @@ pub struct AggregateRating {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "url"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/url"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/url"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -355,8 +300,6 @@ pub struct AggregateRating {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "worstRating"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/worstRating"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/worstRating"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(

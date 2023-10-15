@@ -9,8 +9,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "about"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/about"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/about"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -26,8 +24,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "abstract"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/abstract"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/abstract"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -43,8 +39,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "accessMode"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/accessMode"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/accessMode"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -60,14 +54,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "accessModeSufficient"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/accessModeSufficient")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/accessModeSufficient")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -83,11 +69,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "accessibilityAPI"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/accessibilityAPI")
-    )]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/accessibilityAPI"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -103,14 +84,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "accessibilityControl"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/accessibilityControl")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/accessibilityControl")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -126,14 +99,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "accessibilityFeature"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/accessibilityFeature")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/accessibilityFeature")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -149,14 +114,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "accessibilityHazard"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/accessibilityHazard")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/accessibilityHazard")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -172,14 +129,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "accessibilitySummary"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/accessibilitySummary")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/accessibilitySummary")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -195,14 +144,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "accountablePerson"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/accountablePerson")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/accountablePerson")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -218,14 +159,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "acquireLicensePage"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/acquireLicensePage")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/acquireLicensePage")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -241,8 +174,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "additionalType"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/additionalType"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/additionalType"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -258,8 +189,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "aggregateRating"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/aggregateRating"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/aggregateRating"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -275,14 +204,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "albumProductionType"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/albumProductionType")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/albumProductionType")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -298,8 +219,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "albumRelease"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/albumRelease"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/albumRelease"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -315,11 +234,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "albumReleaseType"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/albumReleaseType")
-    )]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/albumReleaseType"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -335,8 +249,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "alternateName"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/alternateName"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/alternateName"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -352,14 +264,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "alternativeHeadline"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/alternativeHeadline")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/alternativeHeadline")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -375,8 +279,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "archivedAt"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/archivedAt"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/archivedAt"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -392,8 +294,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "assesses"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/assesses"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/assesses"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -409,8 +309,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "associatedMedia"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/associatedMedia"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/associatedMedia"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -426,8 +324,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "audience"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/audience"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/audience"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -440,8 +336,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "audio"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/audio"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/audio"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -454,8 +348,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "author"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/author"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/author"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -468,8 +360,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "award"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/award"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/award"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -482,8 +372,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "awards"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/awards"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/awards"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -499,8 +387,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "byArtist"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/byArtist"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/byArtist"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -516,8 +402,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "character"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/character"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/character"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -533,8 +417,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "citation"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/citation"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/citation"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -550,8 +432,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "comment"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/comment"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/comment"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -567,8 +447,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "commentCount"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/commentCount"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/commentCount"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -584,14 +462,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "conditionsOfAccess"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/conditionsOfAccess")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/conditionsOfAccess")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -607,8 +477,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "contentLocation"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/contentLocation"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/contentLocation"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -624,8 +492,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "contentRating"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/contentRating"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/contentRating"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -641,14 +507,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "contentReferenceTime"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/contentReferenceTime")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/contentReferenceTime")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -664,8 +522,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "contributor"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/contributor"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/contributor"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -681,8 +537,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "copyrightHolder"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/copyrightHolder"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/copyrightHolder"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -698,8 +552,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "copyrightNotice"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/copyrightNotice"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/copyrightNotice"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -715,8 +567,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "copyrightYear"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/copyrightYear"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/copyrightYear"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -732,8 +582,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "correction"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/correction"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/correction"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -749,8 +597,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "countryOfOrigin"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/countryOfOrigin"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/countryOfOrigin"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -766,14 +612,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "creativeWorkStatus"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/creativeWorkStatus")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/creativeWorkStatus")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -789,8 +627,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "creator"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/creator"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/creator"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -806,8 +642,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "creditText"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/creditText"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/creditText"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -823,8 +657,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "dateCreated"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/dateCreated"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/dateCreated"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -840,8 +672,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "dateModified"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/dateModified"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/dateModified"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -857,8 +687,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "datePublished"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/datePublished"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/datePublished"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -874,8 +702,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "description"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/description"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/description"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -891,14 +717,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "disambiguatingDescription"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/disambiguatingDescription")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/disambiguatingDescription")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -914,8 +732,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "discussionUrl"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/discussionUrl"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/discussionUrl"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -931,8 +747,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "editEIDR"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/editEIDR"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/editEIDR"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -945,8 +759,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "editor"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/editor"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/editor"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -962,14 +774,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "educationalAlignment"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/educationalAlignment")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/educationalAlignment")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -985,11 +789,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "educationalLevel"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/educationalLevel")
-    )]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/educationalLevel"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1005,8 +804,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "educationalUse"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/educationalUse"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/educationalUse"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1022,8 +819,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "encoding"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/encoding"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/encoding"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1039,8 +834,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "encodingFormat"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/encodingFormat"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/encodingFormat"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1056,8 +849,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "encodings"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/encodings"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/encodings"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1073,8 +864,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "exampleOfWork"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/exampleOfWork"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/exampleOfWork"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1090,8 +879,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "expires"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/expires"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/expires"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1107,8 +894,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "fileFormat"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/fileFormat"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/fileFormat"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1121,8 +906,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "funder"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/funder"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/funder"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1138,8 +921,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "funding"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/funding"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/funding"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1152,8 +933,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "genre"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/genre"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/genre"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1169,8 +948,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "hasPart"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/hasPart"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/hasPart"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1186,8 +963,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "headline"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/headline"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/headline"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1203,8 +978,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "identifier"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/identifier"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/identifier"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1217,8 +990,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "image"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/image"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/image"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1234,8 +1005,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "inLanguage"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/inLanguage"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/inLanguage"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1251,14 +1020,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "interactionStatistic"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/interactionStatistic")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/interactionStatistic")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1274,14 +1035,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "interactivityType"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/interactivityType")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/interactivityType")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1297,14 +1050,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "interpretedAsClaim"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/interpretedAsClaim")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/interpretedAsClaim")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1320,14 +1065,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "isAccessibleForFree"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/isAccessibleForFree")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/isAccessibleForFree")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1343,8 +1080,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "isBasedOn"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/isBasedOn"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/isBasedOn"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1360,8 +1095,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "isBasedOnUrl"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/isBasedOnUrl"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/isBasedOnUrl"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1377,11 +1110,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "isFamilyFriendly"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/isFamilyFriendly")
-    )]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/isFamilyFriendly"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1397,8 +1125,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "isPartOf"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/isPartOf"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/isPartOf"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1414,8 +1140,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "keywords"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/keywords"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/keywords"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1431,14 +1155,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "learningResourceType"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/learningResourceType")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/learningResourceType")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1454,8 +1170,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "license"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/license"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/license"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1471,8 +1185,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "locationCreated"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/locationCreated"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/locationCreated"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1488,8 +1200,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "mainEntity"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/mainEntity"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/mainEntity"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1505,11 +1215,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "mainEntityOfPage"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/mainEntityOfPage")
-    )]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/mainEntityOfPage"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1525,8 +1230,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "maintainer"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/maintainer"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/maintainer"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1542,8 +1245,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "material"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/material"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/material"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1559,8 +1260,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "materialExtent"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/materialExtent"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/materialExtent"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1576,8 +1275,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "mentions"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/mentions"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/mentions"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1590,8 +1287,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "name"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/name"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/name"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1607,8 +1302,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "numTracks"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/numTracks"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/numTracks"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1621,8 +1314,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "offers"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/offers"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/offers"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1638,8 +1329,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "pattern"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/pattern"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/pattern"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1655,8 +1344,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "position"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/position"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/position"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1672,8 +1359,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "potentialAction"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/potentialAction"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/potentialAction"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1689,8 +1374,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "producer"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/producer"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/producer"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1706,8 +1389,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "provider"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/provider"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/provider"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1723,8 +1404,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "publication"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/publication"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/publication"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1740,8 +1419,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "publisher"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/publisher"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/publisher"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1757,11 +1434,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "publisherImprint"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/publisherImprint")
-    )]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/publisherImprint"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1777,14 +1449,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "publishingPrinciples"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/publishingPrinciples")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/publishingPrinciples")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1800,8 +1464,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "recordedAt"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/recordedAt"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/recordedAt"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1817,8 +1479,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "releasedEvent"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/releasedEvent"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/releasedEvent"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1831,8 +1491,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "review"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/review"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/review"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1848,8 +1506,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "reviews"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/reviews"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/reviews"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1865,8 +1521,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "sameAs"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/sameAs"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/sameAs"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1882,8 +1536,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "schemaVersion"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/schemaVersion"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/schemaVersion"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1899,8 +1551,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "sdDatePublished"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/sdDatePublished"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/sdDatePublished"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1916,8 +1566,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "sdLicense"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/sdLicense"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/sdLicense"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1933,8 +1581,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "sdPublisher"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/sdPublisher"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/sdPublisher"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1947,8 +1593,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "size"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/size"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/size"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1964,14 +1608,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "sourceOrganization"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/sourceOrganization")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/sourceOrganization")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1987,8 +1623,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "spatial"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/spatial"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/spatial"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -2004,8 +1638,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "spatialCoverage"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/spatialCoverage"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/spatialCoverage"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -2021,8 +1653,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "sponsor"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/sponsor"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/sponsor"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -2038,8 +1668,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "subjectOf"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/subjectOf"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/subjectOf"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -2055,8 +1683,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "teaches"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/teaches"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/teaches"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -2072,8 +1698,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "temporal"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/temporal"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/temporal"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -2089,11 +1713,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "temporalCoverage"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/temporalCoverage")
-    )]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/temporalCoverage"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -2106,8 +1725,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "text"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/text"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/text"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -2123,8 +1740,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "thumbnail"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/thumbnail"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/thumbnail"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -2140,8 +1755,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "thumbnailUrl"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/thumbnailUrl"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/thumbnailUrl"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -2157,8 +1770,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "timeRequired"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/timeRequired"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/timeRequired"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -2171,8 +1782,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "track"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/track"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/track"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -2185,8 +1794,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "tracks"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/tracks"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/tracks"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -2202,14 +1809,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "translationOfWork"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/translationOfWork")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/translationOfWork")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -2225,8 +1824,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "translator"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/translator"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/translator"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -2242,8 +1839,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "typicalAgeRange"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/typicalAgeRange"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/typicalAgeRange"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -2256,8 +1851,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "url"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/url"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/url"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -2273,8 +1866,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "usageInfo"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/usageInfo"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/usageInfo"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -2290,8 +1881,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "version"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/version"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/version"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -2304,8 +1893,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "video"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/video"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/video"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -2321,8 +1908,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "workExample"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/workExample"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/workExample"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -2338,8 +1923,6 @@ pub struct MusicAlbum {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "workTranslation"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/workTranslation"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/workTranslation"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(

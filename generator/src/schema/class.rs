@@ -12,7 +12,7 @@ use crate::{
     schema::{map_schema_name, ReferencedSchema, Schema},
     schema_section::SchemaSection,
     serde_attributes::{
-        serde_alias, serde_as, serde_default, serde_derive, serde_rename, serde_skip_serializing_if,
+        serde_as, serde_default, serde_derive, serde_rename, serde_skip_serializing_if,
     },
     sparql::{SchemaQueries, SchemaQuerySolution},
 };
@@ -89,16 +89,13 @@ impl ToTokens for Class {
         let fields = self
             .properties
             .iter()
-            .map(|ReferencedSchema { iri, name, section }| {
+            .map(|ReferencedSchema { name, section, .. }| {
                 let feature = Feature::Any(vec![
                     Feature::Name(format!("{}-property-schema", name.to_case(Case::Kebab))),
                     Feature::Name(section.feature_name().to_string()),
                 ]);
                 let feature_gate = feature.feature_gate();
                 let serde_rename = serde_rename(name);
-                let http_iri = iri.replacen("https", "http", 1);
-                let https_iri = http_iri.replacen("http", "https", 1);
-                let serde_aliases = &[serde_alias(&https_iri), serde_alias(&http_iri)];
                 let serde_default = serde_default();
                 let serde_skip_serializing_if_empty = serde_skip_serializing_if("Vec::is_empty");
                 let serde_as = serde_as("OneOrMany<_>");
@@ -111,7 +108,6 @@ impl ToTokens for Class {
                 quote!(
                     #feature_gate
                     #serde_rename
-                    #(#serde_aliases)*
                     #serde_default
                     #serde_skip_serializing_if_empty
                     #serde_as

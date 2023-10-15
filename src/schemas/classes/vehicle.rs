@@ -12,11 +12,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "accelerationTime"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/accelerationTime")
-    )]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/accelerationTime"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -32,14 +27,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "additionalProperty"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/additionalProperty")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/additionalProperty")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -55,8 +42,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "additionalType"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/additionalType"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/additionalType"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -72,8 +57,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "aggregateRating"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/aggregateRating"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/aggregateRating"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -89,8 +72,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "alternateName"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/alternateName"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/alternateName"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -103,8 +84,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "asin"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/asin"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/asin"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -120,8 +99,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "audience"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/audience"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/audience"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -134,8 +111,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "award"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/award"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/award"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -148,8 +123,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "awards"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/awards"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/awards"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -162,8 +135,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "bodyType"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/bodyType"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/bodyType"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -176,8 +147,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "brand"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/brand"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/brand"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -193,8 +162,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "callSign"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/callSign"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/callSign"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -210,8 +177,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "cargoVolume"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/cargoVolume"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/cargoVolume"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -227,8 +192,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "category"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/category"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/category"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -241,8 +204,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "color"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/color"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/color"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -258,14 +219,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "countryOfAssembly"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/countryOfAssembly")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/countryOfAssembly")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -281,14 +234,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "countryOfLastProcessing"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/countryOfLastProcessing")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/countryOfLastProcessing")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -304,8 +249,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "countryOfOrigin"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/countryOfOrigin"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/countryOfOrigin"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -321,14 +264,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "dateVehicleFirstRegistered"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/dateVehicleFirstRegistered")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/dateVehicleFirstRegistered")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -341,8 +276,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "depth"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/depth"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/depth"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -358,8 +291,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "description"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/description"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/description"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -375,14 +306,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "disambiguatingDescription"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/disambiguatingDescription")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/disambiguatingDescription")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -398,14 +321,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "driveWheelConfiguration"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/driveWheelConfiguration")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/driveWheelConfiguration")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -421,8 +336,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "emissionsCO2"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/emissionsCO2"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/emissionsCO2"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -438,8 +351,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "fuelCapacity"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/fuelCapacity"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/fuelCapacity"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -455,8 +366,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "fuelConsumption"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/fuelConsumption"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/fuelConsumption"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -472,8 +381,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "fuelEfficiency"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/fuelEfficiency"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/fuelEfficiency"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -489,8 +396,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "fuelType"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/fuelType"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/fuelType"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -506,8 +411,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "funding"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/funding"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/funding"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -520,8 +423,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "gtin"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/gtin"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/gtin"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -537,8 +438,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "gtin12"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/gtin12"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/gtin12"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -554,8 +453,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "gtin13"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/gtin13"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/gtin13"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -571,8 +468,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "gtin14"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/gtin14"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/gtin14"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -585,8 +480,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "gtin8"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/gtin8"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/gtin8"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -602,14 +495,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "hasAdultConsideration"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/hasAdultConsideration")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/hasAdultConsideration")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -625,14 +510,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "hasEnergyConsumptionDetails"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/hasEnergyConsumptionDetails")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/hasEnergyConsumptionDetails")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -648,8 +525,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "hasMeasurement"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/hasMeasurement"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/hasMeasurement"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -665,14 +540,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "hasMerchantReturnPolicy"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/hasMerchantReturnPolicy")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/hasMerchantReturnPolicy")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -688,14 +555,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "hasProductReturnPolicy"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/hasProductReturnPolicy")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/hasProductReturnPolicy")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -708,8 +567,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "height"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/height"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/height"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -725,8 +582,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "identifier"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/identifier"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/identifier"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -739,8 +594,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "image"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/image"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/image"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -756,14 +609,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "inProductGroupWithID"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/inProductGroupWithID")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/inProductGroupWithID")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -779,14 +624,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "isAccessoryOrSparePartFor"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/isAccessoryOrSparePartFor")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/isAccessoryOrSparePartFor")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -802,8 +639,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "isConsumableFor"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/isConsumableFor"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/isConsumableFor"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -819,11 +654,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "isFamilyFriendly"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/isFamilyFriendly")
-    )]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/isFamilyFriendly"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -839,8 +669,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "isRelatedTo"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/isRelatedTo"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/isRelatedTo"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -856,8 +684,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "isSimilarTo"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/isSimilarTo"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/isSimilarTo"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -873,8 +699,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "isVariantOf"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/isVariantOf"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/isVariantOf"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -890,8 +714,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "itemCondition"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/itemCondition"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/itemCondition"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -907,8 +729,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "keywords"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/keywords"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/keywords"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -924,14 +744,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "knownVehicleDamages"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/knownVehicleDamages")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/knownVehicleDamages")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -944,8 +756,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "logo"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/logo"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/logo"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -961,11 +771,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "mainEntityOfPage"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/mainEntityOfPage")
-    )]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/mainEntityOfPage"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -981,8 +786,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "manufacturer"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/manufacturer"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/manufacturer"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -998,8 +801,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "material"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/material"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/material"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1015,14 +816,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "meetsEmissionStandard"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/meetsEmissionStandard")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/meetsEmissionStandard")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1038,14 +831,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "mileageFromOdometer"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/mileageFromOdometer")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/mileageFromOdometer")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1061,8 +846,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "mobileUrl"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/mobileUrl"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/mobileUrl"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1075,8 +858,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "model"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/model"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/model"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1092,8 +873,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "modelDate"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/modelDate"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/modelDate"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1106,8 +885,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "mpn"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/mpn"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/mpn"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1120,8 +897,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "name"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/name"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/name"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1137,8 +912,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "negativeNotes"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/negativeNotes"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/negativeNotes"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1151,8 +924,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "nsn"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/nsn"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/nsn"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1168,8 +939,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "numberOfAirbags"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/numberOfAirbags"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/numberOfAirbags"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1185,8 +954,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "numberOfAxles"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/numberOfAxles"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/numberOfAxles"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1202,8 +969,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "numberOfDoors"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/numberOfDoors"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/numberOfDoors"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1219,14 +984,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "numberOfForwardGears"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/numberOfForwardGears")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/numberOfForwardGears")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1242,14 +999,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "numberOfPreviousOwners"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/numberOfPreviousOwners")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/numberOfPreviousOwners")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1262,8 +1011,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "offers"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/offers"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/offers"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1279,8 +1026,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "pattern"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/pattern"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/pattern"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1293,8 +1038,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "payload"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/payload"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/payload"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1310,8 +1053,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "positiveNotes"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/positiveNotes"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/positiveNotes"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1327,8 +1068,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "potentialAction"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/potentialAction"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/potentialAction"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1344,8 +1083,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "productID"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/productID"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/productID"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1361,8 +1098,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "productionDate"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/productionDate"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/productionDate"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1378,8 +1113,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "purchaseDate"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/purchaseDate"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/purchaseDate"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1395,8 +1128,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "releaseDate"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/releaseDate"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/releaseDate"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1409,8 +1140,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "review"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/review"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/review"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1426,8 +1155,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "reviews"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/reviews"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/reviews"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1443,8 +1170,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "sameAs"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/sameAs"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/sameAs"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1460,8 +1185,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "seatingCapacity"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/seatingCapacity"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/seatingCapacity"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1474,8 +1197,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "size"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/size"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/size"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1488,8 +1209,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "sku"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/sku"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/sku"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1502,8 +1221,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "slogan"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/slogan"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/slogan"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1516,8 +1233,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "speed"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/speed"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/speed"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1533,11 +1248,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "steeringPosition"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/steeringPosition")
-    )]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/steeringPosition"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1553,8 +1263,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "stupidProperty"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/stupidProperty"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/stupidProperty"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1570,8 +1278,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "subjectOf"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/subjectOf"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/subjectOf"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1587,8 +1293,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "tongueWeight"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/tongueWeight"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/tongueWeight"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1604,8 +1308,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "trailerWeight"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/trailerWeight"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/trailerWeight"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1618,8 +1320,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "url"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/url"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/url"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1635,14 +1335,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "vehicleConfiguration"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/vehicleConfiguration")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/vehicleConfiguration")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1658,8 +1350,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "vehicleEngine"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/vehicleEngine"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/vehicleEngine"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1675,14 +1365,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "vehicleIdentificationNumber"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/vehicleIdentificationNumber")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/vehicleIdentificationNumber")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1698,14 +1380,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "vehicleInteriorColor"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/vehicleInteriorColor")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/vehicleInteriorColor")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1721,14 +1395,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "vehicleInteriorType"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/vehicleInteriorType")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/vehicleInteriorType")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1744,11 +1410,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "vehicleModelDate"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/vehicleModelDate")
-    )]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/vehicleModelDate"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1764,14 +1425,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "vehicleSeatingCapacity"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/vehicleSeatingCapacity")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/vehicleSeatingCapacity")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1787,14 +1440,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "vehicleSpecialUsage"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/vehicleSpecialUsage")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/vehicleSpecialUsage")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1810,14 +1455,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "vehicleTransmission"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "https://schema.org/vehicleTransmission")
-    )]
-    #[cfg_attr(
-        feature = "serde",
-        serde(alias = "http://schema.org/vehicleTransmission")
-    )]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1830,8 +1467,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "weight"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/weight"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/weight"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1847,8 +1482,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "weightTotal"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/weightTotal"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/weightTotal"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1861,8 +1494,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "wheelbase"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/wheelbase"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/wheelbase"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
@@ -1875,8 +1506,6 @@ pub struct Vehicle {
         doc
     ))]
     #[cfg_attr(feature = "serde", serde(rename = "width"))]
-    #[cfg_attr(feature = "serde", serde(alias = "https://schema.org/width"))]
-    #[cfg_attr(feature = "serde", serde(alias = "http://schema.org/width"))]
     #[cfg_attr(feature = "serde", serde(default))]
     #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
     #[cfg_attr(
