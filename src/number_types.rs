@@ -7,6 +7,4 @@ mod serde;
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct Number(pub NumberBuf);
 
-#[cfg_attr(feature = "derive-debug", derive(Debug))]
-#[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub type Integer = Number;
