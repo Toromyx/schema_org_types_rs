@@ -11,11 +11,10 @@ use rayon::prelude::*;
 
 use crate::{
     doc_lines::DocLines,
-    read::map_schema_name,
-    schema::Schema,
+    schema::{map_schema_name, Schema},
     schema_section::SchemaSection,
     serde_attributes::serde_derive,
-    sparql::{SchemaQueries, SectionedSchemaQuerySolution},
+    sparql::{SchemaQueries, SchemaQuerySolution},
 };
 
 /// A schema.org enumeration.
@@ -34,7 +33,7 @@ pub struct Enumeration {
 }
 
 impl Schema for Enumeration {
-    fn module_name() -> &'static str {
+    fn parent_module_name() -> &'static str {
         "enumerations"
     }
 
@@ -58,25 +57,21 @@ impl Schema for Enumeration {
         vec![]
     }
 
-    fn read_solutions(store: &Store) -> Vec<SectionedSchemaQuerySolution> {
-        store.enumerations_query()
-    }
-
-    fn from_solution(store: &Store, solution: SectionedSchemaQuerySolution) -> Self {
+    fn from_solution(store: &Store, solution: SchemaQuerySolution) -> Self {
         let mut variants: Vec<EnumerationVariant> = store
-            .variants_of_enumeration_query(&solution.schema.identifiable.iri)
+            .get_variants_of_enumeration(&solution.iri)
             .into_par_iter()
             .map(|solution| EnumerationVariant {
-                iri: solution.identifiable.iri,
-                name: map_schema_name(solution.labeled.label),
+                iri: solution.iri,
+                name: map_schema_name(solution.label),
             })
             .collect();
         variants.sort_unstable();
         Self {
-            iri: solution.schema.identifiable.iri,
-            name: map_schema_name(solution.schema.labeled.label),
+            iri: solution.iri,
+            name: map_schema_name(solution.label),
             variants,
-            section: solution.sectioned.section,
+            section: solution.section,
         }
     }
 }

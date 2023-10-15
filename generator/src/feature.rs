@@ -11,6 +11,7 @@ impl<T: Schema> From<&T> for Feature {
     }
 }
 
+#[derive(Debug, Clone)]
 pub enum Feature {
     Name(String),
     Any(Vec<Feature>),

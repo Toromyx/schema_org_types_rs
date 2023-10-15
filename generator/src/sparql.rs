@@ -6,7 +6,11 @@ use as_literal::AsLiteral;
 use as_named_node::AsNamedNode;
 use const_format::concatcp;
 use into_solutions::IntoSolutions;
-use oxigraph::{model::NamedNode, sparql::QuerySolution, store::Store};
+use oxigraph::{
+    model::NamedNode,
+    sparql::{QueryResults, QuerySolution},
+    store::Store,
+};
 
 use crate::schema_section::SchemaSection;
 
@@ -16,103 +20,6 @@ PREFIX schema: <https://schema.org/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 "#;
-
-/// A query to get all classes which are not an enumeration or data type
-const CLASSES_QUERY: &str = concatcp!(
-    PREFIXES,
-    r#"
-SELECT
-    DISTINCT ?node
-    ?label
-    ?section
-WHERE {
-    ?node a rdfs:Class .
-    FILTER NOT EXISTS {
-        ?node rdfs:subClassOf*/rdfs:subClassOf schema:Enumeration .
-    }
-    FILTER NOT EXISTS {
-        ?node rdfs:subClassOf*/a schema:DataType .
-    }
-    ?node rdfs:label ?label .
-    OPTIONAL { ?node schema:isPartOf ?section . }
-}
-"#
-);
-
-/// A query to get all properties
-const PROPERTIES_QUERY: &str = concatcp!(
-    PREFIXES,
-    r#"
-SELECT
-    DISTINCT ?node
-    ?label
-    ?section
-WHERE {
-    ?node a rdf:Property .
-    ?node rdfs:label ?label .
-    OPTIONAL { ?node schema:isPartOf ?section . }
-}
-"#
-);
-
-/// A query to get all enumerations
-const ENUMERATIONS_QUERY: &str = concatcp!(
-    PREFIXES,
-    r#"
-SELECT
-    DISTINCT ?node
-    ?label
-    ?section
-WHERE {
-    ?node rdfs:subClassOf*/rdfs:subClassOf schema:Enumeration .
-    ?node rdfs:label ?label .
-    OPTIONAL { ?node schema:isPartOf ?section . }
-}
-"#
-);
-
-/// A query to get all data types
-const DATA_TYPES_QUERY: &str = concatcp!(
-    PREFIXES,
-    r#"
-SELECT
-    DISTINCT ?node
-    ?label
-    ?section
-WHERE {
-    ?node rdfs:subClassOf*/a schema:DataType .
-    ?node rdfs:label ?label .
-    OPTIONAL { ?node schema:isPartOf ?section . }
-}
-"#
-);
-
-#[derive(Debug, Clone)]
-pub struct IdentifiableQuerySolution {
-    pub iri: String,
-}
-
-#[derive(Debug, Clone)]
-pub struct LabeledQuerySolution {
-    pub label: String,
-}
-
-#[derive(Debug, Clone)]
-pub struct SectionedQuerySolution {
-    pub section: SchemaSection,
-}
-
-#[derive(Debug, Clone)]
-pub struct SchemaQuerySolution {
-    pub identifiable: IdentifiableQuerySolution,
-    pub labeled: LabeledQuerySolution,
-}
-
-#[derive(Debug, Clone)]
-pub struct SectionedSchemaQuerySolution {
-    pub schema: SchemaQuerySolution,
-    pub sectioned: SectionedQuerySolution,
-}
 
 impl From<&NamedNode> for SchemaSection {
     fn from(value: &NamedNode) -> Self {
@@ -130,130 +37,214 @@ impl From<&NamedNode> for SchemaSection {
     }
 }
 
-impl From<&QuerySolution> for IdentifiableQuerySolution {
-    fn from(value: &QuerySolution) -> Self {
-        Self {
-            iri: value
-                .get("node")
-                .expect("The ?node variable should exist within the query.")
-                .as_named_node()
-                .as_str()
-                .to_string(),
-        }
-    }
+fn iri_from_solution(solution: &QuerySolution) -> String {
+    solution
+        .get("node")
+        .expect("The ?node variable should exist within the query solution.")
+        .as_named_node()
+        .as_str()
+        .to_string()
 }
 
-impl From<&QuerySolution> for LabeledQuerySolution {
-    fn from(value: &QuerySolution) -> Self {
-        Self {
-            label: value
-                .get("label")
-                .expect("The ?label variable should exist within the query.")
-                .as_literal()
-                .value()
-                .to_string(),
-        }
-    }
+fn label_from_solution(solution: &QuerySolution) -> String {
+    solution
+        .get("label")
+        .expect("The ?label variable should exist within the query solution.")
+        .as_literal()
+        .value()
+        .to_string()
 }
 
-impl From<&QuerySolution> for SectionedQuerySolution {
-    fn from(value: &QuerySolution) -> Self {
-        Self {
-            section: value
-                .get("section")
-                .map(|term| term.as_named_node().into())
-                .unwrap_or_default(),
-        }
-    }
+fn section_from_solution(solution: &QuerySolution) -> SchemaSection {
+    solution
+        .get("section")
+        .map(|term| term.as_named_node().into())
+        .unwrap_or_default()
+}
+
+#[derive(Debug, Clone)]
+pub struct SchemaQuerySolution {
+    pub iri: String,
+    pub label: String,
+    pub section: SchemaSection,
 }
 
 impl From<&QuerySolution> for SchemaQuerySolution {
     fn from(value: &QuerySolution) -> Self {
         Self {
-            identifiable: value.into(),
-            labeled: value.into(),
+            iri: iri_from_solution(value),
+            label: label_from_solution(value),
+            section: section_from_solution(value),
         }
     }
 }
 
-impl From<&QuerySolution> for SectionedSchemaQuerySolution {
+pub struct EnumerationVariantSolution {
+    pub iri: String,
+    pub label: String,
+}
+
+impl From<&QuerySolution> for EnumerationVariantSolution {
     fn from(value: &QuerySolution) -> Self {
         Self {
-            schema: value.into(),
-            sectioned: value.into(),
+            iri: iri_from_solution(value),
+            label: label_from_solution(value),
         }
+    }
+}
+
+struct CountSolution(u64);
+
+impl From<QueryResults> for CountSolution {
+    fn from(value: QueryResults) -> Self {
+        Self(
+            value
+                .into_solutions()
+                .pop()
+                .expect("There should always be a query solution within a count query.")
+                .get("count")
+                .expect("The ?count variable should exist within a count query solution.")
+                .as_literal()
+                .value()
+                .parse::<u64>()
+                .expect("The ?count literal should be parsable as an unsigned integer."),
+        )
     }
 }
 
 pub trait SchemaQueries {
-    /// Query for all classes, which are not an enumeration ot data type.
-    fn classes_query(&self) -> Vec<SectionedSchemaQuerySolution>;
+    fn get_schemas(&self) -> Vec<SchemaQuerySolution>;
 
-    /// Query for all properties.
-    fn properties_query(&self) -> Vec<SectionedSchemaQuerySolution>;
+    fn is_enumeration_variant(&self, iri: &str) -> bool;
 
-    /// Query for all enumerations.
-    fn enumerations_query(&self) -> Vec<SectionedSchemaQuerySolution>;
+    fn is_data_type(&self, iri: &str) -> bool;
 
-    /// Query for all data types.
-    fn data_types_query(&self) -> Vec<SectionedSchemaQuerySolution>;
+    fn is_enumeration(&self, iri: &str) -> bool;
 
-    /// Query for all properties of a type, including the properties of types the type is a subclass of.
-    fn properties_of_class_query(&self, class_iri: &str) -> Vec<SectionedSchemaQuerySolution>;
+    fn has_direct_properties(&self, iri: &str) -> bool;
+
+    fn is_property(&self, iri: &str) -> bool;
+
+    fn get_properties_of_class(&self, class_iri: &str) -> Vec<SchemaQuerySolution>;
 
     /// Query for all value labels of a property.
-    fn variants_of_property_query(&self, property_iri: &str) -> Vec<SectionedSchemaQuerySolution>;
+    fn get_variants_of_property(&self, property_iri: &str) -> Vec<SchemaQuerySolution>;
 
     /// Query for all enumeration variants of a specific enumeration.
-    fn variants_of_enumeration_query(&self, enumeration_iri: &str) -> Vec<SchemaQuerySolution>;
+    fn get_variants_of_enumeration(&self, enumeration_iri: &str)
+    -> Vec<EnumerationVariantSolution>;
 
     /// Query for a transformable parent data type of another data type.
     ///
     /// The data type needs to be transformable to a [`crate::serde_attributes::data_type::RustType`].
-    fn transformable_data_type_label_of_data_type_query(
-        &self,
-        data_type_iri: &str,
-    ) -> LabeledQuerySolution;
+    fn get_transformable_data_type_label_of_data_type(&self, data_type_iri: &str) -> String;
 }
 
 impl SchemaQueries for Store {
-    fn classes_query(&self) -> Vec<SectionedSchemaQuerySolution> {
-        self.query(CLASSES_QUERY)
+    fn get_schemas(&self) -> Vec<SchemaQuerySolution> {
+        let query = concatcp!(
+            PREFIXES,
+            r#"
+SELECT
+    ?node
+    ?label
+    ?section
+WHERE {
+    ?node rdfs:label ?label .
+    OPTIONAL { ?node schema:isPartOf ?section . }
+}
+"#,
+        );
+        self.query(query)
             .unwrap()
             .into_solutions()
             .iter()
-            .map(SectionedSchemaQuerySolution::from)
+            .map(SchemaQuerySolution::from)
             .collect()
     }
 
-    fn properties_query(&self) -> Vec<SectionedSchemaQuerySolution> {
-        self.query(PROPERTIES_QUERY)
-            .unwrap()
-            .into_solutions()
-            .iter()
-            .map(SectionedSchemaQuerySolution::from)
-            .collect()
+    fn is_enumeration_variant(&self, iri: &str) -> bool {
+        let query = format!(
+            r#"
+{}
+SELECT
+    (COUNT(*) AS ?count)
+WHERE {{
+    <{}> a ?enumeration .
+    ?enumeration rdfs:subClassOf*/rdfs:subClassOf schema:Enumeration .
+}}
+"#,
+            PREFIXES, iri
+        );
+        let count_solution: CountSolution = self.query(&query).unwrap().into();
+        count_solution.0 > 0
     }
 
-    fn enumerations_query(&self) -> Vec<SectionedSchemaQuerySolution> {
-        self.query(ENUMERATIONS_QUERY)
-            .unwrap()
-            .into_solutions()
-            .iter()
-            .map(SectionedSchemaQuerySolution::from)
-            .collect()
+    fn is_data_type(&self, iri: &str) -> bool {
+        let query = format!(
+            r#"
+{}
+SELECT
+    (COUNT(*) AS ?count)
+WHERE {{
+    <{}> rdfs:subClassOf*/a schema:DataType .
+}}
+"#,
+            PREFIXES, iri
+        );
+        let count_solution: CountSolution = self.query(&query).unwrap().into();
+        count_solution.0 > 0
     }
 
-    fn data_types_query(&self) -> Vec<SectionedSchemaQuerySolution> {
-        self.query(DATA_TYPES_QUERY)
-            .unwrap()
-            .into_solutions()
-            .iter()
-            .map(SectionedSchemaQuerySolution::from)
-            .collect()
+    fn is_enumeration(&self, iri: &str) -> bool {
+        let query = format!(
+            r#"
+{}
+SELECT
+    (COUNT(*) AS ?count)
+WHERE {{
+    <{}> rdfs:subClassOf*/rdfs:subClassOf schema:Enumeration .
+}}
+"#,
+            PREFIXES, iri
+        );
+        let count_solution: CountSolution = self.query(&query).unwrap().into();
+        count_solution.0 > 0
     }
 
-    fn properties_of_class_query(&self, class_iri: &str) -> Vec<SectionedSchemaQuerySolution> {
+    fn has_direct_properties(&self, iri: &str) -> bool {
+        let query = format!(
+            r#"
+{}
+SELECT
+    (COUNT(?property) AS ?count)
+WHERE {{
+    ?property schema:domainIncludes <{}> .
+}}
+"#,
+            PREFIXES, iri
+        );
+        let count_solution: CountSolution = self.query(&query).unwrap().into();
+        count_solution.0 > 0
+    }
+
+    fn is_property(&self, iri: &str) -> bool {
+        let query = format!(
+            r#"
+{}
+SELECT
+    (COUNT(*) AS ?count)
+WHERE {{
+    <{}> a rdf:Property .
+}}
+"#,
+            PREFIXES, iri
+        );
+        let count_solution: CountSolution = self.query(&query).unwrap().into();
+        count_solution.0 > 0
+    }
+
+    fn get_properties_of_class(&self, class_iri: &str) -> Vec<SchemaQuerySolution> {
         let query = format!(
             r#"
 {}
@@ -280,11 +271,11 @@ WHERE {{
             .unwrap()
             .into_solutions()
             .iter()
-            .map(SectionedSchemaQuerySolution::from)
+            .map(SchemaQuerySolution::from)
             .collect()
     }
 
-    fn variants_of_property_query(&self, property_iri: &str) -> Vec<SectionedSchemaQuerySolution> {
+    fn get_variants_of_property(&self, property_iri: &str) -> Vec<SchemaQuerySolution> {
         let query = format!(
             r#"
 {}
@@ -304,11 +295,14 @@ WHERE {{
             .unwrap()
             .into_solutions()
             .iter()
-            .map(SectionedSchemaQuerySolution::from)
+            .map(SchemaQuerySolution::from)
             .collect()
     }
 
-    fn variants_of_enumeration_query(&self, enumeration_iri: &str) -> Vec<SchemaQuerySolution> {
+    fn get_variants_of_enumeration(
+        &self,
+        enumeration_iri: &str,
+    ) -> Vec<EnumerationVariantSolution> {
         let query = format!(
             r#"
 {}
@@ -326,14 +320,11 @@ WHERE {{
             .unwrap()
             .into_solutions()
             .iter()
-            .map(SchemaQuerySolution::from)
+            .map(EnumerationVariantSolution::from)
             .collect()
     }
 
-    fn transformable_data_type_label_of_data_type_query(
-        &self,
-        data_type_iri: &str,
-    ) -> LabeledQuerySolution {
+    fn get_transformable_data_type_label_of_data_type(&self, data_type_iri: &str) -> String {
         let query = format!(
             r#"
 {}
@@ -358,29 +349,12 @@ LIMIT 1
             PREFIXES, data_type_iri
         );
         let solutions = self.query(&query).unwrap().into_solutions();
-        let Some(solution) = solutions.first() else {
+        let solution = solutions.first().unwrap_or_else(|| {
             panic!(
                 "Could not get a transformable data type for the schema \"{}\"",
-                data_type_iri,
+                data_type_iri
             );
-        };
-        solution.into()
-    }
-}
-
-#[cfg(test)]
-mod tests {
-    use std::str::FromStr;
-
-    use oxigraph::sparql::Query;
-
-    use super::*;
-
-    #[test]
-    fn test_query_validity() {
-        Query::from_str(CLASSES_QUERY).unwrap();
-        Query::from_str(PROPERTIES_QUERY).unwrap();
-        Query::from_str(ENUMERATIONS_QUERY).unwrap();
-        Query::from_str(DATA_TYPES_QUERY).unwrap();
+        });
+        label_from_solution(solution)
     }
 }

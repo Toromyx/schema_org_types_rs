@@ -1,7 +1,8 @@
+use convert_case::{Case, Casing};
 use derivative::Derivative;
 use oxigraph::store::Store;
 
-use crate::{schema_section::SchemaSection, sparql::SectionedSchemaQuerySolution};
+use crate::{schema_section::SchemaSection, sparql::SchemaQuerySolution};
 
 pub mod class;
 pub mod data_type;
@@ -10,7 +11,7 @@ pub mod property;
 
 pub trait Schema {
     /// Get the module name describing where to write this schema into.
-    fn module_name() -> &'static str;
+    fn parent_module_name() -> &'static str;
 
     /// Get the feature name which gates the compilation of this schema.
     fn feature_name(&self) -> String;
@@ -27,11 +28,13 @@ pub trait Schema {
     /// Get a [`Vec`] of all features that the children of this schema depend on
     fn child_feature_names(&self) -> Vec<String>;
 
-    /// Read query solutions of this schema from the RDF store.
-    fn read_solutions(store: &Store) -> Vec<SectionedSchemaQuerySolution>;
+    /// Get the module name of this schema. Per default this is [`Case::Snake`] of the [`Self::name`].
+    fn module_name(&self) -> String {
+        self.name().to_case(Case::Snake)
+    }
 
     /// Build the complete schema from a query solution and the RDF store.
-    fn from_solution(store: &Store, solution: SectionedSchemaQuerySolution) -> Self;
+    fn from_solution(store: &Store, solution: SchemaQuerySolution) -> Self;
 }
 
 #[derive(Debug, Clone, Derivative)]
@@ -44,12 +47,20 @@ pub struct ReferencedSchema {
     pub section: SchemaSection,
 }
 
-impl From<SectionedSchemaQuerySolution> for ReferencedSchema {
-    fn from(value: SectionedSchemaQuerySolution) -> Self {
+impl From<SchemaQuerySolution> for ReferencedSchema {
+    fn from(value: SchemaQuerySolution) -> Self {
         Self {
-            iri: value.schema.identifiable.iri,
-            name: value.schema.labeled.label,
-            section: value.sectioned.section,
+            iri: value.iri,
+            name: value.label,
+            section: value.section,
         }
+    }
+}
+
+/// Map schema names which are incompatible with rust as identifier.
+pub fn map_schema_name(name: String) -> String {
+    match name.as_str() {
+        "3DModel" => "Model3D".to_string(),
+        _ => name,
     }
 }

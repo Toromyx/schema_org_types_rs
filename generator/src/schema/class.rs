@@ -9,13 +9,12 @@ use rayon::prelude::*;
 use crate::{
     doc_lines::DocLines,
     feature::Feature,
-    read::map_schema_name,
-    schema::{ReferencedSchema, Schema},
+    schema::{map_schema_name, ReferencedSchema, Schema},
     schema_section::SchemaSection,
     serde_attributes::{
         serde_alias, serde_as, serde_default, serde_derive, serde_rename, serde_skip_serializing_if,
     },
-    sparql::{SchemaQueries, SectionedSchemaQuerySolution},
+    sparql::{SchemaQueries, SchemaQuerySolution},
 };
 
 /// A schema.org class: <https://schema.org/Class>
@@ -34,7 +33,7 @@ pub struct Class {
 }
 
 impl Schema for Class {
-    fn module_name() -> &'static str {
+    fn parent_module_name() -> &'static str {
         "classes"
     }
 
@@ -66,22 +65,18 @@ impl Schema for Class {
             .collect()
     }
 
-    fn read_solutions(store: &Store) -> Vec<SectionedSchemaQuerySolution> {
-        store.classes_query()
-    }
-
-    fn from_solution(store: &Store, solution: SectionedSchemaQuerySolution) -> Self {
+    fn from_solution(store: &Store, solution: SchemaQuerySolution) -> Self {
         let mut properties: Vec<ReferencedSchema> = store
-            .properties_of_class_query(&solution.schema.identifiable.iri)
+            .get_properties_of_class(&solution.iri)
             .into_par_iter()
             .map(ReferencedSchema::from)
             .collect();
         properties.sort_unstable();
         Class {
-            iri: solution.schema.identifiable.iri,
-            name: map_schema_name(solution.schema.labeled.label),
+            iri: solution.iri,
+            name: map_schema_name(solution.label),
             properties,
-            section: solution.sectioned.section,
+            section: solution.section,
         }
     }
 }

@@ -15853,8 +15853,6 @@ data-feed-schema = [
     "work-example-property-schema",
     "work-translation-property-schema",
 ]
-data-type-schema = [
-]
 dataset-property-schema = [
     "dataset-schema",
 ]
@@ -28582,20 +28580,6 @@ insurance-agency-schema = [
     "unnamed-sources-policy-property-schema",
     "url-property-schema",
     "vat-id-property-schema",
-]
-intangible-schema = [
-    "additional-type-property-schema",
-    "alternate-name-property-schema",
-    "description-property-schema",
-    "disambiguating-description-property-schema",
-    "identifier-property-schema",
-    "image-property-schema",
-    "main-entity-of-page-property-schema",
-    "name-property-schema",
-    "potential-action-property-schema",
-    "same-as-property-schema",
-    "subject-of-property-schema",
-    "url-property-schema",
 ]
 integer-schema = [
 ]
@@ -41799,6 +41783,50 @@ payment-accepted-property-schema = [
     "text-schema",
 ]
 payment-card-schema = [
+    "additional-type-property-schema",
+    "aggregate-rating-property-schema",
+    "alternate-name-property-schema",
+    "annual-percentage-rate-property-schema",
+    "area-served-property-schema",
+    "audience-property-schema",
+    "available-channel-property-schema",
+    "award-property-schema",
+    "brand-property-schema",
+    "broker-property-schema",
+    "cash-back-property-schema",
+    "category-property-schema",
+    "contactless-payment-property-schema",
+    "description-property-schema",
+    "disambiguating-description-property-schema",
+    "fees-and-commissions-specification-property-schema",
+    "floor-limit-property-schema",
+    "has-offer-catalog-property-schema",
+    "hours-available-property-schema",
+    "identifier-property-schema",
+    "image-property-schema",
+    "interest-rate-property-schema",
+    "is-related-to-property-schema",
+    "is-similar-to-property-schema",
+    "logo-property-schema",
+    "main-entity-of-page-property-schema",
+    "monthly-minimum-repayment-amount-property-schema",
+    "name-property-schema",
+    "offers-property-schema",
+    "potential-action-property-schema",
+    "produces-property-schema",
+    "provider-property-schema",
+    "provider-mobility-property-schema",
+    "review-property-schema",
+    "same-as-property-schema",
+    "service-area-property-schema",
+    "service-audience-property-schema",
+    "service-output-property-schema",
+    "service-type-property-schema",
+    "slogan-property-schema",
+    "subject-of-property-schema",
+    "superseded-by-property-schema",
+    "terms-of-service-property-schema",
+    "url-property-schema",
 ]
 payment-charge-specification-schema = [
     "additional-type-property-schema",
@@ -46580,6 +46608,27 @@ qualifications-property-schema = [
     "text-schema",
 ]
 qualitative-value-schema = [
+    "additional-property-property-schema",
+    "additional-type-property-schema",
+    "alternate-name-property-schema",
+    "description-property-schema",
+    "disambiguating-description-property-schema",
+    "equal-property-schema",
+    "greater-property-schema",
+    "greater-or-equal-property-schema",
+    "identifier-property-schema",
+    "image-property-schema",
+    "lesser-property-schema",
+    "lesser-or-equal-property-schema",
+    "main-entity-of-page-property-schema",
+    "name-property-schema",
+    "non-equal-property-schema",
+    "potential-action-property-schema",
+    "same-as-property-schema",
+    "subject-of-property-schema",
+    "superseded-by-property-schema",
+    "url-property-schema",
+    "value-reference-property-schema",
 ]
 quantitative-value-distribution-schema = [
     "additional-type-property-schema",
@@ -52308,20 +52357,6 @@ sensory-unit-property-schema = [
 serial-number-property-schema = [
     "text-schema",
 ]
-series-schema = [
-    "additional-type-property-schema",
-    "alternate-name-property-schema",
-    "description-property-schema",
-    "disambiguating-description-property-schema",
-    "identifier-property-schema",
-    "image-property-schema",
-    "main-entity-of-page-property-schema",
-    "name-property-schema",
-    "potential-action-property-schema",
-    "same-as-property-schema",
-    "subject-of-property-schema",
-    "url-property-schema",
-]
 serious-adverse-outcome-property-schema = [
     "medical-entity-schema",
 ]
@@ -53246,6 +53281,33 @@ size-property-schema = [
     "text-schema",
 ]
 size-specification-schema = [
+    "additional-property-property-schema",
+    "additional-type-property-schema",
+    "alternate-name-property-schema",
+    "description-property-schema",
+    "disambiguating-description-property-schema",
+    "equal-property-schema",
+    "greater-property-schema",
+    "greater-or-equal-property-schema",
+    "has-measurement-property-schema",
+    "identifier-property-schema",
+    "image-property-schema",
+    "lesser-property-schema",
+    "lesser-or-equal-property-schema",
+    "main-entity-of-page-property-schema",
+    "name-property-schema",
+    "non-equal-property-schema",
+    "potential-action-property-schema",
+    "same-as-property-schema",
+    "size-group-property-schema",
+    "size-system-property-schema",
+    "subject-of-property-schema",
+    "suggested-age-property-schema",
+    "suggested-gender-property-schema",
+    "suggested-measurement-property-schema",
+    "superseded-by-property-schema",
+    "url-property-schema",
+    "value-reference-property-schema",
 ]
 size-system-enumeration-schema = [
 ]

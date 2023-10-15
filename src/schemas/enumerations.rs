@@ -275,22 +275,6 @@ mod r#drug_prescription_status;
 pub use r#drug_prescription_status::*;
 #[cfg(any(
     any(
-        feature = "eu-energy-efficiency-enumeration-schema",
-        feature = "pending-schema-section"
-    ),
-    doc
-))]
-mod r#eu_energy_efficiency_enumeration;
-#[cfg(any(
-    any(
-        feature = "eu-energy-efficiency-enumeration-schema",
-        feature = "pending-schema-section"
-    ),
-    doc
-))]
-pub use r#eu_energy_efficiency_enumeration::*;
-#[cfg(any(
-    any(
         feature = "energy-efficiency-enumeration-schema",
         feature = "pending-schema-section"
     ),
@@ -321,6 +305,22 @@ mod r#energy_star_energy_efficiency_enumeration;
     doc
 ))]
 pub use r#energy_star_energy_efficiency_enumeration::*;
+#[cfg(any(
+    any(
+        feature = "eu-energy-efficiency-enumeration-schema",
+        feature = "pending-schema-section"
+    ),
+    doc
+))]
+mod r#eu_energy_efficiency_enumeration;
+#[cfg(any(
+    any(
+        feature = "eu-energy-efficiency-enumeration-schema",
+        feature = "pending-schema-section"
+    ),
+    doc
+))]
+pub use r#eu_energy_efficiency_enumeration::*;
 #[cfg(any(
     any(
         feature = "event-attendance-mode-enumeration-schema",
@@ -874,16 +874,6 @@ mod r#order_status;
 ))]
 pub use r#order_status::*;
 #[cfg(any(
-    any(feature = "payment-card-schema", feature = "general-schema-section"),
-    doc
-))]
-mod r#payment_card;
-#[cfg(any(
-    any(feature = "payment-card-schema", feature = "general-schema-section"),
-    doc
-))]
-pub use r#payment_card::*;
-#[cfg(any(
     any(feature = "payment-method-schema", feature = "general-schema-section"),
     doc
 ))]
@@ -989,22 +979,6 @@ mod r#product_return_enumeration;
     doc
 ))]
 pub use r#product_return_enumeration::*;
-#[cfg(any(
-    any(
-        feature = "qualitative-value-schema",
-        feature = "general-schema-section"
-    ),
-    doc
-))]
-mod r#qualitative_value;
-#[cfg(any(
-    any(
-        feature = "qualitative-value-schema",
-        feature = "general-schema-section"
-    ),
-    doc
-))]
-pub use r#qualitative_value::*;
 #[cfg(any(
     any(
         feature = "refund-type-enumeration-schema",
@@ -1127,22 +1101,6 @@ mod r#size_group_enumeration;
     doc
 ))]
 pub use r#size_group_enumeration::*;
-#[cfg(any(
-    any(
-        feature = "size-specification-schema",
-        feature = "pending-schema-section"
-    ),
-    doc
-))]
-mod r#size_specification;
-#[cfg(any(
-    any(
-        feature = "size-specification-schema",
-        feature = "pending-schema-section"
-    ),
-    doc
-))]
-pub use r#size_specification::*;
 #[cfg(any(
     any(
         feature = "size-system-enumeration-schema",

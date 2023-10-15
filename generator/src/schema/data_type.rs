@@ -10,11 +10,10 @@ use rust_type::RustType;
 
 use crate::{
     doc_lines::DocLines,
-    read::map_schema_name,
-    schema::Schema,
+    schema::{map_schema_name, Schema},
     schema_section::SchemaSection,
     serde_attributes::serde_derive,
-    sparql::{SchemaQueries, SectionedSchemaQuerySolution},
+    sparql::{SchemaQueries, SchemaQuerySolution},
 };
 
 /// A Schema.org data type: <https://schema.org/DataType>
@@ -31,7 +30,7 @@ pub struct DataType {
 }
 
 impl Schema for DataType {
-    fn module_name() -> &'static str {
+    fn parent_module_name() -> &'static str {
         "data_types"
     }
 
@@ -55,18 +54,14 @@ impl Schema for DataType {
         vec![]
     }
 
-    fn read_solutions(store: &Store) -> Vec<SectionedSchemaQuerySolution> {
-        store.data_types_query()
-    }
-
-    fn from_solution(store: &Store, solution: SectionedSchemaQuerySolution) -> Self {
-        let transformable_type = store
-            .transformable_data_type_label_of_data_type_query(&solution.schema.identifiable.iri);
+    fn from_solution(store: &Store, solution: SchemaQuerySolution) -> Self {
+        let transformable_type =
+            store.get_transformable_data_type_label_of_data_type(&solution.iri);
         Self {
-            iri: solution.schema.identifiable.iri,
-            name: map_schema_name(solution.schema.labeled.label),
-            rust_type: RustType::from(transformable_type.label.as_str()),
-            section: solution.sectioned.section,
+            iri: solution.iri,
+            name: map_schema_name(solution.label),
+            rust_type: RustType::from(transformable_type.as_str()),
+            section: solution.section,
         }
     }
 }

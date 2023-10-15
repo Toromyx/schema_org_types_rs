@@ -9,11 +9,10 @@ use rayon::prelude::*;
 use crate::{
     doc_lines::DocLines,
     feature::Feature,
-    read::map_schema_name,
-    schema::{ReferencedSchema, Schema},
+    schema::{map_schema_name, ReferencedSchema, Schema},
     schema_section::SchemaSection,
     serde_attributes::{serde_derive, serde_untagged},
-    sparql::{SchemaQueries, SectionedSchemaQuerySolution},
+    sparql::{SchemaQueries, SchemaQuerySolution},
 };
 
 /// A schema.org property.
@@ -32,7 +31,7 @@ pub struct Property {
 }
 
 impl Schema for Property {
-    fn module_name() -> &'static str {
+    fn parent_module_name() -> &'static str {
         "properties"
     }
 
@@ -59,22 +58,18 @@ impl Schema for Property {
             .collect()
     }
 
-    fn read_solutions(store: &Store) -> Vec<SectionedSchemaQuerySolution> {
-        store.properties_query()
-    }
-
-    fn from_solution(store: &Store, solution: SectionedSchemaQuerySolution) -> Self {
+    fn from_solution(store: &Store, solution: SchemaQuerySolution) -> Self {
         let mut variants: Vec<ReferencedSchema> = store
-            .variants_of_property_query(&solution.schema.identifiable.iri)
+            .get_variants_of_property(&solution.iri)
             .into_par_iter()
             .map(ReferencedSchema::from)
             .collect();
         variants.sort_unstable();
         Self {
-            iri: solution.schema.identifiable.iri,
-            name: map_schema_name(solution.schema.labeled.label),
+            iri: solution.iri,
+            name: map_schema_name(solution.label),
             variants,
-            section: solution.sectioned.section,
+            section: solution.section,
         }
     }
 }

@@ -9447,22 +9447,6 @@ mod r#has_offer_catalog;
 pub use r#has_offer_catalog::*;
 #[cfg(any(
     any(
-        feature = "has-pos-property-schema",
-        feature = "general-schema-section"
-    ),
-    doc
-))]
-mod r#has_pos;
-#[cfg(any(
-    any(
-        feature = "has-pos-property-schema",
-        feature = "general-schema-section"
-    ),
-    doc
-))]
-pub use r#has_pos::*;
-#[cfg(any(
-    any(
         feature = "has-part-property-schema",
         feature = "general-schema-section"
     ),
@@ -9477,6 +9461,22 @@ mod r#has_part;
     doc
 ))]
 pub use r#has_part::*;
+#[cfg(any(
+    any(
+        feature = "has-pos-property-schema",
+        feature = "general-schema-section"
+    ),
+    doc
+))]
+mod r#has_pos;
+#[cfg(any(
+    any(
+        feature = "has-pos-property-schema",
+        feature = "general-schema-section"
+    ),
+    doc
+))]
+pub use r#has_pos::*;
 #[cfg(any(
     any(
         feature = "has-product-return-policy-property-schema",
@@ -14947,22 +14947,6 @@ mod r#part_of_system;
 pub use r#part_of_system::*;
 #[cfg(any(
     any(
-        feature = "part-of-tv-series-property-schema",
-        feature = "general-schema-section"
-    ),
-    doc
-))]
-mod r#part_of_tv_series;
-#[cfg(any(
-    any(
-        feature = "part-of-tv-series-property-schema",
-        feature = "general-schema-section"
-    ),
-    doc
-))]
-pub use r#part_of_tv_series::*;
-#[cfg(any(
-    any(
         feature = "part-of-trip-property-schema",
         feature = "pending-schema-section"
     ),
@@ -14977,6 +14961,22 @@ mod r#part_of_trip;
     doc
 ))]
 pub use r#part_of_trip::*;
+#[cfg(any(
+    any(
+        feature = "part-of-tv-series-property-schema",
+        feature = "general-schema-section"
+    ),
+    doc
+))]
+mod r#part_of_tv_series;
+#[cfg(any(
+    any(
+        feature = "part-of-tv-series-property-schema",
+        feature = "general-schema-section"
+    ),
+    doc
+))]
+pub use r#part_of_tv_series::*;
 #[cfg(any(
     any(
         feature = "participant-property-schema",
