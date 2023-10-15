@@ -121,8 +121,6 @@ pub trait SchemaQueries {
 
     fn is_enumeration(&self, iri: &str) -> bool;
 
-    fn has_direct_properties(&self, iri: &str) -> bool;
-
     fn is_property(&self, iri: &str) -> bool;
 
     fn get_properties_of_class(&self, class_iri: &str) -> Vec<SchemaQuerySolution>;
@@ -204,25 +202,12 @@ SELECT
     (COUNT(*) AS ?count)
 WHERE {{
     <{}> rdfs:subClassOf*/rdfs:subClassOf schema:Enumeration .
+    FILTER NOT EXISTS {{
+        ?property schema:domainIncludes <{}> .
+    }}
 }}
 "#,
-            PREFIXES, iri
-        );
-        let count_solution: CountSolution = self.query(&query).unwrap().into();
-        count_solution.0 > 0
-    }
-
-    fn has_direct_properties(&self, iri: &str) -> bool {
-        let query = format!(
-            r#"
-{}
-SELECT
-    (COUNT(?property) AS ?count)
-WHERE {{
-    ?property schema:domainIncludes <{}> .
-}}
-"#,
-            PREFIXES, iri
+            PREFIXES, iri, iri
         );
         let count_solution: CountSolution = self.query(&query).unwrap().into();
         count_solution.0 > 0

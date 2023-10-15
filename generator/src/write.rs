@@ -242,7 +242,7 @@ pub fn write(store: &Store, multi_progress: &MultiProgress) {
                 handle_data_type(solution);
                 break;
             }
-            if store.is_enumeration(&solution.iri) && !store.has_direct_properties(&solution.iri) {
+            if store.is_enumeration(&solution.iri) {
                 handle_enumeration(solution);
                 break;
             }
