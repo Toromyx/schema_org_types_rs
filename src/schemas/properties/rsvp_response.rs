@@ -5,12 +5,12 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum RsvpResponseProperty {
-    #[cfg(any(
-        any(
-            feature = "rsvp-response-type-schema",
-            feature = "general-schema-section"
-        ),
-        doc
-    ))]
-    RsvpResponseType(RsvpResponseType),
+	#[cfg(any(
+		any(
+			feature = "rsvp-response-type-schema",
+			feature = "general-schema-section"
+		),
+		doc
+	))]
+	RsvpResponseType(RsvpResponseType),
 }

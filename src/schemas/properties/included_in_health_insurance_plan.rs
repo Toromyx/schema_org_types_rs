@@ -5,12 +5,12 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum IncludedInHealthInsurancePlanProperty {
-    #[cfg(any(
-        any(
-            feature = "health-insurance-plan-schema",
-            feature = "pending-schema-section"
-        ),
-        doc
-    ))]
-    HealthInsurancePlan(HealthInsurancePlan),
+	#[cfg(any(
+		any(
+			feature = "health-insurance-plan-schema",
+			feature = "pending-schema-section"
+		),
+		doc
+	))]
+	HealthInsurancePlan(HealthInsurancePlan),
 }

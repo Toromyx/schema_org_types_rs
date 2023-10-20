@@ -5,12 +5,12 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum PostalCodeRangeProperty {
-    #[cfg(any(
-        any(
-            feature = "postal-code-range-specification-schema",
-            feature = "pending-schema-section"
-        ),
-        doc
-    ))]
-    PostalCodeRangeSpecification(PostalCodeRangeSpecification),
+	#[cfg(any(
+		any(
+			feature = "postal-code-range-specification-schema",
+			feature = "pending-schema-section"
+		),
+		doc
+	))]
+	PostalCodeRangeSpecification(PostalCodeRangeSpecification),
 }

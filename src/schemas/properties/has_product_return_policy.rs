@@ -5,12 +5,12 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum HasProductReturnPolicyProperty {
-    #[cfg(any(
-        any(
-            feature = "product-return-policy-schema",
-            feature = "attic-schema-section"
-        ),
-        doc
-    ))]
-    ProductReturnPolicy(ProductReturnPolicy),
+	#[cfg(any(
+		any(
+			feature = "product-return-policy-schema",
+			feature = "attic-schema-section"
+		),
+		doc
+	))]
+	ProductReturnPolicy(ProductReturnPolicy),
 }

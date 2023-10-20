@@ -5,9 +5,9 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum DistributionProperty {
-    #[cfg(any(
-        any(feature = "data-download-schema", feature = "general-schema-section"),
-        doc
-    ))]
-    DataDownload(DataDownload),
+	#[cfg(any(
+		any(feature = "data-download-schema", feature = "general-schema-section"),
+		doc
+	))]
+	DataDownload(DataDownload),
 }

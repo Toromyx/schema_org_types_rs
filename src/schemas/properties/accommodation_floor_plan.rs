@@ -5,9 +5,9 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum AccommodationFloorPlanProperty {
-    #[cfg(any(
-        any(feature = "floor-plan-schema", feature = "pending-schema-section"),
-        doc
-    ))]
-    FloorPlan(FloorPlan),
+	#[cfg(any(
+		any(feature = "floor-plan-schema", feature = "pending-schema-section"),
+		doc
+	))]
+	FloorPlan(FloorPlan),
 }

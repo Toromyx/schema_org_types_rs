@@ -5,12 +5,12 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum PartOfSystemProperty {
-    #[cfg(any(
-        any(
-            feature = "anatomical-system-schema",
-            feature = "health-lifesci-schema-section"
-        ),
-        doc
-    ))]
-    AnatomicalSystem(AnatomicalSystem),
+	#[cfg(any(
+		any(
+			feature = "anatomical-system-schema",
+			feature = "health-lifesci-schema-section"
+		),
+		doc
+	))]
+	AnatomicalSystem(AnatomicalSystem),
 }

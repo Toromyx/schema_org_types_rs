@@ -5,9 +5,9 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum DatasetProperty {
-    #[cfg(any(
-        any(feature = "dataset-schema", feature = "general-schema-section"),
-        doc
-    ))]
-    Dataset(Dataset),
+	#[cfg(any(
+		any(feature = "dataset-schema", feature = "general-schema-section"),
+		doc
+	))]
+	Dataset(Dataset),
 }

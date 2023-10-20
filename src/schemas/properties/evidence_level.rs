@@ -5,12 +5,12 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum EvidenceLevelProperty {
-    #[cfg(any(
-        any(
-            feature = "medical-evidence-level-schema",
-            feature = "health-lifesci-schema-section"
-        ),
-        doc
-    ))]
-    MedicalEvidenceLevel(MedicalEvidenceLevel),
+	#[cfg(any(
+		any(
+			feature = "medical-evidence-level-schema",
+			feature = "health-lifesci-schema-section"
+		),
+		doc
+	))]
+	MedicalEvidenceLevel(MedicalEvidenceLevel),
 }

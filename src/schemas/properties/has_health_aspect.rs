@@ -5,12 +5,12 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum HasHealthAspectProperty {
-    #[cfg(any(
-        any(
-            feature = "health-aspect-enumeration-schema",
-            feature = "pending-schema-section"
-        ),
-        doc
-    ))]
-    HealthAspectEnumeration(HealthAspectEnumeration),
+	#[cfg(any(
+		any(
+			feature = "health-aspect-enumeration-schema",
+			feature = "pending-schema-section"
+		),
+		doc
+	))]
+	HealthAspectEnumeration(HealthAspectEnumeration),
 }

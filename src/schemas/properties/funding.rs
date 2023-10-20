@@ -5,6 +5,6 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum FundingProperty {
-    #[cfg(any(any(feature = "grant-schema", feature = "pending-schema-section"), doc))]
-    Grant(Grant),
+	#[cfg(any(any(feature = "grant-schema", feature = "pending-schema-section"), doc))]
+	Grant(Grant),
 }

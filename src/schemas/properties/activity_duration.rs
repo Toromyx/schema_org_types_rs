@@ -5,17 +5,17 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum ActivityDurationProperty {
-    #[cfg(any(
-        any(feature = "duration-schema", feature = "general-schema-section"),
-        doc
-    ))]
-    Duration(Duration),
-    #[cfg(any(
-        any(
-            feature = "quantitative-value-schema",
-            feature = "general-schema-section"
-        ),
-        doc
-    ))]
-    QuantitativeValue(QuantitativeValue),
+	#[cfg(any(
+		any(feature = "duration-schema", feature = "general-schema-section"),
+		doc
+	))]
+	Duration(Duration),
+	#[cfg(any(
+		any(
+			feature = "quantitative-value-schema",
+			feature = "general-schema-section"
+		),
+		doc
+	))]
+	QuantitativeValue(QuantitativeValue),
 }

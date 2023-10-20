@@ -5,9 +5,9 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum OrderDeliveryProperty {
-    #[cfg(any(
-        any(feature = "parcel-delivery-schema", feature = "general-schema-section"),
-        doc
-    ))]
-    ParcelDelivery(ParcelDelivery),
+	#[cfg(any(
+		any(feature = "parcel-delivery-schema", feature = "general-schema-section"),
+		doc
+	))]
+	ParcelDelivery(ParcelDelivery),
 }

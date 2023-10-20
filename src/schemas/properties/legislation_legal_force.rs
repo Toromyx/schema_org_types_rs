@@ -5,12 +5,12 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum LegislationLegalForceProperty {
-    #[cfg(any(
-        any(
-            feature = "legal-force-status-schema",
-            feature = "pending-schema-section"
-        ),
-        doc
-    ))]
-    LegalForceStatus(LegalForceStatus),
+	#[cfg(any(
+		any(
+			feature = "legal-force-status-schema",
+			feature = "pending-schema-section"
+		),
+		doc
+	))]
+	LegalForceStatus(LegalForceStatus),
 }

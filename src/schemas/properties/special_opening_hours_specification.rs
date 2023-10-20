@@ -5,12 +5,12 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum SpecialOpeningHoursSpecificationProperty {
-    #[cfg(any(
-        any(
-            feature = "opening-hours-specification-schema",
-            feature = "general-schema-section"
-        ),
-        doc
-    ))]
-    OpeningHoursSpecification(OpeningHoursSpecification),
+	#[cfg(any(
+		any(
+			feature = "opening-hours-specification-schema",
+			feature = "general-schema-section"
+		),
+		doc
+	))]
+	OpeningHoursSpecification(OpeningHoursSpecification),
 }

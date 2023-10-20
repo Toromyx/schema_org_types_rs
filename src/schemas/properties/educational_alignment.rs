@@ -5,12 +5,12 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum EducationalAlignmentProperty {
-    #[cfg(any(
-        any(
-            feature = "alignment-object-schema",
-            feature = "general-schema-section"
-        ),
-        doc
-    ))]
-    AlignmentObject(AlignmentObject),
+	#[cfg(any(
+		any(
+			feature = "alignment-object-schema",
+			feature = "general-schema-section"
+		),
+		doc
+	))]
+	AlignmentObject(AlignmentObject),
 }

@@ -5,9 +5,9 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum HasMenuItemProperty {
-    #[cfg(any(
-        any(feature = "menu-item-schema", feature = "general-schema-section"),
-        doc
-    ))]
-    MenuItem(MenuItem),
+	#[cfg(any(
+		any(feature = "menu-item-schema", feature = "general-schema-section"),
+		doc
+	))]
+	MenuItem(MenuItem),
 }

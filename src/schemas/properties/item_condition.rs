@@ -5,12 +5,12 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum ItemConditionProperty {
-    #[cfg(any(
-        any(
-            feature = "offer-item-condition-schema",
-            feature = "general-schema-section"
-        ),
-        doc
-    ))]
-    OfferItemCondition(OfferItemCondition),
+	#[cfg(any(
+		any(
+			feature = "offer-item-condition-schema",
+			feature = "general-schema-section"
+		),
+		doc
+	))]
+	OfferItemCondition(OfferItemCondition),
 }

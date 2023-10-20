@@ -5,12 +5,12 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum IncludesAttractionProperty {
-    #[cfg(any(
-        any(
-            feature = "tourist-attraction-schema",
-            feature = "general-schema-section"
-        ),
-        doc
-    ))]
-    TouristAttraction(TouristAttraction),
+	#[cfg(any(
+		any(
+			feature = "tourist-attraction-schema",
+			feature = "general-schema-section"
+		),
+		doc
+	))]
+	TouristAttraction(TouristAttraction),
 }

@@ -5,12 +5,12 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum ActionAccessibilityRequirementProperty {
-    #[cfg(any(
-        any(
-            feature = "action-access-specification-schema",
-            feature = "general-schema-section"
-        ),
-        doc
-    ))]
-    ActionAccessSpecification(ActionAccessSpecification),
+	#[cfg(any(
+		any(
+			feature = "action-access-specification-schema",
+			feature = "general-schema-section"
+		),
+		doc
+	))]
+	ActionAccessSpecification(ActionAccessSpecification),
 }

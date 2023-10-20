@@ -5,8 +5,8 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 pub struct Float(pub crate::number_types::Number);
 impl std::ops::Deref for Float {
-    type Target = crate::number_types::Number;
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
+	type Target = crate::number_types::Number;
+	fn deref(&self) -> &Self::Target {
+		&self.0
+	}
 }

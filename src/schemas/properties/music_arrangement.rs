@@ -5,12 +5,12 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum MusicArrangementProperty {
-    #[cfg(any(
-        any(
-            feature = "music-composition-schema",
-            feature = "general-schema-section"
-        ),
-        doc
-    ))]
-    MusicComposition(MusicComposition),
+	#[cfg(any(
+		any(
+			feature = "music-composition-schema",
+			feature = "general-schema-section"
+		),
+		doc
+	))]
+	MusicComposition(MusicComposition),
 }

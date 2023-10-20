@@ -10,11 +10,11 @@ use quote::{__private::TokenStream, quote, ToTokens, TokenStreamExt};
 use rayon::prelude::*;
 
 use crate::{
-    doc_lines::DocLines,
-    schema::{map_schema_name, Schema},
-    schema_section::SchemaSection,
-    serde_attributes::serde_derive,
-    sparql::{SchemaQueries, SchemaQuerySolution},
+	doc_lines::DocLines,
+	schema::{map_schema_name, Schema},
+	schema_section::SchemaSection,
+	serde_attributes::serde_derive,
+	sparql::{SchemaQueries, SchemaQuerySolution},
 };
 
 /// A schema.org enumeration.
@@ -23,73 +23,73 @@ use crate::{
 #[derive(Debug, Clone, Derivative)]
 #[derivative(PartialEq, Eq, PartialOrd, Ord)]
 pub struct Enumeration {
-    #[derivative(PartialEq = "ignore", PartialOrd = "ignore", Ord = "ignore")]
-    pub iri: String,
-    pub name: String,
-    #[derivative(PartialEq = "ignore", PartialOrd = "ignore", Ord = "ignore")]
-    pub variants: Vec<EnumerationVariant>,
-    #[derivative(PartialEq = "ignore", PartialOrd = "ignore", Ord = "ignore")]
-    pub section: SchemaSection,
+	#[derivative(PartialEq = "ignore", PartialOrd = "ignore", Ord = "ignore")]
+	pub iri: String,
+	pub name: String,
+	#[derivative(PartialEq = "ignore", PartialOrd = "ignore", Ord = "ignore")]
+	pub variants: Vec<EnumerationVariant>,
+	#[derivative(PartialEq = "ignore", PartialOrd = "ignore", Ord = "ignore")]
+	pub section: SchemaSection,
 }
 
 impl Schema for Enumeration {
-    fn parent_module_name() -> &'static str {
-        "enumerations"
-    }
+	fn parent_module_name() -> &'static str {
+		"enumerations"
+	}
 
-    fn feature_name(&self) -> String {
-        format!("{}-schema", self.name.to_case(Case::Kebab))
-    }
+	fn feature_name(&self) -> String {
+		format!("{}-schema", self.name.to_case(Case::Kebab))
+	}
 
-    fn name(&self) -> &String {
-        &self.name
-    }
+	fn name(&self) -> &String {
+		&self.name
+	}
 
-    fn iri(&self) -> &String {
-        &self.iri
-    }
+	fn iri(&self) -> &String {
+		&self.iri
+	}
 
-    fn section(&self) -> &SchemaSection {
-        &self.section
-    }
+	fn section(&self) -> &SchemaSection {
+		&self.section
+	}
 
-    fn child_feature_names(&self) -> Vec<String> {
-        vec![]
-    }
+	fn child_feature_names(&self) -> Vec<String> {
+		vec![]
+	}
 
-    fn from_solution(store: &Store, solution: SchemaQuerySolution) -> Self {
-        let mut variants: Vec<EnumerationVariant> = store
-            .get_variants_of_enumeration(&solution.iri)
-            .into_par_iter()
-            .map(|solution| EnumerationVariant {
-                iri: solution.iri,
-                name: map_schema_name(solution.label),
-            })
-            .collect();
-        variants.sort_unstable();
-        Self {
-            iri: solution.iri,
-            name: map_schema_name(solution.label),
-            variants,
-            section: solution.section,
-        }
-    }
+	fn from_solution(store: &Store, solution: SchemaQuerySolution) -> Self {
+		let mut variants: Vec<EnumerationVariant> = store
+			.get_variants_of_enumeration(&solution.iri)
+			.into_par_iter()
+			.map(|solution| EnumerationVariant {
+				iri: solution.iri,
+				name: map_schema_name(solution.label),
+			})
+			.collect();
+		variants.sort_unstable();
+		Self {
+			iri: solution.iri,
+			name: map_schema_name(solution.label),
+			variants,
+			section: solution.section,
+		}
+	}
 }
 
 impl ToTokens for Enumeration {
-    fn to_tokens(&self, tokens: &mut TokenStream) {
-        let doc_lines = self.doc_lines_token_stream();
-        let serde_derive = serde_derive();
-        let name = TokenStream::from_str(&self.name.to_case(Case::UpperCamel)).unwrap();
-        let variants = &self.variants;
-        tokens.append_all(quote!(
-            #doc_lines
-            #[cfg_attr(feature = "derive-debug", derive(Debug))]
-            #[cfg_attr(feature = "derive-clone", derive(Clone))]
-            #serde_derive
-            pub enum #name {
-                #(#variants),*
-            }
-        ));
-    }
+	fn to_tokens(&self, tokens: &mut TokenStream) {
+		let doc_lines = self.doc_lines_token_stream();
+		let serde_derive = serde_derive();
+		let name = TokenStream::from_str(&self.name.to_case(Case::UpperCamel)).unwrap();
+		let variants = &self.variants;
+		tokens.append_all(quote!(
+			#doc_lines
+			#[cfg_attr(feature = "derive-debug", derive(Debug))]
+			#[cfg_attr(feature = "derive-clone", derive(Clone))]
+			#serde_derive
+			pub enum #name {
+				#(#variants),*
+			}
+		));
+	}
 }

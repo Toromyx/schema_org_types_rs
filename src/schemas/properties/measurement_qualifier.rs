@@ -5,9 +5,9 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum MeasurementQualifierProperty {
-    #[cfg(any(
-        any(feature = "enumeration-schema", feature = "general-schema-section"),
-        doc
-    ))]
-    Enumeration(Enumeration),
+	#[cfg(any(
+		any(feature = "enumeration-schema", feature = "general-schema-section"),
+		doc
+	))]
+	Enumeration(Enumeration),
 }

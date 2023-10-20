@@ -5,6 +5,6 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum IsEncodedByBioChemEntityProperty {
-    #[cfg(any(any(feature = "gene-schema", feature = "pending-schema-section"), doc))]
-    Gene(Gene),
+	#[cfg(any(any(feature = "gene-schema", feature = "pending-schema-section"), doc))]
+	Gene(Gene),
 }

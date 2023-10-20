@@ -5,12 +5,12 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum VehicleEngineProperty {
-    #[cfg(any(
-        any(
-            feature = "engine-specification-schema",
-            feature = "general-schema-section"
-        ),
-        doc
-    ))]
-    EngineSpecification(EngineSpecification),
+	#[cfg(any(
+		any(
+			feature = "engine-specification-schema",
+			feature = "general-schema-section"
+		),
+		doc
+	))]
+	EngineSpecification(EngineSpecification),
 }

@@ -5,12 +5,12 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum TrainingSalaryProperty {
-    #[cfg(any(
-        any(
-            feature = "monetary-amount-distribution-schema",
-            feature = "general-schema-section"
-        ),
-        doc
-    ))]
-    MonetaryAmountDistribution(MonetaryAmountDistribution),
+	#[cfg(any(
+		any(
+			feature = "monetary-amount-distribution-schema",
+			feature = "general-schema-section"
+		),
+		doc
+	))]
+	MonetaryAmountDistribution(MonetaryAmountDistribution),
 }

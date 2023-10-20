@@ -5,12 +5,12 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum HasDigitalDocumentPermissionProperty {
-    #[cfg(any(
-        any(
-            feature = "digital-document-permission-schema",
-            feature = "general-schema-section"
-        ),
-        doc
-    ))]
-    DigitalDocumentPermission(DigitalDocumentPermission),
+	#[cfg(any(
+		any(
+			feature = "digital-document-permission-schema",
+			feature = "general-schema-section"
+		),
+		doc
+	))]
+	DigitalDocumentPermission(DigitalDocumentPermission),
 }

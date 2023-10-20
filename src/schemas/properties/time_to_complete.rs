@@ -5,9 +5,9 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum TimeToCompleteProperty {
-    #[cfg(any(
-        any(feature = "duration-schema", feature = "general-schema-section"),
-        doc
-    ))]
-    Duration(Duration),
+	#[cfg(any(
+		any(feature = "duration-schema", feature = "general-schema-section"),
+		doc
+	))]
+	Duration(Duration),
 }

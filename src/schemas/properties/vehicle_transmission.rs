@@ -5,16 +5,16 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum VehicleTransmissionProperty {
-    #[cfg(any(
-        any(
-            feature = "qualitative-value-schema",
-            feature = "general-schema-section"
-        ),
-        doc
-    ))]
-    QualitativeValue(QualitativeValue),
-    #[cfg(any(any(feature = "url-schema", feature = "general-schema-section"), doc))]
-    Url(Url),
-    #[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
-    Text(Text),
+	#[cfg(any(
+		any(
+			feature = "qualitative-value-schema",
+			feature = "general-schema-section"
+		),
+		doc
+	))]
+	QualitativeValue(QualitativeValue),
+	#[cfg(any(any(feature = "url-schema", feature = "general-schema-section"), doc))]
+	Url(Url),
+	#[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
+	Text(Text),
 }

@@ -5,12 +5,12 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum IdentifyingExamProperty {
-    #[cfg(any(
-        any(
-            feature = "physical-exam-schema",
-            feature = "health-lifesci-schema-section"
-        ),
-        doc
-    ))]
-    PhysicalExam(PhysicalExam),
+	#[cfg(any(
+		any(
+			feature = "physical-exam-schema",
+			feature = "health-lifesci-schema-section"
+		),
+		doc
+	))]
+	PhysicalExam(PhysicalExam),
 }

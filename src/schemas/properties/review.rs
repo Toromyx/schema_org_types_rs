@@ -5,9 +5,9 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum ReviewProperty {
-    #[cfg(any(
-        any(feature = "review-schema", feature = "general-schema-section"),
-        doc
-    ))]
-    Review(Review),
+	#[cfg(any(
+		any(feature = "review-schema", feature = "general-schema-section"),
+		doc
+	))]
+	Review(Review),
 }

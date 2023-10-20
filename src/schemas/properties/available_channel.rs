@@ -5,9 +5,9 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum AvailableChannelProperty {
-    #[cfg(any(
-        any(feature = "service-channel-schema", feature = "general-schema-section"),
-        doc
-    ))]
-    ServiceChannel(ServiceChannel),
+	#[cfg(any(
+		any(feature = "service-channel-schema", feature = "general-schema-section"),
+		doc
+	))]
+	ServiceChannel(ServiceChannel),
 }

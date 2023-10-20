@@ -5,12 +5,12 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum ActionStatusProperty {
-    #[cfg(any(
-        any(
-            feature = "action-status-type-schema",
-            feature = "general-schema-section"
-        ),
-        doc
-    ))]
-    ActionStatusType(ActionStatusType),
+	#[cfg(any(
+		any(
+			feature = "action-status-type-schema",
+			feature = "general-schema-section"
+		),
+		doc
+	))]
+	ActionStatusType(ActionStatusType),
 }

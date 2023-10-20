@@ -5,9 +5,9 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum DepartureBoatTerminalProperty {
-    #[cfg(any(
-        any(feature = "boat-terminal-schema", feature = "pending-schema-section"),
-        doc
-    ))]
-    BoatTerminal(BoatTerminal),
+	#[cfg(any(
+		any(feature = "boat-terminal-schema", feature = "pending-schema-section"),
+		doc
+	))]
+	BoatTerminal(BoatTerminal),
 }

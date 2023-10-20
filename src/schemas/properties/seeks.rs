@@ -5,9 +5,9 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum SeeksProperty {
-    #[cfg(any(
-        any(feature = "demand-schema", feature = "general-schema-section"),
-        doc
-    ))]
-    Demand(Demand),
+	#[cfg(any(
+		any(feature = "demand-schema", feature = "general-schema-section"),
+		doc
+	))]
+	Demand(Demand),
 }

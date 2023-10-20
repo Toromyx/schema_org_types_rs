@@ -5,12 +5,12 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum WarrantyProperty {
-    #[cfg(any(
-        any(
-            feature = "warranty-promise-schema",
-            feature = "general-schema-section"
-        ),
-        doc
-    ))]
-    WarrantyPromise(WarrantyPromise),
+	#[cfg(any(
+		any(
+			feature = "warranty-promise-schema",
+			feature = "general-schema-section"
+		),
+		doc
+	))]
+	WarrantyPromise(WarrantyPromise),
 }

@@ -5,12 +5,12 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum ContactOptionProperty {
-    #[cfg(any(
-        any(
-            feature = "contact-point-option-schema",
-            feature = "general-schema-section"
-        ),
-        doc
-    ))]
-    ContactPointOption(ContactPointOption),
+	#[cfg(any(
+		any(
+			feature = "contact-point-option-schema",
+			feature = "general-schema-section"
+		),
+		doc
+	))]
+	ContactPointOption(ContactPointOption),
 }

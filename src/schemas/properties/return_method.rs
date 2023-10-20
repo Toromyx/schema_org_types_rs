@@ -5,12 +5,12 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum ReturnMethodProperty {
-    #[cfg(any(
-        any(
-            feature = "return-method-enumeration-schema",
-            feature = "pending-schema-section"
-        ),
-        doc
-    ))]
-    ReturnMethodEnumeration(ReturnMethodEnumeration),
+	#[cfg(any(
+		any(
+			feature = "return-method-enumeration-schema",
+			feature = "pending-schema-section"
+		),
+		doc
+	))]
+	ReturnMethodEnumeration(ReturnMethodEnumeration),
 }

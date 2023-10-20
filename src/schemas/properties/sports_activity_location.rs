@@ -5,12 +5,12 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum SportsActivityLocationProperty {
-    #[cfg(any(
-        any(
-            feature = "sports-activity-location-schema",
-            feature = "general-schema-section"
-        ),
-        doc
-    ))]
-    SportsActivityLocation(SportsActivityLocation),
+	#[cfg(any(
+		any(
+			feature = "sports-activity-location-schema",
+			feature = "general-schema-section"
+		),
+		doc
+	))]
+	SportsActivityLocation(SportsActivityLocation),
 }

@@ -5,9 +5,9 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum MediaItemAppearanceProperty {
-    #[cfg(any(
-        any(feature = "media-object-schema", feature = "general-schema-section"),
-        doc
-    ))]
-    MediaObject(MediaObject),
+	#[cfg(any(
+		any(feature = "media-object-schema", feature = "general-schema-section"),
+		doc
+	))]
+	MediaObject(MediaObject),
 }

@@ -5,16 +5,16 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum MerchantReturnDaysProperty {
-    #[cfg(any(any(feature = "date-schema", feature = "general-schema-section"), doc))]
-    Date(Date),
-    #[cfg(any(
-        any(feature = "date-time-schema", feature = "general-schema-section"),
-        doc
-    ))]
-    DateTime(DateTime),
-    #[cfg(any(
-        any(feature = "integer-schema", feature = "general-schema-section"),
-        doc
-    ))]
-    Integer(Integer),
+	#[cfg(any(any(feature = "date-schema", feature = "general-schema-section"), doc))]
+	Date(Date),
+	#[cfg(any(
+		any(feature = "date-time-schema", feature = "general-schema-section"),
+		doc
+	))]
+	DateTime(DateTime),
+	#[cfg(any(
+		any(feature = "integer-schema", feature = "general-schema-section"),
+		doc
+	))]
+	Integer(Integer),
 }

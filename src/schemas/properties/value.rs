@@ -5,24 +5,24 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum ValueProperty {
-    #[cfg(any(
-        any(
-            feature = "structured-value-schema",
-            feature = "general-schema-section"
-        ),
-        doc
-    ))]
-    StructuredValue(StructuredValue),
-    #[cfg(any(
-        any(feature = "boolean-schema", feature = "general-schema-section"),
-        doc
-    ))]
-    Boolean(Boolean),
-    #[cfg(any(
-        any(feature = "number-schema", feature = "general-schema-section"),
-        doc
-    ))]
-    Number(Number),
-    #[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
-    Text(Text),
+	#[cfg(any(
+		any(
+			feature = "structured-value-schema",
+			feature = "general-schema-section"
+		),
+		doc
+	))]
+	StructuredValue(StructuredValue),
+	#[cfg(any(
+		any(feature = "boolean-schema", feature = "general-schema-section"),
+		doc
+	))]
+	Boolean(Boolean),
+	#[cfg(any(
+		any(feature = "number-schema", feature = "general-schema-section"),
+		doc
+	))]
+	Number(Number),
+	#[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
+	Text(Text),
 }

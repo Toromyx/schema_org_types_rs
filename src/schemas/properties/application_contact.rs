@@ -5,9 +5,9 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum ApplicationContactProperty {
-    #[cfg(any(
-        any(feature = "contact-point-schema", feature = "general-schema-section"),
-        doc
-    ))]
-    ContactPoint(ContactPoint),
+	#[cfg(any(
+		any(feature = "contact-point-schema", feature = "general-schema-section"),
+		doc
+	))]
+	ContactPoint(ContactPoint),
 }

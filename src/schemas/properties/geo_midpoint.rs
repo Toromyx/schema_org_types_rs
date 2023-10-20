@@ -5,9 +5,9 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum GeoMidpointProperty {
-    #[cfg(any(
-        any(feature = "geo-coordinates-schema", feature = "general-schema-section"),
-        doc
-    ))]
-    GeoCoordinates(GeoCoordinates),
+	#[cfg(any(
+		any(feature = "geo-coordinates-schema", feature = "general-schema-section"),
+		doc
+	))]
+	GeoCoordinates(GeoCoordinates),
 }

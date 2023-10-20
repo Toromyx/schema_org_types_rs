@@ -5,12 +5,12 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum InteractionStatisticProperty {
-    #[cfg(any(
-        any(
-            feature = "interaction-counter-schema",
-            feature = "general-schema-section"
-        ),
-        doc
-    ))]
-    InteractionCounter(InteractionCounter),
+	#[cfg(any(
+		any(
+			feature = "interaction-counter-schema",
+			feature = "general-schema-section"
+		),
+		doc
+	))]
+	InteractionCounter(InteractionCounter),
 }

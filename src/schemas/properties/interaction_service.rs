@@ -5,17 +5,17 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum InteractionServiceProperty {
-    #[cfg(any(
-        any(
-            feature = "software-application-schema",
-            feature = "general-schema-section"
-        ),
-        doc
-    ))]
-    SoftwareApplication(SoftwareApplication),
-    #[cfg(any(
-        any(feature = "web-site-schema", feature = "general-schema-section"),
-        doc
-    ))]
-    WebSite(WebSite),
+	#[cfg(any(
+		any(
+			feature = "software-application-schema",
+			feature = "general-schema-section"
+		),
+		doc
+	))]
+	SoftwareApplication(SoftwareApplication),
+	#[cfg(any(
+		any(feature = "web-site-schema", feature = "general-schema-section"),
+		doc
+	))]
+	WebSite(WebSite),
 }

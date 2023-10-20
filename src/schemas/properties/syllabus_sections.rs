@@ -5,9 +5,9 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum SyllabusSectionsProperty {
-    #[cfg(any(
-        any(feature = "syllabus-schema", feature = "pending-schema-section"),
-        doc
-    ))]
-    Syllabus(Syllabus),
+	#[cfg(any(
+		any(feature = "syllabus-schema", feature = "pending-schema-section"),
+		doc
+	))]
+	Syllabus(Syllabus),
 }

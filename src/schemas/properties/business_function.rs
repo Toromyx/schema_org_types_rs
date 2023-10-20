@@ -5,12 +5,12 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum BusinessFunctionProperty {
-    #[cfg(any(
-        any(
-            feature = "business-function-schema",
-            feature = "general-schema-section"
-        ),
-        doc
-    ))]
-    BusinessFunction(BusinessFunction),
+	#[cfg(any(
+		any(
+			feature = "business-function-schema",
+			feature = "general-schema-section"
+		),
+		doc
+	))]
+	BusinessFunction(BusinessFunction),
 }

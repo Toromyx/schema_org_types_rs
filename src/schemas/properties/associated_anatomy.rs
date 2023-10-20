@@ -5,28 +5,28 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum AssociatedAnatomyProperty {
-    #[cfg(any(
-        any(
-            feature = "anatomical-structure-schema",
-            feature = "health-lifesci-schema-section"
-        ),
-        doc
-    ))]
-    AnatomicalStructure(AnatomicalStructure),
-    #[cfg(any(
-        any(
-            feature = "anatomical-system-schema",
-            feature = "health-lifesci-schema-section"
-        ),
-        doc
-    ))]
-    AnatomicalSystem(AnatomicalSystem),
-    #[cfg(any(
-        any(
-            feature = "superficial-anatomy-schema",
-            feature = "health-lifesci-schema-section"
-        ),
-        doc
-    ))]
-    SuperficialAnatomy(SuperficialAnatomy),
+	#[cfg(any(
+		any(
+			feature = "anatomical-structure-schema",
+			feature = "health-lifesci-schema-section"
+		),
+		doc
+	))]
+	AnatomicalStructure(AnatomicalStructure),
+	#[cfg(any(
+		any(
+			feature = "anatomical-system-schema",
+			feature = "health-lifesci-schema-section"
+		),
+		doc
+	))]
+	AnatomicalSystem(AnatomicalSystem),
+	#[cfg(any(
+		any(
+			feature = "superficial-anatomy-schema",
+			feature = "health-lifesci-schema-section"
+		),
+		doc
+	))]
+	SuperficialAnatomy(SuperficialAnatomy),
 }

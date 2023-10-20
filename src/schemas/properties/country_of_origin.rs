@@ -5,9 +5,9 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum CountryOfOriginProperty {
-    #[cfg(any(
-        any(feature = "country-schema", feature = "general-schema-section"),
-        doc
-    ))]
-    Country(Country),
+	#[cfg(any(
+		any(feature = "country-schema", feature = "general-schema-section"),
+		doc
+	))]
+	Country(Country),
 }

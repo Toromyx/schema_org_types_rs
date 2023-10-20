@@ -5,12 +5,12 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum PregnancyCategoryProperty {
-    #[cfg(any(
-        any(
-            feature = "drug-pregnancy-category-schema",
-            feature = "health-lifesci-schema-section"
-        ),
-        doc
-    ))]
-    DrugPregnancyCategory(DrugPregnancyCategory),
+	#[cfg(any(
+		any(
+			feature = "drug-pregnancy-category-schema",
+			feature = "health-lifesci-schema-section"
+		),
+		doc
+	))]
+	DrugPregnancyCategory(DrugPregnancyCategory),
 }

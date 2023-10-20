@@ -5,12 +5,12 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum MeasurementDenominatorProperty {
-    #[cfg(any(
-        any(
-            feature = "statistical-variable-schema",
-            feature = "pending-schema-section"
-        ),
-        doc
-    ))]
-    StatisticalVariable(StatisticalVariable),
+	#[cfg(any(
+		any(
+			feature = "statistical-variable-schema",
+			feature = "pending-schema-section"
+		),
+		doc
+	))]
+	StatisticalVariable(StatisticalVariable),
 }

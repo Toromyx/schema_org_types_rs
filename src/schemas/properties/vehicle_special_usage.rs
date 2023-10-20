@@ -5,11 +5,11 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum VehicleSpecialUsageProperty {
-    #[cfg(any(
-        any(feature = "car-usage-type-schema", feature = "auto-schema-section"),
-        doc
-    ))]
-    CarUsageType(CarUsageType),
-    #[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
-    Text(Text),
+	#[cfg(any(
+		any(feature = "car-usage-type-schema", feature = "auto-schema-section"),
+		doc
+	))]
+	CarUsageType(CarUsageType),
+	#[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
+	Text(Text),
 }

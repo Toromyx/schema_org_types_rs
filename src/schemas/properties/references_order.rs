@@ -5,6 +5,6 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum ReferencesOrderProperty {
-    #[cfg(any(any(feature = "order-schema", feature = "general-schema-section"), doc))]
-    Order(Order),
+	#[cfg(any(any(feature = "order-schema", feature = "general-schema-section"), doc))]
+	Order(Order),
 }

@@ -5,9 +5,9 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum PartOfTvSeriesProperty {
-    #[cfg(any(
-        any(feature = "tv-series-schema", feature = "general-schema-section"),
-        doc
-    ))]
-    TvSeries(TvSeries),
+	#[cfg(any(
+		any(feature = "tv-series-schema", feature = "general-schema-section"),
+		doc
+	))]
+	TvSeries(TvSeries),
 }

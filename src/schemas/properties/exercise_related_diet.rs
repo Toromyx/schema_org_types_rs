@@ -5,9 +5,9 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum ExerciseRelatedDietProperty {
-    #[cfg(any(
-        any(feature = "diet-schema", feature = "health-lifesci-schema-section"),
-        doc
-    ))]
-    Diet(Diet),
+	#[cfg(any(
+		any(feature = "diet-schema", feature = "health-lifesci-schema-section"),
+		doc
+	))]
+	Diet(Diet),
 }

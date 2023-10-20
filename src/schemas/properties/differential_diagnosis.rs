@@ -5,12 +5,12 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum DifferentialDiagnosisProperty {
-    #[cfg(any(
-        any(
-            feature = "d-dx-element-schema",
-            feature = "health-lifesci-schema-section"
-        ),
-        doc
-    ))]
-    DDxElement(DDxElement),
+	#[cfg(any(
+		any(
+			feature = "d-dx-element-schema",
+			feature = "health-lifesci-schema-section"
+		),
+		doc
+	))]
+	DDxElement(DDxElement),
 }

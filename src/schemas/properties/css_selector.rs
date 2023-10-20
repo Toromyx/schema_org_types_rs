@@ -5,12 +5,12 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum CssSelectorProperty {
-    #[cfg(any(
-        any(
-            feature = "css-selector-type-schema",
-            feature = "pending-schema-section"
-        ),
-        doc
-    ))]
-    CssSelectorType(CssSelectorType),
+	#[cfg(any(
+		any(
+			feature = "css-selector-type-schema",
+			feature = "pending-schema-section"
+		),
+		doc
+	))]
+	CssSelectorType(CssSelectorType),
 }

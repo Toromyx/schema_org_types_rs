@@ -5,22 +5,22 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum LegalStatusProperty {
-    #[cfg(any(
-        any(
-            feature = "drug-legal-status-schema",
-            feature = "health-lifesci-schema-section"
-        ),
-        doc
-    ))]
-    DrugLegalStatus(DrugLegalStatus),
-    #[cfg(any(
-        any(
-            feature = "medical-enumeration-schema",
-            feature = "health-lifesci-schema-section"
-        ),
-        doc
-    ))]
-    MedicalEnumeration(MedicalEnumeration),
-    #[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
-    Text(Text),
+	#[cfg(any(
+		any(
+			feature = "drug-legal-status-schema",
+			feature = "health-lifesci-schema-section"
+		),
+		doc
+	))]
+	DrugLegalStatus(DrugLegalStatus),
+	#[cfg(any(
+		any(
+			feature = "medical-enumeration-schema",
+			feature = "health-lifesci-schema-section"
+		),
+		doc
+	))]
+	MedicalEnumeration(MedicalEnumeration),
+	#[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
+	Text(Text),
 }

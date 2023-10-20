@@ -5,9 +5,9 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum DistanceProperty {
-    #[cfg(any(
-        any(feature = "distance-schema", feature = "general-schema-section"),
-        doc
-    ))]
-    Distance(Distance),
+	#[cfg(any(
+		any(feature = "distance-schema", feature = "general-schema-section"),
+		doc
+	))]
+	Distance(Distance),
 }

@@ -5,6 +5,6 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum SaturatedFatContentProperty {
-    #[cfg(any(any(feature = "mass-schema", feature = "general-schema-section"), doc))]
-    Mass(Mass),
+	#[cfg(any(any(feature = "mass-schema", feature = "general-schema-section"), doc))]
+	Mass(Mass),
 }

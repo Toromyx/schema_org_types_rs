@@ -5,12 +5,12 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum HasMerchantReturnPolicyProperty {
-    #[cfg(any(
-        any(
-            feature = "merchant-return-policy-schema",
-            feature = "pending-schema-section"
-        ),
-        doc
-    ))]
-    MerchantReturnPolicy(MerchantReturnPolicy),
+	#[cfg(any(
+		any(
+			feature = "merchant-return-policy-schema",
+			feature = "pending-schema-section"
+		),
+		doc
+	))]
+	MerchantReturnPolicy(MerchantReturnPolicy),
 }

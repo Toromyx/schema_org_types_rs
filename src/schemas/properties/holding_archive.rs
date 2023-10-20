@@ -5,12 +5,12 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum HoldingArchiveProperty {
-    #[cfg(any(
-        any(
-            feature = "archive-organization-schema",
-            feature = "pending-schema-section"
-        ),
-        doc
-    ))]
-    ArchiveOrganization(ArchiveOrganization),
+	#[cfg(any(
+		any(
+			feature = "archive-organization-schema",
+			feature = "pending-schema-section"
+		),
+		doc
+	))]
+	ArchiveOrganization(ArchiveOrganization),
 }

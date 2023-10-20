@@ -5,8 +5,8 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 pub struct Number(pub crate::number_types::Number);
 impl std::ops::Deref for Number {
-    type Target = crate::number_types::Number;
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
+	type Target = crate::number_types::Number;
+	fn deref(&self) -> &Self::Target {
+		&self.0
+	}
 }

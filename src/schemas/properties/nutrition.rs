@@ -5,12 +5,12 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum NutritionProperty {
-    #[cfg(any(
-        any(
-            feature = "nutrition-information-schema",
-            feature = "general-schema-section"
-        ),
-        doc
-    ))]
-    NutritionInformation(NutritionInformation),
+	#[cfg(any(
+		any(
+			feature = "nutrition-information-schema",
+			feature = "general-schema-section"
+		),
+		doc
+	))]
+	NutritionInformation(NutritionInformation),
 }

@@ -5,14 +5,14 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum IsVariantOfProperty {
-    #[cfg(any(
-        any(feature = "product-group-schema", feature = "pending-schema-section"),
-        doc
-    ))]
-    ProductGroup(ProductGroup),
-    #[cfg(any(
-        any(feature = "product-model-schema", feature = "general-schema-section"),
-        doc
-    ))]
-    ProductModel(ProductModel),
+	#[cfg(any(
+		any(feature = "product-group-schema", feature = "pending-schema-section"),
+		doc
+	))]
+	ProductGroup(ProductGroup),
+	#[cfg(any(
+		any(feature = "product-model-schema", feature = "general-schema-section"),
+		doc
+	))]
+	ProductModel(ProductModel),
 }

@@ -5,12 +5,12 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum AmenityFeatureProperty {
-    #[cfg(any(
-        any(
-            feature = "location-feature-specification-schema",
-            feature = "general-schema-section"
-        ),
-        doc
-    ))]
-    LocationFeatureSpecification(LocationFeatureSpecification),
+	#[cfg(any(
+		any(
+			feature = "location-feature-specification-schema",
+			feature = "general-schema-section"
+		),
+		doc
+	))]
+	LocationFeatureSpecification(LocationFeatureSpecification),
 }

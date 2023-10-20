@@ -5,6 +5,6 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum MeasuredPropertyProperty {
-    #[cfg(any(any(feature = "property-schema", feature = "meta-schema-section"), doc))]
-    Property(Property),
+	#[cfg(any(any(feature = "property-schema", feature = "meta-schema-section"), doc))]
+	Property(Property),
 }

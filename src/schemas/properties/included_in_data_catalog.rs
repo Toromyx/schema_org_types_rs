@@ -5,9 +5,9 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum IncludedInDataCatalogProperty {
-    #[cfg(any(
-        any(feature = "data-catalog-schema", feature = "general-schema-section"),
-        doc
-    ))]
-    DataCatalog(DataCatalog),
+	#[cfg(any(
+		any(feature = "data-catalog-schema", feature = "general-schema-section"),
+		doc
+	))]
+	DataCatalog(DataCatalog),
 }

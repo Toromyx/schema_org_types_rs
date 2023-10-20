@@ -5,9 +5,9 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum BiologicalRoleProperty {
-    #[cfg(any(
-        any(feature = "defined-term-schema", feature = "pending-schema-section"),
-        doc
-    ))]
-    DefinedTerm(DefinedTerm),
+	#[cfg(any(
+		any(feature = "defined-term-schema", feature = "pending-schema-section"),
+		doc
+	))]
+	DefinedTerm(DefinedTerm),
 }

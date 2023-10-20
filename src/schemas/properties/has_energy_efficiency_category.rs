@@ -5,12 +5,12 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum HasEnergyEfficiencyCategoryProperty {
-    #[cfg(any(
-        any(
-            feature = "energy-efficiency-enumeration-schema",
-            feature = "pending-schema-section"
-        ),
-        doc
-    ))]
-    EnergyEfficiencyEnumeration(EnergyEfficiencyEnumeration),
+	#[cfg(any(
+		any(
+			feature = "energy-efficiency-enumeration-schema",
+			feature = "pending-schema-section"
+		),
+		doc
+	))]
+	EnergyEfficiencyEnumeration(EnergyEfficiencyEnumeration),
 }

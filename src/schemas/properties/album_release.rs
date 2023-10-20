@@ -5,9 +5,9 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum AlbumReleaseProperty {
-    #[cfg(any(
-        any(feature = "music-release-schema", feature = "general-schema-section"),
-        doc
-    ))]
-    MusicRelease(MusicRelease),
+	#[cfg(any(
+		any(feature = "music-release-schema", feature = "general-schema-section"),
+		doc
+	))]
+	MusicRelease(MusicRelease),
 }

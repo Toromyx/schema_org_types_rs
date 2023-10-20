@@ -5,9 +5,9 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum AppliesToDeliveryMethodProperty {
-    #[cfg(any(
-        any(feature = "delivery-method-schema", feature = "general-schema-section"),
-        doc
-    ))]
-    DeliveryMethod(DeliveryMethod),
+	#[cfg(any(
+		any(feature = "delivery-method-schema", feature = "general-schema-section"),
+		doc
+	))]
+	DeliveryMethod(DeliveryMethod),
 }

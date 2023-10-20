@@ -5,14 +5,14 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum GameAvailabilityTypeProperty {
-    #[cfg(any(
-        any(
-            feature = "game-availability-enumeration-schema",
-            feature = "pending-schema-section"
-        ),
-        doc
-    ))]
-    GameAvailabilityEnumeration(GameAvailabilityEnumeration),
-    #[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
-    Text(Text),
+	#[cfg(any(
+		any(
+			feature = "game-availability-enumeration-schema",
+			feature = "pending-schema-section"
+		),
+		doc
+	))]
+	GameAvailabilityEnumeration(GameAvailabilityEnumeration),
+	#[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
+	Text(Text),
 }

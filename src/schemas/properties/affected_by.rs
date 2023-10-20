@@ -5,9 +5,9 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum AffectedByProperty {
-    #[cfg(any(
-        any(feature = "drug-schema", feature = "health-lifesci-schema-section"),
-        doc
-    ))]
-    Drug(Drug),
+	#[cfg(any(
+		any(feature = "drug-schema", feature = "health-lifesci-schema-section"),
+		doc
+	))]
+	Drug(Drug),
 }

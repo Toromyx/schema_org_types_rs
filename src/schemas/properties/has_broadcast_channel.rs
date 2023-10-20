@@ -5,12 +5,12 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum HasBroadcastChannelProperty {
-    #[cfg(any(
-        any(
-            feature = "broadcast-channel-schema",
-            feature = "general-schema-section"
-        ),
-        doc
-    ))]
-    BroadcastChannel(BroadcastChannel),
+	#[cfg(any(
+		any(
+			feature = "broadcast-channel-schema",
+			feature = "general-schema-section"
+		),
+		doc
+	))]
+	BroadcastChannel(BroadcastChannel),
 }

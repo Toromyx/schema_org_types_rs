@@ -5,12 +5,12 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum GovernmentBenefitsInfoProperty {
-    #[cfg(any(
-        any(
-            feature = "government-service-schema",
-            feature = "general-schema-section"
-        ),
-        doc
-    ))]
-    GovernmentService(GovernmentService),
+	#[cfg(any(
+		any(
+			feature = "government-service-schema",
+			feature = "general-schema-section"
+		),
+		doc
+	))]
+	GovernmentService(GovernmentService),
 }

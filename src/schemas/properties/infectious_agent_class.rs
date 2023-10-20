@@ -5,12 +5,12 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum InfectiousAgentClassProperty {
-    #[cfg(any(
-        any(
-            feature = "infectious-agent-class-schema",
-            feature = "health-lifesci-schema-section"
-        ),
-        doc
-    ))]
-    InfectiousAgentClass(InfectiousAgentClass),
+	#[cfg(any(
+		any(
+			feature = "infectious-agent-class-schema",
+			feature = "health-lifesci-schema-section"
+		),
+		doc
+	))]
+	InfectiousAgentClass(InfectiousAgentClass),
 }

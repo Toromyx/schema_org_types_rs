@@ -5,9 +5,9 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum NerveProperty {
-    #[cfg(any(
-        any(feature = "nerve-schema", feature = "health-lifesci-schema-section"),
-        doc
-    ))]
-    Nerve(Nerve),
+	#[cfg(any(
+		any(feature = "nerve-schema", feature = "health-lifesci-schema-section"),
+		doc
+	))]
+	Nerve(Nerve),
 }

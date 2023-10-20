@@ -5,12 +5,12 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum EventStatusProperty {
-    #[cfg(any(
-        any(
-            feature = "event-status-type-schema",
-            feature = "general-schema-section"
-        ),
-        doc
-    ))]
-    EventStatusType(EventStatusType),
+	#[cfg(any(
+		any(
+			feature = "event-status-type-schema",
+			feature = "general-schema-section"
+		),
+		doc
+	))]
+	EventStatusType(EventStatusType),
 }

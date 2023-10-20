@@ -4,265 +4,265 @@ use super::*;
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 pub struct LinkRole {
-    #[cfg(any(
-        any(
-            feature = "additional-type-property-schema",
-            feature = "general-schema-section"
-        ),
-        doc
-    ))]
-    #[cfg_attr(feature = "serde", serde(rename = "additionalType"))]
-    #[cfg_attr(feature = "serde", serde(default))]
-    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-    )]
-    pub r#additional_type: Vec<AdditionalTypeProperty>,
-    #[cfg(any(
-        any(
-            feature = "alternate-name-property-schema",
-            feature = "general-schema-section"
-        ),
-        doc
-    ))]
-    #[cfg_attr(feature = "serde", serde(rename = "alternateName"))]
-    #[cfg_attr(feature = "serde", serde(default))]
-    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-    )]
-    pub r#alternate_name: Vec<AlternateNameProperty>,
-    #[cfg(any(
-        any(
-            feature = "description-property-schema",
-            feature = "general-schema-section"
-        ),
-        doc
-    ))]
-    #[cfg_attr(feature = "serde", serde(rename = "description"))]
-    #[cfg_attr(feature = "serde", serde(default))]
-    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-    )]
-    pub r#description: Vec<DescriptionProperty>,
-    #[cfg(any(
-        any(
-            feature = "disambiguating-description-property-schema",
-            feature = "general-schema-section"
-        ),
-        doc
-    ))]
-    #[cfg_attr(feature = "serde", serde(rename = "disambiguatingDescription"))]
-    #[cfg_attr(feature = "serde", serde(default))]
-    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-    )]
-    pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
-    #[cfg(any(
-        any(
-            feature = "end-date-property-schema",
-            feature = "general-schema-section"
-        ),
-        doc
-    ))]
-    #[cfg_attr(feature = "serde", serde(rename = "endDate"))]
-    #[cfg_attr(feature = "serde", serde(default))]
-    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-    )]
-    pub r#end_date: Vec<EndDateProperty>,
-    #[cfg(any(
-        any(
-            feature = "identifier-property-schema",
-            feature = "general-schema-section"
-        ),
-        doc
-    ))]
-    #[cfg_attr(feature = "serde", serde(rename = "identifier"))]
-    #[cfg_attr(feature = "serde", serde(default))]
-    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-    )]
-    pub r#identifier: Vec<IdentifierProperty>,
-    #[cfg(any(
-        any(feature = "image-property-schema", feature = "general-schema-section"),
-        doc
-    ))]
-    #[cfg_attr(feature = "serde", serde(rename = "image"))]
-    #[cfg_attr(feature = "serde", serde(default))]
-    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-    )]
-    pub r#image: Vec<ImageProperty>,
-    #[cfg(any(
-        any(
-            feature = "in-language-property-schema",
-            feature = "general-schema-section"
-        ),
-        doc
-    ))]
-    #[cfg_attr(feature = "serde", serde(rename = "inLanguage"))]
-    #[cfg_attr(feature = "serde", serde(default))]
-    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-    )]
-    pub r#in_language: Vec<InLanguageProperty>,
-    #[cfg(any(
-        any(
-            feature = "link-relationship-property-schema",
-            feature = "pending-schema-section"
-        ),
-        doc
-    ))]
-    #[cfg_attr(feature = "serde", serde(rename = "linkRelationship"))]
-    #[cfg_attr(feature = "serde", serde(default))]
-    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-    )]
-    pub r#link_relationship: Vec<LinkRelationshipProperty>,
-    #[cfg(any(
-        any(
-            feature = "main-entity-of-page-property-schema",
-            feature = "general-schema-section"
-        ),
-        doc
-    ))]
-    #[cfg_attr(feature = "serde", serde(rename = "mainEntityOfPage"))]
-    #[cfg_attr(feature = "serde", serde(default))]
-    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-    )]
-    pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
-    #[cfg(any(
-        any(feature = "name-property-schema", feature = "general-schema-section"),
-        doc
-    ))]
-    #[cfg_attr(feature = "serde", serde(rename = "name"))]
-    #[cfg_attr(feature = "serde", serde(default))]
-    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-    )]
-    pub r#name: Vec<NameProperty>,
-    #[cfg(any(
-        any(
-            feature = "named-position-property-schema",
-            feature = "general-schema-section"
-        ),
-        doc
-    ))]
-    #[cfg_attr(feature = "serde", serde(rename = "namedPosition"))]
-    #[cfg_attr(feature = "serde", serde(default))]
-    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-    )]
-    pub r#named_position: Vec<NamedPositionProperty>,
-    #[cfg(any(
-        any(
-            feature = "potential-action-property-schema",
-            feature = "general-schema-section"
-        ),
-        doc
-    ))]
-    #[cfg_attr(feature = "serde", serde(rename = "potentialAction"))]
-    #[cfg_attr(feature = "serde", serde(default))]
-    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-    )]
-    pub r#potential_action: Vec<PotentialActionProperty>,
-    #[cfg(any(
-        any(
-            feature = "role-name-property-schema",
-            feature = "general-schema-section"
-        ),
-        doc
-    ))]
-    #[cfg_attr(feature = "serde", serde(rename = "roleName"))]
-    #[cfg_attr(feature = "serde", serde(default))]
-    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-    )]
-    pub r#role_name: Vec<RoleNameProperty>,
-    #[cfg(any(
-        any(
-            feature = "same-as-property-schema",
-            feature = "general-schema-section"
-        ),
-        doc
-    ))]
-    #[cfg_attr(feature = "serde", serde(rename = "sameAs"))]
-    #[cfg_attr(feature = "serde", serde(default))]
-    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-    )]
-    pub r#same_as: Vec<SameAsProperty>,
-    #[cfg(any(
-        any(
-            feature = "start-date-property-schema",
-            feature = "general-schema-section"
-        ),
-        doc
-    ))]
-    #[cfg_attr(feature = "serde", serde(rename = "startDate"))]
-    #[cfg_attr(feature = "serde", serde(default))]
-    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-    )]
-    pub r#start_date: Vec<StartDateProperty>,
-    #[cfg(any(
-        any(
-            feature = "subject-of-property-schema",
-            feature = "general-schema-section"
-        ),
-        doc
-    ))]
-    #[cfg_attr(feature = "serde", serde(rename = "subjectOf"))]
-    #[cfg_attr(feature = "serde", serde(default))]
-    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-    )]
-    pub r#subject_of: Vec<SubjectOfProperty>,
-    #[cfg(any(
-        any(feature = "url-property-schema", feature = "general-schema-section"),
-        doc
-    ))]
-    #[cfg_attr(feature = "serde", serde(rename = "url"))]
-    #[cfg_attr(feature = "serde", serde(default))]
-    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-    #[cfg_attr(
-        feature = "serde",
-        serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-    )]
-    pub r#url: Vec<UrlProperty>,
+	#[cfg(any(
+		any(
+			feature = "additional-type-property-schema",
+			feature = "general-schema-section"
+		),
+		doc
+	))]
+	#[cfg_attr(feature = "serde", serde(rename = "additionalType"))]
+	#[cfg_attr(feature = "serde", serde(default))]
+	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+	#[cfg_attr(
+		feature = "serde",
+		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+	)]
+	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	#[cfg(any(
+		any(
+			feature = "alternate-name-property-schema",
+			feature = "general-schema-section"
+		),
+		doc
+	))]
+	#[cfg_attr(feature = "serde", serde(rename = "alternateName"))]
+	#[cfg_attr(feature = "serde", serde(default))]
+	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+	#[cfg_attr(
+		feature = "serde",
+		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+	)]
+	pub r#alternate_name: Vec<AlternateNameProperty>,
+	#[cfg(any(
+		any(
+			feature = "description-property-schema",
+			feature = "general-schema-section"
+		),
+		doc
+	))]
+	#[cfg_attr(feature = "serde", serde(rename = "description"))]
+	#[cfg_attr(feature = "serde", serde(default))]
+	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+	#[cfg_attr(
+		feature = "serde",
+		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+	)]
+	pub r#description: Vec<DescriptionProperty>,
+	#[cfg(any(
+		any(
+			feature = "disambiguating-description-property-schema",
+			feature = "general-schema-section"
+		),
+		doc
+	))]
+	#[cfg_attr(feature = "serde", serde(rename = "disambiguatingDescription"))]
+	#[cfg_attr(feature = "serde", serde(default))]
+	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+	#[cfg_attr(
+		feature = "serde",
+		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+	)]
+	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	#[cfg(any(
+		any(
+			feature = "end-date-property-schema",
+			feature = "general-schema-section"
+		),
+		doc
+	))]
+	#[cfg_attr(feature = "serde", serde(rename = "endDate"))]
+	#[cfg_attr(feature = "serde", serde(default))]
+	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+	#[cfg_attr(
+		feature = "serde",
+		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+	)]
+	pub r#end_date: Vec<EndDateProperty>,
+	#[cfg(any(
+		any(
+			feature = "identifier-property-schema",
+			feature = "general-schema-section"
+		),
+		doc
+	))]
+	#[cfg_attr(feature = "serde", serde(rename = "identifier"))]
+	#[cfg_attr(feature = "serde", serde(default))]
+	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+	#[cfg_attr(
+		feature = "serde",
+		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+	)]
+	pub r#identifier: Vec<IdentifierProperty>,
+	#[cfg(any(
+		any(feature = "image-property-schema", feature = "general-schema-section"),
+		doc
+	))]
+	#[cfg_attr(feature = "serde", serde(rename = "image"))]
+	#[cfg_attr(feature = "serde", serde(default))]
+	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+	#[cfg_attr(
+		feature = "serde",
+		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+	)]
+	pub r#image: Vec<ImageProperty>,
+	#[cfg(any(
+		any(
+			feature = "in-language-property-schema",
+			feature = "general-schema-section"
+		),
+		doc
+	))]
+	#[cfg_attr(feature = "serde", serde(rename = "inLanguage"))]
+	#[cfg_attr(feature = "serde", serde(default))]
+	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+	#[cfg_attr(
+		feature = "serde",
+		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+	)]
+	pub r#in_language: Vec<InLanguageProperty>,
+	#[cfg(any(
+		any(
+			feature = "link-relationship-property-schema",
+			feature = "pending-schema-section"
+		),
+		doc
+	))]
+	#[cfg_attr(feature = "serde", serde(rename = "linkRelationship"))]
+	#[cfg_attr(feature = "serde", serde(default))]
+	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+	#[cfg_attr(
+		feature = "serde",
+		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+	)]
+	pub r#link_relationship: Vec<LinkRelationshipProperty>,
+	#[cfg(any(
+		any(
+			feature = "main-entity-of-page-property-schema",
+			feature = "general-schema-section"
+		),
+		doc
+	))]
+	#[cfg_attr(feature = "serde", serde(rename = "mainEntityOfPage"))]
+	#[cfg_attr(feature = "serde", serde(default))]
+	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+	#[cfg_attr(
+		feature = "serde",
+		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+	)]
+	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	#[cfg(any(
+		any(feature = "name-property-schema", feature = "general-schema-section"),
+		doc
+	))]
+	#[cfg_attr(feature = "serde", serde(rename = "name"))]
+	#[cfg_attr(feature = "serde", serde(default))]
+	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+	#[cfg_attr(
+		feature = "serde",
+		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+	)]
+	pub r#name: Vec<NameProperty>,
+	#[cfg(any(
+		any(
+			feature = "named-position-property-schema",
+			feature = "general-schema-section"
+		),
+		doc
+	))]
+	#[cfg_attr(feature = "serde", serde(rename = "namedPosition"))]
+	#[cfg_attr(feature = "serde", serde(default))]
+	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+	#[cfg_attr(
+		feature = "serde",
+		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+	)]
+	pub r#named_position: Vec<NamedPositionProperty>,
+	#[cfg(any(
+		any(
+			feature = "potential-action-property-schema",
+			feature = "general-schema-section"
+		),
+		doc
+	))]
+	#[cfg_attr(feature = "serde", serde(rename = "potentialAction"))]
+	#[cfg_attr(feature = "serde", serde(default))]
+	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+	#[cfg_attr(
+		feature = "serde",
+		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+	)]
+	pub r#potential_action: Vec<PotentialActionProperty>,
+	#[cfg(any(
+		any(
+			feature = "role-name-property-schema",
+			feature = "general-schema-section"
+		),
+		doc
+	))]
+	#[cfg_attr(feature = "serde", serde(rename = "roleName"))]
+	#[cfg_attr(feature = "serde", serde(default))]
+	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+	#[cfg_attr(
+		feature = "serde",
+		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+	)]
+	pub r#role_name: Vec<RoleNameProperty>,
+	#[cfg(any(
+		any(
+			feature = "same-as-property-schema",
+			feature = "general-schema-section"
+		),
+		doc
+	))]
+	#[cfg_attr(feature = "serde", serde(rename = "sameAs"))]
+	#[cfg_attr(feature = "serde", serde(default))]
+	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+	#[cfg_attr(
+		feature = "serde",
+		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+	)]
+	pub r#same_as: Vec<SameAsProperty>,
+	#[cfg(any(
+		any(
+			feature = "start-date-property-schema",
+			feature = "general-schema-section"
+		),
+		doc
+	))]
+	#[cfg_attr(feature = "serde", serde(rename = "startDate"))]
+	#[cfg_attr(feature = "serde", serde(default))]
+	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+	#[cfg_attr(
+		feature = "serde",
+		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+	)]
+	pub r#start_date: Vec<StartDateProperty>,
+	#[cfg(any(
+		any(
+			feature = "subject-of-property-schema",
+			feature = "general-schema-section"
+		),
+		doc
+	))]
+	#[cfg_attr(feature = "serde", serde(rename = "subjectOf"))]
+	#[cfg_attr(feature = "serde", serde(default))]
+	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+	#[cfg_attr(
+		feature = "serde",
+		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+	)]
+	pub r#subject_of: Vec<SubjectOfProperty>,
+	#[cfg(any(
+		any(feature = "url-property-schema", feature = "general-schema-section"),
+		doc
+	))]
+	#[cfg_attr(feature = "serde", serde(rename = "url"))]
+	#[cfg_attr(feature = "serde", serde(default))]
+	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+	#[cfg_attr(
+		feature = "serde",
+		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+	)]
+	pub r#url: Vec<UrlProperty>,
 }

@@ -5,9 +5,9 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum InPlaylistProperty {
-    #[cfg(any(
-        any(feature = "music-playlist-schema", feature = "general-schema-section"),
-        doc
-    ))]
-    MusicPlaylist(MusicPlaylist),
+	#[cfg(any(
+		any(feature = "music-playlist-schema", feature = "general-schema-section"),
+		doc
+	))]
+	MusicPlaylist(MusicPlaylist),
 }

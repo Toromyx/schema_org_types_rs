@@ -3,8 +3,8 @@
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 pub enum ContactPointOption {
-    /// <https://schema.org/HearingImpairedSupported>
-    HearingImpairedSupported,
-    /// <https://schema.org/TollFree>
-    TollFree,
+	/// <https://schema.org/HearingImpairedSupported>
+	HearingImpairedSupported,
+	/// <https://schema.org/TollFree>
+	TollFree,
 }

@@ -5,8 +5,8 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 pub struct Url(pub ::url::Url);
 impl std::ops::Deref for Url {
-    type Target = ::url::Url;
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
+	type Target = ::url::Url;
+	fn deref(&self) -> &Self::Target {
+		&self.0
+	}
 }

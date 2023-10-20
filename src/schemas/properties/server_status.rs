@@ -5,12 +5,12 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum ServerStatusProperty {
-    #[cfg(any(
-        any(
-            feature = "game-server-status-schema",
-            feature = "general-schema-section"
-        ),
-        doc
-    ))]
-    GameServerStatus(GameServerStatus),
+	#[cfg(any(
+		any(
+			feature = "game-server-status-schema",
+			feature = "general-schema-section"
+		),
+		doc
+	))]
+	GameServerStatus(GameServerStatus),
 }

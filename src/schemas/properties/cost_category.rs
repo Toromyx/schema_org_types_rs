@@ -5,12 +5,12 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum CostCategoryProperty {
-    #[cfg(any(
-        any(
-            feature = "drug-cost-category-schema",
-            feature = "health-lifesci-schema-section"
-        ),
-        doc
-    ))]
-    DrugCostCategory(DrugCostCategory),
+	#[cfg(any(
+		any(
+			feature = "drug-cost-category-schema",
+			feature = "health-lifesci-schema-section"
+		),
+		doc
+	))]
+	DrugCostCategory(DrugCostCategory),
 }

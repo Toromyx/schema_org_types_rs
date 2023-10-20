@@ -5,9 +5,9 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum HasOfferCatalogProperty {
-    #[cfg(any(
-        any(feature = "offer-catalog-schema", feature = "general-schema-section"),
-        doc
-    ))]
-    OfferCatalog(OfferCatalog),
+	#[cfg(any(
+		any(feature = "offer-catalog-schema", feature = "general-schema-section"),
+		doc
+	))]
+	OfferCatalog(OfferCatalog),
 }

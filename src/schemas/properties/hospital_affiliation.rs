@@ -5,9 +5,9 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum HospitalAffiliationProperty {
-    #[cfg(any(
-        any(feature = "hospital-schema", feature = "general-schema-section"),
-        doc
-    ))]
-    Hospital(Hospital),
+	#[cfg(any(
+		any(feature = "hospital-schema", feature = "general-schema-section"),
+		doc
+	))]
+	Hospital(Hospital),
 }

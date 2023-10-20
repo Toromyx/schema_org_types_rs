@@ -5,9 +5,9 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum HasCourseProperty {
-    #[cfg(any(
-        any(feature = "course-schema", feature = "general-schema-section"),
-        doc
-    ))]
-    Course(Course),
+	#[cfg(any(
+		any(feature = "course-schema", feature = "general-schema-section"),
+		doc
+	))]
+	Course(Course),
 }

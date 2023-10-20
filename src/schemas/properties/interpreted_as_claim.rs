@@ -5,6 +5,6 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum InterpretedAsClaimProperty {
-    #[cfg(any(any(feature = "claim-schema", feature = "pending-schema-section"), doc))]
-    Claim(Claim),
+	#[cfg(any(any(feature = "claim-schema", feature = "pending-schema-section"), doc))]
+	Claim(Claim),
 }

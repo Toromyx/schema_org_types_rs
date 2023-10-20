@@ -5,12 +5,12 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum PriceComponentTypeProperty {
-    #[cfg(any(
-        any(
-            feature = "price-component-type-enumeration-schema",
-            feature = "pending-schema-section"
-        ),
-        doc
-    ))]
-    PriceComponentTypeEnumeration(PriceComponentTypeEnumeration),
+	#[cfg(any(
+		any(
+			feature = "price-component-type-enumeration-schema",
+			feature = "pending-schema-section"
+		),
+		doc
+	))]
+	PriceComponentTypeEnumeration(PriceComponentTypeEnumeration),
 }

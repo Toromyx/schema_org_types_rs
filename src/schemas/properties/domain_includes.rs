@@ -5,6 +5,6 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum DomainIncludesProperty {
-    #[cfg(any(any(feature = "class-schema", feature = "meta-schema-section"), doc))]
-    Class(Class),
+	#[cfg(any(any(feature = "class-schema", feature = "meta-schema-section"), doc))]
+	Class(Class),
 }

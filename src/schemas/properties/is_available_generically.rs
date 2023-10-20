@@ -5,9 +5,9 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum IsAvailableGenericallyProperty {
-    #[cfg(any(
-        any(feature = "boolean-schema", feature = "general-schema-section"),
-        doc
-    ))]
-    Boolean(Boolean),
+	#[cfg(any(
+		any(feature = "boolean-schema", feature = "general-schema-section"),
+		doc
+	))]
+	Boolean(Boolean),
 }

@@ -5,8 +5,8 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 pub struct Text(pub String);
 impl std::ops::Deref for Text {
-    type Target = String;
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
+	type Target = String;
+	fn deref(&self) -> &Self::Target {
+		&self.0
+	}
 }

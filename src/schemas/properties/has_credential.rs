@@ -5,12 +5,12 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum HasCredentialProperty {
-    #[cfg(any(
-        any(
-            feature = "educational-occupational-credential-schema",
-            feature = "pending-schema-section"
-        ),
-        doc
-    ))]
-    EducationalOccupationalCredential(EducationalOccupationalCredential),
+	#[cfg(any(
+		any(
+			feature = "educational-occupational-credential-schema",
+			feature = "pending-schema-section"
+		),
+		doc
+	))]
+	EducationalOccupationalCredential(EducationalOccupationalCredential),
 }

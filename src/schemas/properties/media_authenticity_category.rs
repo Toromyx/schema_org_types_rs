@@ -5,12 +5,12 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum MediaAuthenticityCategoryProperty {
-    #[cfg(any(
-        any(
-            feature = "media-manipulation-rating-enumeration-schema",
-            feature = "pending-schema-section"
-        ),
-        doc
-    ))]
-    MediaManipulationRatingEnumeration(MediaManipulationRatingEnumeration),
+	#[cfg(any(
+		any(
+			feature = "media-manipulation-rating-enumeration-schema",
+			feature = "pending-schema-section"
+		),
+		doc
+	))]
+	MediaManipulationRatingEnumeration(MediaManipulationRatingEnumeration),
 }

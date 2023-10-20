@@ -5,9 +5,9 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum OriginatesFromProperty {
-    #[cfg(any(
-        any(feature = "vessel-schema", feature = "health-lifesci-schema-section"),
-        doc
-    ))]
-    Vessel(Vessel),
+	#[cfg(any(
+		any(feature = "vessel-schema", feature = "health-lifesci-schema-section"),
+		doc
+	))]
+	Vessel(Vessel),
 }

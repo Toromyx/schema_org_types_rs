@@ -5,12 +5,12 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum StudyDesignProperty {
-    #[cfg(any(
-        any(
-            feature = "medical-observational-study-design-schema",
-            feature = "health-lifesci-schema-section"
-        ),
-        doc
-    ))]
-    MedicalObservationalStudyDesign(MedicalObservationalStudyDesign),
+	#[cfg(any(
+		any(
+			feature = "medical-observational-study-design-schema",
+			feature = "health-lifesci-schema-section"
+		),
+		doc
+	))]
+	MedicalObservationalStudyDesign(MedicalObservationalStudyDesign),
 }

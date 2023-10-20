@@ -5,12 +5,12 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum SteeringPositionProperty {
-    #[cfg(any(
-        any(
-            feature = "steering-position-value-schema",
-            feature = "general-schema-section"
-        ),
-        doc
-    ))]
-    SteeringPositionValue(SteeringPositionValue),
+	#[cfg(any(
+		any(
+			feature = "steering-position-value-schema",
+			feature = "general-schema-section"
+		),
+		doc
+	))]
+	SteeringPositionValue(SteeringPositionValue),
 }

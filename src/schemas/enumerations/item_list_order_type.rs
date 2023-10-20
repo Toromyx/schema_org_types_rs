@@ -3,10 +3,10 @@
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 pub enum ItemListOrderType {
-    /// <https://schema.org/ItemListOrderAscending>
-    ItemListOrderAscending,
-    /// <https://schema.org/ItemListOrderDescending>
-    ItemListOrderDescending,
-    /// <https://schema.org/ItemListUnordered>
-    ItemListUnordered,
+	/// <https://schema.org/ItemListOrderAscending>
+	ItemListOrderAscending,
+	/// <https://schema.org/ItemListOrderDescending>
+	ItemListOrderDescending,
+	/// <https://schema.org/ItemListUnordered>
+	ItemListUnordered,
 }

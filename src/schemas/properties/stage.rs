@@ -5,12 +5,12 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum StageProperty {
-    #[cfg(any(
-        any(
-            feature = "medical-condition-stage-schema",
-            feature = "health-lifesci-schema-section"
-        ),
-        doc
-    ))]
-    MedicalConditionStage(MedicalConditionStage),
+	#[cfg(any(
+		any(
+			feature = "medical-condition-stage-schema",
+			feature = "health-lifesci-schema-section"
+		),
+		doc
+	))]
+	MedicalConditionStage(MedicalConditionStage),
 }

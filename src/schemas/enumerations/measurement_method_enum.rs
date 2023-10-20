@@ -3,6 +3,6 @@
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 pub enum MeasurementMethodEnum {
-    /// <https://schema.org/ExampleMeasurementMethodEnum>
-    ExampleMeasurementMethodEnum,
+	/// <https://schema.org/ExampleMeasurementMethodEnum>
+	ExampleMeasurementMethodEnum,
 }

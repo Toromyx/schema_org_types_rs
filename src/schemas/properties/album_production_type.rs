@@ -5,12 +5,12 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum AlbumProductionTypeProperty {
-    #[cfg(any(
-        any(
-            feature = "music-album-production-type-schema",
-            feature = "general-schema-section"
-        ),
-        doc
-    ))]
-    MusicAlbumProductionType(MusicAlbumProductionType),
+	#[cfg(any(
+		any(
+			feature = "music-album-production-type-schema",
+			feature = "general-schema-section"
+		),
+		doc
+	))]
+	MusicAlbumProductionType(MusicAlbumProductionType),
 }

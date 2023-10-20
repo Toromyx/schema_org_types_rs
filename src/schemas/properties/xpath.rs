@@ -5,9 +5,9 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum XpathProperty {
-    #[cfg(any(
-        any(feature = "x-path-type-schema", feature = "pending-schema-section"),
-        doc
-    ))]
-    XPathType(XPathType),
+	#[cfg(any(
+		any(feature = "x-path-type-schema", feature = "pending-schema-section"),
+		doc
+	))]
+	XPathType(XPathType),
 }

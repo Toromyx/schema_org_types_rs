@@ -5,12 +5,12 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum DoseScheduleProperty {
-    #[cfg(any(
-        any(
-            feature = "dose-schedule-schema",
-            feature = "health-lifesci-schema-section"
-        ),
-        doc
-    ))]
-    DoseSchedule(DoseSchedule),
+	#[cfg(any(
+		any(
+			feature = "dose-schedule-schema",
+			feature = "health-lifesci-schema-section"
+		),
+		doc
+	))]
+	DoseSchedule(DoseSchedule),
 }

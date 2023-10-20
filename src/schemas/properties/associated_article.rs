@@ -5,9 +5,9 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum AssociatedArticleProperty {
-    #[cfg(any(
-        any(feature = "news-article-schema", feature = "general-schema-section"),
-        doc
-    ))]
-    NewsArticle(NewsArticle),
+	#[cfg(any(
+		any(feature = "news-article-schema", feature = "general-schema-section"),
+		doc
+	))]
+	NewsArticle(NewsArticle),
 }

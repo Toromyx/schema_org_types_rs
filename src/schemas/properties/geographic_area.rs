@@ -5,12 +5,12 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum GeographicAreaProperty {
-    #[cfg(any(
-        any(
-            feature = "administrative-area-schema",
-            feature = "general-schema-section"
-        ),
-        doc
-    ))]
-    AdministrativeArea(AdministrativeArea),
+	#[cfg(any(
+		any(
+			feature = "administrative-area-schema",
+			feature = "general-schema-section"
+		),
+		doc
+	))]
+	AdministrativeArea(AdministrativeArea),
 }

@@ -5,9 +5,9 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum GameServerProperty {
-    #[cfg(any(
-        any(feature = "game-server-schema", feature = "general-schema-section"),
-        doc
-    ))]
-    GameServer(GameServer),
+	#[cfg(any(
+		any(feature = "game-server-schema", feature = "general-schema-section"),
+		doc
+	))]
+	GameServer(GameServer),
 }

@@ -5,12 +5,12 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum ItemDefectReturnLabelSourceProperty {
-    #[cfg(any(
-        any(
-            feature = "return-label-source-enumeration-schema",
-            feature = "pending-schema-section"
-        ),
-        doc
-    ))]
-    ReturnLabelSourceEnumeration(ReturnLabelSourceEnumeration),
+	#[cfg(any(
+		any(
+			feature = "return-label-source-enumeration-schema",
+			feature = "pending-schema-section"
+		),
+		doc
+	))]
+	ReturnLabelSourceEnumeration(ReturnLabelSourceEnumeration),
 }

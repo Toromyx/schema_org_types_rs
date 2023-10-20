@@ -5,8 +5,8 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum ObservationAboutProperty {
-    #[cfg(any(any(feature = "place-schema", feature = "general-schema-section"), doc))]
-    Place(Place),
-    #[cfg(any(any(feature = "thing-schema", feature = "general-schema-section"), doc))]
-    Thing(Thing),
+	#[cfg(any(any(feature = "place-schema", feature = "general-schema-section"), doc))]
+	Place(Place),
+	#[cfg(any(any(feature = "thing-schema", feature = "general-schema-section"), doc))]
+	Thing(Thing),
 }

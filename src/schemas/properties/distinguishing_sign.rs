@@ -5,12 +5,12 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum DistinguishingSignProperty {
-    #[cfg(any(
-        any(
-            feature = "medical-sign-or-symptom-schema",
-            feature = "health-lifesci-schema-section"
-        ),
-        doc
-    ))]
-    MedicalSignOrSymptom(MedicalSignOrSymptom),
+	#[cfg(any(
+		any(
+			feature = "medical-sign-or-symptom-schema",
+			feature = "health-lifesci-schema-section"
+		),
+		doc
+	))]
+	MedicalSignOrSymptom(MedicalSignOrSymptom),
 }

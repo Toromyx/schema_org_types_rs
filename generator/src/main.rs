@@ -17,7 +17,7 @@ mod write;
 
 #[tokio::main]
 async fn main() {
-    let multi_progress = MultiProgress::new();
-    let store = read().await;
-    write(&store, &multi_progress);
+	let multi_progress = MultiProgress::new();
+	let store = read().await;
+	write(&store, &multi_progress);
 }

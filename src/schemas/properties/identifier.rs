@@ -5,13 +5,13 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum IdentifierProperty {
-    #[cfg(any(
-        any(feature = "property-value-schema", feature = "general-schema-section"),
-        doc
-    ))]
-    PropertyValue(PropertyValue),
-    #[cfg(any(any(feature = "url-schema", feature = "general-schema-section"), doc))]
-    Url(Url),
-    #[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
-    Text(Text),
+	#[cfg(any(
+		any(feature = "property-value-schema", feature = "general-schema-section"),
+		doc
+	))]
+	PropertyValue(PropertyValue),
+	#[cfg(any(any(feature = "url-schema", feature = "general-schema-section"), doc))]
+	Url(Url),
+	#[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
+	Text(Text),
 }

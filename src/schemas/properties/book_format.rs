@@ -5,12 +5,12 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum BookFormatProperty {
-    #[cfg(any(
-        any(
-            feature = "book-format-type-schema",
-            feature = "general-schema-section"
-        ),
-        doc
-    ))]
-    BookFormatType(BookFormatType),
+	#[cfg(any(
+		any(
+			feature = "book-format-type-schema",
+			feature = "general-schema-section"
+		),
+		doc
+	))]
+	BookFormatType(BookFormatType),
 }

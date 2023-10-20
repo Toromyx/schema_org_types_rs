@@ -5,12 +5,12 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum AvailableStrengthProperty {
-    #[cfg(any(
-        any(
-            feature = "drug-strength-schema",
-            feature = "health-lifesci-schema-section"
-        ),
-        doc
-    ))]
-    DrugStrength(DrugStrength),
+	#[cfg(any(
+		any(
+			feature = "drug-strength-schema",
+			feature = "health-lifesci-schema-section"
+		),
+		doc
+	))]
+	DrugStrength(DrugStrength),
 }

@@ -5,12 +5,12 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum ParentServiceProperty {
-    #[cfg(any(
-        any(
-            feature = "broadcast-service-schema",
-            feature = "general-schema-section"
-        ),
-        doc
-    ))]
-    BroadcastService(BroadcastService),
+	#[cfg(any(
+		any(
+			feature = "broadcast-service-schema",
+			feature = "general-schema-section"
+		),
+		doc
+	))]
+	BroadcastService(BroadcastService),
 }

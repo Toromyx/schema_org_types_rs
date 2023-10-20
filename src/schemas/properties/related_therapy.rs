@@ -5,12 +5,12 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum RelatedTherapyProperty {
-    #[cfg(any(
-        any(
-            feature = "medical-therapy-schema",
-            feature = "health-lifesci-schema-section"
-        ),
-        doc
-    ))]
-    MedicalTherapy(MedicalTherapy),
+	#[cfg(any(
+		any(
+			feature = "medical-therapy-schema",
+			feature = "health-lifesci-schema-section"
+		),
+		doc
+	))]
+	MedicalTherapy(MedicalTherapy),
 }

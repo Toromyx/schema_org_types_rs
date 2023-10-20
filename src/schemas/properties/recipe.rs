@@ -5,9 +5,9 @@ use super::*;
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum RecipeProperty {
-    #[cfg(any(
-        any(feature = "recipe-schema", feature = "general-schema-section"),
-        doc
-    ))]
-    Recipe(Recipe),
+	#[cfg(any(
+		any(feature = "recipe-schema", feature = "general-schema-section"),
+		doc
+	))]
+	Recipe(Recipe),
 }
