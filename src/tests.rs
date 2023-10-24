@@ -56,9 +56,9 @@ fn test_date_time_serde() {
 #[test]
 fn test_thing_schema_serde() {
 	let source_json = json!({
-		"https://schema.org/name": "name value",
+		"name": "name value",
 		"alternateName": ["alternate name value"],
-		"http://schema.org/image": [
+		"image": [
 			"https://image.test/1",
 			"https://image.test/2",
 		],
