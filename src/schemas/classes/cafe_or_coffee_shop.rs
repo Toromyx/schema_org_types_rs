@@ -81,6 +81,21 @@ pub struct CafeOrCoffeeShop {
 	pub r#address: Vec<AddressProperty>,
 	#[cfg(any(
 		any(
+			feature = "agent-interaction-statistic-property-schema",
+			feature = "pending-schema-section"
+		),
+		doc
+	))]
+	#[cfg_attr(feature = "serde", serde(rename = "agentInteractionStatistic"))]
+	#[cfg_attr(feature = "serde", serde(default))]
+	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+	#[cfg_attr(
+		feature = "serde",
+		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+	)]
+	pub r#agent_interaction_statistic: Vec<AgentInteractionStatisticProperty>,
+	#[cfg(any(
+		any(
 			feature = "aggregate-rating-property-schema",
 			feature = "general-schema-section"
 		),

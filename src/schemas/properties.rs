@@ -813,6 +813,22 @@ mod r#agent;
 pub use r#agent::*;
 #[cfg(any(
 	any(
+		feature = "agent-interaction-statistic-property-schema",
+		feature = "pending-schema-section"
+	),
+	doc
+))]
+mod r#agent_interaction_statistic;
+#[cfg(any(
+	any(
+		feature = "agent-interaction-statistic-property-schema",
+		feature = "pending-schema-section"
+	),
+	doc
+))]
+pub use r#agent_interaction_statistic::*;
+#[cfg(any(
+	any(
 		feature = "aggregate-rating-property-schema",
 		feature = "general-schema-section"
 	),

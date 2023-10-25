@@ -1544,6 +1544,21 @@ pub struct Comment {
 	)]
 	pub r#sd_publisher: Vec<SdPublisherProperty>,
 	#[cfg(any(
+		any(
+			feature = "shared-content-property-schema",
+			feature = "general-schema-section"
+		),
+		doc
+	))]
+	#[cfg_attr(feature = "serde", serde(rename = "sharedContent"))]
+	#[cfg_attr(feature = "serde", serde(default))]
+	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
+	#[cfg_attr(
+		feature = "serde",
+		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
+	)]
+	pub r#shared_content: Vec<SharedContentProperty>,
+	#[cfg(any(
 		any(feature = "size-property-schema", feature = "pending-schema-section"),
 		doc
 	))]

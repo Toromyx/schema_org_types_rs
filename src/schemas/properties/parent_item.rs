@@ -10,4 +10,9 @@ pub enum ParentItemProperty {
 		doc
 	))]
 	Comment(Comment),
+	#[cfg(any(
+		any(feature = "creative-work-schema", feature = "general-schema-section"),
+		doc
+	))]
+	CreativeWork(CreativeWork),
 }
