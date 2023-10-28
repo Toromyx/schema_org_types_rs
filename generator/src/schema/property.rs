@@ -126,7 +126,7 @@ impl ToTokens for Property {
 				let feature_gate = feature.feature_gate();
 				quote!(
 					#feature_gate
-					#variant_name(#variant_name)
+					#variant_name(#variant_name),
 				)
 			});
 		tokens.append_all(quote! (
@@ -137,7 +137,7 @@ impl ToTokens for Property {
 			#serde_derive
 			#serde_untagged
 			pub enum #name {
-				#(#variants),*
+				#(#variants)*
 			}
 		));
 	}

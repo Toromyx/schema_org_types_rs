@@ -26,7 +26,7 @@ impl ToTokens for EnumerationVariant {
 		let name = TokenStream::from_str(&self.name.to_case(Case::UpperCamel)).unwrap();
 		tokens.append_all(quote!(
 			#doc_lines
-			#name
+			#name,
 		));
 	}
 }

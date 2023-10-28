@@ -111,7 +111,7 @@ impl ToTokens for Class {
 					#serde_default
 					#serde_skip_serializing_if_empty
 					#serde_as
-					#property
+					#property,
 				)
 			});
 		tokens.append_all(quote!(
@@ -121,7 +121,7 @@ impl ToTokens for Class {
 			#[cfg_attr(feature = "derive-clone", derive(Clone))]
 			#serde_derive
 			pub struct #name {
-				#(#fields),*
+				#(#fields)*
 			}
 		));
 	}

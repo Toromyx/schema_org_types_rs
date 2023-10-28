@@ -88,7 +88,7 @@ impl ToTokens for Enumeration {
 			#[cfg_attr(feature = "derive-clone", derive(Clone))]
 			#serde_derive
 			pub enum #name {
-				#(#variants),*
+				#(#variants)*
 			}
 		));
 	}
