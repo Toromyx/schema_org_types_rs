@@ -15,4 +15,6 @@ pub enum TrackProperty {
 		doc
 	))]
 	MusicRecording(MusicRecording),
+	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
+	SerdeFail(crate::FailValue),
 }

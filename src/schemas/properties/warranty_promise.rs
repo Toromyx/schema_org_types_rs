@@ -13,4 +13,6 @@ pub enum WarrantyPromiseProperty {
 		doc
 	))]
 	WarrantyPromise(WarrantyPromise),
+	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
+	SerdeFail(crate::FailValue),
 }

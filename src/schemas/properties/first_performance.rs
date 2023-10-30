@@ -7,4 +7,6 @@ use super::*;
 pub enum FirstPerformanceProperty {
 	#[cfg(any(any(feature = "event-schema", feature = "general-schema-section"), doc))]
 	Event(Event),
+	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
+	SerdeFail(crate::FailValue),
 }

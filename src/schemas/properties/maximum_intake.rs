@@ -13,4 +13,6 @@ pub enum MaximumIntakeProperty {
 		doc
 	))]
 	MaximumDoseSchedule(MaximumDoseSchedule),
+	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
+	SerdeFail(crate::FailValue),
 }

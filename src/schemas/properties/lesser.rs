@@ -13,4 +13,6 @@ pub enum LesserProperty {
 		doc
 	))]
 	QualitativeValue(QualitativeValue),
+	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
+	SerdeFail(crate::FailValue),
 }

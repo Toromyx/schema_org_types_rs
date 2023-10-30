@@ -10,4 +10,6 @@ pub enum ReturnShippingFeesAmountProperty {
 		doc
 	))]
 	MonetaryAmount(MonetaryAmount),
+	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
+	SerdeFail(crate::FailValue),
 }

@@ -15,4 +15,6 @@ pub enum MonthlyMinimumRepaymentAmountProperty {
 		doc
 	))]
 	Number(Number),
+	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
+	SerdeFail(crate::FailValue),
 }

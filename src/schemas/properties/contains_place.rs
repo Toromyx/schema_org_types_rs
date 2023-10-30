@@ -7,4 +7,6 @@ use super::*;
 pub enum ContainsPlaceProperty {
 	#[cfg(any(any(feature = "place-schema", feature = "general-schema-section"), doc))]
 	Place(Place),
+	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
+	SerdeFail(crate::FailValue),
 }

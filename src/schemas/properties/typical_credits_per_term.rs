@@ -18,4 +18,6 @@ pub enum TypicalCreditsPerTermProperty {
 		doc
 	))]
 	Integer(Integer),
+	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
+	SerdeFail(crate::FailValue),
 }

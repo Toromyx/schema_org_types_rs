@@ -10,4 +10,6 @@ pub enum HasCategoryCodeProperty {
 		doc
 	))]
 	CategoryCode(CategoryCode),
+	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
+	SerdeFail(crate::FailValue),
 }

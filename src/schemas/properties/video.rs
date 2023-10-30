@@ -12,4 +12,6 @@ pub enum VideoProperty {
 		doc
 	))]
 	VideoObject(VideoObject),
+	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
+	SerdeFail(crate::FailValue),
 }

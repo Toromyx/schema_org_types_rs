@@ -13,4 +13,6 @@ pub enum HasHealthAspectProperty {
 		doc
 	))]
 	HealthAspectEnumeration(HealthAspectEnumeration),
+	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
+	SerdeFail(crate::FailValue),
 }

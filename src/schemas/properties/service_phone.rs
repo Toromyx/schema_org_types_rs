@@ -10,4 +10,6 @@ pub enum ServicePhoneProperty {
 		doc
 	))]
 	ContactPoint(ContactPoint),
+	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
+	SerdeFail(crate::FailValue),
 }

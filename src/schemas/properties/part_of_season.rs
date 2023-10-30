@@ -13,4 +13,6 @@ pub enum PartOfSeasonProperty {
 		doc
 	))]
 	CreativeWorkSeason(CreativeWorkSeason),
+	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
+	SerdeFail(crate::FailValue),
 }

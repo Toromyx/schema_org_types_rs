@@ -15,4 +15,6 @@ pub enum AnnouncementLocationProperty {
 		doc
 	))]
 	LocalBusiness(LocalBusiness),
+	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
+	SerdeFail(crate::FailValue),
 }

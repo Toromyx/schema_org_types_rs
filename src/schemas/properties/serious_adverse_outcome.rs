@@ -13,4 +13,6 @@ pub enum SeriousAdverseOutcomeProperty {
 		doc
 	))]
 	MedicalEntity(MedicalEntity),
+	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
+	SerdeFail(crate::FailValue),
 }

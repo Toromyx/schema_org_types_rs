@@ -10,4 +10,6 @@ pub enum SeeksProperty {
 		doc
 	))]
 	Demand(Demand),
+	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
+	SerdeFail(crate::FailValue),
 }

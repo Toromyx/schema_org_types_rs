@@ -13,4 +13,6 @@ pub enum StudyDesignProperty {
 		doc
 	))]
 	MedicalObservationalStudyDesign(MedicalObservationalStudyDesign),
+	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
+	SerdeFail(crate::FailValue),
 }

@@ -10,4 +10,6 @@ pub enum PreviousItemProperty {
 		doc
 	))]
 	ListItem(ListItem),
+	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
+	SerdeFail(crate::FailValue),
 }

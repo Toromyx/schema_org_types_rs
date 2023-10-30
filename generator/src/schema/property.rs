@@ -129,6 +129,11 @@ impl ToTokens for Property {
 					#variant_name(#variant_name),
 				)
 			});
+		let fallible_feature_gate = Feature::All(vec![
+			Feature::Name("fallible".to_string()),
+			Feature::Name("serde".to_string()),
+		])
+		.feature_gate();
 		tokens.append_all(quote! (
 			use super::*;
 			#doc_lines
@@ -138,6 +143,8 @@ impl ToTokens for Property {
 			#serde_untagged
 			pub enum #name {
 				#(#variants)*
+				#fallible_feature_gate
+				SerdeFail(crate::FailValue),
 			}
 		));
 	}

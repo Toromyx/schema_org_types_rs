@@ -7,4 +7,6 @@ use super::*;
 pub enum BirthDateProperty {
 	#[cfg(any(any(feature = "date-schema", feature = "general-schema-section"), doc))]
 	Date(Date),
+	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
+	SerdeFail(crate::FailValue),
 }

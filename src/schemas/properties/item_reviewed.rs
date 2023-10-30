@@ -7,4 +7,6 @@ use super::*;
 pub enum ItemReviewedProperty {
 	#[cfg(any(any(feature = "thing-schema", feature = "general-schema-section"), doc))]
 	Thing(Thing),
+	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
+	SerdeFail(crate::FailValue),
 }

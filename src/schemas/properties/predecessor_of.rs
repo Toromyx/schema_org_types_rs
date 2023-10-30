@@ -10,4 +10,6 @@ pub enum PredecessorOfProperty {
 		doc
 	))]
 	ProductModel(ProductModel),
+	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
+	SerdeFail(crate::FailValue),
 }

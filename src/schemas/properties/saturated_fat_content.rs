@@ -7,4 +7,6 @@ use super::*;
 pub enum SaturatedFatContentProperty {
 	#[cfg(any(any(feature = "mass-schema", feature = "general-schema-section"), doc))]
 	Mass(Mass),
+	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
+	SerdeFail(crate::FailValue),
 }

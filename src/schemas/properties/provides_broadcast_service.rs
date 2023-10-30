@@ -13,4 +13,6 @@ pub enum ProvidesBroadcastServiceProperty {
 		doc
 	))]
 	BroadcastService(BroadcastService),
+	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
+	SerdeFail(crate::FailValue),
 }

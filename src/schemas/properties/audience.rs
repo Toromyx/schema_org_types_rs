@@ -10,4 +10,6 @@ pub enum AudienceProperty {
 		doc
 	))]
 	Audience(Audience),
+	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
+	SerdeFail(crate::FailValue),
 }

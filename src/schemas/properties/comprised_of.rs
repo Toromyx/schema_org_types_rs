@@ -21,4 +21,6 @@ pub enum ComprisedOfProperty {
 		doc
 	))]
 	AnatomicalSystem(AnatomicalSystem),
+	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
+	SerdeFail(crate::FailValue),
 }

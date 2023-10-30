@@ -10,4 +10,6 @@ pub enum CollectionSizeProperty {
 		doc
 	))]
 	Integer(Integer),
+	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
+	SerdeFail(crate::FailValue),
 }

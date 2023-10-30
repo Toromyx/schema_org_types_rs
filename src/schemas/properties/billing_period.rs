@@ -10,4 +10,6 @@ pub enum BillingPeriodProperty {
 		doc
 	))]
 	Duration(Duration),
+	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
+	SerdeFail(crate::FailValue),
 }

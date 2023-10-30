@@ -14,4 +14,6 @@ pub enum AvailabilityStartsProperty {
 		doc
 	))]
 	DateTime(DateTime),
+	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
+	SerdeFail(crate::FailValue),
 }

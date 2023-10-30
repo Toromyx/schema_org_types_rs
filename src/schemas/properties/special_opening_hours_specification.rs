@@ -13,4 +13,6 @@ pub enum SpecialOpeningHoursSpecificationProperty {
 		doc
 	))]
 	OpeningHoursSpecification(OpeningHoursSpecification),
+	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
+	SerdeFail(crate::FailValue),
 }

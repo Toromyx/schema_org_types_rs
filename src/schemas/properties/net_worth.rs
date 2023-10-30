@@ -18,4 +18,6 @@ pub enum NetWorthProperty {
 		doc
 	))]
 	PriceSpecification(PriceSpecification),
+	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
+	SerdeFail(crate::FailValue),
 }

@@ -10,4 +10,6 @@ pub enum AssociatedMediaReviewProperty {
 		doc
 	))]
 	Review(Review),
+	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
+	SerdeFail(crate::FailValue),
 }

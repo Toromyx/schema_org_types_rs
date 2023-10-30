@@ -17,4 +17,6 @@ pub enum IsInvolvedInBiologicalProcessProperty {
 	PropertyValue(PropertyValue),
 	#[cfg(any(any(feature = "url-schema", feature = "general-schema-section"), doc))]
 	Url(Url),
+	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
+	SerdeFail(crate::FailValue),
 }

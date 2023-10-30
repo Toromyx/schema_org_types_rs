@@ -10,4 +10,6 @@ pub enum FollowsProperty {
 		doc
 	))]
 	Person(Person),
+	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
+	SerdeFail(crate::FailValue),
 }

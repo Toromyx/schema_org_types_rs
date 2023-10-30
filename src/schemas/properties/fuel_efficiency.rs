@@ -13,4 +13,6 @@ pub enum FuelEfficiencyProperty {
 		doc
 	))]
 	QuantitativeValue(QuantitativeValue),
+	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
+	SerdeFail(crate::FailValue),
 }

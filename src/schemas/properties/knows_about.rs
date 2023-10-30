@@ -11,4 +11,6 @@ pub enum KnowsAboutProperty {
 	Url(Url),
 	#[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
 	Text(Text),
+	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
+	SerdeFail(crate::FailValue),
 }

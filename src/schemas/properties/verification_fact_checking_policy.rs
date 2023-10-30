@@ -12,4 +12,6 @@ pub enum VerificationFactCheckingPolicyProperty {
 	CreativeWork(CreativeWork),
 	#[cfg(any(any(feature = "url-schema", feature = "general-schema-section"), doc))]
 	Url(Url),
+	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
+	SerdeFail(crate::FailValue),
 }

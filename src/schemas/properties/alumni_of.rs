@@ -18,4 +18,6 @@ pub enum AlumniOfProperty {
 		doc
 	))]
 	Organization(Organization),
+	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
+	SerdeFail(crate::FailValue),
 }

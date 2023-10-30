@@ -13,4 +13,6 @@ pub enum TargetProductProperty {
 		doc
 	))]
 	SoftwareApplication(SoftwareApplication),
+	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
+	SerdeFail(crate::FailValue),
 }

@@ -10,4 +10,6 @@ pub enum HospitalAffiliationProperty {
 		doc
 	))]
 	Hospital(Hospital),
+	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
+	SerdeFail(crate::FailValue),
 }

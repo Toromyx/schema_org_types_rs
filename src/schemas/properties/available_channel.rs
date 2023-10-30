@@ -10,4 +10,6 @@ pub enum AvailableChannelProperty {
 		doc
 	))]
 	ServiceChannel(ServiceChannel),
+	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
+	SerdeFail(crate::FailValue),
 }

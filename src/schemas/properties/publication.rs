@@ -13,4 +13,6 @@ pub enum PublicationProperty {
 		doc
 	))]
 	PublicationEvent(PublicationEvent),
+	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
+	SerdeFail(crate::FailValue),
 }

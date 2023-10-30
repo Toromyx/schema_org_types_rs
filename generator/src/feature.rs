@@ -15,6 +15,7 @@ impl<T: Schema> From<&T> for Feature {
 pub enum Feature {
 	Name(String),
 	Any(Vec<Feature>),
+	All(Vec<Feature>),
 }
 
 impl ToTokens for Feature {
@@ -22,6 +23,7 @@ impl ToTokens for Feature {
 		tokens.append_all(match self {
 			Feature::Name(name) => quote!(feature = #name),
 			Feature::Any(features) => quote!(any(#(#features),*)),
+			Feature::All(features) => quote!(all(#(#features),*)),
 		});
 	}
 }
