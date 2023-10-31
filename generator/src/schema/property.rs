@@ -1,3 +1,5 @@
+mod serde;
+
 use std::{cmp::Ordering, str::FromStr};
 
 use convert_case::{Case, Casing};
@@ -9,9 +11,11 @@ use rayon::prelude::*;
 use crate::{
 	doc_lines::DocLines,
 	feature::Feature,
-	schema::{data_type::rust_type::RustType, map_schema_name, ReferencedSchema, Schema},
+	schema::{
+		data_type::rust_type::RustType, map_schema_name, property::serde::serde_mod,
+		ReferencedSchema, Schema,
+	},
 	schema_section::SchemaSection,
-	serde_attributes::{serde_derive, serde_untagged},
 	sparql::{SchemaQueries, SchemaQuerySolution},
 };
 
@@ -109,8 +113,6 @@ impl Schema for Property {
 impl ToTokens for Property {
 	fn to_tokens(&self, tokens: &mut TokenStream) {
 		let doc_lines = self.doc_lines_token_stream();
-		let serde_derive = serde_derive();
-		let serde_untagged = serde_untagged();
 		let name =
 			TokenStream::from_str(&format!("{}Property", self.name.to_case(Case::UpperCamel)))
 				.unwrap();
@@ -123,21 +125,24 @@ impl ToTokens for Property {
 					Feature::Name(format!("{}-schema", name.to_case(Case::Kebab))),
 					Feature::Name(section.feature_name().to_string()),
 				]);
-				let feature_gate = feature.feature_gate();
+				let feature_gate = feature.as_cfg_attribute();
 				quote!(
 					#feature_gate
 					#variant_name(#variant_name),
 				)
 			});
+		let serde_mod = serde_mod(self);
 		tokens.append_all(quote! (
 			use super::*;
 			#doc_lines
 			#[cfg_attr(feature = "derive-debug", derive(Debug))]
 			#[cfg_attr(feature = "derive-clone", derive(Clone))]
-			#serde_derive
-			#serde_untagged
 			pub enum #name {
 				#(#variants)*
+			}
+			#[cfg(feature = "serde")]
+			mod serde {
+				#serde_mod
 			}
 		));
 	}

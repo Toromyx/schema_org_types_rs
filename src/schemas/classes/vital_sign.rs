@@ -2,7 +2,6 @@ use super::*;
 /// <https://schema.org/VitalSign>
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 pub struct VitalSign {
 	#[cfg(any(
 		any(
@@ -11,13 +10,6 @@ pub struct VitalSign {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "additionalType"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
 	#[cfg(any(
 		any(
@@ -26,13 +18,6 @@ pub struct VitalSign {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "alternateName"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#alternate_name: Vec<AlternateNameProperty>,
 	#[cfg(any(
 		any(
@@ -41,13 +26,6 @@ pub struct VitalSign {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "associatedAnatomy"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#associated_anatomy: Vec<AssociatedAnatomyProperty>,
 	#[cfg(any(
 		any(
@@ -56,13 +34,6 @@ pub struct VitalSign {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "code"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#code: Vec<CodeProperty>,
 	#[cfg(any(
 		any(
@@ -71,13 +42,6 @@ pub struct VitalSign {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "description"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#description: Vec<DescriptionProperty>,
 	#[cfg(any(
 		any(
@@ -86,13 +50,6 @@ pub struct VitalSign {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "differentialDiagnosis"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#differential_diagnosis: Vec<DifferentialDiagnosisProperty>,
 	#[cfg(any(
 		any(
@@ -101,13 +58,6 @@ pub struct VitalSign {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "disambiguatingDescription"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
 	#[cfg(any(
 		any(
@@ -116,13 +66,6 @@ pub struct VitalSign {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "drug"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#drug: Vec<DrugProperty>,
 	#[cfg(any(
 		any(
@@ -131,13 +74,6 @@ pub struct VitalSign {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "epidemiology"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#epidemiology: Vec<EpidemiologyProperty>,
 	#[cfg(any(
 		any(
@@ -146,13 +82,6 @@ pub struct VitalSign {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "expectedPrognosis"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#expected_prognosis: Vec<ExpectedPrognosisProperty>,
 	#[cfg(any(
 		any(
@@ -161,13 +90,6 @@ pub struct VitalSign {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "funding"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#funding: Vec<FundingProperty>,
 	#[cfg(any(
 		any(
@@ -176,13 +98,6 @@ pub struct VitalSign {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "guideline"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#guideline: Vec<GuidelineProperty>,
 	#[cfg(any(
 		any(
@@ -191,13 +106,6 @@ pub struct VitalSign {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "identifier"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#identifier: Vec<IdentifierProperty>,
 	#[cfg(any(
 		any(
@@ -206,13 +114,6 @@ pub struct VitalSign {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "identifyingExam"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#identifying_exam: Vec<IdentifyingExamProperty>,
 	#[cfg(any(
 		any(
@@ -221,25 +122,11 @@ pub struct VitalSign {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "identifyingTest"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#identifying_test: Vec<IdentifyingTestProperty>,
 	#[cfg(any(
 		any(feature = "image-property-schema", feature = "general-schema-section"),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "image"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#image: Vec<ImageProperty>,
 	#[cfg(any(
 		any(
@@ -248,13 +135,6 @@ pub struct VitalSign {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "legalStatus"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#legal_status: Vec<LegalStatusProperty>,
 	#[cfg(any(
 		any(
@@ -263,13 +143,6 @@ pub struct VitalSign {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "mainEntityOfPage"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
 	#[cfg(any(
 		any(
@@ -278,25 +151,11 @@ pub struct VitalSign {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "medicineSystem"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#medicine_system: Vec<MedicineSystemProperty>,
 	#[cfg(any(
 		any(feature = "name-property-schema", feature = "general-schema-section"),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "name"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#name: Vec<NameProperty>,
 	#[cfg(any(
 		any(
@@ -305,13 +164,6 @@ pub struct VitalSign {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "naturalProgression"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#natural_progression: Vec<NaturalProgressionProperty>,
 	#[cfg(any(
 		any(
@@ -320,13 +172,6 @@ pub struct VitalSign {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "pathophysiology"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#pathophysiology: Vec<PathophysiologyProperty>,
 	#[cfg(any(
 		any(
@@ -335,13 +180,6 @@ pub struct VitalSign {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "possibleComplication"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#possible_complication: Vec<PossibleComplicationProperty>,
 	#[cfg(any(
 		any(
@@ -350,13 +188,6 @@ pub struct VitalSign {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "possibleTreatment"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#possible_treatment: Vec<PossibleTreatmentProperty>,
 	#[cfg(any(
 		any(
@@ -365,13 +196,6 @@ pub struct VitalSign {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "potentialAction"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#potential_action: Vec<PotentialActionProperty>,
 	#[cfg(any(
 		any(
@@ -380,13 +204,6 @@ pub struct VitalSign {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "primaryPrevention"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#primary_prevention: Vec<PrimaryPreventionProperty>,
 	#[cfg(any(
 		any(
@@ -395,13 +212,6 @@ pub struct VitalSign {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "recognizingAuthority"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#recognizing_authority: Vec<RecognizingAuthorityProperty>,
 	#[cfg(any(
 		any(
@@ -410,13 +220,6 @@ pub struct VitalSign {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "relevantSpecialty"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#relevant_specialty: Vec<RelevantSpecialtyProperty>,
 	#[cfg(any(
 		any(
@@ -425,13 +228,6 @@ pub struct VitalSign {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "riskFactor"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#risk_factor: Vec<RiskFactorProperty>,
 	#[cfg(any(
 		any(
@@ -440,13 +236,6 @@ pub struct VitalSign {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "sameAs"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#same_as: Vec<SameAsProperty>,
 	#[cfg(any(
 		any(
@@ -455,13 +244,6 @@ pub struct VitalSign {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "secondaryPrevention"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#secondary_prevention: Vec<SecondaryPreventionProperty>,
 	#[cfg(any(
 		any(
@@ -470,13 +252,6 @@ pub struct VitalSign {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "signOrSymptom"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#sign_or_symptom: Vec<SignOrSymptomProperty>,
 	#[cfg(any(
 		any(
@@ -485,13 +260,6 @@ pub struct VitalSign {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "stage"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#stage: Vec<StageProperty>,
 	#[cfg(any(
 		any(
@@ -500,13 +268,6 @@ pub struct VitalSign {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "status"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#status: Vec<StatusProperty>,
 	#[cfg(any(
 		any(
@@ -515,13 +276,6 @@ pub struct VitalSign {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "study"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#study: Vec<StudyProperty>,
 	#[cfg(any(
 		any(
@@ -530,13 +284,6 @@ pub struct VitalSign {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "subjectOf"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#subject_of: Vec<SubjectOfProperty>,
 	#[cfg(any(
 		any(
@@ -545,24 +292,4494 @@ pub struct VitalSign {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "typicalTest"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#typical_test: Vec<TypicalTestProperty>,
 	#[cfg(any(
 		any(feature = "url-property-schema", feature = "general-schema-section"),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "url"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#url: Vec<UrlProperty>,
+}
+#[cfg(feature = "serde")]
+mod serde {
+	use std::{fmt, fmt::Formatter};
+
+	use ::serde::{
+		de, de::Visitor, ser::SerializeStruct, Deserialize, Deserializer, Serialize, Serializer,
+	};
+
+	use super::*;
+	impl Serialize for VitalSign {
+		fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+		where
+			S: Serializer,
+		{
+			let len: usize = [
+				if cfg!(any(
+					any(
+						feature = "additional-type-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#additional_type) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "alternate-name-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#alternate_name) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "associated-anatomy-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#associated_anatomy) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "code-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#code) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "description-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#description) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "differential-diagnosis-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#differential_diagnosis) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "disambiguating-description-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#disambiguating_description) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "drug-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#drug) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "epidemiology-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#epidemiology) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "expected-prognosis-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#expected_prognosis) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "funding-property-schema",
+						feature = "pending-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#funding) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "guideline-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#guideline) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "identifier-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#identifier) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "identifying-exam-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#identifying_exam) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "identifying-test-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#identifying_test) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "image-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#image) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "legal-status-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#legal_status) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "main-entity-of-page-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#main_entity_of_page) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "medicine-system-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#medicine_system) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "name-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#name) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "natural-progression-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#natural_progression) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "pathophysiology-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#pathophysiology) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "possible-complication-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#possible_complication) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "possible-treatment-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#possible_treatment) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "potential-action-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#potential_action) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "primary-prevention-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#primary_prevention) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "recognizing-authority-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#recognizing_authority) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "relevant-specialty-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#relevant_specialty) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "risk-factor-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#risk_factor) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "same-as-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#same_as) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "secondary-prevention-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#secondary_prevention) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "sign-or-symptom-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#sign_or_symptom) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "stage-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#stage) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "status-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#status) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "study-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#study) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "subject-of-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#subject_of) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "typical-test-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#typical_test) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "url-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#url) as usize
+				} else {
+					0
+				},
+			]
+			.iter()
+			.sum();
+			let mut serialize_struct = Serializer::serialize_struct(serializer, "VitalSign", len)?;
+			#[cfg(any(
+				any(
+					feature = "additional-type-property-schema",
+					feature = "general-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#additional_type) {
+				serialize_struct.serialize_field("additionalType", {
+					struct SerializeWith<'a>(&'a Vec<AdditionalTypeProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#additional_type)
+				})?;
+			} else {
+				serialize_struct.skip_field("additionalType")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "alternate-name-property-schema",
+					feature = "general-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#alternate_name) {
+				serialize_struct.serialize_field("alternateName", {
+					struct SerializeWith<'a>(&'a Vec<AlternateNameProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#alternate_name)
+				})?;
+			} else {
+				serialize_struct.skip_field("alternateName")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "associated-anatomy-property-schema",
+					feature = "health-lifesci-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#associated_anatomy) {
+				serialize_struct.serialize_field("associatedAnatomy", {
+					struct SerializeWith<'a>(&'a Vec<AssociatedAnatomyProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#associated_anatomy)
+				})?;
+			} else {
+				serialize_struct.skip_field("associatedAnatomy")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "code-property-schema",
+					feature = "health-lifesci-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#code) {
+				serialize_struct.serialize_field("code", {
+					struct SerializeWith<'a>(&'a Vec<CodeProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#code)
+				})?;
+			} else {
+				serialize_struct.skip_field("code")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "description-property-schema",
+					feature = "general-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#description) {
+				serialize_struct.serialize_field("description", {
+					struct SerializeWith<'a>(&'a Vec<DescriptionProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#description)
+				})?;
+			} else {
+				serialize_struct.skip_field("description")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "differential-diagnosis-property-schema",
+					feature = "health-lifesci-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#differential_diagnosis) {
+				serialize_struct.serialize_field("differentialDiagnosis", {
+					struct SerializeWith<'a>(&'a Vec<DifferentialDiagnosisProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#differential_diagnosis)
+				})?;
+			} else {
+				serialize_struct.skip_field("differentialDiagnosis")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "disambiguating-description-property-schema",
+					feature = "general-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#disambiguating_description) {
+				serialize_struct.serialize_field("disambiguatingDescription", {
+					struct SerializeWith<'a>(&'a Vec<DisambiguatingDescriptionProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#disambiguating_description)
+				})?;
+			} else {
+				serialize_struct.skip_field("disambiguatingDescription")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "drug-property-schema",
+					feature = "health-lifesci-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#drug) {
+				serialize_struct.serialize_field("drug", {
+					struct SerializeWith<'a>(&'a Vec<DrugProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#drug)
+				})?;
+			} else {
+				serialize_struct.skip_field("drug")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "epidemiology-property-schema",
+					feature = "health-lifesci-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#epidemiology) {
+				serialize_struct.serialize_field("epidemiology", {
+					struct SerializeWith<'a>(&'a Vec<EpidemiologyProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#epidemiology)
+				})?;
+			} else {
+				serialize_struct.skip_field("epidemiology")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "expected-prognosis-property-schema",
+					feature = "health-lifesci-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#expected_prognosis) {
+				serialize_struct.serialize_field("expectedPrognosis", {
+					struct SerializeWith<'a>(&'a Vec<ExpectedPrognosisProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#expected_prognosis)
+				})?;
+			} else {
+				serialize_struct.skip_field("expectedPrognosis")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "funding-property-schema",
+					feature = "pending-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#funding) {
+				serialize_struct.serialize_field("funding", {
+					struct SerializeWith<'a>(&'a Vec<FundingProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#funding)
+				})?;
+			} else {
+				serialize_struct.skip_field("funding")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "guideline-property-schema",
+					feature = "health-lifesci-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#guideline) {
+				serialize_struct.serialize_field("guideline", {
+					struct SerializeWith<'a>(&'a Vec<GuidelineProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#guideline)
+				})?;
+			} else {
+				serialize_struct.skip_field("guideline")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "identifier-property-schema",
+					feature = "general-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#identifier) {
+				serialize_struct.serialize_field("identifier", {
+					struct SerializeWith<'a>(&'a Vec<IdentifierProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#identifier)
+				})?;
+			} else {
+				serialize_struct.skip_field("identifier")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "identifying-exam-property-schema",
+					feature = "health-lifesci-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#identifying_exam) {
+				serialize_struct.serialize_field("identifyingExam", {
+					struct SerializeWith<'a>(&'a Vec<IdentifyingExamProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#identifying_exam)
+				})?;
+			} else {
+				serialize_struct.skip_field("identifyingExam")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "identifying-test-property-schema",
+					feature = "health-lifesci-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#identifying_test) {
+				serialize_struct.serialize_field("identifyingTest", {
+					struct SerializeWith<'a>(&'a Vec<IdentifyingTestProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#identifying_test)
+				})?;
+			} else {
+				serialize_struct.skip_field("identifyingTest")?;
+			}
+			#[cfg(any(
+				any(feature = "image-property-schema", feature = "general-schema-section"),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#image) {
+				serialize_struct.serialize_field("image", {
+					struct SerializeWith<'a>(&'a Vec<ImageProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#image)
+				})?;
+			} else {
+				serialize_struct.skip_field("image")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "legal-status-property-schema",
+					feature = "health-lifesci-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#legal_status) {
+				serialize_struct.serialize_field("legalStatus", {
+					struct SerializeWith<'a>(&'a Vec<LegalStatusProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#legal_status)
+				})?;
+			} else {
+				serialize_struct.skip_field("legalStatus")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "main-entity-of-page-property-schema",
+					feature = "general-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#main_entity_of_page) {
+				serialize_struct.serialize_field("mainEntityOfPage", {
+					struct SerializeWith<'a>(&'a Vec<MainEntityOfPageProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#main_entity_of_page)
+				})?;
+			} else {
+				serialize_struct.skip_field("mainEntityOfPage")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "medicine-system-property-schema",
+					feature = "health-lifesci-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#medicine_system) {
+				serialize_struct.serialize_field("medicineSystem", {
+					struct SerializeWith<'a>(&'a Vec<MedicineSystemProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#medicine_system)
+				})?;
+			} else {
+				serialize_struct.skip_field("medicineSystem")?;
+			}
+			#[cfg(any(
+				any(feature = "name-property-schema", feature = "general-schema-section"),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#name) {
+				serialize_struct.serialize_field("name", {
+					struct SerializeWith<'a>(&'a Vec<NameProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#name)
+				})?;
+			} else {
+				serialize_struct.skip_field("name")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "natural-progression-property-schema",
+					feature = "health-lifesci-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#natural_progression) {
+				serialize_struct.serialize_field("naturalProgression", {
+					struct SerializeWith<'a>(&'a Vec<NaturalProgressionProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#natural_progression)
+				})?;
+			} else {
+				serialize_struct.skip_field("naturalProgression")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "pathophysiology-property-schema",
+					feature = "health-lifesci-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#pathophysiology) {
+				serialize_struct.serialize_field("pathophysiology", {
+					struct SerializeWith<'a>(&'a Vec<PathophysiologyProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#pathophysiology)
+				})?;
+			} else {
+				serialize_struct.skip_field("pathophysiology")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "possible-complication-property-schema",
+					feature = "health-lifesci-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#possible_complication) {
+				serialize_struct.serialize_field("possibleComplication", {
+					struct SerializeWith<'a>(&'a Vec<PossibleComplicationProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#possible_complication)
+				})?;
+			} else {
+				serialize_struct.skip_field("possibleComplication")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "possible-treatment-property-schema",
+					feature = "health-lifesci-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#possible_treatment) {
+				serialize_struct.serialize_field("possibleTreatment", {
+					struct SerializeWith<'a>(&'a Vec<PossibleTreatmentProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#possible_treatment)
+				})?;
+			} else {
+				serialize_struct.skip_field("possibleTreatment")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "potential-action-property-schema",
+					feature = "general-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#potential_action) {
+				serialize_struct.serialize_field("potentialAction", {
+					struct SerializeWith<'a>(&'a Vec<PotentialActionProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#potential_action)
+				})?;
+			} else {
+				serialize_struct.skip_field("potentialAction")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "primary-prevention-property-schema",
+					feature = "health-lifesci-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#primary_prevention) {
+				serialize_struct.serialize_field("primaryPrevention", {
+					struct SerializeWith<'a>(&'a Vec<PrimaryPreventionProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#primary_prevention)
+				})?;
+			} else {
+				serialize_struct.skip_field("primaryPrevention")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "recognizing-authority-property-schema",
+					feature = "health-lifesci-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#recognizing_authority) {
+				serialize_struct.serialize_field("recognizingAuthority", {
+					struct SerializeWith<'a>(&'a Vec<RecognizingAuthorityProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#recognizing_authority)
+				})?;
+			} else {
+				serialize_struct.skip_field("recognizingAuthority")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "relevant-specialty-property-schema",
+					feature = "health-lifesci-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#relevant_specialty) {
+				serialize_struct.serialize_field("relevantSpecialty", {
+					struct SerializeWith<'a>(&'a Vec<RelevantSpecialtyProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#relevant_specialty)
+				})?;
+			} else {
+				serialize_struct.skip_field("relevantSpecialty")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "risk-factor-property-schema",
+					feature = "health-lifesci-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#risk_factor) {
+				serialize_struct.serialize_field("riskFactor", {
+					struct SerializeWith<'a>(&'a Vec<RiskFactorProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#risk_factor)
+				})?;
+			} else {
+				serialize_struct.skip_field("riskFactor")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "same-as-property-schema",
+					feature = "general-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#same_as) {
+				serialize_struct.serialize_field("sameAs", {
+					struct SerializeWith<'a>(&'a Vec<SameAsProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#same_as)
+				})?;
+			} else {
+				serialize_struct.skip_field("sameAs")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "secondary-prevention-property-schema",
+					feature = "health-lifesci-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#secondary_prevention) {
+				serialize_struct.serialize_field("secondaryPrevention", {
+					struct SerializeWith<'a>(&'a Vec<SecondaryPreventionProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#secondary_prevention)
+				})?;
+			} else {
+				serialize_struct.skip_field("secondaryPrevention")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "sign-or-symptom-property-schema",
+					feature = "health-lifesci-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#sign_or_symptom) {
+				serialize_struct.serialize_field("signOrSymptom", {
+					struct SerializeWith<'a>(&'a Vec<SignOrSymptomProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#sign_or_symptom)
+				})?;
+			} else {
+				serialize_struct.skip_field("signOrSymptom")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "stage-property-schema",
+					feature = "health-lifesci-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#stage) {
+				serialize_struct.serialize_field("stage", {
+					struct SerializeWith<'a>(&'a Vec<StageProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#stage)
+				})?;
+			} else {
+				serialize_struct.skip_field("stage")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "status-property-schema",
+					feature = "health-lifesci-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#status) {
+				serialize_struct.serialize_field("status", {
+					struct SerializeWith<'a>(&'a Vec<StatusProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#status)
+				})?;
+			} else {
+				serialize_struct.skip_field("status")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "study-property-schema",
+					feature = "health-lifesci-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#study) {
+				serialize_struct.serialize_field("study", {
+					struct SerializeWith<'a>(&'a Vec<StudyProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#study)
+				})?;
+			} else {
+				serialize_struct.skip_field("study")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "subject-of-property-schema",
+					feature = "general-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#subject_of) {
+				serialize_struct.serialize_field("subjectOf", {
+					struct SerializeWith<'a>(&'a Vec<SubjectOfProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#subject_of)
+				})?;
+			} else {
+				serialize_struct.skip_field("subjectOf")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "typical-test-property-schema",
+					feature = "health-lifesci-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#typical_test) {
+				serialize_struct.serialize_field("typicalTest", {
+					struct SerializeWith<'a>(&'a Vec<TypicalTestProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#typical_test)
+				})?;
+			} else {
+				serialize_struct.skip_field("typicalTest")?;
+			}
+			#[cfg(any(
+				any(feature = "url-property-schema", feature = "general-schema-section"),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#url) {
+				serialize_struct.serialize_field("url", {
+					struct SerializeWith<'a>(&'a Vec<UrlProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#url)
+				})?;
+			} else {
+				serialize_struct.skip_field("url")?;
+			}
+			serialize_struct.end()
+		}
+	}
+	impl<'de> Deserialize<'de> for VitalSign {
+		fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+		where
+			D: Deserializer<'de>,
+		{
+			enum Field {
+				#[cfg(any(
+					any(
+						feature = "additional-type-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				AdditionalType,
+				#[cfg(any(
+					any(
+						feature = "alternate-name-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				AlternateName,
+				#[cfg(any(
+					any(
+						feature = "associated-anatomy-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				))]
+				AssociatedAnatomy,
+				#[cfg(any(
+					any(
+						feature = "code-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				))]
+				Code,
+				#[cfg(any(
+					any(
+						feature = "description-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				Description,
+				#[cfg(any(
+					any(
+						feature = "differential-diagnosis-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				))]
+				DifferentialDiagnosis,
+				#[cfg(any(
+					any(
+						feature = "disambiguating-description-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				DisambiguatingDescription,
+				#[cfg(any(
+					any(
+						feature = "drug-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				))]
+				Drug,
+				#[cfg(any(
+					any(
+						feature = "epidemiology-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				))]
+				Epidemiology,
+				#[cfg(any(
+					any(
+						feature = "expected-prognosis-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				))]
+				ExpectedPrognosis,
+				#[cfg(any(
+					any(
+						feature = "funding-property-schema",
+						feature = "pending-schema-section"
+					),
+					doc
+				))]
+				Funding,
+				#[cfg(any(
+					any(
+						feature = "guideline-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				))]
+				Guideline,
+				#[cfg(any(
+					any(
+						feature = "identifier-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				Identifier,
+				#[cfg(any(
+					any(
+						feature = "identifying-exam-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				))]
+				IdentifyingExam,
+				#[cfg(any(
+					any(
+						feature = "identifying-test-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				))]
+				IdentifyingTest,
+				#[cfg(any(
+					any(feature = "image-property-schema", feature = "general-schema-section"),
+					doc
+				))]
+				Image,
+				#[cfg(any(
+					any(
+						feature = "legal-status-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				))]
+				LegalStatus,
+				#[cfg(any(
+					any(
+						feature = "main-entity-of-page-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				MainEntityOfPage,
+				#[cfg(any(
+					any(
+						feature = "medicine-system-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				))]
+				MedicineSystem,
+				#[cfg(any(
+					any(feature = "name-property-schema", feature = "general-schema-section"),
+					doc
+				))]
+				Name,
+				#[cfg(any(
+					any(
+						feature = "natural-progression-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				))]
+				NaturalProgression,
+				#[cfg(any(
+					any(
+						feature = "pathophysiology-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				))]
+				Pathophysiology,
+				#[cfg(any(
+					any(
+						feature = "possible-complication-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				))]
+				PossibleComplication,
+				#[cfg(any(
+					any(
+						feature = "possible-treatment-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				))]
+				PossibleTreatment,
+				#[cfg(any(
+					any(
+						feature = "potential-action-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				PotentialAction,
+				#[cfg(any(
+					any(
+						feature = "primary-prevention-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				))]
+				PrimaryPrevention,
+				#[cfg(any(
+					any(
+						feature = "recognizing-authority-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				))]
+				RecognizingAuthority,
+				#[cfg(any(
+					any(
+						feature = "relevant-specialty-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				))]
+				RelevantSpecialty,
+				#[cfg(any(
+					any(
+						feature = "risk-factor-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				))]
+				RiskFactor,
+				#[cfg(any(
+					any(
+						feature = "same-as-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				SameAs,
+				#[cfg(any(
+					any(
+						feature = "secondary-prevention-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				))]
+				SecondaryPrevention,
+				#[cfg(any(
+					any(
+						feature = "sign-or-symptom-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				))]
+				SignOrSymptom,
+				#[cfg(any(
+					any(
+						feature = "stage-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				))]
+				Stage,
+				#[cfg(any(
+					any(
+						feature = "status-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				))]
+				Status,
+				#[cfg(any(
+					any(
+						feature = "study-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				))]
+				Study,
+				#[cfg(any(
+					any(
+						feature = "subject-of-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				SubjectOf,
+				#[cfg(any(
+					any(
+						feature = "typical-test-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				))]
+				TypicalTest,
+				#[cfg(any(
+					any(feature = "url-property-schema", feature = "general-schema-section"),
+					doc
+				))]
+				Url,
+				Ignore,
+			}
+			struct FieldVisitor;
+			impl<'de> Visitor<'de> for FieldVisitor {
+				type Value = Field;
+				fn expecting(&self, formatter: &mut Formatter) -> fmt::Result {
+					formatter.write_str("field identifier")
+				}
+				fn visit_str<E>(self, value: &str) -> Result<Self::Value, E>
+				where
+					E: de::Error,
+				{
+					match value {
+						#[cfg(any(
+							any(
+								feature = "additional-type-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						"additionalType" => Ok(Field::AdditionalType),
+						#[cfg(any(
+							any(
+								feature = "alternate-name-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						"alternateName" => Ok(Field::AlternateName),
+						#[cfg(any(
+							any(
+								feature = "associated-anatomy-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						"associatedAnatomy" => Ok(Field::AssociatedAnatomy),
+						#[cfg(any(
+							any(
+								feature = "code-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						"code" => Ok(Field::Code),
+						#[cfg(any(
+							any(
+								feature = "description-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						"description" => Ok(Field::Description),
+						#[cfg(any(
+							any(
+								feature = "differential-diagnosis-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						"differentialDiagnosis" => Ok(Field::DifferentialDiagnosis),
+						#[cfg(any(
+							any(
+								feature = "disambiguating-description-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
+						#[cfg(any(
+							any(
+								feature = "drug-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						"drug" => Ok(Field::Drug),
+						#[cfg(any(
+							any(
+								feature = "epidemiology-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						"epidemiology" => Ok(Field::Epidemiology),
+						#[cfg(any(
+							any(
+								feature = "expected-prognosis-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						"expectedPrognosis" => Ok(Field::ExpectedPrognosis),
+						#[cfg(any(
+							any(
+								feature = "funding-property-schema",
+								feature = "pending-schema-section"
+							),
+							doc
+						))]
+						"funding" => Ok(Field::Funding),
+						#[cfg(any(
+							any(
+								feature = "guideline-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						"guideline" => Ok(Field::Guideline),
+						#[cfg(any(
+							any(
+								feature = "identifier-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						"identifier" => Ok(Field::Identifier),
+						#[cfg(any(
+							any(
+								feature = "identifying-exam-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						"identifyingExam" => Ok(Field::IdentifyingExam),
+						#[cfg(any(
+							any(
+								feature = "identifying-test-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						"identifyingTest" => Ok(Field::IdentifyingTest),
+						#[cfg(any(
+							any(
+								feature = "image-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						"image" => Ok(Field::Image),
+						#[cfg(any(
+							any(
+								feature = "legal-status-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						"legalStatus" => Ok(Field::LegalStatus),
+						#[cfg(any(
+							any(
+								feature = "main-entity-of-page-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
+						#[cfg(any(
+							any(
+								feature = "medicine-system-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						"medicineSystem" => Ok(Field::MedicineSystem),
+						#[cfg(any(
+							any(
+								feature = "name-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						"name" => Ok(Field::Name),
+						#[cfg(any(
+							any(
+								feature = "natural-progression-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						"naturalProgression" => Ok(Field::NaturalProgression),
+						#[cfg(any(
+							any(
+								feature = "pathophysiology-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						"pathophysiology" => Ok(Field::Pathophysiology),
+						#[cfg(any(
+							any(
+								feature = "possible-complication-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						"possibleComplication" => Ok(Field::PossibleComplication),
+						#[cfg(any(
+							any(
+								feature = "possible-treatment-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						"possibleTreatment" => Ok(Field::PossibleTreatment),
+						#[cfg(any(
+							any(
+								feature = "potential-action-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						"potentialAction" => Ok(Field::PotentialAction),
+						#[cfg(any(
+							any(
+								feature = "primary-prevention-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						"primaryPrevention" => Ok(Field::PrimaryPrevention),
+						#[cfg(any(
+							any(
+								feature = "recognizing-authority-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						"recognizingAuthority" => Ok(Field::RecognizingAuthority),
+						#[cfg(any(
+							any(
+								feature = "relevant-specialty-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						"relevantSpecialty" => Ok(Field::RelevantSpecialty),
+						#[cfg(any(
+							any(
+								feature = "risk-factor-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						"riskFactor" => Ok(Field::RiskFactor),
+						#[cfg(any(
+							any(
+								feature = "same-as-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						"sameAs" => Ok(Field::SameAs),
+						#[cfg(any(
+							any(
+								feature = "secondary-prevention-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						"secondaryPrevention" => Ok(Field::SecondaryPrevention),
+						#[cfg(any(
+							any(
+								feature = "sign-or-symptom-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						"signOrSymptom" => Ok(Field::SignOrSymptom),
+						#[cfg(any(
+							any(
+								feature = "stage-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						"stage" => Ok(Field::Stage),
+						#[cfg(any(
+							any(
+								feature = "status-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						"status" => Ok(Field::Status),
+						#[cfg(any(
+							any(
+								feature = "study-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						"study" => Ok(Field::Study),
+						#[cfg(any(
+							any(
+								feature = "subject-of-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						"subjectOf" => Ok(Field::SubjectOf),
+						#[cfg(any(
+							any(
+								feature = "typical-test-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						"typicalTest" => Ok(Field::TypicalTest),
+						#[cfg(any(
+							any(
+								feature = "url-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						"url" => Ok(Field::Url),
+						_ => Ok(Field::Ignore),
+					}
+				}
+				fn visit_bytes<E>(self, value: &[u8]) -> Result<Self::Value, E>
+				where
+					E: de::Error,
+				{
+					match value {
+						#[cfg(any(
+							any(
+								feature = "additional-type-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						b"additionalType" => Ok(Field::AdditionalType),
+						#[cfg(any(
+							any(
+								feature = "alternate-name-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						b"alternateName" => Ok(Field::AlternateName),
+						#[cfg(any(
+							any(
+								feature = "associated-anatomy-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						b"associatedAnatomy" => Ok(Field::AssociatedAnatomy),
+						#[cfg(any(
+							any(
+								feature = "code-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						b"code" => Ok(Field::Code),
+						#[cfg(any(
+							any(
+								feature = "description-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						b"description" => Ok(Field::Description),
+						#[cfg(any(
+							any(
+								feature = "differential-diagnosis-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						b"differentialDiagnosis" => Ok(Field::DifferentialDiagnosis),
+						#[cfg(any(
+							any(
+								feature = "disambiguating-description-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						b"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
+						#[cfg(any(
+							any(
+								feature = "drug-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						b"drug" => Ok(Field::Drug),
+						#[cfg(any(
+							any(
+								feature = "epidemiology-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						b"epidemiology" => Ok(Field::Epidemiology),
+						#[cfg(any(
+							any(
+								feature = "expected-prognosis-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						b"expectedPrognosis" => Ok(Field::ExpectedPrognosis),
+						#[cfg(any(
+							any(
+								feature = "funding-property-schema",
+								feature = "pending-schema-section"
+							),
+							doc
+						))]
+						b"funding" => Ok(Field::Funding),
+						#[cfg(any(
+							any(
+								feature = "guideline-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						b"guideline" => Ok(Field::Guideline),
+						#[cfg(any(
+							any(
+								feature = "identifier-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						b"identifier" => Ok(Field::Identifier),
+						#[cfg(any(
+							any(
+								feature = "identifying-exam-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						b"identifyingExam" => Ok(Field::IdentifyingExam),
+						#[cfg(any(
+							any(
+								feature = "identifying-test-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						b"identifyingTest" => Ok(Field::IdentifyingTest),
+						#[cfg(any(
+							any(
+								feature = "image-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						b"image" => Ok(Field::Image),
+						#[cfg(any(
+							any(
+								feature = "legal-status-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						b"legalStatus" => Ok(Field::LegalStatus),
+						#[cfg(any(
+							any(
+								feature = "main-entity-of-page-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						b"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
+						#[cfg(any(
+							any(
+								feature = "medicine-system-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						b"medicineSystem" => Ok(Field::MedicineSystem),
+						#[cfg(any(
+							any(
+								feature = "name-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						b"name" => Ok(Field::Name),
+						#[cfg(any(
+							any(
+								feature = "natural-progression-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						b"naturalProgression" => Ok(Field::NaturalProgression),
+						#[cfg(any(
+							any(
+								feature = "pathophysiology-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						b"pathophysiology" => Ok(Field::Pathophysiology),
+						#[cfg(any(
+							any(
+								feature = "possible-complication-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						b"possibleComplication" => Ok(Field::PossibleComplication),
+						#[cfg(any(
+							any(
+								feature = "possible-treatment-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						b"possibleTreatment" => Ok(Field::PossibleTreatment),
+						#[cfg(any(
+							any(
+								feature = "potential-action-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						b"potentialAction" => Ok(Field::PotentialAction),
+						#[cfg(any(
+							any(
+								feature = "primary-prevention-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						b"primaryPrevention" => Ok(Field::PrimaryPrevention),
+						#[cfg(any(
+							any(
+								feature = "recognizing-authority-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						b"recognizingAuthority" => Ok(Field::RecognizingAuthority),
+						#[cfg(any(
+							any(
+								feature = "relevant-specialty-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						b"relevantSpecialty" => Ok(Field::RelevantSpecialty),
+						#[cfg(any(
+							any(
+								feature = "risk-factor-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						b"riskFactor" => Ok(Field::RiskFactor),
+						#[cfg(any(
+							any(
+								feature = "same-as-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						b"sameAs" => Ok(Field::SameAs),
+						#[cfg(any(
+							any(
+								feature = "secondary-prevention-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						b"secondaryPrevention" => Ok(Field::SecondaryPrevention),
+						#[cfg(any(
+							any(
+								feature = "sign-or-symptom-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						b"signOrSymptom" => Ok(Field::SignOrSymptom),
+						#[cfg(any(
+							any(
+								feature = "stage-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						b"stage" => Ok(Field::Stage),
+						#[cfg(any(
+							any(
+								feature = "status-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						b"status" => Ok(Field::Status),
+						#[cfg(any(
+							any(
+								feature = "study-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						b"study" => Ok(Field::Study),
+						#[cfg(any(
+							any(
+								feature = "subject-of-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						b"subjectOf" => Ok(Field::SubjectOf),
+						#[cfg(any(
+							any(
+								feature = "typical-test-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						b"typicalTest" => Ok(Field::TypicalTest),
+						#[cfg(any(
+							any(
+								feature = "url-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						b"url" => Ok(Field::Url),
+						_ => Ok(Field::Ignore),
+					}
+				}
+			}
+			impl<'de> Deserialize<'de> for Field {
+				fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+				where
+					D: Deserializer<'de>,
+				{
+					deserializer.deserialize_identifier(FieldVisitor)
+				}
+			}
+			struct ClassVisitor;
+			impl<'de> Visitor<'de> for ClassVisitor {
+				type Value = VitalSign;
+				fn expecting(&self, formatter: &mut Formatter) -> fmt::Result {
+					formatter.write_str("schema.org schema VitalSign")
+				}
+				fn visit_map<A>(self, mut map: A) -> Result<Self::Value, A::Error>
+				where
+					A: de::MapAccess<'de>,
+				{
+					#[cfg(any(
+						any(
+							feature = "additional-type-property-schema",
+							feature = "general-schema-section"
+						),
+						doc
+					))]
+					let mut r#additional_type_property = None;
+					#[cfg(any(
+						any(
+							feature = "alternate-name-property-schema",
+							feature = "general-schema-section"
+						),
+						doc
+					))]
+					let mut r#alternate_name_property = None;
+					#[cfg(any(
+						any(
+							feature = "associated-anatomy-property-schema",
+							feature = "health-lifesci-schema-section"
+						),
+						doc
+					))]
+					let mut r#associated_anatomy_property = None;
+					#[cfg(any(
+						any(
+							feature = "code-property-schema",
+							feature = "health-lifesci-schema-section"
+						),
+						doc
+					))]
+					let mut r#code_property = None;
+					#[cfg(any(
+						any(
+							feature = "description-property-schema",
+							feature = "general-schema-section"
+						),
+						doc
+					))]
+					let mut r#description_property = None;
+					#[cfg(any(
+						any(
+							feature = "differential-diagnosis-property-schema",
+							feature = "health-lifesci-schema-section"
+						),
+						doc
+					))]
+					let mut r#differential_diagnosis_property = None;
+					#[cfg(any(
+						any(
+							feature = "disambiguating-description-property-schema",
+							feature = "general-schema-section"
+						),
+						doc
+					))]
+					let mut r#disambiguating_description_property = None;
+					#[cfg(any(
+						any(
+							feature = "drug-property-schema",
+							feature = "health-lifesci-schema-section"
+						),
+						doc
+					))]
+					let mut r#drug_property = None;
+					#[cfg(any(
+						any(
+							feature = "epidemiology-property-schema",
+							feature = "health-lifesci-schema-section"
+						),
+						doc
+					))]
+					let mut r#epidemiology_property = None;
+					#[cfg(any(
+						any(
+							feature = "expected-prognosis-property-schema",
+							feature = "health-lifesci-schema-section"
+						),
+						doc
+					))]
+					let mut r#expected_prognosis_property = None;
+					#[cfg(any(
+						any(
+							feature = "funding-property-schema",
+							feature = "pending-schema-section"
+						),
+						doc
+					))]
+					let mut r#funding_property = None;
+					#[cfg(any(
+						any(
+							feature = "guideline-property-schema",
+							feature = "health-lifesci-schema-section"
+						),
+						doc
+					))]
+					let mut r#guideline_property = None;
+					#[cfg(any(
+						any(
+							feature = "identifier-property-schema",
+							feature = "general-schema-section"
+						),
+						doc
+					))]
+					let mut r#identifier_property = None;
+					#[cfg(any(
+						any(
+							feature = "identifying-exam-property-schema",
+							feature = "health-lifesci-schema-section"
+						),
+						doc
+					))]
+					let mut r#identifying_exam_property = None;
+					#[cfg(any(
+						any(
+							feature = "identifying-test-property-schema",
+							feature = "health-lifesci-schema-section"
+						),
+						doc
+					))]
+					let mut r#identifying_test_property = None;
+					#[cfg(any(
+						any(feature = "image-property-schema", feature = "general-schema-section"),
+						doc
+					))]
+					let mut r#image_property = None;
+					#[cfg(any(
+						any(
+							feature = "legal-status-property-schema",
+							feature = "health-lifesci-schema-section"
+						),
+						doc
+					))]
+					let mut r#legal_status_property = None;
+					#[cfg(any(
+						any(
+							feature = "main-entity-of-page-property-schema",
+							feature = "general-schema-section"
+						),
+						doc
+					))]
+					let mut r#main_entity_of_page_property = None;
+					#[cfg(any(
+						any(
+							feature = "medicine-system-property-schema",
+							feature = "health-lifesci-schema-section"
+						),
+						doc
+					))]
+					let mut r#medicine_system_property = None;
+					#[cfg(any(
+						any(feature = "name-property-schema", feature = "general-schema-section"),
+						doc
+					))]
+					let mut r#name_property = None;
+					#[cfg(any(
+						any(
+							feature = "natural-progression-property-schema",
+							feature = "health-lifesci-schema-section"
+						),
+						doc
+					))]
+					let mut r#natural_progression_property = None;
+					#[cfg(any(
+						any(
+							feature = "pathophysiology-property-schema",
+							feature = "health-lifesci-schema-section"
+						),
+						doc
+					))]
+					let mut r#pathophysiology_property = None;
+					#[cfg(any(
+						any(
+							feature = "possible-complication-property-schema",
+							feature = "health-lifesci-schema-section"
+						),
+						doc
+					))]
+					let mut r#possible_complication_property = None;
+					#[cfg(any(
+						any(
+							feature = "possible-treatment-property-schema",
+							feature = "health-lifesci-schema-section"
+						),
+						doc
+					))]
+					let mut r#possible_treatment_property = None;
+					#[cfg(any(
+						any(
+							feature = "potential-action-property-schema",
+							feature = "general-schema-section"
+						),
+						doc
+					))]
+					let mut r#potential_action_property = None;
+					#[cfg(any(
+						any(
+							feature = "primary-prevention-property-schema",
+							feature = "health-lifesci-schema-section"
+						),
+						doc
+					))]
+					let mut r#primary_prevention_property = None;
+					#[cfg(any(
+						any(
+							feature = "recognizing-authority-property-schema",
+							feature = "health-lifesci-schema-section"
+						),
+						doc
+					))]
+					let mut r#recognizing_authority_property = None;
+					#[cfg(any(
+						any(
+							feature = "relevant-specialty-property-schema",
+							feature = "health-lifesci-schema-section"
+						),
+						doc
+					))]
+					let mut r#relevant_specialty_property = None;
+					#[cfg(any(
+						any(
+							feature = "risk-factor-property-schema",
+							feature = "health-lifesci-schema-section"
+						),
+						doc
+					))]
+					let mut r#risk_factor_property = None;
+					#[cfg(any(
+						any(
+							feature = "same-as-property-schema",
+							feature = "general-schema-section"
+						),
+						doc
+					))]
+					let mut r#same_as_property = None;
+					#[cfg(any(
+						any(
+							feature = "secondary-prevention-property-schema",
+							feature = "health-lifesci-schema-section"
+						),
+						doc
+					))]
+					let mut r#secondary_prevention_property = None;
+					#[cfg(any(
+						any(
+							feature = "sign-or-symptom-property-schema",
+							feature = "health-lifesci-schema-section"
+						),
+						doc
+					))]
+					let mut r#sign_or_symptom_property = None;
+					#[cfg(any(
+						any(
+							feature = "stage-property-schema",
+							feature = "health-lifesci-schema-section"
+						),
+						doc
+					))]
+					let mut r#stage_property = None;
+					#[cfg(any(
+						any(
+							feature = "status-property-schema",
+							feature = "health-lifesci-schema-section"
+						),
+						doc
+					))]
+					let mut r#status_property = None;
+					#[cfg(any(
+						any(
+							feature = "study-property-schema",
+							feature = "health-lifesci-schema-section"
+						),
+						doc
+					))]
+					let mut r#study_property = None;
+					#[cfg(any(
+						any(
+							feature = "subject-of-property-schema",
+							feature = "general-schema-section"
+						),
+						doc
+					))]
+					let mut r#subject_of_property = None;
+					#[cfg(any(
+						any(
+							feature = "typical-test-property-schema",
+							feature = "health-lifesci-schema-section"
+						),
+						doc
+					))]
+					let mut r#typical_test_property = None;
+					#[cfg(any(
+						any(feature = "url-property-schema", feature = "general-schema-section"),
+						doc
+					))]
+					let mut r#url_property = None;
+					while let Some(key) = map.next_key::<Field>()? {
+						match key {
+							#[cfg(any(
+								any(
+									feature = "additional-type-property-schema",
+									feature = "general-schema-section"
+								),
+								doc
+							))]
+							Field::AdditionalType => {
+								if r#additional_type_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"additionalType",
+									));
+								}
+								r#additional_type_property = Some({
+									struct DeserializeWith(Vec<AdditionalTypeProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "alternate-name-property-schema",
+									feature = "general-schema-section"
+								),
+								doc
+							))]
+							Field::AlternateName => {
+								if r#alternate_name_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"alternateName",
+									));
+								}
+								r#alternate_name_property = Some({
+									struct DeserializeWith(Vec<AlternateNameProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "associated-anatomy-property-schema",
+									feature = "health-lifesci-schema-section"
+								),
+								doc
+							))]
+							Field::AssociatedAnatomy => {
+								if r#associated_anatomy_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"associatedAnatomy",
+									));
+								}
+								r#associated_anatomy_property = Some({
+									struct DeserializeWith(Vec<AssociatedAnatomyProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "code-property-schema",
+									feature = "health-lifesci-schema-section"
+								),
+								doc
+							))]
+							Field::Code => {
+								if r#code_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field("code"));
+								}
+								r#code_property = Some({
+									struct DeserializeWith(Vec<CodeProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "description-property-schema",
+									feature = "general-schema-section"
+								),
+								doc
+							))]
+							Field::Description => {
+								if r#description_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"description",
+									));
+								}
+								r#description_property = Some({
+									struct DeserializeWith(Vec<DescriptionProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "differential-diagnosis-property-schema",
+									feature = "health-lifesci-schema-section"
+								),
+								doc
+							))]
+							Field::DifferentialDiagnosis => {
+								if r#differential_diagnosis_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"differentialDiagnosis",
+									));
+								}
+								r#differential_diagnosis_property = Some({
+									struct DeserializeWith(Vec<DifferentialDiagnosisProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "disambiguating-description-property-schema",
+									feature = "general-schema-section"
+								),
+								doc
+							))]
+							Field::DisambiguatingDescription => {
+								if r#disambiguating_description_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"disambiguatingDescription",
+									));
+								}
+								r#disambiguating_description_property = Some({
+									struct DeserializeWith(Vec<DisambiguatingDescriptionProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "drug-property-schema",
+									feature = "health-lifesci-schema-section"
+								),
+								doc
+							))]
+							Field::Drug => {
+								if r#drug_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field("drug"));
+								}
+								r#drug_property = Some({
+									struct DeserializeWith(Vec<DrugProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "epidemiology-property-schema",
+									feature = "health-lifesci-schema-section"
+								),
+								doc
+							))]
+							Field::Epidemiology => {
+								if r#epidemiology_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"epidemiology",
+									));
+								}
+								r#epidemiology_property = Some({
+									struct DeserializeWith(Vec<EpidemiologyProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "expected-prognosis-property-schema",
+									feature = "health-lifesci-schema-section"
+								),
+								doc
+							))]
+							Field::ExpectedPrognosis => {
+								if r#expected_prognosis_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"expectedPrognosis",
+									));
+								}
+								r#expected_prognosis_property = Some({
+									struct DeserializeWith(Vec<ExpectedPrognosisProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "funding-property-schema",
+									feature = "pending-schema-section"
+								),
+								doc
+							))]
+							Field::Funding => {
+								if r#funding_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"funding",
+									));
+								}
+								r#funding_property = Some({
+									struct DeserializeWith(Vec<FundingProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "guideline-property-schema",
+									feature = "health-lifesci-schema-section"
+								),
+								doc
+							))]
+							Field::Guideline => {
+								if r#guideline_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"guideline",
+									));
+								}
+								r#guideline_property = Some({
+									struct DeserializeWith(Vec<GuidelineProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "identifier-property-schema",
+									feature = "general-schema-section"
+								),
+								doc
+							))]
+							Field::Identifier => {
+								if r#identifier_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"identifier",
+									));
+								}
+								r#identifier_property = Some({
+									struct DeserializeWith(Vec<IdentifierProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "identifying-exam-property-schema",
+									feature = "health-lifesci-schema-section"
+								),
+								doc
+							))]
+							Field::IdentifyingExam => {
+								if r#identifying_exam_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"identifyingExam",
+									));
+								}
+								r#identifying_exam_property = Some({
+									struct DeserializeWith(Vec<IdentifyingExamProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "identifying-test-property-schema",
+									feature = "health-lifesci-schema-section"
+								),
+								doc
+							))]
+							Field::IdentifyingTest => {
+								if r#identifying_test_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"identifyingTest",
+									));
+								}
+								r#identifying_test_property = Some({
+									struct DeserializeWith(Vec<IdentifyingTestProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "image-property-schema",
+									feature = "general-schema-section"
+								),
+								doc
+							))]
+							Field::Image => {
+								if r#image_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field("image"));
+								}
+								r#image_property = Some({
+									struct DeserializeWith(Vec<ImageProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "legal-status-property-schema",
+									feature = "health-lifesci-schema-section"
+								),
+								doc
+							))]
+							Field::LegalStatus => {
+								if r#legal_status_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"legalStatus",
+									));
+								}
+								r#legal_status_property = Some({
+									struct DeserializeWith(Vec<LegalStatusProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "main-entity-of-page-property-schema",
+									feature = "general-schema-section"
+								),
+								doc
+							))]
+							Field::MainEntityOfPage => {
+								if r#main_entity_of_page_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"mainEntityOfPage",
+									));
+								}
+								r#main_entity_of_page_property = Some({
+									struct DeserializeWith(Vec<MainEntityOfPageProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "medicine-system-property-schema",
+									feature = "health-lifesci-schema-section"
+								),
+								doc
+							))]
+							Field::MedicineSystem => {
+								if r#medicine_system_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"medicineSystem",
+									));
+								}
+								r#medicine_system_property = Some({
+									struct DeserializeWith(Vec<MedicineSystemProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "name-property-schema",
+									feature = "general-schema-section"
+								),
+								doc
+							))]
+							Field::Name => {
+								if r#name_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field("name"));
+								}
+								r#name_property = Some({
+									struct DeserializeWith(Vec<NameProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "natural-progression-property-schema",
+									feature = "health-lifesci-schema-section"
+								),
+								doc
+							))]
+							Field::NaturalProgression => {
+								if r#natural_progression_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"naturalProgression",
+									));
+								}
+								r#natural_progression_property = Some({
+									struct DeserializeWith(Vec<NaturalProgressionProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "pathophysiology-property-schema",
+									feature = "health-lifesci-schema-section"
+								),
+								doc
+							))]
+							Field::Pathophysiology => {
+								if r#pathophysiology_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"pathophysiology",
+									));
+								}
+								r#pathophysiology_property = Some({
+									struct DeserializeWith(Vec<PathophysiologyProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "possible-complication-property-schema",
+									feature = "health-lifesci-schema-section"
+								),
+								doc
+							))]
+							Field::PossibleComplication => {
+								if r#possible_complication_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"possibleComplication",
+									));
+								}
+								r#possible_complication_property = Some({
+									struct DeserializeWith(Vec<PossibleComplicationProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "possible-treatment-property-schema",
+									feature = "health-lifesci-schema-section"
+								),
+								doc
+							))]
+							Field::PossibleTreatment => {
+								if r#possible_treatment_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"possibleTreatment",
+									));
+								}
+								r#possible_treatment_property = Some({
+									struct DeserializeWith(Vec<PossibleTreatmentProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "potential-action-property-schema",
+									feature = "general-schema-section"
+								),
+								doc
+							))]
+							Field::PotentialAction => {
+								if r#potential_action_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"potentialAction",
+									));
+								}
+								r#potential_action_property = Some({
+									struct DeserializeWith(Vec<PotentialActionProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "primary-prevention-property-schema",
+									feature = "health-lifesci-schema-section"
+								),
+								doc
+							))]
+							Field::PrimaryPrevention => {
+								if r#primary_prevention_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"primaryPrevention",
+									));
+								}
+								r#primary_prevention_property = Some({
+									struct DeserializeWith(Vec<PrimaryPreventionProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "recognizing-authority-property-schema",
+									feature = "health-lifesci-schema-section"
+								),
+								doc
+							))]
+							Field::RecognizingAuthority => {
+								if r#recognizing_authority_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"recognizingAuthority",
+									));
+								}
+								r#recognizing_authority_property = Some({
+									struct DeserializeWith(Vec<RecognizingAuthorityProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "relevant-specialty-property-schema",
+									feature = "health-lifesci-schema-section"
+								),
+								doc
+							))]
+							Field::RelevantSpecialty => {
+								if r#relevant_specialty_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"relevantSpecialty",
+									));
+								}
+								r#relevant_specialty_property = Some({
+									struct DeserializeWith(Vec<RelevantSpecialtyProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "risk-factor-property-schema",
+									feature = "health-lifesci-schema-section"
+								),
+								doc
+							))]
+							Field::RiskFactor => {
+								if r#risk_factor_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"riskFactor",
+									));
+								}
+								r#risk_factor_property = Some({
+									struct DeserializeWith(Vec<RiskFactorProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "same-as-property-schema",
+									feature = "general-schema-section"
+								),
+								doc
+							))]
+							Field::SameAs => {
+								if r#same_as_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field("sameAs"));
+								}
+								r#same_as_property = Some({
+									struct DeserializeWith(Vec<SameAsProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "secondary-prevention-property-schema",
+									feature = "health-lifesci-schema-section"
+								),
+								doc
+							))]
+							Field::SecondaryPrevention => {
+								if r#secondary_prevention_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"secondaryPrevention",
+									));
+								}
+								r#secondary_prevention_property = Some({
+									struct DeserializeWith(Vec<SecondaryPreventionProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "sign-or-symptom-property-schema",
+									feature = "health-lifesci-schema-section"
+								),
+								doc
+							))]
+							Field::SignOrSymptom => {
+								if r#sign_or_symptom_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"signOrSymptom",
+									));
+								}
+								r#sign_or_symptom_property = Some({
+									struct DeserializeWith(Vec<SignOrSymptomProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "stage-property-schema",
+									feature = "health-lifesci-schema-section"
+								),
+								doc
+							))]
+							Field::Stage => {
+								if r#stage_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field("stage"));
+								}
+								r#stage_property = Some({
+									struct DeserializeWith(Vec<StageProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "status-property-schema",
+									feature = "health-lifesci-schema-section"
+								),
+								doc
+							))]
+							Field::Status => {
+								if r#status_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field("status"));
+								}
+								r#status_property = Some({
+									struct DeserializeWith(Vec<StatusProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "study-property-schema",
+									feature = "health-lifesci-schema-section"
+								),
+								doc
+							))]
+							Field::Study => {
+								if r#study_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field("study"));
+								}
+								r#study_property = Some({
+									struct DeserializeWith(Vec<StudyProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "subject-of-property-schema",
+									feature = "general-schema-section"
+								),
+								doc
+							))]
+							Field::SubjectOf => {
+								if r#subject_of_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"subjectOf",
+									));
+								}
+								r#subject_of_property = Some({
+									struct DeserializeWith(Vec<SubjectOfProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "typical-test-property-schema",
+									feature = "health-lifesci-schema-section"
+								),
+								doc
+							))]
+							Field::TypicalTest => {
+								if r#typical_test_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"typicalTest",
+									));
+								}
+								r#typical_test_property = Some({
+									struct DeserializeWith(Vec<TypicalTestProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "url-property-schema",
+									feature = "general-schema-section"
+								),
+								doc
+							))]
+							Field::Url => {
+								if r#url_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field("url"));
+								}
+								r#url_property = Some({
+									struct DeserializeWith(Vec<UrlProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							_ => {
+								let _ = map.next_value::<de::IgnoredAny>()?;
+							}
+						}
+					}
+					Ok(VitalSign {
+						#[cfg(any(
+							any(
+								feature = "additional-type-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						r#additional_type: r#additional_type_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "alternate-name-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						r#alternate_name: r#alternate_name_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "associated-anatomy-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						r#associated_anatomy: r#associated_anatomy_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "code-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						r#code: r#code_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "description-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						r#description: r#description_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "differential-diagnosis-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						r#differential_diagnosis: r#differential_diagnosis_property
+							.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "disambiguating-description-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						r#disambiguating_description: r#disambiguating_description_property
+							.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "drug-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						r#drug: r#drug_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "epidemiology-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						r#epidemiology: r#epidemiology_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "expected-prognosis-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						r#expected_prognosis: r#expected_prognosis_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "funding-property-schema",
+								feature = "pending-schema-section"
+							),
+							doc
+						))]
+						r#funding: r#funding_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "guideline-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						r#guideline: r#guideline_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "identifier-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						r#identifier: r#identifier_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "identifying-exam-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						r#identifying_exam: r#identifying_exam_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "identifying-test-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						r#identifying_test: r#identifying_test_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "image-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						r#image: r#image_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "legal-status-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						r#legal_status: r#legal_status_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "main-entity-of-page-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						r#main_entity_of_page: r#main_entity_of_page_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "medicine-system-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						r#medicine_system: r#medicine_system_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "name-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						r#name: r#name_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "natural-progression-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						r#natural_progression: r#natural_progression_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "pathophysiology-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						r#pathophysiology: r#pathophysiology_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "possible-complication-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						r#possible_complication: r#possible_complication_property
+							.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "possible-treatment-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						r#possible_treatment: r#possible_treatment_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "potential-action-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						r#potential_action: r#potential_action_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "primary-prevention-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						r#primary_prevention: r#primary_prevention_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "recognizing-authority-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						r#recognizing_authority: r#recognizing_authority_property
+							.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "relevant-specialty-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						r#relevant_specialty: r#relevant_specialty_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "risk-factor-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						r#risk_factor: r#risk_factor_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "same-as-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						r#same_as: r#same_as_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "secondary-prevention-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						r#secondary_prevention: r#secondary_prevention_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "sign-or-symptom-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						r#sign_or_symptom: r#sign_or_symptom_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "stage-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						r#stage: r#stage_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "status-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						r#status: r#status_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "study-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						r#study: r#study_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "subject-of-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						r#subject_of: r#subject_of_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "typical-test-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						r#typical_test: r#typical_test_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "url-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						r#url: r#url_property.unwrap_or_default(),
+					})
+				}
+			}
+			const FIELDS: &[&str] = &[
+				#[cfg(any(
+					any(
+						feature = "additional-type-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				"additionalType",
+				#[cfg(any(
+					any(
+						feature = "alternate-name-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				"alternateName",
+				#[cfg(any(
+					any(
+						feature = "associated-anatomy-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				))]
+				"associatedAnatomy",
+				#[cfg(any(
+					any(
+						feature = "code-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				))]
+				"code",
+				#[cfg(any(
+					any(
+						feature = "description-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				"description",
+				#[cfg(any(
+					any(
+						feature = "differential-diagnosis-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				))]
+				"differentialDiagnosis",
+				#[cfg(any(
+					any(
+						feature = "disambiguating-description-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				"disambiguatingDescription",
+				#[cfg(any(
+					any(
+						feature = "drug-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				))]
+				"drug",
+				#[cfg(any(
+					any(
+						feature = "epidemiology-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				))]
+				"epidemiology",
+				#[cfg(any(
+					any(
+						feature = "expected-prognosis-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				))]
+				"expectedPrognosis",
+				#[cfg(any(
+					any(
+						feature = "funding-property-schema",
+						feature = "pending-schema-section"
+					),
+					doc
+				))]
+				"funding",
+				#[cfg(any(
+					any(
+						feature = "guideline-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				))]
+				"guideline",
+				#[cfg(any(
+					any(
+						feature = "identifier-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				"identifier",
+				#[cfg(any(
+					any(
+						feature = "identifying-exam-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				))]
+				"identifyingExam",
+				#[cfg(any(
+					any(
+						feature = "identifying-test-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				))]
+				"identifyingTest",
+				#[cfg(any(
+					any(feature = "image-property-schema", feature = "general-schema-section"),
+					doc
+				))]
+				"image",
+				#[cfg(any(
+					any(
+						feature = "legal-status-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				))]
+				"legalStatus",
+				#[cfg(any(
+					any(
+						feature = "main-entity-of-page-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				"mainEntityOfPage",
+				#[cfg(any(
+					any(
+						feature = "medicine-system-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				))]
+				"medicineSystem",
+				#[cfg(any(
+					any(feature = "name-property-schema", feature = "general-schema-section"),
+					doc
+				))]
+				"name",
+				#[cfg(any(
+					any(
+						feature = "natural-progression-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				))]
+				"naturalProgression",
+				#[cfg(any(
+					any(
+						feature = "pathophysiology-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				))]
+				"pathophysiology",
+				#[cfg(any(
+					any(
+						feature = "possible-complication-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				))]
+				"possibleComplication",
+				#[cfg(any(
+					any(
+						feature = "possible-treatment-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				))]
+				"possibleTreatment",
+				#[cfg(any(
+					any(
+						feature = "potential-action-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				"potentialAction",
+				#[cfg(any(
+					any(
+						feature = "primary-prevention-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				))]
+				"primaryPrevention",
+				#[cfg(any(
+					any(
+						feature = "recognizing-authority-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				))]
+				"recognizingAuthority",
+				#[cfg(any(
+					any(
+						feature = "relevant-specialty-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				))]
+				"relevantSpecialty",
+				#[cfg(any(
+					any(
+						feature = "risk-factor-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				))]
+				"riskFactor",
+				#[cfg(any(
+					any(
+						feature = "same-as-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				"sameAs",
+				#[cfg(any(
+					any(
+						feature = "secondary-prevention-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				))]
+				"secondaryPrevention",
+				#[cfg(any(
+					any(
+						feature = "sign-or-symptom-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				))]
+				"signOrSymptom",
+				#[cfg(any(
+					any(
+						feature = "stage-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				))]
+				"stage",
+				#[cfg(any(
+					any(
+						feature = "status-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				))]
+				"status",
+				#[cfg(any(
+					any(
+						feature = "study-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				))]
+				"study",
+				#[cfg(any(
+					any(
+						feature = "subject-of-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				"subjectOf",
+				#[cfg(any(
+					any(
+						feature = "typical-test-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				))]
+				"typicalTest",
+				#[cfg(any(
+					any(feature = "url-property-schema", feature = "general-schema-section"),
+					doc
+				))]
+				"url",
+			];
+			deserializer.deserialize_struct("VitalSign", FIELDS, ClassVisitor)
+		}
+	}
 }

@@ -1,3 +1,5 @@
+mod serde;
+
 use std::str::FromStr;
 
 use convert_case::{Case, Casing};
@@ -9,11 +11,8 @@ use rayon::prelude::*;
 use crate::{
 	doc_lines::DocLines,
 	feature::Feature,
-	schema::{map_schema_name, ReferencedSchema, Schema},
+	schema::{class::serde::serde_mod, map_schema_name, ReferencedSchema, Schema},
 	schema_section::SchemaSection,
-	serde_attributes::{
-		serde_as, serde_default, serde_derive, serde_rename, serde_skip_serializing_if,
-	},
 	sparql::{SchemaQueries, SchemaQuerySolution},
 };
 
@@ -81,47 +80,61 @@ impl Schema for Class {
 	}
 }
 
+fn property_name(referenced_schema: &ReferencedSchema) -> TokenStream {
+	TokenStream::from_str(&format!(
+		"r#{}",
+		referenced_schema.name.to_case(Case::Snake)
+	))
+	.unwrap()
+}
+
+fn property_type(referenced_schema: &ReferencedSchema) -> TokenStream {
+	TokenStream::from_str(&format!(
+		"Vec<{}Property>",
+		referenced_schema.name.to_case(Case::UpperCamel)
+	))
+	.unwrap()
+}
+
+fn property_feature(referenced_schema: &ReferencedSchema) -> Feature {
+	Feature::Any(vec![
+		Feature::Name(format!(
+			"{}-property-schema",
+			referenced_schema.name.to_case(Case::Kebab)
+		)),
+		Feature::Name(referenced_schema.section.feature_name().to_string()),
+	])
+}
+
 impl ToTokens for Class {
 	fn to_tokens(&self, tokens: &mut TokenStream) {
 		let doc_lines = self.doc_lines_token_stream();
-		let serde_derive = serde_derive();
 		let name = TokenStream::from_str(&self.name.to_case(Case::UpperCamel)).unwrap();
-		let fields = self
-			.properties
-			.iter()
-			.map(|ReferencedSchema { name, section, .. }| {
-				let feature = Feature::Any(vec![
-					Feature::Name(format!("{}-property-schema", name.to_case(Case::Kebab))),
-					Feature::Name(section.feature_name().to_string()),
-				]);
-				let feature_gate = feature.feature_gate();
-				let serde_rename = serde_rename(name);
-				let serde_default = serde_default();
-				let serde_skip_serializing_if_empty = serde_skip_serializing_if("Vec::is_empty");
-				let serde_as = serde_as("OneOrMany<_>");
-				let property = TokenStream::from_str(&format!(
-					"pub r#{}: Vec<{}Property>",
-					name.to_case(Case::Snake),
-					name.to_case(Case::UpperCamel)
-				))
-				.unwrap();
-				quote!(
-					#feature_gate
-					#serde_rename
-					#serde_default
-					#serde_skip_serializing_if_empty
-					#serde_as
-					#property,
-				)
-			});
+		let fields = self.properties.iter().map(|referenced_schema| {
+			let feature_gate = property_feature(referenced_schema).as_cfg_attribute();
+			let property = TokenStream::from_str(&format!(
+				"pub {}: {}",
+				property_name(referenced_schema),
+				property_type(referenced_schema),
+			))
+			.unwrap();
+			quote!(
+				#feature_gate
+				#property,
+			)
+		});
+		let serde_mod = serde_mod(self);
 		tokens.append_all(quote!(
 			use super::*;
 			#doc_lines
 			#[cfg_attr(feature = "derive-debug", derive(Debug))]
 			#[cfg_attr(feature = "derive-clone", derive(Clone))]
-			#serde_derive
 			pub struct #name {
 				#(#fields)*
+			}
+			#[cfg(feature = "serde")]
+			mod serde {
+				#serde_mod
 			}
 		));
 	}

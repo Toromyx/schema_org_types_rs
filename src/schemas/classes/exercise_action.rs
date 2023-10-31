@@ -2,7 +2,6 @@ use super::*;
 /// <https://schema.org/ExerciseAction>
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 pub struct ExerciseAction {
 	#[cfg(any(
 		any(
@@ -11,13 +10,6 @@ pub struct ExerciseAction {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "actionStatus"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#action_status: Vec<ActionStatusProperty>,
 	#[cfg(any(
 		any(
@@ -26,25 +18,11 @@ pub struct ExerciseAction {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "additionalType"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
 	#[cfg(any(
 		any(feature = "agent-property-schema", feature = "general-schema-section"),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "agent"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#agent: Vec<AgentProperty>,
 	#[cfg(any(
 		any(
@@ -53,13 +31,6 @@ pub struct ExerciseAction {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "alternateName"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#alternate_name: Vec<AlternateNameProperty>,
 	#[cfg(any(
 		any(
@@ -68,25 +39,11 @@ pub struct ExerciseAction {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "audience"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#audience: Vec<AudienceProperty>,
 	#[cfg(any(
 		any(feature = "course-property-schema", feature = "general-schema-section"),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "course"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#course: Vec<CourseProperty>,
 	#[cfg(any(
 		any(
@@ -95,13 +52,6 @@ pub struct ExerciseAction {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "description"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#description: Vec<DescriptionProperty>,
 	#[cfg(any(
 		any(
@@ -110,13 +60,6 @@ pub struct ExerciseAction {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "diet"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#diet: Vec<DietProperty>,
 	#[cfg(any(
 		any(
@@ -125,13 +68,6 @@ pub struct ExerciseAction {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "disambiguatingDescription"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
 	#[cfg(any(
 		any(
@@ -140,13 +76,6 @@ pub struct ExerciseAction {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "distance"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#distance: Vec<DistanceProperty>,
 	#[cfg(any(
 		any(
@@ -155,37 +84,16 @@ pub struct ExerciseAction {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "endTime"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#end_time: Vec<EndTimeProperty>,
 	#[cfg(any(
 		any(feature = "error-property-schema", feature = "general-schema-section"),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "error"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#error: Vec<ErrorProperty>,
 	#[cfg(any(
 		any(feature = "event-property-schema", feature = "general-schema-section"),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "event"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#event: Vec<EventProperty>,
 	#[cfg(any(
 		any(
@@ -194,13 +102,6 @@ pub struct ExerciseAction {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "exerciseCourse"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#exercise_course: Vec<ExerciseCourseProperty>,
 	#[cfg(any(
 		any(
@@ -209,13 +110,6 @@ pub struct ExerciseAction {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "exercisePlan"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#exercise_plan: Vec<ExercisePlanProperty>,
 	#[cfg(any(
 		any(
@@ -224,13 +118,6 @@ pub struct ExerciseAction {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "exerciseRelatedDiet"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#exercise_related_diet: Vec<ExerciseRelatedDietProperty>,
 	#[cfg(any(
 		any(
@@ -239,13 +126,6 @@ pub struct ExerciseAction {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "exerciseType"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#exercise_type: Vec<ExerciseTypeProperty>,
 	#[cfg(any(
 		any(
@@ -254,13 +134,6 @@ pub struct ExerciseAction {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "fromLocation"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#from_location: Vec<FromLocationProperty>,
 	#[cfg(any(
 		any(
@@ -269,25 +142,11 @@ pub struct ExerciseAction {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "identifier"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#identifier: Vec<IdentifierProperty>,
 	#[cfg(any(
 		any(feature = "image-property-schema", feature = "general-schema-section"),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "image"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#image: Vec<ImageProperty>,
 	#[cfg(any(
 		any(
@@ -296,13 +155,6 @@ pub struct ExerciseAction {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "instrument"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#instrument: Vec<InstrumentProperty>,
 	#[cfg(any(
 		any(
@@ -311,13 +163,6 @@ pub struct ExerciseAction {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "location"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#location: Vec<LocationProperty>,
 	#[cfg(any(
 		any(
@@ -326,37 +171,16 @@ pub struct ExerciseAction {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "mainEntityOfPage"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
 	#[cfg(any(
 		any(feature = "name-property-schema", feature = "general-schema-section"),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "name"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#name: Vec<NameProperty>,
 	#[cfg(any(
 		any(feature = "object-property-schema", feature = "general-schema-section"),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "object"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#object: Vec<ObjectProperty>,
 	#[cfg(any(
 		any(
@@ -365,13 +189,6 @@ pub struct ExerciseAction {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "opponent"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#opponent: Vec<OpponentProperty>,
 	#[cfg(any(
 		any(
@@ -380,13 +197,6 @@ pub struct ExerciseAction {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "participant"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#participant: Vec<ParticipantProperty>,
 	#[cfg(any(
 		any(
@@ -395,13 +205,6 @@ pub struct ExerciseAction {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "potentialAction"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#potential_action: Vec<PotentialActionProperty>,
 	#[cfg(any(
 		any(
@@ -410,25 +213,11 @@ pub struct ExerciseAction {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "provider"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#provider: Vec<ProviderProperty>,
 	#[cfg(any(
 		any(feature = "result-property-schema", feature = "general-schema-section"),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "result"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#result: Vec<ResultProperty>,
 	#[cfg(any(
 		any(
@@ -437,13 +226,6 @@ pub struct ExerciseAction {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "sameAs"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#same_as: Vec<SameAsProperty>,
 	#[cfg(any(
 		any(
@@ -452,13 +234,6 @@ pub struct ExerciseAction {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "sportsActivityLocation"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#sports_activity_location: Vec<SportsActivityLocationProperty>,
 	#[cfg(any(
 		any(
@@ -467,13 +242,6 @@ pub struct ExerciseAction {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "sportsEvent"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#sports_event: Vec<SportsEventProperty>,
 	#[cfg(any(
 		any(
@@ -482,13 +250,6 @@ pub struct ExerciseAction {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "sportsTeam"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#sports_team: Vec<SportsTeamProperty>,
 	#[cfg(any(
 		any(
@@ -497,13 +258,6 @@ pub struct ExerciseAction {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "startTime"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#start_time: Vec<StartTimeProperty>,
 	#[cfg(any(
 		any(
@@ -512,25 +266,11 @@ pub struct ExerciseAction {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "subjectOf"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#subject_of: Vec<SubjectOfProperty>,
 	#[cfg(any(
 		any(feature = "target-property-schema", feature = "general-schema-section"),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "target"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#target: Vec<TargetProperty>,
 	#[cfg(any(
 		any(
@@ -539,24 +279,4533 @@ pub struct ExerciseAction {
 		),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "toLocation"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#to_location: Vec<ToLocationProperty>,
 	#[cfg(any(
 		any(feature = "url-property-schema", feature = "general-schema-section"),
 		doc
 	))]
-	#[cfg_attr(feature = "serde", serde(rename = "url"))]
-	#[cfg_attr(feature = "serde", serde(default))]
-	#[cfg_attr(feature = "serde", serde(skip_serializing_if = "Vec::is_empty"))]
-	#[cfg_attr(
-		feature = "serde",
-		serde(with = "serde_with::As::<serde_with::OneOrMany<serde_with::Same>>")
-	)]
 	pub r#url: Vec<UrlProperty>,
+}
+#[cfg(feature = "serde")]
+mod serde {
+	use std::{fmt, fmt::Formatter};
+
+	use ::serde::{
+		de, de::Visitor, ser::SerializeStruct, Deserialize, Deserializer, Serialize, Serializer,
+	};
+
+	use super::*;
+	impl Serialize for ExerciseAction {
+		fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+		where
+			S: Serializer,
+		{
+			let len: usize = [
+				if cfg!(any(
+					any(
+						feature = "action-status-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#action_status) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "additional-type-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#additional_type) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "agent-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#agent) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "alternate-name-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#alternate_name) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "audience-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#audience) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "course-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#course) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "description-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#description) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "diet-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#diet) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "disambiguating-description-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#disambiguating_description) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "distance-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#distance) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "end-time-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#end_time) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "error-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#error) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "event-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#event) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "exercise-course-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#exercise_course) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "exercise-plan-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#exercise_plan) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "exercise-related-diet-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#exercise_related_diet) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "exercise-type-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#exercise_type) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "from-location-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#from_location) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "identifier-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#identifier) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "image-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#image) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "instrument-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#instrument) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "location-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#location) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "main-entity-of-page-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#main_entity_of_page) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "name-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#name) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "object-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#object) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "opponent-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#opponent) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "participant-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#participant) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "potential-action-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#potential_action) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "provider-property-schema",
+						feature = "pending-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#provider) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "result-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#result) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "same-as-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#same_as) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "sports-activity-location-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#sports_activity_location) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "sports-event-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#sports_event) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "sports-team-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#sports_team) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "start-time-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#start_time) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "subject-of-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#subject_of) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "target-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#target) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "to-location-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#to_location) as usize
+				} else {
+					0
+				},
+				if cfg!(any(
+					any(
+						feature = "url-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				)) {
+					!Vec::is_empty(&self.r#url) as usize
+				} else {
+					0
+				},
+			]
+			.iter()
+			.sum();
+			let mut serialize_struct =
+				Serializer::serialize_struct(serializer, "ExerciseAction", len)?;
+			#[cfg(any(
+				any(
+					feature = "action-status-property-schema",
+					feature = "general-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#action_status) {
+				serialize_struct.serialize_field("actionStatus", {
+					struct SerializeWith<'a>(&'a Vec<ActionStatusProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#action_status)
+				})?;
+			} else {
+				serialize_struct.skip_field("actionStatus")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "additional-type-property-schema",
+					feature = "general-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#additional_type) {
+				serialize_struct.serialize_field("additionalType", {
+					struct SerializeWith<'a>(&'a Vec<AdditionalTypeProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#additional_type)
+				})?;
+			} else {
+				serialize_struct.skip_field("additionalType")?;
+			}
+			#[cfg(any(
+				any(feature = "agent-property-schema", feature = "general-schema-section"),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#agent) {
+				serialize_struct.serialize_field("agent", {
+					struct SerializeWith<'a>(&'a Vec<AgentProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#agent)
+				})?;
+			} else {
+				serialize_struct.skip_field("agent")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "alternate-name-property-schema",
+					feature = "general-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#alternate_name) {
+				serialize_struct.serialize_field("alternateName", {
+					struct SerializeWith<'a>(&'a Vec<AlternateNameProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#alternate_name)
+				})?;
+			} else {
+				serialize_struct.skip_field("alternateName")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "audience-property-schema",
+					feature = "general-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#audience) {
+				serialize_struct.serialize_field("audience", {
+					struct SerializeWith<'a>(&'a Vec<AudienceProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#audience)
+				})?;
+			} else {
+				serialize_struct.skip_field("audience")?;
+			}
+			#[cfg(any(
+				any(feature = "course-property-schema", feature = "general-schema-section"),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#course) {
+				serialize_struct.serialize_field("course", {
+					struct SerializeWith<'a>(&'a Vec<CourseProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#course)
+				})?;
+			} else {
+				serialize_struct.skip_field("course")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "description-property-schema",
+					feature = "general-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#description) {
+				serialize_struct.serialize_field("description", {
+					struct SerializeWith<'a>(&'a Vec<DescriptionProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#description)
+				})?;
+			} else {
+				serialize_struct.skip_field("description")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "diet-property-schema",
+					feature = "health-lifesci-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#diet) {
+				serialize_struct.serialize_field("diet", {
+					struct SerializeWith<'a>(&'a Vec<DietProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#diet)
+				})?;
+			} else {
+				serialize_struct.skip_field("diet")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "disambiguating-description-property-schema",
+					feature = "general-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#disambiguating_description) {
+				serialize_struct.serialize_field("disambiguatingDescription", {
+					struct SerializeWith<'a>(&'a Vec<DisambiguatingDescriptionProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#disambiguating_description)
+				})?;
+			} else {
+				serialize_struct.skip_field("disambiguatingDescription")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "distance-property-schema",
+					feature = "general-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#distance) {
+				serialize_struct.serialize_field("distance", {
+					struct SerializeWith<'a>(&'a Vec<DistanceProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#distance)
+				})?;
+			} else {
+				serialize_struct.skip_field("distance")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "end-time-property-schema",
+					feature = "general-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#end_time) {
+				serialize_struct.serialize_field("endTime", {
+					struct SerializeWith<'a>(&'a Vec<EndTimeProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#end_time)
+				})?;
+			} else {
+				serialize_struct.skip_field("endTime")?;
+			}
+			#[cfg(any(
+				any(feature = "error-property-schema", feature = "general-schema-section"),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#error) {
+				serialize_struct.serialize_field("error", {
+					struct SerializeWith<'a>(&'a Vec<ErrorProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#error)
+				})?;
+			} else {
+				serialize_struct.skip_field("error")?;
+			}
+			#[cfg(any(
+				any(feature = "event-property-schema", feature = "general-schema-section"),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#event) {
+				serialize_struct.serialize_field("event", {
+					struct SerializeWith<'a>(&'a Vec<EventProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#event)
+				})?;
+			} else {
+				serialize_struct.skip_field("event")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "exercise-course-property-schema",
+					feature = "general-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#exercise_course) {
+				serialize_struct.serialize_field("exerciseCourse", {
+					struct SerializeWith<'a>(&'a Vec<ExerciseCourseProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#exercise_course)
+				})?;
+			} else {
+				serialize_struct.skip_field("exerciseCourse")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "exercise-plan-property-schema",
+					feature = "health-lifesci-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#exercise_plan) {
+				serialize_struct.serialize_field("exercisePlan", {
+					struct SerializeWith<'a>(&'a Vec<ExercisePlanProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#exercise_plan)
+				})?;
+			} else {
+				serialize_struct.skip_field("exercisePlan")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "exercise-related-diet-property-schema",
+					feature = "health-lifesci-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#exercise_related_diet) {
+				serialize_struct.serialize_field("exerciseRelatedDiet", {
+					struct SerializeWith<'a>(&'a Vec<ExerciseRelatedDietProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#exercise_related_diet)
+				})?;
+			} else {
+				serialize_struct.skip_field("exerciseRelatedDiet")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "exercise-type-property-schema",
+					feature = "health-lifesci-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#exercise_type) {
+				serialize_struct.serialize_field("exerciseType", {
+					struct SerializeWith<'a>(&'a Vec<ExerciseTypeProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#exercise_type)
+				})?;
+			} else {
+				serialize_struct.skip_field("exerciseType")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "from-location-property-schema",
+					feature = "general-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#from_location) {
+				serialize_struct.serialize_field("fromLocation", {
+					struct SerializeWith<'a>(&'a Vec<FromLocationProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#from_location)
+				})?;
+			} else {
+				serialize_struct.skip_field("fromLocation")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "identifier-property-schema",
+					feature = "general-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#identifier) {
+				serialize_struct.serialize_field("identifier", {
+					struct SerializeWith<'a>(&'a Vec<IdentifierProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#identifier)
+				})?;
+			} else {
+				serialize_struct.skip_field("identifier")?;
+			}
+			#[cfg(any(
+				any(feature = "image-property-schema", feature = "general-schema-section"),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#image) {
+				serialize_struct.serialize_field("image", {
+					struct SerializeWith<'a>(&'a Vec<ImageProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#image)
+				})?;
+			} else {
+				serialize_struct.skip_field("image")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "instrument-property-schema",
+					feature = "general-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#instrument) {
+				serialize_struct.serialize_field("instrument", {
+					struct SerializeWith<'a>(&'a Vec<InstrumentProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#instrument)
+				})?;
+			} else {
+				serialize_struct.skip_field("instrument")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "location-property-schema",
+					feature = "general-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#location) {
+				serialize_struct.serialize_field("location", {
+					struct SerializeWith<'a>(&'a Vec<LocationProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#location)
+				})?;
+			} else {
+				serialize_struct.skip_field("location")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "main-entity-of-page-property-schema",
+					feature = "general-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#main_entity_of_page) {
+				serialize_struct.serialize_field("mainEntityOfPage", {
+					struct SerializeWith<'a>(&'a Vec<MainEntityOfPageProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#main_entity_of_page)
+				})?;
+			} else {
+				serialize_struct.skip_field("mainEntityOfPage")?;
+			}
+			#[cfg(any(
+				any(feature = "name-property-schema", feature = "general-schema-section"),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#name) {
+				serialize_struct.serialize_field("name", {
+					struct SerializeWith<'a>(&'a Vec<NameProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#name)
+				})?;
+			} else {
+				serialize_struct.skip_field("name")?;
+			}
+			#[cfg(any(
+				any(feature = "object-property-schema", feature = "general-schema-section"),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#object) {
+				serialize_struct.serialize_field("object", {
+					struct SerializeWith<'a>(&'a Vec<ObjectProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#object)
+				})?;
+			} else {
+				serialize_struct.skip_field("object")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "opponent-property-schema",
+					feature = "general-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#opponent) {
+				serialize_struct.serialize_field("opponent", {
+					struct SerializeWith<'a>(&'a Vec<OpponentProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#opponent)
+				})?;
+			} else {
+				serialize_struct.skip_field("opponent")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "participant-property-schema",
+					feature = "general-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#participant) {
+				serialize_struct.serialize_field("participant", {
+					struct SerializeWith<'a>(&'a Vec<ParticipantProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#participant)
+				})?;
+			} else {
+				serialize_struct.skip_field("participant")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "potential-action-property-schema",
+					feature = "general-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#potential_action) {
+				serialize_struct.serialize_field("potentialAction", {
+					struct SerializeWith<'a>(&'a Vec<PotentialActionProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#potential_action)
+				})?;
+			} else {
+				serialize_struct.skip_field("potentialAction")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "provider-property-schema",
+					feature = "pending-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#provider) {
+				serialize_struct.serialize_field("provider", {
+					struct SerializeWith<'a>(&'a Vec<ProviderProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#provider)
+				})?;
+			} else {
+				serialize_struct.skip_field("provider")?;
+			}
+			#[cfg(any(
+				any(feature = "result-property-schema", feature = "general-schema-section"),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#result) {
+				serialize_struct.serialize_field("result", {
+					struct SerializeWith<'a>(&'a Vec<ResultProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#result)
+				})?;
+			} else {
+				serialize_struct.skip_field("result")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "same-as-property-schema",
+					feature = "general-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#same_as) {
+				serialize_struct.serialize_field("sameAs", {
+					struct SerializeWith<'a>(&'a Vec<SameAsProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#same_as)
+				})?;
+			} else {
+				serialize_struct.skip_field("sameAs")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "sports-activity-location-property-schema",
+					feature = "general-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#sports_activity_location) {
+				serialize_struct.serialize_field("sportsActivityLocation", {
+					struct SerializeWith<'a>(&'a Vec<SportsActivityLocationProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#sports_activity_location)
+				})?;
+			} else {
+				serialize_struct.skip_field("sportsActivityLocation")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "sports-event-property-schema",
+					feature = "general-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#sports_event) {
+				serialize_struct.serialize_field("sportsEvent", {
+					struct SerializeWith<'a>(&'a Vec<SportsEventProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#sports_event)
+				})?;
+			} else {
+				serialize_struct.skip_field("sportsEvent")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "sports-team-property-schema",
+					feature = "general-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#sports_team) {
+				serialize_struct.serialize_field("sportsTeam", {
+					struct SerializeWith<'a>(&'a Vec<SportsTeamProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#sports_team)
+				})?;
+			} else {
+				serialize_struct.skip_field("sportsTeam")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "start-time-property-schema",
+					feature = "general-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#start_time) {
+				serialize_struct.serialize_field("startTime", {
+					struct SerializeWith<'a>(&'a Vec<StartTimeProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#start_time)
+				})?;
+			} else {
+				serialize_struct.skip_field("startTime")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "subject-of-property-schema",
+					feature = "general-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#subject_of) {
+				serialize_struct.serialize_field("subjectOf", {
+					struct SerializeWith<'a>(&'a Vec<SubjectOfProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#subject_of)
+				})?;
+			} else {
+				serialize_struct.skip_field("subjectOf")?;
+			}
+			#[cfg(any(
+				any(feature = "target-property-schema", feature = "general-schema-section"),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#target) {
+				serialize_struct.serialize_field("target", {
+					struct SerializeWith<'a>(&'a Vec<TargetProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#target)
+				})?;
+			} else {
+				serialize_struct.skip_field("target")?;
+			}
+			#[cfg(any(
+				any(
+					feature = "to-location-property-schema",
+					feature = "general-schema-section"
+				),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#to_location) {
+				serialize_struct.serialize_field("toLocation", {
+					struct SerializeWith<'a>(&'a Vec<ToLocationProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#to_location)
+				})?;
+			} else {
+				serialize_struct.skip_field("toLocation")?;
+			}
+			#[cfg(any(
+				any(feature = "url-property-schema", feature = "general-schema-section"),
+				doc
+			))]
+			if !Vec::is_empty(&self.r#url) {
+				serialize_struct.serialize_field("url", {
+					struct SerializeWith<'a>(&'a Vec<UrlProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#url)
+				})?;
+			} else {
+				serialize_struct.skip_field("url")?;
+			}
+			serialize_struct.end()
+		}
+	}
+	impl<'de> Deserialize<'de> for ExerciseAction {
+		fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+		where
+			D: Deserializer<'de>,
+		{
+			enum Field {
+				#[cfg(any(
+					any(
+						feature = "action-status-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				ActionStatus,
+				#[cfg(any(
+					any(
+						feature = "additional-type-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				AdditionalType,
+				#[cfg(any(
+					any(feature = "agent-property-schema", feature = "general-schema-section"),
+					doc
+				))]
+				Agent,
+				#[cfg(any(
+					any(
+						feature = "alternate-name-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				AlternateName,
+				#[cfg(any(
+					any(
+						feature = "audience-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				Audience,
+				#[cfg(any(
+					any(feature = "course-property-schema", feature = "general-schema-section"),
+					doc
+				))]
+				Course,
+				#[cfg(any(
+					any(
+						feature = "description-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				Description,
+				#[cfg(any(
+					any(
+						feature = "diet-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				))]
+				Diet,
+				#[cfg(any(
+					any(
+						feature = "disambiguating-description-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				DisambiguatingDescription,
+				#[cfg(any(
+					any(
+						feature = "distance-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				Distance,
+				#[cfg(any(
+					any(
+						feature = "end-time-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				EndTime,
+				#[cfg(any(
+					any(feature = "error-property-schema", feature = "general-schema-section"),
+					doc
+				))]
+				Error,
+				#[cfg(any(
+					any(feature = "event-property-schema", feature = "general-schema-section"),
+					doc
+				))]
+				Event,
+				#[cfg(any(
+					any(
+						feature = "exercise-course-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				ExerciseCourse,
+				#[cfg(any(
+					any(
+						feature = "exercise-plan-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				))]
+				ExercisePlan,
+				#[cfg(any(
+					any(
+						feature = "exercise-related-diet-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				))]
+				ExerciseRelatedDiet,
+				#[cfg(any(
+					any(
+						feature = "exercise-type-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				))]
+				ExerciseType,
+				#[cfg(any(
+					any(
+						feature = "from-location-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				FromLocation,
+				#[cfg(any(
+					any(
+						feature = "identifier-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				Identifier,
+				#[cfg(any(
+					any(feature = "image-property-schema", feature = "general-schema-section"),
+					doc
+				))]
+				Image,
+				#[cfg(any(
+					any(
+						feature = "instrument-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				Instrument,
+				#[cfg(any(
+					any(
+						feature = "location-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				Location,
+				#[cfg(any(
+					any(
+						feature = "main-entity-of-page-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				MainEntityOfPage,
+				#[cfg(any(
+					any(feature = "name-property-schema", feature = "general-schema-section"),
+					doc
+				))]
+				Name,
+				#[cfg(any(
+					any(feature = "object-property-schema", feature = "general-schema-section"),
+					doc
+				))]
+				Object,
+				#[cfg(any(
+					any(
+						feature = "opponent-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				Opponent,
+				#[cfg(any(
+					any(
+						feature = "participant-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				Participant,
+				#[cfg(any(
+					any(
+						feature = "potential-action-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				PotentialAction,
+				#[cfg(any(
+					any(
+						feature = "provider-property-schema",
+						feature = "pending-schema-section"
+					),
+					doc
+				))]
+				Provider,
+				#[cfg(any(
+					any(feature = "result-property-schema", feature = "general-schema-section"),
+					doc
+				))]
+				Result,
+				#[cfg(any(
+					any(
+						feature = "same-as-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				SameAs,
+				#[cfg(any(
+					any(
+						feature = "sports-activity-location-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				SportsActivityLocation,
+				#[cfg(any(
+					any(
+						feature = "sports-event-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				SportsEvent,
+				#[cfg(any(
+					any(
+						feature = "sports-team-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				SportsTeam,
+				#[cfg(any(
+					any(
+						feature = "start-time-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				StartTime,
+				#[cfg(any(
+					any(
+						feature = "subject-of-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				SubjectOf,
+				#[cfg(any(
+					any(feature = "target-property-schema", feature = "general-schema-section"),
+					doc
+				))]
+				Target,
+				#[cfg(any(
+					any(
+						feature = "to-location-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				ToLocation,
+				#[cfg(any(
+					any(feature = "url-property-schema", feature = "general-schema-section"),
+					doc
+				))]
+				Url,
+				Ignore,
+			}
+			struct FieldVisitor;
+			impl<'de> Visitor<'de> for FieldVisitor {
+				type Value = Field;
+				fn expecting(&self, formatter: &mut Formatter) -> fmt::Result {
+					formatter.write_str("field identifier")
+				}
+				fn visit_str<E>(self, value: &str) -> Result<Self::Value, E>
+				where
+					E: de::Error,
+				{
+					match value {
+						#[cfg(any(
+							any(
+								feature = "action-status-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						"actionStatus" => Ok(Field::ActionStatus),
+						#[cfg(any(
+							any(
+								feature = "additional-type-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						"additionalType" => Ok(Field::AdditionalType),
+						#[cfg(any(
+							any(
+								feature = "agent-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						"agent" => Ok(Field::Agent),
+						#[cfg(any(
+							any(
+								feature = "alternate-name-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						"alternateName" => Ok(Field::AlternateName),
+						#[cfg(any(
+							any(
+								feature = "audience-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						"audience" => Ok(Field::Audience),
+						#[cfg(any(
+							any(
+								feature = "course-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						"course" => Ok(Field::Course),
+						#[cfg(any(
+							any(
+								feature = "description-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						"description" => Ok(Field::Description),
+						#[cfg(any(
+							any(
+								feature = "diet-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						"diet" => Ok(Field::Diet),
+						#[cfg(any(
+							any(
+								feature = "disambiguating-description-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
+						#[cfg(any(
+							any(
+								feature = "distance-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						"distance" => Ok(Field::Distance),
+						#[cfg(any(
+							any(
+								feature = "end-time-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						"endTime" => Ok(Field::EndTime),
+						#[cfg(any(
+							any(
+								feature = "error-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						"error" => Ok(Field::Error),
+						#[cfg(any(
+							any(
+								feature = "event-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						"event" => Ok(Field::Event),
+						#[cfg(any(
+							any(
+								feature = "exercise-course-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						"exerciseCourse" => Ok(Field::ExerciseCourse),
+						#[cfg(any(
+							any(
+								feature = "exercise-plan-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						"exercisePlan" => Ok(Field::ExercisePlan),
+						#[cfg(any(
+							any(
+								feature = "exercise-related-diet-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						"exerciseRelatedDiet" => Ok(Field::ExerciseRelatedDiet),
+						#[cfg(any(
+							any(
+								feature = "exercise-type-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						"exerciseType" => Ok(Field::ExerciseType),
+						#[cfg(any(
+							any(
+								feature = "from-location-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						"fromLocation" => Ok(Field::FromLocation),
+						#[cfg(any(
+							any(
+								feature = "identifier-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						"identifier" => Ok(Field::Identifier),
+						#[cfg(any(
+							any(
+								feature = "image-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						"image" => Ok(Field::Image),
+						#[cfg(any(
+							any(
+								feature = "instrument-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						"instrument" => Ok(Field::Instrument),
+						#[cfg(any(
+							any(
+								feature = "location-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						"location" => Ok(Field::Location),
+						#[cfg(any(
+							any(
+								feature = "main-entity-of-page-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
+						#[cfg(any(
+							any(
+								feature = "name-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						"name" => Ok(Field::Name),
+						#[cfg(any(
+							any(
+								feature = "object-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						"object" => Ok(Field::Object),
+						#[cfg(any(
+							any(
+								feature = "opponent-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						"opponent" => Ok(Field::Opponent),
+						#[cfg(any(
+							any(
+								feature = "participant-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						"participant" => Ok(Field::Participant),
+						#[cfg(any(
+							any(
+								feature = "potential-action-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						"potentialAction" => Ok(Field::PotentialAction),
+						#[cfg(any(
+							any(
+								feature = "provider-property-schema",
+								feature = "pending-schema-section"
+							),
+							doc
+						))]
+						"provider" => Ok(Field::Provider),
+						#[cfg(any(
+							any(
+								feature = "result-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						"result" => Ok(Field::Result),
+						#[cfg(any(
+							any(
+								feature = "same-as-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						"sameAs" => Ok(Field::SameAs),
+						#[cfg(any(
+							any(
+								feature = "sports-activity-location-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						"sportsActivityLocation" => Ok(Field::SportsActivityLocation),
+						#[cfg(any(
+							any(
+								feature = "sports-event-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						"sportsEvent" => Ok(Field::SportsEvent),
+						#[cfg(any(
+							any(
+								feature = "sports-team-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						"sportsTeam" => Ok(Field::SportsTeam),
+						#[cfg(any(
+							any(
+								feature = "start-time-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						"startTime" => Ok(Field::StartTime),
+						#[cfg(any(
+							any(
+								feature = "subject-of-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						"subjectOf" => Ok(Field::SubjectOf),
+						#[cfg(any(
+							any(
+								feature = "target-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						"target" => Ok(Field::Target),
+						#[cfg(any(
+							any(
+								feature = "to-location-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						"toLocation" => Ok(Field::ToLocation),
+						#[cfg(any(
+							any(
+								feature = "url-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						"url" => Ok(Field::Url),
+						_ => Ok(Field::Ignore),
+					}
+				}
+				fn visit_bytes<E>(self, value: &[u8]) -> Result<Self::Value, E>
+				where
+					E: de::Error,
+				{
+					match value {
+						#[cfg(any(
+							any(
+								feature = "action-status-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						b"actionStatus" => Ok(Field::ActionStatus),
+						#[cfg(any(
+							any(
+								feature = "additional-type-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						b"additionalType" => Ok(Field::AdditionalType),
+						#[cfg(any(
+							any(
+								feature = "agent-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						b"agent" => Ok(Field::Agent),
+						#[cfg(any(
+							any(
+								feature = "alternate-name-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						b"alternateName" => Ok(Field::AlternateName),
+						#[cfg(any(
+							any(
+								feature = "audience-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						b"audience" => Ok(Field::Audience),
+						#[cfg(any(
+							any(
+								feature = "course-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						b"course" => Ok(Field::Course),
+						#[cfg(any(
+							any(
+								feature = "description-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						b"description" => Ok(Field::Description),
+						#[cfg(any(
+							any(
+								feature = "diet-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						b"diet" => Ok(Field::Diet),
+						#[cfg(any(
+							any(
+								feature = "disambiguating-description-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						b"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
+						#[cfg(any(
+							any(
+								feature = "distance-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						b"distance" => Ok(Field::Distance),
+						#[cfg(any(
+							any(
+								feature = "end-time-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						b"endTime" => Ok(Field::EndTime),
+						#[cfg(any(
+							any(
+								feature = "error-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						b"error" => Ok(Field::Error),
+						#[cfg(any(
+							any(
+								feature = "event-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						b"event" => Ok(Field::Event),
+						#[cfg(any(
+							any(
+								feature = "exercise-course-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						b"exerciseCourse" => Ok(Field::ExerciseCourse),
+						#[cfg(any(
+							any(
+								feature = "exercise-plan-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						b"exercisePlan" => Ok(Field::ExercisePlan),
+						#[cfg(any(
+							any(
+								feature = "exercise-related-diet-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						b"exerciseRelatedDiet" => Ok(Field::ExerciseRelatedDiet),
+						#[cfg(any(
+							any(
+								feature = "exercise-type-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						b"exerciseType" => Ok(Field::ExerciseType),
+						#[cfg(any(
+							any(
+								feature = "from-location-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						b"fromLocation" => Ok(Field::FromLocation),
+						#[cfg(any(
+							any(
+								feature = "identifier-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						b"identifier" => Ok(Field::Identifier),
+						#[cfg(any(
+							any(
+								feature = "image-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						b"image" => Ok(Field::Image),
+						#[cfg(any(
+							any(
+								feature = "instrument-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						b"instrument" => Ok(Field::Instrument),
+						#[cfg(any(
+							any(
+								feature = "location-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						b"location" => Ok(Field::Location),
+						#[cfg(any(
+							any(
+								feature = "main-entity-of-page-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						b"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
+						#[cfg(any(
+							any(
+								feature = "name-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						b"name" => Ok(Field::Name),
+						#[cfg(any(
+							any(
+								feature = "object-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						b"object" => Ok(Field::Object),
+						#[cfg(any(
+							any(
+								feature = "opponent-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						b"opponent" => Ok(Field::Opponent),
+						#[cfg(any(
+							any(
+								feature = "participant-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						b"participant" => Ok(Field::Participant),
+						#[cfg(any(
+							any(
+								feature = "potential-action-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						b"potentialAction" => Ok(Field::PotentialAction),
+						#[cfg(any(
+							any(
+								feature = "provider-property-schema",
+								feature = "pending-schema-section"
+							),
+							doc
+						))]
+						b"provider" => Ok(Field::Provider),
+						#[cfg(any(
+							any(
+								feature = "result-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						b"result" => Ok(Field::Result),
+						#[cfg(any(
+							any(
+								feature = "same-as-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						b"sameAs" => Ok(Field::SameAs),
+						#[cfg(any(
+							any(
+								feature = "sports-activity-location-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						b"sportsActivityLocation" => Ok(Field::SportsActivityLocation),
+						#[cfg(any(
+							any(
+								feature = "sports-event-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						b"sportsEvent" => Ok(Field::SportsEvent),
+						#[cfg(any(
+							any(
+								feature = "sports-team-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						b"sportsTeam" => Ok(Field::SportsTeam),
+						#[cfg(any(
+							any(
+								feature = "start-time-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						b"startTime" => Ok(Field::StartTime),
+						#[cfg(any(
+							any(
+								feature = "subject-of-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						b"subjectOf" => Ok(Field::SubjectOf),
+						#[cfg(any(
+							any(
+								feature = "target-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						b"target" => Ok(Field::Target),
+						#[cfg(any(
+							any(
+								feature = "to-location-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						b"toLocation" => Ok(Field::ToLocation),
+						#[cfg(any(
+							any(
+								feature = "url-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						b"url" => Ok(Field::Url),
+						_ => Ok(Field::Ignore),
+					}
+				}
+			}
+			impl<'de> Deserialize<'de> for Field {
+				fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+				where
+					D: Deserializer<'de>,
+				{
+					deserializer.deserialize_identifier(FieldVisitor)
+				}
+			}
+			struct ClassVisitor;
+			impl<'de> Visitor<'de> for ClassVisitor {
+				type Value = ExerciseAction;
+				fn expecting(&self, formatter: &mut Formatter) -> fmt::Result {
+					formatter.write_str("schema.org schema ExerciseAction")
+				}
+				fn visit_map<A>(self, mut map: A) -> Result<Self::Value, A::Error>
+				where
+					A: de::MapAccess<'de>,
+				{
+					#[cfg(any(
+						any(
+							feature = "action-status-property-schema",
+							feature = "general-schema-section"
+						),
+						doc
+					))]
+					let mut r#action_status_property = None;
+					#[cfg(any(
+						any(
+							feature = "additional-type-property-schema",
+							feature = "general-schema-section"
+						),
+						doc
+					))]
+					let mut r#additional_type_property = None;
+					#[cfg(any(
+						any(feature = "agent-property-schema", feature = "general-schema-section"),
+						doc
+					))]
+					let mut r#agent_property = None;
+					#[cfg(any(
+						any(
+							feature = "alternate-name-property-schema",
+							feature = "general-schema-section"
+						),
+						doc
+					))]
+					let mut r#alternate_name_property = None;
+					#[cfg(any(
+						any(
+							feature = "audience-property-schema",
+							feature = "general-schema-section"
+						),
+						doc
+					))]
+					let mut r#audience_property = None;
+					#[cfg(any(
+						any(
+							feature = "course-property-schema",
+							feature = "general-schema-section"
+						),
+						doc
+					))]
+					let mut r#course_property = None;
+					#[cfg(any(
+						any(
+							feature = "description-property-schema",
+							feature = "general-schema-section"
+						),
+						doc
+					))]
+					let mut r#description_property = None;
+					#[cfg(any(
+						any(
+							feature = "diet-property-schema",
+							feature = "health-lifesci-schema-section"
+						),
+						doc
+					))]
+					let mut r#diet_property = None;
+					#[cfg(any(
+						any(
+							feature = "disambiguating-description-property-schema",
+							feature = "general-schema-section"
+						),
+						doc
+					))]
+					let mut r#disambiguating_description_property = None;
+					#[cfg(any(
+						any(
+							feature = "distance-property-schema",
+							feature = "general-schema-section"
+						),
+						doc
+					))]
+					let mut r#distance_property = None;
+					#[cfg(any(
+						any(
+							feature = "end-time-property-schema",
+							feature = "general-schema-section"
+						),
+						doc
+					))]
+					let mut r#end_time_property = None;
+					#[cfg(any(
+						any(feature = "error-property-schema", feature = "general-schema-section"),
+						doc
+					))]
+					let mut r#error_property = None;
+					#[cfg(any(
+						any(feature = "event-property-schema", feature = "general-schema-section"),
+						doc
+					))]
+					let mut r#event_property = None;
+					#[cfg(any(
+						any(
+							feature = "exercise-course-property-schema",
+							feature = "general-schema-section"
+						),
+						doc
+					))]
+					let mut r#exercise_course_property = None;
+					#[cfg(any(
+						any(
+							feature = "exercise-plan-property-schema",
+							feature = "health-lifesci-schema-section"
+						),
+						doc
+					))]
+					let mut r#exercise_plan_property = None;
+					#[cfg(any(
+						any(
+							feature = "exercise-related-diet-property-schema",
+							feature = "health-lifesci-schema-section"
+						),
+						doc
+					))]
+					let mut r#exercise_related_diet_property = None;
+					#[cfg(any(
+						any(
+							feature = "exercise-type-property-schema",
+							feature = "health-lifesci-schema-section"
+						),
+						doc
+					))]
+					let mut r#exercise_type_property = None;
+					#[cfg(any(
+						any(
+							feature = "from-location-property-schema",
+							feature = "general-schema-section"
+						),
+						doc
+					))]
+					let mut r#from_location_property = None;
+					#[cfg(any(
+						any(
+							feature = "identifier-property-schema",
+							feature = "general-schema-section"
+						),
+						doc
+					))]
+					let mut r#identifier_property = None;
+					#[cfg(any(
+						any(feature = "image-property-schema", feature = "general-schema-section"),
+						doc
+					))]
+					let mut r#image_property = None;
+					#[cfg(any(
+						any(
+							feature = "instrument-property-schema",
+							feature = "general-schema-section"
+						),
+						doc
+					))]
+					let mut r#instrument_property = None;
+					#[cfg(any(
+						any(
+							feature = "location-property-schema",
+							feature = "general-schema-section"
+						),
+						doc
+					))]
+					let mut r#location_property = None;
+					#[cfg(any(
+						any(
+							feature = "main-entity-of-page-property-schema",
+							feature = "general-schema-section"
+						),
+						doc
+					))]
+					let mut r#main_entity_of_page_property = None;
+					#[cfg(any(
+						any(feature = "name-property-schema", feature = "general-schema-section"),
+						doc
+					))]
+					let mut r#name_property = None;
+					#[cfg(any(
+						any(
+							feature = "object-property-schema",
+							feature = "general-schema-section"
+						),
+						doc
+					))]
+					let mut r#object_property = None;
+					#[cfg(any(
+						any(
+							feature = "opponent-property-schema",
+							feature = "general-schema-section"
+						),
+						doc
+					))]
+					let mut r#opponent_property = None;
+					#[cfg(any(
+						any(
+							feature = "participant-property-schema",
+							feature = "general-schema-section"
+						),
+						doc
+					))]
+					let mut r#participant_property = None;
+					#[cfg(any(
+						any(
+							feature = "potential-action-property-schema",
+							feature = "general-schema-section"
+						),
+						doc
+					))]
+					let mut r#potential_action_property = None;
+					#[cfg(any(
+						any(
+							feature = "provider-property-schema",
+							feature = "pending-schema-section"
+						),
+						doc
+					))]
+					let mut r#provider_property = None;
+					#[cfg(any(
+						any(
+							feature = "result-property-schema",
+							feature = "general-schema-section"
+						),
+						doc
+					))]
+					let mut r#result_property = None;
+					#[cfg(any(
+						any(
+							feature = "same-as-property-schema",
+							feature = "general-schema-section"
+						),
+						doc
+					))]
+					let mut r#same_as_property = None;
+					#[cfg(any(
+						any(
+							feature = "sports-activity-location-property-schema",
+							feature = "general-schema-section"
+						),
+						doc
+					))]
+					let mut r#sports_activity_location_property = None;
+					#[cfg(any(
+						any(
+							feature = "sports-event-property-schema",
+							feature = "general-schema-section"
+						),
+						doc
+					))]
+					let mut r#sports_event_property = None;
+					#[cfg(any(
+						any(
+							feature = "sports-team-property-schema",
+							feature = "general-schema-section"
+						),
+						doc
+					))]
+					let mut r#sports_team_property = None;
+					#[cfg(any(
+						any(
+							feature = "start-time-property-schema",
+							feature = "general-schema-section"
+						),
+						doc
+					))]
+					let mut r#start_time_property = None;
+					#[cfg(any(
+						any(
+							feature = "subject-of-property-schema",
+							feature = "general-schema-section"
+						),
+						doc
+					))]
+					let mut r#subject_of_property = None;
+					#[cfg(any(
+						any(
+							feature = "target-property-schema",
+							feature = "general-schema-section"
+						),
+						doc
+					))]
+					let mut r#target_property = None;
+					#[cfg(any(
+						any(
+							feature = "to-location-property-schema",
+							feature = "general-schema-section"
+						),
+						doc
+					))]
+					let mut r#to_location_property = None;
+					#[cfg(any(
+						any(feature = "url-property-schema", feature = "general-schema-section"),
+						doc
+					))]
+					let mut r#url_property = None;
+					while let Some(key) = map.next_key::<Field>()? {
+						match key {
+							#[cfg(any(
+								any(
+									feature = "action-status-property-schema",
+									feature = "general-schema-section"
+								),
+								doc
+							))]
+							Field::ActionStatus => {
+								if r#action_status_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"actionStatus",
+									));
+								}
+								r#action_status_property = Some({
+									struct DeserializeWith(Vec<ActionStatusProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "additional-type-property-schema",
+									feature = "general-schema-section"
+								),
+								doc
+							))]
+							Field::AdditionalType => {
+								if r#additional_type_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"additionalType",
+									));
+								}
+								r#additional_type_property = Some({
+									struct DeserializeWith(Vec<AdditionalTypeProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "agent-property-schema",
+									feature = "general-schema-section"
+								),
+								doc
+							))]
+							Field::Agent => {
+								if r#agent_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field("agent"));
+								}
+								r#agent_property = Some({
+									struct DeserializeWith(Vec<AgentProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "alternate-name-property-schema",
+									feature = "general-schema-section"
+								),
+								doc
+							))]
+							Field::AlternateName => {
+								if r#alternate_name_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"alternateName",
+									));
+								}
+								r#alternate_name_property = Some({
+									struct DeserializeWith(Vec<AlternateNameProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "audience-property-schema",
+									feature = "general-schema-section"
+								),
+								doc
+							))]
+							Field::Audience => {
+								if r#audience_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"audience",
+									));
+								}
+								r#audience_property = Some({
+									struct DeserializeWith(Vec<AudienceProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "course-property-schema",
+									feature = "general-schema-section"
+								),
+								doc
+							))]
+							Field::Course => {
+								if r#course_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field("course"));
+								}
+								r#course_property = Some({
+									struct DeserializeWith(Vec<CourseProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "description-property-schema",
+									feature = "general-schema-section"
+								),
+								doc
+							))]
+							Field::Description => {
+								if r#description_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"description",
+									));
+								}
+								r#description_property = Some({
+									struct DeserializeWith(Vec<DescriptionProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "diet-property-schema",
+									feature = "health-lifesci-schema-section"
+								),
+								doc
+							))]
+							Field::Diet => {
+								if r#diet_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field("diet"));
+								}
+								r#diet_property = Some({
+									struct DeserializeWith(Vec<DietProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "disambiguating-description-property-schema",
+									feature = "general-schema-section"
+								),
+								doc
+							))]
+							Field::DisambiguatingDescription => {
+								if r#disambiguating_description_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"disambiguatingDescription",
+									));
+								}
+								r#disambiguating_description_property = Some({
+									struct DeserializeWith(Vec<DisambiguatingDescriptionProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "distance-property-schema",
+									feature = "general-schema-section"
+								),
+								doc
+							))]
+							Field::Distance => {
+								if r#distance_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"distance",
+									));
+								}
+								r#distance_property = Some({
+									struct DeserializeWith(Vec<DistanceProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "end-time-property-schema",
+									feature = "general-schema-section"
+								),
+								doc
+							))]
+							Field::EndTime => {
+								if r#end_time_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"endTime",
+									));
+								}
+								r#end_time_property = Some({
+									struct DeserializeWith(Vec<EndTimeProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "error-property-schema",
+									feature = "general-schema-section"
+								),
+								doc
+							))]
+							Field::Error => {
+								if r#error_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field("error"));
+								}
+								r#error_property = Some({
+									struct DeserializeWith(Vec<ErrorProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "event-property-schema",
+									feature = "general-schema-section"
+								),
+								doc
+							))]
+							Field::Event => {
+								if r#event_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field("event"));
+								}
+								r#event_property = Some({
+									struct DeserializeWith(Vec<EventProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "exercise-course-property-schema",
+									feature = "general-schema-section"
+								),
+								doc
+							))]
+							Field::ExerciseCourse => {
+								if r#exercise_course_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"exerciseCourse",
+									));
+								}
+								r#exercise_course_property = Some({
+									struct DeserializeWith(Vec<ExerciseCourseProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "exercise-plan-property-schema",
+									feature = "health-lifesci-schema-section"
+								),
+								doc
+							))]
+							Field::ExercisePlan => {
+								if r#exercise_plan_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"exercisePlan",
+									));
+								}
+								r#exercise_plan_property = Some({
+									struct DeserializeWith(Vec<ExercisePlanProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "exercise-related-diet-property-schema",
+									feature = "health-lifesci-schema-section"
+								),
+								doc
+							))]
+							Field::ExerciseRelatedDiet => {
+								if r#exercise_related_diet_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"exerciseRelatedDiet",
+									));
+								}
+								r#exercise_related_diet_property = Some({
+									struct DeserializeWith(Vec<ExerciseRelatedDietProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "exercise-type-property-schema",
+									feature = "health-lifesci-schema-section"
+								),
+								doc
+							))]
+							Field::ExerciseType => {
+								if r#exercise_type_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"exerciseType",
+									));
+								}
+								r#exercise_type_property = Some({
+									struct DeserializeWith(Vec<ExerciseTypeProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "from-location-property-schema",
+									feature = "general-schema-section"
+								),
+								doc
+							))]
+							Field::FromLocation => {
+								if r#from_location_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"fromLocation",
+									));
+								}
+								r#from_location_property = Some({
+									struct DeserializeWith(Vec<FromLocationProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "identifier-property-schema",
+									feature = "general-schema-section"
+								),
+								doc
+							))]
+							Field::Identifier => {
+								if r#identifier_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"identifier",
+									));
+								}
+								r#identifier_property = Some({
+									struct DeserializeWith(Vec<IdentifierProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "image-property-schema",
+									feature = "general-schema-section"
+								),
+								doc
+							))]
+							Field::Image => {
+								if r#image_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field("image"));
+								}
+								r#image_property = Some({
+									struct DeserializeWith(Vec<ImageProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "instrument-property-schema",
+									feature = "general-schema-section"
+								),
+								doc
+							))]
+							Field::Instrument => {
+								if r#instrument_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"instrument",
+									));
+								}
+								r#instrument_property = Some({
+									struct DeserializeWith(Vec<InstrumentProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "location-property-schema",
+									feature = "general-schema-section"
+								),
+								doc
+							))]
+							Field::Location => {
+								if r#location_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"location",
+									));
+								}
+								r#location_property = Some({
+									struct DeserializeWith(Vec<LocationProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "main-entity-of-page-property-schema",
+									feature = "general-schema-section"
+								),
+								doc
+							))]
+							Field::MainEntityOfPage => {
+								if r#main_entity_of_page_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"mainEntityOfPage",
+									));
+								}
+								r#main_entity_of_page_property = Some({
+									struct DeserializeWith(Vec<MainEntityOfPageProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "name-property-schema",
+									feature = "general-schema-section"
+								),
+								doc
+							))]
+							Field::Name => {
+								if r#name_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field("name"));
+								}
+								r#name_property = Some({
+									struct DeserializeWith(Vec<NameProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "object-property-schema",
+									feature = "general-schema-section"
+								),
+								doc
+							))]
+							Field::Object => {
+								if r#object_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field("object"));
+								}
+								r#object_property = Some({
+									struct DeserializeWith(Vec<ObjectProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "opponent-property-schema",
+									feature = "general-schema-section"
+								),
+								doc
+							))]
+							Field::Opponent => {
+								if r#opponent_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"opponent",
+									));
+								}
+								r#opponent_property = Some({
+									struct DeserializeWith(Vec<OpponentProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "participant-property-schema",
+									feature = "general-schema-section"
+								),
+								doc
+							))]
+							Field::Participant => {
+								if r#participant_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"participant",
+									));
+								}
+								r#participant_property = Some({
+									struct DeserializeWith(Vec<ParticipantProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "potential-action-property-schema",
+									feature = "general-schema-section"
+								),
+								doc
+							))]
+							Field::PotentialAction => {
+								if r#potential_action_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"potentialAction",
+									));
+								}
+								r#potential_action_property = Some({
+									struct DeserializeWith(Vec<PotentialActionProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "provider-property-schema",
+									feature = "pending-schema-section"
+								),
+								doc
+							))]
+							Field::Provider => {
+								if r#provider_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"provider",
+									));
+								}
+								r#provider_property = Some({
+									struct DeserializeWith(Vec<ProviderProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "result-property-schema",
+									feature = "general-schema-section"
+								),
+								doc
+							))]
+							Field::Result => {
+								if r#result_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field("result"));
+								}
+								r#result_property = Some({
+									struct DeserializeWith(Vec<ResultProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "same-as-property-schema",
+									feature = "general-schema-section"
+								),
+								doc
+							))]
+							Field::SameAs => {
+								if r#same_as_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field("sameAs"));
+								}
+								r#same_as_property = Some({
+									struct DeserializeWith(Vec<SameAsProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "sports-activity-location-property-schema",
+									feature = "general-schema-section"
+								),
+								doc
+							))]
+							Field::SportsActivityLocation => {
+								if r#sports_activity_location_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"sportsActivityLocation",
+									));
+								}
+								r#sports_activity_location_property = Some({
+									struct DeserializeWith(Vec<SportsActivityLocationProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "sports-event-property-schema",
+									feature = "general-schema-section"
+								),
+								doc
+							))]
+							Field::SportsEvent => {
+								if r#sports_event_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"sportsEvent",
+									));
+								}
+								r#sports_event_property = Some({
+									struct DeserializeWith(Vec<SportsEventProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "sports-team-property-schema",
+									feature = "general-schema-section"
+								),
+								doc
+							))]
+							Field::SportsTeam => {
+								if r#sports_team_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"sportsTeam",
+									));
+								}
+								r#sports_team_property = Some({
+									struct DeserializeWith(Vec<SportsTeamProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "start-time-property-schema",
+									feature = "general-schema-section"
+								),
+								doc
+							))]
+							Field::StartTime => {
+								if r#start_time_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"startTime",
+									));
+								}
+								r#start_time_property = Some({
+									struct DeserializeWith(Vec<StartTimeProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "subject-of-property-schema",
+									feature = "general-schema-section"
+								),
+								doc
+							))]
+							Field::SubjectOf => {
+								if r#subject_of_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"subjectOf",
+									));
+								}
+								r#subject_of_property = Some({
+									struct DeserializeWith(Vec<SubjectOfProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "target-property-schema",
+									feature = "general-schema-section"
+								),
+								doc
+							))]
+							Field::Target => {
+								if r#target_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field("target"));
+								}
+								r#target_property = Some({
+									struct DeserializeWith(Vec<TargetProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "to-location-property-schema",
+									feature = "general-schema-section"
+								),
+								doc
+							))]
+							Field::ToLocation => {
+								if r#to_location_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"toLocation",
+									));
+								}
+								r#to_location_property = Some({
+									struct DeserializeWith(Vec<ToLocationProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							#[cfg(any(
+								any(
+									feature = "url-property-schema",
+									feature = "general-schema-section"
+								),
+								doc
+							))]
+							Field::Url => {
+								if r#url_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field("url"));
+								}
+								r#url_property = Some({
+									struct DeserializeWith(Vec<UrlProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							_ => {
+								let _ = map.next_value::<de::IgnoredAny>()?;
+							}
+						}
+					}
+					Ok(ExerciseAction {
+						#[cfg(any(
+							any(
+								feature = "action-status-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						r#action_status: r#action_status_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "additional-type-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						r#additional_type: r#additional_type_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "agent-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						r#agent: r#agent_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "alternate-name-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						r#alternate_name: r#alternate_name_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "audience-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						r#audience: r#audience_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "course-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						r#course: r#course_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "description-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						r#description: r#description_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "diet-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						r#diet: r#diet_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "disambiguating-description-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						r#disambiguating_description: r#disambiguating_description_property
+							.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "distance-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						r#distance: r#distance_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "end-time-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						r#end_time: r#end_time_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "error-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						r#error: r#error_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "event-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						r#event: r#event_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "exercise-course-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						r#exercise_course: r#exercise_course_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "exercise-plan-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						r#exercise_plan: r#exercise_plan_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "exercise-related-diet-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						r#exercise_related_diet: r#exercise_related_diet_property
+							.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "exercise-type-property-schema",
+								feature = "health-lifesci-schema-section"
+							),
+							doc
+						))]
+						r#exercise_type: r#exercise_type_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "from-location-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						r#from_location: r#from_location_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "identifier-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						r#identifier: r#identifier_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "image-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						r#image: r#image_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "instrument-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						r#instrument: r#instrument_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "location-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						r#location: r#location_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "main-entity-of-page-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						r#main_entity_of_page: r#main_entity_of_page_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "name-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						r#name: r#name_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "object-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						r#object: r#object_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "opponent-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						r#opponent: r#opponent_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "participant-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						r#participant: r#participant_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "potential-action-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						r#potential_action: r#potential_action_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "provider-property-schema",
+								feature = "pending-schema-section"
+							),
+							doc
+						))]
+						r#provider: r#provider_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "result-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						r#result: r#result_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "same-as-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						r#same_as: r#same_as_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "sports-activity-location-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						r#sports_activity_location: r#sports_activity_location_property
+							.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "sports-event-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						r#sports_event: r#sports_event_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "sports-team-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						r#sports_team: r#sports_team_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "start-time-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						r#start_time: r#start_time_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "subject-of-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						r#subject_of: r#subject_of_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "target-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						r#target: r#target_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "to-location-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						r#to_location: r#to_location_property.unwrap_or_default(),
+						#[cfg(any(
+							any(
+								feature = "url-property-schema",
+								feature = "general-schema-section"
+							),
+							doc
+						))]
+						r#url: r#url_property.unwrap_or_default(),
+					})
+				}
+			}
+			const FIELDS: &[&str] = &[
+				#[cfg(any(
+					any(
+						feature = "action-status-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				"actionStatus",
+				#[cfg(any(
+					any(
+						feature = "additional-type-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				"additionalType",
+				#[cfg(any(
+					any(feature = "agent-property-schema", feature = "general-schema-section"),
+					doc
+				))]
+				"agent",
+				#[cfg(any(
+					any(
+						feature = "alternate-name-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				"alternateName",
+				#[cfg(any(
+					any(
+						feature = "audience-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				"audience",
+				#[cfg(any(
+					any(feature = "course-property-schema", feature = "general-schema-section"),
+					doc
+				))]
+				"course",
+				#[cfg(any(
+					any(
+						feature = "description-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				"description",
+				#[cfg(any(
+					any(
+						feature = "diet-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				))]
+				"diet",
+				#[cfg(any(
+					any(
+						feature = "disambiguating-description-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				"disambiguatingDescription",
+				#[cfg(any(
+					any(
+						feature = "distance-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				"distance",
+				#[cfg(any(
+					any(
+						feature = "end-time-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				"endTime",
+				#[cfg(any(
+					any(feature = "error-property-schema", feature = "general-schema-section"),
+					doc
+				))]
+				"error",
+				#[cfg(any(
+					any(feature = "event-property-schema", feature = "general-schema-section"),
+					doc
+				))]
+				"event",
+				#[cfg(any(
+					any(
+						feature = "exercise-course-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				"exerciseCourse",
+				#[cfg(any(
+					any(
+						feature = "exercise-plan-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				))]
+				"exercisePlan",
+				#[cfg(any(
+					any(
+						feature = "exercise-related-diet-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				))]
+				"exerciseRelatedDiet",
+				#[cfg(any(
+					any(
+						feature = "exercise-type-property-schema",
+						feature = "health-lifesci-schema-section"
+					),
+					doc
+				))]
+				"exerciseType",
+				#[cfg(any(
+					any(
+						feature = "from-location-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				"fromLocation",
+				#[cfg(any(
+					any(
+						feature = "identifier-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				"identifier",
+				#[cfg(any(
+					any(feature = "image-property-schema", feature = "general-schema-section"),
+					doc
+				))]
+				"image",
+				#[cfg(any(
+					any(
+						feature = "instrument-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				"instrument",
+				#[cfg(any(
+					any(
+						feature = "location-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				"location",
+				#[cfg(any(
+					any(
+						feature = "main-entity-of-page-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				"mainEntityOfPage",
+				#[cfg(any(
+					any(feature = "name-property-schema", feature = "general-schema-section"),
+					doc
+				))]
+				"name",
+				#[cfg(any(
+					any(feature = "object-property-schema", feature = "general-schema-section"),
+					doc
+				))]
+				"object",
+				#[cfg(any(
+					any(
+						feature = "opponent-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				"opponent",
+				#[cfg(any(
+					any(
+						feature = "participant-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				"participant",
+				#[cfg(any(
+					any(
+						feature = "potential-action-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				"potentialAction",
+				#[cfg(any(
+					any(
+						feature = "provider-property-schema",
+						feature = "pending-schema-section"
+					),
+					doc
+				))]
+				"provider",
+				#[cfg(any(
+					any(feature = "result-property-schema", feature = "general-schema-section"),
+					doc
+				))]
+				"result",
+				#[cfg(any(
+					any(
+						feature = "same-as-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				"sameAs",
+				#[cfg(any(
+					any(
+						feature = "sports-activity-location-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				"sportsActivityLocation",
+				#[cfg(any(
+					any(
+						feature = "sports-event-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				"sportsEvent",
+				#[cfg(any(
+					any(
+						feature = "sports-team-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				"sportsTeam",
+				#[cfg(any(
+					any(
+						feature = "start-time-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				"startTime",
+				#[cfg(any(
+					any(
+						feature = "subject-of-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				"subjectOf",
+				#[cfg(any(
+					any(feature = "target-property-schema", feature = "general-schema-section"),
+					doc
+				))]
+				"target",
+				#[cfg(any(
+					any(
+						feature = "to-location-property-schema",
+						feature = "general-schema-section"
+					),
+					doc
+				))]
+				"toLocation",
+				#[cfg(any(
+					any(feature = "url-property-schema", feature = "general-schema-section"),
+					doc
+				))]
+				"url",
+			];
+			deserializer.deserialize_struct("ExerciseAction", FIELDS, ClassVisitor)
+		}
+	}
 }
