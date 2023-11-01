@@ -79,7 +79,7 @@ trait ToModuleString {
 impl ToModuleString for &[SchemaModuleInfo] {
 	fn to_module_string(&self) -> String {
 		let schema_mods_and_pub_uses = self.iter().map(|schema| {
-			let feature_gate = schema.feature.feature_gate();
+			let feature_gate = schema.feature.as_cfg_attribute();
 			let module_name = TokenStream::from_str(&format!("r#{}", schema.name)).unwrap();
 			quote!(
 				#feature_gate

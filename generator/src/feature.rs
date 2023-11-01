@@ -29,10 +29,15 @@ impl ToTokens for Feature {
 }
 
 impl Feature {
-	pub fn feature_gate(&self) -> TokenStream {
+	pub fn as_cfg_attribute(&self) -> TokenStream {
 		let features_cfg = self.to_token_stream();
 		quote!(
 			#[cfg(any(#features_cfg, doc))]
 		)
+	}
+
+	pub fn as_cfg_macro(&self) -> TokenStream {
+		let features_cfg = self.to_token_stream();
+		quote!(cfg!(any(#features_cfg, doc)))
 	}
 }

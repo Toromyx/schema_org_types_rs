@@ -1,4 +1,5 @@
 pub mod enumeration_variant;
+mod serde;
 
 use std::str::FromStr;
 
@@ -11,9 +12,8 @@ use rayon::prelude::*;
 
 use crate::{
 	doc_lines::DocLines,
-	schema::{map_schema_name, Schema},
+	schema::{enumeration::serde::serde_mod, map_schema_name, Schema},
 	schema_section::SchemaSection,
-	serde_attributes::serde_derive,
 	sparql::{SchemaQueries, SchemaQuerySolution},
 };
 
@@ -79,16 +79,19 @@ impl Schema for Enumeration {
 impl ToTokens for Enumeration {
 	fn to_tokens(&self, tokens: &mut TokenStream) {
 		let doc_lines = self.doc_lines_token_stream();
-		let serde_derive = serde_derive();
 		let name = TokenStream::from_str(&self.name.to_case(Case::UpperCamel)).unwrap();
 		let variants = &self.variants;
+		let serde_mod = serde_mod(self);
 		tokens.append_all(quote!(
 			#doc_lines
 			#[cfg_attr(feature = "derive-debug", derive(Debug))]
 			#[cfg_attr(feature = "derive-clone", derive(Clone))]
-			#serde_derive
 			pub enum #name {
 				#(#variants)*
+			}
+			#[cfg(feature = "serde")]
+			mod serde {
+				#serde_mod
 			}
 		));
 	}

@@ -2,8 +2,6 @@ use std::cmp::Ordering;
 
 use quote::{__private::TokenStream, quote, ToTokens, TokenStreamExt};
 
-use crate::serde_attributes::serde_as;
-
 /// Represents the underlying rust types used in Schema.org types.
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub enum RustType {
@@ -18,14 +16,14 @@ pub enum RustType {
 }
 
 impl RustType {
-	pub fn serde_attributes(&self) -> Option<TokenStream> {
+	pub fn serde_as(&self) -> Option<&str> {
 		match self {
 			RustType::Boolean => None,
 			RustType::Number => None,
 			RustType::Integer => None,
-			RustType::Date => Some(serde_as("DisplayFromStr")),
-			RustType::Time => Some(serde_as("DisplayFromStr")),
-			RustType::DateTime => Some(serde_as("DisplayFromStr")),
+			RustType::Date => Some("DisplayFromStr"),
+			RustType::Time => Some("DisplayFromStr"),
+			RustType::DateTime => Some("DisplayFromStr"),
 			RustType::String => None,
 			RustType::Url => None,
 		}

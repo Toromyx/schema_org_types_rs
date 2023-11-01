@@ -1,4 +1,5 @@
 pub mod rust_type;
+mod serde;
 
 use std::str::FromStr;
 
@@ -10,9 +11,8 @@ use rust_type::RustType;
 
 use crate::{
 	doc_lines::DocLines,
-	schema::{map_schema_name, Schema},
+	schema::{data_type::serde::serde_mod, map_schema_name, Schema},
 	schema_section::SchemaSection,
-	serde_attributes::serde_derive,
 	sparql::{SchemaQueries, SchemaQuerySolution},
 };
 
@@ -71,15 +71,13 @@ impl ToTokens for DataType {
 		let doc_lines = self.doc_lines_token_stream();
 		let name = TokenStream::from_str(&self.name.to_case(Case::UpperCamel)).unwrap();
 		let rust_type = &self.rust_type;
-		let field_attribute = rust_type.serde_attributes();
-		let serde_derive = serde_derive();
+		let serde_mod = serde_mod(self);
 		tokens.append_all(quote!(
 			use super::*;
 			#doc_lines
 			#[cfg_attr(feature = "derive-debug", derive(Debug))]
 			#[cfg_attr(feature = "derive-clone", derive(Clone))]
-			#serde_derive
-			pub struct #name(#field_attribute pub #rust_type);
+			pub struct #name(pub #rust_type);
 
 			impl std::ops::Deref for #name {
 				type Target = #rust_type;
@@ -87,6 +85,11 @@ impl ToTokens for DataType {
 				fn deref(&self) -> &Self::Target {
 					&self.0
 				}
+			}
+
+			#[cfg(feature = "serde")]
+			mod serde {
+				#serde_mod
 			}
 		));
 	}
