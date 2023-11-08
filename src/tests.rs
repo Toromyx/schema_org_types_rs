@@ -2,6 +2,7 @@ use pretty_assertions::assert_eq;
 use serde_json::{json, Value};
 
 use super::*;
+use crate::fallible::FailValue;
 
 #[test]
 fn test_date_serde() {
@@ -62,6 +63,7 @@ fn test_thing_schema_serde() {
 			"https://image.test/1",
 			"https://image.test/2",
 		],
+		"mainEntityOfPage": "invalid_value",
 	});
 	let target_json = json!({
 		"name": "name value",
@@ -70,8 +72,34 @@ fn test_thing_schema_serde() {
 			"https://image.test/1",
 			"https://image.test/2",
 		],
+		"mainEntityOfPage": "invalid_value",
 	});
 	let thing: Thing = serde_json::from_value(source_json).unwrap();
+	assert!(match thing.name.get(0).unwrap() {
+		NameProperty::Text(name) => dbg!(&name.0) == "name value",
+		_ => false,
+	});
+	assert!(match thing.alternate_name.get(0).unwrap() {
+		AlternateNameProperty::Text(alternate_name) =>
+			dbg!(&alternate_name.0) == "alternate name value",
+		_ => false,
+	});
+	assert!(match thing.image.get(0).unwrap() {
+		ImageProperty::Url(image_1_url) => dbg!(image_1_url.0.as_str()) == "https://image.test/1",
+		_ => false,
+	});
+	assert!(match thing.image.get(1).unwrap() {
+		ImageProperty::Url(image_2_url) => dbg!(image_2_url.0.as_str()) == "https://image.test/2",
+		_ => false,
+	});
+	assert!(match thing.main_entity_of_page.get(0).unwrap() {
+		MainEntityOfPageProperty::SerdeFail(value) => match value {
+			FailValue::String(main_entity_of_page_fail_string) =>
+				dbg!(main_entity_of_page_fail_string) == "invalid_value",
+			_ => false,
+		},
+		_ => false,
+	});
 	let serialized_thing = serde_json::to_value(thing).unwrap();
 	assert_eq!(serialized_thing, target_json);
 }

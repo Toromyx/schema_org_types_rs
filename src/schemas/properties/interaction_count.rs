@@ -2,7 +2,10 @@ use super::*;
 /// <https://schema.org/interactionCount>
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
-pub enum InteractionCountProperty {}
+pub enum InteractionCountProperty {
+	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
+	SerdeFail(crate::fallible::FailValue),
+}
 #[cfg(feature = "serde")]
 mod serde {
 	use std::{fmt, fmt::Formatter};
@@ -17,7 +20,10 @@ mod serde {
 		where
 			S: Serializer,
 		{
-			match *self {}
+			match *self {
+				#[cfg(all(feature = "fallible", feature = "serde"))]
+				InteractionCountProperty::SerdeFail(ref inner) => inner.serialize(serializer),
+			}
 		}
 	}
 	impl<'de> Deserialize<'de> for InteractionCountProperty {
@@ -29,9 +35,19 @@ mod serde {
 				<::serde::__private::de::Content as Deserialize>::deserialize(deserializer)?;
 			let deserializer =
 				::serde::__private::de::ContentRefDeserializer::<D::Error>::new(&content);
-			Err(de::Error::custom(
-				"data did not match any variant of schema.org property interactionCount",
-			))
+			#[cfg(all(feature = "fallible", feature = "serde"))]
+			if let Ok(ok) = Result::map(
+				<crate::fallible::FailValue as Deserialize>::deserialize(deserializer),
+				InteractionCountProperty::SerdeFail,
+			) {
+				return Ok(ok);
+			}
+			#[cfg(all(feature = "fallible", feature = "serde"))]
+			const CUSTOM_ERROR: &str = "data did neither match any variant of schema.org property interactionCount or was able to be deserialized into a generic value";
+			#[cfg(any(not(feature = "fallible"), not(feature = "serde")))]
+			const CUSTOM_ERROR: &str =
+				"data did not match any variant of schema.org property interactionCount";
+			Err(de::Error::custom(CUSTOM_ERROR))
 		}
 	}
 }

@@ -24,6 +24,7 @@
 //!   - enabled by *derive-all*
 //! - `derive-clone` — derive [`Clone`] for the schemas
 //!   - enabled by *derive-all*
+//! - `fallible` — add a last `*Fail`-variant to all properties which should capture all failed deserialization attempts with their value, see [`fallible`]
 //!
 //! ### Optional Dependencies
 //!
@@ -41,6 +42,8 @@
 #![cfg_attr(doc, feature(doc_auto_cfg))]
 
 pub mod date_types;
+#[cfg(any(feature = "fallible", doc))]
+mod fallible;
 pub mod number_types;
 mod schemas;
 

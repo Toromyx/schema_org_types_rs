@@ -13,6 +13,8 @@ pub enum ContraindicationProperty {
 	MedicalContraindication(MedicalContraindication),
 	#[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
 	Text(Text),
+	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
+	SerdeFail(crate::fallible::FailValue),
 }
 #[cfg(feature = "serde")]
 mod serde {
@@ -39,6 +41,8 @@ mod serde {
 				ContraindicationProperty::MedicalContraindication(ref inner) => inner.serialize(serializer),
 				#[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
 				ContraindicationProperty::Text(ref inner) => inner.serialize(serializer),
+				#[cfg(all(feature = "fallible", feature = "serde"))]
+				ContraindicationProperty::SerdeFail(ref inner) => inner.serialize(serializer),
 			}
 		}
 	}
@@ -71,9 +75,19 @@ mod serde {
 			) {
 				return Ok(ok);
 			}
-			Err(de::Error::custom(
-				"data did not match any variant of schema.org property contraindication",
-			))
+			#[cfg(all(feature = "fallible", feature = "serde"))]
+			if let Ok(ok) = Result::map(
+				<crate::fallible::FailValue as Deserialize>::deserialize(deserializer),
+				ContraindicationProperty::SerdeFail,
+			) {
+				return Ok(ok);
+			}
+			#[cfg(all(feature = "fallible", feature = "serde"))]
+			const CUSTOM_ERROR: &str = "data did neither match any variant of schema.org property contraindication or was able to be deserialized into a generic value";
+			#[cfg(any(not(feature = "fallible"), not(feature = "serde")))]
+			const CUSTOM_ERROR: &str =
+				"data did not match any variant of schema.org property contraindication";
+			Err(de::Error::custom(CUSTOM_ERROR))
 		}
 	}
 }

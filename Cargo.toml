@@ -64,6 +64,7 @@ derive-all = [
 ]
 derive-debug = []
 derive-clone = []
+fallible = []
 serde = [
     "dep:serde",
     "dep:serde_with",
@@ -74,6 +75,7 @@ doc = [
     "all-schema-sections",
 ]
 test = [
+    "fallible",
     "serde",
     "date-schema",
     "time-schema",

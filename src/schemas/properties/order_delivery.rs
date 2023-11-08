@@ -8,6 +8,8 @@ pub enum OrderDeliveryProperty {
 		doc
 	))]
 	ParcelDelivery(ParcelDelivery),
+	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
+	SerdeFail(crate::fallible::FailValue),
 }
 #[cfg(feature = "serde")]
 mod serde {
@@ -29,6 +31,8 @@ mod serde {
 					doc
 				))]
 				OrderDeliveryProperty::ParcelDelivery(ref inner) => inner.serialize(serializer),
+				#[cfg(all(feature = "fallible", feature = "serde"))]
+				OrderDeliveryProperty::SerdeFail(ref inner) => inner.serialize(serializer),
 			}
 		}
 	}
@@ -51,9 +55,19 @@ mod serde {
 			) {
 				return Ok(ok);
 			}
-			Err(de::Error::custom(
-				"data did not match any variant of schema.org property orderDelivery",
-			))
+			#[cfg(all(feature = "fallible", feature = "serde"))]
+			if let Ok(ok) = Result::map(
+				<crate::fallible::FailValue as Deserialize>::deserialize(deserializer),
+				OrderDeliveryProperty::SerdeFail,
+			) {
+				return Ok(ok);
+			}
+			#[cfg(all(feature = "fallible", feature = "serde"))]
+			const CUSTOM_ERROR: &str = "data did neither match any variant of schema.org property orderDelivery or was able to be deserialized into a generic value";
+			#[cfg(any(not(feature = "fallible"), not(feature = "serde")))]
+			const CUSTOM_ERROR: &str =
+				"data did not match any variant of schema.org property orderDelivery";
+			Err(de::Error::custom(CUSTOM_ERROR))
 		}
 	}
 }
