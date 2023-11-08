@@ -3,13 +3,6 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum SeriousAdverseOutcomeProperty {
-	#[cfg(any(
-		any(
-			feature = "medical-entity-schema",
-			feature = "health-lifesci-schema-section"
-		),
-		doc
-	))]
 	MedicalEntity(MedicalEntity),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),
@@ -29,14 +22,9 @@ mod serde {
 			S: Serializer,
 		{
 			match *self {
-				#[cfg(any(
-					any(
-						feature = "medical-entity-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
-				SeriousAdverseOutcomeProperty::MedicalEntity(ref inner) => inner.serialize(serializer),
+				SeriousAdverseOutcomeProperty::MedicalEntity(ref inner) => {
+					inner.serialize(serializer)
+				}
 				#[cfg(all(feature = "fallible", feature = "serde"))]
 				SeriousAdverseOutcomeProperty::SerdeFail(ref inner) => inner.serialize(serializer),
 			}
@@ -51,13 +39,6 @@ mod serde {
 				<::serde::__private::de::Content as Deserialize>::deserialize(deserializer)?;
 			let deserializer =
 				::serde::__private::de::ContentRefDeserializer::<D::Error>::new(&content);
-			#[cfg(any(
-				any(
-					feature = "medical-entity-schema",
-					feature = "health-lifesci-schema-section"
-				),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<MedicalEntity as Deserialize>::deserialize(deserializer),
 				SeriousAdverseOutcomeProperty::MedicalEntity,

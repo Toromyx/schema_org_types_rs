@@ -3,18 +3,7 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum MemberOfProperty {
-	#[cfg(any(
-		any(feature = "organization-schema", feature = "general-schema-section"),
-		doc
-	))]
 	Organization(Organization),
-	#[cfg(any(
-		any(
-			feature = "program-membership-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	ProgramMembership(ProgramMembership),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),
@@ -34,18 +23,7 @@ mod serde {
 			S: Serializer,
 		{
 			match *self {
-				#[cfg(any(
-					any(feature = "organization-schema", feature = "general-schema-section"),
-					doc
-				))]
 				MemberOfProperty::Organization(ref inner) => inner.serialize(serializer),
-				#[cfg(any(
-					any(
-						feature = "program-membership-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				MemberOfProperty::ProgramMembership(ref inner) => inner.serialize(serializer),
 				#[cfg(all(feature = "fallible", feature = "serde"))]
 				MemberOfProperty::SerdeFail(ref inner) => inner.serialize(serializer),
@@ -61,23 +39,12 @@ mod serde {
 				<::serde::__private::de::Content as Deserialize>::deserialize(deserializer)?;
 			let deserializer =
 				::serde::__private::de::ContentRefDeserializer::<D::Error>::new(&content);
-			#[cfg(any(
-				any(feature = "organization-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<Organization as Deserialize>::deserialize(deserializer),
 				MemberOfProperty::Organization,
 			) {
 				return Ok(ok);
 			}
-			#[cfg(any(
-				any(
-					feature = "program-membership-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<ProgramMembership as Deserialize>::deserialize(deserializer),
 				MemberOfProperty::ProgramMembership,

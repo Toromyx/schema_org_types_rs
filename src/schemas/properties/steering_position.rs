@@ -3,13 +3,6 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum SteeringPositionProperty {
-	#[cfg(any(
-		any(
-			feature = "steering-position-value-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	SteeringPositionValue(SteeringPositionValue),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),
@@ -29,14 +22,9 @@ mod serde {
 			S: Serializer,
 		{
 			match *self {
-				#[cfg(any(
-					any(
-						feature = "steering-position-value-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
-				SteeringPositionProperty::SteeringPositionValue(ref inner) => inner.serialize(serializer),
+				SteeringPositionProperty::SteeringPositionValue(ref inner) => {
+					inner.serialize(serializer)
+				}
 				#[cfg(all(feature = "fallible", feature = "serde"))]
 				SteeringPositionProperty::SerdeFail(ref inner) => inner.serialize(serializer),
 			}
@@ -51,13 +39,6 @@ mod serde {
 				<::serde::__private::de::Content as Deserialize>::deserialize(deserializer)?;
 			let deserializer =
 				::serde::__private::de::ContentRefDeserializer::<D::Error>::new(&content);
-			#[cfg(any(
-				any(
-					feature = "steering-position-value-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<SteeringPositionValue as Deserialize>::deserialize(deserializer),
 				SteeringPositionProperty::SteeringPositionValue,

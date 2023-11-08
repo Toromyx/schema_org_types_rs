@@ -3,10 +3,6 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum ArrivalBoatTerminalProperty {
-	#[cfg(any(
-		any(feature = "boat-terminal-schema", feature = "pending-schema-section"),
-		doc
-	))]
 	BoatTerminal(BoatTerminal),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),
@@ -26,10 +22,6 @@ mod serde {
 			S: Serializer,
 		{
 			match *self {
-				#[cfg(any(
-					any(feature = "boat-terminal-schema", feature = "pending-schema-section"),
-					doc
-				))]
 				ArrivalBoatTerminalProperty::BoatTerminal(ref inner) => inner.serialize(serializer),
 				#[cfg(all(feature = "fallible", feature = "serde"))]
 				ArrivalBoatTerminalProperty::SerdeFail(ref inner) => inner.serialize(serializer),
@@ -45,10 +37,6 @@ mod serde {
 				<::serde::__private::de::Content as Deserialize>::deserialize(deserializer)?;
 			let deserializer =
 				::serde::__private::de::ContentRefDeserializer::<D::Error>::new(&content);
-			#[cfg(any(
-				any(feature = "boat-terminal-schema", feature = "pending-schema-section"),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<BoatTerminal as Deserialize>::deserialize(deserializer),
 				ArrivalBoatTerminalProperty::BoatTerminal,

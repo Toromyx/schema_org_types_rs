@@ -3,193 +3,30 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct DeliveryChargeSpecification {
-	#[cfg(any(
-		any(
-			feature = "additional-type-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
-	#[cfg(any(
-		any(
-			feature = "alternate-name-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#alternate_name: Vec<AlternateNameProperty>,
-	#[cfg(any(
-		any(
-			feature = "applies-to-delivery-method-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#applies_to_delivery_method: Vec<AppliesToDeliveryMethodProperty>,
-	#[cfg(any(
-		any(
-			feature = "area-served-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#area_served: Vec<AreaServedProperty>,
-	#[cfg(any(
-		any(
-			feature = "description-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#description: Vec<DescriptionProperty>,
-	#[cfg(any(
-		any(
-			feature = "disambiguating-description-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
-	#[cfg(any(
-		any(
-			feature = "eligible-quantity-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#eligible_quantity: Vec<EligibleQuantityProperty>,
-	#[cfg(any(
-		any(
-			feature = "eligible-region-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#eligible_region: Vec<EligibleRegionProperty>,
-	#[cfg(any(
-		any(
-			feature = "eligible-transaction-volume-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#eligible_transaction_volume: Vec<EligibleTransactionVolumeProperty>,
-	#[cfg(any(
-		any(
-			feature = "identifier-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#identifier: Vec<IdentifierProperty>,
-	#[cfg(any(
-		any(feature = "image-property-schema", feature = "general-schema-section"),
-		doc
-	))]
 	pub r#image: Vec<ImageProperty>,
-	#[cfg(any(
-		any(
-			feature = "ineligible-region-property-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	pub r#ineligible_region: Vec<IneligibleRegionProperty>,
-	#[cfg(any(
-		any(
-			feature = "main-entity-of-page-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
-	#[cfg(any(
-		any(
-			feature = "max-price-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#max_price: Vec<MaxPriceProperty>,
-	#[cfg(any(
-		any(
-			feature = "min-price-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#min_price: Vec<MinPriceProperty>,
-	#[cfg(any(
-		any(feature = "name-property-schema", feature = "general-schema-section"),
-		doc
-	))]
 	pub r#name: Vec<NameProperty>,
-	#[cfg(any(
-		any(
-			feature = "potential-action-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#potential_action: Vec<PotentialActionProperty>,
-	#[cfg(any(
-		any(feature = "price-property-schema", feature = "general-schema-section"),
-		doc
-	))]
 	pub r#price: Vec<PriceProperty>,
-	#[cfg(any(
-		any(
-			feature = "price-currency-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#price_currency: Vec<PriceCurrencyProperty>,
-	#[cfg(any(
-		any(
-			feature = "same-as-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#same_as: Vec<SameAsProperty>,
-	#[cfg(any(
-		any(
-			feature = "subject-of-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#subject_of: Vec<SubjectOfProperty>,
-	#[cfg(any(
-		any(feature = "url-property-schema", feature = "general-schema-section"),
-		doc
-	))]
 	pub r#url: Vec<UrlProperty>,
-	#[cfg(any(
-		any(
-			feature = "valid-from-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#valid_from: Vec<ValidFromProperty>,
-	#[cfg(any(
-		any(
-			feature = "valid-through-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#valid_through: Vec<ValidThroughProperty>,
-	#[cfg(any(
-		any(
-			feature = "value-added-tax-included-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#value_added_tax_included: Vec<ValueAddedTaxIncludedProperty>,
 }
 #[cfg(feature = "serde")]
@@ -207,293 +44,36 @@ mod serde {
 			S: Serializer,
 		{
 			let len: usize = [
-				if cfg!(any(
-					any(
-						feature = "additional-type-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#additional_type) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "alternate-name-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#alternate_name) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "applies-to-delivery-method-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#applies_to_delivery_method) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "area-served-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#area_served) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "description-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#description) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "disambiguating-description-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#disambiguating_description) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "eligible-quantity-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#eligible_quantity) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "eligible-region-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#eligible_region) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "eligible-transaction-volume-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#eligible_transaction_volume) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "identifier-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#identifier) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "image-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#image) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "ineligible-region-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#ineligible_region) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "main-entity-of-page-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#main_entity_of_page) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "max-price-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#max_price) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "min-price-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#min_price) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "name-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#name) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "potential-action-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#potential_action) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "price-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#price) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "price-currency-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#price_currency) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "same-as-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#same_as) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "subject-of-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#subject_of) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "url-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#url) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "valid-from-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#valid_from) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "valid-through-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#valid_through) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "value-added-tax-included-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#value_added_tax_included) as usize
-				} else {
-					0
-				},
+				!Vec::is_empty(&self.r#additional_type) as usize,
+				!Vec::is_empty(&self.r#alternate_name) as usize,
+				!Vec::is_empty(&self.r#applies_to_delivery_method) as usize,
+				!Vec::is_empty(&self.r#area_served) as usize,
+				!Vec::is_empty(&self.r#description) as usize,
+				!Vec::is_empty(&self.r#disambiguating_description) as usize,
+				!Vec::is_empty(&self.r#eligible_quantity) as usize,
+				!Vec::is_empty(&self.r#eligible_region) as usize,
+				!Vec::is_empty(&self.r#eligible_transaction_volume) as usize,
+				!Vec::is_empty(&self.r#identifier) as usize,
+				!Vec::is_empty(&self.r#image) as usize,
+				!Vec::is_empty(&self.r#ineligible_region) as usize,
+				!Vec::is_empty(&self.r#main_entity_of_page) as usize,
+				!Vec::is_empty(&self.r#max_price) as usize,
+				!Vec::is_empty(&self.r#min_price) as usize,
+				!Vec::is_empty(&self.r#name) as usize,
+				!Vec::is_empty(&self.r#potential_action) as usize,
+				!Vec::is_empty(&self.r#price) as usize,
+				!Vec::is_empty(&self.r#price_currency) as usize,
+				!Vec::is_empty(&self.r#same_as) as usize,
+				!Vec::is_empty(&self.r#subject_of) as usize,
+				!Vec::is_empty(&self.r#url) as usize,
+				!Vec::is_empty(&self.r#valid_from) as usize,
+				!Vec::is_empty(&self.r#valid_through) as usize,
+				!Vec::is_empty(&self.r#value_added_tax_included) as usize,
 			]
 			.iter()
 			.sum();
 			let mut serialize_struct =
 				Serializer::serialize_struct(serializer, "DeliveryChargeSpecification", len)?;
-			#[cfg(any(
-				any(
-					feature = "additional-type-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#additional_type) {
 				serialize_struct.serialize_field("additionalType", {
 					struct SerializeWith<'a>(&'a Vec<AdditionalTypeProperty>);
@@ -512,13 +92,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("additionalType")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "alternate-name-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#alternate_name) {
 				serialize_struct.serialize_field("alternateName", {
 					struct SerializeWith<'a>(&'a Vec<AlternateNameProperty>);
@@ -537,13 +110,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("alternateName")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "applies-to-delivery-method-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#applies_to_delivery_method) {
 				serialize_struct.serialize_field("appliesToDeliveryMethod", {
 					struct SerializeWith<'a>(&'a Vec<AppliesToDeliveryMethodProperty>);
@@ -562,13 +128,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("appliesToDeliveryMethod")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "area-served-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#area_served) {
 				serialize_struct.serialize_field("areaServed", {
 					struct SerializeWith<'a>(&'a Vec<AreaServedProperty>);
@@ -587,13 +146,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("areaServed")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "description-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#description) {
 				serialize_struct.serialize_field("description", {
 					struct SerializeWith<'a>(&'a Vec<DescriptionProperty>);
@@ -612,13 +164,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("description")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "disambiguating-description-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#disambiguating_description) {
 				serialize_struct.serialize_field("disambiguatingDescription", {
 					struct SerializeWith<'a>(&'a Vec<DisambiguatingDescriptionProperty>);
@@ -637,13 +182,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("disambiguatingDescription")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "eligible-quantity-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#eligible_quantity) {
 				serialize_struct.serialize_field("eligibleQuantity", {
 					struct SerializeWith<'a>(&'a Vec<EligibleQuantityProperty>);
@@ -662,13 +200,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("eligibleQuantity")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "eligible-region-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#eligible_region) {
 				serialize_struct.serialize_field("eligibleRegion", {
 					struct SerializeWith<'a>(&'a Vec<EligibleRegionProperty>);
@@ -687,13 +218,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("eligibleRegion")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "eligible-transaction-volume-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#eligible_transaction_volume) {
 				serialize_struct.serialize_field("eligibleTransactionVolume", {
 					struct SerializeWith<'a>(&'a Vec<EligibleTransactionVolumeProperty>);
@@ -712,13 +236,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("eligibleTransactionVolume")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "identifier-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#identifier) {
 				serialize_struct.serialize_field("identifier", {
 					struct SerializeWith<'a>(&'a Vec<IdentifierProperty>);
@@ -737,10 +254,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("identifier")?;
 			}
-			#[cfg(any(
-				any(feature = "image-property-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#image) {
 				serialize_struct.serialize_field("image", {
 					struct SerializeWith<'a>(&'a Vec<ImageProperty>);
@@ -759,13 +272,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("image")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "ineligible-region-property-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#ineligible_region) {
 				serialize_struct.serialize_field("ineligibleRegion", {
 					struct SerializeWith<'a>(&'a Vec<IneligibleRegionProperty>);
@@ -784,13 +290,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("ineligibleRegion")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "main-entity-of-page-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#main_entity_of_page) {
 				serialize_struct.serialize_field("mainEntityOfPage", {
 					struct SerializeWith<'a>(&'a Vec<MainEntityOfPageProperty>);
@@ -809,13 +308,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("mainEntityOfPage")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "max-price-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#max_price) {
 				serialize_struct.serialize_field("maxPrice", {
 					struct SerializeWith<'a>(&'a Vec<MaxPriceProperty>);
@@ -834,13 +326,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("maxPrice")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "min-price-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#min_price) {
 				serialize_struct.serialize_field("minPrice", {
 					struct SerializeWith<'a>(&'a Vec<MinPriceProperty>);
@@ -859,10 +344,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("minPrice")?;
 			}
-			#[cfg(any(
-				any(feature = "name-property-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#name) {
 				serialize_struct.serialize_field("name", {
 					struct SerializeWith<'a>(&'a Vec<NameProperty>);
@@ -881,13 +362,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("name")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "potential-action-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#potential_action) {
 				serialize_struct.serialize_field("potentialAction", {
 					struct SerializeWith<'a>(&'a Vec<PotentialActionProperty>);
@@ -906,10 +380,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("potentialAction")?;
 			}
-			#[cfg(any(
-				any(feature = "price-property-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#price) {
 				serialize_struct.serialize_field("price", {
 					struct SerializeWith<'a>(&'a Vec<PriceProperty>);
@@ -928,13 +398,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("price")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "price-currency-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#price_currency) {
 				serialize_struct.serialize_field("priceCurrency", {
 					struct SerializeWith<'a>(&'a Vec<PriceCurrencyProperty>);
@@ -953,13 +416,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("priceCurrency")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "same-as-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#same_as) {
 				serialize_struct.serialize_field("sameAs", {
 					struct SerializeWith<'a>(&'a Vec<SameAsProperty>);
@@ -978,13 +434,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("sameAs")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "subject-of-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#subject_of) {
 				serialize_struct.serialize_field("subjectOf", {
 					struct SerializeWith<'a>(&'a Vec<SubjectOfProperty>);
@@ -1003,10 +452,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("subjectOf")?;
 			}
-			#[cfg(any(
-				any(feature = "url-property-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#url) {
 				serialize_struct.serialize_field("url", {
 					struct SerializeWith<'a>(&'a Vec<UrlProperty>);
@@ -1025,13 +470,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("url")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "valid-from-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#valid_from) {
 				serialize_struct.serialize_field("validFrom", {
 					struct SerializeWith<'a>(&'a Vec<ValidFromProperty>);
@@ -1050,13 +488,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("validFrom")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "valid-through-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#valid_through) {
 				serialize_struct.serialize_field("validThrough", {
 					struct SerializeWith<'a>(&'a Vec<ValidThroughProperty>);
@@ -1075,13 +506,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("validThrough")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "value-added-tax-included-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#value_added_tax_included) {
 				serialize_struct.serialize_field("valueAddedTaxIncluded", {
 					struct SerializeWith<'a>(&'a Vec<ValueAddedTaxIncludedProperty>);
@@ -1109,193 +533,30 @@ mod serde {
 			D: Deserializer<'de>,
 		{
 			enum Field {
-				#[cfg(any(
-					any(
-						feature = "additional-type-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				AdditionalType,
-				#[cfg(any(
-					any(
-						feature = "alternate-name-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				AlternateName,
-				#[cfg(any(
-					any(
-						feature = "applies-to-delivery-method-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				AppliesToDeliveryMethod,
-				#[cfg(any(
-					any(
-						feature = "area-served-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				AreaServed,
-				#[cfg(any(
-					any(
-						feature = "description-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				Description,
-				#[cfg(any(
-					any(
-						feature = "disambiguating-description-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				DisambiguatingDescription,
-				#[cfg(any(
-					any(
-						feature = "eligible-quantity-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				EligibleQuantity,
-				#[cfg(any(
-					any(
-						feature = "eligible-region-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				EligibleRegion,
-				#[cfg(any(
-					any(
-						feature = "eligible-transaction-volume-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				EligibleTransactionVolume,
-				#[cfg(any(
-					any(
-						feature = "identifier-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				Identifier,
-				#[cfg(any(
-					any(feature = "image-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				Image,
-				#[cfg(any(
-					any(
-						feature = "ineligible-region-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				IneligibleRegion,
-				#[cfg(any(
-					any(
-						feature = "main-entity-of-page-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				MainEntityOfPage,
-				#[cfg(any(
-					any(
-						feature = "max-price-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				MaxPrice,
-				#[cfg(any(
-					any(
-						feature = "min-price-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				MinPrice,
-				#[cfg(any(
-					any(feature = "name-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				Name,
-				#[cfg(any(
-					any(
-						feature = "potential-action-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				PotentialAction,
-				#[cfg(any(
-					any(feature = "price-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				Price,
-				#[cfg(any(
-					any(
-						feature = "price-currency-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				PriceCurrency,
-				#[cfg(any(
-					any(
-						feature = "same-as-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				SameAs,
-				#[cfg(any(
-					any(
-						feature = "subject-of-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				SubjectOf,
-				#[cfg(any(
-					any(feature = "url-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				Url,
-				#[cfg(any(
-					any(
-						feature = "valid-from-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				ValidFrom,
-				#[cfg(any(
-					any(
-						feature = "valid-through-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				ValidThrough,
-				#[cfg(any(
-					any(
-						feature = "value-added-tax-included-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				ValueAddedTaxIncluded,
 				Ignore,
 			}
@@ -1310,205 +571,30 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
-						#[cfg(any(
-							any(
-								feature = "additional-type-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"additionalType" => Ok(Field::AdditionalType),
-						#[cfg(any(
-							any(
-								feature = "alternate-name-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"alternateName" => Ok(Field::AlternateName),
-						#[cfg(any(
-							any(
-								feature = "applies-to-delivery-method-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"appliesToDeliveryMethod" => Ok(Field::AppliesToDeliveryMethod),
-						#[cfg(any(
-							any(
-								feature = "area-served-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"areaServed" => Ok(Field::AreaServed),
-						#[cfg(any(
-							any(
-								feature = "description-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"description" => Ok(Field::Description),
-						#[cfg(any(
-							any(
-								feature = "disambiguating-description-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
-						#[cfg(any(
-							any(
-								feature = "eligible-quantity-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"eligibleQuantity" => Ok(Field::EligibleQuantity),
-						#[cfg(any(
-							any(
-								feature = "eligible-region-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"eligibleRegion" => Ok(Field::EligibleRegion),
-						#[cfg(any(
-							any(
-								feature = "eligible-transaction-volume-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"eligibleTransactionVolume" => Ok(Field::EligibleTransactionVolume),
-						#[cfg(any(
-							any(
-								feature = "identifier-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"identifier" => Ok(Field::Identifier),
-						#[cfg(any(
-							any(
-								feature = "image-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"image" => Ok(Field::Image),
-						#[cfg(any(
-							any(
-								feature = "ineligible-region-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						"ineligibleRegion" => Ok(Field::IneligibleRegion),
-						#[cfg(any(
-							any(
-								feature = "main-entity-of-page-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
-						#[cfg(any(
-							any(
-								feature = "max-price-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"maxPrice" => Ok(Field::MaxPrice),
-						#[cfg(any(
-							any(
-								feature = "min-price-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"minPrice" => Ok(Field::MinPrice),
-						#[cfg(any(
-							any(
-								feature = "name-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"name" => Ok(Field::Name),
-						#[cfg(any(
-							any(
-								feature = "potential-action-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"potentialAction" => Ok(Field::PotentialAction),
-						#[cfg(any(
-							any(
-								feature = "price-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"price" => Ok(Field::Price),
-						#[cfg(any(
-							any(
-								feature = "price-currency-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"priceCurrency" => Ok(Field::PriceCurrency),
-						#[cfg(any(
-							any(
-								feature = "same-as-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"sameAs" => Ok(Field::SameAs),
-						#[cfg(any(
-							any(
-								feature = "subject-of-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"subjectOf" => Ok(Field::SubjectOf),
-						#[cfg(any(
-							any(
-								feature = "url-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"url" => Ok(Field::Url),
-						#[cfg(any(
-							any(
-								feature = "valid-from-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"validFrom" => Ok(Field::ValidFrom),
-						#[cfg(any(
-							any(
-								feature = "valid-through-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"validThrough" => Ok(Field::ValidThrough),
-						#[cfg(any(
-							any(
-								feature = "value-added-tax-included-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"valueAddedTaxIncluded" => Ok(Field::ValueAddedTaxIncluded),
 						_ => Ok(Field::Ignore),
 					}
@@ -1518,205 +604,30 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
-						#[cfg(any(
-							any(
-								feature = "additional-type-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"additionalType" => Ok(Field::AdditionalType),
-						#[cfg(any(
-							any(
-								feature = "alternate-name-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"alternateName" => Ok(Field::AlternateName),
-						#[cfg(any(
-							any(
-								feature = "applies-to-delivery-method-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"appliesToDeliveryMethod" => Ok(Field::AppliesToDeliveryMethod),
-						#[cfg(any(
-							any(
-								feature = "area-served-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"areaServed" => Ok(Field::AreaServed),
-						#[cfg(any(
-							any(
-								feature = "description-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"description" => Ok(Field::Description),
-						#[cfg(any(
-							any(
-								feature = "disambiguating-description-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
-						#[cfg(any(
-							any(
-								feature = "eligible-quantity-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"eligibleQuantity" => Ok(Field::EligibleQuantity),
-						#[cfg(any(
-							any(
-								feature = "eligible-region-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"eligibleRegion" => Ok(Field::EligibleRegion),
-						#[cfg(any(
-							any(
-								feature = "eligible-transaction-volume-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"eligibleTransactionVolume" => Ok(Field::EligibleTransactionVolume),
-						#[cfg(any(
-							any(
-								feature = "identifier-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"identifier" => Ok(Field::Identifier),
-						#[cfg(any(
-							any(
-								feature = "image-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"image" => Ok(Field::Image),
-						#[cfg(any(
-							any(
-								feature = "ineligible-region-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						b"ineligibleRegion" => Ok(Field::IneligibleRegion),
-						#[cfg(any(
-							any(
-								feature = "main-entity-of-page-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
-						#[cfg(any(
-							any(
-								feature = "max-price-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"maxPrice" => Ok(Field::MaxPrice),
-						#[cfg(any(
-							any(
-								feature = "min-price-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"minPrice" => Ok(Field::MinPrice),
-						#[cfg(any(
-							any(
-								feature = "name-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"name" => Ok(Field::Name),
-						#[cfg(any(
-							any(
-								feature = "potential-action-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"potentialAction" => Ok(Field::PotentialAction),
-						#[cfg(any(
-							any(
-								feature = "price-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"price" => Ok(Field::Price),
-						#[cfg(any(
-							any(
-								feature = "price-currency-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"priceCurrency" => Ok(Field::PriceCurrency),
-						#[cfg(any(
-							any(
-								feature = "same-as-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"sameAs" => Ok(Field::SameAs),
-						#[cfg(any(
-							any(
-								feature = "subject-of-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"subjectOf" => Ok(Field::SubjectOf),
-						#[cfg(any(
-							any(
-								feature = "url-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"url" => Ok(Field::Url),
-						#[cfg(any(
-							any(
-								feature = "valid-from-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"validFrom" => Ok(Field::ValidFrom),
-						#[cfg(any(
-							any(
-								feature = "valid-through-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"validThrough" => Ok(Field::ValidThrough),
-						#[cfg(any(
-							any(
-								feature = "value-added-tax-included-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"valueAddedTaxIncluded" => Ok(Field::ValueAddedTaxIncluded),
 						_ => Ok(Field::Ignore),
 					}
@@ -1740,203 +651,33 @@ mod serde {
 				where
 					A: de::MapAccess<'de>,
 				{
-					#[cfg(any(
-						any(
-							feature = "additional-type-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#additional_type_property = None;
-					#[cfg(any(
-						any(
-							feature = "alternate-name-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#alternate_name_property = None;
-					#[cfg(any(
-						any(
-							feature = "applies-to-delivery-method-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#applies_to_delivery_method_property = None;
-					#[cfg(any(
-						any(
-							feature = "area-served-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#area_served_property = None;
-					#[cfg(any(
-						any(
-							feature = "description-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#description_property = None;
-					#[cfg(any(
-						any(
-							feature = "disambiguating-description-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#disambiguating_description_property = None;
-					#[cfg(any(
-						any(
-							feature = "eligible-quantity-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#eligible_quantity_property = None;
-					#[cfg(any(
-						any(
-							feature = "eligible-region-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#eligible_region_property = None;
-					#[cfg(any(
-						any(
-							feature = "eligible-transaction-volume-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#eligible_transaction_volume_property = None;
-					#[cfg(any(
-						any(
-							feature = "identifier-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#identifier_property = None;
-					#[cfg(any(
-						any(feature = "image-property-schema", feature = "general-schema-section"),
-						doc
-					))]
 					let mut r#image_property = None;
-					#[cfg(any(
-						any(
-							feature = "ineligible-region-property-schema",
-							feature = "pending-schema-section"
-						),
-						doc
-					))]
 					let mut r#ineligible_region_property = None;
-					#[cfg(any(
-						any(
-							feature = "main-entity-of-page-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#main_entity_of_page_property = None;
-					#[cfg(any(
-						any(
-							feature = "max-price-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#max_price_property = None;
-					#[cfg(any(
-						any(
-							feature = "min-price-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#min_price_property = None;
-					#[cfg(any(
-						any(feature = "name-property-schema", feature = "general-schema-section"),
-						doc
-					))]
 					let mut r#name_property = None;
-					#[cfg(any(
-						any(
-							feature = "potential-action-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#potential_action_property = None;
-					#[cfg(any(
-						any(feature = "price-property-schema", feature = "general-schema-section"),
-						doc
-					))]
 					let mut r#price_property = None;
-					#[cfg(any(
-						any(
-							feature = "price-currency-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#price_currency_property = None;
-					#[cfg(any(
-						any(
-							feature = "same-as-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#same_as_property = None;
-					#[cfg(any(
-						any(
-							feature = "subject-of-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#subject_of_property = None;
-					#[cfg(any(
-						any(feature = "url-property-schema", feature = "general-schema-section"),
-						doc
-					))]
 					let mut r#url_property = None;
-					#[cfg(any(
-						any(
-							feature = "valid-from-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#valid_from_property = None;
-					#[cfg(any(
-						any(
-							feature = "valid-through-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#valid_through_property = None;
-					#[cfg(any(
-						any(
-							feature = "value-added-tax-included-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#value_added_tax_included_property = None;
 					while let Some(key) = map.next_key::<Field>()? {
 						match key {
-							#[cfg(any(
-								any(
-									feature = "additional-type-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::AdditionalType => {
 								if r#additional_type_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -1963,13 +704,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "alternate-name-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::AlternateName => {
 								if r#alternate_name_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -1996,13 +730,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "applies-to-delivery-method-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::AppliesToDeliveryMethod => {
 								if r#applies_to_delivery_method_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2029,13 +756,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "area-served-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::AreaServed => {
 								if r#area_served_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2062,13 +782,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "description-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Description => {
 								if r#description_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2095,13 +808,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "disambiguating-description-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::DisambiguatingDescription => {
 								if r#disambiguating_description_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2128,13 +834,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "eligible-quantity-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::EligibleQuantity => {
 								if r#eligible_quantity_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2161,13 +860,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "eligible-region-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::EligibleRegion => {
 								if r#eligible_region_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2194,13 +886,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "eligible-transaction-volume-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::EligibleTransactionVolume => {
 								if r#eligible_transaction_volume_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2227,13 +912,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "identifier-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Identifier => {
 								if r#identifier_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2260,13 +938,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "image-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Image => {
 								if r#image_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("image"));
@@ -2291,13 +962,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "ineligible-region-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::IneligibleRegion => {
 								if r#ineligible_region_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2324,13 +988,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "main-entity-of-page-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::MainEntityOfPage => {
 								if r#main_entity_of_page_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2357,13 +1014,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "max-price-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::MaxPrice => {
 								if r#max_price_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2390,13 +1040,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "min-price-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::MinPrice => {
 								if r#min_price_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2423,13 +1066,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "name-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Name => {
 								if r#name_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("name"));
@@ -2454,13 +1090,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "potential-action-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::PotentialAction => {
 								if r#potential_action_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2487,13 +1116,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "price-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Price => {
 								if r#price_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("price"));
@@ -2518,13 +1140,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "price-currency-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::PriceCurrency => {
 								if r#price_currency_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2551,13 +1166,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "same-as-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::SameAs => {
 								if r#same_as_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("sameAs"));
@@ -2582,13 +1190,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "subject-of-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::SubjectOf => {
 								if r#subject_of_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2615,13 +1216,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "url-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Url => {
 								if r#url_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("url"));
@@ -2646,13 +1240,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "valid-from-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::ValidFrom => {
 								if r#valid_from_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2679,13 +1266,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "valid-through-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::ValidThrough => {
 								if r#valid_through_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2712,13 +1292,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "value-added-tax-included-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::ValueAddedTaxIncluded => {
 								if r#value_added_tax_included_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2751,401 +1324,63 @@ mod serde {
 						}
 					}
 					Ok(DeliveryChargeSpecification {
-						#[cfg(any(
-							any(
-								feature = "additional-type-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#additional_type: r#additional_type_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "alternate-name-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#alternate_name: r#alternate_name_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "applies-to-delivery-method-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#applies_to_delivery_method: r#applies_to_delivery_method_property
 							.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "area-served-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#area_served: r#area_served_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "description-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#description: r#description_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "disambiguating-description-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#disambiguating_description: r#disambiguating_description_property
 							.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "eligible-quantity-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#eligible_quantity: r#eligible_quantity_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "eligible-region-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#eligible_region: r#eligible_region_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "eligible-transaction-volume-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#eligible_transaction_volume: r#eligible_transaction_volume_property
 							.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "identifier-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#identifier: r#identifier_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "image-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#image: r#image_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "ineligible-region-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#ineligible_region: r#ineligible_region_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "main-entity-of-page-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#main_entity_of_page: r#main_entity_of_page_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "max-price-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#max_price: r#max_price_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "min-price-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#min_price: r#min_price_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "name-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#name: r#name_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "potential-action-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#potential_action: r#potential_action_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "price-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#price: r#price_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "price-currency-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#price_currency: r#price_currency_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "same-as-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#same_as: r#same_as_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "subject-of-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#subject_of: r#subject_of_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "url-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#url: r#url_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "valid-from-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#valid_from: r#valid_from_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "valid-through-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#valid_through: r#valid_through_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "value-added-tax-included-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#value_added_tax_included: r#value_added_tax_included_property
 							.unwrap_or_default(),
 					})
 				}
 			}
 			const FIELDS: &[&str] = &[
-				#[cfg(any(
-					any(
-						feature = "additional-type-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"additionalType",
-				#[cfg(any(
-					any(
-						feature = "alternate-name-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"alternateName",
-				#[cfg(any(
-					any(
-						feature = "applies-to-delivery-method-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"appliesToDeliveryMethod",
-				#[cfg(any(
-					any(
-						feature = "area-served-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"areaServed",
-				#[cfg(any(
-					any(
-						feature = "description-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"description",
-				#[cfg(any(
-					any(
-						feature = "disambiguating-description-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"disambiguatingDescription",
-				#[cfg(any(
-					any(
-						feature = "eligible-quantity-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"eligibleQuantity",
-				#[cfg(any(
-					any(
-						feature = "eligible-region-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"eligibleRegion",
-				#[cfg(any(
-					any(
-						feature = "eligible-transaction-volume-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"eligibleTransactionVolume",
-				#[cfg(any(
-					any(
-						feature = "identifier-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"identifier",
-				#[cfg(any(
-					any(feature = "image-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				"image",
-				#[cfg(any(
-					any(
-						feature = "ineligible-region-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				"ineligibleRegion",
-				#[cfg(any(
-					any(
-						feature = "main-entity-of-page-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"mainEntityOfPage",
-				#[cfg(any(
-					any(
-						feature = "max-price-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"maxPrice",
-				#[cfg(any(
-					any(
-						feature = "min-price-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"minPrice",
-				#[cfg(any(
-					any(feature = "name-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				"name",
-				#[cfg(any(
-					any(
-						feature = "potential-action-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"potentialAction",
-				#[cfg(any(
-					any(feature = "price-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				"price",
-				#[cfg(any(
-					any(
-						feature = "price-currency-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"priceCurrency",
-				#[cfg(any(
-					any(
-						feature = "same-as-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"sameAs",
-				#[cfg(any(
-					any(
-						feature = "subject-of-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"subjectOf",
-				#[cfg(any(
-					any(feature = "url-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				"url",
-				#[cfg(any(
-					any(
-						feature = "valid-from-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"validFrom",
-				#[cfg(any(
-					any(
-						feature = "valid-through-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"validThrough",
-				#[cfg(any(
-					any(
-						feature = "value-added-tax-included-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"valueAddedTaxIncluded",
 			];
 			deserializer.deserialize_struct("DeliveryChargeSpecification", FIELDS, ClassVisitor)

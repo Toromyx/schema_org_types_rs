@@ -3,13 +3,6 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum ArchiveHeldProperty {
-	#[cfg(any(
-		any(
-			feature = "archive-component-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	ArchiveComponent(ArchiveComponent),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),
@@ -29,13 +22,6 @@ mod serde {
 			S: Serializer,
 		{
 			match *self {
-				#[cfg(any(
-					any(
-						feature = "archive-component-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				ArchiveHeldProperty::ArchiveComponent(ref inner) => inner.serialize(serializer),
 				#[cfg(all(feature = "fallible", feature = "serde"))]
 				ArchiveHeldProperty::SerdeFail(ref inner) => inner.serialize(serializer),
@@ -51,13 +37,6 @@ mod serde {
 				<::serde::__private::de::Content as Deserialize>::deserialize(deserializer)?;
 			let deserializer =
 				::serde::__private::de::ContentRefDeserializer::<D::Error>::new(&content);
-			#[cfg(any(
-				any(
-					feature = "archive-component-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<ArchiveComponent as Deserialize>::deserialize(deserializer),
 				ArchiveHeldProperty::ArchiveComponent,

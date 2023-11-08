@@ -2,7 +2,7 @@ use convert_case::{Case, Casing};
 use derivative::Derivative;
 use oxigraph::store::Store;
 
-use crate::{schema_section::SchemaSection, sparql::SchemaQuerySolution};
+use crate::sparql::SchemaQuerySolution;
 
 pub mod class;
 pub mod data_type;
@@ -22,9 +22,6 @@ pub trait Schema {
 	/// Get the IRI of this schema.
 	fn iri(&self) -> &String;
 
-	/// Get the section of this schema.
-	fn section(&self) -> &SchemaSection;
-
 	/// Get a [`Vec`] of all features that the children of this schema depend on
 	fn child_feature_names(&self) -> Vec<String>;
 
@@ -43,8 +40,6 @@ pub struct ReferencedSchema {
 	#[derivative(PartialEq = "ignore", PartialOrd = "ignore", Ord = "ignore")]
 	pub iri: String,
 	pub name: String,
-	#[derivative(PartialEq = "ignore", PartialOrd = "ignore", Ord = "ignore")]
-	pub section: SchemaSection,
 }
 
 impl From<SchemaQuerySolution> for ReferencedSchema {
@@ -52,7 +47,6 @@ impl From<SchemaQuerySolution> for ReferencedSchema {
 		Self {
 			iri: value.iri,
 			name: value.label,
-			section: value.section,
 		}
 	}
 }

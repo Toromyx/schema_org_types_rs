@@ -3,14 +3,8 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum DataFeedElementProperty {
-	#[cfg(any(
-		any(feature = "data-feed-item-schema", feature = "general-schema-section"),
-		doc
-	))]
 	DataFeedItem(DataFeedItem),
-	#[cfg(any(any(feature = "thing-schema", feature = "general-schema-section"), doc))]
 	Thing(Thing),
-	#[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
 	Text(Text),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),
@@ -30,14 +24,8 @@ mod serde {
 			S: Serializer,
 		{
 			match *self {
-				#[cfg(any(
-					any(feature = "data-feed-item-schema", feature = "general-schema-section"),
-					doc
-				))]
 				DataFeedElementProperty::DataFeedItem(ref inner) => inner.serialize(serializer),
-				#[cfg(any(any(feature = "thing-schema", feature = "general-schema-section"), doc))]
 				DataFeedElementProperty::Thing(ref inner) => inner.serialize(serializer),
-				#[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
 				DataFeedElementProperty::Text(ref inner) => inner.serialize(serializer),
 				#[cfg(all(feature = "fallible", feature = "serde"))]
 				DataFeedElementProperty::SerdeFail(ref inner) => inner.serialize(serializer),
@@ -53,24 +41,18 @@ mod serde {
 				<::serde::__private::de::Content as Deserialize>::deserialize(deserializer)?;
 			let deserializer =
 				::serde::__private::de::ContentRefDeserializer::<D::Error>::new(&content);
-			#[cfg(any(
-				any(feature = "data-feed-item-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<DataFeedItem as Deserialize>::deserialize(deserializer),
 				DataFeedElementProperty::DataFeedItem,
 			) {
 				return Ok(ok);
 			}
-			#[cfg(any(any(feature = "thing-schema", feature = "general-schema-section"), doc))]
 			if let Ok(ok) = Result::map(
 				<Thing as Deserialize>::deserialize(deserializer),
 				DataFeedElementProperty::Thing,
 			) {
 				return Ok(ok);
 			}
-			#[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
 			if let Ok(ok) = Result::map(
 				<Text as Deserialize>::deserialize(deserializer),
 				DataFeedElementProperty::Text,

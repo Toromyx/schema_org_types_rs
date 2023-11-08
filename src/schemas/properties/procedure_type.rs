@@ -3,13 +3,6 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum ProcedureTypeProperty {
-	#[cfg(any(
-		any(
-			feature = "medical-procedure-type-schema",
-			feature = "health-lifesci-schema-section"
-		),
-		doc
-	))]
 	MedicalProcedureType(MedicalProcedureType),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),
@@ -29,14 +22,9 @@ mod serde {
 			S: Serializer,
 		{
 			match *self {
-				#[cfg(any(
-					any(
-						feature = "medical-procedure-type-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
-				ProcedureTypeProperty::MedicalProcedureType(ref inner) => inner.serialize(serializer),
+				ProcedureTypeProperty::MedicalProcedureType(ref inner) => {
+					inner.serialize(serializer)
+				}
 				#[cfg(all(feature = "fallible", feature = "serde"))]
 				ProcedureTypeProperty::SerdeFail(ref inner) => inner.serialize(serializer),
 			}
@@ -51,13 +39,6 @@ mod serde {
 				<::serde::__private::de::Content as Deserialize>::deserialize(deserializer)?;
 			let deserializer =
 				::serde::__private::de::ContentRefDeserializer::<D::Error>::new(&content);
-			#[cfg(any(
-				any(
-					feature = "medical-procedure-type-schema",
-					feature = "health-lifesci-schema-section"
-				),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<MedicalProcedureType as Deserialize>::deserialize(deserializer),
 				ProcedureTypeProperty::MedicalProcedureType,

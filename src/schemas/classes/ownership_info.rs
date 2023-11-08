@@ -3,124 +3,21 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct OwnershipInfo {
-	#[cfg(any(
-		any(
-			feature = "acquired-from-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#acquired_from: Vec<AcquiredFromProperty>,
-	#[cfg(any(
-		any(
-			feature = "additional-type-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
-	#[cfg(any(
-		any(
-			feature = "alternate-name-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#alternate_name: Vec<AlternateNameProperty>,
-	#[cfg(any(
-		any(
-			feature = "description-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#description: Vec<DescriptionProperty>,
-	#[cfg(any(
-		any(
-			feature = "disambiguating-description-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
-	#[cfg(any(
-		any(
-			feature = "identifier-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#identifier: Vec<IdentifierProperty>,
-	#[cfg(any(
-		any(feature = "image-property-schema", feature = "general-schema-section"),
-		doc
-	))]
 	pub r#image: Vec<ImageProperty>,
-	#[cfg(any(
-		any(
-			feature = "main-entity-of-page-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
-	#[cfg(any(
-		any(feature = "name-property-schema", feature = "general-schema-section"),
-		doc
-	))]
 	pub r#name: Vec<NameProperty>,
-	#[cfg(any(
-		any(
-			feature = "owned-from-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#owned_from: Vec<OwnedFromProperty>,
-	#[cfg(any(
-		any(
-			feature = "owned-through-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#owned_through: Vec<OwnedThroughProperty>,
-	#[cfg(any(
-		any(
-			feature = "potential-action-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#potential_action: Vec<PotentialActionProperty>,
-	#[cfg(any(
-		any(
-			feature = "same-as-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#same_as: Vec<SameAsProperty>,
-	#[cfg(any(
-		any(
-			feature = "subject-of-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#subject_of: Vec<SubjectOfProperty>,
-	#[cfg(any(
-		any(
-			feature = "type-of-good-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#type_of_good: Vec<TypeOfGoodProperty>,
-	#[cfg(any(
-		any(feature = "url-property-schema", feature = "general-schema-section"),
-		doc
-	))]
 	pub r#url: Vec<UrlProperty>,
 }
 #[cfg(feature = "serde")]
@@ -138,194 +35,27 @@ mod serde {
 			S: Serializer,
 		{
 			let len: usize = [
-				if cfg!(any(
-					any(
-						feature = "acquired-from-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#acquired_from) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "additional-type-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#additional_type) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "alternate-name-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#alternate_name) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "description-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#description) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "disambiguating-description-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#disambiguating_description) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "identifier-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#identifier) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "image-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#image) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "main-entity-of-page-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#main_entity_of_page) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "name-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#name) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "owned-from-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#owned_from) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "owned-through-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#owned_through) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "potential-action-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#potential_action) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "same-as-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#same_as) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "subject-of-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#subject_of) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "type-of-good-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#type_of_good) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "url-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#url) as usize
-				} else {
-					0
-				},
+				!Vec::is_empty(&self.r#acquired_from) as usize,
+				!Vec::is_empty(&self.r#additional_type) as usize,
+				!Vec::is_empty(&self.r#alternate_name) as usize,
+				!Vec::is_empty(&self.r#description) as usize,
+				!Vec::is_empty(&self.r#disambiguating_description) as usize,
+				!Vec::is_empty(&self.r#identifier) as usize,
+				!Vec::is_empty(&self.r#image) as usize,
+				!Vec::is_empty(&self.r#main_entity_of_page) as usize,
+				!Vec::is_empty(&self.r#name) as usize,
+				!Vec::is_empty(&self.r#owned_from) as usize,
+				!Vec::is_empty(&self.r#owned_through) as usize,
+				!Vec::is_empty(&self.r#potential_action) as usize,
+				!Vec::is_empty(&self.r#same_as) as usize,
+				!Vec::is_empty(&self.r#subject_of) as usize,
+				!Vec::is_empty(&self.r#type_of_good) as usize,
+				!Vec::is_empty(&self.r#url) as usize,
 			]
 			.iter()
 			.sum();
 			let mut serialize_struct =
 				Serializer::serialize_struct(serializer, "OwnershipInfo", len)?;
-			#[cfg(any(
-				any(
-					feature = "acquired-from-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#acquired_from) {
 				serialize_struct.serialize_field("acquiredFrom", {
 					struct SerializeWith<'a>(&'a Vec<AcquiredFromProperty>);
@@ -344,13 +74,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("acquiredFrom")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "additional-type-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#additional_type) {
 				serialize_struct.serialize_field("additionalType", {
 					struct SerializeWith<'a>(&'a Vec<AdditionalTypeProperty>);
@@ -369,13 +92,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("additionalType")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "alternate-name-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#alternate_name) {
 				serialize_struct.serialize_field("alternateName", {
 					struct SerializeWith<'a>(&'a Vec<AlternateNameProperty>);
@@ -394,13 +110,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("alternateName")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "description-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#description) {
 				serialize_struct.serialize_field("description", {
 					struct SerializeWith<'a>(&'a Vec<DescriptionProperty>);
@@ -419,13 +128,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("description")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "disambiguating-description-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#disambiguating_description) {
 				serialize_struct.serialize_field("disambiguatingDescription", {
 					struct SerializeWith<'a>(&'a Vec<DisambiguatingDescriptionProperty>);
@@ -444,13 +146,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("disambiguatingDescription")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "identifier-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#identifier) {
 				serialize_struct.serialize_field("identifier", {
 					struct SerializeWith<'a>(&'a Vec<IdentifierProperty>);
@@ -469,10 +164,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("identifier")?;
 			}
-			#[cfg(any(
-				any(feature = "image-property-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#image) {
 				serialize_struct.serialize_field("image", {
 					struct SerializeWith<'a>(&'a Vec<ImageProperty>);
@@ -491,13 +182,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("image")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "main-entity-of-page-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#main_entity_of_page) {
 				serialize_struct.serialize_field("mainEntityOfPage", {
 					struct SerializeWith<'a>(&'a Vec<MainEntityOfPageProperty>);
@@ -516,10 +200,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("mainEntityOfPage")?;
 			}
-			#[cfg(any(
-				any(feature = "name-property-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#name) {
 				serialize_struct.serialize_field("name", {
 					struct SerializeWith<'a>(&'a Vec<NameProperty>);
@@ -538,13 +218,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("name")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "owned-from-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#owned_from) {
 				serialize_struct.serialize_field("ownedFrom", {
 					struct SerializeWith<'a>(&'a Vec<OwnedFromProperty>);
@@ -563,13 +236,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("ownedFrom")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "owned-through-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#owned_through) {
 				serialize_struct.serialize_field("ownedThrough", {
 					struct SerializeWith<'a>(&'a Vec<OwnedThroughProperty>);
@@ -588,13 +254,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("ownedThrough")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "potential-action-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#potential_action) {
 				serialize_struct.serialize_field("potentialAction", {
 					struct SerializeWith<'a>(&'a Vec<PotentialActionProperty>);
@@ -613,13 +272,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("potentialAction")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "same-as-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#same_as) {
 				serialize_struct.serialize_field("sameAs", {
 					struct SerializeWith<'a>(&'a Vec<SameAsProperty>);
@@ -638,13 +290,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("sameAs")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "subject-of-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#subject_of) {
 				serialize_struct.serialize_field("subjectOf", {
 					struct SerializeWith<'a>(&'a Vec<SubjectOfProperty>);
@@ -663,13 +308,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("subjectOf")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "type-of-good-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#type_of_good) {
 				serialize_struct.serialize_field("typeOfGood", {
 					struct SerializeWith<'a>(&'a Vec<TypeOfGoodProperty>);
@@ -688,10 +326,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("typeOfGood")?;
 			}
-			#[cfg(any(
-				any(feature = "url-property-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#url) {
 				serialize_struct.serialize_field("url", {
 					struct SerializeWith<'a>(&'a Vec<UrlProperty>);
@@ -719,124 +353,21 @@ mod serde {
 			D: Deserializer<'de>,
 		{
 			enum Field {
-				#[cfg(any(
-					any(
-						feature = "acquired-from-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				AcquiredFrom,
-				#[cfg(any(
-					any(
-						feature = "additional-type-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				AdditionalType,
-				#[cfg(any(
-					any(
-						feature = "alternate-name-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				AlternateName,
-				#[cfg(any(
-					any(
-						feature = "description-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				Description,
-				#[cfg(any(
-					any(
-						feature = "disambiguating-description-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				DisambiguatingDescription,
-				#[cfg(any(
-					any(
-						feature = "identifier-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				Identifier,
-				#[cfg(any(
-					any(feature = "image-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				Image,
-				#[cfg(any(
-					any(
-						feature = "main-entity-of-page-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				MainEntityOfPage,
-				#[cfg(any(
-					any(feature = "name-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				Name,
-				#[cfg(any(
-					any(
-						feature = "owned-from-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				OwnedFrom,
-				#[cfg(any(
-					any(
-						feature = "owned-through-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				OwnedThrough,
-				#[cfg(any(
-					any(
-						feature = "potential-action-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				PotentialAction,
-				#[cfg(any(
-					any(
-						feature = "same-as-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				SameAs,
-				#[cfg(any(
-					any(
-						feature = "subject-of-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				SubjectOf,
-				#[cfg(any(
-					any(
-						feature = "type-of-good-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				TypeOfGood,
-				#[cfg(any(
-					any(feature = "url-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				Url,
 				Ignore,
 			}
@@ -851,133 +382,21 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
-						#[cfg(any(
-							any(
-								feature = "acquired-from-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"acquiredFrom" => Ok(Field::AcquiredFrom),
-						#[cfg(any(
-							any(
-								feature = "additional-type-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"additionalType" => Ok(Field::AdditionalType),
-						#[cfg(any(
-							any(
-								feature = "alternate-name-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"alternateName" => Ok(Field::AlternateName),
-						#[cfg(any(
-							any(
-								feature = "description-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"description" => Ok(Field::Description),
-						#[cfg(any(
-							any(
-								feature = "disambiguating-description-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
-						#[cfg(any(
-							any(
-								feature = "identifier-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"identifier" => Ok(Field::Identifier),
-						#[cfg(any(
-							any(
-								feature = "image-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"image" => Ok(Field::Image),
-						#[cfg(any(
-							any(
-								feature = "main-entity-of-page-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
-						#[cfg(any(
-							any(
-								feature = "name-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"name" => Ok(Field::Name),
-						#[cfg(any(
-							any(
-								feature = "owned-from-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"ownedFrom" => Ok(Field::OwnedFrom),
-						#[cfg(any(
-							any(
-								feature = "owned-through-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"ownedThrough" => Ok(Field::OwnedThrough),
-						#[cfg(any(
-							any(
-								feature = "potential-action-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"potentialAction" => Ok(Field::PotentialAction),
-						#[cfg(any(
-							any(
-								feature = "same-as-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"sameAs" => Ok(Field::SameAs),
-						#[cfg(any(
-							any(
-								feature = "subject-of-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"subjectOf" => Ok(Field::SubjectOf),
-						#[cfg(any(
-							any(
-								feature = "type-of-good-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"typeOfGood" => Ok(Field::TypeOfGood),
-						#[cfg(any(
-							any(
-								feature = "url-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"url" => Ok(Field::Url),
 						_ => Ok(Field::Ignore),
 					}
@@ -987,133 +406,21 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
-						#[cfg(any(
-							any(
-								feature = "acquired-from-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"acquiredFrom" => Ok(Field::AcquiredFrom),
-						#[cfg(any(
-							any(
-								feature = "additional-type-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"additionalType" => Ok(Field::AdditionalType),
-						#[cfg(any(
-							any(
-								feature = "alternate-name-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"alternateName" => Ok(Field::AlternateName),
-						#[cfg(any(
-							any(
-								feature = "description-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"description" => Ok(Field::Description),
-						#[cfg(any(
-							any(
-								feature = "disambiguating-description-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
-						#[cfg(any(
-							any(
-								feature = "identifier-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"identifier" => Ok(Field::Identifier),
-						#[cfg(any(
-							any(
-								feature = "image-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"image" => Ok(Field::Image),
-						#[cfg(any(
-							any(
-								feature = "main-entity-of-page-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
-						#[cfg(any(
-							any(
-								feature = "name-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"name" => Ok(Field::Name),
-						#[cfg(any(
-							any(
-								feature = "owned-from-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"ownedFrom" => Ok(Field::OwnedFrom),
-						#[cfg(any(
-							any(
-								feature = "owned-through-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"ownedThrough" => Ok(Field::OwnedThrough),
-						#[cfg(any(
-							any(
-								feature = "potential-action-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"potentialAction" => Ok(Field::PotentialAction),
-						#[cfg(any(
-							any(
-								feature = "same-as-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"sameAs" => Ok(Field::SameAs),
-						#[cfg(any(
-							any(
-								feature = "subject-of-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"subjectOf" => Ok(Field::SubjectOf),
-						#[cfg(any(
-							any(
-								feature = "type-of-good-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"typeOfGood" => Ok(Field::TypeOfGood),
-						#[cfg(any(
-							any(
-								feature = "url-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"url" => Ok(Field::Url),
 						_ => Ok(Field::Ignore),
 					}
@@ -1137,134 +444,24 @@ mod serde {
 				where
 					A: de::MapAccess<'de>,
 				{
-					#[cfg(any(
-						any(
-							feature = "acquired-from-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#acquired_from_property = None;
-					#[cfg(any(
-						any(
-							feature = "additional-type-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#additional_type_property = None;
-					#[cfg(any(
-						any(
-							feature = "alternate-name-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#alternate_name_property = None;
-					#[cfg(any(
-						any(
-							feature = "description-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#description_property = None;
-					#[cfg(any(
-						any(
-							feature = "disambiguating-description-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#disambiguating_description_property = None;
-					#[cfg(any(
-						any(
-							feature = "identifier-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#identifier_property = None;
-					#[cfg(any(
-						any(feature = "image-property-schema", feature = "general-schema-section"),
-						doc
-					))]
 					let mut r#image_property = None;
-					#[cfg(any(
-						any(
-							feature = "main-entity-of-page-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#main_entity_of_page_property = None;
-					#[cfg(any(
-						any(feature = "name-property-schema", feature = "general-schema-section"),
-						doc
-					))]
 					let mut r#name_property = None;
-					#[cfg(any(
-						any(
-							feature = "owned-from-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#owned_from_property = None;
-					#[cfg(any(
-						any(
-							feature = "owned-through-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#owned_through_property = None;
-					#[cfg(any(
-						any(
-							feature = "potential-action-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#potential_action_property = None;
-					#[cfg(any(
-						any(
-							feature = "same-as-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#same_as_property = None;
-					#[cfg(any(
-						any(
-							feature = "subject-of-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#subject_of_property = None;
-					#[cfg(any(
-						any(
-							feature = "type-of-good-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#type_of_good_property = None;
-					#[cfg(any(
-						any(feature = "url-property-schema", feature = "general-schema-section"),
-						doc
-					))]
 					let mut r#url_property = None;
 					while let Some(key) = map.next_key::<Field>()? {
 						match key {
-							#[cfg(any(
-								any(
-									feature = "acquired-from-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::AcquiredFrom => {
 								if r#acquired_from_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -1291,13 +488,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "additional-type-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::AdditionalType => {
 								if r#additional_type_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -1324,13 +514,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "alternate-name-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::AlternateName => {
 								if r#alternate_name_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -1357,13 +540,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "description-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Description => {
 								if r#description_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -1390,13 +566,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "disambiguating-description-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::DisambiguatingDescription => {
 								if r#disambiguating_description_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -1423,13 +592,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "identifier-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Identifier => {
 								if r#identifier_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -1456,13 +618,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "image-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Image => {
 								if r#image_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("image"));
@@ -1487,13 +642,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "main-entity-of-page-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::MainEntityOfPage => {
 								if r#main_entity_of_page_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -1520,13 +668,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "name-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Name => {
 								if r#name_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("name"));
@@ -1551,13 +692,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "owned-from-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::OwnedFrom => {
 								if r#owned_from_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -1584,13 +718,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "owned-through-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::OwnedThrough => {
 								if r#owned_through_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -1617,13 +744,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "potential-action-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::PotentialAction => {
 								if r#potential_action_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -1650,13 +770,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "same-as-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::SameAs => {
 								if r#same_as_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("sameAs"));
@@ -1681,13 +794,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "subject-of-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::SubjectOf => {
 								if r#subject_of_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -1714,13 +820,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "type-of-good-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::TypeOfGood => {
 								if r#type_of_good_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -1747,13 +846,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "url-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Url => {
 								if r#url_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("url"));
@@ -1784,257 +876,42 @@ mod serde {
 						}
 					}
 					Ok(OwnershipInfo {
-						#[cfg(any(
-							any(
-								feature = "acquired-from-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#acquired_from: r#acquired_from_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "additional-type-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#additional_type: r#additional_type_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "alternate-name-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#alternate_name: r#alternate_name_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "description-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#description: r#description_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "disambiguating-description-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#disambiguating_description: r#disambiguating_description_property
 							.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "identifier-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#identifier: r#identifier_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "image-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#image: r#image_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "main-entity-of-page-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#main_entity_of_page: r#main_entity_of_page_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "name-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#name: r#name_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "owned-from-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#owned_from: r#owned_from_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "owned-through-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#owned_through: r#owned_through_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "potential-action-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#potential_action: r#potential_action_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "same-as-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#same_as: r#same_as_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "subject-of-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#subject_of: r#subject_of_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "type-of-good-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#type_of_good: r#type_of_good_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "url-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#url: r#url_property.unwrap_or_default(),
 					})
 				}
 			}
 			const FIELDS: &[&str] = &[
-				#[cfg(any(
-					any(
-						feature = "acquired-from-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"acquiredFrom",
-				#[cfg(any(
-					any(
-						feature = "additional-type-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"additionalType",
-				#[cfg(any(
-					any(
-						feature = "alternate-name-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"alternateName",
-				#[cfg(any(
-					any(
-						feature = "description-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"description",
-				#[cfg(any(
-					any(
-						feature = "disambiguating-description-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"disambiguatingDescription",
-				#[cfg(any(
-					any(
-						feature = "identifier-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"identifier",
-				#[cfg(any(
-					any(feature = "image-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				"image",
-				#[cfg(any(
-					any(
-						feature = "main-entity-of-page-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"mainEntityOfPage",
-				#[cfg(any(
-					any(feature = "name-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				"name",
-				#[cfg(any(
-					any(
-						feature = "owned-from-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"ownedFrom",
-				#[cfg(any(
-					any(
-						feature = "owned-through-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"ownedThrough",
-				#[cfg(any(
-					any(
-						feature = "potential-action-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"potentialAction",
-				#[cfg(any(
-					any(
-						feature = "same-as-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"sameAs",
-				#[cfg(any(
-					any(
-						feature = "subject-of-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"subjectOf",
-				#[cfg(any(
-					any(
-						feature = "type-of-good-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"typeOfGood",
-				#[cfg(any(
-					any(feature = "url-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				"url",
 			];
 			deserializer.deserialize_struct("OwnershipInfo", FIELDS, ClassVisitor)

@@ -12,7 +12,6 @@ use rust_type::RustType;
 use crate::{
 	doc_lines::DocLines,
 	schema::{data_type::serde::serde_mod, map_schema_name, Schema},
-	schema_section::SchemaSection,
 	sparql::{SchemaQueries, SchemaQuerySolution},
 };
 
@@ -25,8 +24,6 @@ pub struct DataType {
 	pub name: String,
 	#[derivative(PartialEq = "ignore", PartialOrd = "ignore", Ord = "ignore")]
 	pub rust_type: RustType,
-	#[derivative(PartialEq = "ignore", PartialOrd = "ignore", Ord = "ignore")]
-	pub section: SchemaSection,
 }
 
 impl Schema for DataType {
@@ -46,10 +43,6 @@ impl Schema for DataType {
 		&self.iri
 	}
 
-	fn section(&self) -> &SchemaSection {
-		&self.section
-	}
-
 	fn child_feature_names(&self) -> Vec<String> {
 		vec![]
 	}
@@ -61,7 +54,6 @@ impl Schema for DataType {
 			iri: solution.iri,
 			name: map_schema_name(solution.label),
 			rust_type: RustType::from(transformable_type.as_str()),
-			section: solution.section,
 		}
 	}
 }

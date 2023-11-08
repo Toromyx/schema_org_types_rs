@@ -7,12 +7,9 @@ use as_named_node::AsNamedNode;
 use const_format::concatcp;
 use into_solutions::IntoSolutions;
 use oxigraph::{
-	model::NamedNode,
 	sparql::{QueryResults, QuerySolution},
 	store::Store,
 };
-
-use crate::schema_section::SchemaSection;
 
 /// The prefixes/namespaces used in the schema.org RDF
 const PREFIXES: &str = r#"
@@ -20,22 +17,6 @@ PREFIX schema: <https://schema.org/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 "#;
-
-impl From<&NamedNode> for SchemaSection {
-	fn from(value: &NamedNode) -> Self {
-		match value.as_str() {
-			"https://attic.schema.org" => Self::Attic,
-			"https://auto.schema.org" => Self::Auto,
-			"https://bib.schema.org" => Self::Bib,
-			"https://health-lifesci.schema.org" => Self::HealthLifesci,
-			"https://meta.schema.org" => Self::Meta,
-			"https://pending.schema.org" => Self::Pending,
-			iri => {
-				panic!("Could no determine the Schema.org section of \"{}\".", iri)
-			}
-		}
-	}
-}
 
 fn iri_from_solution(solution: &QuerySolution) -> String {
 	solution
@@ -55,18 +36,10 @@ fn label_from_solution(solution: &QuerySolution) -> String {
 		.to_string()
 }
 
-fn section_from_solution(solution: &QuerySolution) -> SchemaSection {
-	solution
-		.get("section")
-		.map(|term| term.as_named_node().into())
-		.unwrap_or_default()
-}
-
 #[derive(Debug, Clone)]
 pub struct SchemaQuerySolution {
 	pub iri: String,
 	pub label: String,
-	pub section: SchemaSection,
 }
 
 impl From<&QuerySolution> for SchemaQuerySolution {
@@ -74,7 +47,6 @@ impl From<&QuerySolution> for SchemaQuerySolution {
 		Self {
 			iri: iri_from_solution(value),
 			label: label_from_solution(value),
-			section: section_from_solution(value),
 		}
 	}
 }
@@ -146,10 +118,8 @@ impl SchemaQueries for Store {
 SELECT
     ?node
     ?label
-    ?section
 WHERE {
     ?node rdfs:label ?label .
-    OPTIONAL { ?node schema:isPartOf ?section . }
 }
 "#,
 		);
@@ -236,7 +206,6 @@ WHERE {{
 SELECT DISTINCT
     ?node
     ?label
-    ?section
 WHERE {{
     {{
         <{}> rdfs:subClassOf* ?parent .
@@ -247,7 +216,6 @@ WHERE {{
         ?node schema:domainIncludes <{}> .
     }}
     ?node rdfs:label ?label .
-    OPTIONAL {{ ?node schema:isPartOf ?section . }}
 }}
 "#,
 			PREFIXES, class_iri, class_iri
@@ -267,11 +235,9 @@ WHERE {{
 SELECT
     ?node
     ?label
-    ?section
 WHERE {{
     <{}> schema:rangeIncludes ?node .
     ?node rdfs:label ?label .
-    OPTIONAL {{ ?node schema:isPartOf ?section . }}
 }}
 "#,
 			PREFIXES, property_iri

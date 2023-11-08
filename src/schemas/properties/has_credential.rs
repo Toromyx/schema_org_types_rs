@@ -3,13 +3,6 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum HasCredentialProperty {
-	#[cfg(any(
-		any(
-			feature = "educational-occupational-credential-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	EducationalOccupationalCredential(EducationalOccupationalCredential),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),
@@ -29,13 +22,6 @@ mod serde {
 			S: Serializer,
 		{
 			match *self {
-				#[cfg(any(
-					any(
-						feature = "educational-occupational-credential-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				HasCredentialProperty::EducationalOccupationalCredential(ref inner) => {
 					inner.serialize(serializer)
 				}
@@ -53,13 +39,6 @@ mod serde {
 				<::serde::__private::de::Content as Deserialize>::deserialize(deserializer)?;
 			let deserializer =
 				::serde::__private::de::ContentRefDeserializer::<D::Error>::new(&content);
-			#[cfg(any(
-				any(
-					feature = "educational-occupational-credential-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<EducationalOccupationalCredential as Deserialize>::deserialize(deserializer),
 				HasCredentialProperty::EducationalOccupationalCredential,

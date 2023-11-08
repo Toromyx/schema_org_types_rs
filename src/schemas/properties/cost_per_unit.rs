@@ -3,20 +3,8 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum CostPerUnitProperty {
-	#[cfg(any(
-		any(
-			feature = "qualitative-value-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	QualitativeValue(QualitativeValue),
-	#[cfg(any(
-		any(feature = "number-schema", feature = "general-schema-section"),
-		doc
-	))]
 	Number(Number),
-	#[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
 	Text(Text),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),
@@ -36,20 +24,8 @@ mod serde {
 			S: Serializer,
 		{
 			match *self {
-				#[cfg(any(
-					any(
-						feature = "qualitative-value-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				CostPerUnitProperty::QualitativeValue(ref inner) => inner.serialize(serializer),
-				#[cfg(any(
-					any(feature = "number-schema", feature = "general-schema-section"),
-					doc
-				))]
 				CostPerUnitProperty::Number(ref inner) => inner.serialize(serializer),
-				#[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
 				CostPerUnitProperty::Text(ref inner) => inner.serialize(serializer),
 				#[cfg(all(feature = "fallible", feature = "serde"))]
 				CostPerUnitProperty::SerdeFail(ref inner) => inner.serialize(serializer),
@@ -65,30 +41,18 @@ mod serde {
 				<::serde::__private::de::Content as Deserialize>::deserialize(deserializer)?;
 			let deserializer =
 				::serde::__private::de::ContentRefDeserializer::<D::Error>::new(&content);
-			#[cfg(any(
-				any(
-					feature = "qualitative-value-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<QualitativeValue as Deserialize>::deserialize(deserializer),
 				CostPerUnitProperty::QualitativeValue,
 			) {
 				return Ok(ok);
 			}
-			#[cfg(any(
-				any(feature = "number-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<Number as Deserialize>::deserialize(deserializer),
 				CostPerUnitProperty::Number,
 			) {
 				return Ok(ok);
 			}
-			#[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
 			if let Ok(ok) = Result::map(
 				<Text as Deserialize>::deserialize(deserializer),
 				CostPerUnitProperty::Text,

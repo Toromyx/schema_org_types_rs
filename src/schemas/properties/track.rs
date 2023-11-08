@@ -3,15 +3,7 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum TrackProperty {
-	#[cfg(any(
-		any(feature = "item-list-schema", feature = "general-schema-section"),
-		doc
-	))]
 	ItemList(ItemList),
-	#[cfg(any(
-		any(feature = "music-recording-schema", feature = "general-schema-section"),
-		doc
-	))]
 	MusicRecording(MusicRecording),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),
@@ -31,15 +23,7 @@ mod serde {
 			S: Serializer,
 		{
 			match *self {
-				#[cfg(any(
-					any(feature = "item-list-schema", feature = "general-schema-section"),
-					doc
-				))]
 				TrackProperty::ItemList(ref inner) => inner.serialize(serializer),
-				#[cfg(any(
-					any(feature = "music-recording-schema", feature = "general-schema-section"),
-					doc
-				))]
 				TrackProperty::MusicRecording(ref inner) => inner.serialize(serializer),
 				#[cfg(all(feature = "fallible", feature = "serde"))]
 				TrackProperty::SerdeFail(ref inner) => inner.serialize(serializer),
@@ -55,20 +39,12 @@ mod serde {
 				<::serde::__private::de::Content as Deserialize>::deserialize(deserializer)?;
 			let deserializer =
 				::serde::__private::de::ContentRefDeserializer::<D::Error>::new(&content);
-			#[cfg(any(
-				any(feature = "item-list-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<ItemList as Deserialize>::deserialize(deserializer),
 				TrackProperty::ItemList,
 			) {
 				return Ok(ok);
 			}
-			#[cfg(any(
-				any(feature = "music-recording-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<MusicRecording as Deserialize>::deserialize(deserializer),
 				TrackProperty::MusicRecording,

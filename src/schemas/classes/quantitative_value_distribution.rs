@@ -3,137 +3,23 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct QuantitativeValueDistribution {
-	#[cfg(any(
-		any(
-			feature = "additional-type-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
-	#[cfg(any(
-		any(
-			feature = "alternate-name-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#alternate_name: Vec<AlternateNameProperty>,
-	#[cfg(any(
-		any(
-			feature = "description-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#description: Vec<DescriptionProperty>,
-	#[cfg(any(
-		any(
-			feature = "disambiguating-description-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
-	#[cfg(any(
-		any(
-			feature = "duration-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#duration: Vec<DurationProperty>,
-	#[cfg(any(
-		any(
-			feature = "identifier-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#identifier: Vec<IdentifierProperty>,
-	#[cfg(any(
-		any(feature = "image-property-schema", feature = "general-schema-section"),
-		doc
-	))]
 	pub r#image: Vec<ImageProperty>,
-	#[cfg(any(
-		any(
-			feature = "main-entity-of-page-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
-	#[cfg(any(
-		any(feature = "median-property-schema", feature = "general-schema-section"),
-		doc
-	))]
 	pub r#median: Vec<MedianProperty>,
-	#[cfg(any(
-		any(feature = "name-property-schema", feature = "general-schema-section"),
-		doc
-	))]
 	pub r#name: Vec<NameProperty>,
-	#[cfg(any(
-		any(
-			feature = "percentile-10-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#percentile_10: Vec<Percentile10Property>,
-	#[cfg(any(
-		any(
-			feature = "percentile-25-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#percentile_25: Vec<Percentile25Property>,
-	#[cfg(any(
-		any(
-			feature = "percentile-75-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#percentile_75: Vec<Percentile75Property>,
-	#[cfg(any(
-		any(
-			feature = "percentile-90-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#percentile_90: Vec<Percentile90Property>,
-	#[cfg(any(
-		any(
-			feature = "potential-action-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#potential_action: Vec<PotentialActionProperty>,
-	#[cfg(any(
-		any(
-			feature = "same-as-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#same_as: Vec<SameAsProperty>,
-	#[cfg(any(
-		any(
-			feature = "subject-of-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#subject_of: Vec<SubjectOfProperty>,
-	#[cfg(any(
-		any(feature = "url-property-schema", feature = "general-schema-section"),
-		doc
-	))]
 	pub r#url: Vec<UrlProperty>,
 }
 #[cfg(feature = "serde")]
@@ -151,216 +37,29 @@ mod serde {
 			S: Serializer,
 		{
 			let len: usize = [
-				if cfg!(any(
-					any(
-						feature = "additional-type-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#additional_type) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "alternate-name-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#alternate_name) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "description-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#description) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "disambiguating-description-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#disambiguating_description) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "duration-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#duration) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "identifier-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#identifier) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "image-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#image) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "main-entity-of-page-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#main_entity_of_page) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "median-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#median) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "name-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#name) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "percentile-10-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#percentile_10) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "percentile-25-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#percentile_25) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "percentile-75-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#percentile_75) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "percentile-90-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#percentile_90) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "potential-action-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#potential_action) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "same-as-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#same_as) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "subject-of-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#subject_of) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "url-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#url) as usize
-				} else {
-					0
-				},
+				!Vec::is_empty(&self.r#additional_type) as usize,
+				!Vec::is_empty(&self.r#alternate_name) as usize,
+				!Vec::is_empty(&self.r#description) as usize,
+				!Vec::is_empty(&self.r#disambiguating_description) as usize,
+				!Vec::is_empty(&self.r#duration) as usize,
+				!Vec::is_empty(&self.r#identifier) as usize,
+				!Vec::is_empty(&self.r#image) as usize,
+				!Vec::is_empty(&self.r#main_entity_of_page) as usize,
+				!Vec::is_empty(&self.r#median) as usize,
+				!Vec::is_empty(&self.r#name) as usize,
+				!Vec::is_empty(&self.r#percentile_10) as usize,
+				!Vec::is_empty(&self.r#percentile_25) as usize,
+				!Vec::is_empty(&self.r#percentile_75) as usize,
+				!Vec::is_empty(&self.r#percentile_90) as usize,
+				!Vec::is_empty(&self.r#potential_action) as usize,
+				!Vec::is_empty(&self.r#same_as) as usize,
+				!Vec::is_empty(&self.r#subject_of) as usize,
+				!Vec::is_empty(&self.r#url) as usize,
 			]
 			.iter()
 			.sum();
 			let mut serialize_struct =
 				Serializer::serialize_struct(serializer, "QuantitativeValueDistribution", len)?;
-			#[cfg(any(
-				any(
-					feature = "additional-type-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#additional_type) {
 				serialize_struct.serialize_field("additionalType", {
 					struct SerializeWith<'a>(&'a Vec<AdditionalTypeProperty>);
@@ -379,13 +78,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("additionalType")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "alternate-name-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#alternate_name) {
 				serialize_struct.serialize_field("alternateName", {
 					struct SerializeWith<'a>(&'a Vec<AlternateNameProperty>);
@@ -404,13 +96,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("alternateName")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "description-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#description) {
 				serialize_struct.serialize_field("description", {
 					struct SerializeWith<'a>(&'a Vec<DescriptionProperty>);
@@ -429,13 +114,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("description")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "disambiguating-description-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#disambiguating_description) {
 				serialize_struct.serialize_field("disambiguatingDescription", {
 					struct SerializeWith<'a>(&'a Vec<DisambiguatingDescriptionProperty>);
@@ -454,13 +132,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("disambiguatingDescription")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "duration-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#duration) {
 				serialize_struct.serialize_field("duration", {
 					struct SerializeWith<'a>(&'a Vec<DurationProperty>);
@@ -479,13 +150,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("duration")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "identifier-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#identifier) {
 				serialize_struct.serialize_field("identifier", {
 					struct SerializeWith<'a>(&'a Vec<IdentifierProperty>);
@@ -504,10 +168,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("identifier")?;
 			}
-			#[cfg(any(
-				any(feature = "image-property-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#image) {
 				serialize_struct.serialize_field("image", {
 					struct SerializeWith<'a>(&'a Vec<ImageProperty>);
@@ -526,13 +186,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("image")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "main-entity-of-page-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#main_entity_of_page) {
 				serialize_struct.serialize_field("mainEntityOfPage", {
 					struct SerializeWith<'a>(&'a Vec<MainEntityOfPageProperty>);
@@ -551,10 +204,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("mainEntityOfPage")?;
 			}
-			#[cfg(any(
-				any(feature = "median-property-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#median) {
 				serialize_struct.serialize_field("median", {
 					struct SerializeWith<'a>(&'a Vec<MedianProperty>);
@@ -573,10 +222,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("median")?;
 			}
-			#[cfg(any(
-				any(feature = "name-property-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#name) {
 				serialize_struct.serialize_field("name", {
 					struct SerializeWith<'a>(&'a Vec<NameProperty>);
@@ -595,13 +240,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("name")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "percentile-10-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#percentile_10) {
 				serialize_struct.serialize_field("percentile10", {
 					struct SerializeWith<'a>(&'a Vec<Percentile10Property>);
@@ -620,13 +258,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("percentile10")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "percentile-25-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#percentile_25) {
 				serialize_struct.serialize_field("percentile25", {
 					struct SerializeWith<'a>(&'a Vec<Percentile25Property>);
@@ -645,13 +276,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("percentile25")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "percentile-75-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#percentile_75) {
 				serialize_struct.serialize_field("percentile75", {
 					struct SerializeWith<'a>(&'a Vec<Percentile75Property>);
@@ -670,13 +294,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("percentile75")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "percentile-90-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#percentile_90) {
 				serialize_struct.serialize_field("percentile90", {
 					struct SerializeWith<'a>(&'a Vec<Percentile90Property>);
@@ -695,13 +312,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("percentile90")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "potential-action-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#potential_action) {
 				serialize_struct.serialize_field("potentialAction", {
 					struct SerializeWith<'a>(&'a Vec<PotentialActionProperty>);
@@ -720,13 +330,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("potentialAction")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "same-as-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#same_as) {
 				serialize_struct.serialize_field("sameAs", {
 					struct SerializeWith<'a>(&'a Vec<SameAsProperty>);
@@ -745,13 +348,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("sameAs")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "subject-of-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#subject_of) {
 				serialize_struct.serialize_field("subjectOf", {
 					struct SerializeWith<'a>(&'a Vec<SubjectOfProperty>);
@@ -770,10 +366,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("subjectOf")?;
 			}
-			#[cfg(any(
-				any(feature = "url-property-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#url) {
 				serialize_struct.serialize_field("url", {
 					struct SerializeWith<'a>(&'a Vec<UrlProperty>);
@@ -801,137 +393,23 @@ mod serde {
 			D: Deserializer<'de>,
 		{
 			enum Field {
-				#[cfg(any(
-					any(
-						feature = "additional-type-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				AdditionalType,
-				#[cfg(any(
-					any(
-						feature = "alternate-name-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				AlternateName,
-				#[cfg(any(
-					any(
-						feature = "description-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				Description,
-				#[cfg(any(
-					any(
-						feature = "disambiguating-description-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				DisambiguatingDescription,
-				#[cfg(any(
-					any(
-						feature = "duration-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				Duration,
-				#[cfg(any(
-					any(
-						feature = "identifier-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				Identifier,
-				#[cfg(any(
-					any(feature = "image-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				Image,
-				#[cfg(any(
-					any(
-						feature = "main-entity-of-page-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				MainEntityOfPage,
-				#[cfg(any(
-					any(feature = "median-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				Median,
-				#[cfg(any(
-					any(feature = "name-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				Name,
-				#[cfg(any(
-					any(
-						feature = "percentile-10-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				Percentile10,
-				#[cfg(any(
-					any(
-						feature = "percentile-25-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				Percentile25,
-				#[cfg(any(
-					any(
-						feature = "percentile-75-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				Percentile75,
-				#[cfg(any(
-					any(
-						feature = "percentile-90-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				Percentile90,
-				#[cfg(any(
-					any(
-						feature = "potential-action-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				PotentialAction,
-				#[cfg(any(
-					any(
-						feature = "same-as-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				SameAs,
-				#[cfg(any(
-					any(
-						feature = "subject-of-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				SubjectOf,
-				#[cfg(any(
-					any(feature = "url-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				Url,
 				Ignore,
 			}
@@ -946,149 +424,23 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
-						#[cfg(any(
-							any(
-								feature = "additional-type-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"additionalType" => Ok(Field::AdditionalType),
-						#[cfg(any(
-							any(
-								feature = "alternate-name-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"alternateName" => Ok(Field::AlternateName),
-						#[cfg(any(
-							any(
-								feature = "description-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"description" => Ok(Field::Description),
-						#[cfg(any(
-							any(
-								feature = "disambiguating-description-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
-						#[cfg(any(
-							any(
-								feature = "duration-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"duration" => Ok(Field::Duration),
-						#[cfg(any(
-							any(
-								feature = "identifier-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"identifier" => Ok(Field::Identifier),
-						#[cfg(any(
-							any(
-								feature = "image-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"image" => Ok(Field::Image),
-						#[cfg(any(
-							any(
-								feature = "main-entity-of-page-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
-						#[cfg(any(
-							any(
-								feature = "median-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"median" => Ok(Field::Median),
-						#[cfg(any(
-							any(
-								feature = "name-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"name" => Ok(Field::Name),
-						#[cfg(any(
-							any(
-								feature = "percentile-10-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"percentile10" => Ok(Field::Percentile10),
-						#[cfg(any(
-							any(
-								feature = "percentile-25-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"percentile25" => Ok(Field::Percentile25),
-						#[cfg(any(
-							any(
-								feature = "percentile-75-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"percentile75" => Ok(Field::Percentile75),
-						#[cfg(any(
-							any(
-								feature = "percentile-90-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"percentile90" => Ok(Field::Percentile90),
-						#[cfg(any(
-							any(
-								feature = "potential-action-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"potentialAction" => Ok(Field::PotentialAction),
-						#[cfg(any(
-							any(
-								feature = "same-as-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"sameAs" => Ok(Field::SameAs),
-						#[cfg(any(
-							any(
-								feature = "subject-of-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"subjectOf" => Ok(Field::SubjectOf),
-						#[cfg(any(
-							any(
-								feature = "url-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"url" => Ok(Field::Url),
 						_ => Ok(Field::Ignore),
 					}
@@ -1098,149 +450,23 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
-						#[cfg(any(
-							any(
-								feature = "additional-type-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"additionalType" => Ok(Field::AdditionalType),
-						#[cfg(any(
-							any(
-								feature = "alternate-name-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"alternateName" => Ok(Field::AlternateName),
-						#[cfg(any(
-							any(
-								feature = "description-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"description" => Ok(Field::Description),
-						#[cfg(any(
-							any(
-								feature = "disambiguating-description-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
-						#[cfg(any(
-							any(
-								feature = "duration-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"duration" => Ok(Field::Duration),
-						#[cfg(any(
-							any(
-								feature = "identifier-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"identifier" => Ok(Field::Identifier),
-						#[cfg(any(
-							any(
-								feature = "image-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"image" => Ok(Field::Image),
-						#[cfg(any(
-							any(
-								feature = "main-entity-of-page-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
-						#[cfg(any(
-							any(
-								feature = "median-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"median" => Ok(Field::Median),
-						#[cfg(any(
-							any(
-								feature = "name-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"name" => Ok(Field::Name),
-						#[cfg(any(
-							any(
-								feature = "percentile-10-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"percentile10" => Ok(Field::Percentile10),
-						#[cfg(any(
-							any(
-								feature = "percentile-25-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"percentile25" => Ok(Field::Percentile25),
-						#[cfg(any(
-							any(
-								feature = "percentile-75-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"percentile75" => Ok(Field::Percentile75),
-						#[cfg(any(
-							any(
-								feature = "percentile-90-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"percentile90" => Ok(Field::Percentile90),
-						#[cfg(any(
-							any(
-								feature = "potential-action-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"potentialAction" => Ok(Field::PotentialAction),
-						#[cfg(any(
-							any(
-								feature = "same-as-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"sameAs" => Ok(Field::SameAs),
-						#[cfg(any(
-							any(
-								feature = "subject-of-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"subjectOf" => Ok(Field::SubjectOf),
-						#[cfg(any(
-							any(
-								feature = "url-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"url" => Ok(Field::Url),
 						_ => Ok(Field::Ignore),
 					}
@@ -1264,150 +490,26 @@ mod serde {
 				where
 					A: de::MapAccess<'de>,
 				{
-					#[cfg(any(
-						any(
-							feature = "additional-type-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#additional_type_property = None;
-					#[cfg(any(
-						any(
-							feature = "alternate-name-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#alternate_name_property = None;
-					#[cfg(any(
-						any(
-							feature = "description-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#description_property = None;
-					#[cfg(any(
-						any(
-							feature = "disambiguating-description-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#disambiguating_description_property = None;
-					#[cfg(any(
-						any(
-							feature = "duration-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#duration_property = None;
-					#[cfg(any(
-						any(
-							feature = "identifier-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#identifier_property = None;
-					#[cfg(any(
-						any(feature = "image-property-schema", feature = "general-schema-section"),
-						doc
-					))]
 					let mut r#image_property = None;
-					#[cfg(any(
-						any(
-							feature = "main-entity-of-page-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#main_entity_of_page_property = None;
-					#[cfg(any(
-						any(
-							feature = "median-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#median_property = None;
-					#[cfg(any(
-						any(feature = "name-property-schema", feature = "general-schema-section"),
-						doc
-					))]
 					let mut r#name_property = None;
-					#[cfg(any(
-						any(
-							feature = "percentile-10-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#percentile_10_property = None;
-					#[cfg(any(
-						any(
-							feature = "percentile-25-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#percentile_25_property = None;
-					#[cfg(any(
-						any(
-							feature = "percentile-75-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#percentile_75_property = None;
-					#[cfg(any(
-						any(
-							feature = "percentile-90-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#percentile_90_property = None;
-					#[cfg(any(
-						any(
-							feature = "potential-action-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#potential_action_property = None;
-					#[cfg(any(
-						any(
-							feature = "same-as-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#same_as_property = None;
-					#[cfg(any(
-						any(
-							feature = "subject-of-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#subject_of_property = None;
-					#[cfg(any(
-						any(feature = "url-property-schema", feature = "general-schema-section"),
-						doc
-					))]
 					let mut r#url_property = None;
 					while let Some(key) = map.next_key::<Field>()? {
 						match key {
-							#[cfg(any(
-								any(
-									feature = "additional-type-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::AdditionalType => {
 								if r#additional_type_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -1434,13 +536,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "alternate-name-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::AlternateName => {
 								if r#alternate_name_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -1467,13 +562,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "description-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Description => {
 								if r#description_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -1500,13 +588,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "disambiguating-description-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::DisambiguatingDescription => {
 								if r#disambiguating_description_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -1533,13 +614,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "duration-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Duration => {
 								if r#duration_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -1566,13 +640,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "identifier-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Identifier => {
 								if r#identifier_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -1599,13 +666,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "image-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Image => {
 								if r#image_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("image"));
@@ -1630,13 +690,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "main-entity-of-page-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::MainEntityOfPage => {
 								if r#main_entity_of_page_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -1663,13 +716,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "median-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Median => {
 								if r#median_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("median"));
@@ -1694,13 +740,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "name-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Name => {
 								if r#name_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("name"));
@@ -1725,13 +764,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "percentile-10-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Percentile10 => {
 								if r#percentile_10_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -1758,13 +790,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "percentile-25-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Percentile25 => {
 								if r#percentile_25_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -1791,13 +816,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "percentile-75-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Percentile75 => {
 								if r#percentile_75_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -1824,13 +842,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "percentile-90-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Percentile90 => {
 								if r#percentile_90_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -1857,13 +868,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "potential-action-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::PotentialAction => {
 								if r#potential_action_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -1890,13 +894,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "same-as-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::SameAs => {
 								if r#same_as_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("sameAs"));
@@ -1921,13 +918,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "subject-of-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::SubjectOf => {
 								if r#subject_of_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -1954,13 +944,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "url-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Url => {
 								if r#url_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("url"));
@@ -1991,286 +974,46 @@ mod serde {
 						}
 					}
 					Ok(QuantitativeValueDistribution {
-						#[cfg(any(
-							any(
-								feature = "additional-type-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#additional_type: r#additional_type_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "alternate-name-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#alternate_name: r#alternate_name_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "description-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#description: r#description_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "disambiguating-description-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#disambiguating_description: r#disambiguating_description_property
 							.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "duration-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#duration: r#duration_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "identifier-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#identifier: r#identifier_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "image-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#image: r#image_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "main-entity-of-page-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#main_entity_of_page: r#main_entity_of_page_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "median-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#median: r#median_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "name-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#name: r#name_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "percentile-10-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#percentile_10: r#percentile_10_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "percentile-25-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#percentile_25: r#percentile_25_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "percentile-75-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#percentile_75: r#percentile_75_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "percentile-90-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#percentile_90: r#percentile_90_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "potential-action-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#potential_action: r#potential_action_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "same-as-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#same_as: r#same_as_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "subject-of-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#subject_of: r#subject_of_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "url-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#url: r#url_property.unwrap_or_default(),
 					})
 				}
 			}
 			const FIELDS: &[&str] = &[
-				#[cfg(any(
-					any(
-						feature = "additional-type-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"additionalType",
-				#[cfg(any(
-					any(
-						feature = "alternate-name-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"alternateName",
-				#[cfg(any(
-					any(
-						feature = "description-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"description",
-				#[cfg(any(
-					any(
-						feature = "disambiguating-description-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"disambiguatingDescription",
-				#[cfg(any(
-					any(
-						feature = "duration-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"duration",
-				#[cfg(any(
-					any(
-						feature = "identifier-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"identifier",
-				#[cfg(any(
-					any(feature = "image-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				"image",
-				#[cfg(any(
-					any(
-						feature = "main-entity-of-page-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"mainEntityOfPage",
-				#[cfg(any(
-					any(feature = "median-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				"median",
-				#[cfg(any(
-					any(feature = "name-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				"name",
-				#[cfg(any(
-					any(
-						feature = "percentile-10-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"percentile10",
-				#[cfg(any(
-					any(
-						feature = "percentile-25-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"percentile25",
-				#[cfg(any(
-					any(
-						feature = "percentile-75-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"percentile75",
-				#[cfg(any(
-					any(
-						feature = "percentile-90-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"percentile90",
-				#[cfg(any(
-					any(
-						feature = "potential-action-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"potentialAction",
-				#[cfg(any(
-					any(
-						feature = "same-as-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"sameAs",
-				#[cfg(any(
-					any(
-						feature = "subject-of-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"subjectOf",
-				#[cfg(any(
-					any(feature = "url-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				"url",
 			];
 			deserializer.deserialize_struct("QuantitativeValueDistribution", FIELDS, ClassVisitor)

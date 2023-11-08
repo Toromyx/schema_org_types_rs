@@ -3,13 +3,6 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum LegislationLegalForceProperty {
-	#[cfg(any(
-		any(
-			feature = "legal-force-status-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	LegalForceStatus(LegalForceStatus),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),
@@ -29,14 +22,9 @@ mod serde {
 			S: Serializer,
 		{
 			match *self {
-				#[cfg(any(
-					any(
-						feature = "legal-force-status-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
-				LegislationLegalForceProperty::LegalForceStatus(ref inner) => inner.serialize(serializer),
+				LegislationLegalForceProperty::LegalForceStatus(ref inner) => {
+					inner.serialize(serializer)
+				}
 				#[cfg(all(feature = "fallible", feature = "serde"))]
 				LegislationLegalForceProperty::SerdeFail(ref inner) => inner.serialize(serializer),
 			}
@@ -51,13 +39,6 @@ mod serde {
 				<::serde::__private::de::Content as Deserialize>::deserialize(deserializer)?;
 			let deserializer =
 				::serde::__private::de::ContentRefDeserializer::<D::Error>::new(&content);
-			#[cfg(any(
-				any(
-					feature = "legal-force-status-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<LegalForceStatus as Deserialize>::deserialize(deserializer),
 				LegislationLegalForceProperty::LegalForceStatus,

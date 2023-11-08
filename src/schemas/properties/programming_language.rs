@@ -3,15 +3,7 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum ProgrammingLanguageProperty {
-	#[cfg(any(
-		any(
-			feature = "computer-language-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	ComputerLanguage(ComputerLanguage),
-	#[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
 	Text(Text),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),
@@ -31,15 +23,9 @@ mod serde {
 			S: Serializer,
 		{
 			match *self {
-				#[cfg(any(
-					any(
-						feature = "computer-language-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
-				ProgrammingLanguageProperty::ComputerLanguage(ref inner) => inner.serialize(serializer),
-				#[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
+				ProgrammingLanguageProperty::ComputerLanguage(ref inner) => {
+					inner.serialize(serializer)
+				}
 				ProgrammingLanguageProperty::Text(ref inner) => inner.serialize(serializer),
 				#[cfg(all(feature = "fallible", feature = "serde"))]
 				ProgrammingLanguageProperty::SerdeFail(ref inner) => inner.serialize(serializer),
@@ -55,20 +41,12 @@ mod serde {
 				<::serde::__private::de::Content as Deserialize>::deserialize(deserializer)?;
 			let deserializer =
 				::serde::__private::de::ContentRefDeserializer::<D::Error>::new(&content);
-			#[cfg(any(
-				any(
-					feature = "computer-language-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<ComputerLanguage as Deserialize>::deserialize(deserializer),
 				ProgrammingLanguageProperty::ComputerLanguage,
 			) {
 				return Ok(ok);
 			}
-			#[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
 			if let Ok(ok) = Result::map(
 				<Text as Deserialize>::deserialize(deserializer),
 				ProgrammingLanguageProperty::Text,

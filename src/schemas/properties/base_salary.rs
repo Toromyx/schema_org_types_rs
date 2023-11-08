@@ -3,23 +3,8 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum BaseSalaryProperty {
-	#[cfg(any(
-		any(feature = "monetary-amount-schema", feature = "general-schema-section"),
-		doc
-	))]
 	MonetaryAmount(MonetaryAmount),
-	#[cfg(any(
-		any(
-			feature = "price-specification-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	PriceSpecification(PriceSpecification),
-	#[cfg(any(
-		any(feature = "number-schema", feature = "general-schema-section"),
-		doc
-	))]
 	Number(Number),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),
@@ -39,23 +24,8 @@ mod serde {
 			S: Serializer,
 		{
 			match *self {
-				#[cfg(any(
-					any(feature = "monetary-amount-schema", feature = "general-schema-section"),
-					doc
-				))]
 				BaseSalaryProperty::MonetaryAmount(ref inner) => inner.serialize(serializer),
-				#[cfg(any(
-					any(
-						feature = "price-specification-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				BaseSalaryProperty::PriceSpecification(ref inner) => inner.serialize(serializer),
-				#[cfg(any(
-					any(feature = "number-schema", feature = "general-schema-section"),
-					doc
-				))]
 				BaseSalaryProperty::Number(ref inner) => inner.serialize(serializer),
 				#[cfg(all(feature = "fallible", feature = "serde"))]
 				BaseSalaryProperty::SerdeFail(ref inner) => inner.serialize(serializer),
@@ -71,33 +41,18 @@ mod serde {
 				<::serde::__private::de::Content as Deserialize>::deserialize(deserializer)?;
 			let deserializer =
 				::serde::__private::de::ContentRefDeserializer::<D::Error>::new(&content);
-			#[cfg(any(
-				any(feature = "monetary-amount-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<MonetaryAmount as Deserialize>::deserialize(deserializer),
 				BaseSalaryProperty::MonetaryAmount,
 			) {
 				return Ok(ok);
 			}
-			#[cfg(any(
-				any(
-					feature = "price-specification-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<PriceSpecification as Deserialize>::deserialize(deserializer),
 				BaseSalaryProperty::PriceSpecification,
 			) {
 				return Ok(ok);
 			}
-			#[cfg(any(
-				any(feature = "number-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<Number as Deserialize>::deserialize(deserializer),
 				BaseSalaryProperty::Number,

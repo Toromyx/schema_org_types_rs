@@ -3,21 +3,7 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum ComprisedOfProperty {
-	#[cfg(any(
-		any(
-			feature = "anatomical-structure-schema",
-			feature = "health-lifesci-schema-section"
-		),
-		doc
-	))]
 	AnatomicalStructure(AnatomicalStructure),
-	#[cfg(any(
-		any(
-			feature = "anatomical-system-schema",
-			feature = "health-lifesci-schema-section"
-		),
-		doc
-	))]
 	AnatomicalSystem(AnatomicalSystem),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),
@@ -37,21 +23,7 @@ mod serde {
 			S: Serializer,
 		{
 			match *self {
-				#[cfg(any(
-					any(
-						feature = "anatomical-structure-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
 				ComprisedOfProperty::AnatomicalStructure(ref inner) => inner.serialize(serializer),
-				#[cfg(any(
-					any(
-						feature = "anatomical-system-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
 				ComprisedOfProperty::AnatomicalSystem(ref inner) => inner.serialize(serializer),
 				#[cfg(all(feature = "fallible", feature = "serde"))]
 				ComprisedOfProperty::SerdeFail(ref inner) => inner.serialize(serializer),
@@ -67,26 +39,12 @@ mod serde {
 				<::serde::__private::de::Content as Deserialize>::deserialize(deserializer)?;
 			let deserializer =
 				::serde::__private::de::ContentRefDeserializer::<D::Error>::new(&content);
-			#[cfg(any(
-				any(
-					feature = "anatomical-structure-schema",
-					feature = "health-lifesci-schema-section"
-				),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<AnatomicalStructure as Deserialize>::deserialize(deserializer),
 				ComprisedOfProperty::AnatomicalStructure,
 			) {
 				return Ok(ok);
 			}
-			#[cfg(any(
-				any(
-					feature = "anatomical-system-schema",
-					feature = "health-lifesci-schema-section"
-				),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<AnatomicalSystem as Deserialize>::deserialize(deserializer),
 				ComprisedOfProperty::AnatomicalSystem,

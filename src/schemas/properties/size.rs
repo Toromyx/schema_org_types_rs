@@ -3,28 +3,9 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum SizeProperty {
-	#[cfg(any(
-		any(feature = "defined-term-schema", feature = "pending-schema-section"),
-		doc
-	))]
 	DefinedTerm(DefinedTerm),
-	#[cfg(any(
-		any(
-			feature = "quantitative-value-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	QuantitativeValue(QuantitativeValue),
-	#[cfg(any(
-		any(
-			feature = "size-specification-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	SizeSpecification(SizeSpecification),
-	#[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
 	Text(Text),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),
@@ -44,28 +25,9 @@ mod serde {
 			S: Serializer,
 		{
 			match *self {
-				#[cfg(any(
-					any(feature = "defined-term-schema", feature = "pending-schema-section"),
-					doc
-				))]
 				SizeProperty::DefinedTerm(ref inner) => inner.serialize(serializer),
-				#[cfg(any(
-					any(
-						feature = "quantitative-value-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				SizeProperty::QuantitativeValue(ref inner) => inner.serialize(serializer),
-				#[cfg(any(
-					any(
-						feature = "size-specification-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				SizeProperty::SizeSpecification(ref inner) => inner.serialize(serializer),
-				#[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
 				SizeProperty::Text(ref inner) => inner.serialize(serializer),
 				#[cfg(all(feature = "fallible", feature = "serde"))]
 				SizeProperty::SerdeFail(ref inner) => inner.serialize(serializer),
@@ -81,43 +43,24 @@ mod serde {
 				<::serde::__private::de::Content as Deserialize>::deserialize(deserializer)?;
 			let deserializer =
 				::serde::__private::de::ContentRefDeserializer::<D::Error>::new(&content);
-			#[cfg(any(
-				any(feature = "defined-term-schema", feature = "pending-schema-section"),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<DefinedTerm as Deserialize>::deserialize(deserializer),
 				SizeProperty::DefinedTerm,
 			) {
 				return Ok(ok);
 			}
-			#[cfg(any(
-				any(
-					feature = "quantitative-value-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<QuantitativeValue as Deserialize>::deserialize(deserializer),
 				SizeProperty::QuantitativeValue,
 			) {
 				return Ok(ok);
 			}
-			#[cfg(any(
-				any(
-					feature = "size-specification-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<SizeSpecification as Deserialize>::deserialize(deserializer),
 				SizeProperty::SizeSpecification,
 			) {
 				return Ok(ok);
 			}
-			#[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
 			if let Ok(ok) = Result::map(
 				<Text as Deserialize>::deserialize(deserializer),
 				SizeProperty::Text,

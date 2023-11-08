@@ -3,23 +3,8 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum StatusProperty {
-	#[cfg(any(
-		any(
-			feature = "event-status-type-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	EventStatusType(EventStatusType),
-	#[cfg(any(
-		any(
-			feature = "medical-study-status-schema",
-			feature = "health-lifesci-schema-section"
-		),
-		doc
-	))]
 	MedicalStudyStatus(MedicalStudyStatus),
-	#[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
 	Text(Text),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),
@@ -39,23 +24,8 @@ mod serde {
 			S: Serializer,
 		{
 			match *self {
-				#[cfg(any(
-					any(
-						feature = "event-status-type-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				StatusProperty::EventStatusType(ref inner) => inner.serialize(serializer),
-				#[cfg(any(
-					any(
-						feature = "medical-study-status-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
 				StatusProperty::MedicalStudyStatus(ref inner) => inner.serialize(serializer),
-				#[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
 				StatusProperty::Text(ref inner) => inner.serialize(serializer),
 				#[cfg(all(feature = "fallible", feature = "serde"))]
 				StatusProperty::SerdeFail(ref inner) => inner.serialize(serializer),
@@ -71,33 +41,18 @@ mod serde {
 				<::serde::__private::de::Content as Deserialize>::deserialize(deserializer)?;
 			let deserializer =
 				::serde::__private::de::ContentRefDeserializer::<D::Error>::new(&content);
-			#[cfg(any(
-				any(
-					feature = "event-status-type-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<EventStatusType as Deserialize>::deserialize(deserializer),
 				StatusProperty::EventStatusType,
 			) {
 				return Ok(ok);
 			}
-			#[cfg(any(
-				any(
-					feature = "medical-study-status-schema",
-					feature = "health-lifesci-schema-section"
-				),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<MedicalStudyStatus as Deserialize>::deserialize(deserializer),
 				StatusProperty::MedicalStudyStatus,
 			) {
 				return Ok(ok);
 			}
-			#[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
 			if let Ok(ok) = Result::map(
 				<Text as Deserialize>::deserialize(deserializer),
 				StatusProperty::Text,

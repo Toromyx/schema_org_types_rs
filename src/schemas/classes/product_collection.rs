@@ -3,1264 +3,174 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct ProductCollection {
-	#[cfg(any(
-		any(feature = "about-property-schema", feature = "general-schema-section"),
-		doc
-	))]
 	pub r#about: Vec<AboutProperty>,
-	#[cfg(any(
-		any(
-			feature = "abstract-property-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	pub r#abstract: Vec<AbstractProperty>,
-	#[cfg(any(
-		any(
-			feature = "access-mode-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#access_mode: Vec<AccessModeProperty>,
-	#[cfg(any(
-		any(
-			feature = "access-mode-sufficient-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#access_mode_sufficient: Vec<AccessModeSufficientProperty>,
-	#[cfg(any(
-		any(
-			feature = "accessibility-api-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#accessibility_api: Vec<AccessibilityApiProperty>,
-	#[cfg(any(
-		any(
-			feature = "accessibility-control-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#accessibility_control: Vec<AccessibilityControlProperty>,
-	#[cfg(any(
-		any(
-			feature = "accessibility-feature-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#accessibility_feature: Vec<AccessibilityFeatureProperty>,
-	#[cfg(any(
-		any(
-			feature = "accessibility-hazard-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#accessibility_hazard: Vec<AccessibilityHazardProperty>,
-	#[cfg(any(
-		any(
-			feature = "accessibility-summary-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#accessibility_summary: Vec<AccessibilitySummaryProperty>,
-	#[cfg(any(
-		any(
-			feature = "accountable-person-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#accountable_person: Vec<AccountablePersonProperty>,
-	#[cfg(any(
-		any(
-			feature = "acquire-license-page-property-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	pub r#acquire_license_page: Vec<AcquireLicensePageProperty>,
-	#[cfg(any(
-		any(
-			feature = "additional-property-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#additional_property: Vec<AdditionalPropertyProperty>,
-	#[cfg(any(
-		any(
-			feature = "additional-type-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
-	#[cfg(any(
-		any(
-			feature = "aggregate-rating-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#aggregate_rating: Vec<AggregateRatingProperty>,
-	#[cfg(any(
-		any(
-			feature = "alternate-name-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#alternate_name: Vec<AlternateNameProperty>,
-	#[cfg(any(
-		any(
-			feature = "alternative-headline-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#alternative_headline: Vec<AlternativeHeadlineProperty>,
-	#[cfg(any(
-		any(
-			feature = "archived-at-property-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	pub r#archived_at: Vec<ArchivedAtProperty>,
-	#[cfg(any(
-		any(feature = "asin-property-schema", feature = "pending-schema-section"),
-		doc
-	))]
 	pub r#asin: Vec<AsinProperty>,
-	#[cfg(any(
-		any(
-			feature = "assesses-property-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	pub r#assesses: Vec<AssessesProperty>,
-	#[cfg(any(
-		any(
-			feature = "associated-media-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#associated_media: Vec<AssociatedMediaProperty>,
-	#[cfg(any(
-		any(
-			feature = "audience-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#audience: Vec<AudienceProperty>,
-	#[cfg(any(
-		any(feature = "audio-property-schema", feature = "general-schema-section"),
-		doc
-	))]
 	pub r#audio: Vec<AudioProperty>,
-	#[cfg(any(
-		any(feature = "author-property-schema", feature = "general-schema-section"),
-		doc
-	))]
 	pub r#author: Vec<AuthorProperty>,
-	#[cfg(any(
-		any(feature = "award-property-schema", feature = "general-schema-section"),
-		doc
-	))]
 	pub r#award: Vec<AwardProperty>,
-	#[cfg(any(
-		any(feature = "awards-property-schema", feature = "general-schema-section"),
-		doc
-	))]
 	pub r#awards: Vec<AwardsProperty>,
-	#[cfg(any(
-		any(feature = "brand-property-schema", feature = "general-schema-section"),
-		doc
-	))]
 	pub r#brand: Vec<BrandProperty>,
-	#[cfg(any(
-		any(
-			feature = "category-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#category: Vec<CategoryProperty>,
-	#[cfg(any(
-		any(
-			feature = "character-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#character: Vec<CharacterProperty>,
-	#[cfg(any(
-		any(
-			feature = "citation-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#citation: Vec<CitationProperty>,
-	#[cfg(any(
-		any(
-			feature = "collection-size-property-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	pub r#collection_size: Vec<CollectionSizeProperty>,
-	#[cfg(any(
-		any(feature = "color-property-schema", feature = "general-schema-section"),
-		doc
-	))]
 	pub r#color: Vec<ColorProperty>,
-	#[cfg(any(
-		any(
-			feature = "comment-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#comment: Vec<CommentProperty>,
-	#[cfg(any(
-		any(
-			feature = "comment-count-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#comment_count: Vec<CommentCountProperty>,
-	#[cfg(any(
-		any(
-			feature = "conditions-of-access-property-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	pub r#conditions_of_access: Vec<ConditionsOfAccessProperty>,
-	#[cfg(any(
-		any(
-			feature = "content-location-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#content_location: Vec<ContentLocationProperty>,
-	#[cfg(any(
-		any(
-			feature = "content-rating-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#content_rating: Vec<ContentRatingProperty>,
-	#[cfg(any(
-		any(
-			feature = "content-reference-time-property-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	pub r#content_reference_time: Vec<ContentReferenceTimeProperty>,
-	#[cfg(any(
-		any(
-			feature = "contributor-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#contributor: Vec<ContributorProperty>,
-	#[cfg(any(
-		any(
-			feature = "copyright-holder-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#copyright_holder: Vec<CopyrightHolderProperty>,
-	#[cfg(any(
-		any(
-			feature = "copyright-notice-property-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	pub r#copyright_notice: Vec<CopyrightNoticeProperty>,
-	#[cfg(any(
-		any(
-			feature = "copyright-year-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#copyright_year: Vec<CopyrightYearProperty>,
-	#[cfg(any(
-		any(
-			feature = "correction-property-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	pub r#correction: Vec<CorrectionProperty>,
-	#[cfg(any(
-		any(
-			feature = "country-of-assembly-property-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	pub r#country_of_assembly: Vec<CountryOfAssemblyProperty>,
-	#[cfg(any(
-		any(
-			feature = "country-of-last-processing-property-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	pub r#country_of_last_processing: Vec<CountryOfLastProcessingProperty>,
-	#[cfg(any(
-		any(
-			feature = "country-of-origin-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#country_of_origin: Vec<CountryOfOriginProperty>,
-	#[cfg(any(
-		any(
-			feature = "creative-work-status-property-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	pub r#creative_work_status: Vec<CreativeWorkStatusProperty>,
-	#[cfg(any(
-		any(
-			feature = "creator-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#creator: Vec<CreatorProperty>,
-	#[cfg(any(
-		any(
-			feature = "credit-text-property-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	pub r#credit_text: Vec<CreditTextProperty>,
-	#[cfg(any(
-		any(
-			feature = "date-created-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#date_created: Vec<DateCreatedProperty>,
-	#[cfg(any(
-		any(
-			feature = "date-modified-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#date_modified: Vec<DateModifiedProperty>,
-	#[cfg(any(
-		any(
-			feature = "date-published-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#date_published: Vec<DatePublishedProperty>,
-	#[cfg(any(
-		any(feature = "depth-property-schema", feature = "general-schema-section"),
-		doc
-	))]
 	pub r#depth: Vec<DepthProperty>,
-	#[cfg(any(
-		any(
-			feature = "description-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#description: Vec<DescriptionProperty>,
-	#[cfg(any(
-		any(
-			feature = "disambiguating-description-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
-	#[cfg(any(
-		any(
-			feature = "discussion-url-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#discussion_url: Vec<DiscussionUrlProperty>,
-	#[cfg(any(
-		any(
-			feature = "edit-eidr-property-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	pub r#edit_eidr: Vec<EditEidrProperty>,
-	#[cfg(any(
-		any(feature = "editor-property-schema", feature = "general-schema-section"),
-		doc
-	))]
 	pub r#editor: Vec<EditorProperty>,
-	#[cfg(any(
-		any(
-			feature = "educational-alignment-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#educational_alignment: Vec<EducationalAlignmentProperty>,
-	#[cfg(any(
-		any(
-			feature = "educational-level-property-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	pub r#educational_level: Vec<EducationalLevelProperty>,
-	#[cfg(any(
-		any(
-			feature = "educational-use-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#educational_use: Vec<EducationalUseProperty>,
-	#[cfg(any(
-		any(
-			feature = "encoding-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#encoding: Vec<EncodingProperty>,
-	#[cfg(any(
-		any(
-			feature = "encoding-format-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#encoding_format: Vec<EncodingFormatProperty>,
-	#[cfg(any(
-		any(
-			feature = "encodings-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#encodings: Vec<EncodingsProperty>,
-	#[cfg(any(
-		any(
-			feature = "example-of-work-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#example_of_work: Vec<ExampleOfWorkProperty>,
-	#[cfg(any(
-		any(
-			feature = "expires-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#expires: Vec<ExpiresProperty>,
-	#[cfg(any(
-		any(
-			feature = "file-format-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#file_format: Vec<FileFormatProperty>,
-	#[cfg(any(
-		any(feature = "funder-property-schema", feature = "general-schema-section"),
-		doc
-	))]
 	pub r#funder: Vec<FunderProperty>,
-	#[cfg(any(
-		any(
-			feature = "funding-property-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	pub r#funding: Vec<FundingProperty>,
-	#[cfg(any(
-		any(feature = "genre-property-schema", feature = "general-schema-section"),
-		doc
-	))]
 	pub r#genre: Vec<GenreProperty>,
-	#[cfg(any(
-		any(feature = "gtin-property-schema", feature = "pending-schema-section"),
-		doc
-	))]
 	pub r#gtin: Vec<GtinProperty>,
-	#[cfg(any(
-		any(
-			feature = "gtin-12-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#gtin_12: Vec<Gtin12Property>,
-	#[cfg(any(
-		any(
-			feature = "gtin-13-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#gtin_13: Vec<Gtin13Property>,
-	#[cfg(any(
-		any(
-			feature = "gtin-14-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#gtin_14: Vec<Gtin14Property>,
-	#[cfg(any(
-		any(feature = "gtin-8-property-schema", feature = "general-schema-section"),
-		doc
-	))]
 	pub r#gtin_8: Vec<Gtin8Property>,
-	#[cfg(any(
-		any(
-			feature = "has-adult-consideration-property-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	pub r#has_adult_consideration: Vec<HasAdultConsiderationProperty>,
-	#[cfg(any(
-		any(
-			feature = "has-energy-consumption-details-property-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	pub r#has_energy_consumption_details: Vec<HasEnergyConsumptionDetailsProperty>,
-	#[cfg(any(
-		any(
-			feature = "has-measurement-property-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	pub r#has_measurement: Vec<HasMeasurementProperty>,
-	#[cfg(any(
-		any(
-			feature = "has-merchant-return-policy-property-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	pub r#has_merchant_return_policy: Vec<HasMerchantReturnPolicyProperty>,
-	#[cfg(any(
-		any(
-			feature = "has-part-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#has_part: Vec<HasPartProperty>,
-	#[cfg(any(
-		any(
-			feature = "has-product-return-policy-property-schema",
-			feature = "attic-schema-section"
-		),
-		doc
-	))]
 	pub r#has_product_return_policy: Vec<HasProductReturnPolicyProperty>,
-	#[cfg(any(
-		any(
-			feature = "headline-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#headline: Vec<HeadlineProperty>,
-	#[cfg(any(
-		any(feature = "height-property-schema", feature = "general-schema-section"),
-		doc
-	))]
 	pub r#height: Vec<HeightProperty>,
-	#[cfg(any(
-		any(
-			feature = "identifier-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#identifier: Vec<IdentifierProperty>,
-	#[cfg(any(
-		any(feature = "image-property-schema", feature = "general-schema-section"),
-		doc
-	))]
 	pub r#image: Vec<ImageProperty>,
-	#[cfg(any(
-		any(
-			feature = "in-language-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#in_language: Vec<InLanguageProperty>,
-	#[cfg(any(
-		any(
-			feature = "in-product-group-with-id-property-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	pub r#in_product_group_with_id: Vec<InProductGroupWithIdProperty>,
-	#[cfg(any(
-		any(
-			feature = "includes-object-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#includes_object: Vec<IncludesObjectProperty>,
-	#[cfg(any(
-		any(
-			feature = "interaction-statistic-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#interaction_statistic: Vec<InteractionStatisticProperty>,
-	#[cfg(any(
-		any(
-			feature = "interactivity-type-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#interactivity_type: Vec<InteractivityTypeProperty>,
-	#[cfg(any(
-		any(
-			feature = "interpreted-as-claim-property-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	pub r#interpreted_as_claim: Vec<InterpretedAsClaimProperty>,
-	#[cfg(any(
-		any(
-			feature = "is-accessible-for-free-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#is_accessible_for_free: Vec<IsAccessibleForFreeProperty>,
-	#[cfg(any(
-		any(
-			feature = "is-accessory-or-spare-part-for-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#is_accessory_or_spare_part_for: Vec<IsAccessoryOrSparePartForProperty>,
-	#[cfg(any(
-		any(
-			feature = "is-based-on-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#is_based_on: Vec<IsBasedOnProperty>,
-	#[cfg(any(
-		any(
-			feature = "is-based-on-url-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#is_based_on_url: Vec<IsBasedOnUrlProperty>,
-	#[cfg(any(
-		any(
-			feature = "is-consumable-for-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#is_consumable_for: Vec<IsConsumableForProperty>,
-	#[cfg(any(
-		any(
-			feature = "is-family-friendly-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#is_family_friendly: Vec<IsFamilyFriendlyProperty>,
-	#[cfg(any(
-		any(
-			feature = "is-part-of-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#is_part_of: Vec<IsPartOfProperty>,
-	#[cfg(any(
-		any(
-			feature = "is-related-to-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#is_related_to: Vec<IsRelatedToProperty>,
-	#[cfg(any(
-		any(
-			feature = "is-similar-to-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#is_similar_to: Vec<IsSimilarToProperty>,
-	#[cfg(any(
-		any(
-			feature = "is-variant-of-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#is_variant_of: Vec<IsVariantOfProperty>,
-	#[cfg(any(
-		any(
-			feature = "item-condition-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#item_condition: Vec<ItemConditionProperty>,
-	#[cfg(any(
-		any(
-			feature = "keywords-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#keywords: Vec<KeywordsProperty>,
-	#[cfg(any(
-		any(
-			feature = "learning-resource-type-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#learning_resource_type: Vec<LearningResourceTypeProperty>,
-	#[cfg(any(
-		any(
-			feature = "license-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#license: Vec<LicenseProperty>,
-	#[cfg(any(
-		any(
-			feature = "location-created-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#location_created: Vec<LocationCreatedProperty>,
-	#[cfg(any(
-		any(feature = "logo-property-schema", feature = "general-schema-section"),
-		doc
-	))]
 	pub r#logo: Vec<LogoProperty>,
-	#[cfg(any(
-		any(
-			feature = "main-entity-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#main_entity: Vec<MainEntityProperty>,
-	#[cfg(any(
-		any(
-			feature = "main-entity-of-page-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
-	#[cfg(any(
-		any(
-			feature = "maintainer-property-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	pub r#maintainer: Vec<MaintainerProperty>,
-	#[cfg(any(
-		any(
-			feature = "manufacturer-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#manufacturer: Vec<ManufacturerProperty>,
-	#[cfg(any(
-		any(
-			feature = "material-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#material: Vec<MaterialProperty>,
-	#[cfg(any(
-		any(
-			feature = "material-extent-property-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	pub r#material_extent: Vec<MaterialExtentProperty>,
-	#[cfg(any(
-		any(
-			feature = "mentions-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#mentions: Vec<MentionsProperty>,
-	#[cfg(any(
-		any(
-			feature = "mobile-url-property-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	pub r#mobile_url: Vec<MobileUrlProperty>,
-	#[cfg(any(
-		any(feature = "model-property-schema", feature = "general-schema-section"),
-		doc
-	))]
 	pub r#model: Vec<ModelProperty>,
-	#[cfg(any(
-		any(feature = "mpn-property-schema", feature = "general-schema-section"),
-		doc
-	))]
 	pub r#mpn: Vec<MpnProperty>,
-	#[cfg(any(
-		any(feature = "name-property-schema", feature = "general-schema-section"),
-		doc
-	))]
 	pub r#name: Vec<NameProperty>,
-	#[cfg(any(
-		any(
-			feature = "negative-notes-property-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	pub r#negative_notes: Vec<NegativeNotesProperty>,
-	#[cfg(any(
-		any(feature = "nsn-property-schema", feature = "pending-schema-section"),
-		doc
-	))]
 	pub r#nsn: Vec<NsnProperty>,
-	#[cfg(any(
-		any(feature = "offers-property-schema", feature = "general-schema-section"),
-		doc
-	))]
 	pub r#offers: Vec<OffersProperty>,
-	#[cfg(any(
-		any(
-			feature = "pattern-property-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	pub r#pattern: Vec<PatternProperty>,
-	#[cfg(any(
-		any(
-			feature = "position-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#position: Vec<PositionProperty>,
-	#[cfg(any(
-		any(
-			feature = "positive-notes-property-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	pub r#positive_notes: Vec<PositiveNotesProperty>,
-	#[cfg(any(
-		any(
-			feature = "potential-action-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#potential_action: Vec<PotentialActionProperty>,
-	#[cfg(any(
-		any(
-			feature = "producer-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#producer: Vec<ProducerProperty>,
-	#[cfg(any(
-		any(
-			feature = "product-id-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#product_id: Vec<ProductIdProperty>,
-	#[cfg(any(
-		any(
-			feature = "production-date-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#production_date: Vec<ProductionDateProperty>,
-	#[cfg(any(
-		any(
-			feature = "provider-property-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	pub r#provider: Vec<ProviderProperty>,
-	#[cfg(any(
-		any(
-			feature = "publication-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#publication: Vec<PublicationProperty>,
-	#[cfg(any(
-		any(
-			feature = "publisher-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#publisher: Vec<PublisherProperty>,
-	#[cfg(any(
-		any(
-			feature = "publisher-imprint-property-schema",
-			feature = "bib-schema-section"
-		),
-		doc
-	))]
 	pub r#publisher_imprint: Vec<PublisherImprintProperty>,
-	#[cfg(any(
-		any(
-			feature = "publishing-principles-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#publishing_principles: Vec<PublishingPrinciplesProperty>,
-	#[cfg(any(
-		any(
-			feature = "purchase-date-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#purchase_date: Vec<PurchaseDateProperty>,
-	#[cfg(any(
-		any(
-			feature = "recorded-at-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#recorded_at: Vec<RecordedAtProperty>,
-	#[cfg(any(
-		any(
-			feature = "release-date-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#release_date: Vec<ReleaseDateProperty>,
-	#[cfg(any(
-		any(
-			feature = "released-event-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#released_event: Vec<ReleasedEventProperty>,
-	#[cfg(any(
-		any(feature = "review-property-schema", feature = "general-schema-section"),
-		doc
-	))]
 	pub r#review: Vec<ReviewProperty>,
-	#[cfg(any(
-		any(
-			feature = "reviews-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#reviews: Vec<ReviewsProperty>,
-	#[cfg(any(
-		any(
-			feature = "same-as-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#same_as: Vec<SameAsProperty>,
-	#[cfg(any(
-		any(
-			feature = "schema-version-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#schema_version: Vec<SchemaVersionProperty>,
-	#[cfg(any(
-		any(
-			feature = "sd-date-published-property-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	pub r#sd_date_published: Vec<SdDatePublishedProperty>,
-	#[cfg(any(
-		any(
-			feature = "sd-license-property-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	pub r#sd_license: Vec<SdLicenseProperty>,
-	#[cfg(any(
-		any(
-			feature = "sd-publisher-property-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	pub r#sd_publisher: Vec<SdPublisherProperty>,
-	#[cfg(any(
-		any(feature = "size-property-schema", feature = "pending-schema-section"),
-		doc
-	))]
 	pub r#size: Vec<SizeProperty>,
-	#[cfg(any(
-		any(feature = "sku-property-schema", feature = "general-schema-section"),
-		doc
-	))]
 	pub r#sku: Vec<SkuProperty>,
-	#[cfg(any(
-		any(feature = "slogan-property-schema", feature = "general-schema-section"),
-		doc
-	))]
 	pub r#slogan: Vec<SloganProperty>,
-	#[cfg(any(
-		any(
-			feature = "source-organization-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#source_organization: Vec<SourceOrganizationProperty>,
-	#[cfg(any(
-		any(
-			feature = "spatial-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#spatial: Vec<SpatialProperty>,
-	#[cfg(any(
-		any(
-			feature = "spatial-coverage-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#spatial_coverage: Vec<SpatialCoverageProperty>,
-	#[cfg(any(
-		any(
-			feature = "sponsor-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#sponsor: Vec<SponsorProperty>,
-	#[cfg(any(
-		any(
-			feature = "subject-of-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#subject_of: Vec<SubjectOfProperty>,
-	#[cfg(any(
-		any(
-			feature = "teaches-property-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	pub r#teaches: Vec<TeachesProperty>,
-	#[cfg(any(
-		any(
-			feature = "temporal-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#temporal: Vec<TemporalProperty>,
-	#[cfg(any(
-		any(
-			feature = "temporal-coverage-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#temporal_coverage: Vec<TemporalCoverageProperty>,
-	#[cfg(any(
-		any(feature = "text-property-schema", feature = "general-schema-section"),
-		doc
-	))]
 	pub r#text: Vec<TextProperty>,
-	#[cfg(any(
-		any(
-			feature = "thumbnail-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#thumbnail: Vec<ThumbnailProperty>,
-	#[cfg(any(
-		any(
-			feature = "thumbnail-url-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#thumbnail_url: Vec<ThumbnailUrlProperty>,
-	#[cfg(any(
-		any(
-			feature = "time-required-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#time_required: Vec<TimeRequiredProperty>,
-	#[cfg(any(
-		any(
-			feature = "translation-of-work-property-schema",
-			feature = "bib-schema-section"
-		),
-		doc
-	))]
 	pub r#translation_of_work: Vec<TranslationOfWorkProperty>,
-	#[cfg(any(
-		any(
-			feature = "translator-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#translator: Vec<TranslatorProperty>,
-	#[cfg(any(
-		any(
-			feature = "typical-age-range-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#typical_age_range: Vec<TypicalAgeRangeProperty>,
-	#[cfg(any(
-		any(feature = "url-property-schema", feature = "general-schema-section"),
-		doc
-	))]
 	pub r#url: Vec<UrlProperty>,
-	#[cfg(any(
-		any(
-			feature = "usage-info-property-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	pub r#usage_info: Vec<UsageInfoProperty>,
-	#[cfg(any(
-		any(
-			feature = "version-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#version: Vec<VersionProperty>,
-	#[cfg(any(
-		any(feature = "video-property-schema", feature = "general-schema-section"),
-		doc
-	))]
 	pub r#video: Vec<VideoProperty>,
-	#[cfg(any(
-		any(feature = "weight-property-schema", feature = "general-schema-section"),
-		doc
-	))]
 	pub r#weight: Vec<WeightProperty>,
-	#[cfg(any(
-		any(feature = "width-property-schema", feature = "general-schema-section"),
-		doc
-	))]
 	pub r#width: Vec<WidthProperty>,
-	#[cfg(any(
-		any(
-			feature = "work-example-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#work_example: Vec<WorkExampleProperty>,
-	#[cfg(any(
-		any(
-			feature = "work-translation-property-schema",
-			feature = "bib-schema-section"
-		),
-		doc
-	))]
 	pub r#work_translation: Vec<WorkTranslationProperty>,
 }
 #[cfg(feature = "serde")]
@@ -1278,1874 +188,180 @@ mod serde {
 			S: Serializer,
 		{
 			let len: usize = [
-				if cfg!(any(
-					any(
-						feature = "about-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#about) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "abstract-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#abstract) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "access-mode-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#access_mode) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "access-mode-sufficient-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#access_mode_sufficient) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "accessibility-api-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#accessibility_api) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "accessibility-control-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#accessibility_control) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "accessibility-feature-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#accessibility_feature) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "accessibility-hazard-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#accessibility_hazard) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "accessibility-summary-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#accessibility_summary) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "accountable-person-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#accountable_person) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "acquire-license-page-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#acquire_license_page) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "additional-property-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#additional_property) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "additional-type-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#additional_type) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "aggregate-rating-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#aggregate_rating) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "alternate-name-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#alternate_name) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "alternative-headline-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#alternative_headline) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "archived-at-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#archived_at) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "asin-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#asin) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "assesses-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#assesses) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "associated-media-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#associated_media) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "audience-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#audience) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "audio-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#audio) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "author-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#author) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "award-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#award) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "awards-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#awards) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "brand-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#brand) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "category-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#category) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "character-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#character) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "citation-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#citation) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "collection-size-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#collection_size) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "color-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#color) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "comment-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#comment) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "comment-count-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#comment_count) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "conditions-of-access-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#conditions_of_access) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "content-location-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#content_location) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "content-rating-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#content_rating) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "content-reference-time-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#content_reference_time) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "contributor-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#contributor) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "copyright-holder-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#copyright_holder) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "copyright-notice-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#copyright_notice) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "copyright-year-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#copyright_year) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "correction-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#correction) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "country-of-assembly-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#country_of_assembly) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "country-of-last-processing-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#country_of_last_processing) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "country-of-origin-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#country_of_origin) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "creative-work-status-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#creative_work_status) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "creator-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#creator) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "credit-text-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#credit_text) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "date-created-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#date_created) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "date-modified-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#date_modified) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "date-published-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#date_published) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "depth-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#depth) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "description-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#description) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "disambiguating-description-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#disambiguating_description) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "discussion-url-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#discussion_url) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "edit-eidr-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#edit_eidr) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "editor-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#editor) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "educational-alignment-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#educational_alignment) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "educational-level-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#educational_level) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "educational-use-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#educational_use) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "encoding-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#encoding) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "encoding-format-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#encoding_format) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "encodings-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#encodings) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "example-of-work-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#example_of_work) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "expires-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#expires) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "file-format-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#file_format) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "funder-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#funder) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "funding-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#funding) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "genre-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#genre) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "gtin-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#gtin) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "gtin-12-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#gtin_12) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "gtin-13-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#gtin_13) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "gtin-14-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#gtin_14) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "gtin-8-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#gtin_8) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "has-adult-consideration-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#has_adult_consideration) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "has-energy-consumption-details-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#has_energy_consumption_details) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "has-measurement-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#has_measurement) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "has-merchant-return-policy-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#has_merchant_return_policy) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "has-part-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#has_part) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "has-product-return-policy-property-schema",
-						feature = "attic-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#has_product_return_policy) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "headline-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#headline) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "height-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#height) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "identifier-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#identifier) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "image-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#image) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "in-language-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#in_language) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "in-product-group-with-id-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#in_product_group_with_id) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "includes-object-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#includes_object) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "interaction-statistic-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#interaction_statistic) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "interactivity-type-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#interactivity_type) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "interpreted-as-claim-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#interpreted_as_claim) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "is-accessible-for-free-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#is_accessible_for_free) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "is-accessory-or-spare-part-for-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#is_accessory_or_spare_part_for) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "is-based-on-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#is_based_on) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "is-based-on-url-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#is_based_on_url) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "is-consumable-for-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#is_consumable_for) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "is-family-friendly-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#is_family_friendly) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "is-part-of-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#is_part_of) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "is-related-to-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#is_related_to) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "is-similar-to-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#is_similar_to) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "is-variant-of-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#is_variant_of) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "item-condition-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#item_condition) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "keywords-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#keywords) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "learning-resource-type-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#learning_resource_type) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "license-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#license) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "location-created-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#location_created) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "logo-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#logo) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "main-entity-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#main_entity) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "main-entity-of-page-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#main_entity_of_page) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "maintainer-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#maintainer) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "manufacturer-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#manufacturer) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "material-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#material) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "material-extent-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#material_extent) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "mentions-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#mentions) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "mobile-url-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#mobile_url) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "model-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#model) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "mpn-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#mpn) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "name-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#name) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "negative-notes-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#negative_notes) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "nsn-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#nsn) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "offers-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#offers) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "pattern-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#pattern) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "position-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#position) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "positive-notes-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#positive_notes) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "potential-action-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#potential_action) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "producer-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#producer) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "product-id-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#product_id) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "production-date-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#production_date) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "provider-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#provider) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "publication-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#publication) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "publisher-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#publisher) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "publisher-imprint-property-schema",
-						feature = "bib-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#publisher_imprint) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "publishing-principles-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#publishing_principles) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "purchase-date-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#purchase_date) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "recorded-at-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#recorded_at) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "release-date-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#release_date) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "released-event-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#released_event) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "review-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#review) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "reviews-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#reviews) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "same-as-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#same_as) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "schema-version-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#schema_version) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "sd-date-published-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#sd_date_published) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "sd-license-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#sd_license) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "sd-publisher-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#sd_publisher) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "size-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#size) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "sku-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#sku) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "slogan-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#slogan) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "source-organization-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#source_organization) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "spatial-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#spatial) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "spatial-coverage-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#spatial_coverage) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "sponsor-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#sponsor) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "subject-of-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#subject_of) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "teaches-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#teaches) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "temporal-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#temporal) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "temporal-coverage-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#temporal_coverage) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "text-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#text) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "thumbnail-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#thumbnail) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "thumbnail-url-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#thumbnail_url) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "time-required-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#time_required) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "translation-of-work-property-schema",
-						feature = "bib-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#translation_of_work) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "translator-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#translator) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "typical-age-range-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#typical_age_range) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "url-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#url) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "usage-info-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#usage_info) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "version-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#version) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "video-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#video) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "weight-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#weight) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "width-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#width) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "work-example-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#work_example) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "work-translation-property-schema",
-						feature = "bib-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#work_translation) as usize
-				} else {
-					0
-				},
+				!Vec::is_empty(&self.r#about) as usize,
+				!Vec::is_empty(&self.r#abstract) as usize,
+				!Vec::is_empty(&self.r#access_mode) as usize,
+				!Vec::is_empty(&self.r#access_mode_sufficient) as usize,
+				!Vec::is_empty(&self.r#accessibility_api) as usize,
+				!Vec::is_empty(&self.r#accessibility_control) as usize,
+				!Vec::is_empty(&self.r#accessibility_feature) as usize,
+				!Vec::is_empty(&self.r#accessibility_hazard) as usize,
+				!Vec::is_empty(&self.r#accessibility_summary) as usize,
+				!Vec::is_empty(&self.r#accountable_person) as usize,
+				!Vec::is_empty(&self.r#acquire_license_page) as usize,
+				!Vec::is_empty(&self.r#additional_property) as usize,
+				!Vec::is_empty(&self.r#additional_type) as usize,
+				!Vec::is_empty(&self.r#aggregate_rating) as usize,
+				!Vec::is_empty(&self.r#alternate_name) as usize,
+				!Vec::is_empty(&self.r#alternative_headline) as usize,
+				!Vec::is_empty(&self.r#archived_at) as usize,
+				!Vec::is_empty(&self.r#asin) as usize,
+				!Vec::is_empty(&self.r#assesses) as usize,
+				!Vec::is_empty(&self.r#associated_media) as usize,
+				!Vec::is_empty(&self.r#audience) as usize,
+				!Vec::is_empty(&self.r#audio) as usize,
+				!Vec::is_empty(&self.r#author) as usize,
+				!Vec::is_empty(&self.r#award) as usize,
+				!Vec::is_empty(&self.r#awards) as usize,
+				!Vec::is_empty(&self.r#brand) as usize,
+				!Vec::is_empty(&self.r#category) as usize,
+				!Vec::is_empty(&self.r#character) as usize,
+				!Vec::is_empty(&self.r#citation) as usize,
+				!Vec::is_empty(&self.r#collection_size) as usize,
+				!Vec::is_empty(&self.r#color) as usize,
+				!Vec::is_empty(&self.r#comment) as usize,
+				!Vec::is_empty(&self.r#comment_count) as usize,
+				!Vec::is_empty(&self.r#conditions_of_access) as usize,
+				!Vec::is_empty(&self.r#content_location) as usize,
+				!Vec::is_empty(&self.r#content_rating) as usize,
+				!Vec::is_empty(&self.r#content_reference_time) as usize,
+				!Vec::is_empty(&self.r#contributor) as usize,
+				!Vec::is_empty(&self.r#copyright_holder) as usize,
+				!Vec::is_empty(&self.r#copyright_notice) as usize,
+				!Vec::is_empty(&self.r#copyright_year) as usize,
+				!Vec::is_empty(&self.r#correction) as usize,
+				!Vec::is_empty(&self.r#country_of_assembly) as usize,
+				!Vec::is_empty(&self.r#country_of_last_processing) as usize,
+				!Vec::is_empty(&self.r#country_of_origin) as usize,
+				!Vec::is_empty(&self.r#creative_work_status) as usize,
+				!Vec::is_empty(&self.r#creator) as usize,
+				!Vec::is_empty(&self.r#credit_text) as usize,
+				!Vec::is_empty(&self.r#date_created) as usize,
+				!Vec::is_empty(&self.r#date_modified) as usize,
+				!Vec::is_empty(&self.r#date_published) as usize,
+				!Vec::is_empty(&self.r#depth) as usize,
+				!Vec::is_empty(&self.r#description) as usize,
+				!Vec::is_empty(&self.r#disambiguating_description) as usize,
+				!Vec::is_empty(&self.r#discussion_url) as usize,
+				!Vec::is_empty(&self.r#edit_eidr) as usize,
+				!Vec::is_empty(&self.r#editor) as usize,
+				!Vec::is_empty(&self.r#educational_alignment) as usize,
+				!Vec::is_empty(&self.r#educational_level) as usize,
+				!Vec::is_empty(&self.r#educational_use) as usize,
+				!Vec::is_empty(&self.r#encoding) as usize,
+				!Vec::is_empty(&self.r#encoding_format) as usize,
+				!Vec::is_empty(&self.r#encodings) as usize,
+				!Vec::is_empty(&self.r#example_of_work) as usize,
+				!Vec::is_empty(&self.r#expires) as usize,
+				!Vec::is_empty(&self.r#file_format) as usize,
+				!Vec::is_empty(&self.r#funder) as usize,
+				!Vec::is_empty(&self.r#funding) as usize,
+				!Vec::is_empty(&self.r#genre) as usize,
+				!Vec::is_empty(&self.r#gtin) as usize,
+				!Vec::is_empty(&self.r#gtin_12) as usize,
+				!Vec::is_empty(&self.r#gtin_13) as usize,
+				!Vec::is_empty(&self.r#gtin_14) as usize,
+				!Vec::is_empty(&self.r#gtin_8) as usize,
+				!Vec::is_empty(&self.r#has_adult_consideration) as usize,
+				!Vec::is_empty(&self.r#has_energy_consumption_details) as usize,
+				!Vec::is_empty(&self.r#has_measurement) as usize,
+				!Vec::is_empty(&self.r#has_merchant_return_policy) as usize,
+				!Vec::is_empty(&self.r#has_part) as usize,
+				!Vec::is_empty(&self.r#has_product_return_policy) as usize,
+				!Vec::is_empty(&self.r#headline) as usize,
+				!Vec::is_empty(&self.r#height) as usize,
+				!Vec::is_empty(&self.r#identifier) as usize,
+				!Vec::is_empty(&self.r#image) as usize,
+				!Vec::is_empty(&self.r#in_language) as usize,
+				!Vec::is_empty(&self.r#in_product_group_with_id) as usize,
+				!Vec::is_empty(&self.r#includes_object) as usize,
+				!Vec::is_empty(&self.r#interaction_statistic) as usize,
+				!Vec::is_empty(&self.r#interactivity_type) as usize,
+				!Vec::is_empty(&self.r#interpreted_as_claim) as usize,
+				!Vec::is_empty(&self.r#is_accessible_for_free) as usize,
+				!Vec::is_empty(&self.r#is_accessory_or_spare_part_for) as usize,
+				!Vec::is_empty(&self.r#is_based_on) as usize,
+				!Vec::is_empty(&self.r#is_based_on_url) as usize,
+				!Vec::is_empty(&self.r#is_consumable_for) as usize,
+				!Vec::is_empty(&self.r#is_family_friendly) as usize,
+				!Vec::is_empty(&self.r#is_part_of) as usize,
+				!Vec::is_empty(&self.r#is_related_to) as usize,
+				!Vec::is_empty(&self.r#is_similar_to) as usize,
+				!Vec::is_empty(&self.r#is_variant_of) as usize,
+				!Vec::is_empty(&self.r#item_condition) as usize,
+				!Vec::is_empty(&self.r#keywords) as usize,
+				!Vec::is_empty(&self.r#learning_resource_type) as usize,
+				!Vec::is_empty(&self.r#license) as usize,
+				!Vec::is_empty(&self.r#location_created) as usize,
+				!Vec::is_empty(&self.r#logo) as usize,
+				!Vec::is_empty(&self.r#main_entity) as usize,
+				!Vec::is_empty(&self.r#main_entity_of_page) as usize,
+				!Vec::is_empty(&self.r#maintainer) as usize,
+				!Vec::is_empty(&self.r#manufacturer) as usize,
+				!Vec::is_empty(&self.r#material) as usize,
+				!Vec::is_empty(&self.r#material_extent) as usize,
+				!Vec::is_empty(&self.r#mentions) as usize,
+				!Vec::is_empty(&self.r#mobile_url) as usize,
+				!Vec::is_empty(&self.r#model) as usize,
+				!Vec::is_empty(&self.r#mpn) as usize,
+				!Vec::is_empty(&self.r#name) as usize,
+				!Vec::is_empty(&self.r#negative_notes) as usize,
+				!Vec::is_empty(&self.r#nsn) as usize,
+				!Vec::is_empty(&self.r#offers) as usize,
+				!Vec::is_empty(&self.r#pattern) as usize,
+				!Vec::is_empty(&self.r#position) as usize,
+				!Vec::is_empty(&self.r#positive_notes) as usize,
+				!Vec::is_empty(&self.r#potential_action) as usize,
+				!Vec::is_empty(&self.r#producer) as usize,
+				!Vec::is_empty(&self.r#product_id) as usize,
+				!Vec::is_empty(&self.r#production_date) as usize,
+				!Vec::is_empty(&self.r#provider) as usize,
+				!Vec::is_empty(&self.r#publication) as usize,
+				!Vec::is_empty(&self.r#publisher) as usize,
+				!Vec::is_empty(&self.r#publisher_imprint) as usize,
+				!Vec::is_empty(&self.r#publishing_principles) as usize,
+				!Vec::is_empty(&self.r#purchase_date) as usize,
+				!Vec::is_empty(&self.r#recorded_at) as usize,
+				!Vec::is_empty(&self.r#release_date) as usize,
+				!Vec::is_empty(&self.r#released_event) as usize,
+				!Vec::is_empty(&self.r#review) as usize,
+				!Vec::is_empty(&self.r#reviews) as usize,
+				!Vec::is_empty(&self.r#same_as) as usize,
+				!Vec::is_empty(&self.r#schema_version) as usize,
+				!Vec::is_empty(&self.r#sd_date_published) as usize,
+				!Vec::is_empty(&self.r#sd_license) as usize,
+				!Vec::is_empty(&self.r#sd_publisher) as usize,
+				!Vec::is_empty(&self.r#size) as usize,
+				!Vec::is_empty(&self.r#sku) as usize,
+				!Vec::is_empty(&self.r#slogan) as usize,
+				!Vec::is_empty(&self.r#source_organization) as usize,
+				!Vec::is_empty(&self.r#spatial) as usize,
+				!Vec::is_empty(&self.r#spatial_coverage) as usize,
+				!Vec::is_empty(&self.r#sponsor) as usize,
+				!Vec::is_empty(&self.r#subject_of) as usize,
+				!Vec::is_empty(&self.r#teaches) as usize,
+				!Vec::is_empty(&self.r#temporal) as usize,
+				!Vec::is_empty(&self.r#temporal_coverage) as usize,
+				!Vec::is_empty(&self.r#text) as usize,
+				!Vec::is_empty(&self.r#thumbnail) as usize,
+				!Vec::is_empty(&self.r#thumbnail_url) as usize,
+				!Vec::is_empty(&self.r#time_required) as usize,
+				!Vec::is_empty(&self.r#translation_of_work) as usize,
+				!Vec::is_empty(&self.r#translator) as usize,
+				!Vec::is_empty(&self.r#typical_age_range) as usize,
+				!Vec::is_empty(&self.r#url) as usize,
+				!Vec::is_empty(&self.r#usage_info) as usize,
+				!Vec::is_empty(&self.r#version) as usize,
+				!Vec::is_empty(&self.r#video) as usize,
+				!Vec::is_empty(&self.r#weight) as usize,
+				!Vec::is_empty(&self.r#width) as usize,
+				!Vec::is_empty(&self.r#work_example) as usize,
+				!Vec::is_empty(&self.r#work_translation) as usize,
 			]
 			.iter()
 			.sum();
 			let mut serialize_struct =
 				Serializer::serialize_struct(serializer, "ProductCollection", len)?;
-			#[cfg(any(
-				any(feature = "about-property-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#about) {
 				serialize_struct.serialize_field("about", {
 					struct SerializeWith<'a>(&'a Vec<AboutProperty>);
@@ -3164,13 +380,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("about")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "abstract-property-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#abstract) {
 				serialize_struct.serialize_field("abstract", {
 					struct SerializeWith<'a>(&'a Vec<AbstractProperty>);
@@ -3189,13 +398,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("abstract")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "access-mode-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#access_mode) {
 				serialize_struct.serialize_field("accessMode", {
 					struct SerializeWith<'a>(&'a Vec<AccessModeProperty>);
@@ -3214,13 +416,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("accessMode")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "access-mode-sufficient-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#access_mode_sufficient) {
 				serialize_struct.serialize_field("accessModeSufficient", {
 					struct SerializeWith<'a>(&'a Vec<AccessModeSufficientProperty>);
@@ -3239,13 +434,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("accessModeSufficient")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "accessibility-api-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#accessibility_api) {
 				serialize_struct.serialize_field("accessibilityAPI", {
 					struct SerializeWith<'a>(&'a Vec<AccessibilityApiProperty>);
@@ -3264,13 +452,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("accessibilityAPI")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "accessibility-control-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#accessibility_control) {
 				serialize_struct.serialize_field("accessibilityControl", {
 					struct SerializeWith<'a>(&'a Vec<AccessibilityControlProperty>);
@@ -3289,13 +470,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("accessibilityControl")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "accessibility-feature-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#accessibility_feature) {
 				serialize_struct.serialize_field("accessibilityFeature", {
 					struct SerializeWith<'a>(&'a Vec<AccessibilityFeatureProperty>);
@@ -3314,13 +488,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("accessibilityFeature")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "accessibility-hazard-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#accessibility_hazard) {
 				serialize_struct.serialize_field("accessibilityHazard", {
 					struct SerializeWith<'a>(&'a Vec<AccessibilityHazardProperty>);
@@ -3339,13 +506,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("accessibilityHazard")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "accessibility-summary-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#accessibility_summary) {
 				serialize_struct.serialize_field("accessibilitySummary", {
 					struct SerializeWith<'a>(&'a Vec<AccessibilitySummaryProperty>);
@@ -3364,13 +524,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("accessibilitySummary")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "accountable-person-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#accountable_person) {
 				serialize_struct.serialize_field("accountablePerson", {
 					struct SerializeWith<'a>(&'a Vec<AccountablePersonProperty>);
@@ -3389,13 +542,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("accountablePerson")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "acquire-license-page-property-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#acquire_license_page) {
 				serialize_struct.serialize_field("acquireLicensePage", {
 					struct SerializeWith<'a>(&'a Vec<AcquireLicensePageProperty>);
@@ -3414,13 +560,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("acquireLicensePage")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "additional-property-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#additional_property) {
 				serialize_struct.serialize_field("additionalProperty", {
 					struct SerializeWith<'a>(&'a Vec<AdditionalPropertyProperty>);
@@ -3439,13 +578,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("additionalProperty")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "additional-type-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#additional_type) {
 				serialize_struct.serialize_field("additionalType", {
 					struct SerializeWith<'a>(&'a Vec<AdditionalTypeProperty>);
@@ -3464,13 +596,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("additionalType")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "aggregate-rating-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#aggregate_rating) {
 				serialize_struct.serialize_field("aggregateRating", {
 					struct SerializeWith<'a>(&'a Vec<AggregateRatingProperty>);
@@ -3489,13 +614,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("aggregateRating")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "alternate-name-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#alternate_name) {
 				serialize_struct.serialize_field("alternateName", {
 					struct SerializeWith<'a>(&'a Vec<AlternateNameProperty>);
@@ -3514,13 +632,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("alternateName")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "alternative-headline-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#alternative_headline) {
 				serialize_struct.serialize_field("alternativeHeadline", {
 					struct SerializeWith<'a>(&'a Vec<AlternativeHeadlineProperty>);
@@ -3539,13 +650,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("alternativeHeadline")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "archived-at-property-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#archived_at) {
 				serialize_struct.serialize_field("archivedAt", {
 					struct SerializeWith<'a>(&'a Vec<ArchivedAtProperty>);
@@ -3564,10 +668,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("archivedAt")?;
 			}
-			#[cfg(any(
-				any(feature = "asin-property-schema", feature = "pending-schema-section"),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#asin) {
 				serialize_struct.serialize_field("asin", {
 					struct SerializeWith<'a>(&'a Vec<AsinProperty>);
@@ -3586,13 +686,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("asin")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "assesses-property-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#assesses) {
 				serialize_struct.serialize_field("assesses", {
 					struct SerializeWith<'a>(&'a Vec<AssessesProperty>);
@@ -3611,13 +704,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("assesses")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "associated-media-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#associated_media) {
 				serialize_struct.serialize_field("associatedMedia", {
 					struct SerializeWith<'a>(&'a Vec<AssociatedMediaProperty>);
@@ -3636,13 +722,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("associatedMedia")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "audience-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#audience) {
 				serialize_struct.serialize_field("audience", {
 					struct SerializeWith<'a>(&'a Vec<AudienceProperty>);
@@ -3661,10 +740,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("audience")?;
 			}
-			#[cfg(any(
-				any(feature = "audio-property-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#audio) {
 				serialize_struct.serialize_field("audio", {
 					struct SerializeWith<'a>(&'a Vec<AudioProperty>);
@@ -3683,10 +758,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("audio")?;
 			}
-			#[cfg(any(
-				any(feature = "author-property-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#author) {
 				serialize_struct.serialize_field("author", {
 					struct SerializeWith<'a>(&'a Vec<AuthorProperty>);
@@ -3705,10 +776,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("author")?;
 			}
-			#[cfg(any(
-				any(feature = "award-property-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#award) {
 				serialize_struct.serialize_field("award", {
 					struct SerializeWith<'a>(&'a Vec<AwardProperty>);
@@ -3727,10 +794,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("award")?;
 			}
-			#[cfg(any(
-				any(feature = "awards-property-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#awards) {
 				serialize_struct.serialize_field("awards", {
 					struct SerializeWith<'a>(&'a Vec<AwardsProperty>);
@@ -3749,10 +812,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("awards")?;
 			}
-			#[cfg(any(
-				any(feature = "brand-property-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#brand) {
 				serialize_struct.serialize_field("brand", {
 					struct SerializeWith<'a>(&'a Vec<BrandProperty>);
@@ -3771,13 +830,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("brand")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "category-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#category) {
 				serialize_struct.serialize_field("category", {
 					struct SerializeWith<'a>(&'a Vec<CategoryProperty>);
@@ -3796,13 +848,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("category")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "character-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#character) {
 				serialize_struct.serialize_field("character", {
 					struct SerializeWith<'a>(&'a Vec<CharacterProperty>);
@@ -3821,13 +866,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("character")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "citation-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#citation) {
 				serialize_struct.serialize_field("citation", {
 					struct SerializeWith<'a>(&'a Vec<CitationProperty>);
@@ -3846,13 +884,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("citation")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "collection-size-property-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#collection_size) {
 				serialize_struct.serialize_field("collectionSize", {
 					struct SerializeWith<'a>(&'a Vec<CollectionSizeProperty>);
@@ -3871,10 +902,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("collectionSize")?;
 			}
-			#[cfg(any(
-				any(feature = "color-property-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#color) {
 				serialize_struct.serialize_field("color", {
 					struct SerializeWith<'a>(&'a Vec<ColorProperty>);
@@ -3893,13 +920,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("color")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "comment-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#comment) {
 				serialize_struct.serialize_field("comment", {
 					struct SerializeWith<'a>(&'a Vec<CommentProperty>);
@@ -3918,13 +938,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("comment")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "comment-count-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#comment_count) {
 				serialize_struct.serialize_field("commentCount", {
 					struct SerializeWith<'a>(&'a Vec<CommentCountProperty>);
@@ -3943,13 +956,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("commentCount")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "conditions-of-access-property-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#conditions_of_access) {
 				serialize_struct.serialize_field("conditionsOfAccess", {
 					struct SerializeWith<'a>(&'a Vec<ConditionsOfAccessProperty>);
@@ -3968,13 +974,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("conditionsOfAccess")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "content-location-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#content_location) {
 				serialize_struct.serialize_field("contentLocation", {
 					struct SerializeWith<'a>(&'a Vec<ContentLocationProperty>);
@@ -3993,13 +992,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("contentLocation")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "content-rating-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#content_rating) {
 				serialize_struct.serialize_field("contentRating", {
 					struct SerializeWith<'a>(&'a Vec<ContentRatingProperty>);
@@ -4018,13 +1010,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("contentRating")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "content-reference-time-property-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#content_reference_time) {
 				serialize_struct.serialize_field("contentReferenceTime", {
 					struct SerializeWith<'a>(&'a Vec<ContentReferenceTimeProperty>);
@@ -4043,13 +1028,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("contentReferenceTime")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "contributor-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#contributor) {
 				serialize_struct.serialize_field("contributor", {
 					struct SerializeWith<'a>(&'a Vec<ContributorProperty>);
@@ -4068,13 +1046,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("contributor")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "copyright-holder-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#copyright_holder) {
 				serialize_struct.serialize_field("copyrightHolder", {
 					struct SerializeWith<'a>(&'a Vec<CopyrightHolderProperty>);
@@ -4093,13 +1064,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("copyrightHolder")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "copyright-notice-property-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#copyright_notice) {
 				serialize_struct.serialize_field("copyrightNotice", {
 					struct SerializeWith<'a>(&'a Vec<CopyrightNoticeProperty>);
@@ -4118,13 +1082,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("copyrightNotice")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "copyright-year-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#copyright_year) {
 				serialize_struct.serialize_field("copyrightYear", {
 					struct SerializeWith<'a>(&'a Vec<CopyrightYearProperty>);
@@ -4143,13 +1100,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("copyrightYear")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "correction-property-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#correction) {
 				serialize_struct.serialize_field("correction", {
 					struct SerializeWith<'a>(&'a Vec<CorrectionProperty>);
@@ -4168,13 +1118,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("correction")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "country-of-assembly-property-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#country_of_assembly) {
 				serialize_struct.serialize_field("countryOfAssembly", {
 					struct SerializeWith<'a>(&'a Vec<CountryOfAssemblyProperty>);
@@ -4193,13 +1136,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("countryOfAssembly")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "country-of-last-processing-property-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#country_of_last_processing) {
 				serialize_struct.serialize_field("countryOfLastProcessing", {
 					struct SerializeWith<'a>(&'a Vec<CountryOfLastProcessingProperty>);
@@ -4218,13 +1154,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("countryOfLastProcessing")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "country-of-origin-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#country_of_origin) {
 				serialize_struct.serialize_field("countryOfOrigin", {
 					struct SerializeWith<'a>(&'a Vec<CountryOfOriginProperty>);
@@ -4243,13 +1172,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("countryOfOrigin")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "creative-work-status-property-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#creative_work_status) {
 				serialize_struct.serialize_field("creativeWorkStatus", {
 					struct SerializeWith<'a>(&'a Vec<CreativeWorkStatusProperty>);
@@ -4268,13 +1190,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("creativeWorkStatus")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "creator-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#creator) {
 				serialize_struct.serialize_field("creator", {
 					struct SerializeWith<'a>(&'a Vec<CreatorProperty>);
@@ -4293,13 +1208,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("creator")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "credit-text-property-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#credit_text) {
 				serialize_struct.serialize_field("creditText", {
 					struct SerializeWith<'a>(&'a Vec<CreditTextProperty>);
@@ -4318,13 +1226,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("creditText")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "date-created-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#date_created) {
 				serialize_struct.serialize_field("dateCreated", {
 					struct SerializeWith<'a>(&'a Vec<DateCreatedProperty>);
@@ -4343,13 +1244,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("dateCreated")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "date-modified-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#date_modified) {
 				serialize_struct.serialize_field("dateModified", {
 					struct SerializeWith<'a>(&'a Vec<DateModifiedProperty>);
@@ -4368,13 +1262,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("dateModified")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "date-published-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#date_published) {
 				serialize_struct.serialize_field("datePublished", {
 					struct SerializeWith<'a>(&'a Vec<DatePublishedProperty>);
@@ -4393,10 +1280,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("datePublished")?;
 			}
-			#[cfg(any(
-				any(feature = "depth-property-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#depth) {
 				serialize_struct.serialize_field("depth", {
 					struct SerializeWith<'a>(&'a Vec<DepthProperty>);
@@ -4415,13 +1298,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("depth")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "description-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#description) {
 				serialize_struct.serialize_field("description", {
 					struct SerializeWith<'a>(&'a Vec<DescriptionProperty>);
@@ -4440,13 +1316,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("description")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "disambiguating-description-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#disambiguating_description) {
 				serialize_struct.serialize_field("disambiguatingDescription", {
 					struct SerializeWith<'a>(&'a Vec<DisambiguatingDescriptionProperty>);
@@ -4465,13 +1334,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("disambiguatingDescription")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "discussion-url-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#discussion_url) {
 				serialize_struct.serialize_field("discussionUrl", {
 					struct SerializeWith<'a>(&'a Vec<DiscussionUrlProperty>);
@@ -4490,13 +1352,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("discussionUrl")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "edit-eidr-property-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#edit_eidr) {
 				serialize_struct.serialize_field("editEIDR", {
 					struct SerializeWith<'a>(&'a Vec<EditEidrProperty>);
@@ -4515,10 +1370,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("editEIDR")?;
 			}
-			#[cfg(any(
-				any(feature = "editor-property-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#editor) {
 				serialize_struct.serialize_field("editor", {
 					struct SerializeWith<'a>(&'a Vec<EditorProperty>);
@@ -4537,13 +1388,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("editor")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "educational-alignment-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#educational_alignment) {
 				serialize_struct.serialize_field("educationalAlignment", {
 					struct SerializeWith<'a>(&'a Vec<EducationalAlignmentProperty>);
@@ -4562,13 +1406,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("educationalAlignment")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "educational-level-property-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#educational_level) {
 				serialize_struct.serialize_field("educationalLevel", {
 					struct SerializeWith<'a>(&'a Vec<EducationalLevelProperty>);
@@ -4587,13 +1424,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("educationalLevel")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "educational-use-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#educational_use) {
 				serialize_struct.serialize_field("educationalUse", {
 					struct SerializeWith<'a>(&'a Vec<EducationalUseProperty>);
@@ -4612,13 +1442,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("educationalUse")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "encoding-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#encoding) {
 				serialize_struct.serialize_field("encoding", {
 					struct SerializeWith<'a>(&'a Vec<EncodingProperty>);
@@ -4637,13 +1460,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("encoding")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "encoding-format-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#encoding_format) {
 				serialize_struct.serialize_field("encodingFormat", {
 					struct SerializeWith<'a>(&'a Vec<EncodingFormatProperty>);
@@ -4662,13 +1478,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("encodingFormat")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "encodings-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#encodings) {
 				serialize_struct.serialize_field("encodings", {
 					struct SerializeWith<'a>(&'a Vec<EncodingsProperty>);
@@ -4687,13 +1496,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("encodings")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "example-of-work-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#example_of_work) {
 				serialize_struct.serialize_field("exampleOfWork", {
 					struct SerializeWith<'a>(&'a Vec<ExampleOfWorkProperty>);
@@ -4712,13 +1514,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("exampleOfWork")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "expires-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#expires) {
 				serialize_struct.serialize_field("expires", {
 					struct SerializeWith<'a>(&'a Vec<ExpiresProperty>);
@@ -4737,13 +1532,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("expires")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "file-format-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#file_format) {
 				serialize_struct.serialize_field("fileFormat", {
 					struct SerializeWith<'a>(&'a Vec<FileFormatProperty>);
@@ -4762,10 +1550,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("fileFormat")?;
 			}
-			#[cfg(any(
-				any(feature = "funder-property-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#funder) {
 				serialize_struct.serialize_field("funder", {
 					struct SerializeWith<'a>(&'a Vec<FunderProperty>);
@@ -4784,13 +1568,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("funder")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "funding-property-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#funding) {
 				serialize_struct.serialize_field("funding", {
 					struct SerializeWith<'a>(&'a Vec<FundingProperty>);
@@ -4809,10 +1586,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("funding")?;
 			}
-			#[cfg(any(
-				any(feature = "genre-property-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#genre) {
 				serialize_struct.serialize_field("genre", {
 					struct SerializeWith<'a>(&'a Vec<GenreProperty>);
@@ -4831,10 +1604,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("genre")?;
 			}
-			#[cfg(any(
-				any(feature = "gtin-property-schema", feature = "pending-schema-section"),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#gtin) {
 				serialize_struct.serialize_field("gtin", {
 					struct SerializeWith<'a>(&'a Vec<GtinProperty>);
@@ -4853,13 +1622,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("gtin")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "gtin-12-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#gtin_12) {
 				serialize_struct.serialize_field("gtin12", {
 					struct SerializeWith<'a>(&'a Vec<Gtin12Property>);
@@ -4878,13 +1640,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("gtin12")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "gtin-13-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#gtin_13) {
 				serialize_struct.serialize_field("gtin13", {
 					struct SerializeWith<'a>(&'a Vec<Gtin13Property>);
@@ -4903,13 +1658,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("gtin13")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "gtin-14-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#gtin_14) {
 				serialize_struct.serialize_field("gtin14", {
 					struct SerializeWith<'a>(&'a Vec<Gtin14Property>);
@@ -4928,10 +1676,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("gtin14")?;
 			}
-			#[cfg(any(
-				any(feature = "gtin-8-property-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#gtin_8) {
 				serialize_struct.serialize_field("gtin8", {
 					struct SerializeWith<'a>(&'a Vec<Gtin8Property>);
@@ -4950,13 +1694,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("gtin8")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "has-adult-consideration-property-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#has_adult_consideration) {
 				serialize_struct.serialize_field("hasAdultConsideration", {
 					struct SerializeWith<'a>(&'a Vec<HasAdultConsiderationProperty>);
@@ -4975,13 +1712,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("hasAdultConsideration")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "has-energy-consumption-details-property-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#has_energy_consumption_details) {
 				serialize_struct.serialize_field("hasEnergyConsumptionDetails", {
 					struct SerializeWith<'a>(&'a Vec<HasEnergyConsumptionDetailsProperty>);
@@ -5000,13 +1730,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("hasEnergyConsumptionDetails")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "has-measurement-property-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#has_measurement) {
 				serialize_struct.serialize_field("hasMeasurement", {
 					struct SerializeWith<'a>(&'a Vec<HasMeasurementProperty>);
@@ -5025,13 +1748,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("hasMeasurement")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "has-merchant-return-policy-property-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#has_merchant_return_policy) {
 				serialize_struct.serialize_field("hasMerchantReturnPolicy", {
 					struct SerializeWith<'a>(&'a Vec<HasMerchantReturnPolicyProperty>);
@@ -5050,13 +1766,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("hasMerchantReturnPolicy")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "has-part-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#has_part) {
 				serialize_struct.serialize_field("hasPart", {
 					struct SerializeWith<'a>(&'a Vec<HasPartProperty>);
@@ -5075,13 +1784,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("hasPart")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "has-product-return-policy-property-schema",
-					feature = "attic-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#has_product_return_policy) {
 				serialize_struct.serialize_field("hasProductReturnPolicy", {
 					struct SerializeWith<'a>(&'a Vec<HasProductReturnPolicyProperty>);
@@ -5100,13 +1802,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("hasProductReturnPolicy")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "headline-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#headline) {
 				serialize_struct.serialize_field("headline", {
 					struct SerializeWith<'a>(&'a Vec<HeadlineProperty>);
@@ -5125,10 +1820,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("headline")?;
 			}
-			#[cfg(any(
-				any(feature = "height-property-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#height) {
 				serialize_struct.serialize_field("height", {
 					struct SerializeWith<'a>(&'a Vec<HeightProperty>);
@@ -5147,13 +1838,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("height")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "identifier-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#identifier) {
 				serialize_struct.serialize_field("identifier", {
 					struct SerializeWith<'a>(&'a Vec<IdentifierProperty>);
@@ -5172,10 +1856,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("identifier")?;
 			}
-			#[cfg(any(
-				any(feature = "image-property-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#image) {
 				serialize_struct.serialize_field("image", {
 					struct SerializeWith<'a>(&'a Vec<ImageProperty>);
@@ -5194,13 +1874,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("image")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "in-language-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#in_language) {
 				serialize_struct.serialize_field("inLanguage", {
 					struct SerializeWith<'a>(&'a Vec<InLanguageProperty>);
@@ -5219,13 +1892,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("inLanguage")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "in-product-group-with-id-property-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#in_product_group_with_id) {
 				serialize_struct.serialize_field("inProductGroupWithID", {
 					struct SerializeWith<'a>(&'a Vec<InProductGroupWithIdProperty>);
@@ -5244,13 +1910,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("inProductGroupWithID")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "includes-object-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#includes_object) {
 				serialize_struct.serialize_field("includesObject", {
 					struct SerializeWith<'a>(&'a Vec<IncludesObjectProperty>);
@@ -5269,13 +1928,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("includesObject")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "interaction-statistic-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#interaction_statistic) {
 				serialize_struct.serialize_field("interactionStatistic", {
 					struct SerializeWith<'a>(&'a Vec<InteractionStatisticProperty>);
@@ -5294,13 +1946,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("interactionStatistic")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "interactivity-type-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#interactivity_type) {
 				serialize_struct.serialize_field("interactivityType", {
 					struct SerializeWith<'a>(&'a Vec<InteractivityTypeProperty>);
@@ -5319,13 +1964,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("interactivityType")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "interpreted-as-claim-property-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#interpreted_as_claim) {
 				serialize_struct.serialize_field("interpretedAsClaim", {
 					struct SerializeWith<'a>(&'a Vec<InterpretedAsClaimProperty>);
@@ -5344,13 +1982,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("interpretedAsClaim")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "is-accessible-for-free-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#is_accessible_for_free) {
 				serialize_struct.serialize_field("isAccessibleForFree", {
 					struct SerializeWith<'a>(&'a Vec<IsAccessibleForFreeProperty>);
@@ -5369,13 +2000,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("isAccessibleForFree")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "is-accessory-or-spare-part-for-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#is_accessory_or_spare_part_for) {
 				serialize_struct.serialize_field("isAccessoryOrSparePartFor", {
 					struct SerializeWith<'a>(&'a Vec<IsAccessoryOrSparePartForProperty>);
@@ -5394,13 +2018,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("isAccessoryOrSparePartFor")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "is-based-on-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#is_based_on) {
 				serialize_struct.serialize_field("isBasedOn", {
 					struct SerializeWith<'a>(&'a Vec<IsBasedOnProperty>);
@@ -5419,13 +2036,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("isBasedOn")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "is-based-on-url-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#is_based_on_url) {
 				serialize_struct.serialize_field("isBasedOnUrl", {
 					struct SerializeWith<'a>(&'a Vec<IsBasedOnUrlProperty>);
@@ -5444,13 +2054,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("isBasedOnUrl")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "is-consumable-for-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#is_consumable_for) {
 				serialize_struct.serialize_field("isConsumableFor", {
 					struct SerializeWith<'a>(&'a Vec<IsConsumableForProperty>);
@@ -5469,13 +2072,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("isConsumableFor")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "is-family-friendly-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#is_family_friendly) {
 				serialize_struct.serialize_field("isFamilyFriendly", {
 					struct SerializeWith<'a>(&'a Vec<IsFamilyFriendlyProperty>);
@@ -5494,13 +2090,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("isFamilyFriendly")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "is-part-of-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#is_part_of) {
 				serialize_struct.serialize_field("isPartOf", {
 					struct SerializeWith<'a>(&'a Vec<IsPartOfProperty>);
@@ -5519,13 +2108,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("isPartOf")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "is-related-to-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#is_related_to) {
 				serialize_struct.serialize_field("isRelatedTo", {
 					struct SerializeWith<'a>(&'a Vec<IsRelatedToProperty>);
@@ -5544,13 +2126,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("isRelatedTo")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "is-similar-to-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#is_similar_to) {
 				serialize_struct.serialize_field("isSimilarTo", {
 					struct SerializeWith<'a>(&'a Vec<IsSimilarToProperty>);
@@ -5569,13 +2144,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("isSimilarTo")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "is-variant-of-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#is_variant_of) {
 				serialize_struct.serialize_field("isVariantOf", {
 					struct SerializeWith<'a>(&'a Vec<IsVariantOfProperty>);
@@ -5594,13 +2162,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("isVariantOf")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "item-condition-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#item_condition) {
 				serialize_struct.serialize_field("itemCondition", {
 					struct SerializeWith<'a>(&'a Vec<ItemConditionProperty>);
@@ -5619,13 +2180,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("itemCondition")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "keywords-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#keywords) {
 				serialize_struct.serialize_field("keywords", {
 					struct SerializeWith<'a>(&'a Vec<KeywordsProperty>);
@@ -5644,13 +2198,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("keywords")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "learning-resource-type-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#learning_resource_type) {
 				serialize_struct.serialize_field("learningResourceType", {
 					struct SerializeWith<'a>(&'a Vec<LearningResourceTypeProperty>);
@@ -5669,13 +2216,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("learningResourceType")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "license-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#license) {
 				serialize_struct.serialize_field("license", {
 					struct SerializeWith<'a>(&'a Vec<LicenseProperty>);
@@ -5694,13 +2234,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("license")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "location-created-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#location_created) {
 				serialize_struct.serialize_field("locationCreated", {
 					struct SerializeWith<'a>(&'a Vec<LocationCreatedProperty>);
@@ -5719,10 +2252,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("locationCreated")?;
 			}
-			#[cfg(any(
-				any(feature = "logo-property-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#logo) {
 				serialize_struct.serialize_field("logo", {
 					struct SerializeWith<'a>(&'a Vec<LogoProperty>);
@@ -5741,13 +2270,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("logo")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "main-entity-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#main_entity) {
 				serialize_struct.serialize_field("mainEntity", {
 					struct SerializeWith<'a>(&'a Vec<MainEntityProperty>);
@@ -5766,13 +2288,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("mainEntity")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "main-entity-of-page-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#main_entity_of_page) {
 				serialize_struct.serialize_field("mainEntityOfPage", {
 					struct SerializeWith<'a>(&'a Vec<MainEntityOfPageProperty>);
@@ -5791,13 +2306,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("mainEntityOfPage")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "maintainer-property-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#maintainer) {
 				serialize_struct.serialize_field("maintainer", {
 					struct SerializeWith<'a>(&'a Vec<MaintainerProperty>);
@@ -5816,13 +2324,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("maintainer")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "manufacturer-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#manufacturer) {
 				serialize_struct.serialize_field("manufacturer", {
 					struct SerializeWith<'a>(&'a Vec<ManufacturerProperty>);
@@ -5841,13 +2342,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("manufacturer")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "material-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#material) {
 				serialize_struct.serialize_field("material", {
 					struct SerializeWith<'a>(&'a Vec<MaterialProperty>);
@@ -5866,13 +2360,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("material")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "material-extent-property-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#material_extent) {
 				serialize_struct.serialize_field("materialExtent", {
 					struct SerializeWith<'a>(&'a Vec<MaterialExtentProperty>);
@@ -5891,13 +2378,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("materialExtent")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "mentions-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#mentions) {
 				serialize_struct.serialize_field("mentions", {
 					struct SerializeWith<'a>(&'a Vec<MentionsProperty>);
@@ -5916,13 +2396,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("mentions")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "mobile-url-property-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#mobile_url) {
 				serialize_struct.serialize_field("mobileUrl", {
 					struct SerializeWith<'a>(&'a Vec<MobileUrlProperty>);
@@ -5941,10 +2414,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("mobileUrl")?;
 			}
-			#[cfg(any(
-				any(feature = "model-property-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#model) {
 				serialize_struct.serialize_field("model", {
 					struct SerializeWith<'a>(&'a Vec<ModelProperty>);
@@ -5963,10 +2432,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("model")?;
 			}
-			#[cfg(any(
-				any(feature = "mpn-property-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#mpn) {
 				serialize_struct.serialize_field("mpn", {
 					struct SerializeWith<'a>(&'a Vec<MpnProperty>);
@@ -5985,10 +2450,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("mpn")?;
 			}
-			#[cfg(any(
-				any(feature = "name-property-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#name) {
 				serialize_struct.serialize_field("name", {
 					struct SerializeWith<'a>(&'a Vec<NameProperty>);
@@ -6007,13 +2468,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("name")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "negative-notes-property-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#negative_notes) {
 				serialize_struct.serialize_field("negativeNotes", {
 					struct SerializeWith<'a>(&'a Vec<NegativeNotesProperty>);
@@ -6032,10 +2486,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("negativeNotes")?;
 			}
-			#[cfg(any(
-				any(feature = "nsn-property-schema", feature = "pending-schema-section"),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#nsn) {
 				serialize_struct.serialize_field("nsn", {
 					struct SerializeWith<'a>(&'a Vec<NsnProperty>);
@@ -6054,10 +2504,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("nsn")?;
 			}
-			#[cfg(any(
-				any(feature = "offers-property-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#offers) {
 				serialize_struct.serialize_field("offers", {
 					struct SerializeWith<'a>(&'a Vec<OffersProperty>);
@@ -6076,13 +2522,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("offers")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "pattern-property-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#pattern) {
 				serialize_struct.serialize_field("pattern", {
 					struct SerializeWith<'a>(&'a Vec<PatternProperty>);
@@ -6101,13 +2540,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("pattern")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "position-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#position) {
 				serialize_struct.serialize_field("position", {
 					struct SerializeWith<'a>(&'a Vec<PositionProperty>);
@@ -6126,13 +2558,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("position")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "positive-notes-property-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#positive_notes) {
 				serialize_struct.serialize_field("positiveNotes", {
 					struct SerializeWith<'a>(&'a Vec<PositiveNotesProperty>);
@@ -6151,13 +2576,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("positiveNotes")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "potential-action-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#potential_action) {
 				serialize_struct.serialize_field("potentialAction", {
 					struct SerializeWith<'a>(&'a Vec<PotentialActionProperty>);
@@ -6176,13 +2594,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("potentialAction")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "producer-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#producer) {
 				serialize_struct.serialize_field("producer", {
 					struct SerializeWith<'a>(&'a Vec<ProducerProperty>);
@@ -6201,13 +2612,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("producer")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "product-id-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#product_id) {
 				serialize_struct.serialize_field("productID", {
 					struct SerializeWith<'a>(&'a Vec<ProductIdProperty>);
@@ -6226,13 +2630,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("productID")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "production-date-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#production_date) {
 				serialize_struct.serialize_field("productionDate", {
 					struct SerializeWith<'a>(&'a Vec<ProductionDateProperty>);
@@ -6251,13 +2648,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("productionDate")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "provider-property-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#provider) {
 				serialize_struct.serialize_field("provider", {
 					struct SerializeWith<'a>(&'a Vec<ProviderProperty>);
@@ -6276,13 +2666,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("provider")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "publication-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#publication) {
 				serialize_struct.serialize_field("publication", {
 					struct SerializeWith<'a>(&'a Vec<PublicationProperty>);
@@ -6301,13 +2684,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("publication")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "publisher-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#publisher) {
 				serialize_struct.serialize_field("publisher", {
 					struct SerializeWith<'a>(&'a Vec<PublisherProperty>);
@@ -6326,13 +2702,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("publisher")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "publisher-imprint-property-schema",
-					feature = "bib-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#publisher_imprint) {
 				serialize_struct.serialize_field("publisherImprint", {
 					struct SerializeWith<'a>(&'a Vec<PublisherImprintProperty>);
@@ -6351,13 +2720,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("publisherImprint")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "publishing-principles-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#publishing_principles) {
 				serialize_struct.serialize_field("publishingPrinciples", {
 					struct SerializeWith<'a>(&'a Vec<PublishingPrinciplesProperty>);
@@ -6376,13 +2738,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("publishingPrinciples")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "purchase-date-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#purchase_date) {
 				serialize_struct.serialize_field("purchaseDate", {
 					struct SerializeWith<'a>(&'a Vec<PurchaseDateProperty>);
@@ -6401,13 +2756,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("purchaseDate")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "recorded-at-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#recorded_at) {
 				serialize_struct.serialize_field("recordedAt", {
 					struct SerializeWith<'a>(&'a Vec<RecordedAtProperty>);
@@ -6426,13 +2774,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("recordedAt")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "release-date-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#release_date) {
 				serialize_struct.serialize_field("releaseDate", {
 					struct SerializeWith<'a>(&'a Vec<ReleaseDateProperty>);
@@ -6451,13 +2792,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("releaseDate")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "released-event-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#released_event) {
 				serialize_struct.serialize_field("releasedEvent", {
 					struct SerializeWith<'a>(&'a Vec<ReleasedEventProperty>);
@@ -6476,10 +2810,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("releasedEvent")?;
 			}
-			#[cfg(any(
-				any(feature = "review-property-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#review) {
 				serialize_struct.serialize_field("review", {
 					struct SerializeWith<'a>(&'a Vec<ReviewProperty>);
@@ -6498,13 +2828,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("review")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "reviews-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#reviews) {
 				serialize_struct.serialize_field("reviews", {
 					struct SerializeWith<'a>(&'a Vec<ReviewsProperty>);
@@ -6523,13 +2846,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("reviews")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "same-as-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#same_as) {
 				serialize_struct.serialize_field("sameAs", {
 					struct SerializeWith<'a>(&'a Vec<SameAsProperty>);
@@ -6548,13 +2864,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("sameAs")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "schema-version-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#schema_version) {
 				serialize_struct.serialize_field("schemaVersion", {
 					struct SerializeWith<'a>(&'a Vec<SchemaVersionProperty>);
@@ -6573,13 +2882,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("schemaVersion")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "sd-date-published-property-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#sd_date_published) {
 				serialize_struct.serialize_field("sdDatePublished", {
 					struct SerializeWith<'a>(&'a Vec<SdDatePublishedProperty>);
@@ -6598,13 +2900,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("sdDatePublished")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "sd-license-property-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#sd_license) {
 				serialize_struct.serialize_field("sdLicense", {
 					struct SerializeWith<'a>(&'a Vec<SdLicenseProperty>);
@@ -6623,13 +2918,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("sdLicense")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "sd-publisher-property-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#sd_publisher) {
 				serialize_struct.serialize_field("sdPublisher", {
 					struct SerializeWith<'a>(&'a Vec<SdPublisherProperty>);
@@ -6648,10 +2936,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("sdPublisher")?;
 			}
-			#[cfg(any(
-				any(feature = "size-property-schema", feature = "pending-schema-section"),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#size) {
 				serialize_struct.serialize_field("size", {
 					struct SerializeWith<'a>(&'a Vec<SizeProperty>);
@@ -6670,10 +2954,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("size")?;
 			}
-			#[cfg(any(
-				any(feature = "sku-property-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#sku) {
 				serialize_struct.serialize_field("sku", {
 					struct SerializeWith<'a>(&'a Vec<SkuProperty>);
@@ -6692,10 +2972,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("sku")?;
 			}
-			#[cfg(any(
-				any(feature = "slogan-property-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#slogan) {
 				serialize_struct.serialize_field("slogan", {
 					struct SerializeWith<'a>(&'a Vec<SloganProperty>);
@@ -6714,13 +2990,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("slogan")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "source-organization-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#source_organization) {
 				serialize_struct.serialize_field("sourceOrganization", {
 					struct SerializeWith<'a>(&'a Vec<SourceOrganizationProperty>);
@@ -6739,13 +3008,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("sourceOrganization")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "spatial-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#spatial) {
 				serialize_struct.serialize_field("spatial", {
 					struct SerializeWith<'a>(&'a Vec<SpatialProperty>);
@@ -6764,13 +3026,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("spatial")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "spatial-coverage-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#spatial_coverage) {
 				serialize_struct.serialize_field("spatialCoverage", {
 					struct SerializeWith<'a>(&'a Vec<SpatialCoverageProperty>);
@@ -6789,13 +3044,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("spatialCoverage")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "sponsor-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#sponsor) {
 				serialize_struct.serialize_field("sponsor", {
 					struct SerializeWith<'a>(&'a Vec<SponsorProperty>);
@@ -6814,13 +3062,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("sponsor")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "subject-of-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#subject_of) {
 				serialize_struct.serialize_field("subjectOf", {
 					struct SerializeWith<'a>(&'a Vec<SubjectOfProperty>);
@@ -6839,13 +3080,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("subjectOf")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "teaches-property-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#teaches) {
 				serialize_struct.serialize_field("teaches", {
 					struct SerializeWith<'a>(&'a Vec<TeachesProperty>);
@@ -6864,13 +3098,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("teaches")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "temporal-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#temporal) {
 				serialize_struct.serialize_field("temporal", {
 					struct SerializeWith<'a>(&'a Vec<TemporalProperty>);
@@ -6889,13 +3116,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("temporal")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "temporal-coverage-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#temporal_coverage) {
 				serialize_struct.serialize_field("temporalCoverage", {
 					struct SerializeWith<'a>(&'a Vec<TemporalCoverageProperty>);
@@ -6914,10 +3134,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("temporalCoverage")?;
 			}
-			#[cfg(any(
-				any(feature = "text-property-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#text) {
 				serialize_struct.serialize_field("text", {
 					struct SerializeWith<'a>(&'a Vec<TextProperty>);
@@ -6936,13 +3152,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("text")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "thumbnail-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#thumbnail) {
 				serialize_struct.serialize_field("thumbnail", {
 					struct SerializeWith<'a>(&'a Vec<ThumbnailProperty>);
@@ -6961,13 +3170,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("thumbnail")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "thumbnail-url-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#thumbnail_url) {
 				serialize_struct.serialize_field("thumbnailUrl", {
 					struct SerializeWith<'a>(&'a Vec<ThumbnailUrlProperty>);
@@ -6986,13 +3188,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("thumbnailUrl")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "time-required-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#time_required) {
 				serialize_struct.serialize_field("timeRequired", {
 					struct SerializeWith<'a>(&'a Vec<TimeRequiredProperty>);
@@ -7011,13 +3206,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("timeRequired")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "translation-of-work-property-schema",
-					feature = "bib-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#translation_of_work) {
 				serialize_struct.serialize_field("translationOfWork", {
 					struct SerializeWith<'a>(&'a Vec<TranslationOfWorkProperty>);
@@ -7036,13 +3224,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("translationOfWork")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "translator-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#translator) {
 				serialize_struct.serialize_field("translator", {
 					struct SerializeWith<'a>(&'a Vec<TranslatorProperty>);
@@ -7061,13 +3242,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("translator")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "typical-age-range-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#typical_age_range) {
 				serialize_struct.serialize_field("typicalAgeRange", {
 					struct SerializeWith<'a>(&'a Vec<TypicalAgeRangeProperty>);
@@ -7086,10 +3260,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("typicalAgeRange")?;
 			}
-			#[cfg(any(
-				any(feature = "url-property-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#url) {
 				serialize_struct.serialize_field("url", {
 					struct SerializeWith<'a>(&'a Vec<UrlProperty>);
@@ -7108,13 +3278,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("url")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "usage-info-property-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#usage_info) {
 				serialize_struct.serialize_field("usageInfo", {
 					struct SerializeWith<'a>(&'a Vec<UsageInfoProperty>);
@@ -7133,13 +3296,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("usageInfo")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "version-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#version) {
 				serialize_struct.serialize_field("version", {
 					struct SerializeWith<'a>(&'a Vec<VersionProperty>);
@@ -7158,10 +3314,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("version")?;
 			}
-			#[cfg(any(
-				any(feature = "video-property-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#video) {
 				serialize_struct.serialize_field("video", {
 					struct SerializeWith<'a>(&'a Vec<VideoProperty>);
@@ -7180,10 +3332,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("video")?;
 			}
-			#[cfg(any(
-				any(feature = "weight-property-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#weight) {
 				serialize_struct.serialize_field("weight", {
 					struct SerializeWith<'a>(&'a Vec<WeightProperty>);
@@ -7202,10 +3350,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("weight")?;
 			}
-			#[cfg(any(
-				any(feature = "width-property-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#width) {
 				serialize_struct.serialize_field("width", {
 					struct SerializeWith<'a>(&'a Vec<WidthProperty>);
@@ -7224,13 +3368,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("width")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "work-example-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#work_example) {
 				serialize_struct.serialize_field("workExample", {
 					struct SerializeWith<'a>(&'a Vec<WorkExampleProperty>);
@@ -7249,13 +3386,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("workExample")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "work-translation-property-schema",
-					feature = "bib-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#work_translation) {
 				serialize_struct.serialize_field("workTranslation", {
 					struct SerializeWith<'a>(&'a Vec<WorkTranslationProperty>);
@@ -7283,1264 +3413,174 @@ mod serde {
 			D: Deserializer<'de>,
 		{
 			enum Field {
-				#[cfg(any(
-					any(feature = "about-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				About,
-				#[cfg(any(
-					any(
-						feature = "abstract-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				Abstract,
-				#[cfg(any(
-					any(
-						feature = "access-mode-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				AccessMode,
-				#[cfg(any(
-					any(
-						feature = "access-mode-sufficient-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				AccessModeSufficient,
-				#[cfg(any(
-					any(
-						feature = "accessibility-api-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				AccessibilityApi,
-				#[cfg(any(
-					any(
-						feature = "accessibility-control-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				AccessibilityControl,
-				#[cfg(any(
-					any(
-						feature = "accessibility-feature-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				AccessibilityFeature,
-				#[cfg(any(
-					any(
-						feature = "accessibility-hazard-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				AccessibilityHazard,
-				#[cfg(any(
-					any(
-						feature = "accessibility-summary-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				AccessibilitySummary,
-				#[cfg(any(
-					any(
-						feature = "accountable-person-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				AccountablePerson,
-				#[cfg(any(
-					any(
-						feature = "acquire-license-page-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				AcquireLicensePage,
-				#[cfg(any(
-					any(
-						feature = "additional-property-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				AdditionalProperty,
-				#[cfg(any(
-					any(
-						feature = "additional-type-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				AdditionalType,
-				#[cfg(any(
-					any(
-						feature = "aggregate-rating-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				AggregateRating,
-				#[cfg(any(
-					any(
-						feature = "alternate-name-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				AlternateName,
-				#[cfg(any(
-					any(
-						feature = "alternative-headline-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				AlternativeHeadline,
-				#[cfg(any(
-					any(
-						feature = "archived-at-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				ArchivedAt,
-				#[cfg(any(
-					any(feature = "asin-property-schema", feature = "pending-schema-section"),
-					doc
-				))]
 				Asin,
-				#[cfg(any(
-					any(
-						feature = "assesses-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				Assesses,
-				#[cfg(any(
-					any(
-						feature = "associated-media-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				AssociatedMedia,
-				#[cfg(any(
-					any(
-						feature = "audience-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				Audience,
-				#[cfg(any(
-					any(feature = "audio-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				Audio,
-				#[cfg(any(
-					any(feature = "author-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				Author,
-				#[cfg(any(
-					any(feature = "award-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				Award,
-				#[cfg(any(
-					any(feature = "awards-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				Awards,
-				#[cfg(any(
-					any(feature = "brand-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				Brand,
-				#[cfg(any(
-					any(
-						feature = "category-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				Category,
-				#[cfg(any(
-					any(
-						feature = "character-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				Character,
-				#[cfg(any(
-					any(
-						feature = "citation-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				Citation,
-				#[cfg(any(
-					any(
-						feature = "collection-size-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				CollectionSize,
-				#[cfg(any(
-					any(feature = "color-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				Color,
-				#[cfg(any(
-					any(
-						feature = "comment-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				Comment,
-				#[cfg(any(
-					any(
-						feature = "comment-count-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				CommentCount,
-				#[cfg(any(
-					any(
-						feature = "conditions-of-access-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				ConditionsOfAccess,
-				#[cfg(any(
-					any(
-						feature = "content-location-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				ContentLocation,
-				#[cfg(any(
-					any(
-						feature = "content-rating-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				ContentRating,
-				#[cfg(any(
-					any(
-						feature = "content-reference-time-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				ContentReferenceTime,
-				#[cfg(any(
-					any(
-						feature = "contributor-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				Contributor,
-				#[cfg(any(
-					any(
-						feature = "copyright-holder-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				CopyrightHolder,
-				#[cfg(any(
-					any(
-						feature = "copyright-notice-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				CopyrightNotice,
-				#[cfg(any(
-					any(
-						feature = "copyright-year-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				CopyrightYear,
-				#[cfg(any(
-					any(
-						feature = "correction-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				Correction,
-				#[cfg(any(
-					any(
-						feature = "country-of-assembly-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				CountryOfAssembly,
-				#[cfg(any(
-					any(
-						feature = "country-of-last-processing-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				CountryOfLastProcessing,
-				#[cfg(any(
-					any(
-						feature = "country-of-origin-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				CountryOfOrigin,
-				#[cfg(any(
-					any(
-						feature = "creative-work-status-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				CreativeWorkStatus,
-				#[cfg(any(
-					any(
-						feature = "creator-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				Creator,
-				#[cfg(any(
-					any(
-						feature = "credit-text-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				CreditText,
-				#[cfg(any(
-					any(
-						feature = "date-created-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				DateCreated,
-				#[cfg(any(
-					any(
-						feature = "date-modified-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				DateModified,
-				#[cfg(any(
-					any(
-						feature = "date-published-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				DatePublished,
-				#[cfg(any(
-					any(feature = "depth-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				Depth,
-				#[cfg(any(
-					any(
-						feature = "description-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				Description,
-				#[cfg(any(
-					any(
-						feature = "disambiguating-description-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				DisambiguatingDescription,
-				#[cfg(any(
-					any(
-						feature = "discussion-url-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				DiscussionUrl,
-				#[cfg(any(
-					any(
-						feature = "edit-eidr-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				EditEidr,
-				#[cfg(any(
-					any(feature = "editor-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				Editor,
-				#[cfg(any(
-					any(
-						feature = "educational-alignment-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				EducationalAlignment,
-				#[cfg(any(
-					any(
-						feature = "educational-level-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				EducationalLevel,
-				#[cfg(any(
-					any(
-						feature = "educational-use-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				EducationalUse,
-				#[cfg(any(
-					any(
-						feature = "encoding-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				Encoding,
-				#[cfg(any(
-					any(
-						feature = "encoding-format-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				EncodingFormat,
-				#[cfg(any(
-					any(
-						feature = "encodings-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				Encodings,
-				#[cfg(any(
-					any(
-						feature = "example-of-work-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				ExampleOfWork,
-				#[cfg(any(
-					any(
-						feature = "expires-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				Expires,
-				#[cfg(any(
-					any(
-						feature = "file-format-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				FileFormat,
-				#[cfg(any(
-					any(feature = "funder-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				Funder,
-				#[cfg(any(
-					any(
-						feature = "funding-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				Funding,
-				#[cfg(any(
-					any(feature = "genre-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				Genre,
-				#[cfg(any(
-					any(feature = "gtin-property-schema", feature = "pending-schema-section"),
-					doc
-				))]
 				Gtin,
-				#[cfg(any(
-					any(
-						feature = "gtin-12-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				Gtin12,
-				#[cfg(any(
-					any(
-						feature = "gtin-13-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				Gtin13,
-				#[cfg(any(
-					any(
-						feature = "gtin-14-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				Gtin14,
-				#[cfg(any(
-					any(feature = "gtin-8-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				Gtin8,
-				#[cfg(any(
-					any(
-						feature = "has-adult-consideration-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				HasAdultConsideration,
-				#[cfg(any(
-					any(
-						feature = "has-energy-consumption-details-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				HasEnergyConsumptionDetails,
-				#[cfg(any(
-					any(
-						feature = "has-measurement-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				HasMeasurement,
-				#[cfg(any(
-					any(
-						feature = "has-merchant-return-policy-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				HasMerchantReturnPolicy,
-				#[cfg(any(
-					any(
-						feature = "has-part-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				HasPart,
-				#[cfg(any(
-					any(
-						feature = "has-product-return-policy-property-schema",
-						feature = "attic-schema-section"
-					),
-					doc
-				))]
 				HasProductReturnPolicy,
-				#[cfg(any(
-					any(
-						feature = "headline-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				Headline,
-				#[cfg(any(
-					any(feature = "height-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				Height,
-				#[cfg(any(
-					any(
-						feature = "identifier-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				Identifier,
-				#[cfg(any(
-					any(feature = "image-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				Image,
-				#[cfg(any(
-					any(
-						feature = "in-language-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				InLanguage,
-				#[cfg(any(
-					any(
-						feature = "in-product-group-with-id-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				InProductGroupWithId,
-				#[cfg(any(
-					any(
-						feature = "includes-object-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				IncludesObject,
-				#[cfg(any(
-					any(
-						feature = "interaction-statistic-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				InteractionStatistic,
-				#[cfg(any(
-					any(
-						feature = "interactivity-type-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				InteractivityType,
-				#[cfg(any(
-					any(
-						feature = "interpreted-as-claim-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				InterpretedAsClaim,
-				#[cfg(any(
-					any(
-						feature = "is-accessible-for-free-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				IsAccessibleForFree,
-				#[cfg(any(
-					any(
-						feature = "is-accessory-or-spare-part-for-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				IsAccessoryOrSparePartFor,
-				#[cfg(any(
-					any(
-						feature = "is-based-on-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				IsBasedOn,
-				#[cfg(any(
-					any(
-						feature = "is-based-on-url-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				IsBasedOnUrl,
-				#[cfg(any(
-					any(
-						feature = "is-consumable-for-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				IsConsumableFor,
-				#[cfg(any(
-					any(
-						feature = "is-family-friendly-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				IsFamilyFriendly,
-				#[cfg(any(
-					any(
-						feature = "is-part-of-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				IsPartOf,
-				#[cfg(any(
-					any(
-						feature = "is-related-to-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				IsRelatedTo,
-				#[cfg(any(
-					any(
-						feature = "is-similar-to-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				IsSimilarTo,
-				#[cfg(any(
-					any(
-						feature = "is-variant-of-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				IsVariantOf,
-				#[cfg(any(
-					any(
-						feature = "item-condition-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				ItemCondition,
-				#[cfg(any(
-					any(
-						feature = "keywords-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				Keywords,
-				#[cfg(any(
-					any(
-						feature = "learning-resource-type-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				LearningResourceType,
-				#[cfg(any(
-					any(
-						feature = "license-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				License,
-				#[cfg(any(
-					any(
-						feature = "location-created-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				LocationCreated,
-				#[cfg(any(
-					any(feature = "logo-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				Logo,
-				#[cfg(any(
-					any(
-						feature = "main-entity-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				MainEntity,
-				#[cfg(any(
-					any(
-						feature = "main-entity-of-page-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				MainEntityOfPage,
-				#[cfg(any(
-					any(
-						feature = "maintainer-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				Maintainer,
-				#[cfg(any(
-					any(
-						feature = "manufacturer-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				Manufacturer,
-				#[cfg(any(
-					any(
-						feature = "material-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				Material,
-				#[cfg(any(
-					any(
-						feature = "material-extent-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				MaterialExtent,
-				#[cfg(any(
-					any(
-						feature = "mentions-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				Mentions,
-				#[cfg(any(
-					any(
-						feature = "mobile-url-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				MobileUrl,
-				#[cfg(any(
-					any(feature = "model-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				Model,
-				#[cfg(any(
-					any(feature = "mpn-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				Mpn,
-				#[cfg(any(
-					any(feature = "name-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				Name,
-				#[cfg(any(
-					any(
-						feature = "negative-notes-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				NegativeNotes,
-				#[cfg(any(
-					any(feature = "nsn-property-schema", feature = "pending-schema-section"),
-					doc
-				))]
 				Nsn,
-				#[cfg(any(
-					any(feature = "offers-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				Offers,
-				#[cfg(any(
-					any(
-						feature = "pattern-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				Pattern,
-				#[cfg(any(
-					any(
-						feature = "position-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				Position,
-				#[cfg(any(
-					any(
-						feature = "positive-notes-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				PositiveNotes,
-				#[cfg(any(
-					any(
-						feature = "potential-action-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				PotentialAction,
-				#[cfg(any(
-					any(
-						feature = "producer-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				Producer,
-				#[cfg(any(
-					any(
-						feature = "product-id-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				ProductId,
-				#[cfg(any(
-					any(
-						feature = "production-date-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				ProductionDate,
-				#[cfg(any(
-					any(
-						feature = "provider-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				Provider,
-				#[cfg(any(
-					any(
-						feature = "publication-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				Publication,
-				#[cfg(any(
-					any(
-						feature = "publisher-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				Publisher,
-				#[cfg(any(
-					any(
-						feature = "publisher-imprint-property-schema",
-						feature = "bib-schema-section"
-					),
-					doc
-				))]
 				PublisherImprint,
-				#[cfg(any(
-					any(
-						feature = "publishing-principles-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				PublishingPrinciples,
-				#[cfg(any(
-					any(
-						feature = "purchase-date-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				PurchaseDate,
-				#[cfg(any(
-					any(
-						feature = "recorded-at-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				RecordedAt,
-				#[cfg(any(
-					any(
-						feature = "release-date-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				ReleaseDate,
-				#[cfg(any(
-					any(
-						feature = "released-event-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				ReleasedEvent,
-				#[cfg(any(
-					any(feature = "review-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				Review,
-				#[cfg(any(
-					any(
-						feature = "reviews-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				Reviews,
-				#[cfg(any(
-					any(
-						feature = "same-as-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				SameAs,
-				#[cfg(any(
-					any(
-						feature = "schema-version-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				SchemaVersion,
-				#[cfg(any(
-					any(
-						feature = "sd-date-published-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				SdDatePublished,
-				#[cfg(any(
-					any(
-						feature = "sd-license-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				SdLicense,
-				#[cfg(any(
-					any(
-						feature = "sd-publisher-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				SdPublisher,
-				#[cfg(any(
-					any(feature = "size-property-schema", feature = "pending-schema-section"),
-					doc
-				))]
 				Size,
-				#[cfg(any(
-					any(feature = "sku-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				Sku,
-				#[cfg(any(
-					any(feature = "slogan-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				Slogan,
-				#[cfg(any(
-					any(
-						feature = "source-organization-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				SourceOrganization,
-				#[cfg(any(
-					any(
-						feature = "spatial-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				Spatial,
-				#[cfg(any(
-					any(
-						feature = "spatial-coverage-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				SpatialCoverage,
-				#[cfg(any(
-					any(
-						feature = "sponsor-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				Sponsor,
-				#[cfg(any(
-					any(
-						feature = "subject-of-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				SubjectOf,
-				#[cfg(any(
-					any(
-						feature = "teaches-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				Teaches,
-				#[cfg(any(
-					any(
-						feature = "temporal-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				Temporal,
-				#[cfg(any(
-					any(
-						feature = "temporal-coverage-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				TemporalCoverage,
-				#[cfg(any(
-					any(feature = "text-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				Text,
-				#[cfg(any(
-					any(
-						feature = "thumbnail-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				Thumbnail,
-				#[cfg(any(
-					any(
-						feature = "thumbnail-url-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				ThumbnailUrl,
-				#[cfg(any(
-					any(
-						feature = "time-required-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				TimeRequired,
-				#[cfg(any(
-					any(
-						feature = "translation-of-work-property-schema",
-						feature = "bib-schema-section"
-					),
-					doc
-				))]
 				TranslationOfWork,
-				#[cfg(any(
-					any(
-						feature = "translator-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				Translator,
-				#[cfg(any(
-					any(
-						feature = "typical-age-range-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				TypicalAgeRange,
-				#[cfg(any(
-					any(feature = "url-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				Url,
-				#[cfg(any(
-					any(
-						feature = "usage-info-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				UsageInfo,
-				#[cfg(any(
-					any(
-						feature = "version-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				Version,
-				#[cfg(any(
-					any(feature = "video-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				Video,
-				#[cfg(any(
-					any(feature = "weight-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				Weight,
-				#[cfg(any(
-					any(feature = "width-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				Width,
-				#[cfg(any(
-					any(
-						feature = "work-example-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				WorkExample,
-				#[cfg(any(
-					any(
-						feature = "work-translation-property-schema",
-						feature = "bib-schema-section"
-					),
-					doc
-				))]
 				WorkTranslation,
 				Ignore,
 			}
@@ -8555,1357 +3595,174 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
-						#[cfg(any(
-							any(
-								feature = "about-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"about" => Ok(Field::About),
-						#[cfg(any(
-							any(
-								feature = "abstract-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						"abstract" => Ok(Field::Abstract),
-						#[cfg(any(
-							any(
-								feature = "access-mode-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"accessMode" => Ok(Field::AccessMode),
-						#[cfg(any(
-							any(
-								feature = "access-mode-sufficient-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"accessModeSufficient" => Ok(Field::AccessModeSufficient),
-						#[cfg(any(
-							any(
-								feature = "accessibility-api-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"accessibilityAPI" => Ok(Field::AccessibilityApi),
-						#[cfg(any(
-							any(
-								feature = "accessibility-control-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"accessibilityControl" => Ok(Field::AccessibilityControl),
-						#[cfg(any(
-							any(
-								feature = "accessibility-feature-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"accessibilityFeature" => Ok(Field::AccessibilityFeature),
-						#[cfg(any(
-							any(
-								feature = "accessibility-hazard-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"accessibilityHazard" => Ok(Field::AccessibilityHazard),
-						#[cfg(any(
-							any(
-								feature = "accessibility-summary-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"accessibilitySummary" => Ok(Field::AccessibilitySummary),
-						#[cfg(any(
-							any(
-								feature = "accountable-person-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"accountablePerson" => Ok(Field::AccountablePerson),
-						#[cfg(any(
-							any(
-								feature = "acquire-license-page-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						"acquireLicensePage" => Ok(Field::AcquireLicensePage),
-						#[cfg(any(
-							any(
-								feature = "additional-property-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"additionalProperty" => Ok(Field::AdditionalProperty),
-						#[cfg(any(
-							any(
-								feature = "additional-type-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"additionalType" => Ok(Field::AdditionalType),
-						#[cfg(any(
-							any(
-								feature = "aggregate-rating-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"aggregateRating" => Ok(Field::AggregateRating),
-						#[cfg(any(
-							any(
-								feature = "alternate-name-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"alternateName" => Ok(Field::AlternateName),
-						#[cfg(any(
-							any(
-								feature = "alternative-headline-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"alternativeHeadline" => Ok(Field::AlternativeHeadline),
-						#[cfg(any(
-							any(
-								feature = "archived-at-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						"archivedAt" => Ok(Field::ArchivedAt),
-						#[cfg(any(
-							any(
-								feature = "asin-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						"asin" => Ok(Field::Asin),
-						#[cfg(any(
-							any(
-								feature = "assesses-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						"assesses" => Ok(Field::Assesses),
-						#[cfg(any(
-							any(
-								feature = "associated-media-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"associatedMedia" => Ok(Field::AssociatedMedia),
-						#[cfg(any(
-							any(
-								feature = "audience-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"audience" => Ok(Field::Audience),
-						#[cfg(any(
-							any(
-								feature = "audio-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"audio" => Ok(Field::Audio),
-						#[cfg(any(
-							any(
-								feature = "author-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"author" => Ok(Field::Author),
-						#[cfg(any(
-							any(
-								feature = "award-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"award" => Ok(Field::Award),
-						#[cfg(any(
-							any(
-								feature = "awards-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"awards" => Ok(Field::Awards),
-						#[cfg(any(
-							any(
-								feature = "brand-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"brand" => Ok(Field::Brand),
-						#[cfg(any(
-							any(
-								feature = "category-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"category" => Ok(Field::Category),
-						#[cfg(any(
-							any(
-								feature = "character-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"character" => Ok(Field::Character),
-						#[cfg(any(
-							any(
-								feature = "citation-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"citation" => Ok(Field::Citation),
-						#[cfg(any(
-							any(
-								feature = "collection-size-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						"collectionSize" => Ok(Field::CollectionSize),
-						#[cfg(any(
-							any(
-								feature = "color-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"color" => Ok(Field::Color),
-						#[cfg(any(
-							any(
-								feature = "comment-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"comment" => Ok(Field::Comment),
-						#[cfg(any(
-							any(
-								feature = "comment-count-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"commentCount" => Ok(Field::CommentCount),
-						#[cfg(any(
-							any(
-								feature = "conditions-of-access-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						"conditionsOfAccess" => Ok(Field::ConditionsOfAccess),
-						#[cfg(any(
-							any(
-								feature = "content-location-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"contentLocation" => Ok(Field::ContentLocation),
-						#[cfg(any(
-							any(
-								feature = "content-rating-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"contentRating" => Ok(Field::ContentRating),
-						#[cfg(any(
-							any(
-								feature = "content-reference-time-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						"contentReferenceTime" => Ok(Field::ContentReferenceTime),
-						#[cfg(any(
-							any(
-								feature = "contributor-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"contributor" => Ok(Field::Contributor),
-						#[cfg(any(
-							any(
-								feature = "copyright-holder-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"copyrightHolder" => Ok(Field::CopyrightHolder),
-						#[cfg(any(
-							any(
-								feature = "copyright-notice-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						"copyrightNotice" => Ok(Field::CopyrightNotice),
-						#[cfg(any(
-							any(
-								feature = "copyright-year-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"copyrightYear" => Ok(Field::CopyrightYear),
-						#[cfg(any(
-							any(
-								feature = "correction-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						"correction" => Ok(Field::Correction),
-						#[cfg(any(
-							any(
-								feature = "country-of-assembly-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						"countryOfAssembly" => Ok(Field::CountryOfAssembly),
-						#[cfg(any(
-							any(
-								feature = "country-of-last-processing-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						"countryOfLastProcessing" => Ok(Field::CountryOfLastProcessing),
-						#[cfg(any(
-							any(
-								feature = "country-of-origin-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"countryOfOrigin" => Ok(Field::CountryOfOrigin),
-						#[cfg(any(
-							any(
-								feature = "creative-work-status-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						"creativeWorkStatus" => Ok(Field::CreativeWorkStatus),
-						#[cfg(any(
-							any(
-								feature = "creator-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"creator" => Ok(Field::Creator),
-						#[cfg(any(
-							any(
-								feature = "credit-text-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						"creditText" => Ok(Field::CreditText),
-						#[cfg(any(
-							any(
-								feature = "date-created-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"dateCreated" => Ok(Field::DateCreated),
-						#[cfg(any(
-							any(
-								feature = "date-modified-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"dateModified" => Ok(Field::DateModified),
-						#[cfg(any(
-							any(
-								feature = "date-published-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"datePublished" => Ok(Field::DatePublished),
-						#[cfg(any(
-							any(
-								feature = "depth-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"depth" => Ok(Field::Depth),
-						#[cfg(any(
-							any(
-								feature = "description-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"description" => Ok(Field::Description),
-						#[cfg(any(
-							any(
-								feature = "disambiguating-description-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
-						#[cfg(any(
-							any(
-								feature = "discussion-url-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"discussionUrl" => Ok(Field::DiscussionUrl),
-						#[cfg(any(
-							any(
-								feature = "edit-eidr-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						"editEIDR" => Ok(Field::EditEidr),
-						#[cfg(any(
-							any(
-								feature = "editor-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"editor" => Ok(Field::Editor),
-						#[cfg(any(
-							any(
-								feature = "educational-alignment-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"educationalAlignment" => Ok(Field::EducationalAlignment),
-						#[cfg(any(
-							any(
-								feature = "educational-level-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						"educationalLevel" => Ok(Field::EducationalLevel),
-						#[cfg(any(
-							any(
-								feature = "educational-use-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"educationalUse" => Ok(Field::EducationalUse),
-						#[cfg(any(
-							any(
-								feature = "encoding-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"encoding" => Ok(Field::Encoding),
-						#[cfg(any(
-							any(
-								feature = "encoding-format-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"encodingFormat" => Ok(Field::EncodingFormat),
-						#[cfg(any(
-							any(
-								feature = "encodings-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"encodings" => Ok(Field::Encodings),
-						#[cfg(any(
-							any(
-								feature = "example-of-work-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"exampleOfWork" => Ok(Field::ExampleOfWork),
-						#[cfg(any(
-							any(
-								feature = "expires-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"expires" => Ok(Field::Expires),
-						#[cfg(any(
-							any(
-								feature = "file-format-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"fileFormat" => Ok(Field::FileFormat),
-						#[cfg(any(
-							any(
-								feature = "funder-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"funder" => Ok(Field::Funder),
-						#[cfg(any(
-							any(
-								feature = "funding-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						"funding" => Ok(Field::Funding),
-						#[cfg(any(
-							any(
-								feature = "genre-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"genre" => Ok(Field::Genre),
-						#[cfg(any(
-							any(
-								feature = "gtin-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						"gtin" => Ok(Field::Gtin),
-						#[cfg(any(
-							any(
-								feature = "gtin-12-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"gtin12" => Ok(Field::Gtin12),
-						#[cfg(any(
-							any(
-								feature = "gtin-13-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"gtin13" => Ok(Field::Gtin13),
-						#[cfg(any(
-							any(
-								feature = "gtin-14-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"gtin14" => Ok(Field::Gtin14),
-						#[cfg(any(
-							any(
-								feature = "gtin-8-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"gtin8" => Ok(Field::Gtin8),
-						#[cfg(any(
-							any(
-								feature = "has-adult-consideration-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						"hasAdultConsideration" => Ok(Field::HasAdultConsideration),
-						#[cfg(any(
-							any(
-								feature = "has-energy-consumption-details-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						"hasEnergyConsumptionDetails" => Ok(Field::HasEnergyConsumptionDetails),
-						#[cfg(any(
-							any(
-								feature = "has-measurement-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						"hasMeasurement" => Ok(Field::HasMeasurement),
-						#[cfg(any(
-							any(
-								feature = "has-merchant-return-policy-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						"hasMerchantReturnPolicy" => Ok(Field::HasMerchantReturnPolicy),
-						#[cfg(any(
-							any(
-								feature = "has-part-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"hasPart" => Ok(Field::HasPart),
-						#[cfg(any(
-							any(
-								feature = "has-product-return-policy-property-schema",
-								feature = "attic-schema-section"
-							),
-							doc
-						))]
 						"hasProductReturnPolicy" => Ok(Field::HasProductReturnPolicy),
-						#[cfg(any(
-							any(
-								feature = "headline-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"headline" => Ok(Field::Headline),
-						#[cfg(any(
-							any(
-								feature = "height-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"height" => Ok(Field::Height),
-						#[cfg(any(
-							any(
-								feature = "identifier-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"identifier" => Ok(Field::Identifier),
-						#[cfg(any(
-							any(
-								feature = "image-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"image" => Ok(Field::Image),
-						#[cfg(any(
-							any(
-								feature = "in-language-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"inLanguage" => Ok(Field::InLanguage),
-						#[cfg(any(
-							any(
-								feature = "in-product-group-with-id-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						"inProductGroupWithID" => Ok(Field::InProductGroupWithId),
-						#[cfg(any(
-							any(
-								feature = "includes-object-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"includesObject" => Ok(Field::IncludesObject),
-						#[cfg(any(
-							any(
-								feature = "interaction-statistic-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"interactionStatistic" => Ok(Field::InteractionStatistic),
-						#[cfg(any(
-							any(
-								feature = "interactivity-type-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"interactivityType" => Ok(Field::InteractivityType),
-						#[cfg(any(
-							any(
-								feature = "interpreted-as-claim-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						"interpretedAsClaim" => Ok(Field::InterpretedAsClaim),
-						#[cfg(any(
-							any(
-								feature = "is-accessible-for-free-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"isAccessibleForFree" => Ok(Field::IsAccessibleForFree),
-						#[cfg(any(
-							any(
-								feature = "is-accessory-or-spare-part-for-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"isAccessoryOrSparePartFor" => Ok(Field::IsAccessoryOrSparePartFor),
-						#[cfg(any(
-							any(
-								feature = "is-based-on-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"isBasedOn" => Ok(Field::IsBasedOn),
-						#[cfg(any(
-							any(
-								feature = "is-based-on-url-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"isBasedOnUrl" => Ok(Field::IsBasedOnUrl),
-						#[cfg(any(
-							any(
-								feature = "is-consumable-for-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"isConsumableFor" => Ok(Field::IsConsumableFor),
-						#[cfg(any(
-							any(
-								feature = "is-family-friendly-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"isFamilyFriendly" => Ok(Field::IsFamilyFriendly),
-						#[cfg(any(
-							any(
-								feature = "is-part-of-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"isPartOf" => Ok(Field::IsPartOf),
-						#[cfg(any(
-							any(
-								feature = "is-related-to-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"isRelatedTo" => Ok(Field::IsRelatedTo),
-						#[cfg(any(
-							any(
-								feature = "is-similar-to-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"isSimilarTo" => Ok(Field::IsSimilarTo),
-						#[cfg(any(
-							any(
-								feature = "is-variant-of-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"isVariantOf" => Ok(Field::IsVariantOf),
-						#[cfg(any(
-							any(
-								feature = "item-condition-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"itemCondition" => Ok(Field::ItemCondition),
-						#[cfg(any(
-							any(
-								feature = "keywords-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"keywords" => Ok(Field::Keywords),
-						#[cfg(any(
-							any(
-								feature = "learning-resource-type-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"learningResourceType" => Ok(Field::LearningResourceType),
-						#[cfg(any(
-							any(
-								feature = "license-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"license" => Ok(Field::License),
-						#[cfg(any(
-							any(
-								feature = "location-created-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"locationCreated" => Ok(Field::LocationCreated),
-						#[cfg(any(
-							any(
-								feature = "logo-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"logo" => Ok(Field::Logo),
-						#[cfg(any(
-							any(
-								feature = "main-entity-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"mainEntity" => Ok(Field::MainEntity),
-						#[cfg(any(
-							any(
-								feature = "main-entity-of-page-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
-						#[cfg(any(
-							any(
-								feature = "maintainer-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						"maintainer" => Ok(Field::Maintainer),
-						#[cfg(any(
-							any(
-								feature = "manufacturer-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"manufacturer" => Ok(Field::Manufacturer),
-						#[cfg(any(
-							any(
-								feature = "material-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"material" => Ok(Field::Material),
-						#[cfg(any(
-							any(
-								feature = "material-extent-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						"materialExtent" => Ok(Field::MaterialExtent),
-						#[cfg(any(
-							any(
-								feature = "mentions-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"mentions" => Ok(Field::Mentions),
-						#[cfg(any(
-							any(
-								feature = "mobile-url-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						"mobileUrl" => Ok(Field::MobileUrl),
-						#[cfg(any(
-							any(
-								feature = "model-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"model" => Ok(Field::Model),
-						#[cfg(any(
-							any(
-								feature = "mpn-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"mpn" => Ok(Field::Mpn),
-						#[cfg(any(
-							any(
-								feature = "name-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"name" => Ok(Field::Name),
-						#[cfg(any(
-							any(
-								feature = "negative-notes-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						"negativeNotes" => Ok(Field::NegativeNotes),
-						#[cfg(any(
-							any(
-								feature = "nsn-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						"nsn" => Ok(Field::Nsn),
-						#[cfg(any(
-							any(
-								feature = "offers-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"offers" => Ok(Field::Offers),
-						#[cfg(any(
-							any(
-								feature = "pattern-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						"pattern" => Ok(Field::Pattern),
-						#[cfg(any(
-							any(
-								feature = "position-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"position" => Ok(Field::Position),
-						#[cfg(any(
-							any(
-								feature = "positive-notes-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						"positiveNotes" => Ok(Field::PositiveNotes),
-						#[cfg(any(
-							any(
-								feature = "potential-action-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"potentialAction" => Ok(Field::PotentialAction),
-						#[cfg(any(
-							any(
-								feature = "producer-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"producer" => Ok(Field::Producer),
-						#[cfg(any(
-							any(
-								feature = "product-id-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"productID" => Ok(Field::ProductId),
-						#[cfg(any(
-							any(
-								feature = "production-date-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"productionDate" => Ok(Field::ProductionDate),
-						#[cfg(any(
-							any(
-								feature = "provider-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						"provider" => Ok(Field::Provider),
-						#[cfg(any(
-							any(
-								feature = "publication-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"publication" => Ok(Field::Publication),
-						#[cfg(any(
-							any(
-								feature = "publisher-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"publisher" => Ok(Field::Publisher),
-						#[cfg(any(
-							any(
-								feature = "publisher-imprint-property-schema",
-								feature = "bib-schema-section"
-							),
-							doc
-						))]
 						"publisherImprint" => Ok(Field::PublisherImprint),
-						#[cfg(any(
-							any(
-								feature = "publishing-principles-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"publishingPrinciples" => Ok(Field::PublishingPrinciples),
-						#[cfg(any(
-							any(
-								feature = "purchase-date-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"purchaseDate" => Ok(Field::PurchaseDate),
-						#[cfg(any(
-							any(
-								feature = "recorded-at-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"recordedAt" => Ok(Field::RecordedAt),
-						#[cfg(any(
-							any(
-								feature = "release-date-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"releaseDate" => Ok(Field::ReleaseDate),
-						#[cfg(any(
-							any(
-								feature = "released-event-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"releasedEvent" => Ok(Field::ReleasedEvent),
-						#[cfg(any(
-							any(
-								feature = "review-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"review" => Ok(Field::Review),
-						#[cfg(any(
-							any(
-								feature = "reviews-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"reviews" => Ok(Field::Reviews),
-						#[cfg(any(
-							any(
-								feature = "same-as-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"sameAs" => Ok(Field::SameAs),
-						#[cfg(any(
-							any(
-								feature = "schema-version-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"schemaVersion" => Ok(Field::SchemaVersion),
-						#[cfg(any(
-							any(
-								feature = "sd-date-published-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						"sdDatePublished" => Ok(Field::SdDatePublished),
-						#[cfg(any(
-							any(
-								feature = "sd-license-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						"sdLicense" => Ok(Field::SdLicense),
-						#[cfg(any(
-							any(
-								feature = "sd-publisher-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						"sdPublisher" => Ok(Field::SdPublisher),
-						#[cfg(any(
-							any(
-								feature = "size-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						"size" => Ok(Field::Size),
-						#[cfg(any(
-							any(
-								feature = "sku-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"sku" => Ok(Field::Sku),
-						#[cfg(any(
-							any(
-								feature = "slogan-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"slogan" => Ok(Field::Slogan),
-						#[cfg(any(
-							any(
-								feature = "source-organization-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"sourceOrganization" => Ok(Field::SourceOrganization),
-						#[cfg(any(
-							any(
-								feature = "spatial-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"spatial" => Ok(Field::Spatial),
-						#[cfg(any(
-							any(
-								feature = "spatial-coverage-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"spatialCoverage" => Ok(Field::SpatialCoverage),
-						#[cfg(any(
-							any(
-								feature = "sponsor-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"sponsor" => Ok(Field::Sponsor),
-						#[cfg(any(
-							any(
-								feature = "subject-of-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"subjectOf" => Ok(Field::SubjectOf),
-						#[cfg(any(
-							any(
-								feature = "teaches-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						"teaches" => Ok(Field::Teaches),
-						#[cfg(any(
-							any(
-								feature = "temporal-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"temporal" => Ok(Field::Temporal),
-						#[cfg(any(
-							any(
-								feature = "temporal-coverage-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"temporalCoverage" => Ok(Field::TemporalCoverage),
-						#[cfg(any(
-							any(
-								feature = "text-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"text" => Ok(Field::Text),
-						#[cfg(any(
-							any(
-								feature = "thumbnail-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"thumbnail" => Ok(Field::Thumbnail),
-						#[cfg(any(
-							any(
-								feature = "thumbnail-url-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"thumbnailUrl" => Ok(Field::ThumbnailUrl),
-						#[cfg(any(
-							any(
-								feature = "time-required-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"timeRequired" => Ok(Field::TimeRequired),
-						#[cfg(any(
-							any(
-								feature = "translation-of-work-property-schema",
-								feature = "bib-schema-section"
-							),
-							doc
-						))]
 						"translationOfWork" => Ok(Field::TranslationOfWork),
-						#[cfg(any(
-							any(
-								feature = "translator-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"translator" => Ok(Field::Translator),
-						#[cfg(any(
-							any(
-								feature = "typical-age-range-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"typicalAgeRange" => Ok(Field::TypicalAgeRange),
-						#[cfg(any(
-							any(
-								feature = "url-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"url" => Ok(Field::Url),
-						#[cfg(any(
-							any(
-								feature = "usage-info-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						"usageInfo" => Ok(Field::UsageInfo),
-						#[cfg(any(
-							any(
-								feature = "version-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"version" => Ok(Field::Version),
-						#[cfg(any(
-							any(
-								feature = "video-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"video" => Ok(Field::Video),
-						#[cfg(any(
-							any(
-								feature = "weight-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"weight" => Ok(Field::Weight),
-						#[cfg(any(
-							any(
-								feature = "width-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"width" => Ok(Field::Width),
-						#[cfg(any(
-							any(
-								feature = "work-example-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"workExample" => Ok(Field::WorkExample),
-						#[cfg(any(
-							any(
-								feature = "work-translation-property-schema",
-								feature = "bib-schema-section"
-							),
-							doc
-						))]
 						"workTranslation" => Ok(Field::WorkTranslation),
 						_ => Ok(Field::Ignore),
 					}
@@ -9915,1357 +3772,174 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
-						#[cfg(any(
-							any(
-								feature = "about-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"about" => Ok(Field::About),
-						#[cfg(any(
-							any(
-								feature = "abstract-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						b"abstract" => Ok(Field::Abstract),
-						#[cfg(any(
-							any(
-								feature = "access-mode-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"accessMode" => Ok(Field::AccessMode),
-						#[cfg(any(
-							any(
-								feature = "access-mode-sufficient-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"accessModeSufficient" => Ok(Field::AccessModeSufficient),
-						#[cfg(any(
-							any(
-								feature = "accessibility-api-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"accessibilityAPI" => Ok(Field::AccessibilityApi),
-						#[cfg(any(
-							any(
-								feature = "accessibility-control-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"accessibilityControl" => Ok(Field::AccessibilityControl),
-						#[cfg(any(
-							any(
-								feature = "accessibility-feature-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"accessibilityFeature" => Ok(Field::AccessibilityFeature),
-						#[cfg(any(
-							any(
-								feature = "accessibility-hazard-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"accessibilityHazard" => Ok(Field::AccessibilityHazard),
-						#[cfg(any(
-							any(
-								feature = "accessibility-summary-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"accessibilitySummary" => Ok(Field::AccessibilitySummary),
-						#[cfg(any(
-							any(
-								feature = "accountable-person-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"accountablePerson" => Ok(Field::AccountablePerson),
-						#[cfg(any(
-							any(
-								feature = "acquire-license-page-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						b"acquireLicensePage" => Ok(Field::AcquireLicensePage),
-						#[cfg(any(
-							any(
-								feature = "additional-property-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"additionalProperty" => Ok(Field::AdditionalProperty),
-						#[cfg(any(
-							any(
-								feature = "additional-type-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"additionalType" => Ok(Field::AdditionalType),
-						#[cfg(any(
-							any(
-								feature = "aggregate-rating-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"aggregateRating" => Ok(Field::AggregateRating),
-						#[cfg(any(
-							any(
-								feature = "alternate-name-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"alternateName" => Ok(Field::AlternateName),
-						#[cfg(any(
-							any(
-								feature = "alternative-headline-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"alternativeHeadline" => Ok(Field::AlternativeHeadline),
-						#[cfg(any(
-							any(
-								feature = "archived-at-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						b"archivedAt" => Ok(Field::ArchivedAt),
-						#[cfg(any(
-							any(
-								feature = "asin-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						b"asin" => Ok(Field::Asin),
-						#[cfg(any(
-							any(
-								feature = "assesses-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						b"assesses" => Ok(Field::Assesses),
-						#[cfg(any(
-							any(
-								feature = "associated-media-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"associatedMedia" => Ok(Field::AssociatedMedia),
-						#[cfg(any(
-							any(
-								feature = "audience-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"audience" => Ok(Field::Audience),
-						#[cfg(any(
-							any(
-								feature = "audio-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"audio" => Ok(Field::Audio),
-						#[cfg(any(
-							any(
-								feature = "author-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"author" => Ok(Field::Author),
-						#[cfg(any(
-							any(
-								feature = "award-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"award" => Ok(Field::Award),
-						#[cfg(any(
-							any(
-								feature = "awards-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"awards" => Ok(Field::Awards),
-						#[cfg(any(
-							any(
-								feature = "brand-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"brand" => Ok(Field::Brand),
-						#[cfg(any(
-							any(
-								feature = "category-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"category" => Ok(Field::Category),
-						#[cfg(any(
-							any(
-								feature = "character-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"character" => Ok(Field::Character),
-						#[cfg(any(
-							any(
-								feature = "citation-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"citation" => Ok(Field::Citation),
-						#[cfg(any(
-							any(
-								feature = "collection-size-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						b"collectionSize" => Ok(Field::CollectionSize),
-						#[cfg(any(
-							any(
-								feature = "color-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"color" => Ok(Field::Color),
-						#[cfg(any(
-							any(
-								feature = "comment-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"comment" => Ok(Field::Comment),
-						#[cfg(any(
-							any(
-								feature = "comment-count-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"commentCount" => Ok(Field::CommentCount),
-						#[cfg(any(
-							any(
-								feature = "conditions-of-access-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						b"conditionsOfAccess" => Ok(Field::ConditionsOfAccess),
-						#[cfg(any(
-							any(
-								feature = "content-location-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"contentLocation" => Ok(Field::ContentLocation),
-						#[cfg(any(
-							any(
-								feature = "content-rating-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"contentRating" => Ok(Field::ContentRating),
-						#[cfg(any(
-							any(
-								feature = "content-reference-time-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						b"contentReferenceTime" => Ok(Field::ContentReferenceTime),
-						#[cfg(any(
-							any(
-								feature = "contributor-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"contributor" => Ok(Field::Contributor),
-						#[cfg(any(
-							any(
-								feature = "copyright-holder-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"copyrightHolder" => Ok(Field::CopyrightHolder),
-						#[cfg(any(
-							any(
-								feature = "copyright-notice-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						b"copyrightNotice" => Ok(Field::CopyrightNotice),
-						#[cfg(any(
-							any(
-								feature = "copyright-year-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"copyrightYear" => Ok(Field::CopyrightYear),
-						#[cfg(any(
-							any(
-								feature = "correction-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						b"correction" => Ok(Field::Correction),
-						#[cfg(any(
-							any(
-								feature = "country-of-assembly-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						b"countryOfAssembly" => Ok(Field::CountryOfAssembly),
-						#[cfg(any(
-							any(
-								feature = "country-of-last-processing-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						b"countryOfLastProcessing" => Ok(Field::CountryOfLastProcessing),
-						#[cfg(any(
-							any(
-								feature = "country-of-origin-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"countryOfOrigin" => Ok(Field::CountryOfOrigin),
-						#[cfg(any(
-							any(
-								feature = "creative-work-status-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						b"creativeWorkStatus" => Ok(Field::CreativeWorkStatus),
-						#[cfg(any(
-							any(
-								feature = "creator-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"creator" => Ok(Field::Creator),
-						#[cfg(any(
-							any(
-								feature = "credit-text-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						b"creditText" => Ok(Field::CreditText),
-						#[cfg(any(
-							any(
-								feature = "date-created-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"dateCreated" => Ok(Field::DateCreated),
-						#[cfg(any(
-							any(
-								feature = "date-modified-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"dateModified" => Ok(Field::DateModified),
-						#[cfg(any(
-							any(
-								feature = "date-published-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"datePublished" => Ok(Field::DatePublished),
-						#[cfg(any(
-							any(
-								feature = "depth-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"depth" => Ok(Field::Depth),
-						#[cfg(any(
-							any(
-								feature = "description-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"description" => Ok(Field::Description),
-						#[cfg(any(
-							any(
-								feature = "disambiguating-description-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
-						#[cfg(any(
-							any(
-								feature = "discussion-url-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"discussionUrl" => Ok(Field::DiscussionUrl),
-						#[cfg(any(
-							any(
-								feature = "edit-eidr-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						b"editEIDR" => Ok(Field::EditEidr),
-						#[cfg(any(
-							any(
-								feature = "editor-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"editor" => Ok(Field::Editor),
-						#[cfg(any(
-							any(
-								feature = "educational-alignment-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"educationalAlignment" => Ok(Field::EducationalAlignment),
-						#[cfg(any(
-							any(
-								feature = "educational-level-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						b"educationalLevel" => Ok(Field::EducationalLevel),
-						#[cfg(any(
-							any(
-								feature = "educational-use-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"educationalUse" => Ok(Field::EducationalUse),
-						#[cfg(any(
-							any(
-								feature = "encoding-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"encoding" => Ok(Field::Encoding),
-						#[cfg(any(
-							any(
-								feature = "encoding-format-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"encodingFormat" => Ok(Field::EncodingFormat),
-						#[cfg(any(
-							any(
-								feature = "encodings-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"encodings" => Ok(Field::Encodings),
-						#[cfg(any(
-							any(
-								feature = "example-of-work-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"exampleOfWork" => Ok(Field::ExampleOfWork),
-						#[cfg(any(
-							any(
-								feature = "expires-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"expires" => Ok(Field::Expires),
-						#[cfg(any(
-							any(
-								feature = "file-format-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"fileFormat" => Ok(Field::FileFormat),
-						#[cfg(any(
-							any(
-								feature = "funder-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"funder" => Ok(Field::Funder),
-						#[cfg(any(
-							any(
-								feature = "funding-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						b"funding" => Ok(Field::Funding),
-						#[cfg(any(
-							any(
-								feature = "genre-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"genre" => Ok(Field::Genre),
-						#[cfg(any(
-							any(
-								feature = "gtin-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						b"gtin" => Ok(Field::Gtin),
-						#[cfg(any(
-							any(
-								feature = "gtin-12-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"gtin12" => Ok(Field::Gtin12),
-						#[cfg(any(
-							any(
-								feature = "gtin-13-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"gtin13" => Ok(Field::Gtin13),
-						#[cfg(any(
-							any(
-								feature = "gtin-14-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"gtin14" => Ok(Field::Gtin14),
-						#[cfg(any(
-							any(
-								feature = "gtin-8-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"gtin8" => Ok(Field::Gtin8),
-						#[cfg(any(
-							any(
-								feature = "has-adult-consideration-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						b"hasAdultConsideration" => Ok(Field::HasAdultConsideration),
-						#[cfg(any(
-							any(
-								feature = "has-energy-consumption-details-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						b"hasEnergyConsumptionDetails" => Ok(Field::HasEnergyConsumptionDetails),
-						#[cfg(any(
-							any(
-								feature = "has-measurement-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						b"hasMeasurement" => Ok(Field::HasMeasurement),
-						#[cfg(any(
-							any(
-								feature = "has-merchant-return-policy-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						b"hasMerchantReturnPolicy" => Ok(Field::HasMerchantReturnPolicy),
-						#[cfg(any(
-							any(
-								feature = "has-part-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"hasPart" => Ok(Field::HasPart),
-						#[cfg(any(
-							any(
-								feature = "has-product-return-policy-property-schema",
-								feature = "attic-schema-section"
-							),
-							doc
-						))]
 						b"hasProductReturnPolicy" => Ok(Field::HasProductReturnPolicy),
-						#[cfg(any(
-							any(
-								feature = "headline-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"headline" => Ok(Field::Headline),
-						#[cfg(any(
-							any(
-								feature = "height-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"height" => Ok(Field::Height),
-						#[cfg(any(
-							any(
-								feature = "identifier-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"identifier" => Ok(Field::Identifier),
-						#[cfg(any(
-							any(
-								feature = "image-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"image" => Ok(Field::Image),
-						#[cfg(any(
-							any(
-								feature = "in-language-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"inLanguage" => Ok(Field::InLanguage),
-						#[cfg(any(
-							any(
-								feature = "in-product-group-with-id-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						b"inProductGroupWithID" => Ok(Field::InProductGroupWithId),
-						#[cfg(any(
-							any(
-								feature = "includes-object-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"includesObject" => Ok(Field::IncludesObject),
-						#[cfg(any(
-							any(
-								feature = "interaction-statistic-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"interactionStatistic" => Ok(Field::InteractionStatistic),
-						#[cfg(any(
-							any(
-								feature = "interactivity-type-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"interactivityType" => Ok(Field::InteractivityType),
-						#[cfg(any(
-							any(
-								feature = "interpreted-as-claim-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						b"interpretedAsClaim" => Ok(Field::InterpretedAsClaim),
-						#[cfg(any(
-							any(
-								feature = "is-accessible-for-free-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"isAccessibleForFree" => Ok(Field::IsAccessibleForFree),
-						#[cfg(any(
-							any(
-								feature = "is-accessory-or-spare-part-for-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"isAccessoryOrSparePartFor" => Ok(Field::IsAccessoryOrSparePartFor),
-						#[cfg(any(
-							any(
-								feature = "is-based-on-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"isBasedOn" => Ok(Field::IsBasedOn),
-						#[cfg(any(
-							any(
-								feature = "is-based-on-url-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"isBasedOnUrl" => Ok(Field::IsBasedOnUrl),
-						#[cfg(any(
-							any(
-								feature = "is-consumable-for-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"isConsumableFor" => Ok(Field::IsConsumableFor),
-						#[cfg(any(
-							any(
-								feature = "is-family-friendly-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"isFamilyFriendly" => Ok(Field::IsFamilyFriendly),
-						#[cfg(any(
-							any(
-								feature = "is-part-of-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"isPartOf" => Ok(Field::IsPartOf),
-						#[cfg(any(
-							any(
-								feature = "is-related-to-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"isRelatedTo" => Ok(Field::IsRelatedTo),
-						#[cfg(any(
-							any(
-								feature = "is-similar-to-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"isSimilarTo" => Ok(Field::IsSimilarTo),
-						#[cfg(any(
-							any(
-								feature = "is-variant-of-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"isVariantOf" => Ok(Field::IsVariantOf),
-						#[cfg(any(
-							any(
-								feature = "item-condition-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"itemCondition" => Ok(Field::ItemCondition),
-						#[cfg(any(
-							any(
-								feature = "keywords-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"keywords" => Ok(Field::Keywords),
-						#[cfg(any(
-							any(
-								feature = "learning-resource-type-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"learningResourceType" => Ok(Field::LearningResourceType),
-						#[cfg(any(
-							any(
-								feature = "license-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"license" => Ok(Field::License),
-						#[cfg(any(
-							any(
-								feature = "location-created-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"locationCreated" => Ok(Field::LocationCreated),
-						#[cfg(any(
-							any(
-								feature = "logo-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"logo" => Ok(Field::Logo),
-						#[cfg(any(
-							any(
-								feature = "main-entity-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"mainEntity" => Ok(Field::MainEntity),
-						#[cfg(any(
-							any(
-								feature = "main-entity-of-page-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
-						#[cfg(any(
-							any(
-								feature = "maintainer-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						b"maintainer" => Ok(Field::Maintainer),
-						#[cfg(any(
-							any(
-								feature = "manufacturer-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"manufacturer" => Ok(Field::Manufacturer),
-						#[cfg(any(
-							any(
-								feature = "material-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"material" => Ok(Field::Material),
-						#[cfg(any(
-							any(
-								feature = "material-extent-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						b"materialExtent" => Ok(Field::MaterialExtent),
-						#[cfg(any(
-							any(
-								feature = "mentions-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"mentions" => Ok(Field::Mentions),
-						#[cfg(any(
-							any(
-								feature = "mobile-url-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						b"mobileUrl" => Ok(Field::MobileUrl),
-						#[cfg(any(
-							any(
-								feature = "model-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"model" => Ok(Field::Model),
-						#[cfg(any(
-							any(
-								feature = "mpn-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"mpn" => Ok(Field::Mpn),
-						#[cfg(any(
-							any(
-								feature = "name-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"name" => Ok(Field::Name),
-						#[cfg(any(
-							any(
-								feature = "negative-notes-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						b"negativeNotes" => Ok(Field::NegativeNotes),
-						#[cfg(any(
-							any(
-								feature = "nsn-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						b"nsn" => Ok(Field::Nsn),
-						#[cfg(any(
-							any(
-								feature = "offers-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"offers" => Ok(Field::Offers),
-						#[cfg(any(
-							any(
-								feature = "pattern-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						b"pattern" => Ok(Field::Pattern),
-						#[cfg(any(
-							any(
-								feature = "position-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"position" => Ok(Field::Position),
-						#[cfg(any(
-							any(
-								feature = "positive-notes-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						b"positiveNotes" => Ok(Field::PositiveNotes),
-						#[cfg(any(
-							any(
-								feature = "potential-action-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"potentialAction" => Ok(Field::PotentialAction),
-						#[cfg(any(
-							any(
-								feature = "producer-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"producer" => Ok(Field::Producer),
-						#[cfg(any(
-							any(
-								feature = "product-id-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"productID" => Ok(Field::ProductId),
-						#[cfg(any(
-							any(
-								feature = "production-date-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"productionDate" => Ok(Field::ProductionDate),
-						#[cfg(any(
-							any(
-								feature = "provider-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						b"provider" => Ok(Field::Provider),
-						#[cfg(any(
-							any(
-								feature = "publication-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"publication" => Ok(Field::Publication),
-						#[cfg(any(
-							any(
-								feature = "publisher-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"publisher" => Ok(Field::Publisher),
-						#[cfg(any(
-							any(
-								feature = "publisher-imprint-property-schema",
-								feature = "bib-schema-section"
-							),
-							doc
-						))]
 						b"publisherImprint" => Ok(Field::PublisherImprint),
-						#[cfg(any(
-							any(
-								feature = "publishing-principles-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"publishingPrinciples" => Ok(Field::PublishingPrinciples),
-						#[cfg(any(
-							any(
-								feature = "purchase-date-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"purchaseDate" => Ok(Field::PurchaseDate),
-						#[cfg(any(
-							any(
-								feature = "recorded-at-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"recordedAt" => Ok(Field::RecordedAt),
-						#[cfg(any(
-							any(
-								feature = "release-date-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"releaseDate" => Ok(Field::ReleaseDate),
-						#[cfg(any(
-							any(
-								feature = "released-event-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"releasedEvent" => Ok(Field::ReleasedEvent),
-						#[cfg(any(
-							any(
-								feature = "review-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"review" => Ok(Field::Review),
-						#[cfg(any(
-							any(
-								feature = "reviews-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"reviews" => Ok(Field::Reviews),
-						#[cfg(any(
-							any(
-								feature = "same-as-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"sameAs" => Ok(Field::SameAs),
-						#[cfg(any(
-							any(
-								feature = "schema-version-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"schemaVersion" => Ok(Field::SchemaVersion),
-						#[cfg(any(
-							any(
-								feature = "sd-date-published-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						b"sdDatePublished" => Ok(Field::SdDatePublished),
-						#[cfg(any(
-							any(
-								feature = "sd-license-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						b"sdLicense" => Ok(Field::SdLicense),
-						#[cfg(any(
-							any(
-								feature = "sd-publisher-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						b"sdPublisher" => Ok(Field::SdPublisher),
-						#[cfg(any(
-							any(
-								feature = "size-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						b"size" => Ok(Field::Size),
-						#[cfg(any(
-							any(
-								feature = "sku-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"sku" => Ok(Field::Sku),
-						#[cfg(any(
-							any(
-								feature = "slogan-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"slogan" => Ok(Field::Slogan),
-						#[cfg(any(
-							any(
-								feature = "source-organization-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"sourceOrganization" => Ok(Field::SourceOrganization),
-						#[cfg(any(
-							any(
-								feature = "spatial-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"spatial" => Ok(Field::Spatial),
-						#[cfg(any(
-							any(
-								feature = "spatial-coverage-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"spatialCoverage" => Ok(Field::SpatialCoverage),
-						#[cfg(any(
-							any(
-								feature = "sponsor-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"sponsor" => Ok(Field::Sponsor),
-						#[cfg(any(
-							any(
-								feature = "subject-of-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"subjectOf" => Ok(Field::SubjectOf),
-						#[cfg(any(
-							any(
-								feature = "teaches-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						b"teaches" => Ok(Field::Teaches),
-						#[cfg(any(
-							any(
-								feature = "temporal-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"temporal" => Ok(Field::Temporal),
-						#[cfg(any(
-							any(
-								feature = "temporal-coverage-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"temporalCoverage" => Ok(Field::TemporalCoverage),
-						#[cfg(any(
-							any(
-								feature = "text-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"text" => Ok(Field::Text),
-						#[cfg(any(
-							any(
-								feature = "thumbnail-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"thumbnail" => Ok(Field::Thumbnail),
-						#[cfg(any(
-							any(
-								feature = "thumbnail-url-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"thumbnailUrl" => Ok(Field::ThumbnailUrl),
-						#[cfg(any(
-							any(
-								feature = "time-required-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"timeRequired" => Ok(Field::TimeRequired),
-						#[cfg(any(
-							any(
-								feature = "translation-of-work-property-schema",
-								feature = "bib-schema-section"
-							),
-							doc
-						))]
 						b"translationOfWork" => Ok(Field::TranslationOfWork),
-						#[cfg(any(
-							any(
-								feature = "translator-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"translator" => Ok(Field::Translator),
-						#[cfg(any(
-							any(
-								feature = "typical-age-range-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"typicalAgeRange" => Ok(Field::TypicalAgeRange),
-						#[cfg(any(
-							any(
-								feature = "url-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"url" => Ok(Field::Url),
-						#[cfg(any(
-							any(
-								feature = "usage-info-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						b"usageInfo" => Ok(Field::UsageInfo),
-						#[cfg(any(
-							any(
-								feature = "version-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"version" => Ok(Field::Version),
-						#[cfg(any(
-							any(
-								feature = "video-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"video" => Ok(Field::Video),
-						#[cfg(any(
-							any(
-								feature = "weight-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"weight" => Ok(Field::Weight),
-						#[cfg(any(
-							any(
-								feature = "width-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"width" => Ok(Field::Width),
-						#[cfg(any(
-							any(
-								feature = "work-example-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"workExample" => Ok(Field::WorkExample),
-						#[cfg(any(
-							any(
-								feature = "work-translation-property-schema",
-								feature = "bib-schema-section"
-							),
-							doc
-						))]
 						b"workTranslation" => Ok(Field::WorkTranslation),
 						_ => Ok(Field::Ignore),
 					}
@@ -11289,1304 +3963,177 @@ mod serde {
 				where
 					A: de::MapAccess<'de>,
 				{
-					#[cfg(any(
-						any(feature = "about-property-schema", feature = "general-schema-section"),
-						doc
-					))]
 					let mut r#about_property = None;
-					#[cfg(any(
-						any(
-							feature = "abstract-property-schema",
-							feature = "pending-schema-section"
-						),
-						doc
-					))]
 					let mut r#abstract_property = None;
-					#[cfg(any(
-						any(
-							feature = "access-mode-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#access_mode_property = None;
-					#[cfg(any(
-						any(
-							feature = "access-mode-sufficient-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#access_mode_sufficient_property = None;
-					#[cfg(any(
-						any(
-							feature = "accessibility-api-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#accessibility_api_property = None;
-					#[cfg(any(
-						any(
-							feature = "accessibility-control-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#accessibility_control_property = None;
-					#[cfg(any(
-						any(
-							feature = "accessibility-feature-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#accessibility_feature_property = None;
-					#[cfg(any(
-						any(
-							feature = "accessibility-hazard-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#accessibility_hazard_property = None;
-					#[cfg(any(
-						any(
-							feature = "accessibility-summary-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#accessibility_summary_property = None;
-					#[cfg(any(
-						any(
-							feature = "accountable-person-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#accountable_person_property = None;
-					#[cfg(any(
-						any(
-							feature = "acquire-license-page-property-schema",
-							feature = "pending-schema-section"
-						),
-						doc
-					))]
 					let mut r#acquire_license_page_property = None;
-					#[cfg(any(
-						any(
-							feature = "additional-property-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#additional_property_property = None;
-					#[cfg(any(
-						any(
-							feature = "additional-type-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#additional_type_property = None;
-					#[cfg(any(
-						any(
-							feature = "aggregate-rating-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#aggregate_rating_property = None;
-					#[cfg(any(
-						any(
-							feature = "alternate-name-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#alternate_name_property = None;
-					#[cfg(any(
-						any(
-							feature = "alternative-headline-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#alternative_headline_property = None;
-					#[cfg(any(
-						any(
-							feature = "archived-at-property-schema",
-							feature = "pending-schema-section"
-						),
-						doc
-					))]
 					let mut r#archived_at_property = None;
-					#[cfg(any(
-						any(feature = "asin-property-schema", feature = "pending-schema-section"),
-						doc
-					))]
 					let mut r#asin_property = None;
-					#[cfg(any(
-						any(
-							feature = "assesses-property-schema",
-							feature = "pending-schema-section"
-						),
-						doc
-					))]
 					let mut r#assesses_property = None;
-					#[cfg(any(
-						any(
-							feature = "associated-media-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#associated_media_property = None;
-					#[cfg(any(
-						any(
-							feature = "audience-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#audience_property = None;
-					#[cfg(any(
-						any(feature = "audio-property-schema", feature = "general-schema-section"),
-						doc
-					))]
 					let mut r#audio_property = None;
-					#[cfg(any(
-						any(
-							feature = "author-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#author_property = None;
-					#[cfg(any(
-						any(feature = "award-property-schema", feature = "general-schema-section"),
-						doc
-					))]
 					let mut r#award_property = None;
-					#[cfg(any(
-						any(
-							feature = "awards-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#awards_property = None;
-					#[cfg(any(
-						any(feature = "brand-property-schema", feature = "general-schema-section"),
-						doc
-					))]
 					let mut r#brand_property = None;
-					#[cfg(any(
-						any(
-							feature = "category-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#category_property = None;
-					#[cfg(any(
-						any(
-							feature = "character-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#character_property = None;
-					#[cfg(any(
-						any(
-							feature = "citation-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#citation_property = None;
-					#[cfg(any(
-						any(
-							feature = "collection-size-property-schema",
-							feature = "pending-schema-section"
-						),
-						doc
-					))]
 					let mut r#collection_size_property = None;
-					#[cfg(any(
-						any(feature = "color-property-schema", feature = "general-schema-section"),
-						doc
-					))]
 					let mut r#color_property = None;
-					#[cfg(any(
-						any(
-							feature = "comment-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#comment_property = None;
-					#[cfg(any(
-						any(
-							feature = "comment-count-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#comment_count_property = None;
-					#[cfg(any(
-						any(
-							feature = "conditions-of-access-property-schema",
-							feature = "pending-schema-section"
-						),
-						doc
-					))]
 					let mut r#conditions_of_access_property = None;
-					#[cfg(any(
-						any(
-							feature = "content-location-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#content_location_property = None;
-					#[cfg(any(
-						any(
-							feature = "content-rating-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#content_rating_property = None;
-					#[cfg(any(
-						any(
-							feature = "content-reference-time-property-schema",
-							feature = "pending-schema-section"
-						),
-						doc
-					))]
 					let mut r#content_reference_time_property = None;
-					#[cfg(any(
-						any(
-							feature = "contributor-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#contributor_property = None;
-					#[cfg(any(
-						any(
-							feature = "copyright-holder-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#copyright_holder_property = None;
-					#[cfg(any(
-						any(
-							feature = "copyright-notice-property-schema",
-							feature = "pending-schema-section"
-						),
-						doc
-					))]
 					let mut r#copyright_notice_property = None;
-					#[cfg(any(
-						any(
-							feature = "copyright-year-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#copyright_year_property = None;
-					#[cfg(any(
-						any(
-							feature = "correction-property-schema",
-							feature = "pending-schema-section"
-						),
-						doc
-					))]
 					let mut r#correction_property = None;
-					#[cfg(any(
-						any(
-							feature = "country-of-assembly-property-schema",
-							feature = "pending-schema-section"
-						),
-						doc
-					))]
 					let mut r#country_of_assembly_property = None;
-					#[cfg(any(
-						any(
-							feature = "country-of-last-processing-property-schema",
-							feature = "pending-schema-section"
-						),
-						doc
-					))]
 					let mut r#country_of_last_processing_property = None;
-					#[cfg(any(
-						any(
-							feature = "country-of-origin-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#country_of_origin_property = None;
-					#[cfg(any(
-						any(
-							feature = "creative-work-status-property-schema",
-							feature = "pending-schema-section"
-						),
-						doc
-					))]
 					let mut r#creative_work_status_property = None;
-					#[cfg(any(
-						any(
-							feature = "creator-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#creator_property = None;
-					#[cfg(any(
-						any(
-							feature = "credit-text-property-schema",
-							feature = "pending-schema-section"
-						),
-						doc
-					))]
 					let mut r#credit_text_property = None;
-					#[cfg(any(
-						any(
-							feature = "date-created-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#date_created_property = None;
-					#[cfg(any(
-						any(
-							feature = "date-modified-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#date_modified_property = None;
-					#[cfg(any(
-						any(
-							feature = "date-published-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#date_published_property = None;
-					#[cfg(any(
-						any(feature = "depth-property-schema", feature = "general-schema-section"),
-						doc
-					))]
 					let mut r#depth_property = None;
-					#[cfg(any(
-						any(
-							feature = "description-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#description_property = None;
-					#[cfg(any(
-						any(
-							feature = "disambiguating-description-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#disambiguating_description_property = None;
-					#[cfg(any(
-						any(
-							feature = "discussion-url-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#discussion_url_property = None;
-					#[cfg(any(
-						any(
-							feature = "edit-eidr-property-schema",
-							feature = "pending-schema-section"
-						),
-						doc
-					))]
 					let mut r#edit_eidr_property = None;
-					#[cfg(any(
-						any(
-							feature = "editor-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#editor_property = None;
-					#[cfg(any(
-						any(
-							feature = "educational-alignment-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#educational_alignment_property = None;
-					#[cfg(any(
-						any(
-							feature = "educational-level-property-schema",
-							feature = "pending-schema-section"
-						),
-						doc
-					))]
 					let mut r#educational_level_property = None;
-					#[cfg(any(
-						any(
-							feature = "educational-use-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#educational_use_property = None;
-					#[cfg(any(
-						any(
-							feature = "encoding-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#encoding_property = None;
-					#[cfg(any(
-						any(
-							feature = "encoding-format-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#encoding_format_property = None;
-					#[cfg(any(
-						any(
-							feature = "encodings-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#encodings_property = None;
-					#[cfg(any(
-						any(
-							feature = "example-of-work-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#example_of_work_property = None;
-					#[cfg(any(
-						any(
-							feature = "expires-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#expires_property = None;
-					#[cfg(any(
-						any(
-							feature = "file-format-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#file_format_property = None;
-					#[cfg(any(
-						any(
-							feature = "funder-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#funder_property = None;
-					#[cfg(any(
-						any(
-							feature = "funding-property-schema",
-							feature = "pending-schema-section"
-						),
-						doc
-					))]
 					let mut r#funding_property = None;
-					#[cfg(any(
-						any(feature = "genre-property-schema", feature = "general-schema-section"),
-						doc
-					))]
 					let mut r#genre_property = None;
-					#[cfg(any(
-						any(feature = "gtin-property-schema", feature = "pending-schema-section"),
-						doc
-					))]
 					let mut r#gtin_property = None;
-					#[cfg(any(
-						any(
-							feature = "gtin-12-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#gtin_12_property = None;
-					#[cfg(any(
-						any(
-							feature = "gtin-13-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#gtin_13_property = None;
-					#[cfg(any(
-						any(
-							feature = "gtin-14-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#gtin_14_property = None;
-					#[cfg(any(
-						any(
-							feature = "gtin-8-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#gtin_8_property = None;
-					#[cfg(any(
-						any(
-							feature = "has-adult-consideration-property-schema",
-							feature = "pending-schema-section"
-						),
-						doc
-					))]
 					let mut r#has_adult_consideration_property = None;
-					#[cfg(any(
-						any(
-							feature = "has-energy-consumption-details-property-schema",
-							feature = "pending-schema-section"
-						),
-						doc
-					))]
 					let mut r#has_energy_consumption_details_property = None;
-					#[cfg(any(
-						any(
-							feature = "has-measurement-property-schema",
-							feature = "pending-schema-section"
-						),
-						doc
-					))]
 					let mut r#has_measurement_property = None;
-					#[cfg(any(
-						any(
-							feature = "has-merchant-return-policy-property-schema",
-							feature = "pending-schema-section"
-						),
-						doc
-					))]
 					let mut r#has_merchant_return_policy_property = None;
-					#[cfg(any(
-						any(
-							feature = "has-part-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#has_part_property = None;
-					#[cfg(any(
-						any(
-							feature = "has-product-return-policy-property-schema",
-							feature = "attic-schema-section"
-						),
-						doc
-					))]
 					let mut r#has_product_return_policy_property = None;
-					#[cfg(any(
-						any(
-							feature = "headline-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#headline_property = None;
-					#[cfg(any(
-						any(
-							feature = "height-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#height_property = None;
-					#[cfg(any(
-						any(
-							feature = "identifier-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#identifier_property = None;
-					#[cfg(any(
-						any(feature = "image-property-schema", feature = "general-schema-section"),
-						doc
-					))]
 					let mut r#image_property = None;
-					#[cfg(any(
-						any(
-							feature = "in-language-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#in_language_property = None;
-					#[cfg(any(
-						any(
-							feature = "in-product-group-with-id-property-schema",
-							feature = "pending-schema-section"
-						),
-						doc
-					))]
 					let mut r#in_product_group_with_id_property = None;
-					#[cfg(any(
-						any(
-							feature = "includes-object-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#includes_object_property = None;
-					#[cfg(any(
-						any(
-							feature = "interaction-statistic-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#interaction_statistic_property = None;
-					#[cfg(any(
-						any(
-							feature = "interactivity-type-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#interactivity_type_property = None;
-					#[cfg(any(
-						any(
-							feature = "interpreted-as-claim-property-schema",
-							feature = "pending-schema-section"
-						),
-						doc
-					))]
 					let mut r#interpreted_as_claim_property = None;
-					#[cfg(any(
-						any(
-							feature = "is-accessible-for-free-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#is_accessible_for_free_property = None;
-					#[cfg(any(
-						any(
-							feature = "is-accessory-or-spare-part-for-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#is_accessory_or_spare_part_for_property = None;
-					#[cfg(any(
-						any(
-							feature = "is-based-on-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#is_based_on_property = None;
-					#[cfg(any(
-						any(
-							feature = "is-based-on-url-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#is_based_on_url_property = None;
-					#[cfg(any(
-						any(
-							feature = "is-consumable-for-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#is_consumable_for_property = None;
-					#[cfg(any(
-						any(
-							feature = "is-family-friendly-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#is_family_friendly_property = None;
-					#[cfg(any(
-						any(
-							feature = "is-part-of-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#is_part_of_property = None;
-					#[cfg(any(
-						any(
-							feature = "is-related-to-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#is_related_to_property = None;
-					#[cfg(any(
-						any(
-							feature = "is-similar-to-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#is_similar_to_property = None;
-					#[cfg(any(
-						any(
-							feature = "is-variant-of-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#is_variant_of_property = None;
-					#[cfg(any(
-						any(
-							feature = "item-condition-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#item_condition_property = None;
-					#[cfg(any(
-						any(
-							feature = "keywords-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#keywords_property = None;
-					#[cfg(any(
-						any(
-							feature = "learning-resource-type-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#learning_resource_type_property = None;
-					#[cfg(any(
-						any(
-							feature = "license-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#license_property = None;
-					#[cfg(any(
-						any(
-							feature = "location-created-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#location_created_property = None;
-					#[cfg(any(
-						any(feature = "logo-property-schema", feature = "general-schema-section"),
-						doc
-					))]
 					let mut r#logo_property = None;
-					#[cfg(any(
-						any(
-							feature = "main-entity-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#main_entity_property = None;
-					#[cfg(any(
-						any(
-							feature = "main-entity-of-page-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#main_entity_of_page_property = None;
-					#[cfg(any(
-						any(
-							feature = "maintainer-property-schema",
-							feature = "pending-schema-section"
-						),
-						doc
-					))]
 					let mut r#maintainer_property = None;
-					#[cfg(any(
-						any(
-							feature = "manufacturer-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#manufacturer_property = None;
-					#[cfg(any(
-						any(
-							feature = "material-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#material_property = None;
-					#[cfg(any(
-						any(
-							feature = "material-extent-property-schema",
-							feature = "pending-schema-section"
-						),
-						doc
-					))]
 					let mut r#material_extent_property = None;
-					#[cfg(any(
-						any(
-							feature = "mentions-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#mentions_property = None;
-					#[cfg(any(
-						any(
-							feature = "mobile-url-property-schema",
-							feature = "pending-schema-section"
-						),
-						doc
-					))]
 					let mut r#mobile_url_property = None;
-					#[cfg(any(
-						any(feature = "model-property-schema", feature = "general-schema-section"),
-						doc
-					))]
 					let mut r#model_property = None;
-					#[cfg(any(
-						any(feature = "mpn-property-schema", feature = "general-schema-section"),
-						doc
-					))]
 					let mut r#mpn_property = None;
-					#[cfg(any(
-						any(feature = "name-property-schema", feature = "general-schema-section"),
-						doc
-					))]
 					let mut r#name_property = None;
-					#[cfg(any(
-						any(
-							feature = "negative-notes-property-schema",
-							feature = "pending-schema-section"
-						),
-						doc
-					))]
 					let mut r#negative_notes_property = None;
-					#[cfg(any(
-						any(feature = "nsn-property-schema", feature = "pending-schema-section"),
-						doc
-					))]
 					let mut r#nsn_property = None;
-					#[cfg(any(
-						any(
-							feature = "offers-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#offers_property = None;
-					#[cfg(any(
-						any(
-							feature = "pattern-property-schema",
-							feature = "pending-schema-section"
-						),
-						doc
-					))]
 					let mut r#pattern_property = None;
-					#[cfg(any(
-						any(
-							feature = "position-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#position_property = None;
-					#[cfg(any(
-						any(
-							feature = "positive-notes-property-schema",
-							feature = "pending-schema-section"
-						),
-						doc
-					))]
 					let mut r#positive_notes_property = None;
-					#[cfg(any(
-						any(
-							feature = "potential-action-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#potential_action_property = None;
-					#[cfg(any(
-						any(
-							feature = "producer-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#producer_property = None;
-					#[cfg(any(
-						any(
-							feature = "product-id-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#product_id_property = None;
-					#[cfg(any(
-						any(
-							feature = "production-date-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#production_date_property = None;
-					#[cfg(any(
-						any(
-							feature = "provider-property-schema",
-							feature = "pending-schema-section"
-						),
-						doc
-					))]
 					let mut r#provider_property = None;
-					#[cfg(any(
-						any(
-							feature = "publication-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#publication_property = None;
-					#[cfg(any(
-						any(
-							feature = "publisher-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#publisher_property = None;
-					#[cfg(any(
-						any(
-							feature = "publisher-imprint-property-schema",
-							feature = "bib-schema-section"
-						),
-						doc
-					))]
 					let mut r#publisher_imprint_property = None;
-					#[cfg(any(
-						any(
-							feature = "publishing-principles-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#publishing_principles_property = None;
-					#[cfg(any(
-						any(
-							feature = "purchase-date-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#purchase_date_property = None;
-					#[cfg(any(
-						any(
-							feature = "recorded-at-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#recorded_at_property = None;
-					#[cfg(any(
-						any(
-							feature = "release-date-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#release_date_property = None;
-					#[cfg(any(
-						any(
-							feature = "released-event-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#released_event_property = None;
-					#[cfg(any(
-						any(
-							feature = "review-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#review_property = None;
-					#[cfg(any(
-						any(
-							feature = "reviews-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#reviews_property = None;
-					#[cfg(any(
-						any(
-							feature = "same-as-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#same_as_property = None;
-					#[cfg(any(
-						any(
-							feature = "schema-version-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#schema_version_property = None;
-					#[cfg(any(
-						any(
-							feature = "sd-date-published-property-schema",
-							feature = "pending-schema-section"
-						),
-						doc
-					))]
 					let mut r#sd_date_published_property = None;
-					#[cfg(any(
-						any(
-							feature = "sd-license-property-schema",
-							feature = "pending-schema-section"
-						),
-						doc
-					))]
 					let mut r#sd_license_property = None;
-					#[cfg(any(
-						any(
-							feature = "sd-publisher-property-schema",
-							feature = "pending-schema-section"
-						),
-						doc
-					))]
 					let mut r#sd_publisher_property = None;
-					#[cfg(any(
-						any(feature = "size-property-schema", feature = "pending-schema-section"),
-						doc
-					))]
 					let mut r#size_property = None;
-					#[cfg(any(
-						any(feature = "sku-property-schema", feature = "general-schema-section"),
-						doc
-					))]
 					let mut r#sku_property = None;
-					#[cfg(any(
-						any(
-							feature = "slogan-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#slogan_property = None;
-					#[cfg(any(
-						any(
-							feature = "source-organization-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#source_organization_property = None;
-					#[cfg(any(
-						any(
-							feature = "spatial-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#spatial_property = None;
-					#[cfg(any(
-						any(
-							feature = "spatial-coverage-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#spatial_coverage_property = None;
-					#[cfg(any(
-						any(
-							feature = "sponsor-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#sponsor_property = None;
-					#[cfg(any(
-						any(
-							feature = "subject-of-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#subject_of_property = None;
-					#[cfg(any(
-						any(
-							feature = "teaches-property-schema",
-							feature = "pending-schema-section"
-						),
-						doc
-					))]
 					let mut r#teaches_property = None;
-					#[cfg(any(
-						any(
-							feature = "temporal-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#temporal_property = None;
-					#[cfg(any(
-						any(
-							feature = "temporal-coverage-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#temporal_coverage_property = None;
-					#[cfg(any(
-						any(feature = "text-property-schema", feature = "general-schema-section"),
-						doc
-					))]
 					let mut r#text_property = None;
-					#[cfg(any(
-						any(
-							feature = "thumbnail-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#thumbnail_property = None;
-					#[cfg(any(
-						any(
-							feature = "thumbnail-url-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#thumbnail_url_property = None;
-					#[cfg(any(
-						any(
-							feature = "time-required-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#time_required_property = None;
-					#[cfg(any(
-						any(
-							feature = "translation-of-work-property-schema",
-							feature = "bib-schema-section"
-						),
-						doc
-					))]
 					let mut r#translation_of_work_property = None;
-					#[cfg(any(
-						any(
-							feature = "translator-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#translator_property = None;
-					#[cfg(any(
-						any(
-							feature = "typical-age-range-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#typical_age_range_property = None;
-					#[cfg(any(
-						any(feature = "url-property-schema", feature = "general-schema-section"),
-						doc
-					))]
 					let mut r#url_property = None;
-					#[cfg(any(
-						any(
-							feature = "usage-info-property-schema",
-							feature = "pending-schema-section"
-						),
-						doc
-					))]
 					let mut r#usage_info_property = None;
-					#[cfg(any(
-						any(
-							feature = "version-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#version_property = None;
-					#[cfg(any(
-						any(feature = "video-property-schema", feature = "general-schema-section"),
-						doc
-					))]
 					let mut r#video_property = None;
-					#[cfg(any(
-						any(
-							feature = "weight-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#weight_property = None;
-					#[cfg(any(
-						any(feature = "width-property-schema", feature = "general-schema-section"),
-						doc
-					))]
 					let mut r#width_property = None;
-					#[cfg(any(
-						any(
-							feature = "work-example-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#work_example_property = None;
-					#[cfg(any(
-						any(
-							feature = "work-translation-property-schema",
-							feature = "bib-schema-section"
-						),
-						doc
-					))]
 					let mut r#work_translation_property = None;
 					while let Some(key) = map.next_key::<Field>()? {
 						match key {
-							#[cfg(any(
-								any(
-									feature = "about-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::About => {
 								if r#about_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("about"));
@@ -12611,13 +4158,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "abstract-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::Abstract => {
 								if r#abstract_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -12644,13 +4184,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "access-mode-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::AccessMode => {
 								if r#access_mode_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -12677,13 +4210,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "access-mode-sufficient-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::AccessModeSufficient => {
 								if r#access_mode_sufficient_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -12710,13 +4236,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "accessibility-api-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::AccessibilityApi => {
 								if r#accessibility_api_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -12743,13 +4262,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "accessibility-control-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::AccessibilityControl => {
 								if r#accessibility_control_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -12776,13 +4288,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "accessibility-feature-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::AccessibilityFeature => {
 								if r#accessibility_feature_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -12809,13 +4314,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "accessibility-hazard-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::AccessibilityHazard => {
 								if r#accessibility_hazard_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -12842,13 +4340,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "accessibility-summary-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::AccessibilitySummary => {
 								if r#accessibility_summary_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -12875,13 +4366,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "accountable-person-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::AccountablePerson => {
 								if r#accountable_person_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -12908,13 +4392,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "acquire-license-page-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::AcquireLicensePage => {
 								if r#acquire_license_page_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -12941,13 +4418,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "additional-property-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::AdditionalProperty => {
 								if r#additional_property_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -12974,13 +4444,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "additional-type-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::AdditionalType => {
 								if r#additional_type_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -13007,13 +4470,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "aggregate-rating-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::AggregateRating => {
 								if r#aggregate_rating_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -13040,13 +4496,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "alternate-name-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::AlternateName => {
 								if r#alternate_name_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -13073,13 +4522,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "alternative-headline-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::AlternativeHeadline => {
 								if r#alternative_headline_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -13106,13 +4548,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "archived-at-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::ArchivedAt => {
 								if r#archived_at_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -13139,13 +4574,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "asin-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::Asin => {
 								if r#asin_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("asin"));
@@ -13170,13 +4598,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "assesses-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::Assesses => {
 								if r#assesses_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -13203,13 +4624,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "associated-media-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::AssociatedMedia => {
 								if r#associated_media_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -13236,13 +4650,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "audience-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Audience => {
 								if r#audience_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -13269,13 +4676,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "audio-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Audio => {
 								if r#audio_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("audio"));
@@ -13300,13 +4700,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "author-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Author => {
 								if r#author_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("author"));
@@ -13331,13 +4724,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "award-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Award => {
 								if r#award_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("award"));
@@ -13362,13 +4748,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "awards-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Awards => {
 								if r#awards_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("awards"));
@@ -13393,13 +4772,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "brand-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Brand => {
 								if r#brand_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("brand"));
@@ -13424,13 +4796,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "category-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Category => {
 								if r#category_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -13457,13 +4822,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "character-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Character => {
 								if r#character_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -13490,13 +4848,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "citation-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Citation => {
 								if r#citation_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -13523,13 +4874,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "collection-size-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::CollectionSize => {
 								if r#collection_size_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -13556,13 +4900,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "color-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Color => {
 								if r#color_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("color"));
@@ -13587,13 +4924,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "comment-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Comment => {
 								if r#comment_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -13620,13 +4950,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "comment-count-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::CommentCount => {
 								if r#comment_count_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -13653,13 +4976,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "conditions-of-access-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::ConditionsOfAccess => {
 								if r#conditions_of_access_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -13686,13 +5002,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "content-location-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::ContentLocation => {
 								if r#content_location_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -13719,13 +5028,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "content-rating-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::ContentRating => {
 								if r#content_rating_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -13752,13 +5054,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "content-reference-time-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::ContentReferenceTime => {
 								if r#content_reference_time_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -13785,13 +5080,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "contributor-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Contributor => {
 								if r#contributor_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -13818,13 +5106,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "copyright-holder-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::CopyrightHolder => {
 								if r#copyright_holder_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -13851,13 +5132,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "copyright-notice-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::CopyrightNotice => {
 								if r#copyright_notice_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -13884,13 +5158,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "copyright-year-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::CopyrightYear => {
 								if r#copyright_year_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -13917,13 +5184,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "correction-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::Correction => {
 								if r#correction_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -13950,13 +5210,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "country-of-assembly-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::CountryOfAssembly => {
 								if r#country_of_assembly_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -13983,13 +5236,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "country-of-last-processing-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::CountryOfLastProcessing => {
 								if r#country_of_last_processing_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -14016,13 +5262,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "country-of-origin-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::CountryOfOrigin => {
 								if r#country_of_origin_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -14049,13 +5288,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "creative-work-status-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::CreativeWorkStatus => {
 								if r#creative_work_status_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -14082,13 +5314,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "creator-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Creator => {
 								if r#creator_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -14115,13 +5340,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "credit-text-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::CreditText => {
 								if r#credit_text_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -14148,13 +5366,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "date-created-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::DateCreated => {
 								if r#date_created_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -14181,13 +5392,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "date-modified-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::DateModified => {
 								if r#date_modified_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -14214,13 +5418,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "date-published-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::DatePublished => {
 								if r#date_published_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -14247,13 +5444,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "depth-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Depth => {
 								if r#depth_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("depth"));
@@ -14278,13 +5468,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "description-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Description => {
 								if r#description_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -14311,13 +5494,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "disambiguating-description-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::DisambiguatingDescription => {
 								if r#disambiguating_description_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -14344,13 +5520,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "discussion-url-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::DiscussionUrl => {
 								if r#discussion_url_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -14377,13 +5546,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "edit-eidr-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::EditEidr => {
 								if r#edit_eidr_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -14410,13 +5572,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "editor-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Editor => {
 								if r#editor_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("editor"));
@@ -14441,13 +5596,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "educational-alignment-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::EducationalAlignment => {
 								if r#educational_alignment_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -14474,13 +5622,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "educational-level-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::EducationalLevel => {
 								if r#educational_level_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -14507,13 +5648,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "educational-use-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::EducationalUse => {
 								if r#educational_use_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -14540,13 +5674,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "encoding-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Encoding => {
 								if r#encoding_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -14573,13 +5700,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "encoding-format-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::EncodingFormat => {
 								if r#encoding_format_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -14606,13 +5726,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "encodings-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Encodings => {
 								if r#encodings_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -14639,13 +5752,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "example-of-work-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::ExampleOfWork => {
 								if r#example_of_work_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -14672,13 +5778,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "expires-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Expires => {
 								if r#expires_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -14705,13 +5804,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "file-format-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::FileFormat => {
 								if r#file_format_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -14738,13 +5830,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "funder-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Funder => {
 								if r#funder_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("funder"));
@@ -14769,13 +5854,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "funding-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::Funding => {
 								if r#funding_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -14802,13 +5880,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "genre-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Genre => {
 								if r#genre_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("genre"));
@@ -14833,13 +5904,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "gtin-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::Gtin => {
 								if r#gtin_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("gtin"));
@@ -14864,13 +5928,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "gtin-12-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Gtin12 => {
 								if r#gtin_12_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("gtin12"));
@@ -14895,13 +5952,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "gtin-13-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Gtin13 => {
 								if r#gtin_13_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("gtin13"));
@@ -14926,13 +5976,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "gtin-14-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Gtin14 => {
 								if r#gtin_14_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("gtin14"));
@@ -14957,13 +6000,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "gtin-8-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Gtin8 => {
 								if r#gtin_8_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("gtin8"));
@@ -14988,13 +6024,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "has-adult-consideration-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::HasAdultConsideration => {
 								if r#has_adult_consideration_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -15021,13 +6050,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "has-energy-consumption-details-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::HasEnergyConsumptionDetails => {
 								if r#has_energy_consumption_details_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -15056,13 +6078,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "has-measurement-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::HasMeasurement => {
 								if r#has_measurement_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -15089,13 +6104,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "has-merchant-return-policy-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::HasMerchantReturnPolicy => {
 								if r#has_merchant_return_policy_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -15122,13 +6130,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "has-part-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::HasPart => {
 								if r#has_part_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -15155,13 +6156,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "has-product-return-policy-property-schema",
-									feature = "attic-schema-section"
-								),
-								doc
-							))]
 							Field::HasProductReturnPolicy => {
 								if r#has_product_return_policy_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -15188,13 +6182,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "headline-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Headline => {
 								if r#headline_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -15221,13 +6208,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "height-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Height => {
 								if r#height_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("height"));
@@ -15252,13 +6232,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "identifier-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Identifier => {
 								if r#identifier_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -15285,13 +6258,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "image-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Image => {
 								if r#image_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("image"));
@@ -15316,13 +6282,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "in-language-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::InLanguage => {
 								if r#in_language_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -15349,13 +6308,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "in-product-group-with-id-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::InProductGroupWithId => {
 								if r#in_product_group_with_id_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -15382,13 +6334,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "includes-object-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::IncludesObject => {
 								if r#includes_object_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -15415,13 +6360,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "interaction-statistic-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::InteractionStatistic => {
 								if r#interaction_statistic_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -15448,13 +6386,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "interactivity-type-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::InteractivityType => {
 								if r#interactivity_type_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -15481,13 +6412,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "interpreted-as-claim-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::InterpretedAsClaim => {
 								if r#interpreted_as_claim_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -15514,13 +6438,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "is-accessible-for-free-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::IsAccessibleForFree => {
 								if r#is_accessible_for_free_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -15547,13 +6464,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "is-accessory-or-spare-part-for-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::IsAccessoryOrSparePartFor => {
 								if r#is_accessory_or_spare_part_for_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -15580,13 +6490,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "is-based-on-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::IsBasedOn => {
 								if r#is_based_on_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -15613,13 +6516,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "is-based-on-url-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::IsBasedOnUrl => {
 								if r#is_based_on_url_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -15646,13 +6542,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "is-consumable-for-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::IsConsumableFor => {
 								if r#is_consumable_for_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -15679,13 +6568,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "is-family-friendly-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::IsFamilyFriendly => {
 								if r#is_family_friendly_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -15712,13 +6594,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "is-part-of-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::IsPartOf => {
 								if r#is_part_of_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -15745,13 +6620,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "is-related-to-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::IsRelatedTo => {
 								if r#is_related_to_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -15778,13 +6646,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "is-similar-to-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::IsSimilarTo => {
 								if r#is_similar_to_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -15811,13 +6672,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "is-variant-of-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::IsVariantOf => {
 								if r#is_variant_of_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -15844,13 +6698,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "item-condition-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::ItemCondition => {
 								if r#item_condition_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -15877,13 +6724,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "keywords-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Keywords => {
 								if r#keywords_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -15910,13 +6750,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "learning-resource-type-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::LearningResourceType => {
 								if r#learning_resource_type_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -15943,13 +6776,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "license-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::License => {
 								if r#license_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -15976,13 +6802,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "location-created-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::LocationCreated => {
 								if r#location_created_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -16009,13 +6828,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "logo-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Logo => {
 								if r#logo_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("logo"));
@@ -16040,13 +6852,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "main-entity-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::MainEntity => {
 								if r#main_entity_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -16073,13 +6878,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "main-entity-of-page-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::MainEntityOfPage => {
 								if r#main_entity_of_page_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -16106,13 +6904,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "maintainer-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::Maintainer => {
 								if r#maintainer_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -16139,13 +6930,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "manufacturer-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Manufacturer => {
 								if r#manufacturer_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -16172,13 +6956,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "material-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Material => {
 								if r#material_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -16205,13 +6982,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "material-extent-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::MaterialExtent => {
 								if r#material_extent_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -16238,13 +7008,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "mentions-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Mentions => {
 								if r#mentions_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -16271,13 +7034,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "mobile-url-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::MobileUrl => {
 								if r#mobile_url_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -16304,13 +7060,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "model-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Model => {
 								if r#model_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("model"));
@@ -16335,13 +7084,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "mpn-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Mpn => {
 								if r#mpn_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("mpn"));
@@ -16366,13 +7108,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "name-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Name => {
 								if r#name_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("name"));
@@ -16397,13 +7132,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "negative-notes-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::NegativeNotes => {
 								if r#negative_notes_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -16430,13 +7158,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "nsn-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::Nsn => {
 								if r#nsn_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("nsn"));
@@ -16461,13 +7182,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "offers-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Offers => {
 								if r#offers_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("offers"));
@@ -16492,13 +7206,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "pattern-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::Pattern => {
 								if r#pattern_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -16525,13 +7232,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "position-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Position => {
 								if r#position_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -16558,13 +7258,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "positive-notes-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::PositiveNotes => {
 								if r#positive_notes_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -16591,13 +7284,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "potential-action-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::PotentialAction => {
 								if r#potential_action_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -16624,13 +7310,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "producer-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Producer => {
 								if r#producer_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -16657,13 +7336,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "product-id-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::ProductId => {
 								if r#product_id_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -16690,13 +7362,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "production-date-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::ProductionDate => {
 								if r#production_date_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -16723,13 +7388,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "provider-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::Provider => {
 								if r#provider_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -16756,13 +7414,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "publication-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Publication => {
 								if r#publication_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -16789,13 +7440,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "publisher-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Publisher => {
 								if r#publisher_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -16822,13 +7466,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "publisher-imprint-property-schema",
-									feature = "bib-schema-section"
-								),
-								doc
-							))]
 							Field::PublisherImprint => {
 								if r#publisher_imprint_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -16855,13 +7492,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "publishing-principles-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::PublishingPrinciples => {
 								if r#publishing_principles_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -16888,13 +7518,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "purchase-date-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::PurchaseDate => {
 								if r#purchase_date_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -16921,13 +7544,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "recorded-at-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::RecordedAt => {
 								if r#recorded_at_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -16954,13 +7570,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "release-date-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::ReleaseDate => {
 								if r#release_date_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -16987,13 +7596,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "released-event-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::ReleasedEvent => {
 								if r#released_event_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -17020,13 +7622,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "review-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Review => {
 								if r#review_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("review"));
@@ -17051,13 +7646,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "reviews-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Reviews => {
 								if r#reviews_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -17084,13 +7672,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "same-as-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::SameAs => {
 								if r#same_as_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("sameAs"));
@@ -17115,13 +7696,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "schema-version-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::SchemaVersion => {
 								if r#schema_version_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -17148,13 +7722,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "sd-date-published-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::SdDatePublished => {
 								if r#sd_date_published_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -17181,13 +7748,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "sd-license-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::SdLicense => {
 								if r#sd_license_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -17214,13 +7774,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "sd-publisher-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::SdPublisher => {
 								if r#sd_publisher_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -17247,13 +7800,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "size-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::Size => {
 								if r#size_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("size"));
@@ -17278,13 +7824,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "sku-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Sku => {
 								if r#sku_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("sku"));
@@ -17309,13 +7848,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "slogan-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Slogan => {
 								if r#slogan_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("slogan"));
@@ -17340,13 +7872,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "source-organization-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::SourceOrganization => {
 								if r#source_organization_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -17373,13 +7898,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "spatial-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Spatial => {
 								if r#spatial_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -17406,13 +7924,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "spatial-coverage-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::SpatialCoverage => {
 								if r#spatial_coverage_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -17439,13 +7950,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "sponsor-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Sponsor => {
 								if r#sponsor_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -17472,13 +7976,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "subject-of-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::SubjectOf => {
 								if r#subject_of_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -17505,13 +8002,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "teaches-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::Teaches => {
 								if r#teaches_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -17538,13 +8028,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "temporal-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Temporal => {
 								if r#temporal_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -17571,13 +8054,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "temporal-coverage-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::TemporalCoverage => {
 								if r#temporal_coverage_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -17604,13 +8080,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "text-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Text => {
 								if r#text_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("text"));
@@ -17635,13 +8104,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "thumbnail-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Thumbnail => {
 								if r#thumbnail_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -17668,13 +8130,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "thumbnail-url-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::ThumbnailUrl => {
 								if r#thumbnail_url_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -17701,13 +8156,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "time-required-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::TimeRequired => {
 								if r#time_required_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -17734,13 +8182,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "translation-of-work-property-schema",
-									feature = "bib-schema-section"
-								),
-								doc
-							))]
 							Field::TranslationOfWork => {
 								if r#translation_of_work_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -17767,13 +8208,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "translator-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Translator => {
 								if r#translator_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -17800,13 +8234,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "typical-age-range-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::TypicalAgeRange => {
 								if r#typical_age_range_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -17833,13 +8260,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "url-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Url => {
 								if r#url_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("url"));
@@ -17864,13 +8284,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "usage-info-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::UsageInfo => {
 								if r#usage_info_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -17897,13 +8310,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "version-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Version => {
 								if r#version_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -17930,13 +8336,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "video-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Video => {
 								if r#video_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("video"));
@@ -17961,13 +8360,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "weight-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Weight => {
 								if r#weight_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("weight"));
@@ -17992,13 +8384,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "width-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Width => {
 								if r#width_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("width"));
@@ -18023,13 +8408,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "work-example-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::WorkExample => {
 								if r#work_example_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -18056,13 +8434,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "work-translation-property-schema",
-									feature = "bib-schema-section"
-								),
-								doc
-							))]
 							Field::WorkTranslation => {
 								if r#work_translation_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -18095,2638 +8466,365 @@ mod serde {
 						}
 					}
 					Ok(ProductCollection {
-						#[cfg(any(
-							any(
-								feature = "about-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#about: r#about_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "abstract-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#abstract: r#abstract_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "access-mode-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#access_mode: r#access_mode_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "access-mode-sufficient-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#access_mode_sufficient: r#access_mode_sufficient_property
 							.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "accessibility-api-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#accessibility_api: r#accessibility_api_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "accessibility-control-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#accessibility_control: r#accessibility_control_property
 							.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "accessibility-feature-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#accessibility_feature: r#accessibility_feature_property
 							.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "accessibility-hazard-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#accessibility_hazard: r#accessibility_hazard_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "accessibility-summary-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#accessibility_summary: r#accessibility_summary_property
 							.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "accountable-person-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#accountable_person: r#accountable_person_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "acquire-license-page-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#acquire_license_page: r#acquire_license_page_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "additional-property-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#additional_property: r#additional_property_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "additional-type-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#additional_type: r#additional_type_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "aggregate-rating-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#aggregate_rating: r#aggregate_rating_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "alternate-name-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#alternate_name: r#alternate_name_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "alternative-headline-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#alternative_headline: r#alternative_headline_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "archived-at-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#archived_at: r#archived_at_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "asin-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#asin: r#asin_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "assesses-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#assesses: r#assesses_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "associated-media-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#associated_media: r#associated_media_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "audience-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#audience: r#audience_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "audio-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#audio: r#audio_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "author-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#author: r#author_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "award-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#award: r#award_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "awards-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#awards: r#awards_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "brand-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#brand: r#brand_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "category-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#category: r#category_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "character-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#character: r#character_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "citation-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#citation: r#citation_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "collection-size-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#collection_size: r#collection_size_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "color-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#color: r#color_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "comment-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#comment: r#comment_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "comment-count-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#comment_count: r#comment_count_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "conditions-of-access-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#conditions_of_access: r#conditions_of_access_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "content-location-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#content_location: r#content_location_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "content-rating-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#content_rating: r#content_rating_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "content-reference-time-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#content_reference_time: r#content_reference_time_property
 							.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "contributor-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#contributor: r#contributor_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "copyright-holder-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#copyright_holder: r#copyright_holder_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "copyright-notice-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#copyright_notice: r#copyright_notice_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "copyright-year-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#copyright_year: r#copyright_year_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "correction-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#correction: r#correction_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "country-of-assembly-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#country_of_assembly: r#country_of_assembly_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "country-of-last-processing-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#country_of_last_processing: r#country_of_last_processing_property
 							.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "country-of-origin-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#country_of_origin: r#country_of_origin_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "creative-work-status-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#creative_work_status: r#creative_work_status_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "creator-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#creator: r#creator_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "credit-text-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#credit_text: r#credit_text_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "date-created-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#date_created: r#date_created_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "date-modified-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#date_modified: r#date_modified_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "date-published-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#date_published: r#date_published_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "depth-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#depth: r#depth_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "description-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#description: r#description_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "disambiguating-description-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#disambiguating_description: r#disambiguating_description_property
 							.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "discussion-url-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#discussion_url: r#discussion_url_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "edit-eidr-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#edit_eidr: r#edit_eidr_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "editor-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#editor: r#editor_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "educational-alignment-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#educational_alignment: r#educational_alignment_property
 							.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "educational-level-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#educational_level: r#educational_level_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "educational-use-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#educational_use: r#educational_use_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "encoding-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#encoding: r#encoding_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "encoding-format-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#encoding_format: r#encoding_format_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "encodings-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#encodings: r#encodings_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "example-of-work-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#example_of_work: r#example_of_work_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "expires-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#expires: r#expires_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "file-format-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#file_format: r#file_format_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "funder-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#funder: r#funder_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "funding-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#funding: r#funding_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "genre-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#genre: r#genre_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "gtin-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#gtin: r#gtin_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "gtin-12-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#gtin_12: r#gtin_12_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "gtin-13-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#gtin_13: r#gtin_13_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "gtin-14-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#gtin_14: r#gtin_14_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "gtin-8-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#gtin_8: r#gtin_8_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "has-adult-consideration-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#has_adult_consideration: r#has_adult_consideration_property
 							.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "has-energy-consumption-details-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#has_energy_consumption_details: r#has_energy_consumption_details_property
 							.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "has-measurement-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#has_measurement: r#has_measurement_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "has-merchant-return-policy-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#has_merchant_return_policy: r#has_merchant_return_policy_property
 							.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "has-part-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#has_part: r#has_part_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "has-product-return-policy-property-schema",
-								feature = "attic-schema-section"
-							),
-							doc
-						))]
 						r#has_product_return_policy: r#has_product_return_policy_property
 							.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "headline-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#headline: r#headline_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "height-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#height: r#height_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "identifier-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#identifier: r#identifier_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "image-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#image: r#image_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "in-language-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#in_language: r#in_language_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "in-product-group-with-id-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#in_product_group_with_id: r#in_product_group_with_id_property
 							.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "includes-object-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#includes_object: r#includes_object_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "interaction-statistic-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#interaction_statistic: r#interaction_statistic_property
 							.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "interactivity-type-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#interactivity_type: r#interactivity_type_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "interpreted-as-claim-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#interpreted_as_claim: r#interpreted_as_claim_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "is-accessible-for-free-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#is_accessible_for_free: r#is_accessible_for_free_property
 							.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "is-accessory-or-spare-part-for-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#is_accessory_or_spare_part_for: r#is_accessory_or_spare_part_for_property
 							.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "is-based-on-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#is_based_on: r#is_based_on_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "is-based-on-url-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#is_based_on_url: r#is_based_on_url_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "is-consumable-for-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#is_consumable_for: r#is_consumable_for_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "is-family-friendly-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#is_family_friendly: r#is_family_friendly_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "is-part-of-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#is_part_of: r#is_part_of_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "is-related-to-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#is_related_to: r#is_related_to_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "is-similar-to-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#is_similar_to: r#is_similar_to_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "is-variant-of-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#is_variant_of: r#is_variant_of_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "item-condition-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#item_condition: r#item_condition_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "keywords-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#keywords: r#keywords_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "learning-resource-type-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#learning_resource_type: r#learning_resource_type_property
 							.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "license-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#license: r#license_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "location-created-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#location_created: r#location_created_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "logo-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#logo: r#logo_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "main-entity-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#main_entity: r#main_entity_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "main-entity-of-page-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#main_entity_of_page: r#main_entity_of_page_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "maintainer-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#maintainer: r#maintainer_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "manufacturer-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#manufacturer: r#manufacturer_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "material-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#material: r#material_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "material-extent-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#material_extent: r#material_extent_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "mentions-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#mentions: r#mentions_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "mobile-url-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#mobile_url: r#mobile_url_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "model-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#model: r#model_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "mpn-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#mpn: r#mpn_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "name-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#name: r#name_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "negative-notes-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#negative_notes: r#negative_notes_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "nsn-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#nsn: r#nsn_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "offers-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#offers: r#offers_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "pattern-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#pattern: r#pattern_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "position-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#position: r#position_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "positive-notes-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#positive_notes: r#positive_notes_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "potential-action-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#potential_action: r#potential_action_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "producer-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#producer: r#producer_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "product-id-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#product_id: r#product_id_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "production-date-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#production_date: r#production_date_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "provider-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#provider: r#provider_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "publication-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#publication: r#publication_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "publisher-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#publisher: r#publisher_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "publisher-imprint-property-schema",
-								feature = "bib-schema-section"
-							),
-							doc
-						))]
 						r#publisher_imprint: r#publisher_imprint_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "publishing-principles-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#publishing_principles: r#publishing_principles_property
 							.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "purchase-date-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#purchase_date: r#purchase_date_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "recorded-at-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#recorded_at: r#recorded_at_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "release-date-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#release_date: r#release_date_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "released-event-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#released_event: r#released_event_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "review-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#review: r#review_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "reviews-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#reviews: r#reviews_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "same-as-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#same_as: r#same_as_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "schema-version-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#schema_version: r#schema_version_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "sd-date-published-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#sd_date_published: r#sd_date_published_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "sd-license-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#sd_license: r#sd_license_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "sd-publisher-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#sd_publisher: r#sd_publisher_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "size-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#size: r#size_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "sku-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#sku: r#sku_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "slogan-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#slogan: r#slogan_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "source-organization-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#source_organization: r#source_organization_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "spatial-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#spatial: r#spatial_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "spatial-coverage-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#spatial_coverage: r#spatial_coverage_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "sponsor-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#sponsor: r#sponsor_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "subject-of-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#subject_of: r#subject_of_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "teaches-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#teaches: r#teaches_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "temporal-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#temporal: r#temporal_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "temporal-coverage-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#temporal_coverage: r#temporal_coverage_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "text-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#text: r#text_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "thumbnail-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#thumbnail: r#thumbnail_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "thumbnail-url-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#thumbnail_url: r#thumbnail_url_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "time-required-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#time_required: r#time_required_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "translation-of-work-property-schema",
-								feature = "bib-schema-section"
-							),
-							doc
-						))]
 						r#translation_of_work: r#translation_of_work_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "translator-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#translator: r#translator_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "typical-age-range-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#typical_age_range: r#typical_age_range_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "url-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#url: r#url_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "usage-info-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#usage_info: r#usage_info_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "version-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#version: r#version_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "video-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#video: r#video_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "weight-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#weight: r#weight_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "width-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#width: r#width_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "work-example-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#work_example: r#work_example_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "work-translation-property-schema",
-								feature = "bib-schema-section"
-							),
-							doc
-						))]
 						r#work_translation: r#work_translation_property.unwrap_or_default(),
 					})
 				}
 			}
 			const FIELDS: &[&str] = &[
-				#[cfg(any(
-					any(feature = "about-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				"about",
-				#[cfg(any(
-					any(
-						feature = "abstract-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				"abstract",
-				#[cfg(any(
-					any(
-						feature = "access-mode-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"accessMode",
-				#[cfg(any(
-					any(
-						feature = "access-mode-sufficient-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"accessModeSufficient",
-				#[cfg(any(
-					any(
-						feature = "accessibility-api-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"accessibilityAPI",
-				#[cfg(any(
-					any(
-						feature = "accessibility-control-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"accessibilityControl",
-				#[cfg(any(
-					any(
-						feature = "accessibility-feature-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"accessibilityFeature",
-				#[cfg(any(
-					any(
-						feature = "accessibility-hazard-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"accessibilityHazard",
-				#[cfg(any(
-					any(
-						feature = "accessibility-summary-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"accessibilitySummary",
-				#[cfg(any(
-					any(
-						feature = "accountable-person-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"accountablePerson",
-				#[cfg(any(
-					any(
-						feature = "acquire-license-page-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				"acquireLicensePage",
-				#[cfg(any(
-					any(
-						feature = "additional-property-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"additionalProperty",
-				#[cfg(any(
-					any(
-						feature = "additional-type-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"additionalType",
-				#[cfg(any(
-					any(
-						feature = "aggregate-rating-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"aggregateRating",
-				#[cfg(any(
-					any(
-						feature = "alternate-name-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"alternateName",
-				#[cfg(any(
-					any(
-						feature = "alternative-headline-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"alternativeHeadline",
-				#[cfg(any(
-					any(
-						feature = "archived-at-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				"archivedAt",
-				#[cfg(any(
-					any(feature = "asin-property-schema", feature = "pending-schema-section"),
-					doc
-				))]
 				"asin",
-				#[cfg(any(
-					any(
-						feature = "assesses-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				"assesses",
-				#[cfg(any(
-					any(
-						feature = "associated-media-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"associatedMedia",
-				#[cfg(any(
-					any(
-						feature = "audience-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"audience",
-				#[cfg(any(
-					any(feature = "audio-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				"audio",
-				#[cfg(any(
-					any(feature = "author-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				"author",
-				#[cfg(any(
-					any(feature = "award-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				"award",
-				#[cfg(any(
-					any(feature = "awards-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				"awards",
-				#[cfg(any(
-					any(feature = "brand-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				"brand",
-				#[cfg(any(
-					any(
-						feature = "category-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"category",
-				#[cfg(any(
-					any(
-						feature = "character-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"character",
-				#[cfg(any(
-					any(
-						feature = "citation-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"citation",
-				#[cfg(any(
-					any(
-						feature = "collection-size-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				"collectionSize",
-				#[cfg(any(
-					any(feature = "color-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				"color",
-				#[cfg(any(
-					any(
-						feature = "comment-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"comment",
-				#[cfg(any(
-					any(
-						feature = "comment-count-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"commentCount",
-				#[cfg(any(
-					any(
-						feature = "conditions-of-access-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				"conditionsOfAccess",
-				#[cfg(any(
-					any(
-						feature = "content-location-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"contentLocation",
-				#[cfg(any(
-					any(
-						feature = "content-rating-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"contentRating",
-				#[cfg(any(
-					any(
-						feature = "content-reference-time-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				"contentReferenceTime",
-				#[cfg(any(
-					any(
-						feature = "contributor-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"contributor",
-				#[cfg(any(
-					any(
-						feature = "copyright-holder-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"copyrightHolder",
-				#[cfg(any(
-					any(
-						feature = "copyright-notice-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				"copyrightNotice",
-				#[cfg(any(
-					any(
-						feature = "copyright-year-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"copyrightYear",
-				#[cfg(any(
-					any(
-						feature = "correction-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				"correction",
-				#[cfg(any(
-					any(
-						feature = "country-of-assembly-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				"countryOfAssembly",
-				#[cfg(any(
-					any(
-						feature = "country-of-last-processing-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				"countryOfLastProcessing",
-				#[cfg(any(
-					any(
-						feature = "country-of-origin-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"countryOfOrigin",
-				#[cfg(any(
-					any(
-						feature = "creative-work-status-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				"creativeWorkStatus",
-				#[cfg(any(
-					any(
-						feature = "creator-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"creator",
-				#[cfg(any(
-					any(
-						feature = "credit-text-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				"creditText",
-				#[cfg(any(
-					any(
-						feature = "date-created-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"dateCreated",
-				#[cfg(any(
-					any(
-						feature = "date-modified-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"dateModified",
-				#[cfg(any(
-					any(
-						feature = "date-published-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"datePublished",
-				#[cfg(any(
-					any(feature = "depth-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				"depth",
-				#[cfg(any(
-					any(
-						feature = "description-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"description",
-				#[cfg(any(
-					any(
-						feature = "disambiguating-description-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"disambiguatingDescription",
-				#[cfg(any(
-					any(
-						feature = "discussion-url-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"discussionUrl",
-				#[cfg(any(
-					any(
-						feature = "edit-eidr-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				"editEIDR",
-				#[cfg(any(
-					any(feature = "editor-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				"editor",
-				#[cfg(any(
-					any(
-						feature = "educational-alignment-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"educationalAlignment",
-				#[cfg(any(
-					any(
-						feature = "educational-level-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				"educationalLevel",
-				#[cfg(any(
-					any(
-						feature = "educational-use-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"educationalUse",
-				#[cfg(any(
-					any(
-						feature = "encoding-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"encoding",
-				#[cfg(any(
-					any(
-						feature = "encoding-format-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"encodingFormat",
-				#[cfg(any(
-					any(
-						feature = "encodings-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"encodings",
-				#[cfg(any(
-					any(
-						feature = "example-of-work-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"exampleOfWork",
-				#[cfg(any(
-					any(
-						feature = "expires-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"expires",
-				#[cfg(any(
-					any(
-						feature = "file-format-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"fileFormat",
-				#[cfg(any(
-					any(feature = "funder-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				"funder",
-				#[cfg(any(
-					any(
-						feature = "funding-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				"funding",
-				#[cfg(any(
-					any(feature = "genre-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				"genre",
-				#[cfg(any(
-					any(feature = "gtin-property-schema", feature = "pending-schema-section"),
-					doc
-				))]
 				"gtin",
-				#[cfg(any(
-					any(
-						feature = "gtin-12-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"gtin12",
-				#[cfg(any(
-					any(
-						feature = "gtin-13-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"gtin13",
-				#[cfg(any(
-					any(
-						feature = "gtin-14-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"gtin14",
-				#[cfg(any(
-					any(feature = "gtin-8-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				"gtin8",
-				#[cfg(any(
-					any(
-						feature = "has-adult-consideration-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				"hasAdultConsideration",
-				#[cfg(any(
-					any(
-						feature = "has-energy-consumption-details-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				"hasEnergyConsumptionDetails",
-				#[cfg(any(
-					any(
-						feature = "has-measurement-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				"hasMeasurement",
-				#[cfg(any(
-					any(
-						feature = "has-merchant-return-policy-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				"hasMerchantReturnPolicy",
-				#[cfg(any(
-					any(
-						feature = "has-part-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"hasPart",
-				#[cfg(any(
-					any(
-						feature = "has-product-return-policy-property-schema",
-						feature = "attic-schema-section"
-					),
-					doc
-				))]
 				"hasProductReturnPolicy",
-				#[cfg(any(
-					any(
-						feature = "headline-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"headline",
-				#[cfg(any(
-					any(feature = "height-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				"height",
-				#[cfg(any(
-					any(
-						feature = "identifier-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"identifier",
-				#[cfg(any(
-					any(feature = "image-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				"image",
-				#[cfg(any(
-					any(
-						feature = "in-language-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"inLanguage",
-				#[cfg(any(
-					any(
-						feature = "in-product-group-with-id-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				"inProductGroupWithID",
-				#[cfg(any(
-					any(
-						feature = "includes-object-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"includesObject",
-				#[cfg(any(
-					any(
-						feature = "interaction-statistic-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"interactionStatistic",
-				#[cfg(any(
-					any(
-						feature = "interactivity-type-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"interactivityType",
-				#[cfg(any(
-					any(
-						feature = "interpreted-as-claim-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				"interpretedAsClaim",
-				#[cfg(any(
-					any(
-						feature = "is-accessible-for-free-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"isAccessibleForFree",
-				#[cfg(any(
-					any(
-						feature = "is-accessory-or-spare-part-for-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"isAccessoryOrSparePartFor",
-				#[cfg(any(
-					any(
-						feature = "is-based-on-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"isBasedOn",
-				#[cfg(any(
-					any(
-						feature = "is-based-on-url-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"isBasedOnUrl",
-				#[cfg(any(
-					any(
-						feature = "is-consumable-for-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"isConsumableFor",
-				#[cfg(any(
-					any(
-						feature = "is-family-friendly-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"isFamilyFriendly",
-				#[cfg(any(
-					any(
-						feature = "is-part-of-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"isPartOf",
-				#[cfg(any(
-					any(
-						feature = "is-related-to-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"isRelatedTo",
-				#[cfg(any(
-					any(
-						feature = "is-similar-to-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"isSimilarTo",
-				#[cfg(any(
-					any(
-						feature = "is-variant-of-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"isVariantOf",
-				#[cfg(any(
-					any(
-						feature = "item-condition-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"itemCondition",
-				#[cfg(any(
-					any(
-						feature = "keywords-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"keywords",
-				#[cfg(any(
-					any(
-						feature = "learning-resource-type-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"learningResourceType",
-				#[cfg(any(
-					any(
-						feature = "license-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"license",
-				#[cfg(any(
-					any(
-						feature = "location-created-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"locationCreated",
-				#[cfg(any(
-					any(feature = "logo-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				"logo",
-				#[cfg(any(
-					any(
-						feature = "main-entity-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"mainEntity",
-				#[cfg(any(
-					any(
-						feature = "main-entity-of-page-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"mainEntityOfPage",
-				#[cfg(any(
-					any(
-						feature = "maintainer-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				"maintainer",
-				#[cfg(any(
-					any(
-						feature = "manufacturer-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"manufacturer",
-				#[cfg(any(
-					any(
-						feature = "material-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"material",
-				#[cfg(any(
-					any(
-						feature = "material-extent-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				"materialExtent",
-				#[cfg(any(
-					any(
-						feature = "mentions-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"mentions",
-				#[cfg(any(
-					any(
-						feature = "mobile-url-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				"mobileUrl",
-				#[cfg(any(
-					any(feature = "model-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				"model",
-				#[cfg(any(
-					any(feature = "mpn-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				"mpn",
-				#[cfg(any(
-					any(feature = "name-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				"name",
-				#[cfg(any(
-					any(
-						feature = "negative-notes-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				"negativeNotes",
-				#[cfg(any(
-					any(feature = "nsn-property-schema", feature = "pending-schema-section"),
-					doc
-				))]
 				"nsn",
-				#[cfg(any(
-					any(feature = "offers-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				"offers",
-				#[cfg(any(
-					any(
-						feature = "pattern-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				"pattern",
-				#[cfg(any(
-					any(
-						feature = "position-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"position",
-				#[cfg(any(
-					any(
-						feature = "positive-notes-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				"positiveNotes",
-				#[cfg(any(
-					any(
-						feature = "potential-action-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"potentialAction",
-				#[cfg(any(
-					any(
-						feature = "producer-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"producer",
-				#[cfg(any(
-					any(
-						feature = "product-id-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"productID",
-				#[cfg(any(
-					any(
-						feature = "production-date-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"productionDate",
-				#[cfg(any(
-					any(
-						feature = "provider-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				"provider",
-				#[cfg(any(
-					any(
-						feature = "publication-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"publication",
-				#[cfg(any(
-					any(
-						feature = "publisher-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"publisher",
-				#[cfg(any(
-					any(
-						feature = "publisher-imprint-property-schema",
-						feature = "bib-schema-section"
-					),
-					doc
-				))]
 				"publisherImprint",
-				#[cfg(any(
-					any(
-						feature = "publishing-principles-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"publishingPrinciples",
-				#[cfg(any(
-					any(
-						feature = "purchase-date-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"purchaseDate",
-				#[cfg(any(
-					any(
-						feature = "recorded-at-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"recordedAt",
-				#[cfg(any(
-					any(
-						feature = "release-date-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"releaseDate",
-				#[cfg(any(
-					any(
-						feature = "released-event-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"releasedEvent",
-				#[cfg(any(
-					any(feature = "review-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				"review",
-				#[cfg(any(
-					any(
-						feature = "reviews-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"reviews",
-				#[cfg(any(
-					any(
-						feature = "same-as-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"sameAs",
-				#[cfg(any(
-					any(
-						feature = "schema-version-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"schemaVersion",
-				#[cfg(any(
-					any(
-						feature = "sd-date-published-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				"sdDatePublished",
-				#[cfg(any(
-					any(
-						feature = "sd-license-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				"sdLicense",
-				#[cfg(any(
-					any(
-						feature = "sd-publisher-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				"sdPublisher",
-				#[cfg(any(
-					any(feature = "size-property-schema", feature = "pending-schema-section"),
-					doc
-				))]
 				"size",
-				#[cfg(any(
-					any(feature = "sku-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				"sku",
-				#[cfg(any(
-					any(feature = "slogan-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				"slogan",
-				#[cfg(any(
-					any(
-						feature = "source-organization-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"sourceOrganization",
-				#[cfg(any(
-					any(
-						feature = "spatial-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"spatial",
-				#[cfg(any(
-					any(
-						feature = "spatial-coverage-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"spatialCoverage",
-				#[cfg(any(
-					any(
-						feature = "sponsor-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"sponsor",
-				#[cfg(any(
-					any(
-						feature = "subject-of-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"subjectOf",
-				#[cfg(any(
-					any(
-						feature = "teaches-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				"teaches",
-				#[cfg(any(
-					any(
-						feature = "temporal-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"temporal",
-				#[cfg(any(
-					any(
-						feature = "temporal-coverage-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"temporalCoverage",
-				#[cfg(any(
-					any(feature = "text-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				"text",
-				#[cfg(any(
-					any(
-						feature = "thumbnail-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"thumbnail",
-				#[cfg(any(
-					any(
-						feature = "thumbnail-url-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"thumbnailUrl",
-				#[cfg(any(
-					any(
-						feature = "time-required-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"timeRequired",
-				#[cfg(any(
-					any(
-						feature = "translation-of-work-property-schema",
-						feature = "bib-schema-section"
-					),
-					doc
-				))]
 				"translationOfWork",
-				#[cfg(any(
-					any(
-						feature = "translator-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"translator",
-				#[cfg(any(
-					any(
-						feature = "typical-age-range-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"typicalAgeRange",
-				#[cfg(any(
-					any(feature = "url-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				"url",
-				#[cfg(any(
-					any(
-						feature = "usage-info-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				"usageInfo",
-				#[cfg(any(
-					any(
-						feature = "version-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"version",
-				#[cfg(any(
-					any(feature = "video-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				"video",
-				#[cfg(any(
-					any(feature = "weight-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				"weight",
-				#[cfg(any(
-					any(feature = "width-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				"width",
-				#[cfg(any(
-					any(
-						feature = "work-example-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"workExample",
-				#[cfg(any(
-					any(
-						feature = "work-translation-property-schema",
-						feature = "bib-schema-section"
-					),
-					doc
-				))]
 				"workTranslation",
 			];
 			deserializer.deserialize_struct("ProductCollection", FIELDS, ClassVisitor)

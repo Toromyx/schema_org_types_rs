@@ -3,12 +3,7 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum OffersProperty {
-	#[cfg(any(
-		any(feature = "demand-schema", feature = "general-schema-section"),
-		doc
-	))]
 	Demand(Demand),
-	#[cfg(any(any(feature = "offer-schema", feature = "general-schema-section"), doc))]
 	Offer(Offer),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),
@@ -28,12 +23,7 @@ mod serde {
 			S: Serializer,
 		{
 			match *self {
-				#[cfg(any(
-					any(feature = "demand-schema", feature = "general-schema-section"),
-					doc
-				))]
 				OffersProperty::Demand(ref inner) => inner.serialize(serializer),
-				#[cfg(any(any(feature = "offer-schema", feature = "general-schema-section"), doc))]
 				OffersProperty::Offer(ref inner) => inner.serialize(serializer),
 				#[cfg(all(feature = "fallible", feature = "serde"))]
 				OffersProperty::SerdeFail(ref inner) => inner.serialize(serializer),
@@ -49,17 +39,12 @@ mod serde {
 				<::serde::__private::de::Content as Deserialize>::deserialize(deserializer)?;
 			let deserializer =
 				::serde::__private::de::ContentRefDeserializer::<D::Error>::new(&content);
-			#[cfg(any(
-				any(feature = "demand-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<Demand as Deserialize>::deserialize(deserializer),
 				OffersProperty::Demand,
 			) {
 				return Ok(ok);
 			}
-			#[cfg(any(any(feature = "offer-schema", feature = "general-schema-section"), doc))]
 			if let Ok(ok) = Result::map(
 				<Offer as Deserialize>::deserialize(deserializer),
 				OffersProperty::Offer,

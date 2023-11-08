@@ -10,9 +10,7 @@ use rayon::prelude::*;
 
 use crate::{
 	doc_lines::DocLines,
-	feature::Feature,
 	schema::{class::serde::serde_mod, map_schema_name, ReferencedSchema, Schema},
-	schema_section::SchemaSection,
 	sparql::{SchemaQueries, SchemaQuerySolution},
 };
 
@@ -27,8 +25,6 @@ pub struct Class {
 	pub name: String,
 	#[derivative(PartialEq = "ignore", PartialOrd = "ignore", Ord = "ignore")]
 	pub properties: Vec<ReferencedSchema>,
-	#[derivative(PartialEq = "ignore", PartialOrd = "ignore", Ord = "ignore")]
-	pub section: SchemaSection,
 }
 
 impl Schema for Class {
@@ -46,10 +42,6 @@ impl Schema for Class {
 
 	fn iri(&self) -> &String {
 		&self.iri
-	}
-
-	fn section(&self) -> &SchemaSection {
-		&self.section
 	}
 
 	fn child_feature_names(&self) -> Vec<String> {
@@ -75,7 +67,6 @@ impl Schema for Class {
 			iri: solution.iri,
 			name: map_schema_name(solution.label),
 			properties,
-			section: solution.section,
 		}
 	}
 }
@@ -96,22 +87,11 @@ fn property_type(referenced_schema: &ReferencedSchema) -> TokenStream {
 	.unwrap()
 }
 
-fn property_feature(referenced_schema: &ReferencedSchema) -> Feature {
-	Feature::Any(vec![
-		Feature::Name(format!(
-			"{}-property-schema",
-			referenced_schema.name.to_case(Case::Kebab)
-		)),
-		Feature::Name(referenced_schema.section.feature_name().to_string()),
-	])
-}
-
 impl ToTokens for Class {
 	fn to_tokens(&self, tokens: &mut TokenStream) {
 		let doc_lines = self.doc_lines_token_stream();
 		let name = TokenStream::from_str(&self.name.to_case(Case::UpperCamel)).unwrap();
 		let fields = self.properties.iter().map(|referenced_schema| {
-			let feature_gate = property_feature(referenced_schema).as_cfg_attribute();
 			let property = TokenStream::from_str(&format!(
 				"pub {}: {}",
 				property_name(referenced_schema),
@@ -119,7 +99,6 @@ impl ToTokens for Class {
 			))
 			.unwrap();
 			quote!(
-				#feature_gate
 				#property,
 			)
 		});

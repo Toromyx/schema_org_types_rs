@@ -3,17 +3,8 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum AudioProperty {
-	#[cfg(any(
-		any(feature = "audio-object-schema", feature = "general-schema-section"),
-		doc
-	))]
 	AudioObject(AudioObject),
-	#[cfg(any(any(feature = "clip-schema", feature = "general-schema-section"), doc))]
 	Clip(Clip),
-	#[cfg(any(
-		any(feature = "music-recording-schema", feature = "general-schema-section"),
-		doc
-	))]
 	MusicRecording(MusicRecording),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),
@@ -33,17 +24,8 @@ mod serde {
 			S: Serializer,
 		{
 			match *self {
-				#[cfg(any(
-					any(feature = "audio-object-schema", feature = "general-schema-section"),
-					doc
-				))]
 				AudioProperty::AudioObject(ref inner) => inner.serialize(serializer),
-				#[cfg(any(any(feature = "clip-schema", feature = "general-schema-section"), doc))]
 				AudioProperty::Clip(ref inner) => inner.serialize(serializer),
-				#[cfg(any(
-					any(feature = "music-recording-schema", feature = "general-schema-section"),
-					doc
-				))]
 				AudioProperty::MusicRecording(ref inner) => inner.serialize(serializer),
 				#[cfg(all(feature = "fallible", feature = "serde"))]
 				AudioProperty::SerdeFail(ref inner) => inner.serialize(serializer),
@@ -59,27 +41,18 @@ mod serde {
 				<::serde::__private::de::Content as Deserialize>::deserialize(deserializer)?;
 			let deserializer =
 				::serde::__private::de::ContentRefDeserializer::<D::Error>::new(&content);
-			#[cfg(any(
-				any(feature = "audio-object-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<AudioObject as Deserialize>::deserialize(deserializer),
 				AudioProperty::AudioObject,
 			) {
 				return Ok(ok);
 			}
-			#[cfg(any(any(feature = "clip-schema", feature = "general-schema-section"), doc))]
 			if let Ok(ok) = Result::map(
 				<Clip as Deserialize>::deserialize(deserializer),
 				AudioProperty::Clip,
 			) {
 				return Ok(ok);
 			}
-			#[cfg(any(
-				any(feature = "music-recording-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<MusicRecording as Deserialize>::deserialize(deserializer),
 				AudioProperty::MusicRecording,

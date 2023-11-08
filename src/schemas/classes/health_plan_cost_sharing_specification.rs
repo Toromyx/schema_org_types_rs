@@ -3,132 +3,22 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct HealthPlanCostSharingSpecification {
-	#[cfg(any(
-		any(
-			feature = "additional-type-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
-	#[cfg(any(
-		any(
-			feature = "alternate-name-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#alternate_name: Vec<AlternateNameProperty>,
-	#[cfg(any(
-		any(
-			feature = "description-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#description: Vec<DescriptionProperty>,
-	#[cfg(any(
-		any(
-			feature = "disambiguating-description-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
-	#[cfg(any(
-		any(
-			feature = "health-plan-coinsurance-option-property-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	pub r#health_plan_coinsurance_option: Vec<HealthPlanCoinsuranceOptionProperty>,
-	#[cfg(any(
-		any(
-			feature = "health-plan-coinsurance-rate-property-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	pub r#health_plan_coinsurance_rate: Vec<HealthPlanCoinsuranceRateProperty>,
-	#[cfg(any(
-		any(
-			feature = "health-plan-copay-property-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	pub r#health_plan_copay: Vec<HealthPlanCopayProperty>,
-	#[cfg(any(
-		any(
-			feature = "health-plan-copay-option-property-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	pub r#health_plan_copay_option: Vec<HealthPlanCopayOptionProperty>,
-	#[cfg(any(
-		any(
-			feature = "health-plan-pharmacy-category-property-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	pub r#health_plan_pharmacy_category: Vec<HealthPlanPharmacyCategoryProperty>,
-	#[cfg(any(
-		any(
-			feature = "identifier-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#identifier: Vec<IdentifierProperty>,
-	#[cfg(any(
-		any(feature = "image-property-schema", feature = "general-schema-section"),
-		doc
-	))]
 	pub r#image: Vec<ImageProperty>,
-	#[cfg(any(
-		any(
-			feature = "main-entity-of-page-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
-	#[cfg(any(
-		any(feature = "name-property-schema", feature = "general-schema-section"),
-		doc
-	))]
 	pub r#name: Vec<NameProperty>,
-	#[cfg(any(
-		any(
-			feature = "potential-action-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#potential_action: Vec<PotentialActionProperty>,
-	#[cfg(any(
-		any(
-			feature = "same-as-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#same_as: Vec<SameAsProperty>,
-	#[cfg(any(
-		any(
-			feature = "subject-of-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#subject_of: Vec<SubjectOfProperty>,
-	#[cfg(any(
-		any(feature = "url-property-schema", feature = "general-schema-section"),
-		doc
-	))]
 	pub r#url: Vec<UrlProperty>,
 }
 #[cfg(feature = "serde")]
@@ -146,193 +36,23 @@ mod serde {
 			S: Serializer,
 		{
 			let len: usize = [
-				if cfg!(any(
-					any(
-						feature = "additional-type-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#additional_type) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "alternate-name-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#alternate_name) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "description-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#description) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "disambiguating-description-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#disambiguating_description) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "health-plan-coinsurance-option-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#health_plan_coinsurance_option) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "health-plan-coinsurance-rate-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#health_plan_coinsurance_rate) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "health-plan-copay-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#health_plan_copay) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "health-plan-copay-option-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#health_plan_copay_option) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "health-plan-pharmacy-category-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#health_plan_pharmacy_category) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "identifier-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#identifier) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "image-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#image) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "main-entity-of-page-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#main_entity_of_page) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "name-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#name) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "potential-action-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#potential_action) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "same-as-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#same_as) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "subject-of-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#subject_of) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "url-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#url) as usize
-				} else {
-					0
-				},
+				!Vec::is_empty(&self.r#additional_type) as usize,
+				!Vec::is_empty(&self.r#alternate_name) as usize,
+				!Vec::is_empty(&self.r#description) as usize,
+				!Vec::is_empty(&self.r#disambiguating_description) as usize,
+				!Vec::is_empty(&self.r#health_plan_coinsurance_option) as usize,
+				!Vec::is_empty(&self.r#health_plan_coinsurance_rate) as usize,
+				!Vec::is_empty(&self.r#health_plan_copay) as usize,
+				!Vec::is_empty(&self.r#health_plan_copay_option) as usize,
+				!Vec::is_empty(&self.r#health_plan_pharmacy_category) as usize,
+				!Vec::is_empty(&self.r#identifier) as usize,
+				!Vec::is_empty(&self.r#image) as usize,
+				!Vec::is_empty(&self.r#main_entity_of_page) as usize,
+				!Vec::is_empty(&self.r#name) as usize,
+				!Vec::is_empty(&self.r#potential_action) as usize,
+				!Vec::is_empty(&self.r#same_as) as usize,
+				!Vec::is_empty(&self.r#subject_of) as usize,
+				!Vec::is_empty(&self.r#url) as usize,
 			]
 			.iter()
 			.sum();
@@ -341,13 +61,6 @@ mod serde {
 				"HealthPlanCostSharingSpecification",
 				len,
 			)?;
-			#[cfg(any(
-				any(
-					feature = "additional-type-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#additional_type) {
 				serialize_struct.serialize_field("additionalType", {
 					struct SerializeWith<'a>(&'a Vec<AdditionalTypeProperty>);
@@ -366,13 +79,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("additionalType")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "alternate-name-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#alternate_name) {
 				serialize_struct.serialize_field("alternateName", {
 					struct SerializeWith<'a>(&'a Vec<AlternateNameProperty>);
@@ -391,13 +97,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("alternateName")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "description-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#description) {
 				serialize_struct.serialize_field("description", {
 					struct SerializeWith<'a>(&'a Vec<DescriptionProperty>);
@@ -416,13 +115,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("description")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "disambiguating-description-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#disambiguating_description) {
 				serialize_struct.serialize_field("disambiguatingDescription", {
 					struct SerializeWith<'a>(&'a Vec<DisambiguatingDescriptionProperty>);
@@ -441,13 +133,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("disambiguatingDescription")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "health-plan-coinsurance-option-property-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#health_plan_coinsurance_option) {
 				serialize_struct.serialize_field("healthPlanCoinsuranceOption", {
 					struct SerializeWith<'a>(&'a Vec<HealthPlanCoinsuranceOptionProperty>);
@@ -466,13 +151,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("healthPlanCoinsuranceOption")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "health-plan-coinsurance-rate-property-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#health_plan_coinsurance_rate) {
 				serialize_struct.serialize_field("healthPlanCoinsuranceRate", {
 					struct SerializeWith<'a>(&'a Vec<HealthPlanCoinsuranceRateProperty>);
@@ -491,13 +169,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("healthPlanCoinsuranceRate")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "health-plan-copay-property-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#health_plan_copay) {
 				serialize_struct.serialize_field("healthPlanCopay", {
 					struct SerializeWith<'a>(&'a Vec<HealthPlanCopayProperty>);
@@ -516,13 +187,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("healthPlanCopay")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "health-plan-copay-option-property-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#health_plan_copay_option) {
 				serialize_struct.serialize_field("healthPlanCopayOption", {
 					struct SerializeWith<'a>(&'a Vec<HealthPlanCopayOptionProperty>);
@@ -541,13 +205,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("healthPlanCopayOption")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "health-plan-pharmacy-category-property-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#health_plan_pharmacy_category) {
 				serialize_struct.serialize_field("healthPlanPharmacyCategory", {
 					struct SerializeWith<'a>(&'a Vec<HealthPlanPharmacyCategoryProperty>);
@@ -566,13 +223,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("healthPlanPharmacyCategory")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "identifier-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#identifier) {
 				serialize_struct.serialize_field("identifier", {
 					struct SerializeWith<'a>(&'a Vec<IdentifierProperty>);
@@ -591,10 +241,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("identifier")?;
 			}
-			#[cfg(any(
-				any(feature = "image-property-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#image) {
 				serialize_struct.serialize_field("image", {
 					struct SerializeWith<'a>(&'a Vec<ImageProperty>);
@@ -613,13 +259,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("image")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "main-entity-of-page-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#main_entity_of_page) {
 				serialize_struct.serialize_field("mainEntityOfPage", {
 					struct SerializeWith<'a>(&'a Vec<MainEntityOfPageProperty>);
@@ -638,10 +277,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("mainEntityOfPage")?;
 			}
-			#[cfg(any(
-				any(feature = "name-property-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#name) {
 				serialize_struct.serialize_field("name", {
 					struct SerializeWith<'a>(&'a Vec<NameProperty>);
@@ -660,13 +295,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("name")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "potential-action-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#potential_action) {
 				serialize_struct.serialize_field("potentialAction", {
 					struct SerializeWith<'a>(&'a Vec<PotentialActionProperty>);
@@ -685,13 +313,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("potentialAction")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "same-as-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#same_as) {
 				serialize_struct.serialize_field("sameAs", {
 					struct SerializeWith<'a>(&'a Vec<SameAsProperty>);
@@ -710,13 +331,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("sameAs")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "subject-of-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#subject_of) {
 				serialize_struct.serialize_field("subjectOf", {
 					struct SerializeWith<'a>(&'a Vec<SubjectOfProperty>);
@@ -735,10 +349,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("subjectOf")?;
 			}
-			#[cfg(any(
-				any(feature = "url-property-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#url) {
 				serialize_struct.serialize_field("url", {
 					struct SerializeWith<'a>(&'a Vec<UrlProperty>);
@@ -766,132 +376,22 @@ mod serde {
 			D: Deserializer<'de>,
 		{
 			enum Field {
-				#[cfg(any(
-					any(
-						feature = "additional-type-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				AdditionalType,
-				#[cfg(any(
-					any(
-						feature = "alternate-name-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				AlternateName,
-				#[cfg(any(
-					any(
-						feature = "description-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				Description,
-				#[cfg(any(
-					any(
-						feature = "disambiguating-description-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				DisambiguatingDescription,
-				#[cfg(any(
-					any(
-						feature = "health-plan-coinsurance-option-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				HealthPlanCoinsuranceOption,
-				#[cfg(any(
-					any(
-						feature = "health-plan-coinsurance-rate-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				HealthPlanCoinsuranceRate,
-				#[cfg(any(
-					any(
-						feature = "health-plan-copay-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				HealthPlanCopay,
-				#[cfg(any(
-					any(
-						feature = "health-plan-copay-option-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				HealthPlanCopayOption,
-				#[cfg(any(
-					any(
-						feature = "health-plan-pharmacy-category-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				HealthPlanPharmacyCategory,
-				#[cfg(any(
-					any(
-						feature = "identifier-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				Identifier,
-				#[cfg(any(
-					any(feature = "image-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				Image,
-				#[cfg(any(
-					any(
-						feature = "main-entity-of-page-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				MainEntityOfPage,
-				#[cfg(any(
-					any(feature = "name-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				Name,
-				#[cfg(any(
-					any(
-						feature = "potential-action-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				PotentialAction,
-				#[cfg(any(
-					any(
-						feature = "same-as-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				SameAs,
-				#[cfg(any(
-					any(
-						feature = "subject-of-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				SubjectOf,
-				#[cfg(any(
-					any(feature = "url-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				Url,
 				Ignore,
 			}
@@ -906,141 +406,22 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
-						#[cfg(any(
-							any(
-								feature = "additional-type-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"additionalType" => Ok(Field::AdditionalType),
-						#[cfg(any(
-							any(
-								feature = "alternate-name-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"alternateName" => Ok(Field::AlternateName),
-						#[cfg(any(
-							any(
-								feature = "description-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"description" => Ok(Field::Description),
-						#[cfg(any(
-							any(
-								feature = "disambiguating-description-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
-						#[cfg(any(
-							any(
-								feature = "health-plan-coinsurance-option-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						"healthPlanCoinsuranceOption" => Ok(Field::HealthPlanCoinsuranceOption),
-						#[cfg(any(
-							any(
-								feature = "health-plan-coinsurance-rate-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						"healthPlanCoinsuranceRate" => Ok(Field::HealthPlanCoinsuranceRate),
-						#[cfg(any(
-							any(
-								feature = "health-plan-copay-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						"healthPlanCopay" => Ok(Field::HealthPlanCopay),
-						#[cfg(any(
-							any(
-								feature = "health-plan-copay-option-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						"healthPlanCopayOption" => Ok(Field::HealthPlanCopayOption),
-						#[cfg(any(
-							any(
-								feature = "health-plan-pharmacy-category-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						"healthPlanPharmacyCategory" => Ok(Field::HealthPlanPharmacyCategory),
-						#[cfg(any(
-							any(
-								feature = "identifier-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"identifier" => Ok(Field::Identifier),
-						#[cfg(any(
-							any(
-								feature = "image-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"image" => Ok(Field::Image),
-						#[cfg(any(
-							any(
-								feature = "main-entity-of-page-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
-						#[cfg(any(
-							any(
-								feature = "name-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"name" => Ok(Field::Name),
-						#[cfg(any(
-							any(
-								feature = "potential-action-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"potentialAction" => Ok(Field::PotentialAction),
-						#[cfg(any(
-							any(
-								feature = "same-as-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"sameAs" => Ok(Field::SameAs),
-						#[cfg(any(
-							any(
-								feature = "subject-of-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"subjectOf" => Ok(Field::SubjectOf),
-						#[cfg(any(
-							any(
-								feature = "url-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"url" => Ok(Field::Url),
 						_ => Ok(Field::Ignore),
 					}
@@ -1050,141 +431,22 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
-						#[cfg(any(
-							any(
-								feature = "additional-type-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"additionalType" => Ok(Field::AdditionalType),
-						#[cfg(any(
-							any(
-								feature = "alternate-name-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"alternateName" => Ok(Field::AlternateName),
-						#[cfg(any(
-							any(
-								feature = "description-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"description" => Ok(Field::Description),
-						#[cfg(any(
-							any(
-								feature = "disambiguating-description-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
-						#[cfg(any(
-							any(
-								feature = "health-plan-coinsurance-option-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						b"healthPlanCoinsuranceOption" => Ok(Field::HealthPlanCoinsuranceOption),
-						#[cfg(any(
-							any(
-								feature = "health-plan-coinsurance-rate-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						b"healthPlanCoinsuranceRate" => Ok(Field::HealthPlanCoinsuranceRate),
-						#[cfg(any(
-							any(
-								feature = "health-plan-copay-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						b"healthPlanCopay" => Ok(Field::HealthPlanCopay),
-						#[cfg(any(
-							any(
-								feature = "health-plan-copay-option-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						b"healthPlanCopayOption" => Ok(Field::HealthPlanCopayOption),
-						#[cfg(any(
-							any(
-								feature = "health-plan-pharmacy-category-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						b"healthPlanPharmacyCategory" => Ok(Field::HealthPlanPharmacyCategory),
-						#[cfg(any(
-							any(
-								feature = "identifier-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"identifier" => Ok(Field::Identifier),
-						#[cfg(any(
-							any(
-								feature = "image-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"image" => Ok(Field::Image),
-						#[cfg(any(
-							any(
-								feature = "main-entity-of-page-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
-						#[cfg(any(
-							any(
-								feature = "name-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"name" => Ok(Field::Name),
-						#[cfg(any(
-							any(
-								feature = "potential-action-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"potentialAction" => Ok(Field::PotentialAction),
-						#[cfg(any(
-							any(
-								feature = "same-as-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"sameAs" => Ok(Field::SameAs),
-						#[cfg(any(
-							any(
-								feature = "subject-of-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"subjectOf" => Ok(Field::SubjectOf),
-						#[cfg(any(
-							any(
-								feature = "url-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"url" => Ok(Field::Url),
 						_ => Ok(Field::Ignore),
 					}
@@ -1208,142 +470,25 @@ mod serde {
 				where
 					A: de::MapAccess<'de>,
 				{
-					#[cfg(any(
-						any(
-							feature = "additional-type-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#additional_type_property = None;
-					#[cfg(any(
-						any(
-							feature = "alternate-name-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#alternate_name_property = None;
-					#[cfg(any(
-						any(
-							feature = "description-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#description_property = None;
-					#[cfg(any(
-						any(
-							feature = "disambiguating-description-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#disambiguating_description_property = None;
-					#[cfg(any(
-						any(
-							feature = "health-plan-coinsurance-option-property-schema",
-							feature = "pending-schema-section"
-						),
-						doc
-					))]
 					let mut r#health_plan_coinsurance_option_property = None;
-					#[cfg(any(
-						any(
-							feature = "health-plan-coinsurance-rate-property-schema",
-							feature = "pending-schema-section"
-						),
-						doc
-					))]
 					let mut r#health_plan_coinsurance_rate_property = None;
-					#[cfg(any(
-						any(
-							feature = "health-plan-copay-property-schema",
-							feature = "pending-schema-section"
-						),
-						doc
-					))]
 					let mut r#health_plan_copay_property = None;
-					#[cfg(any(
-						any(
-							feature = "health-plan-copay-option-property-schema",
-							feature = "pending-schema-section"
-						),
-						doc
-					))]
 					let mut r#health_plan_copay_option_property = None;
-					#[cfg(any(
-						any(
-							feature = "health-plan-pharmacy-category-property-schema",
-							feature = "pending-schema-section"
-						),
-						doc
-					))]
 					let mut r#health_plan_pharmacy_category_property = None;
-					#[cfg(any(
-						any(
-							feature = "identifier-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#identifier_property = None;
-					#[cfg(any(
-						any(feature = "image-property-schema", feature = "general-schema-section"),
-						doc
-					))]
 					let mut r#image_property = None;
-					#[cfg(any(
-						any(
-							feature = "main-entity-of-page-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#main_entity_of_page_property = None;
-					#[cfg(any(
-						any(feature = "name-property-schema", feature = "general-schema-section"),
-						doc
-					))]
 					let mut r#name_property = None;
-					#[cfg(any(
-						any(
-							feature = "potential-action-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#potential_action_property = None;
-					#[cfg(any(
-						any(
-							feature = "same-as-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#same_as_property = None;
-					#[cfg(any(
-						any(
-							feature = "subject-of-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#subject_of_property = None;
-					#[cfg(any(
-						any(feature = "url-property-schema", feature = "general-schema-section"),
-						doc
-					))]
 					let mut r#url_property = None;
 					while let Some(key) = map.next_key::<Field>()? {
 						match key {
-							#[cfg(any(
-								any(
-									feature = "additional-type-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::AdditionalType => {
 								if r#additional_type_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -1370,13 +515,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "alternate-name-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::AlternateName => {
 								if r#alternate_name_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -1403,13 +541,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "description-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Description => {
 								if r#description_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -1436,13 +567,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "disambiguating-description-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::DisambiguatingDescription => {
 								if r#disambiguating_description_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -1469,13 +593,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "health-plan-coinsurance-option-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::HealthPlanCoinsuranceOption => {
 								if r#health_plan_coinsurance_option_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -1504,13 +621,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "health-plan-coinsurance-rate-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::HealthPlanCoinsuranceRate => {
 								if r#health_plan_coinsurance_rate_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -1537,13 +647,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "health-plan-copay-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::HealthPlanCopay => {
 								if r#health_plan_copay_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -1570,13 +673,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "health-plan-copay-option-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::HealthPlanCopayOption => {
 								if r#health_plan_copay_option_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -1603,13 +699,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "health-plan-pharmacy-category-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::HealthPlanPharmacyCategory => {
 								if r#health_plan_pharmacy_category_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -1636,13 +725,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "identifier-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Identifier => {
 								if r#identifier_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -1669,13 +751,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "image-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Image => {
 								if r#image_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("image"));
@@ -1700,13 +775,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "main-entity-of-page-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::MainEntityOfPage => {
 								if r#main_entity_of_page_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -1733,13 +801,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "name-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Name => {
 								if r#name_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("name"));
@@ -1764,13 +825,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "potential-action-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::PotentialAction => {
 								if r#potential_action_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -1797,13 +851,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "same-as-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::SameAs => {
 								if r#same_as_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("sameAs"));
@@ -1828,13 +875,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "subject-of-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::SubjectOf => {
 								if r#subject_of_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -1861,13 +901,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "url-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Url => {
 								if r#url_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("url"));
@@ -1898,277 +931,48 @@ mod serde {
 						}
 					}
 					Ok(HealthPlanCostSharingSpecification {
-						#[cfg(any(
-							any(
-								feature = "additional-type-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#additional_type: r#additional_type_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "alternate-name-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#alternate_name: r#alternate_name_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "description-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#description: r#description_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "disambiguating-description-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#disambiguating_description: r#disambiguating_description_property
 							.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "health-plan-coinsurance-option-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#health_plan_coinsurance_option: r#health_plan_coinsurance_option_property
 							.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "health-plan-coinsurance-rate-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#health_plan_coinsurance_rate: r#health_plan_coinsurance_rate_property
 							.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "health-plan-copay-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#health_plan_copay: r#health_plan_copay_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "health-plan-copay-option-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#health_plan_copay_option: r#health_plan_copay_option_property
 							.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "health-plan-pharmacy-category-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#health_plan_pharmacy_category: r#health_plan_pharmacy_category_property
 							.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "identifier-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#identifier: r#identifier_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "image-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#image: r#image_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "main-entity-of-page-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#main_entity_of_page: r#main_entity_of_page_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "name-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#name: r#name_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "potential-action-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#potential_action: r#potential_action_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "same-as-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#same_as: r#same_as_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "subject-of-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#subject_of: r#subject_of_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "url-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#url: r#url_property.unwrap_or_default(),
 					})
 				}
 			}
 			const FIELDS: &[&str] = &[
-				#[cfg(any(
-					any(
-						feature = "additional-type-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"additionalType",
-				#[cfg(any(
-					any(
-						feature = "alternate-name-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"alternateName",
-				#[cfg(any(
-					any(
-						feature = "description-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"description",
-				#[cfg(any(
-					any(
-						feature = "disambiguating-description-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"disambiguatingDescription",
-				#[cfg(any(
-					any(
-						feature = "health-plan-coinsurance-option-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				"healthPlanCoinsuranceOption",
-				#[cfg(any(
-					any(
-						feature = "health-plan-coinsurance-rate-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				"healthPlanCoinsuranceRate",
-				#[cfg(any(
-					any(
-						feature = "health-plan-copay-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				"healthPlanCopay",
-				#[cfg(any(
-					any(
-						feature = "health-plan-copay-option-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				"healthPlanCopayOption",
-				#[cfg(any(
-					any(
-						feature = "health-plan-pharmacy-category-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				"healthPlanPharmacyCategory",
-				#[cfg(any(
-					any(
-						feature = "identifier-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"identifier",
-				#[cfg(any(
-					any(feature = "image-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				"image",
-				#[cfg(any(
-					any(
-						feature = "main-entity-of-page-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"mainEntityOfPage",
-				#[cfg(any(
-					any(feature = "name-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				"name",
-				#[cfg(any(
-					any(
-						feature = "potential-action-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"potentialAction",
-				#[cfg(any(
-					any(
-						feature = "same-as-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"sameAs",
-				#[cfg(any(
-					any(
-						feature = "subject-of-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"subjectOf",
-				#[cfg(any(
-					any(feature = "url-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				"url",
 			];
 			deserializer.deserialize_struct(

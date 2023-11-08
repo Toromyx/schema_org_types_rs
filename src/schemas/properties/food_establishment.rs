@@ -3,15 +3,7 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum FoodEstablishmentProperty {
-	#[cfg(any(
-		any(
-			feature = "food-establishment-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	FoodEstablishment(FoodEstablishment),
-	#[cfg(any(any(feature = "place-schema", feature = "general-schema-section"), doc))]
 	Place(Place),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),
@@ -31,15 +23,9 @@ mod serde {
 			S: Serializer,
 		{
 			match *self {
-				#[cfg(any(
-					any(
-						feature = "food-establishment-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
-				FoodEstablishmentProperty::FoodEstablishment(ref inner) => inner.serialize(serializer),
-				#[cfg(any(any(feature = "place-schema", feature = "general-schema-section"), doc))]
+				FoodEstablishmentProperty::FoodEstablishment(ref inner) => {
+					inner.serialize(serializer)
+				}
 				FoodEstablishmentProperty::Place(ref inner) => inner.serialize(serializer),
 				#[cfg(all(feature = "fallible", feature = "serde"))]
 				FoodEstablishmentProperty::SerdeFail(ref inner) => inner.serialize(serializer),
@@ -55,20 +41,12 @@ mod serde {
 				<::serde::__private::de::Content as Deserialize>::deserialize(deserializer)?;
 			let deserializer =
 				::serde::__private::de::ContentRefDeserializer::<D::Error>::new(&content);
-			#[cfg(any(
-				any(
-					feature = "food-establishment-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<FoodEstablishment as Deserialize>::deserialize(deserializer),
 				FoodEstablishmentProperty::FoodEstablishment,
 			) {
 				return Ok(ok);
 			}
-			#[cfg(any(any(feature = "place-schema", feature = "general-schema-section"), doc))]
 			if let Ok(ok) = Result::map(
 				<Place as Deserialize>::deserialize(deserializer),
 				FoodEstablishmentProperty::Place,

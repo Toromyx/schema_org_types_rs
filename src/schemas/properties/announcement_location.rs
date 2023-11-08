@@ -3,15 +3,7 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum AnnouncementLocationProperty {
-	#[cfg(any(
-		any(feature = "civic-structure-schema", feature = "general-schema-section"),
-		doc
-	))]
 	CivicStructure(CivicStructure),
-	#[cfg(any(
-		any(feature = "local-business-schema", feature = "general-schema-section"),
-		doc
-	))]
 	LocalBusiness(LocalBusiness),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),
@@ -31,16 +23,12 @@ mod serde {
 			S: Serializer,
 		{
 			match *self {
-				#[cfg(any(
-					any(feature = "civic-structure-schema", feature = "general-schema-section"),
-					doc
-				))]
-				AnnouncementLocationProperty::CivicStructure(ref inner) => inner.serialize(serializer),
-				#[cfg(any(
-					any(feature = "local-business-schema", feature = "general-schema-section"),
-					doc
-				))]
-				AnnouncementLocationProperty::LocalBusiness(ref inner) => inner.serialize(serializer),
+				AnnouncementLocationProperty::CivicStructure(ref inner) => {
+					inner.serialize(serializer)
+				}
+				AnnouncementLocationProperty::LocalBusiness(ref inner) => {
+					inner.serialize(serializer)
+				}
 				#[cfg(all(feature = "fallible", feature = "serde"))]
 				AnnouncementLocationProperty::SerdeFail(ref inner) => inner.serialize(serializer),
 			}
@@ -55,20 +43,12 @@ mod serde {
 				<::serde::__private::de::Content as Deserialize>::deserialize(deserializer)?;
 			let deserializer =
 				::serde::__private::de::ContentRefDeserializer::<D::Error>::new(&content);
-			#[cfg(any(
-				any(feature = "civic-structure-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<CivicStructure as Deserialize>::deserialize(deserializer),
 				AnnouncementLocationProperty::CivicStructure,
 			) {
 				return Ok(ok);
 			}
-			#[cfg(any(
-				any(feature = "local-business-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<LocalBusiness as Deserialize>::deserialize(deserializer),
 				AnnouncementLocationProperty::LocalBusiness,

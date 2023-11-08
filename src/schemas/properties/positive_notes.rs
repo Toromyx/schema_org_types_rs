@@ -3,22 +3,9 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum PositiveNotesProperty {
-	#[cfg(any(
-		any(feature = "item-list-schema", feature = "general-schema-section"),
-		doc
-	))]
 	ItemList(ItemList),
-	#[cfg(any(
-		any(feature = "list-item-schema", feature = "general-schema-section"),
-		doc
-	))]
 	ListItem(ListItem),
-	#[cfg(any(
-		any(feature = "web-content-schema", feature = "pending-schema-section"),
-		doc
-	))]
 	WebContent(WebContent),
-	#[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
 	Text(Text),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),
@@ -38,22 +25,9 @@ mod serde {
 			S: Serializer,
 		{
 			match *self {
-				#[cfg(any(
-					any(feature = "item-list-schema", feature = "general-schema-section"),
-					doc
-				))]
 				PositiveNotesProperty::ItemList(ref inner) => inner.serialize(serializer),
-				#[cfg(any(
-					any(feature = "list-item-schema", feature = "general-schema-section"),
-					doc
-				))]
 				PositiveNotesProperty::ListItem(ref inner) => inner.serialize(serializer),
-				#[cfg(any(
-					any(feature = "web-content-schema", feature = "pending-schema-section"),
-					doc
-				))]
 				PositiveNotesProperty::WebContent(ref inner) => inner.serialize(serializer),
-				#[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
 				PositiveNotesProperty::Text(ref inner) => inner.serialize(serializer),
 				#[cfg(all(feature = "fallible", feature = "serde"))]
 				PositiveNotesProperty::SerdeFail(ref inner) => inner.serialize(serializer),
@@ -69,37 +43,24 @@ mod serde {
 				<::serde::__private::de::Content as Deserialize>::deserialize(deserializer)?;
 			let deserializer =
 				::serde::__private::de::ContentRefDeserializer::<D::Error>::new(&content);
-			#[cfg(any(
-				any(feature = "item-list-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<ItemList as Deserialize>::deserialize(deserializer),
 				PositiveNotesProperty::ItemList,
 			) {
 				return Ok(ok);
 			}
-			#[cfg(any(
-				any(feature = "list-item-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<ListItem as Deserialize>::deserialize(deserializer),
 				PositiveNotesProperty::ListItem,
 			) {
 				return Ok(ok);
 			}
-			#[cfg(any(
-				any(feature = "web-content-schema", feature = "pending-schema-section"),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<WebContent as Deserialize>::deserialize(deserializer),
 				PositiveNotesProperty::WebContent,
 			) {
 				return Ok(ok);
 			}
-			#[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
 			if let Ok(ok) = Result::map(
 				<Text as Deserialize>::deserialize(deserializer),
 				PositiveNotesProperty::Text,

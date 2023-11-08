@@ -3,10 +3,6 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum SportsTeamProperty {
-	#[cfg(any(
-		any(feature = "sports-team-schema", feature = "general-schema-section"),
-		doc
-	))]
 	SportsTeam(SportsTeam),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),
@@ -26,10 +22,6 @@ mod serde {
 			S: Serializer,
 		{
 			match *self {
-				#[cfg(any(
-					any(feature = "sports-team-schema", feature = "general-schema-section"),
-					doc
-				))]
 				SportsTeamProperty::SportsTeam(ref inner) => inner.serialize(serializer),
 				#[cfg(all(feature = "fallible", feature = "serde"))]
 				SportsTeamProperty::SerdeFail(ref inner) => inner.serialize(serializer),
@@ -45,10 +37,6 @@ mod serde {
 				<::serde::__private::de::Content as Deserialize>::deserialize(deserializer)?;
 			let deserializer =
 				::serde::__private::de::ContentRefDeserializer::<D::Error>::new(&content);
-			#[cfg(any(
-				any(feature = "sports-team-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<SportsTeam as Deserialize>::deserialize(deserializer),
 				SportsTeamProperty::SportsTeam,

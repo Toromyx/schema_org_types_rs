@@ -3,18 +3,7 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum WidthProperty {
-	#[cfg(any(
-		any(feature = "distance-schema", feature = "general-schema-section"),
-		doc
-	))]
 	Distance(Distance),
-	#[cfg(any(
-		any(
-			feature = "quantitative-value-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	QuantitativeValue(QuantitativeValue),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),
@@ -34,18 +23,7 @@ mod serde {
 			S: Serializer,
 		{
 			match *self {
-				#[cfg(any(
-					any(feature = "distance-schema", feature = "general-schema-section"),
-					doc
-				))]
 				WidthProperty::Distance(ref inner) => inner.serialize(serializer),
-				#[cfg(any(
-					any(
-						feature = "quantitative-value-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				WidthProperty::QuantitativeValue(ref inner) => inner.serialize(serializer),
 				#[cfg(all(feature = "fallible", feature = "serde"))]
 				WidthProperty::SerdeFail(ref inner) => inner.serialize(serializer),
@@ -61,23 +39,12 @@ mod serde {
 				<::serde::__private::de::Content as Deserialize>::deserialize(deserializer)?;
 			let deserializer =
 				::serde::__private::de::ContentRefDeserializer::<D::Error>::new(&content);
-			#[cfg(any(
-				any(feature = "distance-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<Distance as Deserialize>::deserialize(deserializer),
 				WidthProperty::Distance,
 			) {
 				return Ok(ok);
 			}
-			#[cfg(any(
-				any(
-					feature = "quantitative-value-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<QuantitativeValue as Deserialize>::deserialize(deserializer),
 				WidthProperty::QuantitativeValue,

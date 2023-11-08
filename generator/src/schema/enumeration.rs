@@ -13,7 +13,6 @@ use rayon::prelude::*;
 use crate::{
 	doc_lines::DocLines,
 	schema::{enumeration::serde::serde_mod, map_schema_name, Schema},
-	schema_section::SchemaSection,
 	sparql::{SchemaQueries, SchemaQuerySolution},
 };
 
@@ -28,8 +27,6 @@ pub struct Enumeration {
 	pub name: String,
 	#[derivative(PartialEq = "ignore", PartialOrd = "ignore", Ord = "ignore")]
 	pub variants: Vec<EnumerationVariant>,
-	#[derivative(PartialEq = "ignore", PartialOrd = "ignore", Ord = "ignore")]
-	pub section: SchemaSection,
 }
 
 impl Schema for Enumeration {
@@ -47,10 +44,6 @@ impl Schema for Enumeration {
 
 	fn iri(&self) -> &String {
 		&self.iri
-	}
-
-	fn section(&self) -> &SchemaSection {
-		&self.section
 	}
 
 	fn child_feature_names(&self) -> Vec<String> {
@@ -71,7 +64,6 @@ impl Schema for Enumeration {
 			iri: solution.iri,
 			name: map_schema_name(solution.label),
 			variants,
-			section: solution.section,
 		}
 	}
 }

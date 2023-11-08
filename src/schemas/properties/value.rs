@@ -3,25 +3,9 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum ValueProperty {
-	#[cfg(any(
-		any(
-			feature = "structured-value-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	StructuredValue(StructuredValue),
-	#[cfg(any(
-		any(feature = "boolean-schema", feature = "general-schema-section"),
-		doc
-	))]
 	Boolean(Boolean),
-	#[cfg(any(
-		any(feature = "number-schema", feature = "general-schema-section"),
-		doc
-	))]
 	Number(Number),
-	#[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
 	Text(Text),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),
@@ -41,25 +25,9 @@ mod serde {
 			S: Serializer,
 		{
 			match *self {
-				#[cfg(any(
-					any(
-						feature = "structured-value-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				ValueProperty::StructuredValue(ref inner) => inner.serialize(serializer),
-				#[cfg(any(
-					any(feature = "boolean-schema", feature = "general-schema-section"),
-					doc
-				))]
 				ValueProperty::Boolean(ref inner) => inner.serialize(serializer),
-				#[cfg(any(
-					any(feature = "number-schema", feature = "general-schema-section"),
-					doc
-				))]
 				ValueProperty::Number(ref inner) => inner.serialize(serializer),
-				#[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
 				ValueProperty::Text(ref inner) => inner.serialize(serializer),
 				#[cfg(all(feature = "fallible", feature = "serde"))]
 				ValueProperty::SerdeFail(ref inner) => inner.serialize(serializer),
@@ -75,40 +43,24 @@ mod serde {
 				<::serde::__private::de::Content as Deserialize>::deserialize(deserializer)?;
 			let deserializer =
 				::serde::__private::de::ContentRefDeserializer::<D::Error>::new(&content);
-			#[cfg(any(
-				any(
-					feature = "structured-value-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<StructuredValue as Deserialize>::deserialize(deserializer),
 				ValueProperty::StructuredValue,
 			) {
 				return Ok(ok);
 			}
-			#[cfg(any(
-				any(feature = "boolean-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<Boolean as Deserialize>::deserialize(deserializer),
 				ValueProperty::Boolean,
 			) {
 				return Ok(ok);
 			}
-			#[cfg(any(
-				any(feature = "number-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<Number as Deserialize>::deserialize(deserializer),
 				ValueProperty::Number,
 			) {
 				return Ok(ok);
 			}
-			#[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
 			if let Ok(ok) = Result::map(
 				<Text as Deserialize>::deserialize(deserializer),
 				ValueProperty::Text,

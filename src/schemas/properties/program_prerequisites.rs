@@ -3,28 +3,9 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum ProgramPrerequisitesProperty {
-	#[cfg(any(
-		any(
-			feature = "alignment-object-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	AlignmentObject(AlignmentObject),
-	#[cfg(any(
-		any(feature = "course-schema", feature = "general-schema-section"),
-		doc
-	))]
 	Course(Course),
-	#[cfg(any(
-		any(
-			feature = "educational-occupational-credential-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	EducationalOccupationalCredential(EducationalOccupationalCredential),
-	#[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
 	Text(Text),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),
@@ -44,30 +25,13 @@ mod serde {
 			S: Serializer,
 		{
 			match *self {
-				#[cfg(any(
-					any(
-						feature = "alignment-object-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
-				ProgramPrerequisitesProperty::AlignmentObject(ref inner) => inner.serialize(serializer),
-				#[cfg(any(
-					any(feature = "course-schema", feature = "general-schema-section"),
-					doc
-				))]
+				ProgramPrerequisitesProperty::AlignmentObject(ref inner) => {
+					inner.serialize(serializer)
+				}
 				ProgramPrerequisitesProperty::Course(ref inner) => inner.serialize(serializer),
-				#[cfg(any(
-					any(
-						feature = "educational-occupational-credential-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				ProgramPrerequisitesProperty::EducationalOccupationalCredential(ref inner) => {
 					inner.serialize(serializer)
 				}
-				#[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
 				ProgramPrerequisitesProperty::Text(ref inner) => inner.serialize(serializer),
 				#[cfg(all(feature = "fallible", feature = "serde"))]
 				ProgramPrerequisitesProperty::SerdeFail(ref inner) => inner.serialize(serializer),
@@ -83,43 +47,24 @@ mod serde {
 				<::serde::__private::de::Content as Deserialize>::deserialize(deserializer)?;
 			let deserializer =
 				::serde::__private::de::ContentRefDeserializer::<D::Error>::new(&content);
-			#[cfg(any(
-				any(
-					feature = "alignment-object-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<AlignmentObject as Deserialize>::deserialize(deserializer),
 				ProgramPrerequisitesProperty::AlignmentObject,
 			) {
 				return Ok(ok);
 			}
-			#[cfg(any(
-				any(feature = "course-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<Course as Deserialize>::deserialize(deserializer),
 				ProgramPrerequisitesProperty::Course,
 			) {
 				return Ok(ok);
 			}
-			#[cfg(any(
-				any(
-					feature = "educational-occupational-credential-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<EducationalOccupationalCredential as Deserialize>::deserialize(deserializer),
 				ProgramPrerequisitesProperty::EducationalOccupationalCredential,
 			) {
 				return Ok(ok);
 			}
-			#[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
 			if let Ok(ok) = Result::map(
 				<Text as Deserialize>::deserialize(deserializer),
 				ProgramPrerequisitesProperty::Text,

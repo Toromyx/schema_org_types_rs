@@ -3,15 +3,7 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum OwnsProperty {
-	#[cfg(any(
-		any(feature = "ownership-info-schema", feature = "general-schema-section"),
-		doc
-	))]
 	OwnershipInfo(OwnershipInfo),
-	#[cfg(any(
-		any(feature = "product-schema", feature = "general-schema-section"),
-		doc
-	))]
 	Product(Product),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),
@@ -31,15 +23,7 @@ mod serde {
 			S: Serializer,
 		{
 			match *self {
-				#[cfg(any(
-					any(feature = "ownership-info-schema", feature = "general-schema-section"),
-					doc
-				))]
 				OwnsProperty::OwnershipInfo(ref inner) => inner.serialize(serializer),
-				#[cfg(any(
-					any(feature = "product-schema", feature = "general-schema-section"),
-					doc
-				))]
 				OwnsProperty::Product(ref inner) => inner.serialize(serializer),
 				#[cfg(all(feature = "fallible", feature = "serde"))]
 				OwnsProperty::SerdeFail(ref inner) => inner.serialize(serializer),
@@ -55,20 +39,12 @@ mod serde {
 				<::serde::__private::de::Content as Deserialize>::deserialize(deserializer)?;
 			let deserializer =
 				::serde::__private::de::ContentRefDeserializer::<D::Error>::new(&content);
-			#[cfg(any(
-				any(feature = "ownership-info-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<OwnershipInfo as Deserialize>::deserialize(deserializer),
 				OwnsProperty::OwnershipInfo,
 			) {
 				return Ok(ok);
 			}
-			#[cfg(any(
-				any(feature = "product-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<Product as Deserialize>::deserialize(deserializer),
 				OwnsProperty::Product,

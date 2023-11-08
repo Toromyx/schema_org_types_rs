@@ -9,8 +9,6 @@ mod doc_lines;
 mod feature;
 mod read;
 mod schema;
-mod schema_feature;
-mod schema_section;
 mod serde_attributes;
 mod sparql;
 mod write;

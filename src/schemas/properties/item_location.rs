@@ -3,14 +3,8 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum ItemLocationProperty {
-	#[cfg(any(any(feature = "place-schema", feature = "general-schema-section"), doc))]
 	Place(Place),
-	#[cfg(any(
-		any(feature = "postal-address-schema", feature = "general-schema-section"),
-		doc
-	))]
 	PostalAddress(PostalAddress),
-	#[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
 	Text(Text),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),
@@ -30,14 +24,8 @@ mod serde {
 			S: Serializer,
 		{
 			match *self {
-				#[cfg(any(any(feature = "place-schema", feature = "general-schema-section"), doc))]
 				ItemLocationProperty::Place(ref inner) => inner.serialize(serializer),
-				#[cfg(any(
-					any(feature = "postal-address-schema", feature = "general-schema-section"),
-					doc
-				))]
 				ItemLocationProperty::PostalAddress(ref inner) => inner.serialize(serializer),
-				#[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
 				ItemLocationProperty::Text(ref inner) => inner.serialize(serializer),
 				#[cfg(all(feature = "fallible", feature = "serde"))]
 				ItemLocationProperty::SerdeFail(ref inner) => inner.serialize(serializer),
@@ -53,24 +41,18 @@ mod serde {
 				<::serde::__private::de::Content as Deserialize>::deserialize(deserializer)?;
 			let deserializer =
 				::serde::__private::de::ContentRefDeserializer::<D::Error>::new(&content);
-			#[cfg(any(any(feature = "place-schema", feature = "general-schema-section"), doc))]
 			if let Ok(ok) = Result::map(
 				<Place as Deserialize>::deserialize(deserializer),
 				ItemLocationProperty::Place,
 			) {
 				return Ok(ok);
 			}
-			#[cfg(any(
-				any(feature = "postal-address-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<PostalAddress as Deserialize>::deserialize(deserializer),
 				ItemLocationProperty::PostalAddress,
 			) {
 				return Ok(ok);
 			}
-			#[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
 			if let Ok(ok) = Result::map(
 				<Text as Deserialize>::deserialize(deserializer),
 				ItemLocationProperty::Text,

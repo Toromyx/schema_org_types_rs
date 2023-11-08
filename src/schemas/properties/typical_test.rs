@@ -3,13 +3,6 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum TypicalTestProperty {
-	#[cfg(any(
-		any(
-			feature = "medical-test-schema",
-			feature = "health-lifesci-schema-section"
-		),
-		doc
-	))]
 	MedicalTest(MedicalTest),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),
@@ -29,13 +22,6 @@ mod serde {
 			S: Serializer,
 		{
 			match *self {
-				#[cfg(any(
-					any(
-						feature = "medical-test-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
 				TypicalTestProperty::MedicalTest(ref inner) => inner.serialize(serializer),
 				#[cfg(all(feature = "fallible", feature = "serde"))]
 				TypicalTestProperty::SerdeFail(ref inner) => inner.serialize(serializer),
@@ -51,13 +37,6 @@ mod serde {
 				<::serde::__private::de::Content as Deserialize>::deserialize(deserializer)?;
 			let deserializer =
 				::serde::__private::de::ContentRefDeserializer::<D::Error>::new(&content);
-			#[cfg(any(
-				any(
-					feature = "medical-test-schema",
-					feature = "health-lifesci-schema-section"
-				),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<MedicalTest as Deserialize>::deserialize(deserializer),
 				TypicalTestProperty::MedicalTest,

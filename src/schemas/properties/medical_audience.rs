@@ -3,21 +3,7 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum MedicalAudienceProperty {
-	#[cfg(any(
-		any(
-			feature = "medical-audience-schema",
-			feature = "health-lifesci-schema-section"
-		),
-		doc
-	))]
 	MedicalAudience(MedicalAudience),
-	#[cfg(any(
-		any(
-			feature = "medical-audience-type-schema",
-			feature = "health-lifesci-schema-section"
-		),
-		doc
-	))]
 	MedicalAudienceType(MedicalAudienceType),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),
@@ -37,22 +23,10 @@ mod serde {
 			S: Serializer,
 		{
 			match *self {
-				#[cfg(any(
-					any(
-						feature = "medical-audience-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
 				MedicalAudienceProperty::MedicalAudience(ref inner) => inner.serialize(serializer),
-				#[cfg(any(
-					any(
-						feature = "medical-audience-type-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
-				MedicalAudienceProperty::MedicalAudienceType(ref inner) => inner.serialize(serializer),
+				MedicalAudienceProperty::MedicalAudienceType(ref inner) => {
+					inner.serialize(serializer)
+				}
 				#[cfg(all(feature = "fallible", feature = "serde"))]
 				MedicalAudienceProperty::SerdeFail(ref inner) => inner.serialize(serializer),
 			}
@@ -67,26 +41,12 @@ mod serde {
 				<::serde::__private::de::Content as Deserialize>::deserialize(deserializer)?;
 			let deserializer =
 				::serde::__private::de::ContentRefDeserializer::<D::Error>::new(&content);
-			#[cfg(any(
-				any(
-					feature = "medical-audience-schema",
-					feature = "health-lifesci-schema-section"
-				),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<MedicalAudience as Deserialize>::deserialize(deserializer),
 				MedicalAudienceProperty::MedicalAudience,
 			) {
 				return Ok(ok);
 			}
-			#[cfg(any(
-				any(
-					feature = "medical-audience-type-schema",
-					feature = "health-lifesci-schema-section"
-				),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<MedicalAudienceType as Deserialize>::deserialize(deserializer),
 				MedicalAudienceProperty::MedicalAudienceType,

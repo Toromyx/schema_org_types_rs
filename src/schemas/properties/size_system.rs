@@ -3,15 +3,7 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum SizeSystemProperty {
-	#[cfg(any(
-		any(
-			feature = "size-system-enumeration-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	SizeSystemEnumeration(SizeSystemEnumeration),
-	#[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
 	Text(Text),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),
@@ -31,15 +23,7 @@ mod serde {
 			S: Serializer,
 		{
 			match *self {
-				#[cfg(any(
-					any(
-						feature = "size-system-enumeration-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				SizeSystemProperty::SizeSystemEnumeration(ref inner) => inner.serialize(serializer),
-				#[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
 				SizeSystemProperty::Text(ref inner) => inner.serialize(serializer),
 				#[cfg(all(feature = "fallible", feature = "serde"))]
 				SizeSystemProperty::SerdeFail(ref inner) => inner.serialize(serializer),
@@ -55,20 +39,12 @@ mod serde {
 				<::serde::__private::de::Content as Deserialize>::deserialize(deserializer)?;
 			let deserializer =
 				::serde::__private::de::ContentRefDeserializer::<D::Error>::new(&content);
-			#[cfg(any(
-				any(
-					feature = "size-system-enumeration-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<SizeSystemEnumeration as Deserialize>::deserialize(deserializer),
 				SizeSystemProperty::SizeSystemEnumeration,
 			) {
 				return Ok(ok);
 			}
-			#[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
 			if let Ok(ok) = Result::map(
 				<Text as Deserialize>::deserialize(deserializer),
 				SizeSystemProperty::Text,

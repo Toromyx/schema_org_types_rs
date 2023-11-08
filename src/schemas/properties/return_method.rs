@@ -3,13 +3,6 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum ReturnMethodProperty {
-	#[cfg(any(
-		any(
-			feature = "return-method-enumeration-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	ReturnMethodEnumeration(ReturnMethodEnumeration),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),
@@ -29,14 +22,9 @@ mod serde {
 			S: Serializer,
 		{
 			match *self {
-				#[cfg(any(
-					any(
-						feature = "return-method-enumeration-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
-				ReturnMethodProperty::ReturnMethodEnumeration(ref inner) => inner.serialize(serializer),
+				ReturnMethodProperty::ReturnMethodEnumeration(ref inner) => {
+					inner.serialize(serializer)
+				}
 				#[cfg(all(feature = "fallible", feature = "serde"))]
 				ReturnMethodProperty::SerdeFail(ref inner) => inner.serialize(serializer),
 			}
@@ -51,13 +39,6 @@ mod serde {
 				<::serde::__private::de::Content as Deserialize>::deserialize(deserializer)?;
 			let deserializer =
 				::serde::__private::de::ContentRefDeserializer::<D::Error>::new(&content);
-			#[cfg(any(
-				any(
-					feature = "return-method-enumeration-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<ReturnMethodEnumeration as Deserialize>::deserialize(deserializer),
 				ReturnMethodProperty::ReturnMethodEnumeration,

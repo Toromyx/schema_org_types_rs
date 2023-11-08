@@ -3,17 +3,8 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum IsLocatedInSubcellularLocationProperty {
-	#[cfg(any(
-		any(feature = "defined-term-schema", feature = "pending-schema-section"),
-		doc
-	))]
 	DefinedTerm(DefinedTerm),
-	#[cfg(any(
-		any(feature = "property-value-schema", feature = "general-schema-section"),
-		doc
-	))]
 	PropertyValue(PropertyValue),
-	#[cfg(any(any(feature = "url-schema", feature = "general-schema-section"), doc))]
 	Url(Url),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),
@@ -33,18 +24,15 @@ mod serde {
 			S: Serializer,
 		{
 			match *self {
-				#[cfg(any(
-					any(feature = "defined-term-schema", feature = "pending-schema-section"),
-					doc
-				))]
-				IsLocatedInSubcellularLocationProperty::DefinedTerm(ref inner) => inner.serialize(serializer),
-				#[cfg(any(
-					any(feature = "property-value-schema", feature = "general-schema-section"),
-					doc
-				))]
-				IsLocatedInSubcellularLocationProperty::PropertyValue(ref inner) => inner.serialize(serializer),
-				#[cfg(any(any(feature = "url-schema", feature = "general-schema-section"), doc))]
-				IsLocatedInSubcellularLocationProperty::Url(ref inner) => inner.serialize(serializer),
+				IsLocatedInSubcellularLocationProperty::DefinedTerm(ref inner) => {
+					inner.serialize(serializer)
+				}
+				IsLocatedInSubcellularLocationProperty::PropertyValue(ref inner) => {
+					inner.serialize(serializer)
+				}
+				IsLocatedInSubcellularLocationProperty::Url(ref inner) => {
+					inner.serialize(serializer)
+				}
 				#[cfg(all(feature = "fallible", feature = "serde"))]
 				IsLocatedInSubcellularLocationProperty::SerdeFail(ref inner) => inner.serialize(serializer),
 			}
@@ -59,27 +47,18 @@ mod serde {
 				<::serde::__private::de::Content as Deserialize>::deserialize(deserializer)?;
 			let deserializer =
 				::serde::__private::de::ContentRefDeserializer::<D::Error>::new(&content);
-			#[cfg(any(
-				any(feature = "defined-term-schema", feature = "pending-schema-section"),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<DefinedTerm as Deserialize>::deserialize(deserializer),
 				IsLocatedInSubcellularLocationProperty::DefinedTerm,
 			) {
 				return Ok(ok);
 			}
-			#[cfg(any(
-				any(feature = "property-value-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<PropertyValue as Deserialize>::deserialize(deserializer),
 				IsLocatedInSubcellularLocationProperty::PropertyValue,
 			) {
 				return Ok(ok);
 			}
-			#[cfg(any(any(feature = "url-schema", feature = "general-schema-section"), doc))]
 			if let Ok(ok) = Result::map(
 				<Url as Deserialize>::deserialize(deserializer),
 				IsLocatedInSubcellularLocationProperty::Url,

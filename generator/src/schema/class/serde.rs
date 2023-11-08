@@ -4,7 +4,7 @@ use convert_case::{Case, Casing};
 use quote::{__private::TokenStream, quote, ToTokens};
 
 use crate::{
-	schema::class::{property_feature, property_name, property_type, Class},
+	schema::class::{property_name, property_type, Class},
 	serde_attributes::serde_as,
 };
 
@@ -14,8 +14,6 @@ pub fn serde_mod(class: &Class) -> TokenStream {
 	let name = TokenStream::from_str(&name_string).unwrap();
 	let expecting = format!("schema.org schema {}", schema_name);
 	struct PropertyTokenStreams {
-		feature_gate_as_attribute: TokenStream,
-		feature_gate_as_macro: TokenStream,
 		name: TokenStream,
 		variable_name: TokenStream,
 		serialized_name_string: TokenStream,
@@ -25,41 +23,31 @@ pub fn serde_mod(class: &Class) -> TokenStream {
 	let property_token_streams: Vec<PropertyTokenStreams> = class
 		.properties
 		.iter()
-		.map(|referenced_schema| {
-			let feature = property_feature(referenced_schema);
-			PropertyTokenStreams {
-				feature_gate_as_attribute: feature.as_cfg_attribute(),
-				feature_gate_as_macro: feature.as_cfg_macro(),
-				name: property_name(referenced_schema),
-				variable_name: TokenStream::from_str(&format!(
-					"{}_property",
-					property_name(referenced_schema)
-				))
+		.map(|referenced_schema| PropertyTokenStreams {
+			name: property_name(referenced_schema),
+			variable_name: TokenStream::from_str(&format!(
+				"{}_property",
+				property_name(referenced_schema)
+			))
+			.unwrap(),
+			serialized_name_string: referenced_schema.name.to_token_stream(),
+			r#type: property_type(referenced_schema),
+			variant_name: TokenStream::from_str(&referenced_schema.name.to_case(Case::UpperCamel))
 				.unwrap(),
-				serialized_name_string: referenced_schema.name.to_token_stream(),
-				r#type: property_type(referenced_schema),
-				variant_name: TokenStream::from_str(
-					&referenced_schema.name.to_case(Case::UpperCamel),
-				)
-				.unwrap(),
-			}
 		})
 		.collect();
 	let serde_with = serde_as("OneOrMany<_>");
 	let len_terms = property_token_streams.iter().map(|property_token_streams| {
-		let feature_gate = &property_token_streams.feature_gate_as_macro;
 		let name = &property_token_streams.name;
 		quote!(
-			if #feature_gate { !Vec::is_empty(&self.#name) as usize } else { 0 },
+			!Vec::is_empty(&self.#name) as usize,
 		)
 	});
 	let serialize_fields = property_token_streams.iter().map(|property_token_streams| {
-		let feature_gate = &property_token_streams.feature_gate_as_attribute;
 		let name = &property_token_streams.name;
 		let serialized_name_string = &property_token_streams.serialized_name_string;
 		let r#type = &property_token_streams.r#type;
 		quote!(
-			#feature_gate
 			if !Vec::is_empty(&self.#name) {
 				serialize_struct.serialize_field(
 					#serialized_name_string,
@@ -82,50 +70,40 @@ pub fn serde_mod(class: &Class) -> TokenStream {
 		)
 	});
 	let field_enum_variants = property_token_streams.iter().map(|property_token_streams| {
-		let feature_gate = &property_token_streams.feature_gate_as_attribute;
 		let variant_name = &property_token_streams.variant_name;
 		quote!(
-			#feature_gate
 			#variant_name,
 		)
 	});
 	let visit_str_match_arms = property_token_streams.iter().map(|property_token_streams| {
-		let feature_gate = &property_token_streams.feature_gate_as_attribute;
 		let variant_name = &property_token_streams.variant_name;
 		let serialized_name_string = &property_token_streams.serialized_name_string;
 		quote!(
-			#feature_gate
 			#serialized_name_string => Ok(Field::#variant_name),
 		)
 	});
 	let visit_bytes_match_arms = property_token_streams.iter().map(|property_token_streams| {
-		let feature_gate = &property_token_streams.feature_gate_as_attribute;
 		let variant_name = &property_token_streams.variant_name;
 		let serialized_name_string = &property_token_streams.serialized_name_string;
 		let serialized_name =
 			TokenStream::from_str(&format!("b{}", serialized_name_string)).unwrap();
 		quote!(
-			#feature_gate
 			#serialized_name => Ok(Field::#variant_name),
 		)
 	});
 	let visit_map_assignments = property_token_streams.iter().map(|property_token_streams| {
-		let feature_gate = &property_token_streams.feature_gate_as_attribute;
 		let variable = &property_token_streams.variable_name;
 		quote!(
-			#feature_gate
 			let mut #variable = None;
 		)
 	});
 	let visit_map_next_key_match_arms =
 		property_token_streams.iter().map(|property_token_streams| {
-			let feature_gate = &property_token_streams.feature_gate_as_attribute;
 			let serialized_name_string = &property_token_streams.serialized_name_string;
 			let variable = &property_token_streams.variable_name;
 			let variant_name = &property_token_streams.variant_name;
 			let r#type = &property_token_streams.r#type;
 			quote!(
-				#feature_gate
 				Field::#variant_name => {
 					if #variable.is_some() {
 						return Err(
@@ -159,19 +137,15 @@ pub fn serde_mod(class: &Class) -> TokenStream {
 			)
 		});
 	let visit_map_field_assignments = property_token_streams.iter().map(|property_token_streams| {
-		let feature_gate = &property_token_streams.feature_gate_as_attribute;
 		let name = &property_token_streams.name;
 		let variable = &property_token_streams.variable_name;
 		quote!(
-			#feature_gate
 			#name: #variable.unwrap_or_default(),
 		)
 	});
 	let field_strings = property_token_streams.iter().map(|property_token_streams| {
-		let feature_gate = &property_token_streams.feature_gate_as_attribute;
 		let serialized_name_string = &property_token_streams.serialized_name_string;
 		quote!(
-			#feature_gate
 			#serialized_name_string,
 		)
 	});

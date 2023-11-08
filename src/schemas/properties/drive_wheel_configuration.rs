@@ -3,15 +3,7 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum DriveWheelConfigurationProperty {
-	#[cfg(any(
-		any(
-			feature = "drive-wheel-configuration-value-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	DriveWheelConfigurationValue(DriveWheelConfigurationValue),
-	#[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
 	Text(Text),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),
@@ -31,17 +23,9 @@ mod serde {
 			S: Serializer,
 		{
 			match *self {
-				#[cfg(any(
-					any(
-						feature = "drive-wheel-configuration-value-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				DriveWheelConfigurationProperty::DriveWheelConfigurationValue(ref inner) => {
 					inner.serialize(serializer)
 				}
-				#[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
 				DriveWheelConfigurationProperty::Text(ref inner) => inner.serialize(serializer),
 				#[cfg(all(feature = "fallible", feature = "serde"))]
 				DriveWheelConfigurationProperty::SerdeFail(ref inner) => inner.serialize(serializer),
@@ -57,20 +41,12 @@ mod serde {
 				<::serde::__private::de::Content as Deserialize>::deserialize(deserializer)?;
 			let deserializer =
 				::serde::__private::de::ContentRefDeserializer::<D::Error>::new(&content);
-			#[cfg(any(
-				any(
-					feature = "drive-wheel-configuration-value-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<DriveWheelConfigurationValue as Deserialize>::deserialize(deserializer),
 				DriveWheelConfigurationProperty::DriveWheelConfigurationValue,
 			) {
 				return Ok(ok);
 			}
-			#[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
 			if let Ok(ok) = Result::map(
 				<Text as Deserialize>::deserialize(deserializer),
 				DriveWheelConfigurationProperty::Text,

@@ -3,23 +3,8 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum EstimatedSalaryProperty {
-	#[cfg(any(
-		any(feature = "monetary-amount-schema", feature = "general-schema-section"),
-		doc
-	))]
 	MonetaryAmount(MonetaryAmount),
-	#[cfg(any(
-		any(
-			feature = "monetary-amount-distribution-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	MonetaryAmountDistribution(MonetaryAmountDistribution),
-	#[cfg(any(
-		any(feature = "number-schema", feature = "general-schema-section"),
-		doc
-	))]
 	Number(Number),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),
@@ -39,23 +24,10 @@ mod serde {
 			S: Serializer,
 		{
 			match *self {
-				#[cfg(any(
-					any(feature = "monetary-amount-schema", feature = "general-schema-section"),
-					doc
-				))]
 				EstimatedSalaryProperty::MonetaryAmount(ref inner) => inner.serialize(serializer),
-				#[cfg(any(
-					any(
-						feature = "monetary-amount-distribution-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
-				EstimatedSalaryProperty::MonetaryAmountDistribution(ref inner) => inner.serialize(serializer),
-				#[cfg(any(
-					any(feature = "number-schema", feature = "general-schema-section"),
-					doc
-				))]
+				EstimatedSalaryProperty::MonetaryAmountDistribution(ref inner) => {
+					inner.serialize(serializer)
+				}
 				EstimatedSalaryProperty::Number(ref inner) => inner.serialize(serializer),
 				#[cfg(all(feature = "fallible", feature = "serde"))]
 				EstimatedSalaryProperty::SerdeFail(ref inner) => inner.serialize(serializer),
@@ -71,33 +43,18 @@ mod serde {
 				<::serde::__private::de::Content as Deserialize>::deserialize(deserializer)?;
 			let deserializer =
 				::serde::__private::de::ContentRefDeserializer::<D::Error>::new(&content);
-			#[cfg(any(
-				any(feature = "monetary-amount-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<MonetaryAmount as Deserialize>::deserialize(deserializer),
 				EstimatedSalaryProperty::MonetaryAmount,
 			) {
 				return Ok(ok);
 			}
-			#[cfg(any(
-				any(
-					feature = "monetary-amount-distribution-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<MonetaryAmountDistribution as Deserialize>::deserialize(deserializer),
 				EstimatedSalaryProperty::MonetaryAmountDistribution,
 			) {
 				return Ok(ok);
 			}
-			#[cfg(any(
-				any(feature = "number-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<Number as Deserialize>::deserialize(deserializer),
 				EstimatedSalaryProperty::Number,

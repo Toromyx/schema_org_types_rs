@@ -3,20 +3,8 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum OrderedItemProperty {
-	#[cfg(any(
-		any(feature = "order-item-schema", feature = "general-schema-section"),
-		doc
-	))]
 	OrderItem(OrderItem),
-	#[cfg(any(
-		any(feature = "product-schema", feature = "general-schema-section"),
-		doc
-	))]
 	Product(Product),
-	#[cfg(any(
-		any(feature = "service-schema", feature = "general-schema-section"),
-		doc
-	))]
 	Service(Service),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),
@@ -36,20 +24,8 @@ mod serde {
 			S: Serializer,
 		{
 			match *self {
-				#[cfg(any(
-					any(feature = "order-item-schema", feature = "general-schema-section"),
-					doc
-				))]
 				OrderedItemProperty::OrderItem(ref inner) => inner.serialize(serializer),
-				#[cfg(any(
-					any(feature = "product-schema", feature = "general-schema-section"),
-					doc
-				))]
 				OrderedItemProperty::Product(ref inner) => inner.serialize(serializer),
-				#[cfg(any(
-					any(feature = "service-schema", feature = "general-schema-section"),
-					doc
-				))]
 				OrderedItemProperty::Service(ref inner) => inner.serialize(serializer),
 				#[cfg(all(feature = "fallible", feature = "serde"))]
 				OrderedItemProperty::SerdeFail(ref inner) => inner.serialize(serializer),
@@ -65,30 +41,18 @@ mod serde {
 				<::serde::__private::de::Content as Deserialize>::deserialize(deserializer)?;
 			let deserializer =
 				::serde::__private::de::ContentRefDeserializer::<D::Error>::new(&content);
-			#[cfg(any(
-				any(feature = "order-item-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<OrderItem as Deserialize>::deserialize(deserializer),
 				OrderedItemProperty::OrderItem,
 			) {
 				return Ok(ok);
 			}
-			#[cfg(any(
-				any(feature = "product-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<Product as Deserialize>::deserialize(deserializer),
 				OrderedItemProperty::Product,
 			) {
 				return Ok(ok);
 			}
-			#[cfg(any(
-				any(feature = "service-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<Service as Deserialize>::deserialize(deserializer),
 				OrderedItemProperty::Service,

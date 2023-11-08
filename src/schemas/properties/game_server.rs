@@ -3,10 +3,6 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum GameServerProperty {
-	#[cfg(any(
-		any(feature = "game-server-schema", feature = "general-schema-section"),
-		doc
-	))]
 	GameServer(GameServer),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),
@@ -26,10 +22,6 @@ mod serde {
 			S: Serializer,
 		{
 			match *self {
-				#[cfg(any(
-					any(feature = "game-server-schema", feature = "general-schema-section"),
-					doc
-				))]
 				GameServerProperty::GameServer(ref inner) => inner.serialize(serializer),
 				#[cfg(all(feature = "fallible", feature = "serde"))]
 				GameServerProperty::SerdeFail(ref inner) => inner.serialize(serializer),
@@ -45,10 +37,6 @@ mod serde {
 				<::serde::__private::de::Content as Deserialize>::deserialize(deserializer)?;
 			let deserializer =
 				::serde::__private::de::ContentRefDeserializer::<D::Error>::new(&content);
-			#[cfg(any(
-				any(feature = "game-server-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<GameServer as Deserialize>::deserialize(deserializer),
 				GameServerProperty::GameServer,

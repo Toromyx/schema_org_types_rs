@@ -3,15 +3,7 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum ArrivalBusStopProperty {
-	#[cfg(any(
-		any(feature = "bus-station-schema", feature = "general-schema-section"),
-		doc
-	))]
 	BusStation(BusStation),
-	#[cfg(any(
-		any(feature = "bus-stop-schema", feature = "general-schema-section"),
-		doc
-	))]
 	BusStop(BusStop),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),
@@ -31,15 +23,7 @@ mod serde {
 			S: Serializer,
 		{
 			match *self {
-				#[cfg(any(
-					any(feature = "bus-station-schema", feature = "general-schema-section"),
-					doc
-				))]
 				ArrivalBusStopProperty::BusStation(ref inner) => inner.serialize(serializer),
-				#[cfg(any(
-					any(feature = "bus-stop-schema", feature = "general-schema-section"),
-					doc
-				))]
 				ArrivalBusStopProperty::BusStop(ref inner) => inner.serialize(serializer),
 				#[cfg(all(feature = "fallible", feature = "serde"))]
 				ArrivalBusStopProperty::SerdeFail(ref inner) => inner.serialize(serializer),
@@ -55,20 +39,12 @@ mod serde {
 				<::serde::__private::de::Content as Deserialize>::deserialize(deserializer)?;
 			let deserializer =
 				::serde::__private::de::ContentRefDeserializer::<D::Error>::new(&content);
-			#[cfg(any(
-				any(feature = "bus-station-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<BusStation as Deserialize>::deserialize(deserializer),
 				ArrivalBusStopProperty::BusStation,
 			) {
 				return Ok(ok);
 			}
-			#[cfg(any(
-				any(feature = "bus-stop-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<BusStop as Deserialize>::deserialize(deserializer),
 				ArrivalBusStopProperty::BusStop,

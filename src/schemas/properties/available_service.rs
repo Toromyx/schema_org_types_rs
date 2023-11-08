@@ -3,29 +3,8 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum AvailableServiceProperty {
-	#[cfg(any(
-		any(
-			feature = "medical-procedure-schema",
-			feature = "health-lifesci-schema-section"
-		),
-		doc
-	))]
 	MedicalProcedure(MedicalProcedure),
-	#[cfg(any(
-		any(
-			feature = "medical-test-schema",
-			feature = "health-lifesci-schema-section"
-		),
-		doc
-	))]
 	MedicalTest(MedicalTest),
-	#[cfg(any(
-		any(
-			feature = "medical-therapy-schema",
-			feature = "health-lifesci-schema-section"
-		),
-		doc
-	))]
 	MedicalTherapy(MedicalTherapy),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),
@@ -45,29 +24,10 @@ mod serde {
 			S: Serializer,
 		{
 			match *self {
-				#[cfg(any(
-					any(
-						feature = "medical-procedure-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
-				AvailableServiceProperty::MedicalProcedure(ref inner) => inner.serialize(serializer),
-				#[cfg(any(
-					any(
-						feature = "medical-test-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
+				AvailableServiceProperty::MedicalProcedure(ref inner) => {
+					inner.serialize(serializer)
+				}
 				AvailableServiceProperty::MedicalTest(ref inner) => inner.serialize(serializer),
-				#[cfg(any(
-					any(
-						feature = "medical-therapy-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
 				AvailableServiceProperty::MedicalTherapy(ref inner) => inner.serialize(serializer),
 				#[cfg(all(feature = "fallible", feature = "serde"))]
 				AvailableServiceProperty::SerdeFail(ref inner) => inner.serialize(serializer),
@@ -83,39 +43,18 @@ mod serde {
 				<::serde::__private::de::Content as Deserialize>::deserialize(deserializer)?;
 			let deserializer =
 				::serde::__private::de::ContentRefDeserializer::<D::Error>::new(&content);
-			#[cfg(any(
-				any(
-					feature = "medical-procedure-schema",
-					feature = "health-lifesci-schema-section"
-				),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<MedicalProcedure as Deserialize>::deserialize(deserializer),
 				AvailableServiceProperty::MedicalProcedure,
 			) {
 				return Ok(ok);
 			}
-			#[cfg(any(
-				any(
-					feature = "medical-test-schema",
-					feature = "health-lifesci-schema-section"
-				),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<MedicalTest as Deserialize>::deserialize(deserializer),
 				AvailableServiceProperty::MedicalTest,
 			) {
 				return Ok(ok);
 			}
-			#[cfg(any(
-				any(
-					feature = "medical-therapy-schema",
-					feature = "health-lifesci-schema-section"
-				),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<MedicalTherapy as Deserialize>::deserialize(deserializer),
 				AvailableServiceProperty::MedicalTherapy,

@@ -3,196 +3,30 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct BioChemEntity {
-	#[cfg(any(
-		any(
-			feature = "additional-type-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
-	#[cfg(any(
-		any(
-			feature = "alternate-name-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#alternate_name: Vec<AlternateNameProperty>,
-	#[cfg(any(
-		any(
-			feature = "associated-disease-property-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	pub r#associated_disease: Vec<AssociatedDiseaseProperty>,
-	#[cfg(any(
-		any(
-			feature = "bio-chem-interaction-property-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	pub r#bio_chem_interaction: Vec<BioChemInteractionProperty>,
-	#[cfg(any(
-		any(
-			feature = "bio-chem-similarity-property-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	pub r#bio_chem_similarity: Vec<BioChemSimilarityProperty>,
-	#[cfg(any(
-		any(
-			feature = "biological-role-property-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	pub r#biological_role: Vec<BiologicalRoleProperty>,
-	#[cfg(any(
-		any(
-			feature = "description-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#description: Vec<DescriptionProperty>,
-	#[cfg(any(
-		any(
-			feature = "disambiguating-description-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
-	#[cfg(any(
-		any(
-			feature = "funding-property-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	pub r#funding: Vec<FundingProperty>,
-	#[cfg(any(
-		any(
-			feature = "has-bio-chem-entity-part-property-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	pub r#has_bio_chem_entity_part: Vec<HasBioChemEntityPartProperty>,
-	#[cfg(any(
-		any(
-			feature = "has-molecular-function-property-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	pub r#has_molecular_function: Vec<HasMolecularFunctionProperty>,
-	#[cfg(any(
-		any(
-			feature = "has-representation-property-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	pub r#has_representation: Vec<HasRepresentationProperty>,
-	#[cfg(any(
-		any(
-			feature = "identifier-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#identifier: Vec<IdentifierProperty>,
-	#[cfg(any(
-		any(feature = "image-property-schema", feature = "general-schema-section"),
-		doc
-	))]
 	pub r#image: Vec<ImageProperty>,
-	#[cfg(any(
-		any(
-			feature = "is-encoded-by-bio-chem-entity-property-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	pub r#is_encoded_by_bio_chem_entity: Vec<IsEncodedByBioChemEntityProperty>,
-	#[cfg(any(
-		any(
-			feature = "is-involved-in-biological-process-property-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	pub r#is_involved_in_biological_process: Vec<IsInvolvedInBiologicalProcessProperty>,
-	#[cfg(any(
-		any(
-			feature = "is-located-in-subcellular-location-property-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	pub r#is_located_in_subcellular_location: Vec<IsLocatedInSubcellularLocationProperty>,
-	#[cfg(any(
-		any(
-			feature = "is-part-of-bio-chem-entity-property-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	pub r#is_part_of_bio_chem_entity: Vec<IsPartOfBioChemEntityProperty>,
-	#[cfg(any(
-		any(
-			feature = "main-entity-of-page-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
-	#[cfg(any(
-		any(feature = "name-property-schema", feature = "general-schema-section"),
-		doc
-	))]
 	pub r#name: Vec<NameProperty>,
-	#[cfg(any(
-		any(
-			feature = "potential-action-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#potential_action: Vec<PotentialActionProperty>,
-	#[cfg(any(
-		any(
-			feature = "same-as-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#same_as: Vec<SameAsProperty>,
-	#[cfg(any(
-		any(
-			feature = "subject-of-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#subject_of: Vec<SubjectOfProperty>,
-	#[cfg(any(
-		any(
-			feature = "taxonomic-range-property-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	pub r#taxonomic_range: Vec<TaxonomicRangeProperty>,
-	#[cfg(any(
-		any(feature = "url-property-schema", feature = "general-schema-section"),
-		doc
-	))]
 	pub r#url: Vec<UrlProperty>,
 }
 #[cfg(feature = "serde")]
@@ -210,293 +44,36 @@ mod serde {
 			S: Serializer,
 		{
 			let len: usize = [
-				if cfg!(any(
-					any(
-						feature = "additional-type-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#additional_type) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "alternate-name-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#alternate_name) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "associated-disease-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#associated_disease) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "bio-chem-interaction-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#bio_chem_interaction) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "bio-chem-similarity-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#bio_chem_similarity) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "biological-role-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#biological_role) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "description-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#description) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "disambiguating-description-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#disambiguating_description) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "funding-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#funding) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "has-bio-chem-entity-part-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#has_bio_chem_entity_part) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "has-molecular-function-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#has_molecular_function) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "has-representation-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#has_representation) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "identifier-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#identifier) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "image-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#image) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "is-encoded-by-bio-chem-entity-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#is_encoded_by_bio_chem_entity) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "is-involved-in-biological-process-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#is_involved_in_biological_process) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "is-located-in-subcellular-location-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#is_located_in_subcellular_location) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "is-part-of-bio-chem-entity-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#is_part_of_bio_chem_entity) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "main-entity-of-page-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#main_entity_of_page) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "name-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#name) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "potential-action-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#potential_action) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "same-as-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#same_as) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "subject-of-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#subject_of) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "taxonomic-range-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#taxonomic_range) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "url-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#url) as usize
-				} else {
-					0
-				},
+				!Vec::is_empty(&self.r#additional_type) as usize,
+				!Vec::is_empty(&self.r#alternate_name) as usize,
+				!Vec::is_empty(&self.r#associated_disease) as usize,
+				!Vec::is_empty(&self.r#bio_chem_interaction) as usize,
+				!Vec::is_empty(&self.r#bio_chem_similarity) as usize,
+				!Vec::is_empty(&self.r#biological_role) as usize,
+				!Vec::is_empty(&self.r#description) as usize,
+				!Vec::is_empty(&self.r#disambiguating_description) as usize,
+				!Vec::is_empty(&self.r#funding) as usize,
+				!Vec::is_empty(&self.r#has_bio_chem_entity_part) as usize,
+				!Vec::is_empty(&self.r#has_molecular_function) as usize,
+				!Vec::is_empty(&self.r#has_representation) as usize,
+				!Vec::is_empty(&self.r#identifier) as usize,
+				!Vec::is_empty(&self.r#image) as usize,
+				!Vec::is_empty(&self.r#is_encoded_by_bio_chem_entity) as usize,
+				!Vec::is_empty(&self.r#is_involved_in_biological_process) as usize,
+				!Vec::is_empty(&self.r#is_located_in_subcellular_location) as usize,
+				!Vec::is_empty(&self.r#is_part_of_bio_chem_entity) as usize,
+				!Vec::is_empty(&self.r#main_entity_of_page) as usize,
+				!Vec::is_empty(&self.r#name) as usize,
+				!Vec::is_empty(&self.r#potential_action) as usize,
+				!Vec::is_empty(&self.r#same_as) as usize,
+				!Vec::is_empty(&self.r#subject_of) as usize,
+				!Vec::is_empty(&self.r#taxonomic_range) as usize,
+				!Vec::is_empty(&self.r#url) as usize,
 			]
 			.iter()
 			.sum();
 			let mut serialize_struct =
 				Serializer::serialize_struct(serializer, "BioChemEntity", len)?;
-			#[cfg(any(
-				any(
-					feature = "additional-type-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#additional_type) {
 				serialize_struct.serialize_field("additionalType", {
 					struct SerializeWith<'a>(&'a Vec<AdditionalTypeProperty>);
@@ -515,13 +92,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("additionalType")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "alternate-name-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#alternate_name) {
 				serialize_struct.serialize_field("alternateName", {
 					struct SerializeWith<'a>(&'a Vec<AlternateNameProperty>);
@@ -540,13 +110,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("alternateName")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "associated-disease-property-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#associated_disease) {
 				serialize_struct.serialize_field("associatedDisease", {
 					struct SerializeWith<'a>(&'a Vec<AssociatedDiseaseProperty>);
@@ -565,13 +128,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("associatedDisease")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "bio-chem-interaction-property-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#bio_chem_interaction) {
 				serialize_struct.serialize_field("bioChemInteraction", {
 					struct SerializeWith<'a>(&'a Vec<BioChemInteractionProperty>);
@@ -590,13 +146,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("bioChemInteraction")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "bio-chem-similarity-property-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#bio_chem_similarity) {
 				serialize_struct.serialize_field("bioChemSimilarity", {
 					struct SerializeWith<'a>(&'a Vec<BioChemSimilarityProperty>);
@@ -615,13 +164,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("bioChemSimilarity")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "biological-role-property-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#biological_role) {
 				serialize_struct.serialize_field("biologicalRole", {
 					struct SerializeWith<'a>(&'a Vec<BiologicalRoleProperty>);
@@ -640,13 +182,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("biologicalRole")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "description-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#description) {
 				serialize_struct.serialize_field("description", {
 					struct SerializeWith<'a>(&'a Vec<DescriptionProperty>);
@@ -665,13 +200,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("description")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "disambiguating-description-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#disambiguating_description) {
 				serialize_struct.serialize_field("disambiguatingDescription", {
 					struct SerializeWith<'a>(&'a Vec<DisambiguatingDescriptionProperty>);
@@ -690,13 +218,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("disambiguatingDescription")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "funding-property-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#funding) {
 				serialize_struct.serialize_field("funding", {
 					struct SerializeWith<'a>(&'a Vec<FundingProperty>);
@@ -715,13 +236,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("funding")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "has-bio-chem-entity-part-property-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#has_bio_chem_entity_part) {
 				serialize_struct.serialize_field("hasBioChemEntityPart", {
 					struct SerializeWith<'a>(&'a Vec<HasBioChemEntityPartProperty>);
@@ -740,13 +254,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("hasBioChemEntityPart")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "has-molecular-function-property-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#has_molecular_function) {
 				serialize_struct.serialize_field("hasMolecularFunction", {
 					struct SerializeWith<'a>(&'a Vec<HasMolecularFunctionProperty>);
@@ -765,13 +272,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("hasMolecularFunction")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "has-representation-property-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#has_representation) {
 				serialize_struct.serialize_field("hasRepresentation", {
 					struct SerializeWith<'a>(&'a Vec<HasRepresentationProperty>);
@@ -790,13 +290,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("hasRepresentation")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "identifier-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#identifier) {
 				serialize_struct.serialize_field("identifier", {
 					struct SerializeWith<'a>(&'a Vec<IdentifierProperty>);
@@ -815,10 +308,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("identifier")?;
 			}
-			#[cfg(any(
-				any(feature = "image-property-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#image) {
 				serialize_struct.serialize_field("image", {
 					struct SerializeWith<'a>(&'a Vec<ImageProperty>);
@@ -837,13 +326,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("image")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "is-encoded-by-bio-chem-entity-property-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#is_encoded_by_bio_chem_entity) {
 				serialize_struct.serialize_field("isEncodedByBioChemEntity", {
 					struct SerializeWith<'a>(&'a Vec<IsEncodedByBioChemEntityProperty>);
@@ -862,13 +344,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("isEncodedByBioChemEntity")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "is-involved-in-biological-process-property-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#is_involved_in_biological_process) {
 				serialize_struct.serialize_field("isInvolvedInBiologicalProcess", {
 					struct SerializeWith<'a>(&'a Vec<IsInvolvedInBiologicalProcessProperty>);
@@ -887,13 +362,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("isInvolvedInBiologicalProcess")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "is-located-in-subcellular-location-property-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#is_located_in_subcellular_location) {
 				serialize_struct.serialize_field("isLocatedInSubcellularLocation", {
 					struct SerializeWith<'a>(&'a Vec<IsLocatedInSubcellularLocationProperty>);
@@ -912,13 +380,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("isLocatedInSubcellularLocation")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "is-part-of-bio-chem-entity-property-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#is_part_of_bio_chem_entity) {
 				serialize_struct.serialize_field("isPartOfBioChemEntity", {
 					struct SerializeWith<'a>(&'a Vec<IsPartOfBioChemEntityProperty>);
@@ -937,13 +398,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("isPartOfBioChemEntity")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "main-entity-of-page-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#main_entity_of_page) {
 				serialize_struct.serialize_field("mainEntityOfPage", {
 					struct SerializeWith<'a>(&'a Vec<MainEntityOfPageProperty>);
@@ -962,10 +416,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("mainEntityOfPage")?;
 			}
-			#[cfg(any(
-				any(feature = "name-property-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#name) {
 				serialize_struct.serialize_field("name", {
 					struct SerializeWith<'a>(&'a Vec<NameProperty>);
@@ -984,13 +434,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("name")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "potential-action-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#potential_action) {
 				serialize_struct.serialize_field("potentialAction", {
 					struct SerializeWith<'a>(&'a Vec<PotentialActionProperty>);
@@ -1009,13 +452,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("potentialAction")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "same-as-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#same_as) {
 				serialize_struct.serialize_field("sameAs", {
 					struct SerializeWith<'a>(&'a Vec<SameAsProperty>);
@@ -1034,13 +470,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("sameAs")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "subject-of-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#subject_of) {
 				serialize_struct.serialize_field("subjectOf", {
 					struct SerializeWith<'a>(&'a Vec<SubjectOfProperty>);
@@ -1059,13 +488,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("subjectOf")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "taxonomic-range-property-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#taxonomic_range) {
 				serialize_struct.serialize_field("taxonomicRange", {
 					struct SerializeWith<'a>(&'a Vec<TaxonomicRangeProperty>);
@@ -1084,10 +506,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("taxonomicRange")?;
 			}
-			#[cfg(any(
-				any(feature = "url-property-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#url) {
 				serialize_struct.serialize_field("url", {
 					struct SerializeWith<'a>(&'a Vec<UrlProperty>);
@@ -1115,196 +533,30 @@ mod serde {
 			D: Deserializer<'de>,
 		{
 			enum Field {
-				#[cfg(any(
-					any(
-						feature = "additional-type-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				AdditionalType,
-				#[cfg(any(
-					any(
-						feature = "alternate-name-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				AlternateName,
-				#[cfg(any(
-					any(
-						feature = "associated-disease-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				AssociatedDisease,
-				#[cfg(any(
-					any(
-						feature = "bio-chem-interaction-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				BioChemInteraction,
-				#[cfg(any(
-					any(
-						feature = "bio-chem-similarity-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				BioChemSimilarity,
-				#[cfg(any(
-					any(
-						feature = "biological-role-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				BiologicalRole,
-				#[cfg(any(
-					any(
-						feature = "description-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				Description,
-				#[cfg(any(
-					any(
-						feature = "disambiguating-description-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				DisambiguatingDescription,
-				#[cfg(any(
-					any(
-						feature = "funding-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				Funding,
-				#[cfg(any(
-					any(
-						feature = "has-bio-chem-entity-part-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				HasBioChemEntityPart,
-				#[cfg(any(
-					any(
-						feature = "has-molecular-function-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				HasMolecularFunction,
-				#[cfg(any(
-					any(
-						feature = "has-representation-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				HasRepresentation,
-				#[cfg(any(
-					any(
-						feature = "identifier-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				Identifier,
-				#[cfg(any(
-					any(feature = "image-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				Image,
-				#[cfg(any(
-					any(
-						feature = "is-encoded-by-bio-chem-entity-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				IsEncodedByBioChemEntity,
-				#[cfg(any(
-					any(
-						feature = "is-involved-in-biological-process-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				IsInvolvedInBiologicalProcess,
-				#[cfg(any(
-					any(
-						feature = "is-located-in-subcellular-location-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				IsLocatedInSubcellularLocation,
-				#[cfg(any(
-					any(
-						feature = "is-part-of-bio-chem-entity-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				IsPartOfBioChemEntity,
-				#[cfg(any(
-					any(
-						feature = "main-entity-of-page-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				MainEntityOfPage,
-				#[cfg(any(
-					any(feature = "name-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				Name,
-				#[cfg(any(
-					any(
-						feature = "potential-action-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				PotentialAction,
-				#[cfg(any(
-					any(
-						feature = "same-as-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				SameAs,
-				#[cfg(any(
-					any(
-						feature = "subject-of-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				SubjectOf,
-				#[cfg(any(
-					any(
-						feature = "taxonomic-range-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				TaxonomicRange,
-				#[cfg(any(
-					any(feature = "url-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				Url,
 				Ignore,
 			}
@@ -1319,205 +571,32 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
-						#[cfg(any(
-							any(
-								feature = "additional-type-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"additionalType" => Ok(Field::AdditionalType),
-						#[cfg(any(
-							any(
-								feature = "alternate-name-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"alternateName" => Ok(Field::AlternateName),
-						#[cfg(any(
-							any(
-								feature = "associated-disease-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						"associatedDisease" => Ok(Field::AssociatedDisease),
-						#[cfg(any(
-							any(
-								feature = "bio-chem-interaction-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						"bioChemInteraction" => Ok(Field::BioChemInteraction),
-						#[cfg(any(
-							any(
-								feature = "bio-chem-similarity-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						"bioChemSimilarity" => Ok(Field::BioChemSimilarity),
-						#[cfg(any(
-							any(
-								feature = "biological-role-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						"biologicalRole" => Ok(Field::BiologicalRole),
-						#[cfg(any(
-							any(
-								feature = "description-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"description" => Ok(Field::Description),
-						#[cfg(any(
-							any(
-								feature = "disambiguating-description-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
-						#[cfg(any(
-							any(
-								feature = "funding-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						"funding" => Ok(Field::Funding),
-						#[cfg(any(
-							any(
-								feature = "has-bio-chem-entity-part-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						"hasBioChemEntityPart" => Ok(Field::HasBioChemEntityPart),
-						#[cfg(any(
-							any(
-								feature = "has-molecular-function-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						"hasMolecularFunction" => Ok(Field::HasMolecularFunction),
-						#[cfg(any(
-							any(
-								feature = "has-representation-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						"hasRepresentation" => Ok(Field::HasRepresentation),
-						#[cfg(any(
-							any(
-								feature = "identifier-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"identifier" => Ok(Field::Identifier),
-						#[cfg(any(
-							any(
-								feature = "image-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"image" => Ok(Field::Image),
-						#[cfg(any(
-							any(
-								feature = "is-encoded-by-bio-chem-entity-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						"isEncodedByBioChemEntity" => Ok(Field::IsEncodedByBioChemEntity),
-						#[cfg(any(
-							any(
-								feature = "is-involved-in-biological-process-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						"isInvolvedInBiologicalProcess" => Ok(Field::IsInvolvedInBiologicalProcess),
-						#[cfg(any(
-							any(
-								feature = "is-located-in-subcellular-location-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
-						"isLocatedInSubcellularLocation" => Ok(Field::IsLocatedInSubcellularLocation),
-						#[cfg(any(
-							any(
-								feature = "is-part-of-bio-chem-entity-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
+						"isLocatedInSubcellularLocation" => {
+							Ok(Field::IsLocatedInSubcellularLocation)
+						}
 						"isPartOfBioChemEntity" => Ok(Field::IsPartOfBioChemEntity),
-						#[cfg(any(
-							any(
-								feature = "main-entity-of-page-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
-						#[cfg(any(
-							any(
-								feature = "name-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"name" => Ok(Field::Name),
-						#[cfg(any(
-							any(
-								feature = "potential-action-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"potentialAction" => Ok(Field::PotentialAction),
-						#[cfg(any(
-							any(
-								feature = "same-as-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"sameAs" => Ok(Field::SameAs),
-						#[cfg(any(
-							any(
-								feature = "subject-of-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"subjectOf" => Ok(Field::SubjectOf),
-						#[cfg(any(
-							any(
-								feature = "taxonomic-range-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						"taxonomicRange" => Ok(Field::TaxonomicRange),
-						#[cfg(any(
-							any(
-								feature = "url-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"url" => Ok(Field::Url),
 						_ => Ok(Field::Ignore),
 					}
@@ -1527,205 +606,34 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
-						#[cfg(any(
-							any(
-								feature = "additional-type-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"additionalType" => Ok(Field::AdditionalType),
-						#[cfg(any(
-							any(
-								feature = "alternate-name-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"alternateName" => Ok(Field::AlternateName),
-						#[cfg(any(
-							any(
-								feature = "associated-disease-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						b"associatedDisease" => Ok(Field::AssociatedDisease),
-						#[cfg(any(
-							any(
-								feature = "bio-chem-interaction-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						b"bioChemInteraction" => Ok(Field::BioChemInteraction),
-						#[cfg(any(
-							any(
-								feature = "bio-chem-similarity-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						b"bioChemSimilarity" => Ok(Field::BioChemSimilarity),
-						#[cfg(any(
-							any(
-								feature = "biological-role-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						b"biologicalRole" => Ok(Field::BiologicalRole),
-						#[cfg(any(
-							any(
-								feature = "description-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"description" => Ok(Field::Description),
-						#[cfg(any(
-							any(
-								feature = "disambiguating-description-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
-						#[cfg(any(
-							any(
-								feature = "funding-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						b"funding" => Ok(Field::Funding),
-						#[cfg(any(
-							any(
-								feature = "has-bio-chem-entity-part-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						b"hasBioChemEntityPart" => Ok(Field::HasBioChemEntityPart),
-						#[cfg(any(
-							any(
-								feature = "has-molecular-function-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						b"hasMolecularFunction" => Ok(Field::HasMolecularFunction),
-						#[cfg(any(
-							any(
-								feature = "has-representation-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						b"hasRepresentation" => Ok(Field::HasRepresentation),
-						#[cfg(any(
-							any(
-								feature = "identifier-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"identifier" => Ok(Field::Identifier),
-						#[cfg(any(
-							any(
-								feature = "image-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"image" => Ok(Field::Image),
-						#[cfg(any(
-							any(
-								feature = "is-encoded-by-bio-chem-entity-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						b"isEncodedByBioChemEntity" => Ok(Field::IsEncodedByBioChemEntity),
-						#[cfg(any(
-							any(
-								feature = "is-involved-in-biological-process-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
-						b"isInvolvedInBiologicalProcess" => Ok(Field::IsInvolvedInBiologicalProcess),
-						#[cfg(any(
-							any(
-								feature = "is-located-in-subcellular-location-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
-						b"isLocatedInSubcellularLocation" => Ok(Field::IsLocatedInSubcellularLocation),
-						#[cfg(any(
-							any(
-								feature = "is-part-of-bio-chem-entity-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
+						b"isInvolvedInBiologicalProcess" => {
+							Ok(Field::IsInvolvedInBiologicalProcess)
+						}
+						b"isLocatedInSubcellularLocation" => {
+							Ok(Field::IsLocatedInSubcellularLocation)
+						}
 						b"isPartOfBioChemEntity" => Ok(Field::IsPartOfBioChemEntity),
-						#[cfg(any(
-							any(
-								feature = "main-entity-of-page-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
-						#[cfg(any(
-							any(
-								feature = "name-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"name" => Ok(Field::Name),
-						#[cfg(any(
-							any(
-								feature = "potential-action-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"potentialAction" => Ok(Field::PotentialAction),
-						#[cfg(any(
-							any(
-								feature = "same-as-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"sameAs" => Ok(Field::SameAs),
-						#[cfg(any(
-							any(
-								feature = "subject-of-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"subjectOf" => Ok(Field::SubjectOf),
-						#[cfg(any(
-							any(
-								feature = "taxonomic-range-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						b"taxonomicRange" => Ok(Field::TaxonomicRange),
-						#[cfg(any(
-							any(
-								feature = "url-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"url" => Ok(Field::Url),
 						_ => Ok(Field::Ignore),
 					}
@@ -1749,206 +657,33 @@ mod serde {
 				where
 					A: de::MapAccess<'de>,
 				{
-					#[cfg(any(
-						any(
-							feature = "additional-type-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#additional_type_property = None;
-					#[cfg(any(
-						any(
-							feature = "alternate-name-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#alternate_name_property = None;
-					#[cfg(any(
-						any(
-							feature = "associated-disease-property-schema",
-							feature = "pending-schema-section"
-						),
-						doc
-					))]
 					let mut r#associated_disease_property = None;
-					#[cfg(any(
-						any(
-							feature = "bio-chem-interaction-property-schema",
-							feature = "pending-schema-section"
-						),
-						doc
-					))]
 					let mut r#bio_chem_interaction_property = None;
-					#[cfg(any(
-						any(
-							feature = "bio-chem-similarity-property-schema",
-							feature = "pending-schema-section"
-						),
-						doc
-					))]
 					let mut r#bio_chem_similarity_property = None;
-					#[cfg(any(
-						any(
-							feature = "biological-role-property-schema",
-							feature = "pending-schema-section"
-						),
-						doc
-					))]
 					let mut r#biological_role_property = None;
-					#[cfg(any(
-						any(
-							feature = "description-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#description_property = None;
-					#[cfg(any(
-						any(
-							feature = "disambiguating-description-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#disambiguating_description_property = None;
-					#[cfg(any(
-						any(
-							feature = "funding-property-schema",
-							feature = "pending-schema-section"
-						),
-						doc
-					))]
 					let mut r#funding_property = None;
-					#[cfg(any(
-						any(
-							feature = "has-bio-chem-entity-part-property-schema",
-							feature = "pending-schema-section"
-						),
-						doc
-					))]
 					let mut r#has_bio_chem_entity_part_property = None;
-					#[cfg(any(
-						any(
-							feature = "has-molecular-function-property-schema",
-							feature = "pending-schema-section"
-						),
-						doc
-					))]
 					let mut r#has_molecular_function_property = None;
-					#[cfg(any(
-						any(
-							feature = "has-representation-property-schema",
-							feature = "pending-schema-section"
-						),
-						doc
-					))]
 					let mut r#has_representation_property = None;
-					#[cfg(any(
-						any(
-							feature = "identifier-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#identifier_property = None;
-					#[cfg(any(
-						any(feature = "image-property-schema", feature = "general-schema-section"),
-						doc
-					))]
 					let mut r#image_property = None;
-					#[cfg(any(
-						any(
-							feature = "is-encoded-by-bio-chem-entity-property-schema",
-							feature = "pending-schema-section"
-						),
-						doc
-					))]
 					let mut r#is_encoded_by_bio_chem_entity_property = None;
-					#[cfg(any(
-						any(
-							feature = "is-involved-in-biological-process-property-schema",
-							feature = "pending-schema-section"
-						),
-						doc
-					))]
 					let mut r#is_involved_in_biological_process_property = None;
-					#[cfg(any(
-						any(
-							feature = "is-located-in-subcellular-location-property-schema",
-							feature = "pending-schema-section"
-						),
-						doc
-					))]
 					let mut r#is_located_in_subcellular_location_property = None;
-					#[cfg(any(
-						any(
-							feature = "is-part-of-bio-chem-entity-property-schema",
-							feature = "pending-schema-section"
-						),
-						doc
-					))]
 					let mut r#is_part_of_bio_chem_entity_property = None;
-					#[cfg(any(
-						any(
-							feature = "main-entity-of-page-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#main_entity_of_page_property = None;
-					#[cfg(any(
-						any(feature = "name-property-schema", feature = "general-schema-section"),
-						doc
-					))]
 					let mut r#name_property = None;
-					#[cfg(any(
-						any(
-							feature = "potential-action-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#potential_action_property = None;
-					#[cfg(any(
-						any(
-							feature = "same-as-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#same_as_property = None;
-					#[cfg(any(
-						any(
-							feature = "subject-of-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#subject_of_property = None;
-					#[cfg(any(
-						any(
-							feature = "taxonomic-range-property-schema",
-							feature = "pending-schema-section"
-						),
-						doc
-					))]
 					let mut r#taxonomic_range_property = None;
-					#[cfg(any(
-						any(feature = "url-property-schema", feature = "general-schema-section"),
-						doc
-					))]
 					let mut r#url_property = None;
 					while let Some(key) = map.next_key::<Field>()? {
 						match key {
-							#[cfg(any(
-								any(
-									feature = "additional-type-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::AdditionalType => {
 								if r#additional_type_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -1975,13 +710,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "alternate-name-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::AlternateName => {
 								if r#alternate_name_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2008,13 +736,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "associated-disease-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::AssociatedDisease => {
 								if r#associated_disease_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2041,13 +762,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "bio-chem-interaction-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::BioChemInteraction => {
 								if r#bio_chem_interaction_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2074,13 +788,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "bio-chem-similarity-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::BioChemSimilarity => {
 								if r#bio_chem_similarity_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2107,13 +814,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "biological-role-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::BiologicalRole => {
 								if r#biological_role_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2140,13 +840,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "description-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Description => {
 								if r#description_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2173,13 +866,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "disambiguating-description-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::DisambiguatingDescription => {
 								if r#disambiguating_description_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2206,13 +892,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "funding-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::Funding => {
 								if r#funding_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2239,13 +918,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "has-bio-chem-entity-part-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::HasBioChemEntityPart => {
 								if r#has_bio_chem_entity_part_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2272,13 +944,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "has-molecular-function-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::HasMolecularFunction => {
 								if r#has_molecular_function_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2305,13 +970,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "has-representation-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::HasRepresentation => {
 								if r#has_representation_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2338,13 +996,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "identifier-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Identifier => {
 								if r#identifier_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2371,13 +1022,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "image-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Image => {
 								if r#image_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("image"));
@@ -2402,13 +1046,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "is-encoded-by-bio-chem-entity-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::IsEncodedByBioChemEntity => {
 								if r#is_encoded_by_bio_chem_entity_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2435,13 +1072,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "is-involved-in-biological-process-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::IsInvolvedInBiologicalProcess => {
 								if r#is_involved_in_biological_process_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2470,13 +1100,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "is-located-in-subcellular-location-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::IsLocatedInSubcellularLocation => {
 								if r#is_located_in_subcellular_location_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2505,13 +1128,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "is-part-of-bio-chem-entity-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::IsPartOfBioChemEntity => {
 								if r#is_part_of_bio_chem_entity_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2538,13 +1154,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "main-entity-of-page-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::MainEntityOfPage => {
 								if r#main_entity_of_page_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2571,13 +1180,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "name-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Name => {
 								if r#name_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("name"));
@@ -2602,13 +1204,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "potential-action-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::PotentialAction => {
 								if r#potential_action_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2635,13 +1230,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "same-as-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::SameAs => {
 								if r#same_as_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("sameAs"));
@@ -2666,13 +1254,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "subject-of-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::SubjectOf => {
 								if r#subject_of_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2699,13 +1280,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "taxonomic-range-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::TaxonomicRange => {
 								if r#taxonomic_range_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2732,13 +1306,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "url-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Url => {
 								if r#url_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("url"));
@@ -2769,407 +1336,66 @@ mod serde {
 						}
 					}
 					Ok(BioChemEntity {
-						#[cfg(any(
-							any(
-								feature = "additional-type-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#additional_type: r#additional_type_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "alternate-name-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#alternate_name: r#alternate_name_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "associated-disease-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#associated_disease: r#associated_disease_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "bio-chem-interaction-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#bio_chem_interaction: r#bio_chem_interaction_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "bio-chem-similarity-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#bio_chem_similarity: r#bio_chem_similarity_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "biological-role-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#biological_role: r#biological_role_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "description-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#description: r#description_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "disambiguating-description-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#disambiguating_description: r#disambiguating_description_property
 							.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "funding-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#funding: r#funding_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "has-bio-chem-entity-part-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#has_bio_chem_entity_part: r#has_bio_chem_entity_part_property
 							.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "has-molecular-function-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#has_molecular_function: r#has_molecular_function_property
 							.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "has-representation-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#has_representation: r#has_representation_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "identifier-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#identifier: r#identifier_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "image-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#image: r#image_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "is-encoded-by-bio-chem-entity-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#is_encoded_by_bio_chem_entity: r#is_encoded_by_bio_chem_entity_property
 							.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "is-involved-in-biological-process-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#is_involved_in_biological_process:
 							r#is_involved_in_biological_process_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "is-located-in-subcellular-location-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#is_located_in_subcellular_location:
 							r#is_located_in_subcellular_location_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "is-part-of-bio-chem-entity-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#is_part_of_bio_chem_entity: r#is_part_of_bio_chem_entity_property
 							.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "main-entity-of-page-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#main_entity_of_page: r#main_entity_of_page_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "name-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#name: r#name_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "potential-action-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#potential_action: r#potential_action_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "same-as-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#same_as: r#same_as_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "subject-of-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#subject_of: r#subject_of_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "taxonomic-range-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#taxonomic_range: r#taxonomic_range_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "url-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#url: r#url_property.unwrap_or_default(),
 					})
 				}
 			}
 			const FIELDS: &[&str] = &[
-				#[cfg(any(
-					any(
-						feature = "additional-type-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"additionalType",
-				#[cfg(any(
-					any(
-						feature = "alternate-name-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"alternateName",
-				#[cfg(any(
-					any(
-						feature = "associated-disease-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				"associatedDisease",
-				#[cfg(any(
-					any(
-						feature = "bio-chem-interaction-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				"bioChemInteraction",
-				#[cfg(any(
-					any(
-						feature = "bio-chem-similarity-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				"bioChemSimilarity",
-				#[cfg(any(
-					any(
-						feature = "biological-role-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				"biologicalRole",
-				#[cfg(any(
-					any(
-						feature = "description-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"description",
-				#[cfg(any(
-					any(
-						feature = "disambiguating-description-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"disambiguatingDescription",
-				#[cfg(any(
-					any(
-						feature = "funding-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				"funding",
-				#[cfg(any(
-					any(
-						feature = "has-bio-chem-entity-part-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				"hasBioChemEntityPart",
-				#[cfg(any(
-					any(
-						feature = "has-molecular-function-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				"hasMolecularFunction",
-				#[cfg(any(
-					any(
-						feature = "has-representation-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				"hasRepresentation",
-				#[cfg(any(
-					any(
-						feature = "identifier-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"identifier",
-				#[cfg(any(
-					any(feature = "image-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				"image",
-				#[cfg(any(
-					any(
-						feature = "is-encoded-by-bio-chem-entity-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				"isEncodedByBioChemEntity",
-				#[cfg(any(
-					any(
-						feature = "is-involved-in-biological-process-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				"isInvolvedInBiologicalProcess",
-				#[cfg(any(
-					any(
-						feature = "is-located-in-subcellular-location-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				"isLocatedInSubcellularLocation",
-				#[cfg(any(
-					any(
-						feature = "is-part-of-bio-chem-entity-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				"isPartOfBioChemEntity",
-				#[cfg(any(
-					any(
-						feature = "main-entity-of-page-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"mainEntityOfPage",
-				#[cfg(any(
-					any(feature = "name-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				"name",
-				#[cfg(any(
-					any(
-						feature = "potential-action-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"potentialAction",
-				#[cfg(any(
-					any(
-						feature = "same-as-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"sameAs",
-				#[cfg(any(
-					any(
-						feature = "subject-of-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"subjectOf",
-				#[cfg(any(
-					any(
-						feature = "taxonomic-range-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				"taxonomicRange",
-				#[cfg(any(
-					any(feature = "url-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				"url",
 			];
 			deserializer.deserialize_struct("BioChemEntity", FIELDS, ClassVisitor)

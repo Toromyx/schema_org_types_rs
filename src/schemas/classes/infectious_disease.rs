@@ -3,308 +3,44 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct InfectiousDisease {
-	#[cfg(any(
-		any(
-			feature = "additional-type-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
-	#[cfg(any(
-		any(
-			feature = "alternate-name-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#alternate_name: Vec<AlternateNameProperty>,
-	#[cfg(any(
-		any(
-			feature = "associated-anatomy-property-schema",
-			feature = "health-lifesci-schema-section"
-		),
-		doc
-	))]
 	pub r#associated_anatomy: Vec<AssociatedAnatomyProperty>,
-	#[cfg(any(
-		any(
-			feature = "code-property-schema",
-			feature = "health-lifesci-schema-section"
-		),
-		doc
-	))]
 	pub r#code: Vec<CodeProperty>,
-	#[cfg(any(
-		any(
-			feature = "description-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#description: Vec<DescriptionProperty>,
-	#[cfg(any(
-		any(
-			feature = "differential-diagnosis-property-schema",
-			feature = "health-lifesci-schema-section"
-		),
-		doc
-	))]
 	pub r#differential_diagnosis: Vec<DifferentialDiagnosisProperty>,
-	#[cfg(any(
-		any(
-			feature = "disambiguating-description-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
-	#[cfg(any(
-		any(
-			feature = "drug-property-schema",
-			feature = "health-lifesci-schema-section"
-		),
-		doc
-	))]
 	pub r#drug: Vec<DrugProperty>,
-	#[cfg(any(
-		any(
-			feature = "epidemiology-property-schema",
-			feature = "health-lifesci-schema-section"
-		),
-		doc
-	))]
 	pub r#epidemiology: Vec<EpidemiologyProperty>,
-	#[cfg(any(
-		any(
-			feature = "expected-prognosis-property-schema",
-			feature = "health-lifesci-schema-section"
-		),
-		doc
-	))]
 	pub r#expected_prognosis: Vec<ExpectedPrognosisProperty>,
-	#[cfg(any(
-		any(
-			feature = "funding-property-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	pub r#funding: Vec<FundingProperty>,
-	#[cfg(any(
-		any(
-			feature = "guideline-property-schema",
-			feature = "health-lifesci-schema-section"
-		),
-		doc
-	))]
 	pub r#guideline: Vec<GuidelineProperty>,
-	#[cfg(any(
-		any(
-			feature = "identifier-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#identifier: Vec<IdentifierProperty>,
-	#[cfg(any(
-		any(feature = "image-property-schema", feature = "general-schema-section"),
-		doc
-	))]
 	pub r#image: Vec<ImageProperty>,
-	#[cfg(any(
-		any(
-			feature = "infectious-agent-property-schema",
-			feature = "health-lifesci-schema-section"
-		),
-		doc
-	))]
 	pub r#infectious_agent: Vec<InfectiousAgentProperty>,
-	#[cfg(any(
-		any(
-			feature = "infectious-agent-class-property-schema",
-			feature = "health-lifesci-schema-section"
-		),
-		doc
-	))]
 	pub r#infectious_agent_class: Vec<InfectiousAgentClassProperty>,
-	#[cfg(any(
-		any(
-			feature = "legal-status-property-schema",
-			feature = "health-lifesci-schema-section"
-		),
-		doc
-	))]
 	pub r#legal_status: Vec<LegalStatusProperty>,
-	#[cfg(any(
-		any(
-			feature = "main-entity-of-page-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
-	#[cfg(any(
-		any(
-			feature = "medicine-system-property-schema",
-			feature = "health-lifesci-schema-section"
-		),
-		doc
-	))]
 	pub r#medicine_system: Vec<MedicineSystemProperty>,
-	#[cfg(any(
-		any(feature = "name-property-schema", feature = "general-schema-section"),
-		doc
-	))]
 	pub r#name: Vec<NameProperty>,
-	#[cfg(any(
-		any(
-			feature = "natural-progression-property-schema",
-			feature = "health-lifesci-schema-section"
-		),
-		doc
-	))]
 	pub r#natural_progression: Vec<NaturalProgressionProperty>,
-	#[cfg(any(
-		any(
-			feature = "pathophysiology-property-schema",
-			feature = "health-lifesci-schema-section"
-		),
-		doc
-	))]
 	pub r#pathophysiology: Vec<PathophysiologyProperty>,
-	#[cfg(any(
-		any(
-			feature = "possible-complication-property-schema",
-			feature = "health-lifesci-schema-section"
-		),
-		doc
-	))]
 	pub r#possible_complication: Vec<PossibleComplicationProperty>,
-	#[cfg(any(
-		any(
-			feature = "possible-treatment-property-schema",
-			feature = "health-lifesci-schema-section"
-		),
-		doc
-	))]
 	pub r#possible_treatment: Vec<PossibleTreatmentProperty>,
-	#[cfg(any(
-		any(
-			feature = "potential-action-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#potential_action: Vec<PotentialActionProperty>,
-	#[cfg(any(
-		any(
-			feature = "primary-prevention-property-schema",
-			feature = "health-lifesci-schema-section"
-		),
-		doc
-	))]
 	pub r#primary_prevention: Vec<PrimaryPreventionProperty>,
-	#[cfg(any(
-		any(
-			feature = "recognizing-authority-property-schema",
-			feature = "health-lifesci-schema-section"
-		),
-		doc
-	))]
 	pub r#recognizing_authority: Vec<RecognizingAuthorityProperty>,
-	#[cfg(any(
-		any(
-			feature = "relevant-specialty-property-schema",
-			feature = "health-lifesci-schema-section"
-		),
-		doc
-	))]
 	pub r#relevant_specialty: Vec<RelevantSpecialtyProperty>,
-	#[cfg(any(
-		any(
-			feature = "risk-factor-property-schema",
-			feature = "health-lifesci-schema-section"
-		),
-		doc
-	))]
 	pub r#risk_factor: Vec<RiskFactorProperty>,
-	#[cfg(any(
-		any(
-			feature = "same-as-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#same_as: Vec<SameAsProperty>,
-	#[cfg(any(
-		any(
-			feature = "secondary-prevention-property-schema",
-			feature = "health-lifesci-schema-section"
-		),
-		doc
-	))]
 	pub r#secondary_prevention: Vec<SecondaryPreventionProperty>,
-	#[cfg(any(
-		any(
-			feature = "sign-or-symptom-property-schema",
-			feature = "health-lifesci-schema-section"
-		),
-		doc
-	))]
 	pub r#sign_or_symptom: Vec<SignOrSymptomProperty>,
-	#[cfg(any(
-		any(
-			feature = "stage-property-schema",
-			feature = "health-lifesci-schema-section"
-		),
-		doc
-	))]
 	pub r#stage: Vec<StageProperty>,
-	#[cfg(any(
-		any(
-			feature = "status-property-schema",
-			feature = "health-lifesci-schema-section"
-		),
-		doc
-	))]
 	pub r#status: Vec<StatusProperty>,
-	#[cfg(any(
-		any(
-			feature = "study-property-schema",
-			feature = "health-lifesci-schema-section"
-		),
-		doc
-	))]
 	pub r#study: Vec<StudyProperty>,
-	#[cfg(any(
-		any(
-			feature = "subject-of-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#subject_of: Vec<SubjectOfProperty>,
-	#[cfg(any(
-		any(
-			feature = "transmission-method-property-schema",
-			feature = "health-lifesci-schema-section"
-		),
-		doc
-	))]
 	pub r#transmission_method: Vec<TransmissionMethodProperty>,
-	#[cfg(any(
-		any(
-			feature = "typical-test-property-schema",
-			feature = "health-lifesci-schema-section"
-		),
-		doc
-	))]
 	pub r#typical_test: Vec<TypicalTestProperty>,
-	#[cfg(any(
-		any(feature = "url-property-schema", feature = "general-schema-section"),
-		doc
-	))]
 	pub r#url: Vec<UrlProperty>,
 }
 #[cfg(feature = "serde")]
@@ -322,447 +58,50 @@ mod serde {
 			S: Serializer,
 		{
 			let len: usize = [
-				if cfg!(any(
-					any(
-						feature = "additional-type-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#additional_type) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "alternate-name-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#alternate_name) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "associated-anatomy-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#associated_anatomy) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "code-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#code) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "description-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#description) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "differential-diagnosis-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#differential_diagnosis) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "disambiguating-description-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#disambiguating_description) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "drug-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#drug) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "epidemiology-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#epidemiology) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "expected-prognosis-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#expected_prognosis) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "funding-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#funding) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "guideline-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#guideline) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "identifier-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#identifier) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "image-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#image) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "infectious-agent-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#infectious_agent) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "infectious-agent-class-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#infectious_agent_class) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "legal-status-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#legal_status) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "main-entity-of-page-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#main_entity_of_page) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "medicine-system-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#medicine_system) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "name-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#name) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "natural-progression-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#natural_progression) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "pathophysiology-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#pathophysiology) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "possible-complication-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#possible_complication) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "possible-treatment-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#possible_treatment) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "potential-action-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#potential_action) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "primary-prevention-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#primary_prevention) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "recognizing-authority-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#recognizing_authority) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "relevant-specialty-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#relevant_specialty) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "risk-factor-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#risk_factor) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "same-as-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#same_as) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "secondary-prevention-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#secondary_prevention) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "sign-or-symptom-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#sign_or_symptom) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "stage-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#stage) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "status-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#status) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "study-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#study) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "subject-of-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#subject_of) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "transmission-method-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#transmission_method) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "typical-test-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#typical_test) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "url-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#url) as usize
-				} else {
-					0
-				},
+				!Vec::is_empty(&self.r#additional_type) as usize,
+				!Vec::is_empty(&self.r#alternate_name) as usize,
+				!Vec::is_empty(&self.r#associated_anatomy) as usize,
+				!Vec::is_empty(&self.r#code) as usize,
+				!Vec::is_empty(&self.r#description) as usize,
+				!Vec::is_empty(&self.r#differential_diagnosis) as usize,
+				!Vec::is_empty(&self.r#disambiguating_description) as usize,
+				!Vec::is_empty(&self.r#drug) as usize,
+				!Vec::is_empty(&self.r#epidemiology) as usize,
+				!Vec::is_empty(&self.r#expected_prognosis) as usize,
+				!Vec::is_empty(&self.r#funding) as usize,
+				!Vec::is_empty(&self.r#guideline) as usize,
+				!Vec::is_empty(&self.r#identifier) as usize,
+				!Vec::is_empty(&self.r#image) as usize,
+				!Vec::is_empty(&self.r#infectious_agent) as usize,
+				!Vec::is_empty(&self.r#infectious_agent_class) as usize,
+				!Vec::is_empty(&self.r#legal_status) as usize,
+				!Vec::is_empty(&self.r#main_entity_of_page) as usize,
+				!Vec::is_empty(&self.r#medicine_system) as usize,
+				!Vec::is_empty(&self.r#name) as usize,
+				!Vec::is_empty(&self.r#natural_progression) as usize,
+				!Vec::is_empty(&self.r#pathophysiology) as usize,
+				!Vec::is_empty(&self.r#possible_complication) as usize,
+				!Vec::is_empty(&self.r#possible_treatment) as usize,
+				!Vec::is_empty(&self.r#potential_action) as usize,
+				!Vec::is_empty(&self.r#primary_prevention) as usize,
+				!Vec::is_empty(&self.r#recognizing_authority) as usize,
+				!Vec::is_empty(&self.r#relevant_specialty) as usize,
+				!Vec::is_empty(&self.r#risk_factor) as usize,
+				!Vec::is_empty(&self.r#same_as) as usize,
+				!Vec::is_empty(&self.r#secondary_prevention) as usize,
+				!Vec::is_empty(&self.r#sign_or_symptom) as usize,
+				!Vec::is_empty(&self.r#stage) as usize,
+				!Vec::is_empty(&self.r#status) as usize,
+				!Vec::is_empty(&self.r#study) as usize,
+				!Vec::is_empty(&self.r#subject_of) as usize,
+				!Vec::is_empty(&self.r#transmission_method) as usize,
+				!Vec::is_empty(&self.r#typical_test) as usize,
+				!Vec::is_empty(&self.r#url) as usize,
 			]
 			.iter()
 			.sum();
 			let mut serialize_struct =
 				Serializer::serialize_struct(serializer, "InfectiousDisease", len)?;
-			#[cfg(any(
-				any(
-					feature = "additional-type-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#additional_type) {
 				serialize_struct.serialize_field("additionalType", {
 					struct SerializeWith<'a>(&'a Vec<AdditionalTypeProperty>);
@@ -781,13 +120,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("additionalType")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "alternate-name-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#alternate_name) {
 				serialize_struct.serialize_field("alternateName", {
 					struct SerializeWith<'a>(&'a Vec<AlternateNameProperty>);
@@ -806,13 +138,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("alternateName")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "associated-anatomy-property-schema",
-					feature = "health-lifesci-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#associated_anatomy) {
 				serialize_struct.serialize_field("associatedAnatomy", {
 					struct SerializeWith<'a>(&'a Vec<AssociatedAnatomyProperty>);
@@ -831,13 +156,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("associatedAnatomy")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "code-property-schema",
-					feature = "health-lifesci-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#code) {
 				serialize_struct.serialize_field("code", {
 					struct SerializeWith<'a>(&'a Vec<CodeProperty>);
@@ -856,13 +174,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("code")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "description-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#description) {
 				serialize_struct.serialize_field("description", {
 					struct SerializeWith<'a>(&'a Vec<DescriptionProperty>);
@@ -881,13 +192,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("description")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "differential-diagnosis-property-schema",
-					feature = "health-lifesci-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#differential_diagnosis) {
 				serialize_struct.serialize_field("differentialDiagnosis", {
 					struct SerializeWith<'a>(&'a Vec<DifferentialDiagnosisProperty>);
@@ -906,13 +210,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("differentialDiagnosis")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "disambiguating-description-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#disambiguating_description) {
 				serialize_struct.serialize_field("disambiguatingDescription", {
 					struct SerializeWith<'a>(&'a Vec<DisambiguatingDescriptionProperty>);
@@ -931,13 +228,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("disambiguatingDescription")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "drug-property-schema",
-					feature = "health-lifesci-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#drug) {
 				serialize_struct.serialize_field("drug", {
 					struct SerializeWith<'a>(&'a Vec<DrugProperty>);
@@ -956,13 +246,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("drug")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "epidemiology-property-schema",
-					feature = "health-lifesci-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#epidemiology) {
 				serialize_struct.serialize_field("epidemiology", {
 					struct SerializeWith<'a>(&'a Vec<EpidemiologyProperty>);
@@ -981,13 +264,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("epidemiology")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "expected-prognosis-property-schema",
-					feature = "health-lifesci-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#expected_prognosis) {
 				serialize_struct.serialize_field("expectedPrognosis", {
 					struct SerializeWith<'a>(&'a Vec<ExpectedPrognosisProperty>);
@@ -1006,13 +282,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("expectedPrognosis")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "funding-property-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#funding) {
 				serialize_struct.serialize_field("funding", {
 					struct SerializeWith<'a>(&'a Vec<FundingProperty>);
@@ -1031,13 +300,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("funding")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "guideline-property-schema",
-					feature = "health-lifesci-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#guideline) {
 				serialize_struct.serialize_field("guideline", {
 					struct SerializeWith<'a>(&'a Vec<GuidelineProperty>);
@@ -1056,13 +318,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("guideline")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "identifier-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#identifier) {
 				serialize_struct.serialize_field("identifier", {
 					struct SerializeWith<'a>(&'a Vec<IdentifierProperty>);
@@ -1081,10 +336,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("identifier")?;
 			}
-			#[cfg(any(
-				any(feature = "image-property-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#image) {
 				serialize_struct.serialize_field("image", {
 					struct SerializeWith<'a>(&'a Vec<ImageProperty>);
@@ -1103,13 +354,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("image")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "infectious-agent-property-schema",
-					feature = "health-lifesci-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#infectious_agent) {
 				serialize_struct.serialize_field("infectiousAgent", {
 					struct SerializeWith<'a>(&'a Vec<InfectiousAgentProperty>);
@@ -1128,13 +372,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("infectiousAgent")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "infectious-agent-class-property-schema",
-					feature = "health-lifesci-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#infectious_agent_class) {
 				serialize_struct.serialize_field("infectiousAgentClass", {
 					struct SerializeWith<'a>(&'a Vec<InfectiousAgentClassProperty>);
@@ -1153,13 +390,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("infectiousAgentClass")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "legal-status-property-schema",
-					feature = "health-lifesci-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#legal_status) {
 				serialize_struct.serialize_field("legalStatus", {
 					struct SerializeWith<'a>(&'a Vec<LegalStatusProperty>);
@@ -1178,13 +408,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("legalStatus")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "main-entity-of-page-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#main_entity_of_page) {
 				serialize_struct.serialize_field("mainEntityOfPage", {
 					struct SerializeWith<'a>(&'a Vec<MainEntityOfPageProperty>);
@@ -1203,13 +426,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("mainEntityOfPage")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "medicine-system-property-schema",
-					feature = "health-lifesci-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#medicine_system) {
 				serialize_struct.serialize_field("medicineSystem", {
 					struct SerializeWith<'a>(&'a Vec<MedicineSystemProperty>);
@@ -1228,10 +444,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("medicineSystem")?;
 			}
-			#[cfg(any(
-				any(feature = "name-property-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#name) {
 				serialize_struct.serialize_field("name", {
 					struct SerializeWith<'a>(&'a Vec<NameProperty>);
@@ -1250,13 +462,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("name")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "natural-progression-property-schema",
-					feature = "health-lifesci-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#natural_progression) {
 				serialize_struct.serialize_field("naturalProgression", {
 					struct SerializeWith<'a>(&'a Vec<NaturalProgressionProperty>);
@@ -1275,13 +480,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("naturalProgression")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "pathophysiology-property-schema",
-					feature = "health-lifesci-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#pathophysiology) {
 				serialize_struct.serialize_field("pathophysiology", {
 					struct SerializeWith<'a>(&'a Vec<PathophysiologyProperty>);
@@ -1300,13 +498,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("pathophysiology")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "possible-complication-property-schema",
-					feature = "health-lifesci-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#possible_complication) {
 				serialize_struct.serialize_field("possibleComplication", {
 					struct SerializeWith<'a>(&'a Vec<PossibleComplicationProperty>);
@@ -1325,13 +516,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("possibleComplication")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "possible-treatment-property-schema",
-					feature = "health-lifesci-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#possible_treatment) {
 				serialize_struct.serialize_field("possibleTreatment", {
 					struct SerializeWith<'a>(&'a Vec<PossibleTreatmentProperty>);
@@ -1350,13 +534,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("possibleTreatment")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "potential-action-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#potential_action) {
 				serialize_struct.serialize_field("potentialAction", {
 					struct SerializeWith<'a>(&'a Vec<PotentialActionProperty>);
@@ -1375,13 +552,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("potentialAction")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "primary-prevention-property-schema",
-					feature = "health-lifesci-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#primary_prevention) {
 				serialize_struct.serialize_field("primaryPrevention", {
 					struct SerializeWith<'a>(&'a Vec<PrimaryPreventionProperty>);
@@ -1400,13 +570,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("primaryPrevention")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "recognizing-authority-property-schema",
-					feature = "health-lifesci-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#recognizing_authority) {
 				serialize_struct.serialize_field("recognizingAuthority", {
 					struct SerializeWith<'a>(&'a Vec<RecognizingAuthorityProperty>);
@@ -1425,13 +588,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("recognizingAuthority")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "relevant-specialty-property-schema",
-					feature = "health-lifesci-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#relevant_specialty) {
 				serialize_struct.serialize_field("relevantSpecialty", {
 					struct SerializeWith<'a>(&'a Vec<RelevantSpecialtyProperty>);
@@ -1450,13 +606,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("relevantSpecialty")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "risk-factor-property-schema",
-					feature = "health-lifesci-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#risk_factor) {
 				serialize_struct.serialize_field("riskFactor", {
 					struct SerializeWith<'a>(&'a Vec<RiskFactorProperty>);
@@ -1475,13 +624,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("riskFactor")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "same-as-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#same_as) {
 				serialize_struct.serialize_field("sameAs", {
 					struct SerializeWith<'a>(&'a Vec<SameAsProperty>);
@@ -1500,13 +642,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("sameAs")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "secondary-prevention-property-schema",
-					feature = "health-lifesci-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#secondary_prevention) {
 				serialize_struct.serialize_field("secondaryPrevention", {
 					struct SerializeWith<'a>(&'a Vec<SecondaryPreventionProperty>);
@@ -1525,13 +660,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("secondaryPrevention")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "sign-or-symptom-property-schema",
-					feature = "health-lifesci-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#sign_or_symptom) {
 				serialize_struct.serialize_field("signOrSymptom", {
 					struct SerializeWith<'a>(&'a Vec<SignOrSymptomProperty>);
@@ -1550,13 +678,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("signOrSymptom")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "stage-property-schema",
-					feature = "health-lifesci-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#stage) {
 				serialize_struct.serialize_field("stage", {
 					struct SerializeWith<'a>(&'a Vec<StageProperty>);
@@ -1575,13 +696,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("stage")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "status-property-schema",
-					feature = "health-lifesci-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#status) {
 				serialize_struct.serialize_field("status", {
 					struct SerializeWith<'a>(&'a Vec<StatusProperty>);
@@ -1600,13 +714,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("status")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "study-property-schema",
-					feature = "health-lifesci-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#study) {
 				serialize_struct.serialize_field("study", {
 					struct SerializeWith<'a>(&'a Vec<StudyProperty>);
@@ -1625,13 +732,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("study")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "subject-of-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#subject_of) {
 				serialize_struct.serialize_field("subjectOf", {
 					struct SerializeWith<'a>(&'a Vec<SubjectOfProperty>);
@@ -1650,13 +750,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("subjectOf")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "transmission-method-property-schema",
-					feature = "health-lifesci-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#transmission_method) {
 				serialize_struct.serialize_field("transmissionMethod", {
 					struct SerializeWith<'a>(&'a Vec<TransmissionMethodProperty>);
@@ -1675,13 +768,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("transmissionMethod")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "typical-test-property-schema",
-					feature = "health-lifesci-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#typical_test) {
 				serialize_struct.serialize_field("typicalTest", {
 					struct SerializeWith<'a>(&'a Vec<TypicalTestProperty>);
@@ -1700,10 +786,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("typicalTest")?;
 			}
-			#[cfg(any(
-				any(feature = "url-property-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#url) {
 				serialize_struct.serialize_field("url", {
 					struct SerializeWith<'a>(&'a Vec<UrlProperty>);
@@ -1731,308 +813,44 @@ mod serde {
 			D: Deserializer<'de>,
 		{
 			enum Field {
-				#[cfg(any(
-					any(
-						feature = "additional-type-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				AdditionalType,
-				#[cfg(any(
-					any(
-						feature = "alternate-name-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				AlternateName,
-				#[cfg(any(
-					any(
-						feature = "associated-anatomy-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
 				AssociatedAnatomy,
-				#[cfg(any(
-					any(
-						feature = "code-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
 				Code,
-				#[cfg(any(
-					any(
-						feature = "description-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				Description,
-				#[cfg(any(
-					any(
-						feature = "differential-diagnosis-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
 				DifferentialDiagnosis,
-				#[cfg(any(
-					any(
-						feature = "disambiguating-description-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				DisambiguatingDescription,
-				#[cfg(any(
-					any(
-						feature = "drug-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
 				Drug,
-				#[cfg(any(
-					any(
-						feature = "epidemiology-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
 				Epidemiology,
-				#[cfg(any(
-					any(
-						feature = "expected-prognosis-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
 				ExpectedPrognosis,
-				#[cfg(any(
-					any(
-						feature = "funding-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				Funding,
-				#[cfg(any(
-					any(
-						feature = "guideline-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
 				Guideline,
-				#[cfg(any(
-					any(
-						feature = "identifier-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				Identifier,
-				#[cfg(any(
-					any(feature = "image-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				Image,
-				#[cfg(any(
-					any(
-						feature = "infectious-agent-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
 				InfectiousAgent,
-				#[cfg(any(
-					any(
-						feature = "infectious-agent-class-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
 				InfectiousAgentClass,
-				#[cfg(any(
-					any(
-						feature = "legal-status-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
 				LegalStatus,
-				#[cfg(any(
-					any(
-						feature = "main-entity-of-page-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				MainEntityOfPage,
-				#[cfg(any(
-					any(
-						feature = "medicine-system-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
 				MedicineSystem,
-				#[cfg(any(
-					any(feature = "name-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				Name,
-				#[cfg(any(
-					any(
-						feature = "natural-progression-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
 				NaturalProgression,
-				#[cfg(any(
-					any(
-						feature = "pathophysiology-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
 				Pathophysiology,
-				#[cfg(any(
-					any(
-						feature = "possible-complication-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
 				PossibleComplication,
-				#[cfg(any(
-					any(
-						feature = "possible-treatment-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
 				PossibleTreatment,
-				#[cfg(any(
-					any(
-						feature = "potential-action-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				PotentialAction,
-				#[cfg(any(
-					any(
-						feature = "primary-prevention-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
 				PrimaryPrevention,
-				#[cfg(any(
-					any(
-						feature = "recognizing-authority-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
 				RecognizingAuthority,
-				#[cfg(any(
-					any(
-						feature = "relevant-specialty-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
 				RelevantSpecialty,
-				#[cfg(any(
-					any(
-						feature = "risk-factor-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
 				RiskFactor,
-				#[cfg(any(
-					any(
-						feature = "same-as-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				SameAs,
-				#[cfg(any(
-					any(
-						feature = "secondary-prevention-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
 				SecondaryPrevention,
-				#[cfg(any(
-					any(
-						feature = "sign-or-symptom-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
 				SignOrSymptom,
-				#[cfg(any(
-					any(
-						feature = "stage-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
 				Stage,
-				#[cfg(any(
-					any(
-						feature = "status-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
 				Status,
-				#[cfg(any(
-					any(
-						feature = "study-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
 				Study,
-				#[cfg(any(
-					any(
-						feature = "subject-of-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				SubjectOf,
-				#[cfg(any(
-					any(
-						feature = "transmission-method-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
 				TransmissionMethod,
-				#[cfg(any(
-					any(
-						feature = "typical-test-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
 				TypicalTest,
-				#[cfg(any(
-					any(feature = "url-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				Url,
 				Ignore,
 			}
@@ -2047,317 +865,44 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
-						#[cfg(any(
-							any(
-								feature = "additional-type-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"additionalType" => Ok(Field::AdditionalType),
-						#[cfg(any(
-							any(
-								feature = "alternate-name-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"alternateName" => Ok(Field::AlternateName),
-						#[cfg(any(
-							any(
-								feature = "associated-anatomy-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						"associatedAnatomy" => Ok(Field::AssociatedAnatomy),
-						#[cfg(any(
-							any(
-								feature = "code-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						"code" => Ok(Field::Code),
-						#[cfg(any(
-							any(
-								feature = "description-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"description" => Ok(Field::Description),
-						#[cfg(any(
-							any(
-								feature = "differential-diagnosis-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						"differentialDiagnosis" => Ok(Field::DifferentialDiagnosis),
-						#[cfg(any(
-							any(
-								feature = "disambiguating-description-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
-						#[cfg(any(
-							any(
-								feature = "drug-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						"drug" => Ok(Field::Drug),
-						#[cfg(any(
-							any(
-								feature = "epidemiology-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						"epidemiology" => Ok(Field::Epidemiology),
-						#[cfg(any(
-							any(
-								feature = "expected-prognosis-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						"expectedPrognosis" => Ok(Field::ExpectedPrognosis),
-						#[cfg(any(
-							any(
-								feature = "funding-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						"funding" => Ok(Field::Funding),
-						#[cfg(any(
-							any(
-								feature = "guideline-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						"guideline" => Ok(Field::Guideline),
-						#[cfg(any(
-							any(
-								feature = "identifier-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"identifier" => Ok(Field::Identifier),
-						#[cfg(any(
-							any(
-								feature = "image-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"image" => Ok(Field::Image),
-						#[cfg(any(
-							any(
-								feature = "infectious-agent-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						"infectiousAgent" => Ok(Field::InfectiousAgent),
-						#[cfg(any(
-							any(
-								feature = "infectious-agent-class-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						"infectiousAgentClass" => Ok(Field::InfectiousAgentClass),
-						#[cfg(any(
-							any(
-								feature = "legal-status-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						"legalStatus" => Ok(Field::LegalStatus),
-						#[cfg(any(
-							any(
-								feature = "main-entity-of-page-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
-						#[cfg(any(
-							any(
-								feature = "medicine-system-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						"medicineSystem" => Ok(Field::MedicineSystem),
-						#[cfg(any(
-							any(
-								feature = "name-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"name" => Ok(Field::Name),
-						#[cfg(any(
-							any(
-								feature = "natural-progression-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						"naturalProgression" => Ok(Field::NaturalProgression),
-						#[cfg(any(
-							any(
-								feature = "pathophysiology-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						"pathophysiology" => Ok(Field::Pathophysiology),
-						#[cfg(any(
-							any(
-								feature = "possible-complication-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						"possibleComplication" => Ok(Field::PossibleComplication),
-						#[cfg(any(
-							any(
-								feature = "possible-treatment-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						"possibleTreatment" => Ok(Field::PossibleTreatment),
-						#[cfg(any(
-							any(
-								feature = "potential-action-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"potentialAction" => Ok(Field::PotentialAction),
-						#[cfg(any(
-							any(
-								feature = "primary-prevention-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						"primaryPrevention" => Ok(Field::PrimaryPrevention),
-						#[cfg(any(
-							any(
-								feature = "recognizing-authority-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						"recognizingAuthority" => Ok(Field::RecognizingAuthority),
-						#[cfg(any(
-							any(
-								feature = "relevant-specialty-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						"relevantSpecialty" => Ok(Field::RelevantSpecialty),
-						#[cfg(any(
-							any(
-								feature = "risk-factor-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						"riskFactor" => Ok(Field::RiskFactor),
-						#[cfg(any(
-							any(
-								feature = "same-as-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"sameAs" => Ok(Field::SameAs),
-						#[cfg(any(
-							any(
-								feature = "secondary-prevention-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						"secondaryPrevention" => Ok(Field::SecondaryPrevention),
-						#[cfg(any(
-							any(
-								feature = "sign-or-symptom-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						"signOrSymptom" => Ok(Field::SignOrSymptom),
-						#[cfg(any(
-							any(
-								feature = "stage-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						"stage" => Ok(Field::Stage),
-						#[cfg(any(
-							any(
-								feature = "status-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						"status" => Ok(Field::Status),
-						#[cfg(any(
-							any(
-								feature = "study-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						"study" => Ok(Field::Study),
-						#[cfg(any(
-							any(
-								feature = "subject-of-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"subjectOf" => Ok(Field::SubjectOf),
-						#[cfg(any(
-							any(
-								feature = "transmission-method-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						"transmissionMethod" => Ok(Field::TransmissionMethod),
-						#[cfg(any(
-							any(
-								feature = "typical-test-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						"typicalTest" => Ok(Field::TypicalTest),
-						#[cfg(any(
-							any(
-								feature = "url-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"url" => Ok(Field::Url),
 						_ => Ok(Field::Ignore),
 					}
@@ -2367,317 +912,44 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
-						#[cfg(any(
-							any(
-								feature = "additional-type-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"additionalType" => Ok(Field::AdditionalType),
-						#[cfg(any(
-							any(
-								feature = "alternate-name-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"alternateName" => Ok(Field::AlternateName),
-						#[cfg(any(
-							any(
-								feature = "associated-anatomy-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						b"associatedAnatomy" => Ok(Field::AssociatedAnatomy),
-						#[cfg(any(
-							any(
-								feature = "code-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						b"code" => Ok(Field::Code),
-						#[cfg(any(
-							any(
-								feature = "description-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"description" => Ok(Field::Description),
-						#[cfg(any(
-							any(
-								feature = "differential-diagnosis-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						b"differentialDiagnosis" => Ok(Field::DifferentialDiagnosis),
-						#[cfg(any(
-							any(
-								feature = "disambiguating-description-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
-						#[cfg(any(
-							any(
-								feature = "drug-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						b"drug" => Ok(Field::Drug),
-						#[cfg(any(
-							any(
-								feature = "epidemiology-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						b"epidemiology" => Ok(Field::Epidemiology),
-						#[cfg(any(
-							any(
-								feature = "expected-prognosis-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						b"expectedPrognosis" => Ok(Field::ExpectedPrognosis),
-						#[cfg(any(
-							any(
-								feature = "funding-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						b"funding" => Ok(Field::Funding),
-						#[cfg(any(
-							any(
-								feature = "guideline-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						b"guideline" => Ok(Field::Guideline),
-						#[cfg(any(
-							any(
-								feature = "identifier-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"identifier" => Ok(Field::Identifier),
-						#[cfg(any(
-							any(
-								feature = "image-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"image" => Ok(Field::Image),
-						#[cfg(any(
-							any(
-								feature = "infectious-agent-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						b"infectiousAgent" => Ok(Field::InfectiousAgent),
-						#[cfg(any(
-							any(
-								feature = "infectious-agent-class-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						b"infectiousAgentClass" => Ok(Field::InfectiousAgentClass),
-						#[cfg(any(
-							any(
-								feature = "legal-status-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						b"legalStatus" => Ok(Field::LegalStatus),
-						#[cfg(any(
-							any(
-								feature = "main-entity-of-page-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
-						#[cfg(any(
-							any(
-								feature = "medicine-system-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						b"medicineSystem" => Ok(Field::MedicineSystem),
-						#[cfg(any(
-							any(
-								feature = "name-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"name" => Ok(Field::Name),
-						#[cfg(any(
-							any(
-								feature = "natural-progression-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						b"naturalProgression" => Ok(Field::NaturalProgression),
-						#[cfg(any(
-							any(
-								feature = "pathophysiology-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						b"pathophysiology" => Ok(Field::Pathophysiology),
-						#[cfg(any(
-							any(
-								feature = "possible-complication-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						b"possibleComplication" => Ok(Field::PossibleComplication),
-						#[cfg(any(
-							any(
-								feature = "possible-treatment-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						b"possibleTreatment" => Ok(Field::PossibleTreatment),
-						#[cfg(any(
-							any(
-								feature = "potential-action-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"potentialAction" => Ok(Field::PotentialAction),
-						#[cfg(any(
-							any(
-								feature = "primary-prevention-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						b"primaryPrevention" => Ok(Field::PrimaryPrevention),
-						#[cfg(any(
-							any(
-								feature = "recognizing-authority-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						b"recognizingAuthority" => Ok(Field::RecognizingAuthority),
-						#[cfg(any(
-							any(
-								feature = "relevant-specialty-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						b"relevantSpecialty" => Ok(Field::RelevantSpecialty),
-						#[cfg(any(
-							any(
-								feature = "risk-factor-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						b"riskFactor" => Ok(Field::RiskFactor),
-						#[cfg(any(
-							any(
-								feature = "same-as-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"sameAs" => Ok(Field::SameAs),
-						#[cfg(any(
-							any(
-								feature = "secondary-prevention-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						b"secondaryPrevention" => Ok(Field::SecondaryPrevention),
-						#[cfg(any(
-							any(
-								feature = "sign-or-symptom-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						b"signOrSymptom" => Ok(Field::SignOrSymptom),
-						#[cfg(any(
-							any(
-								feature = "stage-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						b"stage" => Ok(Field::Stage),
-						#[cfg(any(
-							any(
-								feature = "status-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						b"status" => Ok(Field::Status),
-						#[cfg(any(
-							any(
-								feature = "study-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						b"study" => Ok(Field::Study),
-						#[cfg(any(
-							any(
-								feature = "subject-of-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"subjectOf" => Ok(Field::SubjectOf),
-						#[cfg(any(
-							any(
-								feature = "transmission-method-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						b"transmissionMethod" => Ok(Field::TransmissionMethod),
-						#[cfg(any(
-							any(
-								feature = "typical-test-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						b"typicalTest" => Ok(Field::TypicalTest),
-						#[cfg(any(
-							any(
-								feature = "url-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"url" => Ok(Field::Url),
 						_ => Ok(Field::Ignore),
 					}
@@ -2701,318 +973,47 @@ mod serde {
 				where
 					A: de::MapAccess<'de>,
 				{
-					#[cfg(any(
-						any(
-							feature = "additional-type-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#additional_type_property = None;
-					#[cfg(any(
-						any(
-							feature = "alternate-name-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#alternate_name_property = None;
-					#[cfg(any(
-						any(
-							feature = "associated-anatomy-property-schema",
-							feature = "health-lifesci-schema-section"
-						),
-						doc
-					))]
 					let mut r#associated_anatomy_property = None;
-					#[cfg(any(
-						any(
-							feature = "code-property-schema",
-							feature = "health-lifesci-schema-section"
-						),
-						doc
-					))]
 					let mut r#code_property = None;
-					#[cfg(any(
-						any(
-							feature = "description-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#description_property = None;
-					#[cfg(any(
-						any(
-							feature = "differential-diagnosis-property-schema",
-							feature = "health-lifesci-schema-section"
-						),
-						doc
-					))]
 					let mut r#differential_diagnosis_property = None;
-					#[cfg(any(
-						any(
-							feature = "disambiguating-description-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#disambiguating_description_property = None;
-					#[cfg(any(
-						any(
-							feature = "drug-property-schema",
-							feature = "health-lifesci-schema-section"
-						),
-						doc
-					))]
 					let mut r#drug_property = None;
-					#[cfg(any(
-						any(
-							feature = "epidemiology-property-schema",
-							feature = "health-lifesci-schema-section"
-						),
-						doc
-					))]
 					let mut r#epidemiology_property = None;
-					#[cfg(any(
-						any(
-							feature = "expected-prognosis-property-schema",
-							feature = "health-lifesci-schema-section"
-						),
-						doc
-					))]
 					let mut r#expected_prognosis_property = None;
-					#[cfg(any(
-						any(
-							feature = "funding-property-schema",
-							feature = "pending-schema-section"
-						),
-						doc
-					))]
 					let mut r#funding_property = None;
-					#[cfg(any(
-						any(
-							feature = "guideline-property-schema",
-							feature = "health-lifesci-schema-section"
-						),
-						doc
-					))]
 					let mut r#guideline_property = None;
-					#[cfg(any(
-						any(
-							feature = "identifier-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#identifier_property = None;
-					#[cfg(any(
-						any(feature = "image-property-schema", feature = "general-schema-section"),
-						doc
-					))]
 					let mut r#image_property = None;
-					#[cfg(any(
-						any(
-							feature = "infectious-agent-property-schema",
-							feature = "health-lifesci-schema-section"
-						),
-						doc
-					))]
 					let mut r#infectious_agent_property = None;
-					#[cfg(any(
-						any(
-							feature = "infectious-agent-class-property-schema",
-							feature = "health-lifesci-schema-section"
-						),
-						doc
-					))]
 					let mut r#infectious_agent_class_property = None;
-					#[cfg(any(
-						any(
-							feature = "legal-status-property-schema",
-							feature = "health-lifesci-schema-section"
-						),
-						doc
-					))]
 					let mut r#legal_status_property = None;
-					#[cfg(any(
-						any(
-							feature = "main-entity-of-page-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#main_entity_of_page_property = None;
-					#[cfg(any(
-						any(
-							feature = "medicine-system-property-schema",
-							feature = "health-lifesci-schema-section"
-						),
-						doc
-					))]
 					let mut r#medicine_system_property = None;
-					#[cfg(any(
-						any(feature = "name-property-schema", feature = "general-schema-section"),
-						doc
-					))]
 					let mut r#name_property = None;
-					#[cfg(any(
-						any(
-							feature = "natural-progression-property-schema",
-							feature = "health-lifesci-schema-section"
-						),
-						doc
-					))]
 					let mut r#natural_progression_property = None;
-					#[cfg(any(
-						any(
-							feature = "pathophysiology-property-schema",
-							feature = "health-lifesci-schema-section"
-						),
-						doc
-					))]
 					let mut r#pathophysiology_property = None;
-					#[cfg(any(
-						any(
-							feature = "possible-complication-property-schema",
-							feature = "health-lifesci-schema-section"
-						),
-						doc
-					))]
 					let mut r#possible_complication_property = None;
-					#[cfg(any(
-						any(
-							feature = "possible-treatment-property-schema",
-							feature = "health-lifesci-schema-section"
-						),
-						doc
-					))]
 					let mut r#possible_treatment_property = None;
-					#[cfg(any(
-						any(
-							feature = "potential-action-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#potential_action_property = None;
-					#[cfg(any(
-						any(
-							feature = "primary-prevention-property-schema",
-							feature = "health-lifesci-schema-section"
-						),
-						doc
-					))]
 					let mut r#primary_prevention_property = None;
-					#[cfg(any(
-						any(
-							feature = "recognizing-authority-property-schema",
-							feature = "health-lifesci-schema-section"
-						),
-						doc
-					))]
 					let mut r#recognizing_authority_property = None;
-					#[cfg(any(
-						any(
-							feature = "relevant-specialty-property-schema",
-							feature = "health-lifesci-schema-section"
-						),
-						doc
-					))]
 					let mut r#relevant_specialty_property = None;
-					#[cfg(any(
-						any(
-							feature = "risk-factor-property-schema",
-							feature = "health-lifesci-schema-section"
-						),
-						doc
-					))]
 					let mut r#risk_factor_property = None;
-					#[cfg(any(
-						any(
-							feature = "same-as-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#same_as_property = None;
-					#[cfg(any(
-						any(
-							feature = "secondary-prevention-property-schema",
-							feature = "health-lifesci-schema-section"
-						),
-						doc
-					))]
 					let mut r#secondary_prevention_property = None;
-					#[cfg(any(
-						any(
-							feature = "sign-or-symptom-property-schema",
-							feature = "health-lifesci-schema-section"
-						),
-						doc
-					))]
 					let mut r#sign_or_symptom_property = None;
-					#[cfg(any(
-						any(
-							feature = "stage-property-schema",
-							feature = "health-lifesci-schema-section"
-						),
-						doc
-					))]
 					let mut r#stage_property = None;
-					#[cfg(any(
-						any(
-							feature = "status-property-schema",
-							feature = "health-lifesci-schema-section"
-						),
-						doc
-					))]
 					let mut r#status_property = None;
-					#[cfg(any(
-						any(
-							feature = "study-property-schema",
-							feature = "health-lifesci-schema-section"
-						),
-						doc
-					))]
 					let mut r#study_property = None;
-					#[cfg(any(
-						any(
-							feature = "subject-of-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#subject_of_property = None;
-					#[cfg(any(
-						any(
-							feature = "transmission-method-property-schema",
-							feature = "health-lifesci-schema-section"
-						),
-						doc
-					))]
 					let mut r#transmission_method_property = None;
-					#[cfg(any(
-						any(
-							feature = "typical-test-property-schema",
-							feature = "health-lifesci-schema-section"
-						),
-						doc
-					))]
 					let mut r#typical_test_property = None;
-					#[cfg(any(
-						any(feature = "url-property-schema", feature = "general-schema-section"),
-						doc
-					))]
 					let mut r#url_property = None;
 					while let Some(key) = map.next_key::<Field>()? {
 						match key {
-							#[cfg(any(
-								any(
-									feature = "additional-type-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::AdditionalType => {
 								if r#additional_type_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -3039,13 +1040,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "alternate-name-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::AlternateName => {
 								if r#alternate_name_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -3072,13 +1066,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "associated-anatomy-property-schema",
-									feature = "health-lifesci-schema-section"
-								),
-								doc
-							))]
 							Field::AssociatedAnatomy => {
 								if r#associated_anatomy_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -3105,13 +1092,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "code-property-schema",
-									feature = "health-lifesci-schema-section"
-								),
-								doc
-							))]
 							Field::Code => {
 								if r#code_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("code"));
@@ -3136,13 +1116,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "description-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Description => {
 								if r#description_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -3169,13 +1142,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "differential-diagnosis-property-schema",
-									feature = "health-lifesci-schema-section"
-								),
-								doc
-							))]
 							Field::DifferentialDiagnosis => {
 								if r#differential_diagnosis_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -3202,13 +1168,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "disambiguating-description-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::DisambiguatingDescription => {
 								if r#disambiguating_description_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -3235,13 +1194,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "drug-property-schema",
-									feature = "health-lifesci-schema-section"
-								),
-								doc
-							))]
 							Field::Drug => {
 								if r#drug_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("drug"));
@@ -3266,13 +1218,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "epidemiology-property-schema",
-									feature = "health-lifesci-schema-section"
-								),
-								doc
-							))]
 							Field::Epidemiology => {
 								if r#epidemiology_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -3299,13 +1244,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "expected-prognosis-property-schema",
-									feature = "health-lifesci-schema-section"
-								),
-								doc
-							))]
 							Field::ExpectedPrognosis => {
 								if r#expected_prognosis_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -3332,13 +1270,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "funding-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::Funding => {
 								if r#funding_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -3365,13 +1296,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "guideline-property-schema",
-									feature = "health-lifesci-schema-section"
-								),
-								doc
-							))]
 							Field::Guideline => {
 								if r#guideline_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -3398,13 +1322,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "identifier-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Identifier => {
 								if r#identifier_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -3431,13 +1348,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "image-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Image => {
 								if r#image_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("image"));
@@ -3462,13 +1372,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "infectious-agent-property-schema",
-									feature = "health-lifesci-schema-section"
-								),
-								doc
-							))]
 							Field::InfectiousAgent => {
 								if r#infectious_agent_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -3495,13 +1398,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "infectious-agent-class-property-schema",
-									feature = "health-lifesci-schema-section"
-								),
-								doc
-							))]
 							Field::InfectiousAgentClass => {
 								if r#infectious_agent_class_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -3528,13 +1424,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "legal-status-property-schema",
-									feature = "health-lifesci-schema-section"
-								),
-								doc
-							))]
 							Field::LegalStatus => {
 								if r#legal_status_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -3561,13 +1450,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "main-entity-of-page-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::MainEntityOfPage => {
 								if r#main_entity_of_page_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -3594,13 +1476,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "medicine-system-property-schema",
-									feature = "health-lifesci-schema-section"
-								),
-								doc
-							))]
 							Field::MedicineSystem => {
 								if r#medicine_system_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -3627,13 +1502,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "name-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Name => {
 								if r#name_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("name"));
@@ -3658,13 +1526,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "natural-progression-property-schema",
-									feature = "health-lifesci-schema-section"
-								),
-								doc
-							))]
 							Field::NaturalProgression => {
 								if r#natural_progression_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -3691,13 +1552,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "pathophysiology-property-schema",
-									feature = "health-lifesci-schema-section"
-								),
-								doc
-							))]
 							Field::Pathophysiology => {
 								if r#pathophysiology_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -3724,13 +1578,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "possible-complication-property-schema",
-									feature = "health-lifesci-schema-section"
-								),
-								doc
-							))]
 							Field::PossibleComplication => {
 								if r#possible_complication_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -3757,13 +1604,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "possible-treatment-property-schema",
-									feature = "health-lifesci-schema-section"
-								),
-								doc
-							))]
 							Field::PossibleTreatment => {
 								if r#possible_treatment_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -3790,13 +1630,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "potential-action-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::PotentialAction => {
 								if r#potential_action_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -3823,13 +1656,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "primary-prevention-property-schema",
-									feature = "health-lifesci-schema-section"
-								),
-								doc
-							))]
 							Field::PrimaryPrevention => {
 								if r#primary_prevention_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -3856,13 +1682,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "recognizing-authority-property-schema",
-									feature = "health-lifesci-schema-section"
-								),
-								doc
-							))]
 							Field::RecognizingAuthority => {
 								if r#recognizing_authority_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -3889,13 +1708,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "relevant-specialty-property-schema",
-									feature = "health-lifesci-schema-section"
-								),
-								doc
-							))]
 							Field::RelevantSpecialty => {
 								if r#relevant_specialty_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -3922,13 +1734,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "risk-factor-property-schema",
-									feature = "health-lifesci-schema-section"
-								),
-								doc
-							))]
 							Field::RiskFactor => {
 								if r#risk_factor_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -3955,13 +1760,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "same-as-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::SameAs => {
 								if r#same_as_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("sameAs"));
@@ -3986,13 +1784,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "secondary-prevention-property-schema",
-									feature = "health-lifesci-schema-section"
-								),
-								doc
-							))]
 							Field::SecondaryPrevention => {
 								if r#secondary_prevention_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -4019,13 +1810,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "sign-or-symptom-property-schema",
-									feature = "health-lifesci-schema-section"
-								),
-								doc
-							))]
 							Field::SignOrSymptom => {
 								if r#sign_or_symptom_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -4052,13 +1836,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "stage-property-schema",
-									feature = "health-lifesci-schema-section"
-								),
-								doc
-							))]
 							Field::Stage => {
 								if r#stage_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("stage"));
@@ -4083,13 +1860,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "status-property-schema",
-									feature = "health-lifesci-schema-section"
-								),
-								doc
-							))]
 							Field::Status => {
 								if r#status_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("status"));
@@ -4114,13 +1884,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "study-property-schema",
-									feature = "health-lifesci-schema-section"
-								),
-								doc
-							))]
 							Field::Study => {
 								if r#study_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("study"));
@@ -4145,13 +1908,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "subject-of-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::SubjectOf => {
 								if r#subject_of_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -4178,13 +1934,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "transmission-method-property-schema",
-									feature = "health-lifesci-schema-section"
-								),
-								doc
-							))]
 							Field::TransmissionMethod => {
 								if r#transmission_method_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -4211,13 +1960,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "typical-test-property-schema",
-									feature = "health-lifesci-schema-section"
-								),
-								doc
-							))]
 							Field::TypicalTest => {
 								if r#typical_test_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -4244,13 +1986,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "url-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Url => {
 								if r#url_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("url"));
@@ -4281,629 +2016,92 @@ mod serde {
 						}
 					}
 					Ok(InfectiousDisease {
-						#[cfg(any(
-							any(
-								feature = "additional-type-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#additional_type: r#additional_type_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "alternate-name-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#alternate_name: r#alternate_name_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "associated-anatomy-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						r#associated_anatomy: r#associated_anatomy_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "code-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						r#code: r#code_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "description-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#description: r#description_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "differential-diagnosis-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						r#differential_diagnosis: r#differential_diagnosis_property
 							.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "disambiguating-description-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#disambiguating_description: r#disambiguating_description_property
 							.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "drug-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						r#drug: r#drug_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "epidemiology-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						r#epidemiology: r#epidemiology_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "expected-prognosis-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						r#expected_prognosis: r#expected_prognosis_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "funding-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#funding: r#funding_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "guideline-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						r#guideline: r#guideline_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "identifier-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#identifier: r#identifier_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "image-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#image: r#image_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "infectious-agent-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						r#infectious_agent: r#infectious_agent_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "infectious-agent-class-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						r#infectious_agent_class: r#infectious_agent_class_property
 							.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "legal-status-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						r#legal_status: r#legal_status_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "main-entity-of-page-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#main_entity_of_page: r#main_entity_of_page_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "medicine-system-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						r#medicine_system: r#medicine_system_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "name-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#name: r#name_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "natural-progression-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						r#natural_progression: r#natural_progression_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "pathophysiology-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						r#pathophysiology: r#pathophysiology_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "possible-complication-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						r#possible_complication: r#possible_complication_property
 							.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "possible-treatment-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						r#possible_treatment: r#possible_treatment_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "potential-action-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#potential_action: r#potential_action_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "primary-prevention-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						r#primary_prevention: r#primary_prevention_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "recognizing-authority-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						r#recognizing_authority: r#recognizing_authority_property
 							.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "relevant-specialty-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						r#relevant_specialty: r#relevant_specialty_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "risk-factor-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						r#risk_factor: r#risk_factor_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "same-as-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#same_as: r#same_as_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "secondary-prevention-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						r#secondary_prevention: r#secondary_prevention_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "sign-or-symptom-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						r#sign_or_symptom: r#sign_or_symptom_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "stage-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						r#stage: r#stage_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "status-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						r#status: r#status_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "study-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						r#study: r#study_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "subject-of-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#subject_of: r#subject_of_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "transmission-method-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						r#transmission_method: r#transmission_method_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "typical-test-property-schema",
-								feature = "health-lifesci-schema-section"
-							),
-							doc
-						))]
 						r#typical_test: r#typical_test_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "url-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#url: r#url_property.unwrap_or_default(),
 					})
 				}
 			}
 			const FIELDS: &[&str] = &[
-				#[cfg(any(
-					any(
-						feature = "additional-type-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"additionalType",
-				#[cfg(any(
-					any(
-						feature = "alternate-name-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"alternateName",
-				#[cfg(any(
-					any(
-						feature = "associated-anatomy-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
 				"associatedAnatomy",
-				#[cfg(any(
-					any(
-						feature = "code-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
 				"code",
-				#[cfg(any(
-					any(
-						feature = "description-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"description",
-				#[cfg(any(
-					any(
-						feature = "differential-diagnosis-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
 				"differentialDiagnosis",
-				#[cfg(any(
-					any(
-						feature = "disambiguating-description-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"disambiguatingDescription",
-				#[cfg(any(
-					any(
-						feature = "drug-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
 				"drug",
-				#[cfg(any(
-					any(
-						feature = "epidemiology-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
 				"epidemiology",
-				#[cfg(any(
-					any(
-						feature = "expected-prognosis-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
 				"expectedPrognosis",
-				#[cfg(any(
-					any(
-						feature = "funding-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				"funding",
-				#[cfg(any(
-					any(
-						feature = "guideline-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
 				"guideline",
-				#[cfg(any(
-					any(
-						feature = "identifier-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"identifier",
-				#[cfg(any(
-					any(feature = "image-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				"image",
-				#[cfg(any(
-					any(
-						feature = "infectious-agent-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
 				"infectiousAgent",
-				#[cfg(any(
-					any(
-						feature = "infectious-agent-class-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
 				"infectiousAgentClass",
-				#[cfg(any(
-					any(
-						feature = "legal-status-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
 				"legalStatus",
-				#[cfg(any(
-					any(
-						feature = "main-entity-of-page-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"mainEntityOfPage",
-				#[cfg(any(
-					any(
-						feature = "medicine-system-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
 				"medicineSystem",
-				#[cfg(any(
-					any(feature = "name-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				"name",
-				#[cfg(any(
-					any(
-						feature = "natural-progression-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
 				"naturalProgression",
-				#[cfg(any(
-					any(
-						feature = "pathophysiology-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
 				"pathophysiology",
-				#[cfg(any(
-					any(
-						feature = "possible-complication-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
 				"possibleComplication",
-				#[cfg(any(
-					any(
-						feature = "possible-treatment-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
 				"possibleTreatment",
-				#[cfg(any(
-					any(
-						feature = "potential-action-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"potentialAction",
-				#[cfg(any(
-					any(
-						feature = "primary-prevention-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
 				"primaryPrevention",
-				#[cfg(any(
-					any(
-						feature = "recognizing-authority-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
 				"recognizingAuthority",
-				#[cfg(any(
-					any(
-						feature = "relevant-specialty-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
 				"relevantSpecialty",
-				#[cfg(any(
-					any(
-						feature = "risk-factor-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
 				"riskFactor",
-				#[cfg(any(
-					any(
-						feature = "same-as-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"sameAs",
-				#[cfg(any(
-					any(
-						feature = "secondary-prevention-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
 				"secondaryPrevention",
-				#[cfg(any(
-					any(
-						feature = "sign-or-symptom-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
 				"signOrSymptom",
-				#[cfg(any(
-					any(
-						feature = "stage-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
 				"stage",
-				#[cfg(any(
-					any(
-						feature = "status-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
 				"status",
-				#[cfg(any(
-					any(
-						feature = "study-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
 				"study",
-				#[cfg(any(
-					any(
-						feature = "subject-of-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"subjectOf",
-				#[cfg(any(
-					any(
-						feature = "transmission-method-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
 				"transmissionMethod",
-				#[cfg(any(
-					any(
-						feature = "typical-test-property-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
 				"typicalTest",
-				#[cfg(any(
-					any(feature = "url-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				"url",
 			];
 			deserializer.deserialize_struct("InfectiousDisease", FIELDS, ClassVisitor)

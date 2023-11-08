@@ -3,18 +3,7 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum MinimumPaymentDueProperty {
-	#[cfg(any(
-		any(feature = "monetary-amount-schema", feature = "general-schema-section"),
-		doc
-	))]
 	MonetaryAmount(MonetaryAmount),
-	#[cfg(any(
-		any(
-			feature = "price-specification-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	PriceSpecification(PriceSpecification),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),
@@ -34,19 +23,10 @@ mod serde {
 			S: Serializer,
 		{
 			match *self {
-				#[cfg(any(
-					any(feature = "monetary-amount-schema", feature = "general-schema-section"),
-					doc
-				))]
 				MinimumPaymentDueProperty::MonetaryAmount(ref inner) => inner.serialize(serializer),
-				#[cfg(any(
-					any(
-						feature = "price-specification-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
-				MinimumPaymentDueProperty::PriceSpecification(ref inner) => inner.serialize(serializer),
+				MinimumPaymentDueProperty::PriceSpecification(ref inner) => {
+					inner.serialize(serializer)
+				}
 				#[cfg(all(feature = "fallible", feature = "serde"))]
 				MinimumPaymentDueProperty::SerdeFail(ref inner) => inner.serialize(serializer),
 			}
@@ -61,23 +41,12 @@ mod serde {
 				<::serde::__private::de::Content as Deserialize>::deserialize(deserializer)?;
 			let deserializer =
 				::serde::__private::de::ContentRefDeserializer::<D::Error>::new(&content);
-			#[cfg(any(
-				any(feature = "monetary-amount-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<MonetaryAmount as Deserialize>::deserialize(deserializer),
 				MinimumPaymentDueProperty::MonetaryAmount,
 			) {
 				return Ok(ok);
 			}
-			#[cfg(any(
-				any(
-					feature = "price-specification-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<PriceSpecification as Deserialize>::deserialize(deserializer),
 				MinimumPaymentDueProperty::PriceSpecification,

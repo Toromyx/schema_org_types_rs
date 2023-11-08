@@ -3,15 +3,7 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum AnswerExplanationProperty {
-	#[cfg(any(
-		any(feature = "comment-schema", feature = "general-schema-section"),
-		doc
-	))]
 	Comment(Comment),
-	#[cfg(any(
-		any(feature = "web-content-schema", feature = "pending-schema-section"),
-		doc
-	))]
 	WebContent(WebContent),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),
@@ -31,15 +23,7 @@ mod serde {
 			S: Serializer,
 		{
 			match *self {
-				#[cfg(any(
-					any(feature = "comment-schema", feature = "general-schema-section"),
-					doc
-				))]
 				AnswerExplanationProperty::Comment(ref inner) => inner.serialize(serializer),
-				#[cfg(any(
-					any(feature = "web-content-schema", feature = "pending-schema-section"),
-					doc
-				))]
 				AnswerExplanationProperty::WebContent(ref inner) => inner.serialize(serializer),
 				#[cfg(all(feature = "fallible", feature = "serde"))]
 				AnswerExplanationProperty::SerdeFail(ref inner) => inner.serialize(serializer),
@@ -55,20 +39,12 @@ mod serde {
 				<::serde::__private::de::Content as Deserialize>::deserialize(deserializer)?;
 			let deserializer =
 				::serde::__private::de::ContentRefDeserializer::<D::Error>::new(&content);
-			#[cfg(any(
-				any(feature = "comment-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<Comment as Deserialize>::deserialize(deserializer),
 				AnswerExplanationProperty::Comment,
 			) {
 				return Ok(ok);
 			}
-			#[cfg(any(
-				any(feature = "web-content-schema", feature = "pending-schema-section"),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<WebContent as Deserialize>::deserialize(deserializer),
 				AnswerExplanationProperty::WebContent,

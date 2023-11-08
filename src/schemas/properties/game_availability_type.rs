@@ -3,15 +3,7 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum GameAvailabilityTypeProperty {
-	#[cfg(any(
-		any(
-			feature = "game-availability-enumeration-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	GameAvailabilityEnumeration(GameAvailabilityEnumeration),
-	#[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
 	Text(Text),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),
@@ -31,17 +23,9 @@ mod serde {
 			S: Serializer,
 		{
 			match *self {
-				#[cfg(any(
-					any(
-						feature = "game-availability-enumeration-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				GameAvailabilityTypeProperty::GameAvailabilityEnumeration(ref inner) => {
 					inner.serialize(serializer)
 				}
-				#[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
 				GameAvailabilityTypeProperty::Text(ref inner) => inner.serialize(serializer),
 				#[cfg(all(feature = "fallible", feature = "serde"))]
 				GameAvailabilityTypeProperty::SerdeFail(ref inner) => inner.serialize(serializer),
@@ -57,20 +41,12 @@ mod serde {
 				<::serde::__private::de::Content as Deserialize>::deserialize(deserializer)?;
 			let deserializer =
 				::serde::__private::de::ContentRefDeserializer::<D::Error>::new(&content);
-			#[cfg(any(
-				any(
-					feature = "game-availability-enumeration-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<GameAvailabilityEnumeration as Deserialize>::deserialize(deserializer),
 				GameAvailabilityTypeProperty::GameAvailabilityEnumeration,
 			) {
 				return Ok(ok);
 			}
-			#[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
 			if let Ok(ok) = Result::map(
 				<Text as Deserialize>::deserialize(deserializer),
 				GameAvailabilityTypeProperty::Text,

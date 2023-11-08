@@ -3,10 +3,6 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum ReviewProperty {
-	#[cfg(any(
-		any(feature = "review-schema", feature = "general-schema-section"),
-		doc
-	))]
 	Review(Review),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),
@@ -26,10 +22,6 @@ mod serde {
 			S: Serializer,
 		{
 			match *self {
-				#[cfg(any(
-					any(feature = "review-schema", feature = "general-schema-section"),
-					doc
-				))]
 				ReviewProperty::Review(ref inner) => inner.serialize(serializer),
 				#[cfg(all(feature = "fallible", feature = "serde"))]
 				ReviewProperty::SerdeFail(ref inner) => inner.serialize(serializer),
@@ -45,10 +37,6 @@ mod serde {
 				<::serde::__private::de::Content as Deserialize>::deserialize(deserializer)?;
 			let deserializer =
 				::serde::__private::de::ContentRefDeserializer::<D::Error>::new(&content);
-			#[cfg(any(
-				any(feature = "review-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<Review as Deserialize>::deserialize(deserializer),
 				ReviewProperty::Review,

@@ -3,206 +3,32 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct SizeSpecification {
-	#[cfg(any(
-		any(
-			feature = "additional-property-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#additional_property: Vec<AdditionalPropertyProperty>,
-	#[cfg(any(
-		any(
-			feature = "additional-type-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
-	#[cfg(any(
-		any(
-			feature = "alternate-name-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#alternate_name: Vec<AlternateNameProperty>,
-	#[cfg(any(
-		any(
-			feature = "description-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#description: Vec<DescriptionProperty>,
-	#[cfg(any(
-		any(
-			feature = "disambiguating-description-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
-	#[cfg(any(
-		any(feature = "equal-property-schema", feature = "general-schema-section"),
-		doc
-	))]
 	pub r#equal: Vec<EqualProperty>,
-	#[cfg(any(
-		any(
-			feature = "greater-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#greater: Vec<GreaterProperty>,
-	#[cfg(any(
-		any(
-			feature = "greater-or-equal-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#greater_or_equal: Vec<GreaterOrEqualProperty>,
-	#[cfg(any(
-		any(
-			feature = "has-measurement-property-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	pub r#has_measurement: Vec<HasMeasurementProperty>,
-	#[cfg(any(
-		any(
-			feature = "identifier-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#identifier: Vec<IdentifierProperty>,
-	#[cfg(any(
-		any(feature = "image-property-schema", feature = "general-schema-section"),
-		doc
-	))]
 	pub r#image: Vec<ImageProperty>,
-	#[cfg(any(
-		any(feature = "lesser-property-schema", feature = "general-schema-section"),
-		doc
-	))]
 	pub r#lesser: Vec<LesserProperty>,
-	#[cfg(any(
-		any(
-			feature = "lesser-or-equal-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#lesser_or_equal: Vec<LesserOrEqualProperty>,
-	#[cfg(any(
-		any(
-			feature = "main-entity-of-page-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
-	#[cfg(any(
-		any(feature = "name-property-schema", feature = "general-schema-section"),
-		doc
-	))]
 	pub r#name: Vec<NameProperty>,
-	#[cfg(any(
-		any(
-			feature = "non-equal-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#non_equal: Vec<NonEqualProperty>,
-	#[cfg(any(
-		any(
-			feature = "potential-action-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#potential_action: Vec<PotentialActionProperty>,
-	#[cfg(any(
-		any(
-			feature = "same-as-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#same_as: Vec<SameAsProperty>,
-	#[cfg(any(
-		any(
-			feature = "size-group-property-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	pub r#size_group: Vec<SizeGroupProperty>,
-	#[cfg(any(
-		any(
-			feature = "size-system-property-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	pub r#size_system: Vec<SizeSystemProperty>,
-	#[cfg(any(
-		any(
-			feature = "subject-of-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#subject_of: Vec<SubjectOfProperty>,
-	#[cfg(any(
-		any(
-			feature = "suggested-age-property-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	pub r#suggested_age: Vec<SuggestedAgeProperty>,
-	#[cfg(any(
-		any(
-			feature = "suggested-gender-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#suggested_gender: Vec<SuggestedGenderProperty>,
-	#[cfg(any(
-		any(
-			feature = "suggested-measurement-property-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	pub r#suggested_measurement: Vec<SuggestedMeasurementProperty>,
-	#[cfg(any(
-		any(
-			feature = "superseded-by-property-schema",
-			feature = "meta-schema-section"
-		),
-		doc
-	))]
 	pub r#superseded_by: Vec<SupersededByProperty>,
-	#[cfg(any(
-		any(feature = "url-property-schema", feature = "general-schema-section"),
-		doc
-	))]
 	pub r#url: Vec<UrlProperty>,
-	#[cfg(any(
-		any(
-			feature = "value-reference-property-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	pub r#value_reference: Vec<ValueReferenceProperty>,
 }
 #[cfg(feature = "serde")]
@@ -220,315 +46,38 @@ mod serde {
 			S: Serializer,
 		{
 			let len: usize = [
-				if cfg!(any(
-					any(
-						feature = "additional-property-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#additional_property) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "additional-type-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#additional_type) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "alternate-name-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#alternate_name) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "description-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#description) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "disambiguating-description-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#disambiguating_description) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "equal-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#equal) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "greater-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#greater) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "greater-or-equal-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#greater_or_equal) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "has-measurement-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#has_measurement) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "identifier-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#identifier) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "image-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#image) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "lesser-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#lesser) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "lesser-or-equal-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#lesser_or_equal) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "main-entity-of-page-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#main_entity_of_page) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "name-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#name) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "non-equal-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#non_equal) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "potential-action-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#potential_action) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "same-as-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#same_as) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "size-group-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#size_group) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "size-system-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#size_system) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "subject-of-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#subject_of) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "suggested-age-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#suggested_age) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "suggested-gender-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#suggested_gender) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "suggested-measurement-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#suggested_measurement) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "superseded-by-property-schema",
-						feature = "meta-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#superseded_by) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "url-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#url) as usize
-				} else {
-					0
-				},
-				if cfg!(any(
-					any(
-						feature = "value-reference-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				)) {
-					!Vec::is_empty(&self.r#value_reference) as usize
-				} else {
-					0
-				},
+				!Vec::is_empty(&self.r#additional_property) as usize,
+				!Vec::is_empty(&self.r#additional_type) as usize,
+				!Vec::is_empty(&self.r#alternate_name) as usize,
+				!Vec::is_empty(&self.r#description) as usize,
+				!Vec::is_empty(&self.r#disambiguating_description) as usize,
+				!Vec::is_empty(&self.r#equal) as usize,
+				!Vec::is_empty(&self.r#greater) as usize,
+				!Vec::is_empty(&self.r#greater_or_equal) as usize,
+				!Vec::is_empty(&self.r#has_measurement) as usize,
+				!Vec::is_empty(&self.r#identifier) as usize,
+				!Vec::is_empty(&self.r#image) as usize,
+				!Vec::is_empty(&self.r#lesser) as usize,
+				!Vec::is_empty(&self.r#lesser_or_equal) as usize,
+				!Vec::is_empty(&self.r#main_entity_of_page) as usize,
+				!Vec::is_empty(&self.r#name) as usize,
+				!Vec::is_empty(&self.r#non_equal) as usize,
+				!Vec::is_empty(&self.r#potential_action) as usize,
+				!Vec::is_empty(&self.r#same_as) as usize,
+				!Vec::is_empty(&self.r#size_group) as usize,
+				!Vec::is_empty(&self.r#size_system) as usize,
+				!Vec::is_empty(&self.r#subject_of) as usize,
+				!Vec::is_empty(&self.r#suggested_age) as usize,
+				!Vec::is_empty(&self.r#suggested_gender) as usize,
+				!Vec::is_empty(&self.r#suggested_measurement) as usize,
+				!Vec::is_empty(&self.r#superseded_by) as usize,
+				!Vec::is_empty(&self.r#url) as usize,
+				!Vec::is_empty(&self.r#value_reference) as usize,
 			]
 			.iter()
 			.sum();
 			let mut serialize_struct =
 				Serializer::serialize_struct(serializer, "SizeSpecification", len)?;
-			#[cfg(any(
-				any(
-					feature = "additional-property-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#additional_property) {
 				serialize_struct.serialize_field("additionalProperty", {
 					struct SerializeWith<'a>(&'a Vec<AdditionalPropertyProperty>);
@@ -547,13 +96,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("additionalProperty")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "additional-type-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#additional_type) {
 				serialize_struct.serialize_field("additionalType", {
 					struct SerializeWith<'a>(&'a Vec<AdditionalTypeProperty>);
@@ -572,13 +114,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("additionalType")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "alternate-name-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#alternate_name) {
 				serialize_struct.serialize_field("alternateName", {
 					struct SerializeWith<'a>(&'a Vec<AlternateNameProperty>);
@@ -597,13 +132,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("alternateName")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "description-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#description) {
 				serialize_struct.serialize_field("description", {
 					struct SerializeWith<'a>(&'a Vec<DescriptionProperty>);
@@ -622,13 +150,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("description")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "disambiguating-description-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#disambiguating_description) {
 				serialize_struct.serialize_field("disambiguatingDescription", {
 					struct SerializeWith<'a>(&'a Vec<DisambiguatingDescriptionProperty>);
@@ -647,10 +168,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("disambiguatingDescription")?;
 			}
-			#[cfg(any(
-				any(feature = "equal-property-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#equal) {
 				serialize_struct.serialize_field("equal", {
 					struct SerializeWith<'a>(&'a Vec<EqualProperty>);
@@ -669,13 +186,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("equal")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "greater-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#greater) {
 				serialize_struct.serialize_field("greater", {
 					struct SerializeWith<'a>(&'a Vec<GreaterProperty>);
@@ -694,13 +204,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("greater")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "greater-or-equal-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#greater_or_equal) {
 				serialize_struct.serialize_field("greaterOrEqual", {
 					struct SerializeWith<'a>(&'a Vec<GreaterOrEqualProperty>);
@@ -719,13 +222,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("greaterOrEqual")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "has-measurement-property-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#has_measurement) {
 				serialize_struct.serialize_field("hasMeasurement", {
 					struct SerializeWith<'a>(&'a Vec<HasMeasurementProperty>);
@@ -744,13 +240,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("hasMeasurement")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "identifier-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#identifier) {
 				serialize_struct.serialize_field("identifier", {
 					struct SerializeWith<'a>(&'a Vec<IdentifierProperty>);
@@ -769,10 +258,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("identifier")?;
 			}
-			#[cfg(any(
-				any(feature = "image-property-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#image) {
 				serialize_struct.serialize_field("image", {
 					struct SerializeWith<'a>(&'a Vec<ImageProperty>);
@@ -791,10 +276,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("image")?;
 			}
-			#[cfg(any(
-				any(feature = "lesser-property-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#lesser) {
 				serialize_struct.serialize_field("lesser", {
 					struct SerializeWith<'a>(&'a Vec<LesserProperty>);
@@ -813,13 +294,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("lesser")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "lesser-or-equal-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#lesser_or_equal) {
 				serialize_struct.serialize_field("lesserOrEqual", {
 					struct SerializeWith<'a>(&'a Vec<LesserOrEqualProperty>);
@@ -838,13 +312,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("lesserOrEqual")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "main-entity-of-page-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#main_entity_of_page) {
 				serialize_struct.serialize_field("mainEntityOfPage", {
 					struct SerializeWith<'a>(&'a Vec<MainEntityOfPageProperty>);
@@ -863,10 +330,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("mainEntityOfPage")?;
 			}
-			#[cfg(any(
-				any(feature = "name-property-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#name) {
 				serialize_struct.serialize_field("name", {
 					struct SerializeWith<'a>(&'a Vec<NameProperty>);
@@ -885,13 +348,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("name")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "non-equal-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#non_equal) {
 				serialize_struct.serialize_field("nonEqual", {
 					struct SerializeWith<'a>(&'a Vec<NonEqualProperty>);
@@ -910,13 +366,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("nonEqual")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "potential-action-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#potential_action) {
 				serialize_struct.serialize_field("potentialAction", {
 					struct SerializeWith<'a>(&'a Vec<PotentialActionProperty>);
@@ -935,13 +384,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("potentialAction")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "same-as-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#same_as) {
 				serialize_struct.serialize_field("sameAs", {
 					struct SerializeWith<'a>(&'a Vec<SameAsProperty>);
@@ -960,13 +402,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("sameAs")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "size-group-property-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#size_group) {
 				serialize_struct.serialize_field("sizeGroup", {
 					struct SerializeWith<'a>(&'a Vec<SizeGroupProperty>);
@@ -985,13 +420,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("sizeGroup")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "size-system-property-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#size_system) {
 				serialize_struct.serialize_field("sizeSystem", {
 					struct SerializeWith<'a>(&'a Vec<SizeSystemProperty>);
@@ -1010,13 +438,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("sizeSystem")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "subject-of-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#subject_of) {
 				serialize_struct.serialize_field("subjectOf", {
 					struct SerializeWith<'a>(&'a Vec<SubjectOfProperty>);
@@ -1035,13 +456,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("subjectOf")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "suggested-age-property-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#suggested_age) {
 				serialize_struct.serialize_field("suggestedAge", {
 					struct SerializeWith<'a>(&'a Vec<SuggestedAgeProperty>);
@@ -1060,13 +474,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("suggestedAge")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "suggested-gender-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#suggested_gender) {
 				serialize_struct.serialize_field("suggestedGender", {
 					struct SerializeWith<'a>(&'a Vec<SuggestedGenderProperty>);
@@ -1085,13 +492,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("suggestedGender")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "suggested-measurement-property-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#suggested_measurement) {
 				serialize_struct.serialize_field("suggestedMeasurement", {
 					struct SerializeWith<'a>(&'a Vec<SuggestedMeasurementProperty>);
@@ -1110,13 +510,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("suggestedMeasurement")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "superseded-by-property-schema",
-					feature = "meta-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#superseded_by) {
 				serialize_struct.serialize_field("supersededBy", {
 					struct SerializeWith<'a>(&'a Vec<SupersededByProperty>);
@@ -1135,10 +528,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("supersededBy")?;
 			}
-			#[cfg(any(
-				any(feature = "url-property-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#url) {
 				serialize_struct.serialize_field("url", {
 					struct SerializeWith<'a>(&'a Vec<UrlProperty>);
@@ -1157,13 +546,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("url")?;
 			}
-			#[cfg(any(
-				any(
-					feature = "value-reference-property-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if !Vec::is_empty(&self.r#value_reference) {
 				serialize_struct.serialize_field("valueReference", {
 					struct SerializeWith<'a>(&'a Vec<ValueReferenceProperty>);
@@ -1191,206 +573,32 @@ mod serde {
 			D: Deserializer<'de>,
 		{
 			enum Field {
-				#[cfg(any(
-					any(
-						feature = "additional-property-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				AdditionalProperty,
-				#[cfg(any(
-					any(
-						feature = "additional-type-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				AdditionalType,
-				#[cfg(any(
-					any(
-						feature = "alternate-name-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				AlternateName,
-				#[cfg(any(
-					any(
-						feature = "description-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				Description,
-				#[cfg(any(
-					any(
-						feature = "disambiguating-description-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				DisambiguatingDescription,
-				#[cfg(any(
-					any(feature = "equal-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				Equal,
-				#[cfg(any(
-					any(
-						feature = "greater-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				Greater,
-				#[cfg(any(
-					any(
-						feature = "greater-or-equal-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				GreaterOrEqual,
-				#[cfg(any(
-					any(
-						feature = "has-measurement-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				HasMeasurement,
-				#[cfg(any(
-					any(
-						feature = "identifier-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				Identifier,
-				#[cfg(any(
-					any(feature = "image-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				Image,
-				#[cfg(any(
-					any(feature = "lesser-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				Lesser,
-				#[cfg(any(
-					any(
-						feature = "lesser-or-equal-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				LesserOrEqual,
-				#[cfg(any(
-					any(
-						feature = "main-entity-of-page-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				MainEntityOfPage,
-				#[cfg(any(
-					any(feature = "name-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				Name,
-				#[cfg(any(
-					any(
-						feature = "non-equal-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				NonEqual,
-				#[cfg(any(
-					any(
-						feature = "potential-action-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				PotentialAction,
-				#[cfg(any(
-					any(
-						feature = "same-as-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				SameAs,
-				#[cfg(any(
-					any(
-						feature = "size-group-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				SizeGroup,
-				#[cfg(any(
-					any(
-						feature = "size-system-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				SizeSystem,
-				#[cfg(any(
-					any(
-						feature = "subject-of-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				SubjectOf,
-				#[cfg(any(
-					any(
-						feature = "suggested-age-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				SuggestedAge,
-				#[cfg(any(
-					any(
-						feature = "suggested-gender-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				SuggestedGender,
-				#[cfg(any(
-					any(
-						feature = "suggested-measurement-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				SuggestedMeasurement,
-				#[cfg(any(
-					any(
-						feature = "superseded-by-property-schema",
-						feature = "meta-schema-section"
-					),
-					doc
-				))]
 				SupersededBy,
-				#[cfg(any(
-					any(feature = "url-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				Url,
-				#[cfg(any(
-					any(
-						feature = "value-reference-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				ValueReference,
 				Ignore,
 			}
@@ -1405,221 +613,32 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
-						#[cfg(any(
-							any(
-								feature = "additional-property-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"additionalProperty" => Ok(Field::AdditionalProperty),
-						#[cfg(any(
-							any(
-								feature = "additional-type-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"additionalType" => Ok(Field::AdditionalType),
-						#[cfg(any(
-							any(
-								feature = "alternate-name-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"alternateName" => Ok(Field::AlternateName),
-						#[cfg(any(
-							any(
-								feature = "description-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"description" => Ok(Field::Description),
-						#[cfg(any(
-							any(
-								feature = "disambiguating-description-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
-						#[cfg(any(
-							any(
-								feature = "equal-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"equal" => Ok(Field::Equal),
-						#[cfg(any(
-							any(
-								feature = "greater-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"greater" => Ok(Field::Greater),
-						#[cfg(any(
-							any(
-								feature = "greater-or-equal-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"greaterOrEqual" => Ok(Field::GreaterOrEqual),
-						#[cfg(any(
-							any(
-								feature = "has-measurement-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						"hasMeasurement" => Ok(Field::HasMeasurement),
-						#[cfg(any(
-							any(
-								feature = "identifier-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"identifier" => Ok(Field::Identifier),
-						#[cfg(any(
-							any(
-								feature = "image-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"image" => Ok(Field::Image),
-						#[cfg(any(
-							any(
-								feature = "lesser-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"lesser" => Ok(Field::Lesser),
-						#[cfg(any(
-							any(
-								feature = "lesser-or-equal-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"lesserOrEqual" => Ok(Field::LesserOrEqual),
-						#[cfg(any(
-							any(
-								feature = "main-entity-of-page-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
-						#[cfg(any(
-							any(
-								feature = "name-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"name" => Ok(Field::Name),
-						#[cfg(any(
-							any(
-								feature = "non-equal-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"nonEqual" => Ok(Field::NonEqual),
-						#[cfg(any(
-							any(
-								feature = "potential-action-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"potentialAction" => Ok(Field::PotentialAction),
-						#[cfg(any(
-							any(
-								feature = "same-as-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"sameAs" => Ok(Field::SameAs),
-						#[cfg(any(
-							any(
-								feature = "size-group-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						"sizeGroup" => Ok(Field::SizeGroup),
-						#[cfg(any(
-							any(
-								feature = "size-system-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						"sizeSystem" => Ok(Field::SizeSystem),
-						#[cfg(any(
-							any(
-								feature = "subject-of-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"subjectOf" => Ok(Field::SubjectOf),
-						#[cfg(any(
-							any(
-								feature = "suggested-age-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						"suggestedAge" => Ok(Field::SuggestedAge),
-						#[cfg(any(
-							any(
-								feature = "suggested-gender-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"suggestedGender" => Ok(Field::SuggestedGender),
-						#[cfg(any(
-							any(
-								feature = "suggested-measurement-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						"suggestedMeasurement" => Ok(Field::SuggestedMeasurement),
-						#[cfg(any(
-							any(
-								feature = "superseded-by-property-schema",
-								feature = "meta-schema-section"
-							),
-							doc
-						))]
 						"supersededBy" => Ok(Field::SupersededBy),
-						#[cfg(any(
-							any(
-								feature = "url-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"url" => Ok(Field::Url),
-						#[cfg(any(
-							any(
-								feature = "value-reference-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						"valueReference" => Ok(Field::ValueReference),
 						_ => Ok(Field::Ignore),
 					}
@@ -1629,221 +648,32 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
-						#[cfg(any(
-							any(
-								feature = "additional-property-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"additionalProperty" => Ok(Field::AdditionalProperty),
-						#[cfg(any(
-							any(
-								feature = "additional-type-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"additionalType" => Ok(Field::AdditionalType),
-						#[cfg(any(
-							any(
-								feature = "alternate-name-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"alternateName" => Ok(Field::AlternateName),
-						#[cfg(any(
-							any(
-								feature = "description-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"description" => Ok(Field::Description),
-						#[cfg(any(
-							any(
-								feature = "disambiguating-description-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
-						#[cfg(any(
-							any(
-								feature = "equal-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"equal" => Ok(Field::Equal),
-						#[cfg(any(
-							any(
-								feature = "greater-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"greater" => Ok(Field::Greater),
-						#[cfg(any(
-							any(
-								feature = "greater-or-equal-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"greaterOrEqual" => Ok(Field::GreaterOrEqual),
-						#[cfg(any(
-							any(
-								feature = "has-measurement-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						b"hasMeasurement" => Ok(Field::HasMeasurement),
-						#[cfg(any(
-							any(
-								feature = "identifier-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"identifier" => Ok(Field::Identifier),
-						#[cfg(any(
-							any(
-								feature = "image-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"image" => Ok(Field::Image),
-						#[cfg(any(
-							any(
-								feature = "lesser-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"lesser" => Ok(Field::Lesser),
-						#[cfg(any(
-							any(
-								feature = "lesser-or-equal-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"lesserOrEqual" => Ok(Field::LesserOrEqual),
-						#[cfg(any(
-							any(
-								feature = "main-entity-of-page-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
-						#[cfg(any(
-							any(
-								feature = "name-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"name" => Ok(Field::Name),
-						#[cfg(any(
-							any(
-								feature = "non-equal-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"nonEqual" => Ok(Field::NonEqual),
-						#[cfg(any(
-							any(
-								feature = "potential-action-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"potentialAction" => Ok(Field::PotentialAction),
-						#[cfg(any(
-							any(
-								feature = "same-as-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"sameAs" => Ok(Field::SameAs),
-						#[cfg(any(
-							any(
-								feature = "size-group-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						b"sizeGroup" => Ok(Field::SizeGroup),
-						#[cfg(any(
-							any(
-								feature = "size-system-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						b"sizeSystem" => Ok(Field::SizeSystem),
-						#[cfg(any(
-							any(
-								feature = "subject-of-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"subjectOf" => Ok(Field::SubjectOf),
-						#[cfg(any(
-							any(
-								feature = "suggested-age-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						b"suggestedAge" => Ok(Field::SuggestedAge),
-						#[cfg(any(
-							any(
-								feature = "suggested-gender-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"suggestedGender" => Ok(Field::SuggestedGender),
-						#[cfg(any(
-							any(
-								feature = "suggested-measurement-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						b"suggestedMeasurement" => Ok(Field::SuggestedMeasurement),
-						#[cfg(any(
-							any(
-								feature = "superseded-by-property-schema",
-								feature = "meta-schema-section"
-							),
-							doc
-						))]
 						b"supersededBy" => Ok(Field::SupersededBy),
-						#[cfg(any(
-							any(
-								feature = "url-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"url" => Ok(Field::Url),
-						#[cfg(any(
-							any(
-								feature = "value-reference-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						b"valueReference" => Ok(Field::ValueReference),
 						_ => Ok(Field::Ignore),
 					}
@@ -1867,219 +697,35 @@ mod serde {
 				where
 					A: de::MapAccess<'de>,
 				{
-					#[cfg(any(
-						any(
-							feature = "additional-property-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#additional_property_property = None;
-					#[cfg(any(
-						any(
-							feature = "additional-type-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#additional_type_property = None;
-					#[cfg(any(
-						any(
-							feature = "alternate-name-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#alternate_name_property = None;
-					#[cfg(any(
-						any(
-							feature = "description-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#description_property = None;
-					#[cfg(any(
-						any(
-							feature = "disambiguating-description-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#disambiguating_description_property = None;
-					#[cfg(any(
-						any(feature = "equal-property-schema", feature = "general-schema-section"),
-						doc
-					))]
 					let mut r#equal_property = None;
-					#[cfg(any(
-						any(
-							feature = "greater-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#greater_property = None;
-					#[cfg(any(
-						any(
-							feature = "greater-or-equal-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#greater_or_equal_property = None;
-					#[cfg(any(
-						any(
-							feature = "has-measurement-property-schema",
-							feature = "pending-schema-section"
-						),
-						doc
-					))]
 					let mut r#has_measurement_property = None;
-					#[cfg(any(
-						any(
-							feature = "identifier-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#identifier_property = None;
-					#[cfg(any(
-						any(feature = "image-property-schema", feature = "general-schema-section"),
-						doc
-					))]
 					let mut r#image_property = None;
-					#[cfg(any(
-						any(
-							feature = "lesser-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#lesser_property = None;
-					#[cfg(any(
-						any(
-							feature = "lesser-or-equal-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#lesser_or_equal_property = None;
-					#[cfg(any(
-						any(
-							feature = "main-entity-of-page-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#main_entity_of_page_property = None;
-					#[cfg(any(
-						any(feature = "name-property-schema", feature = "general-schema-section"),
-						doc
-					))]
 					let mut r#name_property = None;
-					#[cfg(any(
-						any(
-							feature = "non-equal-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#non_equal_property = None;
-					#[cfg(any(
-						any(
-							feature = "potential-action-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#potential_action_property = None;
-					#[cfg(any(
-						any(
-							feature = "same-as-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#same_as_property = None;
-					#[cfg(any(
-						any(
-							feature = "size-group-property-schema",
-							feature = "pending-schema-section"
-						),
-						doc
-					))]
 					let mut r#size_group_property = None;
-					#[cfg(any(
-						any(
-							feature = "size-system-property-schema",
-							feature = "pending-schema-section"
-						),
-						doc
-					))]
 					let mut r#size_system_property = None;
-					#[cfg(any(
-						any(
-							feature = "subject-of-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#subject_of_property = None;
-					#[cfg(any(
-						any(
-							feature = "suggested-age-property-schema",
-							feature = "pending-schema-section"
-						),
-						doc
-					))]
 					let mut r#suggested_age_property = None;
-					#[cfg(any(
-						any(
-							feature = "suggested-gender-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#suggested_gender_property = None;
-					#[cfg(any(
-						any(
-							feature = "suggested-measurement-property-schema",
-							feature = "pending-schema-section"
-						),
-						doc
-					))]
 					let mut r#suggested_measurement_property = None;
-					#[cfg(any(
-						any(
-							feature = "superseded-by-property-schema",
-							feature = "meta-schema-section"
-						),
-						doc
-					))]
 					let mut r#superseded_by_property = None;
-					#[cfg(any(
-						any(feature = "url-property-schema", feature = "general-schema-section"),
-						doc
-					))]
 					let mut r#url_property = None;
-					#[cfg(any(
-						any(
-							feature = "value-reference-property-schema",
-							feature = "general-schema-section"
-						),
-						doc
-					))]
 					let mut r#value_reference_property = None;
 					while let Some(key) = map.next_key::<Field>()? {
 						match key {
-							#[cfg(any(
-								any(
-									feature = "additional-property-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::AdditionalProperty => {
 								if r#additional_property_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2106,13 +752,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "additional-type-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::AdditionalType => {
 								if r#additional_type_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2139,13 +778,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "alternate-name-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::AlternateName => {
 								if r#alternate_name_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2172,13 +804,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "description-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Description => {
 								if r#description_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2205,13 +830,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "disambiguating-description-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::DisambiguatingDescription => {
 								if r#disambiguating_description_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2238,13 +856,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "equal-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Equal => {
 								if r#equal_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("equal"));
@@ -2269,13 +880,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "greater-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Greater => {
 								if r#greater_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2302,13 +906,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "greater-or-equal-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::GreaterOrEqual => {
 								if r#greater_or_equal_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2335,13 +932,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "has-measurement-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::HasMeasurement => {
 								if r#has_measurement_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2368,13 +958,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "identifier-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Identifier => {
 								if r#identifier_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2401,13 +984,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "image-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Image => {
 								if r#image_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("image"));
@@ -2432,13 +1008,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "lesser-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Lesser => {
 								if r#lesser_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("lesser"));
@@ -2463,13 +1032,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "lesser-or-equal-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::LesserOrEqual => {
 								if r#lesser_or_equal_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2496,13 +1058,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "main-entity-of-page-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::MainEntityOfPage => {
 								if r#main_entity_of_page_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2529,13 +1084,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "name-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Name => {
 								if r#name_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("name"));
@@ -2560,13 +1108,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "non-equal-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::NonEqual => {
 								if r#non_equal_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2593,13 +1134,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "potential-action-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::PotentialAction => {
 								if r#potential_action_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2626,13 +1160,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "same-as-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::SameAs => {
 								if r#same_as_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("sameAs"));
@@ -2657,13 +1184,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "size-group-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::SizeGroup => {
 								if r#size_group_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2690,13 +1210,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "size-system-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::SizeSystem => {
 								if r#size_system_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2723,13 +1236,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "subject-of-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::SubjectOf => {
 								if r#subject_of_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2756,13 +1262,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "suggested-age-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::SuggestedAge => {
 								if r#suggested_age_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2789,13 +1288,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "suggested-gender-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::SuggestedGender => {
 								if r#suggested_gender_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2822,13 +1314,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "suggested-measurement-property-schema",
-									feature = "pending-schema-section"
-								),
-								doc
-							))]
 							Field::SuggestedMeasurement => {
 								if r#suggested_measurement_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2855,13 +1340,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "superseded-by-property-schema",
-									feature = "meta-schema-section"
-								),
-								doc
-							))]
 							Field::SupersededBy => {
 								if r#superseded_by_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2888,13 +1366,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "url-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::Url => {
 								if r#url_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("url"));
@@ -2919,13 +1390,6 @@ mod serde {
 									}
 								});
 							}
-							#[cfg(any(
-								any(
-									feature = "value-reference-property-schema",
-									feature = "general-schema-section"
-								),
-								doc
-							))]
 							Field::ValueReference => {
 								if r#value_reference_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2958,428 +1422,65 @@ mod serde {
 						}
 					}
 					Ok(SizeSpecification {
-						#[cfg(any(
-							any(
-								feature = "additional-property-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#additional_property: r#additional_property_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "additional-type-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#additional_type: r#additional_type_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "alternate-name-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#alternate_name: r#alternate_name_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "description-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#description: r#description_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "disambiguating-description-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#disambiguating_description: r#disambiguating_description_property
 							.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "equal-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#equal: r#equal_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "greater-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#greater: r#greater_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "greater-or-equal-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#greater_or_equal: r#greater_or_equal_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "has-measurement-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#has_measurement: r#has_measurement_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "identifier-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#identifier: r#identifier_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "image-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#image: r#image_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "lesser-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#lesser: r#lesser_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "lesser-or-equal-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#lesser_or_equal: r#lesser_or_equal_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "main-entity-of-page-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#main_entity_of_page: r#main_entity_of_page_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "name-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#name: r#name_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "non-equal-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#non_equal: r#non_equal_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "potential-action-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#potential_action: r#potential_action_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "same-as-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#same_as: r#same_as_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "size-group-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#size_group: r#size_group_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "size-system-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#size_system: r#size_system_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "subject-of-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#subject_of: r#subject_of_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "suggested-age-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#suggested_age: r#suggested_age_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "suggested-gender-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#suggested_gender: r#suggested_gender_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "suggested-measurement-property-schema",
-								feature = "pending-schema-section"
-							),
-							doc
-						))]
 						r#suggested_measurement: r#suggested_measurement_property
 							.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "superseded-by-property-schema",
-								feature = "meta-schema-section"
-							),
-							doc
-						))]
 						r#superseded_by: r#superseded_by_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "url-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#url: r#url_property.unwrap_or_default(),
-						#[cfg(any(
-							any(
-								feature = "value-reference-property-schema",
-								feature = "general-schema-section"
-							),
-							doc
-						))]
 						r#value_reference: r#value_reference_property.unwrap_or_default(),
 					})
 				}
 			}
 			const FIELDS: &[&str] = &[
-				#[cfg(any(
-					any(
-						feature = "additional-property-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"additionalProperty",
-				#[cfg(any(
-					any(
-						feature = "additional-type-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"additionalType",
-				#[cfg(any(
-					any(
-						feature = "alternate-name-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"alternateName",
-				#[cfg(any(
-					any(
-						feature = "description-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"description",
-				#[cfg(any(
-					any(
-						feature = "disambiguating-description-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"disambiguatingDescription",
-				#[cfg(any(
-					any(feature = "equal-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				"equal",
-				#[cfg(any(
-					any(
-						feature = "greater-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"greater",
-				#[cfg(any(
-					any(
-						feature = "greater-or-equal-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"greaterOrEqual",
-				#[cfg(any(
-					any(
-						feature = "has-measurement-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				"hasMeasurement",
-				#[cfg(any(
-					any(
-						feature = "identifier-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"identifier",
-				#[cfg(any(
-					any(feature = "image-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				"image",
-				#[cfg(any(
-					any(feature = "lesser-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				"lesser",
-				#[cfg(any(
-					any(
-						feature = "lesser-or-equal-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"lesserOrEqual",
-				#[cfg(any(
-					any(
-						feature = "main-entity-of-page-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"mainEntityOfPage",
-				#[cfg(any(
-					any(feature = "name-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				"name",
-				#[cfg(any(
-					any(
-						feature = "non-equal-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"nonEqual",
-				#[cfg(any(
-					any(
-						feature = "potential-action-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"potentialAction",
-				#[cfg(any(
-					any(
-						feature = "same-as-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"sameAs",
-				#[cfg(any(
-					any(
-						feature = "size-group-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				"sizeGroup",
-				#[cfg(any(
-					any(
-						feature = "size-system-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				"sizeSystem",
-				#[cfg(any(
-					any(
-						feature = "subject-of-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"subjectOf",
-				#[cfg(any(
-					any(
-						feature = "suggested-age-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				"suggestedAge",
-				#[cfg(any(
-					any(
-						feature = "suggested-gender-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"suggestedGender",
-				#[cfg(any(
-					any(
-						feature = "suggested-measurement-property-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				"suggestedMeasurement",
-				#[cfg(any(
-					any(
-						feature = "superseded-by-property-schema",
-						feature = "meta-schema-section"
-					),
-					doc
-				))]
 				"supersededBy",
-				#[cfg(any(
-					any(feature = "url-property-schema", feature = "general-schema-section"),
-					doc
-				))]
 				"url",
-				#[cfg(any(
-					any(
-						feature = "value-reference-property-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				"valueReference",
 			];
 			deserializer.deserialize_struct("SizeSpecification", FIELDS, ClassVisitor)

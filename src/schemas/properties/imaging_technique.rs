@@ -3,13 +3,6 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum ImagingTechniqueProperty {
-	#[cfg(any(
-		any(
-			feature = "medical-imaging-technique-schema",
-			feature = "health-lifesci-schema-section"
-		),
-		doc
-	))]
 	MedicalImagingTechnique(MedicalImagingTechnique),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),
@@ -29,14 +22,9 @@ mod serde {
 			S: Serializer,
 		{
 			match *self {
-				#[cfg(any(
-					any(
-						feature = "medical-imaging-technique-schema",
-						feature = "health-lifesci-schema-section"
-					),
-					doc
-				))]
-				ImagingTechniqueProperty::MedicalImagingTechnique(ref inner) => inner.serialize(serializer),
+				ImagingTechniqueProperty::MedicalImagingTechnique(ref inner) => {
+					inner.serialize(serializer)
+				}
 				#[cfg(all(feature = "fallible", feature = "serde"))]
 				ImagingTechniqueProperty::SerdeFail(ref inner) => inner.serialize(serializer),
 			}
@@ -51,13 +39,6 @@ mod serde {
 				<::serde::__private::de::Content as Deserialize>::deserialize(deserializer)?;
 			let deserializer =
 				::serde::__private::de::ContentRefDeserializer::<D::Error>::new(&content);
-			#[cfg(any(
-				any(
-					feature = "medical-imaging-technique-schema",
-					feature = "health-lifesci-schema-section"
-				),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<MedicalImagingTechnique as Deserialize>::deserialize(deserializer),
 				ImagingTechniqueProperty::MedicalImagingTechnique,

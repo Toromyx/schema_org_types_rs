@@ -3,17 +3,8 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum EngineTypeProperty {
-	#[cfg(any(
-		any(
-			feature = "qualitative-value-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	QualitativeValue(QualitativeValue),
-	#[cfg(any(any(feature = "url-schema", feature = "general-schema-section"), doc))]
 	Url(Url),
-	#[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
 	Text(Text),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),
@@ -33,17 +24,8 @@ mod serde {
 			S: Serializer,
 		{
 			match *self {
-				#[cfg(any(
-					any(
-						feature = "qualitative-value-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
 				EngineTypeProperty::QualitativeValue(ref inner) => inner.serialize(serializer),
-				#[cfg(any(any(feature = "url-schema", feature = "general-schema-section"), doc))]
 				EngineTypeProperty::Url(ref inner) => inner.serialize(serializer),
-				#[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
 				EngineTypeProperty::Text(ref inner) => inner.serialize(serializer),
 				#[cfg(all(feature = "fallible", feature = "serde"))]
 				EngineTypeProperty::SerdeFail(ref inner) => inner.serialize(serializer),
@@ -59,27 +41,18 @@ mod serde {
 				<::serde::__private::de::Content as Deserialize>::deserialize(deserializer)?;
 			let deserializer =
 				::serde::__private::de::ContentRefDeserializer::<D::Error>::new(&content);
-			#[cfg(any(
-				any(
-					feature = "qualitative-value-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<QualitativeValue as Deserialize>::deserialize(deserializer),
 				EngineTypeProperty::QualitativeValue,
 			) {
 				return Ok(ok);
 			}
-			#[cfg(any(any(feature = "url-schema", feature = "general-schema-section"), doc))]
 			if let Ok(ok) = Result::map(
 				<Url as Deserialize>::deserialize(deserializer),
 				EngineTypeProperty::Url,
 			) {
 				return Ok(ok);
 			}
-			#[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
 			if let Ok(ok) = Result::map(
 				<Text as Deserialize>::deserialize(deserializer),
 				EngineTypeProperty::Text,

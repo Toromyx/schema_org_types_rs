@@ -3,15 +3,7 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum SuggestedAnswerProperty {
-	#[cfg(any(
-		any(feature = "answer-schema", feature = "general-schema-section"),
-		doc
-	))]
 	Answer(Answer),
-	#[cfg(any(
-		any(feature = "item-list-schema", feature = "general-schema-section"),
-		doc
-	))]
 	ItemList(ItemList),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),
@@ -31,15 +23,7 @@ mod serde {
 			S: Serializer,
 		{
 			match *self {
-				#[cfg(any(
-					any(feature = "answer-schema", feature = "general-schema-section"),
-					doc
-				))]
 				SuggestedAnswerProperty::Answer(ref inner) => inner.serialize(serializer),
-				#[cfg(any(
-					any(feature = "item-list-schema", feature = "general-schema-section"),
-					doc
-				))]
 				SuggestedAnswerProperty::ItemList(ref inner) => inner.serialize(serializer),
 				#[cfg(all(feature = "fallible", feature = "serde"))]
 				SuggestedAnswerProperty::SerdeFail(ref inner) => inner.serialize(serializer),
@@ -55,20 +39,12 @@ mod serde {
 				<::serde::__private::de::Content as Deserialize>::deserialize(deserializer)?;
 			let deserializer =
 				::serde::__private::de::ContentRefDeserializer::<D::Error>::new(&content);
-			#[cfg(any(
-				any(feature = "answer-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<Answer as Deserialize>::deserialize(deserializer),
 				SuggestedAnswerProperty::Answer,
 			) {
 				return Ok(ok);
 			}
-			#[cfg(any(
-				any(feature = "item-list-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<ItemList as Deserialize>::deserialize(deserializer),
 				SuggestedAnswerProperty::ItemList,

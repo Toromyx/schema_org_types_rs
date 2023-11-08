@@ -3,14 +3,8 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum TemporalCoverageProperty {
-	#[cfg(any(any(feature = "url-schema", feature = "general-schema-section"), doc))]
 	Url(Url),
-	#[cfg(any(
-		any(feature = "date-time-schema", feature = "general-schema-section"),
-		doc
-	))]
 	DateTime(DateTime),
-	#[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
 	Text(Text),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),
@@ -30,14 +24,8 @@ mod serde {
 			S: Serializer,
 		{
 			match *self {
-				#[cfg(any(any(feature = "url-schema", feature = "general-schema-section"), doc))]
 				TemporalCoverageProperty::Url(ref inner) => inner.serialize(serializer),
-				#[cfg(any(
-					any(feature = "date-time-schema", feature = "general-schema-section"),
-					doc
-				))]
 				TemporalCoverageProperty::DateTime(ref inner) => inner.serialize(serializer),
-				#[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
 				TemporalCoverageProperty::Text(ref inner) => inner.serialize(serializer),
 				#[cfg(all(feature = "fallible", feature = "serde"))]
 				TemporalCoverageProperty::SerdeFail(ref inner) => inner.serialize(serializer),
@@ -53,24 +41,18 @@ mod serde {
 				<::serde::__private::de::Content as Deserialize>::deserialize(deserializer)?;
 			let deserializer =
 				::serde::__private::de::ContentRefDeserializer::<D::Error>::new(&content);
-			#[cfg(any(any(feature = "url-schema", feature = "general-schema-section"), doc))]
 			if let Ok(ok) = Result::map(
 				<Url as Deserialize>::deserialize(deserializer),
 				TemporalCoverageProperty::Url,
 			) {
 				return Ok(ok);
 			}
-			#[cfg(any(
-				any(feature = "date-time-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<DateTime as Deserialize>::deserialize(deserializer),
 				TemporalCoverageProperty::DateTime,
 			) {
 				return Ok(ok);
 			}
-			#[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
 			if let Ok(ok) = Result::map(
 				<Text as Deserialize>::deserialize(deserializer),
 				TemporalCoverageProperty::Text,

@@ -26,7 +26,6 @@ pub fn serde_mod(property: &Property) -> TokenStream {
 
 	struct VariantTokenStreams {
 		variant_name: TokenStream,
-		feature_gate: TokenStream,
 	}
 
 	let variant_token_streams: Vec<VariantTokenStreams> = property
@@ -35,35 +34,20 @@ pub fn serde_mod(property: &Property) -> TokenStream {
 		.map(|referenced_schema| {
 			let variant_name =
 				TokenStream::from_str(&referenced_schema.name.to_case(Case::UpperCamel)).unwrap();
-			let feature = Feature::Any(vec![
-				Feature::Name(format!(
-					"{}-schema",
-					referenced_schema.name.to_case(Case::Kebab)
-				)),
-				Feature::Name(referenced_schema.section.feature_name().to_string()),
-			]);
-			let feature_gate = feature.as_cfg_attribute();
-			VariantTokenStreams {
-				variant_name,
-				feature_gate,
-			}
+			VariantTokenStreams { variant_name }
 		})
 		.collect();
 
 	let serialize_match_arms = variant_token_streams.iter().map(|token_streams| {
 		let variant_name = &token_streams.variant_name;
-		let feature_gate = &token_streams.feature_gate;
 		quote!(
-			#feature_gate
 			#name::#variant_name(ref inner) => inner.serialize(serializer),
 		)
 	});
 
 	let deserialize_variants = variant_token_streams.iter().map(|token_streams| {
 		let variant_name = &token_streams.variant_name;
-		let feature_gate = &token_streams.feature_gate;
 		quote!(
-			#feature_gate
 			if let Ok(ok) = Result::map(
 				<#variant_name as Deserialize>::deserialize(deserializer),
 				#name::#variant_name,

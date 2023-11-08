@@ -1,7 +1,5 @@
 use std::{
 	collections::BinaryHeap,
-	fs::File,
-	io::{BufRead, BufReader, Write},
 	path::{Path, PathBuf},
 	str::FromStr,
 	sync::{Mutex, MutexGuard},
@@ -14,11 +12,9 @@ use quote::{__private::TokenStream, quote, ToTokens};
 use rayon::prelude::*;
 
 use crate::{
-	feature::Feature,
 	schema::{
 		class::Class, data_type::DataType, enumeration::Enumeration, property::Property, Schema,
 	},
-	schema_feature::SchemaFeature,
 	sparql::{SchemaQueries, SchemaQuerySolution},
 };
 
@@ -30,45 +26,16 @@ const IGNORED_SCHEMAS: &[&str] = &[
 	"https://schema.org/Series",
 ];
 
-fn write_features(schema_features: Vec<SchemaFeature>) {
-	let cargo_toml_path = PathBuf::from("../Cargo.toml");
-	let mut cargo_toml_content: Vec<u8> = {
-		let cargo_toml_file = File::open(&cargo_toml_path).unwrap();
-		let reader = BufReader::new(&cargo_toml_file);
-		reader
-			.lines()
-			.map(|line_result| line_result.unwrap())
-			.take_while(|line| line != "# generated features")
-			.flat_map(|line| format!("{}\n", line).into_bytes())
-			.collect()
-	};
-	{
-		cargo_toml_content.extend("# generated features\n".to_string().into_bytes());
-		cargo_toml_content.extend(
-			schema_features
-				.iter()
-				.flat_map(|feature| feature.to_toml_representation().into_bytes())
-				.collect::<Vec<u8>>(),
-		);
-		let mut cargo_toml_file = File::create(&cargo_toml_path).unwrap();
-		cargo_toml_file
-			.write_all(cargo_toml_content.as_slice())
-			.unwrap();
-	}
-}
 #[derive(Debug, Clone, Derivative)]
 #[derivative(PartialEq, Eq, PartialOrd, Ord)]
 struct SchemaModuleInfo {
 	pub name: String,
-	#[derivative(PartialEq = "ignore", PartialOrd = "ignore", Ord = "ignore")]
-	pub feature: Feature,
 }
 
 impl<T: Schema> From<&T> for SchemaModuleInfo {
 	fn from(value: &T) -> Self {
 		Self {
 			name: value.module_name(),
-			feature: value.into(),
 		}
 	}
 }
@@ -79,12 +46,9 @@ trait ToModuleString {
 impl ToModuleString for &[SchemaModuleInfo] {
 	fn to_module_string(&self) -> String {
 		let schema_mods_and_pub_uses = self.iter().map(|schema| {
-			let feature_gate = schema.feature.as_cfg_attribute();
 			let module_name = TokenStream::from_str(&format!("r#{}", schema.name)).unwrap();
 			quote!(
-				#feature_gate
 				mod #module_name;
-				#feature_gate
 				pub use #module_name::*;
 			)
 		});
@@ -108,7 +72,6 @@ trait HandleWrite {
 	fn handle_write(
 		store: &Store,
 		solution: SchemaQuerySolution,
-		schema_features: MutexGuard<BinaryHeap<SchemaFeature>>,
 		schema_module_infos: MutexGuard<BinaryHeap<SchemaModuleInfo>>,
 		schemas_dir: &Path,
 	);
@@ -118,12 +81,10 @@ impl<T: Schema + ToTokens> HandleWrite for T {
 	fn handle_write(
 		store: &Store,
 		solution: SchemaQuerySolution,
-		mut schema_features: MutexGuard<BinaryHeap<SchemaFeature>>,
 		mut schema_module_infos: MutexGuard<BinaryHeap<SchemaModuleInfo>>,
 		schemas_dir: &Path,
 	) {
 		let schema = Self::from_solution(store, solution);
-		schema_features.push(SchemaFeature::from(&schema));
 		schema_module_infos.push(SchemaModuleInfo::from(&schema));
 		schema.write_module(schemas_dir);
 	}
@@ -178,7 +139,6 @@ pub fn write(store: &Store, multi_progress: &MultiProgress) {
 
 	let schemas = store.get_schemas();
 
-	let schema_features = Mutex::new(BinaryHeap::new());
 	let class_schema_module_infos = Mutex::new(BinaryHeap::<SchemaModuleInfo>::new());
 	let property_schema_module_infos = Mutex::new(BinaryHeap::<SchemaModuleInfo>::new());
 	let enumeration_schema_module_infos = Mutex::new(BinaryHeap::<SchemaModuleInfo>::new());
@@ -188,7 +148,6 @@ pub fn write(store: &Store, multi_progress: &MultiProgress) {
 		Class::handle_write(
 			store,
 			solution,
-			schema_features.lock().unwrap(),
 			class_schema_module_infos.lock().unwrap(),
 			&schemas_dir,
 		);
@@ -198,7 +157,6 @@ pub fn write(store: &Store, multi_progress: &MultiProgress) {
 		Property::handle_write(
 			store,
 			solution,
-			schema_features.lock().unwrap(),
 			property_schema_module_infos.lock().unwrap(),
 			&schemas_dir,
 		);
@@ -208,7 +166,6 @@ pub fn write(store: &Store, multi_progress: &MultiProgress) {
 		Enumeration::handle_write(
 			store,
 			solution,
-			schema_features.lock().unwrap(),
 			enumeration_schema_module_infos.lock().unwrap(),
 			&schemas_dir,
 		);
@@ -218,7 +175,6 @@ pub fn write(store: &Store, multi_progress: &MultiProgress) {
 		DataType::handle_write(
 			store,
 			solution,
-			schema_features.lock().unwrap(),
 			data_types_schema_module_infos.lock().unwrap(),
 			&schemas_dir,
 		);
@@ -251,8 +207,6 @@ pub fn write(store: &Store, multi_progress: &MultiProgress) {
 		}
 		bar.inc(1);
 	});
-
-	write_features(schema_features.into_inner().unwrap().into_sorted_vec());
 
 	Class::write_parent_module(
 		class_schema_module_infos

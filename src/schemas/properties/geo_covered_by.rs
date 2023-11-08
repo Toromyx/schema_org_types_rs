@@ -3,15 +3,7 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum GeoCoveredByProperty {
-	#[cfg(any(
-		any(
-			feature = "geospatial-geometry-schema",
-			feature = "pending-schema-section"
-		),
-		doc
-	))]
 	GeospatialGeometry(GeospatialGeometry),
-	#[cfg(any(any(feature = "place-schema", feature = "general-schema-section"), doc))]
 	Place(Place),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),
@@ -31,15 +23,7 @@ mod serde {
 			S: Serializer,
 		{
 			match *self {
-				#[cfg(any(
-					any(
-						feature = "geospatial-geometry-schema",
-						feature = "pending-schema-section"
-					),
-					doc
-				))]
 				GeoCoveredByProperty::GeospatialGeometry(ref inner) => inner.serialize(serializer),
-				#[cfg(any(any(feature = "place-schema", feature = "general-schema-section"), doc))]
 				GeoCoveredByProperty::Place(ref inner) => inner.serialize(serializer),
 				#[cfg(all(feature = "fallible", feature = "serde"))]
 				GeoCoveredByProperty::SerdeFail(ref inner) => inner.serialize(serializer),
@@ -55,20 +39,12 @@ mod serde {
 				<::serde::__private::de::Content as Deserialize>::deserialize(deserializer)?;
 			let deserializer =
 				::serde::__private::de::ContentRefDeserializer::<D::Error>::new(&content);
-			#[cfg(any(
-				any(
-					feature = "geospatial-geometry-schema",
-					feature = "pending-schema-section"
-				),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<GeospatialGeometry as Deserialize>::deserialize(deserializer),
 				GeoCoveredByProperty::GeospatialGeometry,
 			) {
 				return Ok(ok);
 			}
-			#[cfg(any(any(feature = "place-schema", feature = "general-schema-section"), doc))]
 			if let Ok(ok) = Result::map(
 				<Place as Deserialize>::deserialize(deserializer),
 				GeoCoveredByProperty::Place,

@@ -3,17 +3,8 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum MerchantReturnDaysProperty {
-	#[cfg(any(any(feature = "date-schema", feature = "general-schema-section"), doc))]
 	Date(Date),
-	#[cfg(any(
-		any(feature = "date-time-schema", feature = "general-schema-section"),
-		doc
-	))]
 	DateTime(DateTime),
-	#[cfg(any(
-		any(feature = "integer-schema", feature = "general-schema-section"),
-		doc
-	))]
 	Integer(Integer),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),
@@ -33,17 +24,8 @@ mod serde {
 			S: Serializer,
 		{
 			match *self {
-				#[cfg(any(any(feature = "date-schema", feature = "general-schema-section"), doc))]
 				MerchantReturnDaysProperty::Date(ref inner) => inner.serialize(serializer),
-				#[cfg(any(
-					any(feature = "date-time-schema", feature = "general-schema-section"),
-					doc
-				))]
 				MerchantReturnDaysProperty::DateTime(ref inner) => inner.serialize(serializer),
-				#[cfg(any(
-					any(feature = "integer-schema", feature = "general-schema-section"),
-					doc
-				))]
 				MerchantReturnDaysProperty::Integer(ref inner) => inner.serialize(serializer),
 				#[cfg(all(feature = "fallible", feature = "serde"))]
 				MerchantReturnDaysProperty::SerdeFail(ref inner) => inner.serialize(serializer),
@@ -59,27 +41,18 @@ mod serde {
 				<::serde::__private::de::Content as Deserialize>::deserialize(deserializer)?;
 			let deserializer =
 				::serde::__private::de::ContentRefDeserializer::<D::Error>::new(&content);
-			#[cfg(any(any(feature = "date-schema", feature = "general-schema-section"), doc))]
 			if let Ok(ok) = Result::map(
 				<Date as Deserialize>::deserialize(deserializer),
 				MerchantReturnDaysProperty::Date,
 			) {
 				return Ok(ok);
 			}
-			#[cfg(any(
-				any(feature = "date-time-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<DateTime as Deserialize>::deserialize(deserializer),
 				MerchantReturnDaysProperty::DateTime,
 			) {
 				return Ok(ok);
 			}
-			#[cfg(any(
-				any(feature = "integer-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<Integer as Deserialize>::deserialize(deserializer),
 				MerchantReturnDaysProperty::Integer,

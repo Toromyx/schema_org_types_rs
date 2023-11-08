@@ -15,7 +15,6 @@ use crate::{
 		data_type::rust_type::RustType, map_schema_name, property::serde::serde_mod,
 		ReferencedSchema, Schema,
 	},
-	schema_section::SchemaSection,
 	sparql::{SchemaQueries, SchemaQuerySolution},
 };
 
@@ -30,8 +29,6 @@ pub struct Property {
 	pub name: String,
 	#[derivative(PartialEq = "ignore", PartialOrd = "ignore", Ord = "ignore")]
 	pub variants: Vec<ReferencedSchema>,
-	#[derivative(PartialEq = "ignore", PartialOrd = "ignore", Ord = "ignore")]
-	pub section: SchemaSection,
 }
 
 impl Schema for Property {
@@ -49,10 +46,6 @@ impl Schema for Property {
 
 	fn iri(&self) -> &String {
 		&self.iri
-	}
-
-	fn section(&self) -> &SchemaSection {
-		&self.section
 	}
 
 	fn child_feature_names(&self) -> Vec<String> {
@@ -105,7 +98,6 @@ impl Schema for Property {
 			iri: solution.iri,
 			name: map_schema_name(solution.label),
 			variants,
-			section: solution.section,
 		}
 	}
 }
@@ -116,21 +108,12 @@ impl ToTokens for Property {
 		let name =
 			TokenStream::from_str(&format!("{}Property", self.name.to_case(Case::UpperCamel)))
 				.unwrap();
-		let variants = self
-			.variants
-			.iter()
-			.map(|ReferencedSchema { name, section, .. }| {
-				let variant_name = TokenStream::from_str(&name.to_case(Case::UpperCamel)).unwrap();
-				let feature = Feature::Any(vec![
-					Feature::Name(format!("{}-schema", name.to_case(Case::Kebab))),
-					Feature::Name(section.feature_name().to_string()),
-				]);
-				let feature_gate = feature.as_cfg_attribute();
-				quote!(
-					#feature_gate
-					#variant_name(#variant_name),
-				)
-			});
+		let variants = self.variants.iter().map(|ReferencedSchema { name, .. }| {
+			let variant_name = TokenStream::from_str(&name.to_case(Case::UpperCamel)).unwrap();
+			quote!(
+				#variant_name(#variant_name),
+			)
+		});
 		let serde_mod = serde_mod(self);
 		let fallible_feature_gate = Feature::All(vec![
 			Feature::Name("fallible".to_string()),

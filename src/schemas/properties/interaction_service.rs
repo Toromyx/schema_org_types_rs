@@ -3,18 +3,7 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum InteractionServiceProperty {
-	#[cfg(any(
-		any(
-			feature = "software-application-schema",
-			feature = "general-schema-section"
-		),
-		doc
-	))]
 	SoftwareApplication(SoftwareApplication),
-	#[cfg(any(
-		any(feature = "web-site-schema", feature = "general-schema-section"),
-		doc
-	))]
 	WebSite(WebSite),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),
@@ -34,18 +23,9 @@ mod serde {
 			S: Serializer,
 		{
 			match *self {
-				#[cfg(any(
-					any(
-						feature = "software-application-schema",
-						feature = "general-schema-section"
-					),
-					doc
-				))]
-				InteractionServiceProperty::SoftwareApplication(ref inner) => inner.serialize(serializer),
-				#[cfg(any(
-					any(feature = "web-site-schema", feature = "general-schema-section"),
-					doc
-				))]
+				InteractionServiceProperty::SoftwareApplication(ref inner) => {
+					inner.serialize(serializer)
+				}
 				InteractionServiceProperty::WebSite(ref inner) => inner.serialize(serializer),
 				#[cfg(all(feature = "fallible", feature = "serde"))]
 				InteractionServiceProperty::SerdeFail(ref inner) => inner.serialize(serializer),
@@ -61,23 +41,12 @@ mod serde {
 				<::serde::__private::de::Content as Deserialize>::deserialize(deserializer)?;
 			let deserializer =
 				::serde::__private::de::ContentRefDeserializer::<D::Error>::new(&content);
-			#[cfg(any(
-				any(
-					feature = "software-application-schema",
-					feature = "general-schema-section"
-				),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<SoftwareApplication as Deserialize>::deserialize(deserializer),
 				InteractionServiceProperty::SoftwareApplication,
 			) {
 				return Ok(ok);
 			}
-			#[cfg(any(
-				any(feature = "web-site-schema", feature = "general-schema-section"),
-				doc
-			))]
 			if let Ok(ok) = Result::map(
 				<WebSite as Deserialize>::deserialize(deserializer),
 				InteractionServiceProperty::WebSite,
