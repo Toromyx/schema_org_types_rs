@@ -11,7 +11,7 @@ pub enum PublishingPrinciplesProperty {
 	#[cfg(any(any(feature = "url-schema", feature = "general-schema-section"), doc))]
 	Url(Url),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
-	SerdeFail(crate::FailValue),
+	SerdeFail(crate::fallible::FailValue),
 }
 #[cfg(feature = "serde")]
 mod serde {
@@ -35,6 +35,8 @@ mod serde {
 				PublishingPrinciplesProperty::CreativeWork(ref inner) => inner.serialize(serializer),
 				#[cfg(any(any(feature = "url-schema", feature = "general-schema-section"), doc))]
 				PublishingPrinciplesProperty::Url(ref inner) => inner.serialize(serializer),
+				#[cfg(all(feature = "fallible", feature = "serde"))]
+				PublishingPrinciplesProperty::SerdeFail(ref inner) => inner.serialize(serializer),
 			}
 		}
 	}
@@ -64,9 +66,19 @@ mod serde {
 			) {
 				return Ok(ok);
 			}
-			Err(de::Error::custom(
-				"data did not match any variant of schema.org property publishingPrinciples",
-			))
+			#[cfg(all(feature = "fallible", feature = "serde"))]
+			if let Ok(ok) = Result::map(
+				<crate::fallible::FailValue as Deserialize>::deserialize(deserializer),
+				PublishingPrinciplesProperty::SerdeFail,
+			) {
+				return Ok(ok);
+			}
+			#[cfg(all(feature = "fallible", feature = "serde"))]
+			const CUSTOM_ERROR: &str = "data did neither match any variant of schema.org property publishingPrinciples or was able to be deserialized into a generic value";
+			#[cfg(any(not(feature = "fallible"), not(feature = "serde")))]
+			const CUSTOM_ERROR: &str =
+				"data did not match any variant of schema.org property publishingPrinciples";
+			Err(de::Error::custom(CUSTOM_ERROR))
 		}
 	}
 }

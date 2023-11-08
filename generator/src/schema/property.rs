@@ -136,7 +136,7 @@ impl ToTokens for Property {
 			Feature::Name("fallible".to_string()),
 			Feature::Name("serde".to_string()),
 		])
-		.feature_gate();
+		.as_cfg_attribute();
 		tokens.append_all(quote! (
 			use super::*;
 			#doc_lines
@@ -145,7 +145,7 @@ impl ToTokens for Property {
 			pub enum #name {
 				#(#variants)*
 				#fallible_feature_gate
-				SerdeFail(crate::FailValue),
+				SerdeFail(crate::fallible::FailValue),
 			}
 			#[cfg(feature = "serde")]
 			mod serde {

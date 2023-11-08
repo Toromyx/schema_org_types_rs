@@ -2,6 +2,7 @@ use pretty_assertions::assert_eq;
 use serde_json::{json, Value};
 
 use super::*;
+use crate::fallible::FailValue;
 
 #[test]
 fn test_date_serde() {

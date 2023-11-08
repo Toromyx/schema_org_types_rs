@@ -32,6 +32,8 @@ pub enum ItemOfferedProperty {
 	Service(Service),
 	#[cfg(any(any(feature = "trip-schema", feature = "general-schema-section"), doc))]
 	Trip(Trip),
+	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
+	SerdeFail(crate::fallible::FailValue),
 }
 #[cfg(feature = "serde")]
 mod serde {
@@ -77,6 +79,8 @@ mod serde {
 				ItemOfferedProperty::Service(ref inner) => inner.serialize(serializer),
 				#[cfg(any(any(feature = "trip-schema", feature = "general-schema-section"), doc))]
 				ItemOfferedProperty::Trip(ref inner) => inner.serialize(serializer),
+				#[cfg(all(feature = "fallible", feature = "serde"))]
+				ItemOfferedProperty::SerdeFail(ref inner) => inner.serialize(serializer),
 			}
 		}
 	}
@@ -153,9 +157,19 @@ mod serde {
 			) {
 				return Ok(ok);
 			}
-			Err(de::Error::custom(
-				"data did not match any variant of schema.org property itemOffered",
-			))
+			#[cfg(all(feature = "fallible", feature = "serde"))]
+			if let Ok(ok) = Result::map(
+				<crate::fallible::FailValue as Deserialize>::deserialize(deserializer),
+				ItemOfferedProperty::SerdeFail,
+			) {
+				return Ok(ok);
+			}
+			#[cfg(all(feature = "fallible", feature = "serde"))]
+			const CUSTOM_ERROR: &str = "data did neither match any variant of schema.org property itemOffered or was able to be deserialized into a generic value";
+			#[cfg(any(not(feature = "fallible"), not(feature = "serde")))]
+			const CUSTOM_ERROR: &str =
+				"data did not match any variant of schema.org property itemOffered";
+			Err(de::Error::custom(CUSTOM_ERROR))
 		}
 	}
 }

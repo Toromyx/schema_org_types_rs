@@ -1,4 +1,4 @@
-//! This is meant for fallible serialization
+//! This module includes code used in fallible deserialization.
 
 use std::collections::HashMap;
 

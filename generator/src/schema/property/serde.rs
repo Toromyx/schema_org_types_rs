@@ -13,6 +13,16 @@ pub fn serde_mod(property: &Property) -> TokenStream {
 		"data did not match any variant of schema.org property {}",
 		schema_name
 	);
+	let deserialize_custom_error_fallible = format!(
+		"data did neither match any variant of schema.org property {} or was able to be deserialized into a generic value",
+		schema_name
+	);
+	let fallible_feature = Feature::All(vec![
+		Feature::Name("fallible".to_string()),
+		Feature::Name("serde".to_string()),
+	]);
+	let fallible_feature_gate = fallible_feature.as_cfg_attribute_no_doc();
+	let not_fallible_feature_gate = fallible_feature.negate().as_cfg_attribute_no_doc();
 
 	struct VariantTokenStreams {
 		variant_name: TokenStream,
@@ -80,6 +90,8 @@ pub fn serde_mod(property: &Property) -> TokenStream {
 			{
 				match *self {
 					#(#serialize_match_arms)*
+					#fallible_feature_gate
+					#name::SerdeFail(ref inner) => inner.serialize(serializer),
 				}
 			}
 		}
@@ -94,7 +106,18 @@ pub fn serde_mod(property: &Property) -> TokenStream {
 				)?;
 				let deserializer = ::serde::__private::de::ContentRefDeserializer::<D::Error>::new(&content);
 				#(#deserialize_variants)*
-				Err(de::Error::custom(#deserialize_custom_error))
+				#fallible_feature_gate
+				if let Ok(ok) = Result::map(
+					<crate::fallible::FailValue as Deserialize>::deserialize(deserializer),
+					#name::SerdeFail,
+				) {
+					return Ok(ok);
+				}
+				#fallible_feature_gate
+				const CUSTOM_ERROR: &str = #deserialize_custom_error_fallible;
+				#not_fallible_feature_gate
+				const CUSTOM_ERROR: &str = #deserialize_custom_error;
+				Err(de::Error::custom(CUSTOM_ERROR))
 			}
 		}
 	)

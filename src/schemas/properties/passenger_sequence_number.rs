@@ -5,6 +5,8 @@ use super::*;
 pub enum PassengerSequenceNumberProperty {
 	#[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
 	Text(Text),
+	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
+	SerdeFail(crate::fallible::FailValue),
 }
 #[cfg(feature = "serde")]
 mod serde {
@@ -23,6 +25,8 @@ mod serde {
 			match *self {
 				#[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
 				PassengerSequenceNumberProperty::Text(ref inner) => inner.serialize(serializer),
+				#[cfg(all(feature = "fallible", feature = "serde"))]
+				PassengerSequenceNumberProperty::SerdeFail(ref inner) => inner.serialize(serializer),
 			}
 		}
 	}
@@ -42,9 +46,19 @@ mod serde {
 			) {
 				return Ok(ok);
 			}
-			Err(de::Error::custom(
-				"data did not match any variant of schema.org property passengerSequenceNumber",
-			))
+			#[cfg(all(feature = "fallible", feature = "serde"))]
+			if let Ok(ok) = Result::map(
+				<crate::fallible::FailValue as Deserialize>::deserialize(deserializer),
+				PassengerSequenceNumberProperty::SerdeFail,
+			) {
+				return Ok(ok);
+			}
+			#[cfg(all(feature = "fallible", feature = "serde"))]
+			const CUSTOM_ERROR: &str = "data did neither match any variant of schema.org property passengerSequenceNumber or was able to be deserialized into a generic value";
+			#[cfg(any(not(feature = "fallible"), not(feature = "serde")))]
+			const CUSTOM_ERROR: &str =
+				"data did not match any variant of schema.org property passengerSequenceNumber";
+			Err(de::Error::custom(CUSTOM_ERROR))
 		}
 	}
 }

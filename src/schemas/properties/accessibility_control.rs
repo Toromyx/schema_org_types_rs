@@ -6,7 +6,7 @@ pub enum AccessibilityControlProperty {
 	#[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
 	Text(Text),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
-	SerdeFail(crate::FailValue),
+	SerdeFail(crate::fallible::FailValue),
 }
 #[cfg(feature = "serde")]
 mod serde {
@@ -25,6 +25,8 @@ mod serde {
 			match *self {
 				#[cfg(any(any(feature = "text-schema", feature = "general-schema-section"), doc))]
 				AccessibilityControlProperty::Text(ref inner) => inner.serialize(serializer),
+				#[cfg(all(feature = "fallible", feature = "serde"))]
+				AccessibilityControlProperty::SerdeFail(ref inner) => inner.serialize(serializer),
 			}
 		}
 	}
@@ -44,9 +46,19 @@ mod serde {
 			) {
 				return Ok(ok);
 			}
-			Err(de::Error::custom(
-				"data did not match any variant of schema.org property accessibilityControl",
-			))
+			#[cfg(all(feature = "fallible", feature = "serde"))]
+			if let Ok(ok) = Result::map(
+				<crate::fallible::FailValue as Deserialize>::deserialize(deserializer),
+				AccessibilityControlProperty::SerdeFail,
+			) {
+				return Ok(ok);
+			}
+			#[cfg(all(feature = "fallible", feature = "serde"))]
+			const CUSTOM_ERROR: &str = "data did neither match any variant of schema.org property accessibilityControl or was able to be deserialized into a generic value";
+			#[cfg(any(not(feature = "fallible"), not(feature = "serde")))]
+			const CUSTOM_ERROR: &str =
+				"data did not match any variant of schema.org property accessibilityControl";
+			Err(de::Error::custom(CUSTOM_ERROR))
 		}
 	}
 }
