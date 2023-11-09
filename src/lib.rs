@@ -31,10 +31,6 @@
 //! - `serde` — enable serialization and deserialization via [serde](https://serde.rs/)
 //!   - enables *dep:serde*, *dep:serde_with*, *json-number/serde*, *url/serde*
 //!
-//! ### Generated Features
-//!
-//! Each schema has its own feature. E.g. <https://schema.org/Recipe> has the feature `recipe-schema`. Property schema features have the `-property-schema` suffix to avoid duplicate feature names.
-//!
 
 // This recursion limit is necessary for the [`Debug`] derive macro.
 #![recursion_limit = "512"]
