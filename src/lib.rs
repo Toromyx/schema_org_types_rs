@@ -2,22 +2,6 @@
 //!
 //! ## Features
 //!
-//! - `all-schema-sections` — include all schema sections
-//!   - enables *general-schema-section*, *auto-schema-section*, *bib-schema-section*, *health-lifesci-schema-section*, *pending-schema-section*, *attic-schema-section*, *meta-schema-section*
-//! - `general-schema-section` — include all schemas without a special section
-//!   - enabled by *all-schema-sections*
-//! - `auto-schema-section` — include <https://schema.org/docs/auto.home.html>
-//!   - enabled by *all-schema-sections*
-//! - `bib-schema-section` — include <https://schema.org/docs/bib.home.html>
-//!   - enabled by *all-schema-sections*
-//! - `health-lifesci-schema-section` — include <https://schema.org/docs/health-lifesci.home.html>
-//!   - enabled by *all-schema-sections*
-//! - `pending-schema-section` — include <https://schema.org/docs/pending.home.html>
-//!   - enabled by *all-schema-sections*
-//! - `attic-schema-section` — include <https://schema.org/docs/attic.home.html>
-//!   - enabled by *all-schema-sections*
-//! - `meta-schema-section` — include <https://schema.org/docs/meta.home.html>
-//!   - enabled by *all-schema-sections*
 //! - `derive-all` — add all derives on the schemas
 //!   - enables *derive-debug*, *derive-clone*
 //! - `derive-debug` — derive [`Debug`] for the schemas; this needs a `#![recursion_limit = "512"]` in your crate
