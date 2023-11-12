@@ -23,7 +23,7 @@
 
 pub mod date_types;
 #[cfg(any(feature = "fallible", doc))]
-mod fallible;
+pub mod fallible;
 pub mod number_types;
 mod schemas;
 
