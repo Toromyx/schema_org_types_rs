@@ -1,6 +1,7 @@
 name: Up-To-Date Check
 
 on:
+  # the time of this schedule is randomly generated
   schedule:
     - cron: "14 12 * * *"
   workflow_dispatch: {}
