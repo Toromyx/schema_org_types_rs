@@ -1,10 +1,12 @@
 //! This crate provides automatically generated Rust types of [Schema.org](https://schema.org) schemas.
 //!
+//! You will need a `#![recursion_limit = "512"]` when compiling this crate.
+//!
 //! ## Features
 //!
 //! - `derive-all` — add all derives on the schemas
 //!   - enables *derive-debug*, *derive-clone*
-//! - `derive-debug` — derive [`Debug`] for the schemas; this needs a `#![recursion_limit = "512"]` in your crate
+//! - `derive-debug` — derive [`Debug`] for the schemas
 //!   - enabled by *derive-all*
 //! - `derive-clone` — derive [`Clone`] for the schemas
 //!   - enabled by *derive-all*
@@ -16,7 +18,6 @@
 //!   - enables *dep:serde*, *dep:serde_with*, *json-number/serde*, *url/serde*
 //!
 
-// This recursion limit is necessary for the [`Debug`] derive macro.
 #![recursion_limit = "512"]
 // https://doc.rust-lang.org/rustdoc/unstable-features.html#doc_auto_cfg-automatically-generate-doccfg
 #![cfg_attr(doc, feature(doc_auto_cfg))]
