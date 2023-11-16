@@ -116,10 +116,10 @@ impl SchemaQueries for Store {
 			PREFIXES,
 			r#"
 SELECT
-    ?node
-    ?label
+	?node
+	?label
 WHERE {
-    ?node rdfs:label ?label .
+	?node rdfs:label ?label .
 }
 "#,
 		);
@@ -136,10 +136,10 @@ WHERE {
 			r#"
 {}
 SELECT
-    (COUNT(*) AS ?count)
+	(COUNT(*) AS ?count)
 WHERE {{
-    <{}> a ?enumeration .
-    ?enumeration rdfs:subClassOf*/rdfs:subClassOf schema:Enumeration .
+	<{}> a ?enumeration .
+	?enumeration rdfs:subClassOf*/rdfs:subClassOf schema:Enumeration .
 }}
 "#,
 			PREFIXES, iri
@@ -153,9 +153,9 @@ WHERE {{
 			r#"
 {}
 SELECT
-    (COUNT(*) AS ?count)
+	(COUNT(*) AS ?count)
 WHERE {{
-    <{}> rdfs:subClassOf*/a schema:DataType .
+	<{}> rdfs:subClassOf*/a schema:DataType .
 }}
 "#,
 			PREFIXES, iri
@@ -169,12 +169,12 @@ WHERE {{
 			r#"
 {}
 SELECT
-    (COUNT(*) AS ?count)
+	(COUNT(*) AS ?count)
 WHERE {{
-    <{}> rdfs:subClassOf*/rdfs:subClassOf schema:Enumeration .
-    FILTER NOT EXISTS {{
-        ?property schema:domainIncludes <{}> .
-    }}
+	<{}> rdfs:subClassOf*/rdfs:subClassOf schema:Enumeration .
+	FILTER NOT EXISTS {{
+		?property schema:domainIncludes <{}> .
+	}}
 }}
 "#,
 			PREFIXES, iri, iri
@@ -188,9 +188,9 @@ WHERE {{
 			r#"
 {}
 SELECT
-    (COUNT(*) AS ?count)
+	(COUNT(*) AS ?count)
 WHERE {{
-    <{}> a rdf:Property .
+	<{}> a rdf:Property .
 }}
 "#,
 			PREFIXES, iri
@@ -204,18 +204,18 @@ WHERE {{
 			r#"
 {}
 SELECT DISTINCT
-    ?node
-    ?label
+	?node
+	?label
 WHERE {{
-    {{
-        <{}> rdfs:subClassOf* ?parent .
-        ?node schema:domainIncludes ?parent .
-    }}
-    UNION
-    {{
-        ?node schema:domainIncludes <{}> .
-    }}
-    ?node rdfs:label ?label .
+	{{
+		<{}> rdfs:subClassOf* ?parent .
+		?node schema:domainIncludes ?parent .
+	}}
+	UNION
+	{{
+		?node schema:domainIncludes <{}> .
+	}}
+	?node rdfs:label ?label .
 }}
 "#,
 			PREFIXES, class_iri, class_iri
@@ -233,11 +233,11 @@ WHERE {{
 			r#"
 {}
 SELECT
-    ?node
-    ?label
+	?node
+	?label
 WHERE {{
-    <{}> schema:rangeIncludes ?node .
-    ?node rdfs:label ?label .
+	<{}> schema:rangeIncludes ?node .
+	?node rdfs:label ?label .
 }}
 "#,
 			PREFIXES, property_iri
@@ -258,11 +258,11 @@ WHERE {{
 			r#"
 {}
 SELECT
-    ?node
-    ?label
+	?node
+	?label
 WHERE {{
-    ?node a <{}> .
-    ?node rdfs:label ?label .
+	?node a <{}> .
+	?node rdfs:label ?label .
 }}
 "#,
 			PREFIXES, enumeration_iri
@@ -280,20 +280,20 @@ WHERE {{
 			r#"
 {}
 SELECT
-    ?label
+	?label
 WHERE {{
-    <{}> rdfs:subClassOf* ?transformable .
-    VALUES ?transformable {{
-        schema:URL
-        schema:DateTime
-        schema:Date
-        schema:Time
-        schema:Text
-        schema:Integer
-        schema:Number
-        schema:Boolean
-    }}
-    ?transformable rdfs:label ?label .
+	<{}> rdfs:subClassOf* ?transformable .
+	VALUES ?transformable {{
+		schema:URL
+		schema:DateTime
+		schema:Date
+		schema:Time
+		schema:Text
+		schema:Integer
+		schema:Number
+		schema:Boolean
+	}}
+	?transformable rdfs:label ?label .
 }}
 LIMIT 1
 "#,
