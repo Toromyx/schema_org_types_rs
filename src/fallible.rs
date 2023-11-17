@@ -3,7 +3,7 @@
 use std::collections::HashMap;
 
 /// This enumerations represents an arbitrary failed deserialization.
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(untagged))]
 pub enum FailValue {
