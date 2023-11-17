@@ -24,7 +24,10 @@ jobs:
           components: rustfmt
       - uses: actions/cache@v3
         with:
-          key: up-to-date-check-${{ hashFiles('generator/Cargo.lock') }}
+          key: up-to-date-check-${{ hashFiles('generator/Cargo.lock') }}-${{ hashFiles('generator/**') }}
+          restore-keys: |
+            up-to-date-check-${{ hashFiles('generator/Cargo.lock') }}-
+            up-to-date-check-
           path: |
             generator/target
             ~/.cargo
