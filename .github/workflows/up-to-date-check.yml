@@ -5,6 +5,10 @@ on:
   schedule:
     - cron: "14 12 * * *"
   workflow_dispatch: {}
+  push:
+    paths:
+      - generator/**
+      - .github/workflows/up-to-date-check.yml
 
 jobs:
   check:
