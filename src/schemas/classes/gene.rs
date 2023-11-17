@@ -3,35 +3,229 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct Gene {
-	pub r#additional_type: Vec<AdditionalTypeProperty>,
-	pub r#alternate_name: Vec<AlternateNameProperty>,
 	pub r#alternative_of: Vec<AlternativeOfProperty>,
+	pub r#encodes_bio_chem_entity: Vec<EncodesBioChemEntityProperty>,
+	pub r#expressed_in: Vec<ExpressedInProperty>,
+	pub r#has_bio_polymer_sequence: Vec<HasBioPolymerSequenceProperty>,
 	pub r#associated_disease: Vec<AssociatedDiseaseProperty>,
 	pub r#bio_chem_interaction: Vec<BioChemInteractionProperty>,
 	pub r#bio_chem_similarity: Vec<BioChemSimilarityProperty>,
 	pub r#biological_role: Vec<BiologicalRoleProperty>,
-	pub r#description: Vec<DescriptionProperty>,
-	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
-	pub r#encodes_bio_chem_entity: Vec<EncodesBioChemEntityProperty>,
-	pub r#expressed_in: Vec<ExpressedInProperty>,
 	pub r#funding: Vec<FundingProperty>,
 	pub r#has_bio_chem_entity_part: Vec<HasBioChemEntityPartProperty>,
-	pub r#has_bio_polymer_sequence: Vec<HasBioPolymerSequenceProperty>,
 	pub r#has_molecular_function: Vec<HasMolecularFunctionProperty>,
 	pub r#has_representation: Vec<HasRepresentationProperty>,
-	pub r#identifier: Vec<IdentifierProperty>,
-	pub r#image: Vec<ImageProperty>,
 	pub r#is_encoded_by_bio_chem_entity: Vec<IsEncodedByBioChemEntityProperty>,
 	pub r#is_involved_in_biological_process: Vec<IsInvolvedInBiologicalProcessProperty>,
 	pub r#is_located_in_subcellular_location: Vec<IsLocatedInSubcellularLocationProperty>,
 	pub r#is_part_of_bio_chem_entity: Vec<IsPartOfBioChemEntityProperty>,
+	pub r#taxonomic_range: Vec<TaxonomicRangeProperty>,
+	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	pub r#alternate_name: Vec<AlternateNameProperty>,
+	pub r#description: Vec<DescriptionProperty>,
+	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	pub r#identifier: Vec<IdentifierProperty>,
+	pub r#image: Vec<ImageProperty>,
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
 	pub r#name: Vec<NameProperty>,
 	pub r#potential_action: Vec<PotentialActionProperty>,
 	pub r#same_as: Vec<SameAsProperty>,
 	pub r#subject_of: Vec<SubjectOfProperty>,
-	pub r#taxonomic_range: Vec<TaxonomicRangeProperty>,
 	pub r#url: Vec<UrlProperty>,
+}
+pub trait GeneTrait {
+	fn get_alternative_of(&self) -> &[AlternativeOfProperty];
+	fn take_alternative_of(&mut self) -> Vec<AlternativeOfProperty>;
+	fn get_encodes_bio_chem_entity(&self) -> &[EncodesBioChemEntityProperty];
+	fn take_encodes_bio_chem_entity(&mut self) -> Vec<EncodesBioChemEntityProperty>;
+	fn get_expressed_in(&self) -> &[ExpressedInProperty];
+	fn take_expressed_in(&mut self) -> Vec<ExpressedInProperty>;
+	fn get_has_bio_polymer_sequence(&self) -> &[HasBioPolymerSequenceProperty];
+	fn take_has_bio_polymer_sequence(&mut self) -> Vec<HasBioPolymerSequenceProperty>;
+}
+impl GeneTrait for Gene {
+	fn get_alternative_of(&self) -> &[AlternativeOfProperty] {
+		self.r#alternative_of.as_slice()
+	}
+	fn take_alternative_of(&mut self) -> Vec<AlternativeOfProperty> {
+		std::mem::take(&mut self.r#alternative_of)
+	}
+	fn get_encodes_bio_chem_entity(&self) -> &[EncodesBioChemEntityProperty] {
+		self.r#encodes_bio_chem_entity.as_slice()
+	}
+	fn take_encodes_bio_chem_entity(&mut self) -> Vec<EncodesBioChemEntityProperty> {
+		std::mem::take(&mut self.r#encodes_bio_chem_entity)
+	}
+	fn get_expressed_in(&self) -> &[ExpressedInProperty] {
+		self.r#expressed_in.as_slice()
+	}
+	fn take_expressed_in(&mut self) -> Vec<ExpressedInProperty> {
+		std::mem::take(&mut self.r#expressed_in)
+	}
+	fn get_has_bio_polymer_sequence(&self) -> &[HasBioPolymerSequenceProperty] {
+		self.r#has_bio_polymer_sequence.as_slice()
+	}
+	fn take_has_bio_polymer_sequence(&mut self) -> Vec<HasBioPolymerSequenceProperty> {
+		std::mem::take(&mut self.r#has_bio_polymer_sequence)
+	}
+}
+impl BioChemEntityTrait for Gene {
+	fn get_associated_disease(&self) -> &[AssociatedDiseaseProperty] {
+		self.r#associated_disease.as_slice()
+	}
+	fn take_associated_disease(&mut self) -> Vec<AssociatedDiseaseProperty> {
+		std::mem::take(&mut self.r#associated_disease)
+	}
+	fn get_bio_chem_interaction(&self) -> &[BioChemInteractionProperty] {
+		self.r#bio_chem_interaction.as_slice()
+	}
+	fn take_bio_chem_interaction(&mut self) -> Vec<BioChemInteractionProperty> {
+		std::mem::take(&mut self.r#bio_chem_interaction)
+	}
+	fn get_bio_chem_similarity(&self) -> &[BioChemSimilarityProperty] {
+		self.r#bio_chem_similarity.as_slice()
+	}
+	fn take_bio_chem_similarity(&mut self) -> Vec<BioChemSimilarityProperty> {
+		std::mem::take(&mut self.r#bio_chem_similarity)
+	}
+	fn get_biological_role(&self) -> &[BiologicalRoleProperty] {
+		self.r#biological_role.as_slice()
+	}
+	fn take_biological_role(&mut self) -> Vec<BiologicalRoleProperty> {
+		std::mem::take(&mut self.r#biological_role)
+	}
+	fn get_funding(&self) -> &[FundingProperty] {
+		self.r#funding.as_slice()
+	}
+	fn take_funding(&mut self) -> Vec<FundingProperty> {
+		std::mem::take(&mut self.r#funding)
+	}
+	fn get_has_bio_chem_entity_part(&self) -> &[HasBioChemEntityPartProperty] {
+		self.r#has_bio_chem_entity_part.as_slice()
+	}
+	fn take_has_bio_chem_entity_part(&mut self) -> Vec<HasBioChemEntityPartProperty> {
+		std::mem::take(&mut self.r#has_bio_chem_entity_part)
+	}
+	fn get_has_molecular_function(&self) -> &[HasMolecularFunctionProperty] {
+		self.r#has_molecular_function.as_slice()
+	}
+	fn take_has_molecular_function(&mut self) -> Vec<HasMolecularFunctionProperty> {
+		std::mem::take(&mut self.r#has_molecular_function)
+	}
+	fn get_has_representation(&self) -> &[HasRepresentationProperty] {
+		self.r#has_representation.as_slice()
+	}
+	fn take_has_representation(&mut self) -> Vec<HasRepresentationProperty> {
+		std::mem::take(&mut self.r#has_representation)
+	}
+	fn get_is_encoded_by_bio_chem_entity(&self) -> &[IsEncodedByBioChemEntityProperty] {
+		self.r#is_encoded_by_bio_chem_entity.as_slice()
+	}
+	fn take_is_encoded_by_bio_chem_entity(&mut self) -> Vec<IsEncodedByBioChemEntityProperty> {
+		std::mem::take(&mut self.r#is_encoded_by_bio_chem_entity)
+	}
+	fn get_is_involved_in_biological_process(&self) -> &[IsInvolvedInBiologicalProcessProperty] {
+		self.r#is_involved_in_biological_process.as_slice()
+	}
+	fn take_is_involved_in_biological_process(
+		&mut self,
+	) -> Vec<IsInvolvedInBiologicalProcessProperty> {
+		std::mem::take(&mut self.r#is_involved_in_biological_process)
+	}
+	fn get_is_located_in_subcellular_location(&self) -> &[IsLocatedInSubcellularLocationProperty] {
+		self.r#is_located_in_subcellular_location.as_slice()
+	}
+	fn take_is_located_in_subcellular_location(
+		&mut self,
+	) -> Vec<IsLocatedInSubcellularLocationProperty> {
+		std::mem::take(&mut self.r#is_located_in_subcellular_location)
+	}
+	fn get_is_part_of_bio_chem_entity(&self) -> &[IsPartOfBioChemEntityProperty] {
+		self.r#is_part_of_bio_chem_entity.as_slice()
+	}
+	fn take_is_part_of_bio_chem_entity(&mut self) -> Vec<IsPartOfBioChemEntityProperty> {
+		std::mem::take(&mut self.r#is_part_of_bio_chem_entity)
+	}
+	fn get_taxonomic_range(&self) -> &[TaxonomicRangeProperty] {
+		self.r#taxonomic_range.as_slice()
+	}
+	fn take_taxonomic_range(&mut self) -> Vec<TaxonomicRangeProperty> {
+		std::mem::take(&mut self.r#taxonomic_range)
+	}
+}
+impl ThingTrait for Gene {
+	fn get_additional_type(&self) -> &[AdditionalTypeProperty] {
+		self.r#additional_type.as_slice()
+	}
+	fn take_additional_type(&mut self) -> Vec<AdditionalTypeProperty> {
+		std::mem::take(&mut self.r#additional_type)
+	}
+	fn get_alternate_name(&self) -> &[AlternateNameProperty] {
+		self.r#alternate_name.as_slice()
+	}
+	fn take_alternate_name(&mut self) -> Vec<AlternateNameProperty> {
+		std::mem::take(&mut self.r#alternate_name)
+	}
+	fn get_description(&self) -> &[DescriptionProperty] {
+		self.r#description.as_slice()
+	}
+	fn take_description(&mut self) -> Vec<DescriptionProperty> {
+		std::mem::take(&mut self.r#description)
+	}
+	fn get_disambiguating_description(&self) -> &[DisambiguatingDescriptionProperty] {
+		self.r#disambiguating_description.as_slice()
+	}
+	fn take_disambiguating_description(&mut self) -> Vec<DisambiguatingDescriptionProperty> {
+		std::mem::take(&mut self.r#disambiguating_description)
+	}
+	fn get_identifier(&self) -> &[IdentifierProperty] {
+		self.r#identifier.as_slice()
+	}
+	fn take_identifier(&mut self) -> Vec<IdentifierProperty> {
+		std::mem::take(&mut self.r#identifier)
+	}
+	fn get_image(&self) -> &[ImageProperty] {
+		self.r#image.as_slice()
+	}
+	fn take_image(&mut self) -> Vec<ImageProperty> {
+		std::mem::take(&mut self.r#image)
+	}
+	fn get_main_entity_of_page(&self) -> &[MainEntityOfPageProperty] {
+		self.r#main_entity_of_page.as_slice()
+	}
+	fn take_main_entity_of_page(&mut self) -> Vec<MainEntityOfPageProperty> {
+		std::mem::take(&mut self.r#main_entity_of_page)
+	}
+	fn get_name(&self) -> &[NameProperty] {
+		self.r#name.as_slice()
+	}
+	fn take_name(&mut self) -> Vec<NameProperty> {
+		std::mem::take(&mut self.r#name)
+	}
+	fn get_potential_action(&self) -> &[PotentialActionProperty] {
+		self.r#potential_action.as_slice()
+	}
+	fn take_potential_action(&mut self) -> Vec<PotentialActionProperty> {
+		std::mem::take(&mut self.r#potential_action)
+	}
+	fn get_same_as(&self) -> &[SameAsProperty] {
+		self.r#same_as.as_slice()
+	}
+	fn take_same_as(&mut self) -> Vec<SameAsProperty> {
+		std::mem::take(&mut self.r#same_as)
+	}
+	fn get_subject_of(&self) -> &[SubjectOfProperty] {
+		self.r#subject_of.as_slice()
+	}
+	fn take_subject_of(&mut self) -> Vec<SubjectOfProperty> {
+		std::mem::take(&mut self.r#subject_of)
+	}
+	fn get_url(&self) -> &[UrlProperty] {
+		self.r#url.as_slice()
+	}
+	fn take_url(&mut self) -> Vec<UrlProperty> {
+		std::mem::take(&mut self.r#url)
+	}
 }
 #[cfg(feature = "serde")]
 mod serde {
@@ -48,75 +242,39 @@ mod serde {
 			S: Serializer,
 		{
 			let len: usize = [
-				!Vec::is_empty(&self.r#additional_type) as usize,
-				!Vec::is_empty(&self.r#alternate_name) as usize,
 				!Vec::is_empty(&self.r#alternative_of) as usize,
+				!Vec::is_empty(&self.r#encodes_bio_chem_entity) as usize,
+				!Vec::is_empty(&self.r#expressed_in) as usize,
+				!Vec::is_empty(&self.r#has_bio_polymer_sequence) as usize,
 				!Vec::is_empty(&self.r#associated_disease) as usize,
 				!Vec::is_empty(&self.r#bio_chem_interaction) as usize,
 				!Vec::is_empty(&self.r#bio_chem_similarity) as usize,
 				!Vec::is_empty(&self.r#biological_role) as usize,
-				!Vec::is_empty(&self.r#description) as usize,
-				!Vec::is_empty(&self.r#disambiguating_description) as usize,
-				!Vec::is_empty(&self.r#encodes_bio_chem_entity) as usize,
-				!Vec::is_empty(&self.r#expressed_in) as usize,
 				!Vec::is_empty(&self.r#funding) as usize,
 				!Vec::is_empty(&self.r#has_bio_chem_entity_part) as usize,
-				!Vec::is_empty(&self.r#has_bio_polymer_sequence) as usize,
 				!Vec::is_empty(&self.r#has_molecular_function) as usize,
 				!Vec::is_empty(&self.r#has_representation) as usize,
-				!Vec::is_empty(&self.r#identifier) as usize,
-				!Vec::is_empty(&self.r#image) as usize,
 				!Vec::is_empty(&self.r#is_encoded_by_bio_chem_entity) as usize,
 				!Vec::is_empty(&self.r#is_involved_in_biological_process) as usize,
 				!Vec::is_empty(&self.r#is_located_in_subcellular_location) as usize,
 				!Vec::is_empty(&self.r#is_part_of_bio_chem_entity) as usize,
+				!Vec::is_empty(&self.r#taxonomic_range) as usize,
+				!Vec::is_empty(&self.r#additional_type) as usize,
+				!Vec::is_empty(&self.r#alternate_name) as usize,
+				!Vec::is_empty(&self.r#description) as usize,
+				!Vec::is_empty(&self.r#disambiguating_description) as usize,
+				!Vec::is_empty(&self.r#identifier) as usize,
+				!Vec::is_empty(&self.r#image) as usize,
 				!Vec::is_empty(&self.r#main_entity_of_page) as usize,
 				!Vec::is_empty(&self.r#name) as usize,
 				!Vec::is_empty(&self.r#potential_action) as usize,
 				!Vec::is_empty(&self.r#same_as) as usize,
 				!Vec::is_empty(&self.r#subject_of) as usize,
-				!Vec::is_empty(&self.r#taxonomic_range) as usize,
 				!Vec::is_empty(&self.r#url) as usize,
 			]
 			.iter()
 			.sum();
 			let mut serialize_struct = Serializer::serialize_struct(serializer, "Gene", len)?;
-			if !Vec::is_empty(&self.r#additional_type) {
-				serialize_struct.serialize_field("additionalType", {
-					struct SerializeWith<'a>(&'a Vec<AdditionalTypeProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#additional_type)
-				})?;
-			} else {
-				serialize_struct.skip_field("additionalType")?;
-			}
-			if !Vec::is_empty(&self.r#alternate_name) {
-				serialize_struct.serialize_field("alternateName", {
-					struct SerializeWith<'a>(&'a Vec<AlternateNameProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#alternate_name)
-				})?;
-			} else {
-				serialize_struct.skip_field("alternateName")?;
-			}
 			if !Vec::is_empty(&self.r#alternative_of) {
 				serialize_struct.serialize_field("alternativeOf", {
 					struct SerializeWith<'a>(&'a Vec<AlternativeOfProperty>);
@@ -134,6 +292,60 @@ mod serde {
 				})?;
 			} else {
 				serialize_struct.skip_field("alternativeOf")?;
+			}
+			if !Vec::is_empty(&self.r#encodes_bio_chem_entity) {
+				serialize_struct.serialize_field("encodesBioChemEntity", {
+					struct SerializeWith<'a>(&'a Vec<EncodesBioChemEntityProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#encodes_bio_chem_entity)
+				})?;
+			} else {
+				serialize_struct.skip_field("encodesBioChemEntity")?;
+			}
+			if !Vec::is_empty(&self.r#expressed_in) {
+				serialize_struct.serialize_field("expressedIn", {
+					struct SerializeWith<'a>(&'a Vec<ExpressedInProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#expressed_in)
+				})?;
+			} else {
+				serialize_struct.skip_field("expressedIn")?;
+			}
+			if !Vec::is_empty(&self.r#has_bio_polymer_sequence) {
+				serialize_struct.serialize_field("hasBioPolymerSequence", {
+					struct SerializeWith<'a>(&'a Vec<HasBioPolymerSequenceProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#has_bio_polymer_sequence)
+				})?;
+			} else {
+				serialize_struct.skip_field("hasBioPolymerSequence")?;
 			}
 			if !Vec::is_empty(&self.r#associated_disease) {
 				serialize_struct.serialize_field("associatedDisease", {
@@ -207,78 +419,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("biologicalRole")?;
 			}
-			if !Vec::is_empty(&self.r#description) {
-				serialize_struct.serialize_field("description", {
-					struct SerializeWith<'a>(&'a Vec<DescriptionProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#description)
-				})?;
-			} else {
-				serialize_struct.skip_field("description")?;
-			}
-			if !Vec::is_empty(&self.r#disambiguating_description) {
-				serialize_struct.serialize_field("disambiguatingDescription", {
-					struct SerializeWith<'a>(&'a Vec<DisambiguatingDescriptionProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#disambiguating_description)
-				})?;
-			} else {
-				serialize_struct.skip_field("disambiguatingDescription")?;
-			}
-			if !Vec::is_empty(&self.r#encodes_bio_chem_entity) {
-				serialize_struct.serialize_field("encodesBioChemEntity", {
-					struct SerializeWith<'a>(&'a Vec<EncodesBioChemEntityProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#encodes_bio_chem_entity)
-				})?;
-			} else {
-				serialize_struct.skip_field("encodesBioChemEntity")?;
-			}
-			if !Vec::is_empty(&self.r#expressed_in) {
-				serialize_struct.serialize_field("expressedIn", {
-					struct SerializeWith<'a>(&'a Vec<ExpressedInProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#expressed_in)
-				})?;
-			} else {
-				serialize_struct.skip_field("expressedIn")?;
-			}
 			if !Vec::is_empty(&self.r#funding) {
 				serialize_struct.serialize_field("funding", {
 					struct SerializeWith<'a>(&'a Vec<FundingProperty>);
@@ -315,24 +455,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("hasBioChemEntityPart")?;
 			}
-			if !Vec::is_empty(&self.r#has_bio_polymer_sequence) {
-				serialize_struct.serialize_field("hasBioPolymerSequence", {
-					struct SerializeWith<'a>(&'a Vec<HasBioPolymerSequenceProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#has_bio_polymer_sequence)
-				})?;
-			} else {
-				serialize_struct.skip_field("hasBioPolymerSequence")?;
-			}
 			if !Vec::is_empty(&self.r#has_molecular_function) {
 				serialize_struct.serialize_field("hasMolecularFunction", {
 					struct SerializeWith<'a>(&'a Vec<HasMolecularFunctionProperty>);
@@ -368,42 +490,6 @@ mod serde {
 				})?;
 			} else {
 				serialize_struct.skip_field("hasRepresentation")?;
-			}
-			if !Vec::is_empty(&self.r#identifier) {
-				serialize_struct.serialize_field("identifier", {
-					struct SerializeWith<'a>(&'a Vec<IdentifierProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#identifier)
-				})?;
-			} else {
-				serialize_struct.skip_field("identifier")?;
-			}
-			if !Vec::is_empty(&self.r#image) {
-				serialize_struct.serialize_field("image", {
-					struct SerializeWith<'a>(&'a Vec<ImageProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#image)
-				})?;
-			} else {
-				serialize_struct.skip_field("image")?;
 			}
 			if !Vec::is_empty(&self.r#is_encoded_by_bio_chem_entity) {
 				serialize_struct.serialize_field("isEncodedByBioChemEntity", {
@@ -476,6 +562,132 @@ mod serde {
 				})?;
 			} else {
 				serialize_struct.skip_field("isPartOfBioChemEntity")?;
+			}
+			if !Vec::is_empty(&self.r#taxonomic_range) {
+				serialize_struct.serialize_field("taxonomicRange", {
+					struct SerializeWith<'a>(&'a Vec<TaxonomicRangeProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#taxonomic_range)
+				})?;
+			} else {
+				serialize_struct.skip_field("taxonomicRange")?;
+			}
+			if !Vec::is_empty(&self.r#additional_type) {
+				serialize_struct.serialize_field("additionalType", {
+					struct SerializeWith<'a>(&'a Vec<AdditionalTypeProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#additional_type)
+				})?;
+			} else {
+				serialize_struct.skip_field("additionalType")?;
+			}
+			if !Vec::is_empty(&self.r#alternate_name) {
+				serialize_struct.serialize_field("alternateName", {
+					struct SerializeWith<'a>(&'a Vec<AlternateNameProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#alternate_name)
+				})?;
+			} else {
+				serialize_struct.skip_field("alternateName")?;
+			}
+			if !Vec::is_empty(&self.r#description) {
+				serialize_struct.serialize_field("description", {
+					struct SerializeWith<'a>(&'a Vec<DescriptionProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#description)
+				})?;
+			} else {
+				serialize_struct.skip_field("description")?;
+			}
+			if !Vec::is_empty(&self.r#disambiguating_description) {
+				serialize_struct.serialize_field("disambiguatingDescription", {
+					struct SerializeWith<'a>(&'a Vec<DisambiguatingDescriptionProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#disambiguating_description)
+				})?;
+			} else {
+				serialize_struct.skip_field("disambiguatingDescription")?;
+			}
+			if !Vec::is_empty(&self.r#identifier) {
+				serialize_struct.serialize_field("identifier", {
+					struct SerializeWith<'a>(&'a Vec<IdentifierProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#identifier)
+				})?;
+			} else {
+				serialize_struct.skip_field("identifier")?;
+			}
+			if !Vec::is_empty(&self.r#image) {
+				serialize_struct.serialize_field("image", {
+					struct SerializeWith<'a>(&'a Vec<ImageProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#image)
+				})?;
+			} else {
+				serialize_struct.skip_field("image")?;
 			}
 			if !Vec::is_empty(&self.r#main_entity_of_page) {
 				serialize_struct.serialize_field("mainEntityOfPage", {
@@ -567,24 +779,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("subjectOf")?;
 			}
-			if !Vec::is_empty(&self.r#taxonomic_range) {
-				serialize_struct.serialize_field("taxonomicRange", {
-					struct SerializeWith<'a>(&'a Vec<TaxonomicRangeProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#taxonomic_range)
-				})?;
-			} else {
-				serialize_struct.skip_field("taxonomicRange")?;
-			}
 			if !Vec::is_empty(&self.r#url) {
 				serialize_struct.serialize_field("url", {
 					struct SerializeWith<'a>(&'a Vec<UrlProperty>);
@@ -612,34 +806,34 @@ mod serde {
 			D: Deserializer<'de>,
 		{
 			enum Field {
-				AdditionalType,
-				AlternateName,
 				AlternativeOf,
+				EncodesBioChemEntity,
+				ExpressedIn,
+				HasBioPolymerSequence,
 				AssociatedDisease,
 				BioChemInteraction,
 				BioChemSimilarity,
 				BiologicalRole,
-				Description,
-				DisambiguatingDescription,
-				EncodesBioChemEntity,
-				ExpressedIn,
 				Funding,
 				HasBioChemEntityPart,
-				HasBioPolymerSequence,
 				HasMolecularFunction,
 				HasRepresentation,
-				Identifier,
-				Image,
 				IsEncodedByBioChemEntity,
 				IsInvolvedInBiologicalProcess,
 				IsLocatedInSubcellularLocation,
 				IsPartOfBioChemEntity,
+				TaxonomicRange,
+				AdditionalType,
+				AlternateName,
+				Description,
+				DisambiguatingDescription,
+				Identifier,
+				Image,
 				MainEntityOfPage,
 				Name,
 				PotentialAction,
 				SameAs,
 				SubjectOf,
-				TaxonomicRange,
 				Url,
 				Ignore,
 			}
@@ -654,36 +848,36 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
-						"additionalType" => Ok(Field::AdditionalType),
-						"alternateName" => Ok(Field::AlternateName),
 						"alternativeOf" => Ok(Field::AlternativeOf),
+						"encodesBioChemEntity" => Ok(Field::EncodesBioChemEntity),
+						"expressedIn" => Ok(Field::ExpressedIn),
+						"hasBioPolymerSequence" => Ok(Field::HasBioPolymerSequence),
 						"associatedDisease" => Ok(Field::AssociatedDisease),
 						"bioChemInteraction" => Ok(Field::BioChemInteraction),
 						"bioChemSimilarity" => Ok(Field::BioChemSimilarity),
 						"biologicalRole" => Ok(Field::BiologicalRole),
-						"description" => Ok(Field::Description),
-						"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
-						"encodesBioChemEntity" => Ok(Field::EncodesBioChemEntity),
-						"expressedIn" => Ok(Field::ExpressedIn),
 						"funding" => Ok(Field::Funding),
 						"hasBioChemEntityPart" => Ok(Field::HasBioChemEntityPart),
-						"hasBioPolymerSequence" => Ok(Field::HasBioPolymerSequence),
 						"hasMolecularFunction" => Ok(Field::HasMolecularFunction),
 						"hasRepresentation" => Ok(Field::HasRepresentation),
-						"identifier" => Ok(Field::Identifier),
-						"image" => Ok(Field::Image),
 						"isEncodedByBioChemEntity" => Ok(Field::IsEncodedByBioChemEntity),
 						"isInvolvedInBiologicalProcess" => Ok(Field::IsInvolvedInBiologicalProcess),
 						"isLocatedInSubcellularLocation" => {
 							Ok(Field::IsLocatedInSubcellularLocation)
 						}
 						"isPartOfBioChemEntity" => Ok(Field::IsPartOfBioChemEntity),
+						"taxonomicRange" => Ok(Field::TaxonomicRange),
+						"additionalType" => Ok(Field::AdditionalType),
+						"alternateName" => Ok(Field::AlternateName),
+						"description" => Ok(Field::Description),
+						"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
+						"identifier" => Ok(Field::Identifier),
+						"image" => Ok(Field::Image),
 						"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
 						"name" => Ok(Field::Name),
 						"potentialAction" => Ok(Field::PotentialAction),
 						"sameAs" => Ok(Field::SameAs),
 						"subjectOf" => Ok(Field::SubjectOf),
-						"taxonomicRange" => Ok(Field::TaxonomicRange),
 						"url" => Ok(Field::Url),
 						_ => Ok(Field::Ignore),
 					}
@@ -693,24 +887,18 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
-						b"additionalType" => Ok(Field::AdditionalType),
-						b"alternateName" => Ok(Field::AlternateName),
 						b"alternativeOf" => Ok(Field::AlternativeOf),
+						b"encodesBioChemEntity" => Ok(Field::EncodesBioChemEntity),
+						b"expressedIn" => Ok(Field::ExpressedIn),
+						b"hasBioPolymerSequence" => Ok(Field::HasBioPolymerSequence),
 						b"associatedDisease" => Ok(Field::AssociatedDisease),
 						b"bioChemInteraction" => Ok(Field::BioChemInteraction),
 						b"bioChemSimilarity" => Ok(Field::BioChemSimilarity),
 						b"biologicalRole" => Ok(Field::BiologicalRole),
-						b"description" => Ok(Field::Description),
-						b"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
-						b"encodesBioChemEntity" => Ok(Field::EncodesBioChemEntity),
-						b"expressedIn" => Ok(Field::ExpressedIn),
 						b"funding" => Ok(Field::Funding),
 						b"hasBioChemEntityPart" => Ok(Field::HasBioChemEntityPart),
-						b"hasBioPolymerSequence" => Ok(Field::HasBioPolymerSequence),
 						b"hasMolecularFunction" => Ok(Field::HasMolecularFunction),
 						b"hasRepresentation" => Ok(Field::HasRepresentation),
-						b"identifier" => Ok(Field::Identifier),
-						b"image" => Ok(Field::Image),
 						b"isEncodedByBioChemEntity" => Ok(Field::IsEncodedByBioChemEntity),
 						b"isInvolvedInBiologicalProcess" => {
 							Ok(Field::IsInvolvedInBiologicalProcess)
@@ -719,12 +907,18 @@ mod serde {
 							Ok(Field::IsLocatedInSubcellularLocation)
 						}
 						b"isPartOfBioChemEntity" => Ok(Field::IsPartOfBioChemEntity),
+						b"taxonomicRange" => Ok(Field::TaxonomicRange),
+						b"additionalType" => Ok(Field::AdditionalType),
+						b"alternateName" => Ok(Field::AlternateName),
+						b"description" => Ok(Field::Description),
+						b"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
+						b"identifier" => Ok(Field::Identifier),
+						b"image" => Ok(Field::Image),
 						b"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
 						b"name" => Ok(Field::Name),
 						b"potentialAction" => Ok(Field::PotentialAction),
 						b"sameAs" => Ok(Field::SameAs),
 						b"subjectOf" => Ok(Field::SubjectOf),
-						b"taxonomicRange" => Ok(Field::TaxonomicRange),
 						b"url" => Ok(Field::Url),
 						_ => Ok(Field::Ignore),
 					}
@@ -748,89 +942,37 @@ mod serde {
 				where
 					A: de::MapAccess<'de>,
 				{
-					let mut r#additional_type_property = None;
-					let mut r#alternate_name_property = None;
 					let mut r#alternative_of_property = None;
+					let mut r#encodes_bio_chem_entity_property = None;
+					let mut r#expressed_in_property = None;
+					let mut r#has_bio_polymer_sequence_property = None;
 					let mut r#associated_disease_property = None;
 					let mut r#bio_chem_interaction_property = None;
 					let mut r#bio_chem_similarity_property = None;
 					let mut r#biological_role_property = None;
-					let mut r#description_property = None;
-					let mut r#disambiguating_description_property = None;
-					let mut r#encodes_bio_chem_entity_property = None;
-					let mut r#expressed_in_property = None;
 					let mut r#funding_property = None;
 					let mut r#has_bio_chem_entity_part_property = None;
-					let mut r#has_bio_polymer_sequence_property = None;
 					let mut r#has_molecular_function_property = None;
 					let mut r#has_representation_property = None;
-					let mut r#identifier_property = None;
-					let mut r#image_property = None;
 					let mut r#is_encoded_by_bio_chem_entity_property = None;
 					let mut r#is_involved_in_biological_process_property = None;
 					let mut r#is_located_in_subcellular_location_property = None;
 					let mut r#is_part_of_bio_chem_entity_property = None;
+					let mut r#taxonomic_range_property = None;
+					let mut r#additional_type_property = None;
+					let mut r#alternate_name_property = None;
+					let mut r#description_property = None;
+					let mut r#disambiguating_description_property = None;
+					let mut r#identifier_property = None;
+					let mut r#image_property = None;
 					let mut r#main_entity_of_page_property = None;
 					let mut r#name_property = None;
 					let mut r#potential_action_property = None;
 					let mut r#same_as_property = None;
 					let mut r#subject_of_property = None;
-					let mut r#taxonomic_range_property = None;
 					let mut r#url_property = None;
 					while let Some(key) = map.next_key::<Field>()? {
 						match key {
-							Field::AdditionalType => {
-								if r#additional_type_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"additionalType",
-									));
-								}
-								r#additional_type_property = Some({
-									struct DeserializeWith(Vec<AdditionalTypeProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::AlternateName => {
-								if r#alternate_name_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"alternateName",
-									));
-								}
-								r#alternate_name_property = Some({
-									struct DeserializeWith(Vec<AlternateNameProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
 							Field::AlternativeOf => {
 								if r#alternative_of_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -839,6 +981,84 @@ mod serde {
 								}
 								r#alternative_of_property = Some({
 									struct DeserializeWith(Vec<AlternativeOfProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::EncodesBioChemEntity => {
+								if r#encodes_bio_chem_entity_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"encodesBioChemEntity",
+									));
+								}
+								r#encodes_bio_chem_entity_property = Some({
+									struct DeserializeWith(Vec<EncodesBioChemEntityProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::ExpressedIn => {
+								if r#expressed_in_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"expressedIn",
+									));
+								}
+								r#expressed_in_property = Some({
+									struct DeserializeWith(Vec<ExpressedInProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::HasBioPolymerSequence => {
+								if r#has_bio_polymer_sequence_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"hasBioPolymerSequence",
+									));
+								}
+								r#has_bio_polymer_sequence_property = Some({
+									struct DeserializeWith(Vec<HasBioPolymerSequenceProperty>);
 									impl<'de> Deserialize<'de> for DeserializeWith {
 										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
 										where
@@ -961,110 +1181,6 @@ mod serde {
 									}
 								});
 							}
-							Field::Description => {
-								if r#description_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"description",
-									));
-								}
-								r#description_property = Some({
-									struct DeserializeWith(Vec<DescriptionProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::DisambiguatingDescription => {
-								if r#disambiguating_description_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"disambiguatingDescription",
-									));
-								}
-								r#disambiguating_description_property = Some({
-									struct DeserializeWith(Vec<DisambiguatingDescriptionProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::EncodesBioChemEntity => {
-								if r#encodes_bio_chem_entity_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"encodesBioChemEntity",
-									));
-								}
-								r#encodes_bio_chem_entity_property = Some({
-									struct DeserializeWith(Vec<EncodesBioChemEntityProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::ExpressedIn => {
-								if r#expressed_in_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"expressedIn",
-									));
-								}
-								r#expressed_in_property = Some({
-									struct DeserializeWith(Vec<ExpressedInProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
 							Field::Funding => {
 								if r#funding_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -1117,32 +1233,6 @@ mod serde {
 									}
 								});
 							}
-							Field::HasBioPolymerSequence => {
-								if r#has_bio_polymer_sequence_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"hasBioPolymerSequence",
-									));
-								}
-								r#has_bio_polymer_sequence_property = Some({
-									struct DeserializeWith(Vec<HasBioPolymerSequenceProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
 							Field::HasMolecularFunction => {
 								if r#has_molecular_function_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -1177,56 +1267,6 @@ mod serde {
 								}
 								r#has_representation_property = Some({
 									struct DeserializeWith(Vec<HasRepresentationProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::Identifier => {
-								if r#identifier_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"identifier",
-									));
-								}
-								r#identifier_property = Some({
-									struct DeserializeWith(Vec<IdentifierProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::Image => {
-								if r#image_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field("image"));
-								}
-								r#image_property = Some({
-									struct DeserializeWith(Vec<ImageProperty>);
 									impl<'de> Deserialize<'de> for DeserializeWith {
 										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
 										where
@@ -1335,6 +1375,186 @@ mod serde {
 								}
 								r#is_part_of_bio_chem_entity_property = Some({
 									struct DeserializeWith(Vec<IsPartOfBioChemEntityProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::TaxonomicRange => {
+								if r#taxonomic_range_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"taxonomicRange",
+									));
+								}
+								r#taxonomic_range_property = Some({
+									struct DeserializeWith(Vec<TaxonomicRangeProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::AdditionalType => {
+								if r#additional_type_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"additionalType",
+									));
+								}
+								r#additional_type_property = Some({
+									struct DeserializeWith(Vec<AdditionalTypeProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::AlternateName => {
+								if r#alternate_name_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"alternateName",
+									));
+								}
+								r#alternate_name_property = Some({
+									struct DeserializeWith(Vec<AlternateNameProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::Description => {
+								if r#description_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"description",
+									));
+								}
+								r#description_property = Some({
+									struct DeserializeWith(Vec<DescriptionProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::DisambiguatingDescription => {
+								if r#disambiguating_description_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"disambiguatingDescription",
+									));
+								}
+								r#disambiguating_description_property = Some({
+									struct DeserializeWith(Vec<DisambiguatingDescriptionProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::Identifier => {
+								if r#identifier_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"identifier",
+									));
+								}
+								r#identifier_property = Some({
+									struct DeserializeWith(Vec<IdentifierProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::Image => {
+								if r#image_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field("image"));
+								}
+								r#image_property = Some({
+									struct DeserializeWith(Vec<ImageProperty>);
 									impl<'de> Deserialize<'de> for DeserializeWith {
 										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
 										where
@@ -1479,32 +1699,6 @@ mod serde {
 									}
 								});
 							}
-							Field::TaxonomicRange => {
-								if r#taxonomic_range_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"taxonomicRange",
-									));
-								}
-								r#taxonomic_range_property = Some({
-									struct DeserializeWith(Vec<TaxonomicRangeProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
 							Field::Url => {
 								if r#url_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("url"));
@@ -1535,29 +1729,22 @@ mod serde {
 						}
 					}
 					Ok(Gene {
-						r#additional_type: r#additional_type_property.unwrap_or_default(),
-						r#alternate_name: r#alternate_name_property.unwrap_or_default(),
 						r#alternative_of: r#alternative_of_property.unwrap_or_default(),
+						r#encodes_bio_chem_entity: r#encodes_bio_chem_entity_property
+							.unwrap_or_default(),
+						r#expressed_in: r#expressed_in_property.unwrap_or_default(),
+						r#has_bio_polymer_sequence: r#has_bio_polymer_sequence_property
+							.unwrap_or_default(),
 						r#associated_disease: r#associated_disease_property.unwrap_or_default(),
 						r#bio_chem_interaction: r#bio_chem_interaction_property.unwrap_or_default(),
 						r#bio_chem_similarity: r#bio_chem_similarity_property.unwrap_or_default(),
 						r#biological_role: r#biological_role_property.unwrap_or_default(),
-						r#description: r#description_property.unwrap_or_default(),
-						r#disambiguating_description: r#disambiguating_description_property
-							.unwrap_or_default(),
-						r#encodes_bio_chem_entity: r#encodes_bio_chem_entity_property
-							.unwrap_or_default(),
-						r#expressed_in: r#expressed_in_property.unwrap_or_default(),
 						r#funding: r#funding_property.unwrap_or_default(),
 						r#has_bio_chem_entity_part: r#has_bio_chem_entity_part_property
-							.unwrap_or_default(),
-						r#has_bio_polymer_sequence: r#has_bio_polymer_sequence_property
 							.unwrap_or_default(),
 						r#has_molecular_function: r#has_molecular_function_property
 							.unwrap_or_default(),
 						r#has_representation: r#has_representation_property.unwrap_or_default(),
-						r#identifier: r#identifier_property.unwrap_or_default(),
-						r#image: r#image_property.unwrap_or_default(),
 						r#is_encoded_by_bio_chem_entity: r#is_encoded_by_bio_chem_entity_property
 							.unwrap_or_default(),
 						r#is_involved_in_biological_process:
@@ -1566,45 +1753,52 @@ mod serde {
 							r#is_located_in_subcellular_location_property.unwrap_or_default(),
 						r#is_part_of_bio_chem_entity: r#is_part_of_bio_chem_entity_property
 							.unwrap_or_default(),
+						r#taxonomic_range: r#taxonomic_range_property.unwrap_or_default(),
+						r#additional_type: r#additional_type_property.unwrap_or_default(),
+						r#alternate_name: r#alternate_name_property.unwrap_or_default(),
+						r#description: r#description_property.unwrap_or_default(),
+						r#disambiguating_description: r#disambiguating_description_property
+							.unwrap_or_default(),
+						r#identifier: r#identifier_property.unwrap_or_default(),
+						r#image: r#image_property.unwrap_or_default(),
 						r#main_entity_of_page: r#main_entity_of_page_property.unwrap_or_default(),
 						r#name: r#name_property.unwrap_or_default(),
 						r#potential_action: r#potential_action_property.unwrap_or_default(),
 						r#same_as: r#same_as_property.unwrap_or_default(),
 						r#subject_of: r#subject_of_property.unwrap_or_default(),
-						r#taxonomic_range: r#taxonomic_range_property.unwrap_or_default(),
 						r#url: r#url_property.unwrap_or_default(),
 					})
 				}
 			}
 			const FIELDS: &[&str] = &[
-				"additionalType",
-				"alternateName",
 				"alternativeOf",
+				"encodesBioChemEntity",
+				"expressedIn",
+				"hasBioPolymerSequence",
 				"associatedDisease",
 				"bioChemInteraction",
 				"bioChemSimilarity",
 				"biologicalRole",
-				"description",
-				"disambiguatingDescription",
-				"encodesBioChemEntity",
-				"expressedIn",
 				"funding",
 				"hasBioChemEntityPart",
-				"hasBioPolymerSequence",
 				"hasMolecularFunction",
 				"hasRepresentation",
-				"identifier",
-				"image",
 				"isEncodedByBioChemEntity",
 				"isInvolvedInBiologicalProcess",
 				"isLocatedInSubcellularLocation",
 				"isPartOfBioChemEntity",
+				"taxonomicRange",
+				"additionalType",
+				"alternateName",
+				"description",
+				"disambiguatingDescription",
+				"identifier",
+				"image",
 				"mainEntityOfPage",
 				"name",
 				"potentialAction",
 				"sameAs",
 				"subjectOf",
-				"taxonomicRange",
 				"url",
 			];
 			deserializer.deserialize_struct("Gene", FIELDS, ClassVisitor)

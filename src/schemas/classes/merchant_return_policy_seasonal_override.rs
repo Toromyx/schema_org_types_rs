@@ -3,22 +3,132 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct MerchantReturnPolicySeasonalOverride {
+	pub r#end_date: Vec<EndDateProperty>,
+	pub r#merchant_return_days: Vec<MerchantReturnDaysProperty>,
+	pub r#return_policy_category: Vec<ReturnPolicyCategoryProperty>,
+	pub r#start_date: Vec<StartDateProperty>,
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
 	pub r#alternate_name: Vec<AlternateNameProperty>,
 	pub r#description: Vec<DescriptionProperty>,
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
-	pub r#end_date: Vec<EndDateProperty>,
 	pub r#identifier: Vec<IdentifierProperty>,
 	pub r#image: Vec<ImageProperty>,
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
-	pub r#merchant_return_days: Vec<MerchantReturnDaysProperty>,
 	pub r#name: Vec<NameProperty>,
 	pub r#potential_action: Vec<PotentialActionProperty>,
-	pub r#return_policy_category: Vec<ReturnPolicyCategoryProperty>,
 	pub r#same_as: Vec<SameAsProperty>,
-	pub r#start_date: Vec<StartDateProperty>,
 	pub r#subject_of: Vec<SubjectOfProperty>,
 	pub r#url: Vec<UrlProperty>,
+}
+pub trait MerchantReturnPolicySeasonalOverrideTrait {
+	fn get_end_date(&self) -> &[EndDateProperty];
+	fn take_end_date(&mut self) -> Vec<EndDateProperty>;
+	fn get_merchant_return_days(&self) -> &[MerchantReturnDaysProperty];
+	fn take_merchant_return_days(&mut self) -> Vec<MerchantReturnDaysProperty>;
+	fn get_return_policy_category(&self) -> &[ReturnPolicyCategoryProperty];
+	fn take_return_policy_category(&mut self) -> Vec<ReturnPolicyCategoryProperty>;
+	fn get_start_date(&self) -> &[StartDateProperty];
+	fn take_start_date(&mut self) -> Vec<StartDateProperty>;
+}
+impl MerchantReturnPolicySeasonalOverrideTrait for MerchantReturnPolicySeasonalOverride {
+	fn get_end_date(&self) -> &[EndDateProperty] {
+		self.r#end_date.as_slice()
+	}
+	fn take_end_date(&mut self) -> Vec<EndDateProperty> {
+		std::mem::take(&mut self.r#end_date)
+	}
+	fn get_merchant_return_days(&self) -> &[MerchantReturnDaysProperty] {
+		self.r#merchant_return_days.as_slice()
+	}
+	fn take_merchant_return_days(&mut self) -> Vec<MerchantReturnDaysProperty> {
+		std::mem::take(&mut self.r#merchant_return_days)
+	}
+	fn get_return_policy_category(&self) -> &[ReturnPolicyCategoryProperty] {
+		self.r#return_policy_category.as_slice()
+	}
+	fn take_return_policy_category(&mut self) -> Vec<ReturnPolicyCategoryProperty> {
+		std::mem::take(&mut self.r#return_policy_category)
+	}
+	fn get_start_date(&self) -> &[StartDateProperty] {
+		self.r#start_date.as_slice()
+	}
+	fn take_start_date(&mut self) -> Vec<StartDateProperty> {
+		std::mem::take(&mut self.r#start_date)
+	}
+}
+impl ThingTrait for MerchantReturnPolicySeasonalOverride {
+	fn get_additional_type(&self) -> &[AdditionalTypeProperty] {
+		self.r#additional_type.as_slice()
+	}
+	fn take_additional_type(&mut self) -> Vec<AdditionalTypeProperty> {
+		std::mem::take(&mut self.r#additional_type)
+	}
+	fn get_alternate_name(&self) -> &[AlternateNameProperty] {
+		self.r#alternate_name.as_slice()
+	}
+	fn take_alternate_name(&mut self) -> Vec<AlternateNameProperty> {
+		std::mem::take(&mut self.r#alternate_name)
+	}
+	fn get_description(&self) -> &[DescriptionProperty] {
+		self.r#description.as_slice()
+	}
+	fn take_description(&mut self) -> Vec<DescriptionProperty> {
+		std::mem::take(&mut self.r#description)
+	}
+	fn get_disambiguating_description(&self) -> &[DisambiguatingDescriptionProperty] {
+		self.r#disambiguating_description.as_slice()
+	}
+	fn take_disambiguating_description(&mut self) -> Vec<DisambiguatingDescriptionProperty> {
+		std::mem::take(&mut self.r#disambiguating_description)
+	}
+	fn get_identifier(&self) -> &[IdentifierProperty] {
+		self.r#identifier.as_slice()
+	}
+	fn take_identifier(&mut self) -> Vec<IdentifierProperty> {
+		std::mem::take(&mut self.r#identifier)
+	}
+	fn get_image(&self) -> &[ImageProperty] {
+		self.r#image.as_slice()
+	}
+	fn take_image(&mut self) -> Vec<ImageProperty> {
+		std::mem::take(&mut self.r#image)
+	}
+	fn get_main_entity_of_page(&self) -> &[MainEntityOfPageProperty] {
+		self.r#main_entity_of_page.as_slice()
+	}
+	fn take_main_entity_of_page(&mut self) -> Vec<MainEntityOfPageProperty> {
+		std::mem::take(&mut self.r#main_entity_of_page)
+	}
+	fn get_name(&self) -> &[NameProperty] {
+		self.r#name.as_slice()
+	}
+	fn take_name(&mut self) -> Vec<NameProperty> {
+		std::mem::take(&mut self.r#name)
+	}
+	fn get_potential_action(&self) -> &[PotentialActionProperty] {
+		self.r#potential_action.as_slice()
+	}
+	fn take_potential_action(&mut self) -> Vec<PotentialActionProperty> {
+		std::mem::take(&mut self.r#potential_action)
+	}
+	fn get_same_as(&self) -> &[SameAsProperty] {
+		self.r#same_as.as_slice()
+	}
+	fn take_same_as(&mut self) -> Vec<SameAsProperty> {
+		std::mem::take(&mut self.r#same_as)
+	}
+	fn get_subject_of(&self) -> &[SubjectOfProperty] {
+		self.r#subject_of.as_slice()
+	}
+	fn take_subject_of(&mut self) -> Vec<SubjectOfProperty> {
+		std::mem::take(&mut self.r#subject_of)
+	}
+	fn get_url(&self) -> &[UrlProperty] {
+		self.r#url.as_slice()
+	}
+	fn take_url(&mut self) -> Vec<UrlProperty> {
+		std::mem::take(&mut self.r#url)
+	}
 }
 #[cfg(feature = "serde")]
 mod serde {
@@ -35,20 +145,20 @@ mod serde {
 			S: Serializer,
 		{
 			let len: usize = [
+				!Vec::is_empty(&self.r#end_date) as usize,
+				!Vec::is_empty(&self.r#merchant_return_days) as usize,
+				!Vec::is_empty(&self.r#return_policy_category) as usize,
+				!Vec::is_empty(&self.r#start_date) as usize,
 				!Vec::is_empty(&self.r#additional_type) as usize,
 				!Vec::is_empty(&self.r#alternate_name) as usize,
 				!Vec::is_empty(&self.r#description) as usize,
 				!Vec::is_empty(&self.r#disambiguating_description) as usize,
-				!Vec::is_empty(&self.r#end_date) as usize,
 				!Vec::is_empty(&self.r#identifier) as usize,
 				!Vec::is_empty(&self.r#image) as usize,
 				!Vec::is_empty(&self.r#main_entity_of_page) as usize,
-				!Vec::is_empty(&self.r#merchant_return_days) as usize,
 				!Vec::is_empty(&self.r#name) as usize,
 				!Vec::is_empty(&self.r#potential_action) as usize,
-				!Vec::is_empty(&self.r#return_policy_category) as usize,
 				!Vec::is_empty(&self.r#same_as) as usize,
-				!Vec::is_empty(&self.r#start_date) as usize,
 				!Vec::is_empty(&self.r#subject_of) as usize,
 				!Vec::is_empty(&self.r#url) as usize,
 			]
@@ -59,6 +169,78 @@ mod serde {
 				"MerchantReturnPolicySeasonalOverride",
 				len,
 			)?;
+			if !Vec::is_empty(&self.r#end_date) {
+				serialize_struct.serialize_field("endDate", {
+					struct SerializeWith<'a>(&'a Vec<EndDateProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#end_date)
+				})?;
+			} else {
+				serialize_struct.skip_field("endDate")?;
+			}
+			if !Vec::is_empty(&self.r#merchant_return_days) {
+				serialize_struct.serialize_field("merchantReturnDays", {
+					struct SerializeWith<'a>(&'a Vec<MerchantReturnDaysProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#merchant_return_days)
+				})?;
+			} else {
+				serialize_struct.skip_field("merchantReturnDays")?;
+			}
+			if !Vec::is_empty(&self.r#return_policy_category) {
+				serialize_struct.serialize_field("returnPolicyCategory", {
+					struct SerializeWith<'a>(&'a Vec<ReturnPolicyCategoryProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#return_policy_category)
+				})?;
+			} else {
+				serialize_struct.skip_field("returnPolicyCategory")?;
+			}
+			if !Vec::is_empty(&self.r#start_date) {
+				serialize_struct.serialize_field("startDate", {
+					struct SerializeWith<'a>(&'a Vec<StartDateProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#start_date)
+				})?;
+			} else {
+				serialize_struct.skip_field("startDate")?;
+			}
 			if !Vec::is_empty(&self.r#additional_type) {
 				serialize_struct.serialize_field("additionalType", {
 					struct SerializeWith<'a>(&'a Vec<AdditionalTypeProperty>);
@@ -131,24 +313,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("disambiguatingDescription")?;
 			}
-			if !Vec::is_empty(&self.r#end_date) {
-				serialize_struct.serialize_field("endDate", {
-					struct SerializeWith<'a>(&'a Vec<EndDateProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#end_date)
-				})?;
-			} else {
-				serialize_struct.skip_field("endDate")?;
-			}
 			if !Vec::is_empty(&self.r#identifier) {
 				serialize_struct.serialize_field("identifier", {
 					struct SerializeWith<'a>(&'a Vec<IdentifierProperty>);
@@ -203,24 +367,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("mainEntityOfPage")?;
 			}
-			if !Vec::is_empty(&self.r#merchant_return_days) {
-				serialize_struct.serialize_field("merchantReturnDays", {
-					struct SerializeWith<'a>(&'a Vec<MerchantReturnDaysProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#merchant_return_days)
-				})?;
-			} else {
-				serialize_struct.skip_field("merchantReturnDays")?;
-			}
 			if !Vec::is_empty(&self.r#name) {
 				serialize_struct.serialize_field("name", {
 					struct SerializeWith<'a>(&'a Vec<NameProperty>);
@@ -257,24 +403,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("potentialAction")?;
 			}
-			if !Vec::is_empty(&self.r#return_policy_category) {
-				serialize_struct.serialize_field("returnPolicyCategory", {
-					struct SerializeWith<'a>(&'a Vec<ReturnPolicyCategoryProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#return_policy_category)
-				})?;
-			} else {
-				serialize_struct.skip_field("returnPolicyCategory")?;
-			}
 			if !Vec::is_empty(&self.r#same_as) {
 				serialize_struct.serialize_field("sameAs", {
 					struct SerializeWith<'a>(&'a Vec<SameAsProperty>);
@@ -292,24 +420,6 @@ mod serde {
 				})?;
 			} else {
 				serialize_struct.skip_field("sameAs")?;
-			}
-			if !Vec::is_empty(&self.r#start_date) {
-				serialize_struct.serialize_field("startDate", {
-					struct SerializeWith<'a>(&'a Vec<StartDateProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#start_date)
-				})?;
-			} else {
-				serialize_struct.skip_field("startDate")?;
 			}
 			if !Vec::is_empty(&self.r#subject_of) {
 				serialize_struct.serialize_field("subjectOf", {
@@ -356,20 +466,20 @@ mod serde {
 			D: Deserializer<'de>,
 		{
 			enum Field {
+				EndDate,
+				MerchantReturnDays,
+				ReturnPolicyCategory,
+				StartDate,
 				AdditionalType,
 				AlternateName,
 				Description,
 				DisambiguatingDescription,
-				EndDate,
 				Identifier,
 				Image,
 				MainEntityOfPage,
-				MerchantReturnDays,
 				Name,
 				PotentialAction,
-				ReturnPolicyCategory,
 				SameAs,
-				StartDate,
 				SubjectOf,
 				Url,
 				Ignore,
@@ -385,20 +495,20 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
+						"endDate" => Ok(Field::EndDate),
+						"merchantReturnDays" => Ok(Field::MerchantReturnDays),
+						"returnPolicyCategory" => Ok(Field::ReturnPolicyCategory),
+						"startDate" => Ok(Field::StartDate),
 						"additionalType" => Ok(Field::AdditionalType),
 						"alternateName" => Ok(Field::AlternateName),
 						"description" => Ok(Field::Description),
 						"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
-						"endDate" => Ok(Field::EndDate),
 						"identifier" => Ok(Field::Identifier),
 						"image" => Ok(Field::Image),
 						"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
-						"merchantReturnDays" => Ok(Field::MerchantReturnDays),
 						"name" => Ok(Field::Name),
 						"potentialAction" => Ok(Field::PotentialAction),
-						"returnPolicyCategory" => Ok(Field::ReturnPolicyCategory),
 						"sameAs" => Ok(Field::SameAs),
-						"startDate" => Ok(Field::StartDate),
 						"subjectOf" => Ok(Field::SubjectOf),
 						"url" => Ok(Field::Url),
 						_ => Ok(Field::Ignore),
@@ -409,20 +519,20 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
+						b"endDate" => Ok(Field::EndDate),
+						b"merchantReturnDays" => Ok(Field::MerchantReturnDays),
+						b"returnPolicyCategory" => Ok(Field::ReturnPolicyCategory),
+						b"startDate" => Ok(Field::StartDate),
 						b"additionalType" => Ok(Field::AdditionalType),
 						b"alternateName" => Ok(Field::AlternateName),
 						b"description" => Ok(Field::Description),
 						b"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
-						b"endDate" => Ok(Field::EndDate),
 						b"identifier" => Ok(Field::Identifier),
 						b"image" => Ok(Field::Image),
 						b"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
-						b"merchantReturnDays" => Ok(Field::MerchantReturnDays),
 						b"name" => Ok(Field::Name),
 						b"potentialAction" => Ok(Field::PotentialAction),
-						b"returnPolicyCategory" => Ok(Field::ReturnPolicyCategory),
 						b"sameAs" => Ok(Field::SameAs),
-						b"startDate" => Ok(Field::StartDate),
 						b"subjectOf" => Ok(Field::SubjectOf),
 						b"url" => Ok(Field::Url),
 						_ => Ok(Field::Ignore),
@@ -447,24 +557,128 @@ mod serde {
 				where
 					A: de::MapAccess<'de>,
 				{
+					let mut r#end_date_property = None;
+					let mut r#merchant_return_days_property = None;
+					let mut r#return_policy_category_property = None;
+					let mut r#start_date_property = None;
 					let mut r#additional_type_property = None;
 					let mut r#alternate_name_property = None;
 					let mut r#description_property = None;
 					let mut r#disambiguating_description_property = None;
-					let mut r#end_date_property = None;
 					let mut r#identifier_property = None;
 					let mut r#image_property = None;
 					let mut r#main_entity_of_page_property = None;
-					let mut r#merchant_return_days_property = None;
 					let mut r#name_property = None;
 					let mut r#potential_action_property = None;
-					let mut r#return_policy_category_property = None;
 					let mut r#same_as_property = None;
-					let mut r#start_date_property = None;
 					let mut r#subject_of_property = None;
 					let mut r#url_property = None;
 					while let Some(key) = map.next_key::<Field>()? {
 						match key {
+							Field::EndDate => {
+								if r#end_date_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"endDate",
+									));
+								}
+								r#end_date_property = Some({
+									struct DeserializeWith(Vec<EndDateProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::MerchantReturnDays => {
+								if r#merchant_return_days_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"merchantReturnDays",
+									));
+								}
+								r#merchant_return_days_property = Some({
+									struct DeserializeWith(Vec<MerchantReturnDaysProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::ReturnPolicyCategory => {
+								if r#return_policy_category_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"returnPolicyCategory",
+									));
+								}
+								r#return_policy_category_property = Some({
+									struct DeserializeWith(Vec<ReturnPolicyCategoryProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::StartDate => {
+								if r#start_date_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"startDate",
+									));
+								}
+								r#start_date_property = Some({
+									struct DeserializeWith(Vec<StartDateProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
 							Field::AdditionalType => {
 								if r#additional_type_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -569,32 +783,6 @@ mod serde {
 									}
 								});
 							}
-							Field::EndDate => {
-								if r#end_date_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"endDate",
-									));
-								}
-								r#end_date_property = Some({
-									struct DeserializeWith(Vec<EndDateProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
 							Field::Identifier => {
 								if r#identifier_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -671,32 +859,6 @@ mod serde {
 									}
 								});
 							}
-							Field::MerchantReturnDays => {
-								if r#merchant_return_days_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"merchantReturnDays",
-									));
-								}
-								r#merchant_return_days_property = Some({
-									struct DeserializeWith(Vec<MerchantReturnDaysProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
 							Field::Name => {
 								if r#name_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("name"));
@@ -747,64 +909,12 @@ mod serde {
 									}
 								});
 							}
-							Field::ReturnPolicyCategory => {
-								if r#return_policy_category_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"returnPolicyCategory",
-									));
-								}
-								r#return_policy_category_property = Some({
-									struct DeserializeWith(Vec<ReturnPolicyCategoryProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
 							Field::SameAs => {
 								if r#same_as_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("sameAs"));
 								}
 								r#same_as_property = Some({
 									struct DeserializeWith(Vec<SameAsProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::StartDate => {
-								if r#start_date_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"startDate",
-									));
-								}
-								r#start_date_property = Some({
-									struct DeserializeWith(Vec<StartDateProperty>);
 									impl<'de> Deserialize<'de> for DeserializeWith {
 										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
 										where
@@ -879,42 +989,42 @@ mod serde {
 						}
 					}
 					Ok(MerchantReturnPolicySeasonalOverride {
+						r#end_date: r#end_date_property.unwrap_or_default(),
+						r#merchant_return_days: r#merchant_return_days_property.unwrap_or_default(),
+						r#return_policy_category: r#return_policy_category_property
+							.unwrap_or_default(),
+						r#start_date: r#start_date_property.unwrap_or_default(),
 						r#additional_type: r#additional_type_property.unwrap_or_default(),
 						r#alternate_name: r#alternate_name_property.unwrap_or_default(),
 						r#description: r#description_property.unwrap_or_default(),
 						r#disambiguating_description: r#disambiguating_description_property
 							.unwrap_or_default(),
-						r#end_date: r#end_date_property.unwrap_or_default(),
 						r#identifier: r#identifier_property.unwrap_or_default(),
 						r#image: r#image_property.unwrap_or_default(),
 						r#main_entity_of_page: r#main_entity_of_page_property.unwrap_or_default(),
-						r#merchant_return_days: r#merchant_return_days_property.unwrap_or_default(),
 						r#name: r#name_property.unwrap_or_default(),
 						r#potential_action: r#potential_action_property.unwrap_or_default(),
-						r#return_policy_category: r#return_policy_category_property
-							.unwrap_or_default(),
 						r#same_as: r#same_as_property.unwrap_or_default(),
-						r#start_date: r#start_date_property.unwrap_or_default(),
 						r#subject_of: r#subject_of_property.unwrap_or_default(),
 						r#url: r#url_property.unwrap_or_default(),
 					})
 				}
 			}
 			const FIELDS: &[&str] = &[
+				"endDate",
+				"merchantReturnDays",
+				"returnPolicyCategory",
+				"startDate",
 				"additionalType",
 				"alternateName",
 				"description",
 				"disambiguatingDescription",
-				"endDate",
 				"identifier",
 				"image",
 				"mainEntityOfPage",
-				"merchantReturnDays",
 				"name",
 				"potentialAction",
-				"returnPolicyCategory",
 				"sameAs",
-				"startDate",
 				"subjectOf",
 				"url",
 			];

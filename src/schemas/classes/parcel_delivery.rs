@@ -3,30 +3,204 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct ParcelDelivery {
-	pub r#additional_type: Vec<AdditionalTypeProperty>,
-	pub r#alternate_name: Vec<AlternateNameProperty>,
 	pub r#carrier: Vec<CarrierProperty>,
 	pub r#delivery_address: Vec<DeliveryAddressProperty>,
 	pub r#delivery_status: Vec<DeliveryStatusProperty>,
-	pub r#description: Vec<DescriptionProperty>,
-	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
 	pub r#expected_arrival_from: Vec<ExpectedArrivalFromProperty>,
 	pub r#expected_arrival_until: Vec<ExpectedArrivalUntilProperty>,
 	pub r#has_delivery_method: Vec<HasDeliveryMethodProperty>,
-	pub r#identifier: Vec<IdentifierProperty>,
-	pub r#image: Vec<ImageProperty>,
 	pub r#item_shipped: Vec<ItemShippedProperty>,
-	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
-	pub r#name: Vec<NameProperty>,
 	pub r#origin_address: Vec<OriginAddressProperty>,
 	pub r#part_of_order: Vec<PartOfOrderProperty>,
-	pub r#potential_action: Vec<PotentialActionProperty>,
 	pub r#provider: Vec<ProviderProperty>,
-	pub r#same_as: Vec<SameAsProperty>,
-	pub r#subject_of: Vec<SubjectOfProperty>,
 	pub r#tracking_number: Vec<TrackingNumberProperty>,
 	pub r#tracking_url: Vec<TrackingUrlProperty>,
+	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	pub r#alternate_name: Vec<AlternateNameProperty>,
+	pub r#description: Vec<DescriptionProperty>,
+	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	pub r#identifier: Vec<IdentifierProperty>,
+	pub r#image: Vec<ImageProperty>,
+	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	pub r#name: Vec<NameProperty>,
+	pub r#potential_action: Vec<PotentialActionProperty>,
+	pub r#same_as: Vec<SameAsProperty>,
+	pub r#subject_of: Vec<SubjectOfProperty>,
 	pub r#url: Vec<UrlProperty>,
+}
+pub trait ParcelDeliveryTrait {
+	fn get_carrier(&self) -> &[CarrierProperty];
+	fn take_carrier(&mut self) -> Vec<CarrierProperty>;
+	fn get_delivery_address(&self) -> &[DeliveryAddressProperty];
+	fn take_delivery_address(&mut self) -> Vec<DeliveryAddressProperty>;
+	fn get_delivery_status(&self) -> &[DeliveryStatusProperty];
+	fn take_delivery_status(&mut self) -> Vec<DeliveryStatusProperty>;
+	fn get_expected_arrival_from(&self) -> &[ExpectedArrivalFromProperty];
+	fn take_expected_arrival_from(&mut self) -> Vec<ExpectedArrivalFromProperty>;
+	fn get_expected_arrival_until(&self) -> &[ExpectedArrivalUntilProperty];
+	fn take_expected_arrival_until(&mut self) -> Vec<ExpectedArrivalUntilProperty>;
+	fn get_has_delivery_method(&self) -> &[HasDeliveryMethodProperty];
+	fn take_has_delivery_method(&mut self) -> Vec<HasDeliveryMethodProperty>;
+	fn get_item_shipped(&self) -> &[ItemShippedProperty];
+	fn take_item_shipped(&mut self) -> Vec<ItemShippedProperty>;
+	fn get_origin_address(&self) -> &[OriginAddressProperty];
+	fn take_origin_address(&mut self) -> Vec<OriginAddressProperty>;
+	fn get_part_of_order(&self) -> &[PartOfOrderProperty];
+	fn take_part_of_order(&mut self) -> Vec<PartOfOrderProperty>;
+	fn get_provider(&self) -> &[ProviderProperty];
+	fn take_provider(&mut self) -> Vec<ProviderProperty>;
+	fn get_tracking_number(&self) -> &[TrackingNumberProperty];
+	fn take_tracking_number(&mut self) -> Vec<TrackingNumberProperty>;
+	fn get_tracking_url(&self) -> &[TrackingUrlProperty];
+	fn take_tracking_url(&mut self) -> Vec<TrackingUrlProperty>;
+}
+impl ParcelDeliveryTrait for ParcelDelivery {
+	fn get_carrier(&self) -> &[CarrierProperty] {
+		self.r#carrier.as_slice()
+	}
+	fn take_carrier(&mut self) -> Vec<CarrierProperty> {
+		std::mem::take(&mut self.r#carrier)
+	}
+	fn get_delivery_address(&self) -> &[DeliveryAddressProperty] {
+		self.r#delivery_address.as_slice()
+	}
+	fn take_delivery_address(&mut self) -> Vec<DeliveryAddressProperty> {
+		std::mem::take(&mut self.r#delivery_address)
+	}
+	fn get_delivery_status(&self) -> &[DeliveryStatusProperty] {
+		self.r#delivery_status.as_slice()
+	}
+	fn take_delivery_status(&mut self) -> Vec<DeliveryStatusProperty> {
+		std::mem::take(&mut self.r#delivery_status)
+	}
+	fn get_expected_arrival_from(&self) -> &[ExpectedArrivalFromProperty] {
+		self.r#expected_arrival_from.as_slice()
+	}
+	fn take_expected_arrival_from(&mut self) -> Vec<ExpectedArrivalFromProperty> {
+		std::mem::take(&mut self.r#expected_arrival_from)
+	}
+	fn get_expected_arrival_until(&self) -> &[ExpectedArrivalUntilProperty] {
+		self.r#expected_arrival_until.as_slice()
+	}
+	fn take_expected_arrival_until(&mut self) -> Vec<ExpectedArrivalUntilProperty> {
+		std::mem::take(&mut self.r#expected_arrival_until)
+	}
+	fn get_has_delivery_method(&self) -> &[HasDeliveryMethodProperty] {
+		self.r#has_delivery_method.as_slice()
+	}
+	fn take_has_delivery_method(&mut self) -> Vec<HasDeliveryMethodProperty> {
+		std::mem::take(&mut self.r#has_delivery_method)
+	}
+	fn get_item_shipped(&self) -> &[ItemShippedProperty] {
+		self.r#item_shipped.as_slice()
+	}
+	fn take_item_shipped(&mut self) -> Vec<ItemShippedProperty> {
+		std::mem::take(&mut self.r#item_shipped)
+	}
+	fn get_origin_address(&self) -> &[OriginAddressProperty] {
+		self.r#origin_address.as_slice()
+	}
+	fn take_origin_address(&mut self) -> Vec<OriginAddressProperty> {
+		std::mem::take(&mut self.r#origin_address)
+	}
+	fn get_part_of_order(&self) -> &[PartOfOrderProperty] {
+		self.r#part_of_order.as_slice()
+	}
+	fn take_part_of_order(&mut self) -> Vec<PartOfOrderProperty> {
+		std::mem::take(&mut self.r#part_of_order)
+	}
+	fn get_provider(&self) -> &[ProviderProperty] {
+		self.r#provider.as_slice()
+	}
+	fn take_provider(&mut self) -> Vec<ProviderProperty> {
+		std::mem::take(&mut self.r#provider)
+	}
+	fn get_tracking_number(&self) -> &[TrackingNumberProperty] {
+		self.r#tracking_number.as_slice()
+	}
+	fn take_tracking_number(&mut self) -> Vec<TrackingNumberProperty> {
+		std::mem::take(&mut self.r#tracking_number)
+	}
+	fn get_tracking_url(&self) -> &[TrackingUrlProperty] {
+		self.r#tracking_url.as_slice()
+	}
+	fn take_tracking_url(&mut self) -> Vec<TrackingUrlProperty> {
+		std::mem::take(&mut self.r#tracking_url)
+	}
+}
+impl ThingTrait for ParcelDelivery {
+	fn get_additional_type(&self) -> &[AdditionalTypeProperty] {
+		self.r#additional_type.as_slice()
+	}
+	fn take_additional_type(&mut self) -> Vec<AdditionalTypeProperty> {
+		std::mem::take(&mut self.r#additional_type)
+	}
+	fn get_alternate_name(&self) -> &[AlternateNameProperty] {
+		self.r#alternate_name.as_slice()
+	}
+	fn take_alternate_name(&mut self) -> Vec<AlternateNameProperty> {
+		std::mem::take(&mut self.r#alternate_name)
+	}
+	fn get_description(&self) -> &[DescriptionProperty] {
+		self.r#description.as_slice()
+	}
+	fn take_description(&mut self) -> Vec<DescriptionProperty> {
+		std::mem::take(&mut self.r#description)
+	}
+	fn get_disambiguating_description(&self) -> &[DisambiguatingDescriptionProperty] {
+		self.r#disambiguating_description.as_slice()
+	}
+	fn take_disambiguating_description(&mut self) -> Vec<DisambiguatingDescriptionProperty> {
+		std::mem::take(&mut self.r#disambiguating_description)
+	}
+	fn get_identifier(&self) -> &[IdentifierProperty] {
+		self.r#identifier.as_slice()
+	}
+	fn take_identifier(&mut self) -> Vec<IdentifierProperty> {
+		std::mem::take(&mut self.r#identifier)
+	}
+	fn get_image(&self) -> &[ImageProperty] {
+		self.r#image.as_slice()
+	}
+	fn take_image(&mut self) -> Vec<ImageProperty> {
+		std::mem::take(&mut self.r#image)
+	}
+	fn get_main_entity_of_page(&self) -> &[MainEntityOfPageProperty] {
+		self.r#main_entity_of_page.as_slice()
+	}
+	fn take_main_entity_of_page(&mut self) -> Vec<MainEntityOfPageProperty> {
+		std::mem::take(&mut self.r#main_entity_of_page)
+	}
+	fn get_name(&self) -> &[NameProperty] {
+		self.r#name.as_slice()
+	}
+	fn take_name(&mut self) -> Vec<NameProperty> {
+		std::mem::take(&mut self.r#name)
+	}
+	fn get_potential_action(&self) -> &[PotentialActionProperty] {
+		self.r#potential_action.as_slice()
+	}
+	fn take_potential_action(&mut self) -> Vec<PotentialActionProperty> {
+		std::mem::take(&mut self.r#potential_action)
+	}
+	fn get_same_as(&self) -> &[SameAsProperty] {
+		self.r#same_as.as_slice()
+	}
+	fn take_same_as(&mut self) -> Vec<SameAsProperty> {
+		std::mem::take(&mut self.r#same_as)
+	}
+	fn get_subject_of(&self) -> &[SubjectOfProperty] {
+		self.r#subject_of.as_slice()
+	}
+	fn take_subject_of(&mut self) -> Vec<SubjectOfProperty> {
+		std::mem::take(&mut self.r#subject_of)
+	}
+	fn get_url(&self) -> &[UrlProperty] {
+		self.r#url.as_slice()
+	}
+	fn take_url(&mut self) -> Vec<UrlProperty> {
+		std::mem::take(&mut self.r#url)
+	}
 }
 #[cfg(feature = "serde")]
 mod serde {
@@ -43,71 +217,35 @@ mod serde {
 			S: Serializer,
 		{
 			let len: usize = [
-				!Vec::is_empty(&self.r#additional_type) as usize,
-				!Vec::is_empty(&self.r#alternate_name) as usize,
 				!Vec::is_empty(&self.r#carrier) as usize,
 				!Vec::is_empty(&self.r#delivery_address) as usize,
 				!Vec::is_empty(&self.r#delivery_status) as usize,
-				!Vec::is_empty(&self.r#description) as usize,
-				!Vec::is_empty(&self.r#disambiguating_description) as usize,
 				!Vec::is_empty(&self.r#expected_arrival_from) as usize,
 				!Vec::is_empty(&self.r#expected_arrival_until) as usize,
 				!Vec::is_empty(&self.r#has_delivery_method) as usize,
-				!Vec::is_empty(&self.r#identifier) as usize,
-				!Vec::is_empty(&self.r#image) as usize,
 				!Vec::is_empty(&self.r#item_shipped) as usize,
-				!Vec::is_empty(&self.r#main_entity_of_page) as usize,
-				!Vec::is_empty(&self.r#name) as usize,
 				!Vec::is_empty(&self.r#origin_address) as usize,
 				!Vec::is_empty(&self.r#part_of_order) as usize,
-				!Vec::is_empty(&self.r#potential_action) as usize,
 				!Vec::is_empty(&self.r#provider) as usize,
-				!Vec::is_empty(&self.r#same_as) as usize,
-				!Vec::is_empty(&self.r#subject_of) as usize,
 				!Vec::is_empty(&self.r#tracking_number) as usize,
 				!Vec::is_empty(&self.r#tracking_url) as usize,
+				!Vec::is_empty(&self.r#additional_type) as usize,
+				!Vec::is_empty(&self.r#alternate_name) as usize,
+				!Vec::is_empty(&self.r#description) as usize,
+				!Vec::is_empty(&self.r#disambiguating_description) as usize,
+				!Vec::is_empty(&self.r#identifier) as usize,
+				!Vec::is_empty(&self.r#image) as usize,
+				!Vec::is_empty(&self.r#main_entity_of_page) as usize,
+				!Vec::is_empty(&self.r#name) as usize,
+				!Vec::is_empty(&self.r#potential_action) as usize,
+				!Vec::is_empty(&self.r#same_as) as usize,
+				!Vec::is_empty(&self.r#subject_of) as usize,
 				!Vec::is_empty(&self.r#url) as usize,
 			]
 			.iter()
 			.sum();
 			let mut serialize_struct =
 				Serializer::serialize_struct(serializer, "ParcelDelivery", len)?;
-			if !Vec::is_empty(&self.r#additional_type) {
-				serialize_struct.serialize_field("additionalType", {
-					struct SerializeWith<'a>(&'a Vec<AdditionalTypeProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#additional_type)
-				})?;
-			} else {
-				serialize_struct.skip_field("additionalType")?;
-			}
-			if !Vec::is_empty(&self.r#alternate_name) {
-				serialize_struct.serialize_field("alternateName", {
-					struct SerializeWith<'a>(&'a Vec<AlternateNameProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#alternate_name)
-				})?;
-			} else {
-				serialize_struct.skip_field("alternateName")?;
-			}
 			if !Vec::is_empty(&self.r#carrier) {
 				serialize_struct.serialize_field("carrier", {
 					struct SerializeWith<'a>(&'a Vec<CarrierProperty>);
@@ -161,42 +299,6 @@ mod serde {
 				})?;
 			} else {
 				serialize_struct.skip_field("deliveryStatus")?;
-			}
-			if !Vec::is_empty(&self.r#description) {
-				serialize_struct.serialize_field("description", {
-					struct SerializeWith<'a>(&'a Vec<DescriptionProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#description)
-				})?;
-			} else {
-				serialize_struct.skip_field("description")?;
-			}
-			if !Vec::is_empty(&self.r#disambiguating_description) {
-				serialize_struct.serialize_field("disambiguatingDescription", {
-					struct SerializeWith<'a>(&'a Vec<DisambiguatingDescriptionProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#disambiguating_description)
-				})?;
-			} else {
-				serialize_struct.skip_field("disambiguatingDescription")?;
 			}
 			if !Vec::is_empty(&self.r#expected_arrival_from) {
 				serialize_struct.serialize_field("expectedArrivalFrom", {
@@ -252,42 +354,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("hasDeliveryMethod")?;
 			}
-			if !Vec::is_empty(&self.r#identifier) {
-				serialize_struct.serialize_field("identifier", {
-					struct SerializeWith<'a>(&'a Vec<IdentifierProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#identifier)
-				})?;
-			} else {
-				serialize_struct.skip_field("identifier")?;
-			}
-			if !Vec::is_empty(&self.r#image) {
-				serialize_struct.serialize_field("image", {
-					struct SerializeWith<'a>(&'a Vec<ImageProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#image)
-				})?;
-			} else {
-				serialize_struct.skip_field("image")?;
-			}
 			if !Vec::is_empty(&self.r#item_shipped) {
 				serialize_struct.serialize_field("itemShipped", {
 					struct SerializeWith<'a>(&'a Vec<ItemShippedProperty>);
@@ -305,42 +371,6 @@ mod serde {
 				})?;
 			} else {
 				serialize_struct.skip_field("itemShipped")?;
-			}
-			if !Vec::is_empty(&self.r#main_entity_of_page) {
-				serialize_struct.serialize_field("mainEntityOfPage", {
-					struct SerializeWith<'a>(&'a Vec<MainEntityOfPageProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#main_entity_of_page)
-				})?;
-			} else {
-				serialize_struct.skip_field("mainEntityOfPage")?;
-			}
-			if !Vec::is_empty(&self.r#name) {
-				serialize_struct.serialize_field("name", {
-					struct SerializeWith<'a>(&'a Vec<NameProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#name)
-				})?;
-			} else {
-				serialize_struct.skip_field("name")?;
 			}
 			if !Vec::is_empty(&self.r#origin_address) {
 				serialize_struct.serialize_field("originAddress", {
@@ -378,24 +408,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("partOfOrder")?;
 			}
-			if !Vec::is_empty(&self.r#potential_action) {
-				serialize_struct.serialize_field("potentialAction", {
-					struct SerializeWith<'a>(&'a Vec<PotentialActionProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#potential_action)
-				})?;
-			} else {
-				serialize_struct.skip_field("potentialAction")?;
-			}
 			if !Vec::is_empty(&self.r#provider) {
 				serialize_struct.serialize_field("provider", {
 					struct SerializeWith<'a>(&'a Vec<ProviderProperty>);
@@ -413,42 +425,6 @@ mod serde {
 				})?;
 			} else {
 				serialize_struct.skip_field("provider")?;
-			}
-			if !Vec::is_empty(&self.r#same_as) {
-				serialize_struct.serialize_field("sameAs", {
-					struct SerializeWith<'a>(&'a Vec<SameAsProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#same_as)
-				})?;
-			} else {
-				serialize_struct.skip_field("sameAs")?;
-			}
-			if !Vec::is_empty(&self.r#subject_of) {
-				serialize_struct.serialize_field("subjectOf", {
-					struct SerializeWith<'a>(&'a Vec<SubjectOfProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#subject_of)
-				})?;
-			} else {
-				serialize_struct.skip_field("subjectOf")?;
 			}
 			if !Vec::is_empty(&self.r#tracking_number) {
 				serialize_struct.serialize_field("trackingNumber", {
@@ -486,6 +462,204 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("trackingUrl")?;
 			}
+			if !Vec::is_empty(&self.r#additional_type) {
+				serialize_struct.serialize_field("additionalType", {
+					struct SerializeWith<'a>(&'a Vec<AdditionalTypeProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#additional_type)
+				})?;
+			} else {
+				serialize_struct.skip_field("additionalType")?;
+			}
+			if !Vec::is_empty(&self.r#alternate_name) {
+				serialize_struct.serialize_field("alternateName", {
+					struct SerializeWith<'a>(&'a Vec<AlternateNameProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#alternate_name)
+				})?;
+			} else {
+				serialize_struct.skip_field("alternateName")?;
+			}
+			if !Vec::is_empty(&self.r#description) {
+				serialize_struct.serialize_field("description", {
+					struct SerializeWith<'a>(&'a Vec<DescriptionProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#description)
+				})?;
+			} else {
+				serialize_struct.skip_field("description")?;
+			}
+			if !Vec::is_empty(&self.r#disambiguating_description) {
+				serialize_struct.serialize_field("disambiguatingDescription", {
+					struct SerializeWith<'a>(&'a Vec<DisambiguatingDescriptionProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#disambiguating_description)
+				})?;
+			} else {
+				serialize_struct.skip_field("disambiguatingDescription")?;
+			}
+			if !Vec::is_empty(&self.r#identifier) {
+				serialize_struct.serialize_field("identifier", {
+					struct SerializeWith<'a>(&'a Vec<IdentifierProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#identifier)
+				})?;
+			} else {
+				serialize_struct.skip_field("identifier")?;
+			}
+			if !Vec::is_empty(&self.r#image) {
+				serialize_struct.serialize_field("image", {
+					struct SerializeWith<'a>(&'a Vec<ImageProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#image)
+				})?;
+			} else {
+				serialize_struct.skip_field("image")?;
+			}
+			if !Vec::is_empty(&self.r#main_entity_of_page) {
+				serialize_struct.serialize_field("mainEntityOfPage", {
+					struct SerializeWith<'a>(&'a Vec<MainEntityOfPageProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#main_entity_of_page)
+				})?;
+			} else {
+				serialize_struct.skip_field("mainEntityOfPage")?;
+			}
+			if !Vec::is_empty(&self.r#name) {
+				serialize_struct.serialize_field("name", {
+					struct SerializeWith<'a>(&'a Vec<NameProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#name)
+				})?;
+			} else {
+				serialize_struct.skip_field("name")?;
+			}
+			if !Vec::is_empty(&self.r#potential_action) {
+				serialize_struct.serialize_field("potentialAction", {
+					struct SerializeWith<'a>(&'a Vec<PotentialActionProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#potential_action)
+				})?;
+			} else {
+				serialize_struct.skip_field("potentialAction")?;
+			}
+			if !Vec::is_empty(&self.r#same_as) {
+				serialize_struct.serialize_field("sameAs", {
+					struct SerializeWith<'a>(&'a Vec<SameAsProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#same_as)
+				})?;
+			} else {
+				serialize_struct.skip_field("sameAs")?;
+			}
+			if !Vec::is_empty(&self.r#subject_of) {
+				serialize_struct.serialize_field("subjectOf", {
+					struct SerializeWith<'a>(&'a Vec<SubjectOfProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#subject_of)
+				})?;
+			} else {
+				serialize_struct.skip_field("subjectOf")?;
+			}
 			if !Vec::is_empty(&self.r#url) {
 				serialize_struct.serialize_field("url", {
 					struct SerializeWith<'a>(&'a Vec<UrlProperty>);
@@ -513,29 +687,29 @@ mod serde {
 			D: Deserializer<'de>,
 		{
 			enum Field {
-				AdditionalType,
-				AlternateName,
 				Carrier,
 				DeliveryAddress,
 				DeliveryStatus,
-				Description,
-				DisambiguatingDescription,
 				ExpectedArrivalFrom,
 				ExpectedArrivalUntil,
 				HasDeliveryMethod,
-				Identifier,
-				Image,
 				ItemShipped,
-				MainEntityOfPage,
-				Name,
 				OriginAddress,
 				PartOfOrder,
-				PotentialAction,
 				Provider,
-				SameAs,
-				SubjectOf,
 				TrackingNumber,
 				TrackingUrl,
+				AdditionalType,
+				AlternateName,
+				Description,
+				DisambiguatingDescription,
+				Identifier,
+				Image,
+				MainEntityOfPage,
+				Name,
+				PotentialAction,
+				SameAs,
+				SubjectOf,
 				Url,
 				Ignore,
 			}
@@ -550,29 +724,29 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
-						"additionalType" => Ok(Field::AdditionalType),
-						"alternateName" => Ok(Field::AlternateName),
 						"carrier" => Ok(Field::Carrier),
 						"deliveryAddress" => Ok(Field::DeliveryAddress),
 						"deliveryStatus" => Ok(Field::DeliveryStatus),
-						"description" => Ok(Field::Description),
-						"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
 						"expectedArrivalFrom" => Ok(Field::ExpectedArrivalFrom),
 						"expectedArrivalUntil" => Ok(Field::ExpectedArrivalUntil),
 						"hasDeliveryMethod" => Ok(Field::HasDeliveryMethod),
-						"identifier" => Ok(Field::Identifier),
-						"image" => Ok(Field::Image),
 						"itemShipped" => Ok(Field::ItemShipped),
-						"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
-						"name" => Ok(Field::Name),
 						"originAddress" => Ok(Field::OriginAddress),
 						"partOfOrder" => Ok(Field::PartOfOrder),
-						"potentialAction" => Ok(Field::PotentialAction),
 						"provider" => Ok(Field::Provider),
-						"sameAs" => Ok(Field::SameAs),
-						"subjectOf" => Ok(Field::SubjectOf),
 						"trackingNumber" => Ok(Field::TrackingNumber),
 						"trackingUrl" => Ok(Field::TrackingUrl),
+						"additionalType" => Ok(Field::AdditionalType),
+						"alternateName" => Ok(Field::AlternateName),
+						"description" => Ok(Field::Description),
+						"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
+						"identifier" => Ok(Field::Identifier),
+						"image" => Ok(Field::Image),
+						"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
+						"name" => Ok(Field::Name),
+						"potentialAction" => Ok(Field::PotentialAction),
+						"sameAs" => Ok(Field::SameAs),
+						"subjectOf" => Ok(Field::SubjectOf),
 						"url" => Ok(Field::Url),
 						_ => Ok(Field::Ignore),
 					}
@@ -582,29 +756,29 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
-						b"additionalType" => Ok(Field::AdditionalType),
-						b"alternateName" => Ok(Field::AlternateName),
 						b"carrier" => Ok(Field::Carrier),
 						b"deliveryAddress" => Ok(Field::DeliveryAddress),
 						b"deliveryStatus" => Ok(Field::DeliveryStatus),
-						b"description" => Ok(Field::Description),
-						b"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
 						b"expectedArrivalFrom" => Ok(Field::ExpectedArrivalFrom),
 						b"expectedArrivalUntil" => Ok(Field::ExpectedArrivalUntil),
 						b"hasDeliveryMethod" => Ok(Field::HasDeliveryMethod),
-						b"identifier" => Ok(Field::Identifier),
-						b"image" => Ok(Field::Image),
 						b"itemShipped" => Ok(Field::ItemShipped),
-						b"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
-						b"name" => Ok(Field::Name),
 						b"originAddress" => Ok(Field::OriginAddress),
 						b"partOfOrder" => Ok(Field::PartOfOrder),
-						b"potentialAction" => Ok(Field::PotentialAction),
 						b"provider" => Ok(Field::Provider),
-						b"sameAs" => Ok(Field::SameAs),
-						b"subjectOf" => Ok(Field::SubjectOf),
 						b"trackingNumber" => Ok(Field::TrackingNumber),
 						b"trackingUrl" => Ok(Field::TrackingUrl),
+						b"additionalType" => Ok(Field::AdditionalType),
+						b"alternateName" => Ok(Field::AlternateName),
+						b"description" => Ok(Field::Description),
+						b"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
+						b"identifier" => Ok(Field::Identifier),
+						b"image" => Ok(Field::Image),
+						b"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
+						b"name" => Ok(Field::Name),
+						b"potentialAction" => Ok(Field::PotentialAction),
+						b"sameAs" => Ok(Field::SameAs),
+						b"subjectOf" => Ok(Field::SubjectOf),
 						b"url" => Ok(Field::Url),
 						_ => Ok(Field::Ignore),
 					}
@@ -628,84 +802,32 @@ mod serde {
 				where
 					A: de::MapAccess<'de>,
 				{
-					let mut r#additional_type_property = None;
-					let mut r#alternate_name_property = None;
 					let mut r#carrier_property = None;
 					let mut r#delivery_address_property = None;
 					let mut r#delivery_status_property = None;
-					let mut r#description_property = None;
-					let mut r#disambiguating_description_property = None;
 					let mut r#expected_arrival_from_property = None;
 					let mut r#expected_arrival_until_property = None;
 					let mut r#has_delivery_method_property = None;
-					let mut r#identifier_property = None;
-					let mut r#image_property = None;
 					let mut r#item_shipped_property = None;
-					let mut r#main_entity_of_page_property = None;
-					let mut r#name_property = None;
 					let mut r#origin_address_property = None;
 					let mut r#part_of_order_property = None;
-					let mut r#potential_action_property = None;
 					let mut r#provider_property = None;
-					let mut r#same_as_property = None;
-					let mut r#subject_of_property = None;
 					let mut r#tracking_number_property = None;
 					let mut r#tracking_url_property = None;
+					let mut r#additional_type_property = None;
+					let mut r#alternate_name_property = None;
+					let mut r#description_property = None;
+					let mut r#disambiguating_description_property = None;
+					let mut r#identifier_property = None;
+					let mut r#image_property = None;
+					let mut r#main_entity_of_page_property = None;
+					let mut r#name_property = None;
+					let mut r#potential_action_property = None;
+					let mut r#same_as_property = None;
+					let mut r#subject_of_property = None;
 					let mut r#url_property = None;
 					while let Some(key) = map.next_key::<Field>()? {
 						match key {
-							Field::AdditionalType => {
-								if r#additional_type_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"additionalType",
-									));
-								}
-								r#additional_type_property = Some({
-									struct DeserializeWith(Vec<AdditionalTypeProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::AlternateName => {
-								if r#alternate_name_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"alternateName",
-									));
-								}
-								r#alternate_name_property = Some({
-									struct DeserializeWith(Vec<AlternateNameProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
 							Field::Carrier => {
 								if r#carrier_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -766,58 +888,6 @@ mod serde {
 								}
 								r#delivery_status_property = Some({
 									struct DeserializeWith(Vec<DeliveryStatusProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::Description => {
-								if r#description_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"description",
-									));
-								}
-								r#description_property = Some({
-									struct DeserializeWith(Vec<DescriptionProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::DisambiguatingDescription => {
-								if r#disambiguating_description_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"disambiguatingDescription",
-									));
-								}
-								r#disambiguating_description_property = Some({
-									struct DeserializeWith(Vec<DisambiguatingDescriptionProperty>);
 									impl<'de> Deserialize<'de> for DeserializeWith {
 										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
 										where
@@ -914,56 +984,6 @@ mod serde {
 									}
 								});
 							}
-							Field::Identifier => {
-								if r#identifier_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"identifier",
-									));
-								}
-								r#identifier_property = Some({
-									struct DeserializeWith(Vec<IdentifierProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::Image => {
-								if r#image_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field("image"));
-								}
-								r#image_property = Some({
-									struct DeserializeWith(Vec<ImageProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
 							Field::ItemShipped => {
 								if r#item_shipped_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -972,56 +992,6 @@ mod serde {
 								}
 								r#item_shipped_property = Some({
 									struct DeserializeWith(Vec<ItemShippedProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::MainEntityOfPage => {
-								if r#main_entity_of_page_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"mainEntityOfPage",
-									));
-								}
-								r#main_entity_of_page_property = Some({
-									struct DeserializeWith(Vec<MainEntityOfPageProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::Name => {
-								if r#name_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field("name"));
-								}
-								r#name_property = Some({
-									struct DeserializeWith(Vec<NameProperty>);
 									impl<'de> Deserialize<'de> for DeserializeWith {
 										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
 										where
@@ -1092,32 +1062,6 @@ mod serde {
 									}
 								});
 							}
-							Field::PotentialAction => {
-								if r#potential_action_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"potentialAction",
-									));
-								}
-								r#potential_action_property = Some({
-									struct DeserializeWith(Vec<PotentialActionProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
 							Field::Provider => {
 								if r#provider_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -1126,56 +1070,6 @@ mod serde {
 								}
 								r#provider_property = Some({
 									struct DeserializeWith(Vec<ProviderProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::SameAs => {
-								if r#same_as_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field("sameAs"));
-								}
-								r#same_as_property = Some({
-									struct DeserializeWith(Vec<SameAsProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::SubjectOf => {
-								if r#subject_of_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"subjectOf",
-									));
-								}
-								r#subject_of_property = Some({
-									struct DeserializeWith(Vec<SubjectOfProperty>);
 									impl<'de> Deserialize<'de> for DeserializeWith {
 										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
 										where
@@ -1246,6 +1140,286 @@ mod serde {
 									}
 								});
 							}
+							Field::AdditionalType => {
+								if r#additional_type_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"additionalType",
+									));
+								}
+								r#additional_type_property = Some({
+									struct DeserializeWith(Vec<AdditionalTypeProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::AlternateName => {
+								if r#alternate_name_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"alternateName",
+									));
+								}
+								r#alternate_name_property = Some({
+									struct DeserializeWith(Vec<AlternateNameProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::Description => {
+								if r#description_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"description",
+									));
+								}
+								r#description_property = Some({
+									struct DeserializeWith(Vec<DescriptionProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::DisambiguatingDescription => {
+								if r#disambiguating_description_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"disambiguatingDescription",
+									));
+								}
+								r#disambiguating_description_property = Some({
+									struct DeserializeWith(Vec<DisambiguatingDescriptionProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::Identifier => {
+								if r#identifier_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"identifier",
+									));
+								}
+								r#identifier_property = Some({
+									struct DeserializeWith(Vec<IdentifierProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::Image => {
+								if r#image_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field("image"));
+								}
+								r#image_property = Some({
+									struct DeserializeWith(Vec<ImageProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::MainEntityOfPage => {
+								if r#main_entity_of_page_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"mainEntityOfPage",
+									));
+								}
+								r#main_entity_of_page_property = Some({
+									struct DeserializeWith(Vec<MainEntityOfPageProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::Name => {
+								if r#name_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field("name"));
+								}
+								r#name_property = Some({
+									struct DeserializeWith(Vec<NameProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::PotentialAction => {
+								if r#potential_action_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"potentialAction",
+									));
+								}
+								r#potential_action_property = Some({
+									struct DeserializeWith(Vec<PotentialActionProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::SameAs => {
+								if r#same_as_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field("sameAs"));
+								}
+								r#same_as_property = Some({
+									struct DeserializeWith(Vec<SameAsProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::SubjectOf => {
+								if r#subject_of_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"subjectOf",
+									));
+								}
+								r#subject_of_property = Some({
+									struct DeserializeWith(Vec<SubjectOfProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
 							Field::Url => {
 								if r#url_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("url"));
@@ -1276,60 +1450,60 @@ mod serde {
 						}
 					}
 					Ok(ParcelDelivery {
-						r#additional_type: r#additional_type_property.unwrap_or_default(),
-						r#alternate_name: r#alternate_name_property.unwrap_or_default(),
 						r#carrier: r#carrier_property.unwrap_or_default(),
 						r#delivery_address: r#delivery_address_property.unwrap_or_default(),
 						r#delivery_status: r#delivery_status_property.unwrap_or_default(),
-						r#description: r#description_property.unwrap_or_default(),
-						r#disambiguating_description: r#disambiguating_description_property
-							.unwrap_or_default(),
 						r#expected_arrival_from: r#expected_arrival_from_property
 							.unwrap_or_default(),
 						r#expected_arrival_until: r#expected_arrival_until_property
 							.unwrap_or_default(),
 						r#has_delivery_method: r#has_delivery_method_property.unwrap_or_default(),
-						r#identifier: r#identifier_property.unwrap_or_default(),
-						r#image: r#image_property.unwrap_or_default(),
 						r#item_shipped: r#item_shipped_property.unwrap_or_default(),
-						r#main_entity_of_page: r#main_entity_of_page_property.unwrap_or_default(),
-						r#name: r#name_property.unwrap_or_default(),
 						r#origin_address: r#origin_address_property.unwrap_or_default(),
 						r#part_of_order: r#part_of_order_property.unwrap_or_default(),
-						r#potential_action: r#potential_action_property.unwrap_or_default(),
 						r#provider: r#provider_property.unwrap_or_default(),
-						r#same_as: r#same_as_property.unwrap_or_default(),
-						r#subject_of: r#subject_of_property.unwrap_or_default(),
 						r#tracking_number: r#tracking_number_property.unwrap_or_default(),
 						r#tracking_url: r#tracking_url_property.unwrap_or_default(),
+						r#additional_type: r#additional_type_property.unwrap_or_default(),
+						r#alternate_name: r#alternate_name_property.unwrap_or_default(),
+						r#description: r#description_property.unwrap_or_default(),
+						r#disambiguating_description: r#disambiguating_description_property
+							.unwrap_or_default(),
+						r#identifier: r#identifier_property.unwrap_or_default(),
+						r#image: r#image_property.unwrap_or_default(),
+						r#main_entity_of_page: r#main_entity_of_page_property.unwrap_or_default(),
+						r#name: r#name_property.unwrap_or_default(),
+						r#potential_action: r#potential_action_property.unwrap_or_default(),
+						r#same_as: r#same_as_property.unwrap_or_default(),
+						r#subject_of: r#subject_of_property.unwrap_or_default(),
 						r#url: r#url_property.unwrap_or_default(),
 					})
 				}
 			}
 			const FIELDS: &[&str] = &[
-				"additionalType",
-				"alternateName",
 				"carrier",
 				"deliveryAddress",
 				"deliveryStatus",
-				"description",
-				"disambiguatingDescription",
 				"expectedArrivalFrom",
 				"expectedArrivalUntil",
 				"hasDeliveryMethod",
-				"identifier",
-				"image",
 				"itemShipped",
-				"mainEntityOfPage",
-				"name",
 				"originAddress",
 				"partOfOrder",
-				"potentialAction",
 				"provider",
-				"sameAs",
-				"subjectOf",
 				"trackingNumber",
 				"trackingUrl",
+				"additionalType",
+				"alternateName",
+				"description",
+				"disambiguatingDescription",
+				"identifier",
+				"image",
+				"mainEntityOfPage",
+				"name",
+				"potentialAction",
+				"sameAs",
+				"subjectOf",
 				"url",
 			];
 			deserializer.deserialize_struct("ParcelDelivery", FIELDS, ClassVisitor)

@@ -3,22 +3,132 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct Property {
+	pub r#domain_includes: Vec<DomainIncludesProperty>,
+	pub r#inverse_of: Vec<InverseOfProperty>,
+	pub r#range_includes: Vec<RangeIncludesProperty>,
+	pub r#superseded_by: Vec<SupersededByProperty>,
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
 	pub r#alternate_name: Vec<AlternateNameProperty>,
 	pub r#description: Vec<DescriptionProperty>,
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
-	pub r#domain_includes: Vec<DomainIncludesProperty>,
 	pub r#identifier: Vec<IdentifierProperty>,
 	pub r#image: Vec<ImageProperty>,
-	pub r#inverse_of: Vec<InverseOfProperty>,
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
 	pub r#name: Vec<NameProperty>,
 	pub r#potential_action: Vec<PotentialActionProperty>,
-	pub r#range_includes: Vec<RangeIncludesProperty>,
 	pub r#same_as: Vec<SameAsProperty>,
 	pub r#subject_of: Vec<SubjectOfProperty>,
-	pub r#superseded_by: Vec<SupersededByProperty>,
 	pub r#url: Vec<UrlProperty>,
+}
+pub trait PropertyTrait {
+	fn get_domain_includes(&self) -> &[DomainIncludesProperty];
+	fn take_domain_includes(&mut self) -> Vec<DomainIncludesProperty>;
+	fn get_inverse_of(&self) -> &[InverseOfProperty];
+	fn take_inverse_of(&mut self) -> Vec<InverseOfProperty>;
+	fn get_range_includes(&self) -> &[RangeIncludesProperty];
+	fn take_range_includes(&mut self) -> Vec<RangeIncludesProperty>;
+	fn get_superseded_by(&self) -> &[SupersededByProperty];
+	fn take_superseded_by(&mut self) -> Vec<SupersededByProperty>;
+}
+impl PropertyTrait for Property {
+	fn get_domain_includes(&self) -> &[DomainIncludesProperty] {
+		self.r#domain_includes.as_slice()
+	}
+	fn take_domain_includes(&mut self) -> Vec<DomainIncludesProperty> {
+		std::mem::take(&mut self.r#domain_includes)
+	}
+	fn get_inverse_of(&self) -> &[InverseOfProperty] {
+		self.r#inverse_of.as_slice()
+	}
+	fn take_inverse_of(&mut self) -> Vec<InverseOfProperty> {
+		std::mem::take(&mut self.r#inverse_of)
+	}
+	fn get_range_includes(&self) -> &[RangeIncludesProperty] {
+		self.r#range_includes.as_slice()
+	}
+	fn take_range_includes(&mut self) -> Vec<RangeIncludesProperty> {
+		std::mem::take(&mut self.r#range_includes)
+	}
+	fn get_superseded_by(&self) -> &[SupersededByProperty] {
+		self.r#superseded_by.as_slice()
+	}
+	fn take_superseded_by(&mut self) -> Vec<SupersededByProperty> {
+		std::mem::take(&mut self.r#superseded_by)
+	}
+}
+impl ThingTrait for Property {
+	fn get_additional_type(&self) -> &[AdditionalTypeProperty] {
+		self.r#additional_type.as_slice()
+	}
+	fn take_additional_type(&mut self) -> Vec<AdditionalTypeProperty> {
+		std::mem::take(&mut self.r#additional_type)
+	}
+	fn get_alternate_name(&self) -> &[AlternateNameProperty] {
+		self.r#alternate_name.as_slice()
+	}
+	fn take_alternate_name(&mut self) -> Vec<AlternateNameProperty> {
+		std::mem::take(&mut self.r#alternate_name)
+	}
+	fn get_description(&self) -> &[DescriptionProperty] {
+		self.r#description.as_slice()
+	}
+	fn take_description(&mut self) -> Vec<DescriptionProperty> {
+		std::mem::take(&mut self.r#description)
+	}
+	fn get_disambiguating_description(&self) -> &[DisambiguatingDescriptionProperty] {
+		self.r#disambiguating_description.as_slice()
+	}
+	fn take_disambiguating_description(&mut self) -> Vec<DisambiguatingDescriptionProperty> {
+		std::mem::take(&mut self.r#disambiguating_description)
+	}
+	fn get_identifier(&self) -> &[IdentifierProperty] {
+		self.r#identifier.as_slice()
+	}
+	fn take_identifier(&mut self) -> Vec<IdentifierProperty> {
+		std::mem::take(&mut self.r#identifier)
+	}
+	fn get_image(&self) -> &[ImageProperty] {
+		self.r#image.as_slice()
+	}
+	fn take_image(&mut self) -> Vec<ImageProperty> {
+		std::mem::take(&mut self.r#image)
+	}
+	fn get_main_entity_of_page(&self) -> &[MainEntityOfPageProperty] {
+		self.r#main_entity_of_page.as_slice()
+	}
+	fn take_main_entity_of_page(&mut self) -> Vec<MainEntityOfPageProperty> {
+		std::mem::take(&mut self.r#main_entity_of_page)
+	}
+	fn get_name(&self) -> &[NameProperty] {
+		self.r#name.as_slice()
+	}
+	fn take_name(&mut self) -> Vec<NameProperty> {
+		std::mem::take(&mut self.r#name)
+	}
+	fn get_potential_action(&self) -> &[PotentialActionProperty] {
+		self.r#potential_action.as_slice()
+	}
+	fn take_potential_action(&mut self) -> Vec<PotentialActionProperty> {
+		std::mem::take(&mut self.r#potential_action)
+	}
+	fn get_same_as(&self) -> &[SameAsProperty] {
+		self.r#same_as.as_slice()
+	}
+	fn take_same_as(&mut self) -> Vec<SameAsProperty> {
+		std::mem::take(&mut self.r#same_as)
+	}
+	fn get_subject_of(&self) -> &[SubjectOfProperty] {
+		self.r#subject_of.as_slice()
+	}
+	fn take_subject_of(&mut self) -> Vec<SubjectOfProperty> {
+		std::mem::take(&mut self.r#subject_of)
+	}
+	fn get_url(&self) -> &[UrlProperty] {
+		self.r#url.as_slice()
+	}
+	fn take_url(&mut self) -> Vec<UrlProperty> {
+		std::mem::take(&mut self.r#url)
+	}
 }
 #[cfg(feature = "serde")]
 mod serde {
@@ -35,26 +145,98 @@ mod serde {
 			S: Serializer,
 		{
 			let len: usize = [
+				!Vec::is_empty(&self.r#domain_includes) as usize,
+				!Vec::is_empty(&self.r#inverse_of) as usize,
+				!Vec::is_empty(&self.r#range_includes) as usize,
+				!Vec::is_empty(&self.r#superseded_by) as usize,
 				!Vec::is_empty(&self.r#additional_type) as usize,
 				!Vec::is_empty(&self.r#alternate_name) as usize,
 				!Vec::is_empty(&self.r#description) as usize,
 				!Vec::is_empty(&self.r#disambiguating_description) as usize,
-				!Vec::is_empty(&self.r#domain_includes) as usize,
 				!Vec::is_empty(&self.r#identifier) as usize,
 				!Vec::is_empty(&self.r#image) as usize,
-				!Vec::is_empty(&self.r#inverse_of) as usize,
 				!Vec::is_empty(&self.r#main_entity_of_page) as usize,
 				!Vec::is_empty(&self.r#name) as usize,
 				!Vec::is_empty(&self.r#potential_action) as usize,
-				!Vec::is_empty(&self.r#range_includes) as usize,
 				!Vec::is_empty(&self.r#same_as) as usize,
 				!Vec::is_empty(&self.r#subject_of) as usize,
-				!Vec::is_empty(&self.r#superseded_by) as usize,
 				!Vec::is_empty(&self.r#url) as usize,
 			]
 			.iter()
 			.sum();
 			let mut serialize_struct = Serializer::serialize_struct(serializer, "Property", len)?;
+			if !Vec::is_empty(&self.r#domain_includes) {
+				serialize_struct.serialize_field("domainIncludes", {
+					struct SerializeWith<'a>(&'a Vec<DomainIncludesProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#domain_includes)
+				})?;
+			} else {
+				serialize_struct.skip_field("domainIncludes")?;
+			}
+			if !Vec::is_empty(&self.r#inverse_of) {
+				serialize_struct.serialize_field("inverseOf", {
+					struct SerializeWith<'a>(&'a Vec<InverseOfProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#inverse_of)
+				})?;
+			} else {
+				serialize_struct.skip_field("inverseOf")?;
+			}
+			if !Vec::is_empty(&self.r#range_includes) {
+				serialize_struct.serialize_field("rangeIncludes", {
+					struct SerializeWith<'a>(&'a Vec<RangeIncludesProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#range_includes)
+				})?;
+			} else {
+				serialize_struct.skip_field("rangeIncludes")?;
+			}
+			if !Vec::is_empty(&self.r#superseded_by) {
+				serialize_struct.serialize_field("supersededBy", {
+					struct SerializeWith<'a>(&'a Vec<SupersededByProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#superseded_by)
+				})?;
+			} else {
+				serialize_struct.skip_field("supersededBy")?;
+			}
 			if !Vec::is_empty(&self.r#additional_type) {
 				serialize_struct.serialize_field("additionalType", {
 					struct SerializeWith<'a>(&'a Vec<AdditionalTypeProperty>);
@@ -127,24 +309,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("disambiguatingDescription")?;
 			}
-			if !Vec::is_empty(&self.r#domain_includes) {
-				serialize_struct.serialize_field("domainIncludes", {
-					struct SerializeWith<'a>(&'a Vec<DomainIncludesProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#domain_includes)
-				})?;
-			} else {
-				serialize_struct.skip_field("domainIncludes")?;
-			}
 			if !Vec::is_empty(&self.r#identifier) {
 				serialize_struct.serialize_field("identifier", {
 					struct SerializeWith<'a>(&'a Vec<IdentifierProperty>);
@@ -180,24 +344,6 @@ mod serde {
 				})?;
 			} else {
 				serialize_struct.skip_field("image")?;
-			}
-			if !Vec::is_empty(&self.r#inverse_of) {
-				serialize_struct.serialize_field("inverseOf", {
-					struct SerializeWith<'a>(&'a Vec<InverseOfProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#inverse_of)
-				})?;
-			} else {
-				serialize_struct.skip_field("inverseOf")?;
 			}
 			if !Vec::is_empty(&self.r#main_entity_of_page) {
 				serialize_struct.serialize_field("mainEntityOfPage", {
@@ -253,24 +399,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("potentialAction")?;
 			}
-			if !Vec::is_empty(&self.r#range_includes) {
-				serialize_struct.serialize_field("rangeIncludes", {
-					struct SerializeWith<'a>(&'a Vec<RangeIncludesProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#range_includes)
-				})?;
-			} else {
-				serialize_struct.skip_field("rangeIncludes")?;
-			}
 			if !Vec::is_empty(&self.r#same_as) {
 				serialize_struct.serialize_field("sameAs", {
 					struct SerializeWith<'a>(&'a Vec<SameAsProperty>);
@@ -307,24 +435,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("subjectOf")?;
 			}
-			if !Vec::is_empty(&self.r#superseded_by) {
-				serialize_struct.serialize_field("supersededBy", {
-					struct SerializeWith<'a>(&'a Vec<SupersededByProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#superseded_by)
-				})?;
-			} else {
-				serialize_struct.skip_field("supersededBy")?;
-			}
 			if !Vec::is_empty(&self.r#url) {
 				serialize_struct.serialize_field("url", {
 					struct SerializeWith<'a>(&'a Vec<UrlProperty>);
@@ -352,21 +462,21 @@ mod serde {
 			D: Deserializer<'de>,
 		{
 			enum Field {
+				DomainIncludes,
+				InverseOf,
+				RangeIncludes,
+				SupersededBy,
 				AdditionalType,
 				AlternateName,
 				Description,
 				DisambiguatingDescription,
-				DomainIncludes,
 				Identifier,
 				Image,
-				InverseOf,
 				MainEntityOfPage,
 				Name,
 				PotentialAction,
-				RangeIncludes,
 				SameAs,
 				SubjectOf,
-				SupersededBy,
 				Url,
 				Ignore,
 			}
@@ -381,21 +491,21 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
+						"domainIncludes" => Ok(Field::DomainIncludes),
+						"inverseOf" => Ok(Field::InverseOf),
+						"rangeIncludes" => Ok(Field::RangeIncludes),
+						"supersededBy" => Ok(Field::SupersededBy),
 						"additionalType" => Ok(Field::AdditionalType),
 						"alternateName" => Ok(Field::AlternateName),
 						"description" => Ok(Field::Description),
 						"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
-						"domainIncludes" => Ok(Field::DomainIncludes),
 						"identifier" => Ok(Field::Identifier),
 						"image" => Ok(Field::Image),
-						"inverseOf" => Ok(Field::InverseOf),
 						"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
 						"name" => Ok(Field::Name),
 						"potentialAction" => Ok(Field::PotentialAction),
-						"rangeIncludes" => Ok(Field::RangeIncludes),
 						"sameAs" => Ok(Field::SameAs),
 						"subjectOf" => Ok(Field::SubjectOf),
-						"supersededBy" => Ok(Field::SupersededBy),
 						"url" => Ok(Field::Url),
 						_ => Ok(Field::Ignore),
 					}
@@ -405,21 +515,21 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
+						b"domainIncludes" => Ok(Field::DomainIncludes),
+						b"inverseOf" => Ok(Field::InverseOf),
+						b"rangeIncludes" => Ok(Field::RangeIncludes),
+						b"supersededBy" => Ok(Field::SupersededBy),
 						b"additionalType" => Ok(Field::AdditionalType),
 						b"alternateName" => Ok(Field::AlternateName),
 						b"description" => Ok(Field::Description),
 						b"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
-						b"domainIncludes" => Ok(Field::DomainIncludes),
 						b"identifier" => Ok(Field::Identifier),
 						b"image" => Ok(Field::Image),
-						b"inverseOf" => Ok(Field::InverseOf),
 						b"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
 						b"name" => Ok(Field::Name),
 						b"potentialAction" => Ok(Field::PotentialAction),
-						b"rangeIncludes" => Ok(Field::RangeIncludes),
 						b"sameAs" => Ok(Field::SameAs),
 						b"subjectOf" => Ok(Field::SubjectOf),
-						b"supersededBy" => Ok(Field::SupersededBy),
 						b"url" => Ok(Field::Url),
 						_ => Ok(Field::Ignore),
 					}
@@ -443,24 +553,128 @@ mod serde {
 				where
 					A: de::MapAccess<'de>,
 				{
+					let mut r#domain_includes_property = None;
+					let mut r#inverse_of_property = None;
+					let mut r#range_includes_property = None;
+					let mut r#superseded_by_property = None;
 					let mut r#additional_type_property = None;
 					let mut r#alternate_name_property = None;
 					let mut r#description_property = None;
 					let mut r#disambiguating_description_property = None;
-					let mut r#domain_includes_property = None;
 					let mut r#identifier_property = None;
 					let mut r#image_property = None;
-					let mut r#inverse_of_property = None;
 					let mut r#main_entity_of_page_property = None;
 					let mut r#name_property = None;
 					let mut r#potential_action_property = None;
-					let mut r#range_includes_property = None;
 					let mut r#same_as_property = None;
 					let mut r#subject_of_property = None;
-					let mut r#superseded_by_property = None;
 					let mut r#url_property = None;
 					while let Some(key) = map.next_key::<Field>()? {
 						match key {
+							Field::DomainIncludes => {
+								if r#domain_includes_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"domainIncludes",
+									));
+								}
+								r#domain_includes_property = Some({
+									struct DeserializeWith(Vec<DomainIncludesProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::InverseOf => {
+								if r#inverse_of_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"inverseOf",
+									));
+								}
+								r#inverse_of_property = Some({
+									struct DeserializeWith(Vec<InverseOfProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::RangeIncludes => {
+								if r#range_includes_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"rangeIncludes",
+									));
+								}
+								r#range_includes_property = Some({
+									struct DeserializeWith(Vec<RangeIncludesProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::SupersededBy => {
+								if r#superseded_by_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"supersededBy",
+									));
+								}
+								r#superseded_by_property = Some({
+									struct DeserializeWith(Vec<SupersededByProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
 							Field::AdditionalType => {
 								if r#additional_type_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -565,32 +779,6 @@ mod serde {
 									}
 								});
 							}
-							Field::DomainIncludes => {
-								if r#domain_includes_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"domainIncludes",
-									));
-								}
-								r#domain_includes_property = Some({
-									struct DeserializeWith(Vec<DomainIncludesProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
 							Field::Identifier => {
 								if r#identifier_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -623,32 +811,6 @@ mod serde {
 								}
 								r#image_property = Some({
 									struct DeserializeWith(Vec<ImageProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::InverseOf => {
-								if r#inverse_of_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"inverseOf",
-									));
-								}
-								r#inverse_of_property = Some({
-									struct DeserializeWith(Vec<InverseOfProperty>);
 									impl<'de> Deserialize<'de> for DeserializeWith {
 										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
 										where
@@ -743,32 +905,6 @@ mod serde {
 									}
 								});
 							}
-							Field::RangeIncludes => {
-								if r#range_includes_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"rangeIncludes",
-									));
-								}
-								r#range_includes_property = Some({
-									struct DeserializeWith(Vec<RangeIncludesProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
 							Field::SameAs => {
 								if r#same_as_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("sameAs"));
@@ -819,32 +955,6 @@ mod serde {
 									}
 								});
 							}
-							Field::SupersededBy => {
-								if r#superseded_by_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"supersededBy",
-									));
-								}
-								r#superseded_by_property = Some({
-									struct DeserializeWith(Vec<SupersededByProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
 							Field::Url => {
 								if r#url_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("url"));
@@ -875,42 +985,42 @@ mod serde {
 						}
 					}
 					Ok(Property {
+						r#domain_includes: r#domain_includes_property.unwrap_or_default(),
+						r#inverse_of: r#inverse_of_property.unwrap_or_default(),
+						r#range_includes: r#range_includes_property.unwrap_or_default(),
+						r#superseded_by: r#superseded_by_property.unwrap_or_default(),
 						r#additional_type: r#additional_type_property.unwrap_or_default(),
 						r#alternate_name: r#alternate_name_property.unwrap_or_default(),
 						r#description: r#description_property.unwrap_or_default(),
 						r#disambiguating_description: r#disambiguating_description_property
 							.unwrap_or_default(),
-						r#domain_includes: r#domain_includes_property.unwrap_or_default(),
 						r#identifier: r#identifier_property.unwrap_or_default(),
 						r#image: r#image_property.unwrap_or_default(),
-						r#inverse_of: r#inverse_of_property.unwrap_or_default(),
 						r#main_entity_of_page: r#main_entity_of_page_property.unwrap_or_default(),
 						r#name: r#name_property.unwrap_or_default(),
 						r#potential_action: r#potential_action_property.unwrap_or_default(),
-						r#range_includes: r#range_includes_property.unwrap_or_default(),
 						r#same_as: r#same_as_property.unwrap_or_default(),
 						r#subject_of: r#subject_of_property.unwrap_or_default(),
-						r#superseded_by: r#superseded_by_property.unwrap_or_default(),
 						r#url: r#url_property.unwrap_or_default(),
 					})
 				}
 			}
 			const FIELDS: &[&str] = &[
+				"domainIncludes",
+				"inverseOf",
+				"rangeIncludes",
+				"supersededBy",
 				"additionalType",
 				"alternateName",
 				"description",
 				"disambiguatingDescription",
-				"domainIncludes",
 				"identifier",
 				"image",
-				"inverseOf",
 				"mainEntityOfPage",
 				"name",
 				"potentialAction",
-				"rangeIncludes",
 				"sameAs",
 				"subjectOf",
-				"supersededBy",
 				"url",
 			];
 			deserializer.deserialize_struct("Property", FIELDS, ClassVisitor)

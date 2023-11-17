@@ -3,8 +3,6 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct CdcpmdRecord {
-	pub r#additional_type: Vec<AdditionalTypeProperty>,
-	pub r#alternate_name: Vec<AlternateNameProperty>,
 	pub r#cvd_collection_date: Vec<CvdCollectionDateProperty>,
 	pub r#cvd_facility_county: Vec<CvdFacilityCountyProperty>,
 	pub r#cvd_facility_id: Vec<CvdFacilityIdProperty>,
@@ -22,6 +20,8 @@ pub struct CdcpmdRecord {
 	pub r#cvd_num_vent: Vec<CvdNumVentProperty>,
 	pub r#cvd_num_vent_use: Vec<CvdNumVentUseProperty>,
 	pub r#date_posted: Vec<DatePostedProperty>,
+	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	pub r#alternate_name: Vec<AlternateNameProperty>,
 	pub r#description: Vec<DescriptionProperty>,
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
 	pub r#identifier: Vec<IdentifierProperty>,
@@ -32,6 +32,221 @@ pub struct CdcpmdRecord {
 	pub r#same_as: Vec<SameAsProperty>,
 	pub r#subject_of: Vec<SubjectOfProperty>,
 	pub r#url: Vec<UrlProperty>,
+}
+pub trait CdcpmdRecordTrait {
+	fn get_cvd_collection_date(&self) -> &[CvdCollectionDateProperty];
+	fn take_cvd_collection_date(&mut self) -> Vec<CvdCollectionDateProperty>;
+	fn get_cvd_facility_county(&self) -> &[CvdFacilityCountyProperty];
+	fn take_cvd_facility_county(&mut self) -> Vec<CvdFacilityCountyProperty>;
+	fn get_cvd_facility_id(&self) -> &[CvdFacilityIdProperty];
+	fn take_cvd_facility_id(&mut self) -> Vec<CvdFacilityIdProperty>;
+	fn get_cvd_num_beds(&self) -> &[CvdNumBedsProperty];
+	fn take_cvd_num_beds(&mut self) -> Vec<CvdNumBedsProperty>;
+	fn get_cvd_num_beds_occ(&self) -> &[CvdNumBedsOccProperty];
+	fn take_cvd_num_beds_occ(&mut self) -> Vec<CvdNumBedsOccProperty>;
+	fn get_cvd_num_c_19_died(&self) -> &[CvdNumC19DiedProperty];
+	fn take_cvd_num_c_19_died(&mut self) -> Vec<CvdNumC19DiedProperty>;
+	fn get_cvd_num_c_19_ho_pats(&self) -> &[CvdNumC19HoPatsProperty];
+	fn take_cvd_num_c_19_ho_pats(&mut self) -> Vec<CvdNumC19HoPatsProperty>;
+	fn get_cvd_num_c_19_hosp_pats(&self) -> &[CvdNumC19HospPatsProperty];
+	fn take_cvd_num_c_19_hosp_pats(&mut self) -> Vec<CvdNumC19HospPatsProperty>;
+	fn get_cvd_num_c_19_mech_vent_pats(&self) -> &[CvdNumC19MechVentPatsProperty];
+	fn take_cvd_num_c_19_mech_vent_pats(&mut self) -> Vec<CvdNumC19MechVentPatsProperty>;
+	fn get_cvd_num_c_19_of_mech_vent_pats(&self) -> &[CvdNumC19OfMechVentPatsProperty];
+	fn take_cvd_num_c_19_of_mech_vent_pats(&mut self) -> Vec<CvdNumC19OfMechVentPatsProperty>;
+	fn get_cvd_num_c_19_overflow_pats(&self) -> &[CvdNumC19OverflowPatsProperty];
+	fn take_cvd_num_c_19_overflow_pats(&mut self) -> Vec<CvdNumC19OverflowPatsProperty>;
+	fn get_cvd_num_icu_beds(&self) -> &[CvdNumIcuBedsProperty];
+	fn take_cvd_num_icu_beds(&mut self) -> Vec<CvdNumIcuBedsProperty>;
+	fn get_cvd_num_icu_beds_occ(&self) -> &[CvdNumIcuBedsOccProperty];
+	fn take_cvd_num_icu_beds_occ(&mut self) -> Vec<CvdNumIcuBedsOccProperty>;
+	fn get_cvd_num_tot_beds(&self) -> &[CvdNumTotBedsProperty];
+	fn take_cvd_num_tot_beds(&mut self) -> Vec<CvdNumTotBedsProperty>;
+	fn get_cvd_num_vent(&self) -> &[CvdNumVentProperty];
+	fn take_cvd_num_vent(&mut self) -> Vec<CvdNumVentProperty>;
+	fn get_cvd_num_vent_use(&self) -> &[CvdNumVentUseProperty];
+	fn take_cvd_num_vent_use(&mut self) -> Vec<CvdNumVentUseProperty>;
+	fn get_date_posted(&self) -> &[DatePostedProperty];
+	fn take_date_posted(&mut self) -> Vec<DatePostedProperty>;
+}
+impl CdcpmdRecordTrait for CdcpmdRecord {
+	fn get_cvd_collection_date(&self) -> &[CvdCollectionDateProperty] {
+		self.r#cvd_collection_date.as_slice()
+	}
+	fn take_cvd_collection_date(&mut self) -> Vec<CvdCollectionDateProperty> {
+		std::mem::take(&mut self.r#cvd_collection_date)
+	}
+	fn get_cvd_facility_county(&self) -> &[CvdFacilityCountyProperty] {
+		self.r#cvd_facility_county.as_slice()
+	}
+	fn take_cvd_facility_county(&mut self) -> Vec<CvdFacilityCountyProperty> {
+		std::mem::take(&mut self.r#cvd_facility_county)
+	}
+	fn get_cvd_facility_id(&self) -> &[CvdFacilityIdProperty] {
+		self.r#cvd_facility_id.as_slice()
+	}
+	fn take_cvd_facility_id(&mut self) -> Vec<CvdFacilityIdProperty> {
+		std::mem::take(&mut self.r#cvd_facility_id)
+	}
+	fn get_cvd_num_beds(&self) -> &[CvdNumBedsProperty] {
+		self.r#cvd_num_beds.as_slice()
+	}
+	fn take_cvd_num_beds(&mut self) -> Vec<CvdNumBedsProperty> {
+		std::mem::take(&mut self.r#cvd_num_beds)
+	}
+	fn get_cvd_num_beds_occ(&self) -> &[CvdNumBedsOccProperty] {
+		self.r#cvd_num_beds_occ.as_slice()
+	}
+	fn take_cvd_num_beds_occ(&mut self) -> Vec<CvdNumBedsOccProperty> {
+		std::mem::take(&mut self.r#cvd_num_beds_occ)
+	}
+	fn get_cvd_num_c_19_died(&self) -> &[CvdNumC19DiedProperty] {
+		self.r#cvd_num_c_19_died.as_slice()
+	}
+	fn take_cvd_num_c_19_died(&mut self) -> Vec<CvdNumC19DiedProperty> {
+		std::mem::take(&mut self.r#cvd_num_c_19_died)
+	}
+	fn get_cvd_num_c_19_ho_pats(&self) -> &[CvdNumC19HoPatsProperty] {
+		self.r#cvd_num_c_19_ho_pats.as_slice()
+	}
+	fn take_cvd_num_c_19_ho_pats(&mut self) -> Vec<CvdNumC19HoPatsProperty> {
+		std::mem::take(&mut self.r#cvd_num_c_19_ho_pats)
+	}
+	fn get_cvd_num_c_19_hosp_pats(&self) -> &[CvdNumC19HospPatsProperty] {
+		self.r#cvd_num_c_19_hosp_pats.as_slice()
+	}
+	fn take_cvd_num_c_19_hosp_pats(&mut self) -> Vec<CvdNumC19HospPatsProperty> {
+		std::mem::take(&mut self.r#cvd_num_c_19_hosp_pats)
+	}
+	fn get_cvd_num_c_19_mech_vent_pats(&self) -> &[CvdNumC19MechVentPatsProperty] {
+		self.r#cvd_num_c_19_mech_vent_pats.as_slice()
+	}
+	fn take_cvd_num_c_19_mech_vent_pats(&mut self) -> Vec<CvdNumC19MechVentPatsProperty> {
+		std::mem::take(&mut self.r#cvd_num_c_19_mech_vent_pats)
+	}
+	fn get_cvd_num_c_19_of_mech_vent_pats(&self) -> &[CvdNumC19OfMechVentPatsProperty] {
+		self.r#cvd_num_c_19_of_mech_vent_pats.as_slice()
+	}
+	fn take_cvd_num_c_19_of_mech_vent_pats(&mut self) -> Vec<CvdNumC19OfMechVentPatsProperty> {
+		std::mem::take(&mut self.r#cvd_num_c_19_of_mech_vent_pats)
+	}
+	fn get_cvd_num_c_19_overflow_pats(&self) -> &[CvdNumC19OverflowPatsProperty] {
+		self.r#cvd_num_c_19_overflow_pats.as_slice()
+	}
+	fn take_cvd_num_c_19_overflow_pats(&mut self) -> Vec<CvdNumC19OverflowPatsProperty> {
+		std::mem::take(&mut self.r#cvd_num_c_19_overflow_pats)
+	}
+	fn get_cvd_num_icu_beds(&self) -> &[CvdNumIcuBedsProperty] {
+		self.r#cvd_num_icu_beds.as_slice()
+	}
+	fn take_cvd_num_icu_beds(&mut self) -> Vec<CvdNumIcuBedsProperty> {
+		std::mem::take(&mut self.r#cvd_num_icu_beds)
+	}
+	fn get_cvd_num_icu_beds_occ(&self) -> &[CvdNumIcuBedsOccProperty] {
+		self.r#cvd_num_icu_beds_occ.as_slice()
+	}
+	fn take_cvd_num_icu_beds_occ(&mut self) -> Vec<CvdNumIcuBedsOccProperty> {
+		std::mem::take(&mut self.r#cvd_num_icu_beds_occ)
+	}
+	fn get_cvd_num_tot_beds(&self) -> &[CvdNumTotBedsProperty] {
+		self.r#cvd_num_tot_beds.as_slice()
+	}
+	fn take_cvd_num_tot_beds(&mut self) -> Vec<CvdNumTotBedsProperty> {
+		std::mem::take(&mut self.r#cvd_num_tot_beds)
+	}
+	fn get_cvd_num_vent(&self) -> &[CvdNumVentProperty] {
+		self.r#cvd_num_vent.as_slice()
+	}
+	fn take_cvd_num_vent(&mut self) -> Vec<CvdNumVentProperty> {
+		std::mem::take(&mut self.r#cvd_num_vent)
+	}
+	fn get_cvd_num_vent_use(&self) -> &[CvdNumVentUseProperty] {
+		self.r#cvd_num_vent_use.as_slice()
+	}
+	fn take_cvd_num_vent_use(&mut self) -> Vec<CvdNumVentUseProperty> {
+		std::mem::take(&mut self.r#cvd_num_vent_use)
+	}
+	fn get_date_posted(&self) -> &[DatePostedProperty] {
+		self.r#date_posted.as_slice()
+	}
+	fn take_date_posted(&mut self) -> Vec<DatePostedProperty> {
+		std::mem::take(&mut self.r#date_posted)
+	}
+}
+impl StructuredValueTrait for CdcpmdRecord {}
+impl ThingTrait for CdcpmdRecord {
+	fn get_additional_type(&self) -> &[AdditionalTypeProperty] {
+		self.r#additional_type.as_slice()
+	}
+	fn take_additional_type(&mut self) -> Vec<AdditionalTypeProperty> {
+		std::mem::take(&mut self.r#additional_type)
+	}
+	fn get_alternate_name(&self) -> &[AlternateNameProperty] {
+		self.r#alternate_name.as_slice()
+	}
+	fn take_alternate_name(&mut self) -> Vec<AlternateNameProperty> {
+		std::mem::take(&mut self.r#alternate_name)
+	}
+	fn get_description(&self) -> &[DescriptionProperty] {
+		self.r#description.as_slice()
+	}
+	fn take_description(&mut self) -> Vec<DescriptionProperty> {
+		std::mem::take(&mut self.r#description)
+	}
+	fn get_disambiguating_description(&self) -> &[DisambiguatingDescriptionProperty] {
+		self.r#disambiguating_description.as_slice()
+	}
+	fn take_disambiguating_description(&mut self) -> Vec<DisambiguatingDescriptionProperty> {
+		std::mem::take(&mut self.r#disambiguating_description)
+	}
+	fn get_identifier(&self) -> &[IdentifierProperty] {
+		self.r#identifier.as_slice()
+	}
+	fn take_identifier(&mut self) -> Vec<IdentifierProperty> {
+		std::mem::take(&mut self.r#identifier)
+	}
+	fn get_image(&self) -> &[ImageProperty] {
+		self.r#image.as_slice()
+	}
+	fn take_image(&mut self) -> Vec<ImageProperty> {
+		std::mem::take(&mut self.r#image)
+	}
+	fn get_main_entity_of_page(&self) -> &[MainEntityOfPageProperty] {
+		self.r#main_entity_of_page.as_slice()
+	}
+	fn take_main_entity_of_page(&mut self) -> Vec<MainEntityOfPageProperty> {
+		std::mem::take(&mut self.r#main_entity_of_page)
+	}
+	fn get_name(&self) -> &[NameProperty] {
+		self.r#name.as_slice()
+	}
+	fn take_name(&mut self) -> Vec<NameProperty> {
+		std::mem::take(&mut self.r#name)
+	}
+	fn get_potential_action(&self) -> &[PotentialActionProperty] {
+		self.r#potential_action.as_slice()
+	}
+	fn take_potential_action(&mut self) -> Vec<PotentialActionProperty> {
+		std::mem::take(&mut self.r#potential_action)
+	}
+	fn get_same_as(&self) -> &[SameAsProperty] {
+		self.r#same_as.as_slice()
+	}
+	fn take_same_as(&mut self) -> Vec<SameAsProperty> {
+		std::mem::take(&mut self.r#same_as)
+	}
+	fn get_subject_of(&self) -> &[SubjectOfProperty] {
+		self.r#subject_of.as_slice()
+	}
+	fn take_subject_of(&mut self) -> Vec<SubjectOfProperty> {
+		std::mem::take(&mut self.r#subject_of)
+	}
+	fn get_url(&self) -> &[UrlProperty] {
+		self.r#url.as_slice()
+	}
+	fn take_url(&mut self) -> Vec<UrlProperty> {
+		std::mem::take(&mut self.r#url)
+	}
 }
 #[cfg(feature = "serde")]
 mod serde {
@@ -48,8 +263,6 @@ mod serde {
 			S: Serializer,
 		{
 			let len: usize = [
-				!Vec::is_empty(&self.r#additional_type) as usize,
-				!Vec::is_empty(&self.r#alternate_name) as usize,
 				!Vec::is_empty(&self.r#cvd_collection_date) as usize,
 				!Vec::is_empty(&self.r#cvd_facility_county) as usize,
 				!Vec::is_empty(&self.r#cvd_facility_id) as usize,
@@ -67,6 +280,8 @@ mod serde {
 				!Vec::is_empty(&self.r#cvd_num_vent) as usize,
 				!Vec::is_empty(&self.r#cvd_num_vent_use) as usize,
 				!Vec::is_empty(&self.r#date_posted) as usize,
+				!Vec::is_empty(&self.r#additional_type) as usize,
+				!Vec::is_empty(&self.r#alternate_name) as usize,
 				!Vec::is_empty(&self.r#description) as usize,
 				!Vec::is_empty(&self.r#disambiguating_description) as usize,
 				!Vec::is_empty(&self.r#identifier) as usize,
@@ -82,42 +297,6 @@ mod serde {
 			.sum();
 			let mut serialize_struct =
 				Serializer::serialize_struct(serializer, "CdcpmdRecord", len)?;
-			if !Vec::is_empty(&self.r#additional_type) {
-				serialize_struct.serialize_field("additionalType", {
-					struct SerializeWith<'a>(&'a Vec<AdditionalTypeProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#additional_type)
-				})?;
-			} else {
-				serialize_struct.skip_field("additionalType")?;
-			}
-			if !Vec::is_empty(&self.r#alternate_name) {
-				serialize_struct.serialize_field("alternateName", {
-					struct SerializeWith<'a>(&'a Vec<AlternateNameProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#alternate_name)
-				})?;
-			} else {
-				serialize_struct.skip_field("alternateName")?;
-			}
 			if !Vec::is_empty(&self.r#cvd_collection_date) {
 				serialize_struct.serialize_field("cvdCollectionDate", {
 					struct SerializeWith<'a>(&'a Vec<CvdCollectionDateProperty>);
@@ -424,6 +603,42 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("datePosted")?;
 			}
+			if !Vec::is_empty(&self.r#additional_type) {
+				serialize_struct.serialize_field("additionalType", {
+					struct SerializeWith<'a>(&'a Vec<AdditionalTypeProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#additional_type)
+				})?;
+			} else {
+				serialize_struct.skip_field("additionalType")?;
+			}
+			if !Vec::is_empty(&self.r#alternate_name) {
+				serialize_struct.serialize_field("alternateName", {
+					struct SerializeWith<'a>(&'a Vec<AlternateNameProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#alternate_name)
+				})?;
+			} else {
+				serialize_struct.skip_field("alternateName")?;
+			}
 			if !Vec::is_empty(&self.r#description) {
 				serialize_struct.serialize_field("description", {
 					struct SerializeWith<'a>(&'a Vec<DescriptionProperty>);
@@ -613,8 +828,6 @@ mod serde {
 			D: Deserializer<'de>,
 		{
 			enum Field {
-				AdditionalType,
-				AlternateName,
 				CvdCollectionDate,
 				CvdFacilityCounty,
 				CvdFacilityId,
@@ -632,6 +845,8 @@ mod serde {
 				CvdNumVent,
 				CvdNumVentUse,
 				DatePosted,
+				AdditionalType,
+				AlternateName,
 				Description,
 				DisambiguatingDescription,
 				Identifier,
@@ -655,8 +870,6 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
-						"additionalType" => Ok(Field::AdditionalType),
-						"alternateName" => Ok(Field::AlternateName),
 						"cvdCollectionDate" => Ok(Field::CvdCollectionDate),
 						"cvdFacilityCounty" => Ok(Field::CvdFacilityCounty),
 						"cvdFacilityId" => Ok(Field::CvdFacilityId),
@@ -674,6 +887,8 @@ mod serde {
 						"cvdNumVent" => Ok(Field::CvdNumVent),
 						"cvdNumVentUse" => Ok(Field::CvdNumVentUse),
 						"datePosted" => Ok(Field::DatePosted),
+						"additionalType" => Ok(Field::AdditionalType),
+						"alternateName" => Ok(Field::AlternateName),
 						"description" => Ok(Field::Description),
 						"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
 						"identifier" => Ok(Field::Identifier),
@@ -692,8 +907,6 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
-						b"additionalType" => Ok(Field::AdditionalType),
-						b"alternateName" => Ok(Field::AlternateName),
 						b"cvdCollectionDate" => Ok(Field::CvdCollectionDate),
 						b"cvdFacilityCounty" => Ok(Field::CvdFacilityCounty),
 						b"cvdFacilityId" => Ok(Field::CvdFacilityId),
@@ -711,6 +924,8 @@ mod serde {
 						b"cvdNumVent" => Ok(Field::CvdNumVent),
 						b"cvdNumVentUse" => Ok(Field::CvdNumVentUse),
 						b"datePosted" => Ok(Field::DatePosted),
+						b"additionalType" => Ok(Field::AdditionalType),
+						b"alternateName" => Ok(Field::AlternateName),
 						b"description" => Ok(Field::Description),
 						b"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
 						b"identifier" => Ok(Field::Identifier),
@@ -743,8 +958,6 @@ mod serde {
 				where
 					A: de::MapAccess<'de>,
 				{
-					let mut r#additional_type_property = None;
-					let mut r#alternate_name_property = None;
 					let mut r#cvd_collection_date_property = None;
 					let mut r#cvd_facility_county_property = None;
 					let mut r#cvd_facility_id_property = None;
@@ -762,6 +975,8 @@ mod serde {
 					let mut r#cvd_num_vent_property = None;
 					let mut r#cvd_num_vent_use_property = None;
 					let mut r#date_posted_property = None;
+					let mut r#additional_type_property = None;
+					let mut r#alternate_name_property = None;
 					let mut r#description_property = None;
 					let mut r#disambiguating_description_property = None;
 					let mut r#identifier_property = None;
@@ -774,58 +989,6 @@ mod serde {
 					let mut r#url_property = None;
 					while let Some(key) = map.next_key::<Field>()? {
 						match key {
-							Field::AdditionalType => {
-								if r#additional_type_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"additionalType",
-									));
-								}
-								r#additional_type_property = Some({
-									struct DeserializeWith(Vec<AdditionalTypeProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::AlternateName => {
-								if r#alternate_name_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"alternateName",
-									));
-								}
-								r#alternate_name_property = Some({
-									struct DeserializeWith(Vec<AlternateNameProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
 							Field::CvdCollectionDate => {
 								if r#cvd_collection_date_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -1268,6 +1431,58 @@ mod serde {
 									}
 								});
 							}
+							Field::AdditionalType => {
+								if r#additional_type_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"additionalType",
+									));
+								}
+								r#additional_type_property = Some({
+									struct DeserializeWith(Vec<AdditionalTypeProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::AlternateName => {
+								if r#alternate_name_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"alternateName",
+									));
+								}
+								r#alternate_name_property = Some({
+									struct DeserializeWith(Vec<AlternateNameProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
 							Field::Description => {
 								if r#description_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -1526,8 +1741,6 @@ mod serde {
 						}
 					}
 					Ok(CdcpmdRecord {
-						r#additional_type: r#additional_type_property.unwrap_or_default(),
-						r#alternate_name: r#alternate_name_property.unwrap_or_default(),
 						r#cvd_collection_date: r#cvd_collection_date_property.unwrap_or_default(),
 						r#cvd_facility_county: r#cvd_facility_county_property.unwrap_or_default(),
 						r#cvd_facility_id: r#cvd_facility_id_property.unwrap_or_default(),
@@ -1549,6 +1762,8 @@ mod serde {
 						r#cvd_num_vent: r#cvd_num_vent_property.unwrap_or_default(),
 						r#cvd_num_vent_use: r#cvd_num_vent_use_property.unwrap_or_default(),
 						r#date_posted: r#date_posted_property.unwrap_or_default(),
+						r#additional_type: r#additional_type_property.unwrap_or_default(),
+						r#alternate_name: r#alternate_name_property.unwrap_or_default(),
 						r#description: r#description_property.unwrap_or_default(),
 						r#disambiguating_description: r#disambiguating_description_property
 							.unwrap_or_default(),
@@ -1564,8 +1779,6 @@ mod serde {
 				}
 			}
 			const FIELDS: &[&str] = &[
-				"additionalType",
-				"alternateName",
 				"cvdCollectionDate",
 				"cvdFacilityCounty",
 				"cvdFacilityId",
@@ -1583,6 +1796,8 @@ mod serde {
 				"cvdNumVent",
 				"cvdNumVentUse",
 				"datePosted",
+				"additionalType",
+				"alternateName",
 				"description",
 				"disambiguatingDescription",
 				"identifier",

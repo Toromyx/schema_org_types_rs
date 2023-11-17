@@ -5,17 +5,13 @@ use super::*;
 pub struct SocialEvent {
 	pub r#about: Vec<AboutProperty>,
 	pub r#actor: Vec<ActorProperty>,
-	pub r#additional_type: Vec<AdditionalTypeProperty>,
 	pub r#aggregate_rating: Vec<AggregateRatingProperty>,
-	pub r#alternate_name: Vec<AlternateNameProperty>,
 	pub r#attendee: Vec<AttendeeProperty>,
 	pub r#attendees: Vec<AttendeesProperty>,
 	pub r#audience: Vec<AudienceProperty>,
 	pub r#composer: Vec<ComposerProperty>,
 	pub r#contributor: Vec<ContributorProperty>,
-	pub r#description: Vec<DescriptionProperty>,
 	pub r#director: Vec<DirectorProperty>,
-	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
 	pub r#door_time: Vec<DoorTimeProperty>,
 	pub r#duration: Vec<DurationProperty>,
 	pub r#end_date: Vec<EndDateProperty>,
@@ -24,38 +20,370 @@ pub struct SocialEvent {
 	pub r#event_status: Vec<EventStatusProperty>,
 	pub r#funder: Vec<FunderProperty>,
 	pub r#funding: Vec<FundingProperty>,
-	pub r#identifier: Vec<IdentifierProperty>,
-	pub r#image: Vec<ImageProperty>,
 	pub r#in_language: Vec<InLanguageProperty>,
 	pub r#is_accessible_for_free: Vec<IsAccessibleForFreeProperty>,
 	pub r#keywords: Vec<KeywordsProperty>,
 	pub r#location: Vec<LocationProperty>,
-	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
 	pub r#maximum_attendee_capacity: Vec<MaximumAttendeeCapacityProperty>,
 	pub r#maximum_physical_attendee_capacity: Vec<MaximumPhysicalAttendeeCapacityProperty>,
 	pub r#maximum_virtual_attendee_capacity: Vec<MaximumVirtualAttendeeCapacityProperty>,
-	pub r#name: Vec<NameProperty>,
 	pub r#offers: Vec<OffersProperty>,
 	pub r#organizer: Vec<OrganizerProperty>,
 	pub r#performer: Vec<PerformerProperty>,
 	pub r#performers: Vec<PerformersProperty>,
-	pub r#potential_action: Vec<PotentialActionProperty>,
 	pub r#previous_start_date: Vec<PreviousStartDateProperty>,
 	pub r#recorded_in: Vec<RecordedInProperty>,
 	pub r#remaining_attendee_capacity: Vec<RemainingAttendeeCapacityProperty>,
 	pub r#review: Vec<ReviewProperty>,
-	pub r#same_as: Vec<SameAsProperty>,
 	pub r#sponsor: Vec<SponsorProperty>,
 	pub r#start_date: Vec<StartDateProperty>,
 	pub r#sub_event: Vec<SubEventProperty>,
 	pub r#sub_events: Vec<SubEventsProperty>,
-	pub r#subject_of: Vec<SubjectOfProperty>,
 	pub r#super_event: Vec<SuperEventProperty>,
 	pub r#translator: Vec<TranslatorProperty>,
 	pub r#typical_age_range: Vec<TypicalAgeRangeProperty>,
-	pub r#url: Vec<UrlProperty>,
 	pub r#work_featured: Vec<WorkFeaturedProperty>,
 	pub r#work_performed: Vec<WorkPerformedProperty>,
+	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	pub r#alternate_name: Vec<AlternateNameProperty>,
+	pub r#description: Vec<DescriptionProperty>,
+	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	pub r#identifier: Vec<IdentifierProperty>,
+	pub r#image: Vec<ImageProperty>,
+	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	pub r#name: Vec<NameProperty>,
+	pub r#potential_action: Vec<PotentialActionProperty>,
+	pub r#same_as: Vec<SameAsProperty>,
+	pub r#subject_of: Vec<SubjectOfProperty>,
+	pub r#url: Vec<UrlProperty>,
+}
+pub trait SocialEventTrait {}
+impl SocialEventTrait for SocialEvent {}
+impl EventTrait for SocialEvent {
+	fn get_about(&self) -> &[AboutProperty] {
+		self.r#about.as_slice()
+	}
+	fn take_about(&mut self) -> Vec<AboutProperty> {
+		std::mem::take(&mut self.r#about)
+	}
+	fn get_actor(&self) -> &[ActorProperty] {
+		self.r#actor.as_slice()
+	}
+	fn take_actor(&mut self) -> Vec<ActorProperty> {
+		std::mem::take(&mut self.r#actor)
+	}
+	fn get_aggregate_rating(&self) -> &[AggregateRatingProperty] {
+		self.r#aggregate_rating.as_slice()
+	}
+	fn take_aggregate_rating(&mut self) -> Vec<AggregateRatingProperty> {
+		std::mem::take(&mut self.r#aggregate_rating)
+	}
+	fn get_attendee(&self) -> &[AttendeeProperty] {
+		self.r#attendee.as_slice()
+	}
+	fn take_attendee(&mut self) -> Vec<AttendeeProperty> {
+		std::mem::take(&mut self.r#attendee)
+	}
+	fn get_attendees(&self) -> &[AttendeesProperty] {
+		self.r#attendees.as_slice()
+	}
+	fn take_attendees(&mut self) -> Vec<AttendeesProperty> {
+		std::mem::take(&mut self.r#attendees)
+	}
+	fn get_audience(&self) -> &[AudienceProperty] {
+		self.r#audience.as_slice()
+	}
+	fn take_audience(&mut self) -> Vec<AudienceProperty> {
+		std::mem::take(&mut self.r#audience)
+	}
+	fn get_composer(&self) -> &[ComposerProperty] {
+		self.r#composer.as_slice()
+	}
+	fn take_composer(&mut self) -> Vec<ComposerProperty> {
+		std::mem::take(&mut self.r#composer)
+	}
+	fn get_contributor(&self) -> &[ContributorProperty] {
+		self.r#contributor.as_slice()
+	}
+	fn take_contributor(&mut self) -> Vec<ContributorProperty> {
+		std::mem::take(&mut self.r#contributor)
+	}
+	fn get_director(&self) -> &[DirectorProperty] {
+		self.r#director.as_slice()
+	}
+	fn take_director(&mut self) -> Vec<DirectorProperty> {
+		std::mem::take(&mut self.r#director)
+	}
+	fn get_door_time(&self) -> &[DoorTimeProperty] {
+		self.r#door_time.as_slice()
+	}
+	fn take_door_time(&mut self) -> Vec<DoorTimeProperty> {
+		std::mem::take(&mut self.r#door_time)
+	}
+	fn get_duration(&self) -> &[DurationProperty] {
+		self.r#duration.as_slice()
+	}
+	fn take_duration(&mut self) -> Vec<DurationProperty> {
+		std::mem::take(&mut self.r#duration)
+	}
+	fn get_end_date(&self) -> &[EndDateProperty] {
+		self.r#end_date.as_slice()
+	}
+	fn take_end_date(&mut self) -> Vec<EndDateProperty> {
+		std::mem::take(&mut self.r#end_date)
+	}
+	fn get_event_attendance_mode(&self) -> &[EventAttendanceModeProperty] {
+		self.r#event_attendance_mode.as_slice()
+	}
+	fn take_event_attendance_mode(&mut self) -> Vec<EventAttendanceModeProperty> {
+		std::mem::take(&mut self.r#event_attendance_mode)
+	}
+	fn get_event_schedule(&self) -> &[EventScheduleProperty] {
+		self.r#event_schedule.as_slice()
+	}
+	fn take_event_schedule(&mut self) -> Vec<EventScheduleProperty> {
+		std::mem::take(&mut self.r#event_schedule)
+	}
+	fn get_event_status(&self) -> &[EventStatusProperty] {
+		self.r#event_status.as_slice()
+	}
+	fn take_event_status(&mut self) -> Vec<EventStatusProperty> {
+		std::mem::take(&mut self.r#event_status)
+	}
+	fn get_funder(&self) -> &[FunderProperty] {
+		self.r#funder.as_slice()
+	}
+	fn take_funder(&mut self) -> Vec<FunderProperty> {
+		std::mem::take(&mut self.r#funder)
+	}
+	fn get_funding(&self) -> &[FundingProperty] {
+		self.r#funding.as_slice()
+	}
+	fn take_funding(&mut self) -> Vec<FundingProperty> {
+		std::mem::take(&mut self.r#funding)
+	}
+	fn get_in_language(&self) -> &[InLanguageProperty] {
+		self.r#in_language.as_slice()
+	}
+	fn take_in_language(&mut self) -> Vec<InLanguageProperty> {
+		std::mem::take(&mut self.r#in_language)
+	}
+	fn get_is_accessible_for_free(&self) -> &[IsAccessibleForFreeProperty] {
+		self.r#is_accessible_for_free.as_slice()
+	}
+	fn take_is_accessible_for_free(&mut self) -> Vec<IsAccessibleForFreeProperty> {
+		std::mem::take(&mut self.r#is_accessible_for_free)
+	}
+	fn get_keywords(&self) -> &[KeywordsProperty] {
+		self.r#keywords.as_slice()
+	}
+	fn take_keywords(&mut self) -> Vec<KeywordsProperty> {
+		std::mem::take(&mut self.r#keywords)
+	}
+	fn get_location(&self) -> &[LocationProperty] {
+		self.r#location.as_slice()
+	}
+	fn take_location(&mut self) -> Vec<LocationProperty> {
+		std::mem::take(&mut self.r#location)
+	}
+	fn get_maximum_attendee_capacity(&self) -> &[MaximumAttendeeCapacityProperty] {
+		self.r#maximum_attendee_capacity.as_slice()
+	}
+	fn take_maximum_attendee_capacity(&mut self) -> Vec<MaximumAttendeeCapacityProperty> {
+		std::mem::take(&mut self.r#maximum_attendee_capacity)
+	}
+	fn get_maximum_physical_attendee_capacity(&self) -> &[MaximumPhysicalAttendeeCapacityProperty] {
+		self.r#maximum_physical_attendee_capacity.as_slice()
+	}
+	fn take_maximum_physical_attendee_capacity(
+		&mut self,
+	) -> Vec<MaximumPhysicalAttendeeCapacityProperty> {
+		std::mem::take(&mut self.r#maximum_physical_attendee_capacity)
+	}
+	fn get_maximum_virtual_attendee_capacity(&self) -> &[MaximumVirtualAttendeeCapacityProperty] {
+		self.r#maximum_virtual_attendee_capacity.as_slice()
+	}
+	fn take_maximum_virtual_attendee_capacity(
+		&mut self,
+	) -> Vec<MaximumVirtualAttendeeCapacityProperty> {
+		std::mem::take(&mut self.r#maximum_virtual_attendee_capacity)
+	}
+	fn get_offers(&self) -> &[OffersProperty] {
+		self.r#offers.as_slice()
+	}
+	fn take_offers(&mut self) -> Vec<OffersProperty> {
+		std::mem::take(&mut self.r#offers)
+	}
+	fn get_organizer(&self) -> &[OrganizerProperty] {
+		self.r#organizer.as_slice()
+	}
+	fn take_organizer(&mut self) -> Vec<OrganizerProperty> {
+		std::mem::take(&mut self.r#organizer)
+	}
+	fn get_performer(&self) -> &[PerformerProperty] {
+		self.r#performer.as_slice()
+	}
+	fn take_performer(&mut self) -> Vec<PerformerProperty> {
+		std::mem::take(&mut self.r#performer)
+	}
+	fn get_performers(&self) -> &[PerformersProperty] {
+		self.r#performers.as_slice()
+	}
+	fn take_performers(&mut self) -> Vec<PerformersProperty> {
+		std::mem::take(&mut self.r#performers)
+	}
+	fn get_previous_start_date(&self) -> &[PreviousStartDateProperty] {
+		self.r#previous_start_date.as_slice()
+	}
+	fn take_previous_start_date(&mut self) -> Vec<PreviousStartDateProperty> {
+		std::mem::take(&mut self.r#previous_start_date)
+	}
+	fn get_recorded_in(&self) -> &[RecordedInProperty] {
+		self.r#recorded_in.as_slice()
+	}
+	fn take_recorded_in(&mut self) -> Vec<RecordedInProperty> {
+		std::mem::take(&mut self.r#recorded_in)
+	}
+	fn get_remaining_attendee_capacity(&self) -> &[RemainingAttendeeCapacityProperty] {
+		self.r#remaining_attendee_capacity.as_slice()
+	}
+	fn take_remaining_attendee_capacity(&mut self) -> Vec<RemainingAttendeeCapacityProperty> {
+		std::mem::take(&mut self.r#remaining_attendee_capacity)
+	}
+	fn get_review(&self) -> &[ReviewProperty] {
+		self.r#review.as_slice()
+	}
+	fn take_review(&mut self) -> Vec<ReviewProperty> {
+		std::mem::take(&mut self.r#review)
+	}
+	fn get_sponsor(&self) -> &[SponsorProperty] {
+		self.r#sponsor.as_slice()
+	}
+	fn take_sponsor(&mut self) -> Vec<SponsorProperty> {
+		std::mem::take(&mut self.r#sponsor)
+	}
+	fn get_start_date(&self) -> &[StartDateProperty] {
+		self.r#start_date.as_slice()
+	}
+	fn take_start_date(&mut self) -> Vec<StartDateProperty> {
+		std::mem::take(&mut self.r#start_date)
+	}
+	fn get_sub_event(&self) -> &[SubEventProperty] {
+		self.r#sub_event.as_slice()
+	}
+	fn take_sub_event(&mut self) -> Vec<SubEventProperty> {
+		std::mem::take(&mut self.r#sub_event)
+	}
+	fn get_sub_events(&self) -> &[SubEventsProperty] {
+		self.r#sub_events.as_slice()
+	}
+	fn take_sub_events(&mut self) -> Vec<SubEventsProperty> {
+		std::mem::take(&mut self.r#sub_events)
+	}
+	fn get_super_event(&self) -> &[SuperEventProperty] {
+		self.r#super_event.as_slice()
+	}
+	fn take_super_event(&mut self) -> Vec<SuperEventProperty> {
+		std::mem::take(&mut self.r#super_event)
+	}
+	fn get_translator(&self) -> &[TranslatorProperty] {
+		self.r#translator.as_slice()
+	}
+	fn take_translator(&mut self) -> Vec<TranslatorProperty> {
+		std::mem::take(&mut self.r#translator)
+	}
+	fn get_typical_age_range(&self) -> &[TypicalAgeRangeProperty] {
+		self.r#typical_age_range.as_slice()
+	}
+	fn take_typical_age_range(&mut self) -> Vec<TypicalAgeRangeProperty> {
+		std::mem::take(&mut self.r#typical_age_range)
+	}
+	fn get_work_featured(&self) -> &[WorkFeaturedProperty] {
+		self.r#work_featured.as_slice()
+	}
+	fn take_work_featured(&mut self) -> Vec<WorkFeaturedProperty> {
+		std::mem::take(&mut self.r#work_featured)
+	}
+	fn get_work_performed(&self) -> &[WorkPerformedProperty] {
+		self.r#work_performed.as_slice()
+	}
+	fn take_work_performed(&mut self) -> Vec<WorkPerformedProperty> {
+		std::mem::take(&mut self.r#work_performed)
+	}
+}
+impl ThingTrait for SocialEvent {
+	fn get_additional_type(&self) -> &[AdditionalTypeProperty] {
+		self.r#additional_type.as_slice()
+	}
+	fn take_additional_type(&mut self) -> Vec<AdditionalTypeProperty> {
+		std::mem::take(&mut self.r#additional_type)
+	}
+	fn get_alternate_name(&self) -> &[AlternateNameProperty] {
+		self.r#alternate_name.as_slice()
+	}
+	fn take_alternate_name(&mut self) -> Vec<AlternateNameProperty> {
+		std::mem::take(&mut self.r#alternate_name)
+	}
+	fn get_description(&self) -> &[DescriptionProperty] {
+		self.r#description.as_slice()
+	}
+	fn take_description(&mut self) -> Vec<DescriptionProperty> {
+		std::mem::take(&mut self.r#description)
+	}
+	fn get_disambiguating_description(&self) -> &[DisambiguatingDescriptionProperty] {
+		self.r#disambiguating_description.as_slice()
+	}
+	fn take_disambiguating_description(&mut self) -> Vec<DisambiguatingDescriptionProperty> {
+		std::mem::take(&mut self.r#disambiguating_description)
+	}
+	fn get_identifier(&self) -> &[IdentifierProperty] {
+		self.r#identifier.as_slice()
+	}
+	fn take_identifier(&mut self) -> Vec<IdentifierProperty> {
+		std::mem::take(&mut self.r#identifier)
+	}
+	fn get_image(&self) -> &[ImageProperty] {
+		self.r#image.as_slice()
+	}
+	fn take_image(&mut self) -> Vec<ImageProperty> {
+		std::mem::take(&mut self.r#image)
+	}
+	fn get_main_entity_of_page(&self) -> &[MainEntityOfPageProperty] {
+		self.r#main_entity_of_page.as_slice()
+	}
+	fn take_main_entity_of_page(&mut self) -> Vec<MainEntityOfPageProperty> {
+		std::mem::take(&mut self.r#main_entity_of_page)
+	}
+	fn get_name(&self) -> &[NameProperty] {
+		self.r#name.as_slice()
+	}
+	fn take_name(&mut self) -> Vec<NameProperty> {
+		std::mem::take(&mut self.r#name)
+	}
+	fn get_potential_action(&self) -> &[PotentialActionProperty] {
+		self.r#potential_action.as_slice()
+	}
+	fn take_potential_action(&mut self) -> Vec<PotentialActionProperty> {
+		std::mem::take(&mut self.r#potential_action)
+	}
+	fn get_same_as(&self) -> &[SameAsProperty] {
+		self.r#same_as.as_slice()
+	}
+	fn take_same_as(&mut self) -> Vec<SameAsProperty> {
+		std::mem::take(&mut self.r#same_as)
+	}
+	fn get_subject_of(&self) -> &[SubjectOfProperty] {
+		self.r#subject_of.as_slice()
+	}
+	fn take_subject_of(&mut self) -> Vec<SubjectOfProperty> {
+		std::mem::take(&mut self.r#subject_of)
+	}
+	fn get_url(&self) -> &[UrlProperty] {
+		self.r#url.as_slice()
+	}
+	fn take_url(&mut self) -> Vec<UrlProperty> {
+		std::mem::take(&mut self.r#url)
+	}
 }
 #[cfg(feature = "serde")]
 mod serde {
@@ -74,17 +402,13 @@ mod serde {
 			let len: usize = [
 				!Vec::is_empty(&self.r#about) as usize,
 				!Vec::is_empty(&self.r#actor) as usize,
-				!Vec::is_empty(&self.r#additional_type) as usize,
 				!Vec::is_empty(&self.r#aggregate_rating) as usize,
-				!Vec::is_empty(&self.r#alternate_name) as usize,
 				!Vec::is_empty(&self.r#attendee) as usize,
 				!Vec::is_empty(&self.r#attendees) as usize,
 				!Vec::is_empty(&self.r#audience) as usize,
 				!Vec::is_empty(&self.r#composer) as usize,
 				!Vec::is_empty(&self.r#contributor) as usize,
-				!Vec::is_empty(&self.r#description) as usize,
 				!Vec::is_empty(&self.r#director) as usize,
-				!Vec::is_empty(&self.r#disambiguating_description) as usize,
 				!Vec::is_empty(&self.r#door_time) as usize,
 				!Vec::is_empty(&self.r#duration) as usize,
 				!Vec::is_empty(&self.r#end_date) as usize,
@@ -93,38 +417,42 @@ mod serde {
 				!Vec::is_empty(&self.r#event_status) as usize,
 				!Vec::is_empty(&self.r#funder) as usize,
 				!Vec::is_empty(&self.r#funding) as usize,
-				!Vec::is_empty(&self.r#identifier) as usize,
-				!Vec::is_empty(&self.r#image) as usize,
 				!Vec::is_empty(&self.r#in_language) as usize,
 				!Vec::is_empty(&self.r#is_accessible_for_free) as usize,
 				!Vec::is_empty(&self.r#keywords) as usize,
 				!Vec::is_empty(&self.r#location) as usize,
-				!Vec::is_empty(&self.r#main_entity_of_page) as usize,
 				!Vec::is_empty(&self.r#maximum_attendee_capacity) as usize,
 				!Vec::is_empty(&self.r#maximum_physical_attendee_capacity) as usize,
 				!Vec::is_empty(&self.r#maximum_virtual_attendee_capacity) as usize,
-				!Vec::is_empty(&self.r#name) as usize,
 				!Vec::is_empty(&self.r#offers) as usize,
 				!Vec::is_empty(&self.r#organizer) as usize,
 				!Vec::is_empty(&self.r#performer) as usize,
 				!Vec::is_empty(&self.r#performers) as usize,
-				!Vec::is_empty(&self.r#potential_action) as usize,
 				!Vec::is_empty(&self.r#previous_start_date) as usize,
 				!Vec::is_empty(&self.r#recorded_in) as usize,
 				!Vec::is_empty(&self.r#remaining_attendee_capacity) as usize,
 				!Vec::is_empty(&self.r#review) as usize,
-				!Vec::is_empty(&self.r#same_as) as usize,
 				!Vec::is_empty(&self.r#sponsor) as usize,
 				!Vec::is_empty(&self.r#start_date) as usize,
 				!Vec::is_empty(&self.r#sub_event) as usize,
 				!Vec::is_empty(&self.r#sub_events) as usize,
-				!Vec::is_empty(&self.r#subject_of) as usize,
 				!Vec::is_empty(&self.r#super_event) as usize,
 				!Vec::is_empty(&self.r#translator) as usize,
 				!Vec::is_empty(&self.r#typical_age_range) as usize,
-				!Vec::is_empty(&self.r#url) as usize,
 				!Vec::is_empty(&self.r#work_featured) as usize,
 				!Vec::is_empty(&self.r#work_performed) as usize,
+				!Vec::is_empty(&self.r#additional_type) as usize,
+				!Vec::is_empty(&self.r#alternate_name) as usize,
+				!Vec::is_empty(&self.r#description) as usize,
+				!Vec::is_empty(&self.r#disambiguating_description) as usize,
+				!Vec::is_empty(&self.r#identifier) as usize,
+				!Vec::is_empty(&self.r#image) as usize,
+				!Vec::is_empty(&self.r#main_entity_of_page) as usize,
+				!Vec::is_empty(&self.r#name) as usize,
+				!Vec::is_empty(&self.r#potential_action) as usize,
+				!Vec::is_empty(&self.r#same_as) as usize,
+				!Vec::is_empty(&self.r#subject_of) as usize,
+				!Vec::is_empty(&self.r#url) as usize,
 			]
 			.iter()
 			.sum();
@@ -166,24 +494,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("actor")?;
 			}
-			if !Vec::is_empty(&self.r#additional_type) {
-				serialize_struct.serialize_field("additionalType", {
-					struct SerializeWith<'a>(&'a Vec<AdditionalTypeProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#additional_type)
-				})?;
-			} else {
-				serialize_struct.skip_field("additionalType")?;
-			}
 			if !Vec::is_empty(&self.r#aggregate_rating) {
 				serialize_struct.serialize_field("aggregateRating", {
 					struct SerializeWith<'a>(&'a Vec<AggregateRatingProperty>);
@@ -201,24 +511,6 @@ mod serde {
 				})?;
 			} else {
 				serialize_struct.skip_field("aggregateRating")?;
-			}
-			if !Vec::is_empty(&self.r#alternate_name) {
-				serialize_struct.serialize_field("alternateName", {
-					struct SerializeWith<'a>(&'a Vec<AlternateNameProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#alternate_name)
-				})?;
-			} else {
-				serialize_struct.skip_field("alternateName")?;
 			}
 			if !Vec::is_empty(&self.r#attendee) {
 				serialize_struct.serialize_field("attendee", {
@@ -310,24 +602,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("contributor")?;
 			}
-			if !Vec::is_empty(&self.r#description) {
-				serialize_struct.serialize_field("description", {
-					struct SerializeWith<'a>(&'a Vec<DescriptionProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#description)
-				})?;
-			} else {
-				serialize_struct.skip_field("description")?;
-			}
 			if !Vec::is_empty(&self.r#director) {
 				serialize_struct.serialize_field("director", {
 					struct SerializeWith<'a>(&'a Vec<DirectorProperty>);
@@ -345,24 +619,6 @@ mod serde {
 				})?;
 			} else {
 				serialize_struct.skip_field("director")?;
-			}
-			if !Vec::is_empty(&self.r#disambiguating_description) {
-				serialize_struct.serialize_field("disambiguatingDescription", {
-					struct SerializeWith<'a>(&'a Vec<DisambiguatingDescriptionProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#disambiguating_description)
-				})?;
-			} else {
-				serialize_struct.skip_field("disambiguatingDescription")?;
 			}
 			if !Vec::is_empty(&self.r#door_time) {
 				serialize_struct.serialize_field("doorTime", {
@@ -508,42 +764,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("funding")?;
 			}
-			if !Vec::is_empty(&self.r#identifier) {
-				serialize_struct.serialize_field("identifier", {
-					struct SerializeWith<'a>(&'a Vec<IdentifierProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#identifier)
-				})?;
-			} else {
-				serialize_struct.skip_field("identifier")?;
-			}
-			if !Vec::is_empty(&self.r#image) {
-				serialize_struct.serialize_field("image", {
-					struct SerializeWith<'a>(&'a Vec<ImageProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#image)
-				})?;
-			} else {
-				serialize_struct.skip_field("image")?;
-			}
 			if !Vec::is_empty(&self.r#in_language) {
 				serialize_struct.serialize_field("inLanguage", {
 					struct SerializeWith<'a>(&'a Vec<InLanguageProperty>);
@@ -616,24 +836,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("location")?;
 			}
-			if !Vec::is_empty(&self.r#main_entity_of_page) {
-				serialize_struct.serialize_field("mainEntityOfPage", {
-					struct SerializeWith<'a>(&'a Vec<MainEntityOfPageProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#main_entity_of_page)
-				})?;
-			} else {
-				serialize_struct.skip_field("mainEntityOfPage")?;
-			}
 			if !Vec::is_empty(&self.r#maximum_attendee_capacity) {
 				serialize_struct.serialize_field("maximumAttendeeCapacity", {
 					struct SerializeWith<'a>(&'a Vec<MaximumAttendeeCapacityProperty>);
@@ -687,24 +889,6 @@ mod serde {
 				})?;
 			} else {
 				serialize_struct.skip_field("maximumVirtualAttendeeCapacity")?;
-			}
-			if !Vec::is_empty(&self.r#name) {
-				serialize_struct.serialize_field("name", {
-					struct SerializeWith<'a>(&'a Vec<NameProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#name)
-				})?;
-			} else {
-				serialize_struct.skip_field("name")?;
 			}
 			if !Vec::is_empty(&self.r#offers) {
 				serialize_struct.serialize_field("offers", {
@@ -778,24 +962,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("performers")?;
 			}
-			if !Vec::is_empty(&self.r#potential_action) {
-				serialize_struct.serialize_field("potentialAction", {
-					struct SerializeWith<'a>(&'a Vec<PotentialActionProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#potential_action)
-				})?;
-			} else {
-				serialize_struct.skip_field("potentialAction")?;
-			}
 			if !Vec::is_empty(&self.r#previous_start_date) {
 				serialize_struct.serialize_field("previousStartDate", {
 					struct SerializeWith<'a>(&'a Vec<PreviousStartDateProperty>);
@@ -867,24 +1033,6 @@ mod serde {
 				})?;
 			} else {
 				serialize_struct.skip_field("review")?;
-			}
-			if !Vec::is_empty(&self.r#same_as) {
-				serialize_struct.serialize_field("sameAs", {
-					struct SerializeWith<'a>(&'a Vec<SameAsProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#same_as)
-				})?;
-			} else {
-				serialize_struct.skip_field("sameAs")?;
 			}
 			if !Vec::is_empty(&self.r#sponsor) {
 				serialize_struct.serialize_field("sponsor", {
@@ -958,24 +1106,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("subEvents")?;
 			}
-			if !Vec::is_empty(&self.r#subject_of) {
-				serialize_struct.serialize_field("subjectOf", {
-					struct SerializeWith<'a>(&'a Vec<SubjectOfProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#subject_of)
-				})?;
-			} else {
-				serialize_struct.skip_field("subjectOf")?;
-			}
 			if !Vec::is_empty(&self.r#super_event) {
 				serialize_struct.serialize_field("superEvent", {
 					struct SerializeWith<'a>(&'a Vec<SuperEventProperty>);
@@ -1030,24 +1160,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("typicalAgeRange")?;
 			}
-			if !Vec::is_empty(&self.r#url) {
-				serialize_struct.serialize_field("url", {
-					struct SerializeWith<'a>(&'a Vec<UrlProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#url)
-				})?;
-			} else {
-				serialize_struct.skip_field("url")?;
-			}
 			if !Vec::is_empty(&self.r#work_featured) {
 				serialize_struct.serialize_field("workFeatured", {
 					struct SerializeWith<'a>(&'a Vec<WorkFeaturedProperty>);
@@ -1084,6 +1196,222 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("workPerformed")?;
 			}
+			if !Vec::is_empty(&self.r#additional_type) {
+				serialize_struct.serialize_field("additionalType", {
+					struct SerializeWith<'a>(&'a Vec<AdditionalTypeProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#additional_type)
+				})?;
+			} else {
+				serialize_struct.skip_field("additionalType")?;
+			}
+			if !Vec::is_empty(&self.r#alternate_name) {
+				serialize_struct.serialize_field("alternateName", {
+					struct SerializeWith<'a>(&'a Vec<AlternateNameProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#alternate_name)
+				})?;
+			} else {
+				serialize_struct.skip_field("alternateName")?;
+			}
+			if !Vec::is_empty(&self.r#description) {
+				serialize_struct.serialize_field("description", {
+					struct SerializeWith<'a>(&'a Vec<DescriptionProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#description)
+				})?;
+			} else {
+				serialize_struct.skip_field("description")?;
+			}
+			if !Vec::is_empty(&self.r#disambiguating_description) {
+				serialize_struct.serialize_field("disambiguatingDescription", {
+					struct SerializeWith<'a>(&'a Vec<DisambiguatingDescriptionProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#disambiguating_description)
+				})?;
+			} else {
+				serialize_struct.skip_field("disambiguatingDescription")?;
+			}
+			if !Vec::is_empty(&self.r#identifier) {
+				serialize_struct.serialize_field("identifier", {
+					struct SerializeWith<'a>(&'a Vec<IdentifierProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#identifier)
+				})?;
+			} else {
+				serialize_struct.skip_field("identifier")?;
+			}
+			if !Vec::is_empty(&self.r#image) {
+				serialize_struct.serialize_field("image", {
+					struct SerializeWith<'a>(&'a Vec<ImageProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#image)
+				})?;
+			} else {
+				serialize_struct.skip_field("image")?;
+			}
+			if !Vec::is_empty(&self.r#main_entity_of_page) {
+				serialize_struct.serialize_field("mainEntityOfPage", {
+					struct SerializeWith<'a>(&'a Vec<MainEntityOfPageProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#main_entity_of_page)
+				})?;
+			} else {
+				serialize_struct.skip_field("mainEntityOfPage")?;
+			}
+			if !Vec::is_empty(&self.r#name) {
+				serialize_struct.serialize_field("name", {
+					struct SerializeWith<'a>(&'a Vec<NameProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#name)
+				})?;
+			} else {
+				serialize_struct.skip_field("name")?;
+			}
+			if !Vec::is_empty(&self.r#potential_action) {
+				serialize_struct.serialize_field("potentialAction", {
+					struct SerializeWith<'a>(&'a Vec<PotentialActionProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#potential_action)
+				})?;
+			} else {
+				serialize_struct.skip_field("potentialAction")?;
+			}
+			if !Vec::is_empty(&self.r#same_as) {
+				serialize_struct.serialize_field("sameAs", {
+					struct SerializeWith<'a>(&'a Vec<SameAsProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#same_as)
+				})?;
+			} else {
+				serialize_struct.skip_field("sameAs")?;
+			}
+			if !Vec::is_empty(&self.r#subject_of) {
+				serialize_struct.serialize_field("subjectOf", {
+					struct SerializeWith<'a>(&'a Vec<SubjectOfProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#subject_of)
+				})?;
+			} else {
+				serialize_struct.skip_field("subjectOf")?;
+			}
+			if !Vec::is_empty(&self.r#url) {
+				serialize_struct.serialize_field("url", {
+					struct SerializeWith<'a>(&'a Vec<UrlProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#url)
+				})?;
+			} else {
+				serialize_struct.skip_field("url")?;
+			}
 			serialize_struct.end()
 		}
 	}
@@ -1095,17 +1423,13 @@ mod serde {
 			enum Field {
 				About,
 				Actor,
-				AdditionalType,
 				AggregateRating,
-				AlternateName,
 				Attendee,
 				Attendees,
 				Audience,
 				Composer,
 				Contributor,
-				Description,
 				Director,
-				DisambiguatingDescription,
 				DoorTime,
 				Duration,
 				EndDate,
@@ -1114,38 +1438,42 @@ mod serde {
 				EventStatus,
 				Funder,
 				Funding,
-				Identifier,
-				Image,
 				InLanguage,
 				IsAccessibleForFree,
 				Keywords,
 				Location,
-				MainEntityOfPage,
 				MaximumAttendeeCapacity,
 				MaximumPhysicalAttendeeCapacity,
 				MaximumVirtualAttendeeCapacity,
-				Name,
 				Offers,
 				Organizer,
 				Performer,
 				Performers,
-				PotentialAction,
 				PreviousStartDate,
 				RecordedIn,
 				RemainingAttendeeCapacity,
 				Review,
-				SameAs,
 				Sponsor,
 				StartDate,
 				SubEvent,
 				SubEvents,
-				SubjectOf,
 				SuperEvent,
 				Translator,
 				TypicalAgeRange,
-				Url,
 				WorkFeatured,
 				WorkPerformed,
+				AdditionalType,
+				AlternateName,
+				Description,
+				DisambiguatingDescription,
+				Identifier,
+				Image,
+				MainEntityOfPage,
+				Name,
+				PotentialAction,
+				SameAs,
+				SubjectOf,
+				Url,
 				Ignore,
 			}
 			struct FieldVisitor;
@@ -1161,17 +1489,13 @@ mod serde {
 					match value {
 						"about" => Ok(Field::About),
 						"actor" => Ok(Field::Actor),
-						"additionalType" => Ok(Field::AdditionalType),
 						"aggregateRating" => Ok(Field::AggregateRating),
-						"alternateName" => Ok(Field::AlternateName),
 						"attendee" => Ok(Field::Attendee),
 						"attendees" => Ok(Field::Attendees),
 						"audience" => Ok(Field::Audience),
 						"composer" => Ok(Field::Composer),
 						"contributor" => Ok(Field::Contributor),
-						"description" => Ok(Field::Description),
 						"director" => Ok(Field::Director),
-						"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
 						"doorTime" => Ok(Field::DoorTime),
 						"duration" => Ok(Field::Duration),
 						"endDate" => Ok(Field::EndDate),
@@ -1180,13 +1504,10 @@ mod serde {
 						"eventStatus" => Ok(Field::EventStatus),
 						"funder" => Ok(Field::Funder),
 						"funding" => Ok(Field::Funding),
-						"identifier" => Ok(Field::Identifier),
-						"image" => Ok(Field::Image),
 						"inLanguage" => Ok(Field::InLanguage),
 						"isAccessibleForFree" => Ok(Field::IsAccessibleForFree),
 						"keywords" => Ok(Field::Keywords),
 						"location" => Ok(Field::Location),
-						"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
 						"maximumAttendeeCapacity" => Ok(Field::MaximumAttendeeCapacity),
 						"maximumPhysicalAttendeeCapacity" => {
 							Ok(Field::MaximumPhysicalAttendeeCapacity)
@@ -1194,28 +1515,35 @@ mod serde {
 						"maximumVirtualAttendeeCapacity" => {
 							Ok(Field::MaximumVirtualAttendeeCapacity)
 						}
-						"name" => Ok(Field::Name),
 						"offers" => Ok(Field::Offers),
 						"organizer" => Ok(Field::Organizer),
 						"performer" => Ok(Field::Performer),
 						"performers" => Ok(Field::Performers),
-						"potentialAction" => Ok(Field::PotentialAction),
 						"previousStartDate" => Ok(Field::PreviousStartDate),
 						"recordedIn" => Ok(Field::RecordedIn),
 						"remainingAttendeeCapacity" => Ok(Field::RemainingAttendeeCapacity),
 						"review" => Ok(Field::Review),
-						"sameAs" => Ok(Field::SameAs),
 						"sponsor" => Ok(Field::Sponsor),
 						"startDate" => Ok(Field::StartDate),
 						"subEvent" => Ok(Field::SubEvent),
 						"subEvents" => Ok(Field::SubEvents),
-						"subjectOf" => Ok(Field::SubjectOf),
 						"superEvent" => Ok(Field::SuperEvent),
 						"translator" => Ok(Field::Translator),
 						"typicalAgeRange" => Ok(Field::TypicalAgeRange),
-						"url" => Ok(Field::Url),
 						"workFeatured" => Ok(Field::WorkFeatured),
 						"workPerformed" => Ok(Field::WorkPerformed),
+						"additionalType" => Ok(Field::AdditionalType),
+						"alternateName" => Ok(Field::AlternateName),
+						"description" => Ok(Field::Description),
+						"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
+						"identifier" => Ok(Field::Identifier),
+						"image" => Ok(Field::Image),
+						"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
+						"name" => Ok(Field::Name),
+						"potentialAction" => Ok(Field::PotentialAction),
+						"sameAs" => Ok(Field::SameAs),
+						"subjectOf" => Ok(Field::SubjectOf),
+						"url" => Ok(Field::Url),
 						_ => Ok(Field::Ignore),
 					}
 				}
@@ -1226,17 +1554,13 @@ mod serde {
 					match value {
 						b"about" => Ok(Field::About),
 						b"actor" => Ok(Field::Actor),
-						b"additionalType" => Ok(Field::AdditionalType),
 						b"aggregateRating" => Ok(Field::AggregateRating),
-						b"alternateName" => Ok(Field::AlternateName),
 						b"attendee" => Ok(Field::Attendee),
 						b"attendees" => Ok(Field::Attendees),
 						b"audience" => Ok(Field::Audience),
 						b"composer" => Ok(Field::Composer),
 						b"contributor" => Ok(Field::Contributor),
-						b"description" => Ok(Field::Description),
 						b"director" => Ok(Field::Director),
-						b"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
 						b"doorTime" => Ok(Field::DoorTime),
 						b"duration" => Ok(Field::Duration),
 						b"endDate" => Ok(Field::EndDate),
@@ -1245,13 +1569,10 @@ mod serde {
 						b"eventStatus" => Ok(Field::EventStatus),
 						b"funder" => Ok(Field::Funder),
 						b"funding" => Ok(Field::Funding),
-						b"identifier" => Ok(Field::Identifier),
-						b"image" => Ok(Field::Image),
 						b"inLanguage" => Ok(Field::InLanguage),
 						b"isAccessibleForFree" => Ok(Field::IsAccessibleForFree),
 						b"keywords" => Ok(Field::Keywords),
 						b"location" => Ok(Field::Location),
-						b"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
 						b"maximumAttendeeCapacity" => Ok(Field::MaximumAttendeeCapacity),
 						b"maximumPhysicalAttendeeCapacity" => {
 							Ok(Field::MaximumPhysicalAttendeeCapacity)
@@ -1259,28 +1580,35 @@ mod serde {
 						b"maximumVirtualAttendeeCapacity" => {
 							Ok(Field::MaximumVirtualAttendeeCapacity)
 						}
-						b"name" => Ok(Field::Name),
 						b"offers" => Ok(Field::Offers),
 						b"organizer" => Ok(Field::Organizer),
 						b"performer" => Ok(Field::Performer),
 						b"performers" => Ok(Field::Performers),
-						b"potentialAction" => Ok(Field::PotentialAction),
 						b"previousStartDate" => Ok(Field::PreviousStartDate),
 						b"recordedIn" => Ok(Field::RecordedIn),
 						b"remainingAttendeeCapacity" => Ok(Field::RemainingAttendeeCapacity),
 						b"review" => Ok(Field::Review),
-						b"sameAs" => Ok(Field::SameAs),
 						b"sponsor" => Ok(Field::Sponsor),
 						b"startDate" => Ok(Field::StartDate),
 						b"subEvent" => Ok(Field::SubEvent),
 						b"subEvents" => Ok(Field::SubEvents),
-						b"subjectOf" => Ok(Field::SubjectOf),
 						b"superEvent" => Ok(Field::SuperEvent),
 						b"translator" => Ok(Field::Translator),
 						b"typicalAgeRange" => Ok(Field::TypicalAgeRange),
-						b"url" => Ok(Field::Url),
 						b"workFeatured" => Ok(Field::WorkFeatured),
 						b"workPerformed" => Ok(Field::WorkPerformed),
+						b"additionalType" => Ok(Field::AdditionalType),
+						b"alternateName" => Ok(Field::AlternateName),
+						b"description" => Ok(Field::Description),
+						b"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
+						b"identifier" => Ok(Field::Identifier),
+						b"image" => Ok(Field::Image),
+						b"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
+						b"name" => Ok(Field::Name),
+						b"potentialAction" => Ok(Field::PotentialAction),
+						b"sameAs" => Ok(Field::SameAs),
+						b"subjectOf" => Ok(Field::SubjectOf),
+						b"url" => Ok(Field::Url),
 						_ => Ok(Field::Ignore),
 					}
 				}
@@ -1305,17 +1633,13 @@ mod serde {
 				{
 					let mut r#about_property = None;
 					let mut r#actor_property = None;
-					let mut r#additional_type_property = None;
 					let mut r#aggregate_rating_property = None;
-					let mut r#alternate_name_property = None;
 					let mut r#attendee_property = None;
 					let mut r#attendees_property = None;
 					let mut r#audience_property = None;
 					let mut r#composer_property = None;
 					let mut r#contributor_property = None;
-					let mut r#description_property = None;
 					let mut r#director_property = None;
-					let mut r#disambiguating_description_property = None;
 					let mut r#door_time_property = None;
 					let mut r#duration_property = None;
 					let mut r#end_date_property = None;
@@ -1324,38 +1648,42 @@ mod serde {
 					let mut r#event_status_property = None;
 					let mut r#funder_property = None;
 					let mut r#funding_property = None;
-					let mut r#identifier_property = None;
-					let mut r#image_property = None;
 					let mut r#in_language_property = None;
 					let mut r#is_accessible_for_free_property = None;
 					let mut r#keywords_property = None;
 					let mut r#location_property = None;
-					let mut r#main_entity_of_page_property = None;
 					let mut r#maximum_attendee_capacity_property = None;
 					let mut r#maximum_physical_attendee_capacity_property = None;
 					let mut r#maximum_virtual_attendee_capacity_property = None;
-					let mut r#name_property = None;
 					let mut r#offers_property = None;
 					let mut r#organizer_property = None;
 					let mut r#performer_property = None;
 					let mut r#performers_property = None;
-					let mut r#potential_action_property = None;
 					let mut r#previous_start_date_property = None;
 					let mut r#recorded_in_property = None;
 					let mut r#remaining_attendee_capacity_property = None;
 					let mut r#review_property = None;
-					let mut r#same_as_property = None;
 					let mut r#sponsor_property = None;
 					let mut r#start_date_property = None;
 					let mut r#sub_event_property = None;
 					let mut r#sub_events_property = None;
-					let mut r#subject_of_property = None;
 					let mut r#super_event_property = None;
 					let mut r#translator_property = None;
 					let mut r#typical_age_range_property = None;
-					let mut r#url_property = None;
 					let mut r#work_featured_property = None;
 					let mut r#work_performed_property = None;
+					let mut r#additional_type_property = None;
+					let mut r#alternate_name_property = None;
+					let mut r#description_property = None;
+					let mut r#disambiguating_description_property = None;
+					let mut r#identifier_property = None;
+					let mut r#image_property = None;
+					let mut r#main_entity_of_page_property = None;
+					let mut r#name_property = None;
+					let mut r#potential_action_property = None;
+					let mut r#same_as_property = None;
+					let mut r#subject_of_property = None;
+					let mut r#url_property = None;
 					while let Some(key) = map.next_key::<Field>()? {
 						match key {
 							Field::About => {
@@ -1406,32 +1734,6 @@ mod serde {
 									}
 								});
 							}
-							Field::AdditionalType => {
-								if r#additional_type_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"additionalType",
-									));
-								}
-								r#additional_type_property = Some({
-									struct DeserializeWith(Vec<AdditionalTypeProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
 							Field::AggregateRating => {
 								if r#aggregate_rating_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -1440,32 +1742,6 @@ mod serde {
 								}
 								r#aggregate_rating_property = Some({
 									struct DeserializeWith(Vec<AggregateRatingProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::AlternateName => {
-								if r#alternate_name_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"alternateName",
-									));
-								}
-								r#alternate_name_property = Some({
-									struct DeserializeWith(Vec<AlternateNameProperty>);
 									impl<'de> Deserialize<'de> for DeserializeWith {
 										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
 										where
@@ -1614,32 +1890,6 @@ mod serde {
 									}
 								});
 							}
-							Field::Description => {
-								if r#description_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"description",
-									));
-								}
-								r#description_property = Some({
-									struct DeserializeWith(Vec<DescriptionProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
 							Field::Director => {
 								if r#director_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -1648,32 +1898,6 @@ mod serde {
 								}
 								r#director_property = Some({
 									struct DeserializeWith(Vec<DirectorProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::DisambiguatingDescription => {
-								if r#disambiguating_description_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"disambiguatingDescription",
-									));
-								}
-								r#disambiguating_description_property = Some({
-									struct DeserializeWith(Vec<DisambiguatingDescriptionProperty>);
 									impl<'de> Deserialize<'de> for DeserializeWith {
 										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
 										where
@@ -1898,56 +2122,6 @@ mod serde {
 									}
 								});
 							}
-							Field::Identifier => {
-								if r#identifier_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"identifier",
-									));
-								}
-								r#identifier_property = Some({
-									struct DeserializeWith(Vec<IdentifierProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::Image => {
-								if r#image_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field("image"));
-								}
-								r#image_property = Some({
-									struct DeserializeWith(Vec<ImageProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
 							Field::InLanguage => {
 								if r#in_language_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2052,32 +2226,6 @@ mod serde {
 									}
 								});
 							}
-							Field::MainEntityOfPage => {
-								if r#main_entity_of_page_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"mainEntityOfPage",
-									));
-								}
-								r#main_entity_of_page_property = Some({
-									struct DeserializeWith(Vec<MainEntityOfPageProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
 							Field::MaximumAttendeeCapacity => {
 								if r#maximum_attendee_capacity_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2142,30 +2290,6 @@ mod serde {
 									struct DeserializeWith(
 										Vec<MaximumVirtualAttendeeCapacityProperty>,
 									);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::Name => {
-								if r#name_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field("name"));
-								}
-								r#name_property = Some({
-									struct DeserializeWith(Vec<NameProperty>);
 									impl<'de> Deserialize<'de> for DeserializeWith {
 										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
 										where
@@ -2286,32 +2410,6 @@ mod serde {
 									}
 								});
 							}
-							Field::PotentialAction => {
-								if r#potential_action_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"potentialAction",
-									));
-								}
-								r#potential_action_property = Some({
-									struct DeserializeWith(Vec<PotentialActionProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
 							Field::PreviousStartDate => {
 								if r#previous_start_date_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2396,30 +2494,6 @@ mod serde {
 								}
 								r#review_property = Some({
 									struct DeserializeWith(Vec<ReviewProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::SameAs => {
-								if r#same_as_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field("sameAs"));
-								}
-								r#same_as_property = Some({
-									struct DeserializeWith(Vec<SameAsProperty>);
 									impl<'de> Deserialize<'de> for DeserializeWith {
 										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
 										where
@@ -2542,32 +2616,6 @@ mod serde {
 									}
 								});
 							}
-							Field::SubjectOf => {
-								if r#subject_of_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"subjectOf",
-									));
-								}
-								r#subject_of_property = Some({
-									struct DeserializeWith(Vec<SubjectOfProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
 							Field::SuperEvent => {
 								if r#super_event_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2646,30 +2694,6 @@ mod serde {
 									}
 								});
 							}
-							Field::Url => {
-								if r#url_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field("url"));
-								}
-								r#url_property = Some({
-									struct DeserializeWith(Vec<UrlProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
 							Field::WorkFeatured => {
 								if r#work_featured_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -2722,6 +2746,310 @@ mod serde {
 									}
 								});
 							}
+							Field::AdditionalType => {
+								if r#additional_type_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"additionalType",
+									));
+								}
+								r#additional_type_property = Some({
+									struct DeserializeWith(Vec<AdditionalTypeProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::AlternateName => {
+								if r#alternate_name_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"alternateName",
+									));
+								}
+								r#alternate_name_property = Some({
+									struct DeserializeWith(Vec<AlternateNameProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::Description => {
+								if r#description_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"description",
+									));
+								}
+								r#description_property = Some({
+									struct DeserializeWith(Vec<DescriptionProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::DisambiguatingDescription => {
+								if r#disambiguating_description_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"disambiguatingDescription",
+									));
+								}
+								r#disambiguating_description_property = Some({
+									struct DeserializeWith(Vec<DisambiguatingDescriptionProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::Identifier => {
+								if r#identifier_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"identifier",
+									));
+								}
+								r#identifier_property = Some({
+									struct DeserializeWith(Vec<IdentifierProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::Image => {
+								if r#image_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field("image"));
+								}
+								r#image_property = Some({
+									struct DeserializeWith(Vec<ImageProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::MainEntityOfPage => {
+								if r#main_entity_of_page_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"mainEntityOfPage",
+									));
+								}
+								r#main_entity_of_page_property = Some({
+									struct DeserializeWith(Vec<MainEntityOfPageProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::Name => {
+								if r#name_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field("name"));
+								}
+								r#name_property = Some({
+									struct DeserializeWith(Vec<NameProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::PotentialAction => {
+								if r#potential_action_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"potentialAction",
+									));
+								}
+								r#potential_action_property = Some({
+									struct DeserializeWith(Vec<PotentialActionProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::SameAs => {
+								if r#same_as_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field("sameAs"));
+								}
+								r#same_as_property = Some({
+									struct DeserializeWith(Vec<SameAsProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::SubjectOf => {
+								if r#subject_of_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"subjectOf",
+									));
+								}
+								r#subject_of_property = Some({
+									struct DeserializeWith(Vec<SubjectOfProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::Url => {
+								if r#url_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field("url"));
+								}
+								r#url_property = Some({
+									struct DeserializeWith(Vec<UrlProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
 							_ => {
 								let _ = map.next_value::<de::IgnoredAny>()?;
 							}
@@ -2730,18 +3058,13 @@ mod serde {
 					Ok(SocialEvent {
 						r#about: r#about_property.unwrap_or_default(),
 						r#actor: r#actor_property.unwrap_or_default(),
-						r#additional_type: r#additional_type_property.unwrap_or_default(),
 						r#aggregate_rating: r#aggregate_rating_property.unwrap_or_default(),
-						r#alternate_name: r#alternate_name_property.unwrap_or_default(),
 						r#attendee: r#attendee_property.unwrap_or_default(),
 						r#attendees: r#attendees_property.unwrap_or_default(),
 						r#audience: r#audience_property.unwrap_or_default(),
 						r#composer: r#composer_property.unwrap_or_default(),
 						r#contributor: r#contributor_property.unwrap_or_default(),
-						r#description: r#description_property.unwrap_or_default(),
 						r#director: r#director_property.unwrap_or_default(),
-						r#disambiguating_description: r#disambiguating_description_property
-							.unwrap_or_default(),
 						r#door_time: r#door_time_property.unwrap_or_default(),
 						r#duration: r#duration_property.unwrap_or_default(),
 						r#end_date: r#end_date_property.unwrap_or_default(),
@@ -2751,60 +3074,61 @@ mod serde {
 						r#event_status: r#event_status_property.unwrap_or_default(),
 						r#funder: r#funder_property.unwrap_or_default(),
 						r#funding: r#funding_property.unwrap_or_default(),
-						r#identifier: r#identifier_property.unwrap_or_default(),
-						r#image: r#image_property.unwrap_or_default(),
 						r#in_language: r#in_language_property.unwrap_or_default(),
 						r#is_accessible_for_free: r#is_accessible_for_free_property
 							.unwrap_or_default(),
 						r#keywords: r#keywords_property.unwrap_or_default(),
 						r#location: r#location_property.unwrap_or_default(),
-						r#main_entity_of_page: r#main_entity_of_page_property.unwrap_or_default(),
 						r#maximum_attendee_capacity: r#maximum_attendee_capacity_property
 							.unwrap_or_default(),
 						r#maximum_physical_attendee_capacity:
 							r#maximum_physical_attendee_capacity_property.unwrap_or_default(),
 						r#maximum_virtual_attendee_capacity:
 							r#maximum_virtual_attendee_capacity_property.unwrap_or_default(),
-						r#name: r#name_property.unwrap_or_default(),
 						r#offers: r#offers_property.unwrap_or_default(),
 						r#organizer: r#organizer_property.unwrap_or_default(),
 						r#performer: r#performer_property.unwrap_or_default(),
 						r#performers: r#performers_property.unwrap_or_default(),
-						r#potential_action: r#potential_action_property.unwrap_or_default(),
 						r#previous_start_date: r#previous_start_date_property.unwrap_or_default(),
 						r#recorded_in: r#recorded_in_property.unwrap_or_default(),
 						r#remaining_attendee_capacity: r#remaining_attendee_capacity_property
 							.unwrap_or_default(),
 						r#review: r#review_property.unwrap_or_default(),
-						r#same_as: r#same_as_property.unwrap_or_default(),
 						r#sponsor: r#sponsor_property.unwrap_or_default(),
 						r#start_date: r#start_date_property.unwrap_or_default(),
 						r#sub_event: r#sub_event_property.unwrap_or_default(),
 						r#sub_events: r#sub_events_property.unwrap_or_default(),
-						r#subject_of: r#subject_of_property.unwrap_or_default(),
 						r#super_event: r#super_event_property.unwrap_or_default(),
 						r#translator: r#translator_property.unwrap_or_default(),
 						r#typical_age_range: r#typical_age_range_property.unwrap_or_default(),
-						r#url: r#url_property.unwrap_or_default(),
 						r#work_featured: r#work_featured_property.unwrap_or_default(),
 						r#work_performed: r#work_performed_property.unwrap_or_default(),
+						r#additional_type: r#additional_type_property.unwrap_or_default(),
+						r#alternate_name: r#alternate_name_property.unwrap_or_default(),
+						r#description: r#description_property.unwrap_or_default(),
+						r#disambiguating_description: r#disambiguating_description_property
+							.unwrap_or_default(),
+						r#identifier: r#identifier_property.unwrap_or_default(),
+						r#image: r#image_property.unwrap_or_default(),
+						r#main_entity_of_page: r#main_entity_of_page_property.unwrap_or_default(),
+						r#name: r#name_property.unwrap_or_default(),
+						r#potential_action: r#potential_action_property.unwrap_or_default(),
+						r#same_as: r#same_as_property.unwrap_or_default(),
+						r#subject_of: r#subject_of_property.unwrap_or_default(),
+						r#url: r#url_property.unwrap_or_default(),
 					})
 				}
 			}
 			const FIELDS: &[&str] = &[
 				"about",
 				"actor",
-				"additionalType",
 				"aggregateRating",
-				"alternateName",
 				"attendee",
 				"attendees",
 				"audience",
 				"composer",
 				"contributor",
-				"description",
 				"director",
-				"disambiguatingDescription",
 				"doorTime",
 				"duration",
 				"endDate",
@@ -2813,38 +3137,42 @@ mod serde {
 				"eventStatus",
 				"funder",
 				"funding",
-				"identifier",
-				"image",
 				"inLanguage",
 				"isAccessibleForFree",
 				"keywords",
 				"location",
-				"mainEntityOfPage",
 				"maximumAttendeeCapacity",
 				"maximumPhysicalAttendeeCapacity",
 				"maximumVirtualAttendeeCapacity",
-				"name",
 				"offers",
 				"organizer",
 				"performer",
 				"performers",
-				"potentialAction",
 				"previousStartDate",
 				"recordedIn",
 				"remainingAttendeeCapacity",
 				"review",
-				"sameAs",
 				"sponsor",
 				"startDate",
 				"subEvent",
 				"subEvents",
-				"subjectOf",
 				"superEvent",
 				"translator",
 				"typicalAgeRange",
-				"url",
 				"workFeatured",
 				"workPerformed",
+				"additionalType",
+				"alternateName",
+				"description",
+				"disambiguatingDescription",
+				"identifier",
+				"image",
+				"mainEntityOfPage",
+				"name",
+				"potentialAction",
+				"sameAs",
+				"subjectOf",
+				"url",
 			];
 			deserializer.deserialize_struct("SocialEvent", FIELDS, ClassVisitor)
 		}

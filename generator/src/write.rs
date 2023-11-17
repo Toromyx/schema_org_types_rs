@@ -15,16 +15,8 @@ use crate::{
 	schema::{
 		class::Class, data_type::DataType, enumeration::Enumeration, property::Property, Schema,
 	},
-	sparql::{SchemaQueries, SchemaQuerySolution},
+	sparql::{node_type::NodeType, SchemaQueries, SchemaQuerySolution},
 };
-
-const IGNORED_SCHEMAS: &[&str] = &[
-	"https://schema.org/True",
-	"https://schema.org/False",
-	"https://schema.org/DataType",
-	"https://schema.org/Intangible",
-	"https://schema.org/Series",
-];
 
 #[derive(Debug, Clone, Derivative)]
 #[derivative(PartialEq, Eq, PartialOrd, Ord)]
@@ -182,29 +174,21 @@ pub fn write(store: &Store, multi_progress: &MultiProgress) {
 
 	let bar = multi_progress.add(ProgressBar::new(schemas.len() as u64));
 	schemas.into_par_iter().for_each(|solution| {
-		#[allow(clippy::never_loop)]
-		loop {
-			if IGNORED_SCHEMAS.contains(&solution.iri.as_str()) {
-				break;
-			}
-			if store.is_enumeration_variant(&solution.iri) {
-				break;
-			}
-			if store.is_property(&solution.iri) {
+		match NodeType::from_iri(store, &solution.iri) {
+			NodeType::EnumerationVariant => {}
+			NodeType::Property => {
 				handle_property(solution);
-				break;
 			}
-			if store.is_data_type(&solution.iri) {
+			NodeType::DataType => {
 				handle_data_type(solution);
-				break;
 			}
-			if store.is_enumeration(&solution.iri) {
+			NodeType::Enumeration => {
 				handle_enumeration(solution);
-				break;
 			}
-			handle_class(solution);
-			break;
-		}
+			NodeType::Class => {
+				handle_class(solution);
+			}
+		};
 		bar.inc(1);
 	});
 

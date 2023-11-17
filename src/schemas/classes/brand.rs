@@ -3,22 +3,132 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct Brand {
-	pub r#additional_type: Vec<AdditionalTypeProperty>,
 	pub r#aggregate_rating: Vec<AggregateRatingProperty>,
+	pub r#logo: Vec<LogoProperty>,
+	pub r#review: Vec<ReviewProperty>,
+	pub r#slogan: Vec<SloganProperty>,
+	pub r#additional_type: Vec<AdditionalTypeProperty>,
 	pub r#alternate_name: Vec<AlternateNameProperty>,
 	pub r#description: Vec<DescriptionProperty>,
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
 	pub r#identifier: Vec<IdentifierProperty>,
 	pub r#image: Vec<ImageProperty>,
-	pub r#logo: Vec<LogoProperty>,
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
 	pub r#name: Vec<NameProperty>,
 	pub r#potential_action: Vec<PotentialActionProperty>,
-	pub r#review: Vec<ReviewProperty>,
 	pub r#same_as: Vec<SameAsProperty>,
-	pub r#slogan: Vec<SloganProperty>,
 	pub r#subject_of: Vec<SubjectOfProperty>,
 	pub r#url: Vec<UrlProperty>,
+}
+pub trait BrandTrait {
+	fn get_aggregate_rating(&self) -> &[AggregateRatingProperty];
+	fn take_aggregate_rating(&mut self) -> Vec<AggregateRatingProperty>;
+	fn get_logo(&self) -> &[LogoProperty];
+	fn take_logo(&mut self) -> Vec<LogoProperty>;
+	fn get_review(&self) -> &[ReviewProperty];
+	fn take_review(&mut self) -> Vec<ReviewProperty>;
+	fn get_slogan(&self) -> &[SloganProperty];
+	fn take_slogan(&mut self) -> Vec<SloganProperty>;
+}
+impl BrandTrait for Brand {
+	fn get_aggregate_rating(&self) -> &[AggregateRatingProperty] {
+		self.r#aggregate_rating.as_slice()
+	}
+	fn take_aggregate_rating(&mut self) -> Vec<AggregateRatingProperty> {
+		std::mem::take(&mut self.r#aggregate_rating)
+	}
+	fn get_logo(&self) -> &[LogoProperty] {
+		self.r#logo.as_slice()
+	}
+	fn take_logo(&mut self) -> Vec<LogoProperty> {
+		std::mem::take(&mut self.r#logo)
+	}
+	fn get_review(&self) -> &[ReviewProperty] {
+		self.r#review.as_slice()
+	}
+	fn take_review(&mut self) -> Vec<ReviewProperty> {
+		std::mem::take(&mut self.r#review)
+	}
+	fn get_slogan(&self) -> &[SloganProperty] {
+		self.r#slogan.as_slice()
+	}
+	fn take_slogan(&mut self) -> Vec<SloganProperty> {
+		std::mem::take(&mut self.r#slogan)
+	}
+}
+impl ThingTrait for Brand {
+	fn get_additional_type(&self) -> &[AdditionalTypeProperty] {
+		self.r#additional_type.as_slice()
+	}
+	fn take_additional_type(&mut self) -> Vec<AdditionalTypeProperty> {
+		std::mem::take(&mut self.r#additional_type)
+	}
+	fn get_alternate_name(&self) -> &[AlternateNameProperty] {
+		self.r#alternate_name.as_slice()
+	}
+	fn take_alternate_name(&mut self) -> Vec<AlternateNameProperty> {
+		std::mem::take(&mut self.r#alternate_name)
+	}
+	fn get_description(&self) -> &[DescriptionProperty] {
+		self.r#description.as_slice()
+	}
+	fn take_description(&mut self) -> Vec<DescriptionProperty> {
+		std::mem::take(&mut self.r#description)
+	}
+	fn get_disambiguating_description(&self) -> &[DisambiguatingDescriptionProperty] {
+		self.r#disambiguating_description.as_slice()
+	}
+	fn take_disambiguating_description(&mut self) -> Vec<DisambiguatingDescriptionProperty> {
+		std::mem::take(&mut self.r#disambiguating_description)
+	}
+	fn get_identifier(&self) -> &[IdentifierProperty] {
+		self.r#identifier.as_slice()
+	}
+	fn take_identifier(&mut self) -> Vec<IdentifierProperty> {
+		std::mem::take(&mut self.r#identifier)
+	}
+	fn get_image(&self) -> &[ImageProperty] {
+		self.r#image.as_slice()
+	}
+	fn take_image(&mut self) -> Vec<ImageProperty> {
+		std::mem::take(&mut self.r#image)
+	}
+	fn get_main_entity_of_page(&self) -> &[MainEntityOfPageProperty] {
+		self.r#main_entity_of_page.as_slice()
+	}
+	fn take_main_entity_of_page(&mut self) -> Vec<MainEntityOfPageProperty> {
+		std::mem::take(&mut self.r#main_entity_of_page)
+	}
+	fn get_name(&self) -> &[NameProperty] {
+		self.r#name.as_slice()
+	}
+	fn take_name(&mut self) -> Vec<NameProperty> {
+		std::mem::take(&mut self.r#name)
+	}
+	fn get_potential_action(&self) -> &[PotentialActionProperty] {
+		self.r#potential_action.as_slice()
+	}
+	fn take_potential_action(&mut self) -> Vec<PotentialActionProperty> {
+		std::mem::take(&mut self.r#potential_action)
+	}
+	fn get_same_as(&self) -> &[SameAsProperty] {
+		self.r#same_as.as_slice()
+	}
+	fn take_same_as(&mut self) -> Vec<SameAsProperty> {
+		std::mem::take(&mut self.r#same_as)
+	}
+	fn get_subject_of(&self) -> &[SubjectOfProperty] {
+		self.r#subject_of.as_slice()
+	}
+	fn take_subject_of(&mut self) -> Vec<SubjectOfProperty> {
+		std::mem::take(&mut self.r#subject_of)
+	}
+	fn get_url(&self) -> &[UrlProperty] {
+		self.r#url.as_slice()
+	}
+	fn take_url(&mut self) -> Vec<UrlProperty> {
+		std::mem::take(&mut self.r#url)
+	}
 }
 #[cfg(feature = "serde")]
 mod serde {
@@ -35,44 +145,26 @@ mod serde {
 			S: Serializer,
 		{
 			let len: usize = [
-				!Vec::is_empty(&self.r#additional_type) as usize,
 				!Vec::is_empty(&self.r#aggregate_rating) as usize,
+				!Vec::is_empty(&self.r#logo) as usize,
+				!Vec::is_empty(&self.r#review) as usize,
+				!Vec::is_empty(&self.r#slogan) as usize,
+				!Vec::is_empty(&self.r#additional_type) as usize,
 				!Vec::is_empty(&self.r#alternate_name) as usize,
 				!Vec::is_empty(&self.r#description) as usize,
 				!Vec::is_empty(&self.r#disambiguating_description) as usize,
 				!Vec::is_empty(&self.r#identifier) as usize,
 				!Vec::is_empty(&self.r#image) as usize,
-				!Vec::is_empty(&self.r#logo) as usize,
 				!Vec::is_empty(&self.r#main_entity_of_page) as usize,
 				!Vec::is_empty(&self.r#name) as usize,
 				!Vec::is_empty(&self.r#potential_action) as usize,
-				!Vec::is_empty(&self.r#review) as usize,
 				!Vec::is_empty(&self.r#same_as) as usize,
-				!Vec::is_empty(&self.r#slogan) as usize,
 				!Vec::is_empty(&self.r#subject_of) as usize,
 				!Vec::is_empty(&self.r#url) as usize,
 			]
 			.iter()
 			.sum();
 			let mut serialize_struct = Serializer::serialize_struct(serializer, "Brand", len)?;
-			if !Vec::is_empty(&self.r#additional_type) {
-				serialize_struct.serialize_field("additionalType", {
-					struct SerializeWith<'a>(&'a Vec<AdditionalTypeProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#additional_type)
-				})?;
-			} else {
-				serialize_struct.skip_field("additionalType")?;
-			}
 			if !Vec::is_empty(&self.r#aggregate_rating) {
 				serialize_struct.serialize_field("aggregateRating", {
 					struct SerializeWith<'a>(&'a Vec<AggregateRatingProperty>);
@@ -90,6 +182,78 @@ mod serde {
 				})?;
 			} else {
 				serialize_struct.skip_field("aggregateRating")?;
+			}
+			if !Vec::is_empty(&self.r#logo) {
+				serialize_struct.serialize_field("logo", {
+					struct SerializeWith<'a>(&'a Vec<LogoProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#logo)
+				})?;
+			} else {
+				serialize_struct.skip_field("logo")?;
+			}
+			if !Vec::is_empty(&self.r#review) {
+				serialize_struct.serialize_field("review", {
+					struct SerializeWith<'a>(&'a Vec<ReviewProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#review)
+				})?;
+			} else {
+				serialize_struct.skip_field("review")?;
+			}
+			if !Vec::is_empty(&self.r#slogan) {
+				serialize_struct.serialize_field("slogan", {
+					struct SerializeWith<'a>(&'a Vec<SloganProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#slogan)
+				})?;
+			} else {
+				serialize_struct.skip_field("slogan")?;
+			}
+			if !Vec::is_empty(&self.r#additional_type) {
+				serialize_struct.serialize_field("additionalType", {
+					struct SerializeWith<'a>(&'a Vec<AdditionalTypeProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#additional_type)
+				})?;
+			} else {
+				serialize_struct.skip_field("additionalType")?;
 			}
 			if !Vec::is_empty(&self.r#alternate_name) {
 				serialize_struct.serialize_field("alternateName", {
@@ -181,24 +345,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("image")?;
 			}
-			if !Vec::is_empty(&self.r#logo) {
-				serialize_struct.serialize_field("logo", {
-					struct SerializeWith<'a>(&'a Vec<LogoProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#logo)
-				})?;
-			} else {
-				serialize_struct.skip_field("logo")?;
-			}
 			if !Vec::is_empty(&self.r#main_entity_of_page) {
 				serialize_struct.serialize_field("mainEntityOfPage", {
 					struct SerializeWith<'a>(&'a Vec<MainEntityOfPageProperty>);
@@ -253,24 +399,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("potentialAction")?;
 			}
-			if !Vec::is_empty(&self.r#review) {
-				serialize_struct.serialize_field("review", {
-					struct SerializeWith<'a>(&'a Vec<ReviewProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#review)
-				})?;
-			} else {
-				serialize_struct.skip_field("review")?;
-			}
 			if !Vec::is_empty(&self.r#same_as) {
 				serialize_struct.serialize_field("sameAs", {
 					struct SerializeWith<'a>(&'a Vec<SameAsProperty>);
@@ -288,24 +416,6 @@ mod serde {
 				})?;
 			} else {
 				serialize_struct.skip_field("sameAs")?;
-			}
-			if !Vec::is_empty(&self.r#slogan) {
-				serialize_struct.serialize_field("slogan", {
-					struct SerializeWith<'a>(&'a Vec<SloganProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#slogan)
-				})?;
-			} else {
-				serialize_struct.skip_field("slogan")?;
 			}
 			if !Vec::is_empty(&self.r#subject_of) {
 				serialize_struct.serialize_field("subjectOf", {
@@ -352,20 +462,20 @@ mod serde {
 			D: Deserializer<'de>,
 		{
 			enum Field {
-				AdditionalType,
 				AggregateRating,
+				Logo,
+				Review,
+				Slogan,
+				AdditionalType,
 				AlternateName,
 				Description,
 				DisambiguatingDescription,
 				Identifier,
 				Image,
-				Logo,
 				MainEntityOfPage,
 				Name,
 				PotentialAction,
-				Review,
 				SameAs,
-				Slogan,
 				SubjectOf,
 				Url,
 				Ignore,
@@ -381,20 +491,20 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
-						"additionalType" => Ok(Field::AdditionalType),
 						"aggregateRating" => Ok(Field::AggregateRating),
+						"logo" => Ok(Field::Logo),
+						"review" => Ok(Field::Review),
+						"slogan" => Ok(Field::Slogan),
+						"additionalType" => Ok(Field::AdditionalType),
 						"alternateName" => Ok(Field::AlternateName),
 						"description" => Ok(Field::Description),
 						"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
 						"identifier" => Ok(Field::Identifier),
 						"image" => Ok(Field::Image),
-						"logo" => Ok(Field::Logo),
 						"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
 						"name" => Ok(Field::Name),
 						"potentialAction" => Ok(Field::PotentialAction),
-						"review" => Ok(Field::Review),
 						"sameAs" => Ok(Field::SameAs),
-						"slogan" => Ok(Field::Slogan),
 						"subjectOf" => Ok(Field::SubjectOf),
 						"url" => Ok(Field::Url),
 						_ => Ok(Field::Ignore),
@@ -405,20 +515,20 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
-						b"additionalType" => Ok(Field::AdditionalType),
 						b"aggregateRating" => Ok(Field::AggregateRating),
+						b"logo" => Ok(Field::Logo),
+						b"review" => Ok(Field::Review),
+						b"slogan" => Ok(Field::Slogan),
+						b"additionalType" => Ok(Field::AdditionalType),
 						b"alternateName" => Ok(Field::AlternateName),
 						b"description" => Ok(Field::Description),
 						b"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
 						b"identifier" => Ok(Field::Identifier),
 						b"image" => Ok(Field::Image),
-						b"logo" => Ok(Field::Logo),
 						b"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
 						b"name" => Ok(Field::Name),
 						b"potentialAction" => Ok(Field::PotentialAction),
-						b"review" => Ok(Field::Review),
 						b"sameAs" => Ok(Field::SameAs),
-						b"slogan" => Ok(Field::Slogan),
 						b"subjectOf" => Ok(Field::SubjectOf),
 						b"url" => Ok(Field::Url),
 						_ => Ok(Field::Ignore),
@@ -443,32 +553,32 @@ mod serde {
 				where
 					A: de::MapAccess<'de>,
 				{
-					let mut r#additional_type_property = None;
 					let mut r#aggregate_rating_property = None;
+					let mut r#logo_property = None;
+					let mut r#review_property = None;
+					let mut r#slogan_property = None;
+					let mut r#additional_type_property = None;
 					let mut r#alternate_name_property = None;
 					let mut r#description_property = None;
 					let mut r#disambiguating_description_property = None;
 					let mut r#identifier_property = None;
 					let mut r#image_property = None;
-					let mut r#logo_property = None;
 					let mut r#main_entity_of_page_property = None;
 					let mut r#name_property = None;
 					let mut r#potential_action_property = None;
-					let mut r#review_property = None;
 					let mut r#same_as_property = None;
-					let mut r#slogan_property = None;
 					let mut r#subject_of_property = None;
 					let mut r#url_property = None;
 					while let Some(key) = map.next_key::<Field>()? {
 						match key {
-							Field::AdditionalType => {
-								if r#additional_type_property.is_some() {
+							Field::AggregateRating => {
+								if r#aggregate_rating_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
-										"additionalType",
+										"aggregateRating",
 									));
 								}
-								r#additional_type_property = Some({
-									struct DeserializeWith(Vec<AdditionalTypeProperty>);
+								r#aggregate_rating_property = Some({
+									struct DeserializeWith(Vec<AggregateRatingProperty>);
 									impl<'de> Deserialize<'de> for DeserializeWith {
 										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
 										where
@@ -487,14 +597,86 @@ mod serde {
 									}
 								});
 							}
-							Field::AggregateRating => {
-								if r#aggregate_rating_property.is_some() {
+							Field::Logo => {
+								if r#logo_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field("logo"));
+								}
+								r#logo_property = Some({
+									struct DeserializeWith(Vec<LogoProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::Review => {
+								if r#review_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field("review"));
+								}
+								r#review_property = Some({
+									struct DeserializeWith(Vec<ReviewProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::Slogan => {
+								if r#slogan_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field("slogan"));
+								}
+								r#slogan_property = Some({
+									struct DeserializeWith(Vec<SloganProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::AdditionalType => {
+								if r#additional_type_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
-										"aggregateRating",
+										"additionalType",
 									));
 								}
-								r#aggregate_rating_property = Some({
-									struct DeserializeWith(Vec<AggregateRatingProperty>);
+								r#additional_type_property = Some({
+									struct DeserializeWith(Vec<AdditionalTypeProperty>);
 									impl<'de> Deserialize<'de> for DeserializeWith {
 										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
 										where
@@ -641,30 +823,6 @@ mod serde {
 									}
 								});
 							}
-							Field::Logo => {
-								if r#logo_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field("logo"));
-								}
-								r#logo_property = Some({
-									struct DeserializeWith(Vec<LogoProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
 							Field::MainEntityOfPage => {
 								if r#main_entity_of_page_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -741,60 +899,12 @@ mod serde {
 									}
 								});
 							}
-							Field::Review => {
-								if r#review_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field("review"));
-								}
-								r#review_property = Some({
-									struct DeserializeWith(Vec<ReviewProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
 							Field::SameAs => {
 								if r#same_as_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("sameAs"));
 								}
 								r#same_as_property = Some({
 									struct DeserializeWith(Vec<SameAsProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::Slogan => {
-								if r#slogan_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field("slogan"));
-								}
-								r#slogan_property = Some({
-									struct DeserializeWith(Vec<SloganProperty>);
 									impl<'de> Deserialize<'de> for DeserializeWith {
 										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
 										where
@@ -869,41 +979,41 @@ mod serde {
 						}
 					}
 					Ok(Brand {
-						r#additional_type: r#additional_type_property.unwrap_or_default(),
 						r#aggregate_rating: r#aggregate_rating_property.unwrap_or_default(),
+						r#logo: r#logo_property.unwrap_or_default(),
+						r#review: r#review_property.unwrap_or_default(),
+						r#slogan: r#slogan_property.unwrap_or_default(),
+						r#additional_type: r#additional_type_property.unwrap_or_default(),
 						r#alternate_name: r#alternate_name_property.unwrap_or_default(),
 						r#description: r#description_property.unwrap_or_default(),
 						r#disambiguating_description: r#disambiguating_description_property
 							.unwrap_or_default(),
 						r#identifier: r#identifier_property.unwrap_or_default(),
 						r#image: r#image_property.unwrap_or_default(),
-						r#logo: r#logo_property.unwrap_or_default(),
 						r#main_entity_of_page: r#main_entity_of_page_property.unwrap_or_default(),
 						r#name: r#name_property.unwrap_or_default(),
 						r#potential_action: r#potential_action_property.unwrap_or_default(),
-						r#review: r#review_property.unwrap_or_default(),
 						r#same_as: r#same_as_property.unwrap_or_default(),
-						r#slogan: r#slogan_property.unwrap_or_default(),
 						r#subject_of: r#subject_of_property.unwrap_or_default(),
 						r#url: r#url_property.unwrap_or_default(),
 					})
 				}
 			}
 			const FIELDS: &[&str] = &[
-				"additionalType",
 				"aggregateRating",
+				"logo",
+				"review",
+				"slogan",
+				"additionalType",
 				"alternateName",
 				"description",
 				"disambiguatingDescription",
 				"identifier",
 				"image",
-				"logo",
 				"mainEntityOfPage",
 				"name",
 				"potentialAction",
-				"review",
 				"sameAs",
-				"slogan",
 				"subjectOf",
 				"url",
 			];

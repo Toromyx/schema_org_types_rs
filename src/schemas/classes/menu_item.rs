@@ -3,6 +3,10 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct MenuItem {
+	pub r#menu_add_on: Vec<MenuAddOnProperty>,
+	pub r#nutrition: Vec<NutritionProperty>,
+	pub r#offers: Vec<OffersProperty>,
+	pub r#suitable_for_diet: Vec<SuitableForDietProperty>,
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
 	pub r#alternate_name: Vec<AlternateNameProperty>,
 	pub r#description: Vec<DescriptionProperty>,
@@ -10,15 +14,121 @@ pub struct MenuItem {
 	pub r#identifier: Vec<IdentifierProperty>,
 	pub r#image: Vec<ImageProperty>,
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
-	pub r#menu_add_on: Vec<MenuAddOnProperty>,
 	pub r#name: Vec<NameProperty>,
-	pub r#nutrition: Vec<NutritionProperty>,
-	pub r#offers: Vec<OffersProperty>,
 	pub r#potential_action: Vec<PotentialActionProperty>,
 	pub r#same_as: Vec<SameAsProperty>,
 	pub r#subject_of: Vec<SubjectOfProperty>,
-	pub r#suitable_for_diet: Vec<SuitableForDietProperty>,
 	pub r#url: Vec<UrlProperty>,
+}
+pub trait MenuItemTrait {
+	fn get_menu_add_on(&self) -> &[MenuAddOnProperty];
+	fn take_menu_add_on(&mut self) -> Vec<MenuAddOnProperty>;
+	fn get_nutrition(&self) -> &[NutritionProperty];
+	fn take_nutrition(&mut self) -> Vec<NutritionProperty>;
+	fn get_offers(&self) -> &[OffersProperty];
+	fn take_offers(&mut self) -> Vec<OffersProperty>;
+	fn get_suitable_for_diet(&self) -> &[SuitableForDietProperty];
+	fn take_suitable_for_diet(&mut self) -> Vec<SuitableForDietProperty>;
+}
+impl MenuItemTrait for MenuItem {
+	fn get_menu_add_on(&self) -> &[MenuAddOnProperty] {
+		self.r#menu_add_on.as_slice()
+	}
+	fn take_menu_add_on(&mut self) -> Vec<MenuAddOnProperty> {
+		std::mem::take(&mut self.r#menu_add_on)
+	}
+	fn get_nutrition(&self) -> &[NutritionProperty] {
+		self.r#nutrition.as_slice()
+	}
+	fn take_nutrition(&mut self) -> Vec<NutritionProperty> {
+		std::mem::take(&mut self.r#nutrition)
+	}
+	fn get_offers(&self) -> &[OffersProperty] {
+		self.r#offers.as_slice()
+	}
+	fn take_offers(&mut self) -> Vec<OffersProperty> {
+		std::mem::take(&mut self.r#offers)
+	}
+	fn get_suitable_for_diet(&self) -> &[SuitableForDietProperty] {
+		self.r#suitable_for_diet.as_slice()
+	}
+	fn take_suitable_for_diet(&mut self) -> Vec<SuitableForDietProperty> {
+		std::mem::take(&mut self.r#suitable_for_diet)
+	}
+}
+impl ThingTrait for MenuItem {
+	fn get_additional_type(&self) -> &[AdditionalTypeProperty] {
+		self.r#additional_type.as_slice()
+	}
+	fn take_additional_type(&mut self) -> Vec<AdditionalTypeProperty> {
+		std::mem::take(&mut self.r#additional_type)
+	}
+	fn get_alternate_name(&self) -> &[AlternateNameProperty] {
+		self.r#alternate_name.as_slice()
+	}
+	fn take_alternate_name(&mut self) -> Vec<AlternateNameProperty> {
+		std::mem::take(&mut self.r#alternate_name)
+	}
+	fn get_description(&self) -> &[DescriptionProperty] {
+		self.r#description.as_slice()
+	}
+	fn take_description(&mut self) -> Vec<DescriptionProperty> {
+		std::mem::take(&mut self.r#description)
+	}
+	fn get_disambiguating_description(&self) -> &[DisambiguatingDescriptionProperty] {
+		self.r#disambiguating_description.as_slice()
+	}
+	fn take_disambiguating_description(&mut self) -> Vec<DisambiguatingDescriptionProperty> {
+		std::mem::take(&mut self.r#disambiguating_description)
+	}
+	fn get_identifier(&self) -> &[IdentifierProperty] {
+		self.r#identifier.as_slice()
+	}
+	fn take_identifier(&mut self) -> Vec<IdentifierProperty> {
+		std::mem::take(&mut self.r#identifier)
+	}
+	fn get_image(&self) -> &[ImageProperty] {
+		self.r#image.as_slice()
+	}
+	fn take_image(&mut self) -> Vec<ImageProperty> {
+		std::mem::take(&mut self.r#image)
+	}
+	fn get_main_entity_of_page(&self) -> &[MainEntityOfPageProperty] {
+		self.r#main_entity_of_page.as_slice()
+	}
+	fn take_main_entity_of_page(&mut self) -> Vec<MainEntityOfPageProperty> {
+		std::mem::take(&mut self.r#main_entity_of_page)
+	}
+	fn get_name(&self) -> &[NameProperty] {
+		self.r#name.as_slice()
+	}
+	fn take_name(&mut self) -> Vec<NameProperty> {
+		std::mem::take(&mut self.r#name)
+	}
+	fn get_potential_action(&self) -> &[PotentialActionProperty] {
+		self.r#potential_action.as_slice()
+	}
+	fn take_potential_action(&mut self) -> Vec<PotentialActionProperty> {
+		std::mem::take(&mut self.r#potential_action)
+	}
+	fn get_same_as(&self) -> &[SameAsProperty] {
+		self.r#same_as.as_slice()
+	}
+	fn take_same_as(&mut self) -> Vec<SameAsProperty> {
+		std::mem::take(&mut self.r#same_as)
+	}
+	fn get_subject_of(&self) -> &[SubjectOfProperty] {
+		self.r#subject_of.as_slice()
+	}
+	fn take_subject_of(&mut self) -> Vec<SubjectOfProperty> {
+		std::mem::take(&mut self.r#subject_of)
+	}
+	fn get_url(&self) -> &[UrlProperty] {
+		self.r#url.as_slice()
+	}
+	fn take_url(&mut self) -> Vec<UrlProperty> {
+		std::mem::take(&mut self.r#url)
+	}
 }
 #[cfg(feature = "serde")]
 mod serde {
@@ -35,6 +145,10 @@ mod serde {
 			S: Serializer,
 		{
 			let len: usize = [
+				!Vec::is_empty(&self.r#menu_add_on) as usize,
+				!Vec::is_empty(&self.r#nutrition) as usize,
+				!Vec::is_empty(&self.r#offers) as usize,
+				!Vec::is_empty(&self.r#suitable_for_diet) as usize,
 				!Vec::is_empty(&self.r#additional_type) as usize,
 				!Vec::is_empty(&self.r#alternate_name) as usize,
 				!Vec::is_empty(&self.r#description) as usize,
@@ -42,19 +156,87 @@ mod serde {
 				!Vec::is_empty(&self.r#identifier) as usize,
 				!Vec::is_empty(&self.r#image) as usize,
 				!Vec::is_empty(&self.r#main_entity_of_page) as usize,
-				!Vec::is_empty(&self.r#menu_add_on) as usize,
 				!Vec::is_empty(&self.r#name) as usize,
-				!Vec::is_empty(&self.r#nutrition) as usize,
-				!Vec::is_empty(&self.r#offers) as usize,
 				!Vec::is_empty(&self.r#potential_action) as usize,
 				!Vec::is_empty(&self.r#same_as) as usize,
 				!Vec::is_empty(&self.r#subject_of) as usize,
-				!Vec::is_empty(&self.r#suitable_for_diet) as usize,
 				!Vec::is_empty(&self.r#url) as usize,
 			]
 			.iter()
 			.sum();
 			let mut serialize_struct = Serializer::serialize_struct(serializer, "MenuItem", len)?;
+			if !Vec::is_empty(&self.r#menu_add_on) {
+				serialize_struct.serialize_field("menuAddOn", {
+					struct SerializeWith<'a>(&'a Vec<MenuAddOnProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#menu_add_on)
+				})?;
+			} else {
+				serialize_struct.skip_field("menuAddOn")?;
+			}
+			if !Vec::is_empty(&self.r#nutrition) {
+				serialize_struct.serialize_field("nutrition", {
+					struct SerializeWith<'a>(&'a Vec<NutritionProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#nutrition)
+				})?;
+			} else {
+				serialize_struct.skip_field("nutrition")?;
+			}
+			if !Vec::is_empty(&self.r#offers) {
+				serialize_struct.serialize_field("offers", {
+					struct SerializeWith<'a>(&'a Vec<OffersProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#offers)
+				})?;
+			} else {
+				serialize_struct.skip_field("offers")?;
+			}
+			if !Vec::is_empty(&self.r#suitable_for_diet) {
+				serialize_struct.serialize_field("suitableForDiet", {
+					struct SerializeWith<'a>(&'a Vec<SuitableForDietProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#suitable_for_diet)
+				})?;
+			} else {
+				serialize_struct.skip_field("suitableForDiet")?;
+			}
 			if !Vec::is_empty(&self.r#additional_type) {
 				serialize_struct.serialize_field("additionalType", {
 					struct SerializeWith<'a>(&'a Vec<AdditionalTypeProperty>);
@@ -181,24 +363,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("mainEntityOfPage")?;
 			}
-			if !Vec::is_empty(&self.r#menu_add_on) {
-				serialize_struct.serialize_field("menuAddOn", {
-					struct SerializeWith<'a>(&'a Vec<MenuAddOnProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#menu_add_on)
-				})?;
-			} else {
-				serialize_struct.skip_field("menuAddOn")?;
-			}
 			if !Vec::is_empty(&self.r#name) {
 				serialize_struct.serialize_field("name", {
 					struct SerializeWith<'a>(&'a Vec<NameProperty>);
@@ -216,42 +380,6 @@ mod serde {
 				})?;
 			} else {
 				serialize_struct.skip_field("name")?;
-			}
-			if !Vec::is_empty(&self.r#nutrition) {
-				serialize_struct.serialize_field("nutrition", {
-					struct SerializeWith<'a>(&'a Vec<NutritionProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#nutrition)
-				})?;
-			} else {
-				serialize_struct.skip_field("nutrition")?;
-			}
-			if !Vec::is_empty(&self.r#offers) {
-				serialize_struct.serialize_field("offers", {
-					struct SerializeWith<'a>(&'a Vec<OffersProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#offers)
-				})?;
-			} else {
-				serialize_struct.skip_field("offers")?;
 			}
 			if !Vec::is_empty(&self.r#potential_action) {
 				serialize_struct.serialize_field("potentialAction", {
@@ -307,24 +435,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("subjectOf")?;
 			}
-			if !Vec::is_empty(&self.r#suitable_for_diet) {
-				serialize_struct.serialize_field("suitableForDiet", {
-					struct SerializeWith<'a>(&'a Vec<SuitableForDietProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#suitable_for_diet)
-				})?;
-			} else {
-				serialize_struct.skip_field("suitableForDiet")?;
-			}
 			if !Vec::is_empty(&self.r#url) {
 				serialize_struct.serialize_field("url", {
 					struct SerializeWith<'a>(&'a Vec<UrlProperty>);
@@ -352,6 +462,10 @@ mod serde {
 			D: Deserializer<'de>,
 		{
 			enum Field {
+				MenuAddOn,
+				Nutrition,
+				Offers,
+				SuitableForDiet,
 				AdditionalType,
 				AlternateName,
 				Description,
@@ -359,14 +473,10 @@ mod serde {
 				Identifier,
 				Image,
 				MainEntityOfPage,
-				MenuAddOn,
 				Name,
-				Nutrition,
-				Offers,
 				PotentialAction,
 				SameAs,
 				SubjectOf,
-				SuitableForDiet,
 				Url,
 				Ignore,
 			}
@@ -381,6 +491,10 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
+						"menuAddOn" => Ok(Field::MenuAddOn),
+						"nutrition" => Ok(Field::Nutrition),
+						"offers" => Ok(Field::Offers),
+						"suitableForDiet" => Ok(Field::SuitableForDiet),
 						"additionalType" => Ok(Field::AdditionalType),
 						"alternateName" => Ok(Field::AlternateName),
 						"description" => Ok(Field::Description),
@@ -388,14 +502,10 @@ mod serde {
 						"identifier" => Ok(Field::Identifier),
 						"image" => Ok(Field::Image),
 						"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
-						"menuAddOn" => Ok(Field::MenuAddOn),
 						"name" => Ok(Field::Name),
-						"nutrition" => Ok(Field::Nutrition),
-						"offers" => Ok(Field::Offers),
 						"potentialAction" => Ok(Field::PotentialAction),
 						"sameAs" => Ok(Field::SameAs),
 						"subjectOf" => Ok(Field::SubjectOf),
-						"suitableForDiet" => Ok(Field::SuitableForDiet),
 						"url" => Ok(Field::Url),
 						_ => Ok(Field::Ignore),
 					}
@@ -405,6 +515,10 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
+						b"menuAddOn" => Ok(Field::MenuAddOn),
+						b"nutrition" => Ok(Field::Nutrition),
+						b"offers" => Ok(Field::Offers),
+						b"suitableForDiet" => Ok(Field::SuitableForDiet),
 						b"additionalType" => Ok(Field::AdditionalType),
 						b"alternateName" => Ok(Field::AlternateName),
 						b"description" => Ok(Field::Description),
@@ -412,14 +526,10 @@ mod serde {
 						b"identifier" => Ok(Field::Identifier),
 						b"image" => Ok(Field::Image),
 						b"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
-						b"menuAddOn" => Ok(Field::MenuAddOn),
 						b"name" => Ok(Field::Name),
-						b"nutrition" => Ok(Field::Nutrition),
-						b"offers" => Ok(Field::Offers),
 						b"potentialAction" => Ok(Field::PotentialAction),
 						b"sameAs" => Ok(Field::SameAs),
 						b"subjectOf" => Ok(Field::SubjectOf),
-						b"suitableForDiet" => Ok(Field::SuitableForDiet),
 						b"url" => Ok(Field::Url),
 						_ => Ok(Field::Ignore),
 					}
@@ -443,6 +553,10 @@ mod serde {
 				where
 					A: de::MapAccess<'de>,
 				{
+					let mut r#menu_add_on_property = None;
+					let mut r#nutrition_property = None;
+					let mut r#offers_property = None;
+					let mut r#suitable_for_diet_property = None;
 					let mut r#additional_type_property = None;
 					let mut r#alternate_name_property = None;
 					let mut r#description_property = None;
@@ -450,17 +564,115 @@ mod serde {
 					let mut r#identifier_property = None;
 					let mut r#image_property = None;
 					let mut r#main_entity_of_page_property = None;
-					let mut r#menu_add_on_property = None;
 					let mut r#name_property = None;
-					let mut r#nutrition_property = None;
-					let mut r#offers_property = None;
 					let mut r#potential_action_property = None;
 					let mut r#same_as_property = None;
 					let mut r#subject_of_property = None;
-					let mut r#suitable_for_diet_property = None;
 					let mut r#url_property = None;
 					while let Some(key) = map.next_key::<Field>()? {
 						match key {
+							Field::MenuAddOn => {
+								if r#menu_add_on_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"menuAddOn",
+									));
+								}
+								r#menu_add_on_property = Some({
+									struct DeserializeWith(Vec<MenuAddOnProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::Nutrition => {
+								if r#nutrition_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"nutrition",
+									));
+								}
+								r#nutrition_property = Some({
+									struct DeserializeWith(Vec<NutritionProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::Offers => {
+								if r#offers_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field("offers"));
+								}
+								r#offers_property = Some({
+									struct DeserializeWith(Vec<OffersProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::SuitableForDiet => {
+								if r#suitable_for_diet_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"suitableForDiet",
+									));
+								}
+								r#suitable_for_diet_property = Some({
+									struct DeserializeWith(Vec<SuitableForDietProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
 							Field::AdditionalType => {
 								if r#additional_type_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -641,88 +853,12 @@ mod serde {
 									}
 								});
 							}
-							Field::MenuAddOn => {
-								if r#menu_add_on_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"menuAddOn",
-									));
-								}
-								r#menu_add_on_property = Some({
-									struct DeserializeWith(Vec<MenuAddOnProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
 							Field::Name => {
 								if r#name_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("name"));
 								}
 								r#name_property = Some({
 									struct DeserializeWith(Vec<NameProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::Nutrition => {
-								if r#nutrition_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"nutrition",
-									));
-								}
-								r#nutrition_property = Some({
-									struct DeserializeWith(Vec<NutritionProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::Offers => {
-								if r#offers_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field("offers"));
-								}
-								r#offers_property = Some({
-									struct DeserializeWith(Vec<OffersProperty>);
 									impl<'de> Deserialize<'de> for DeserializeWith {
 										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
 										where
@@ -817,32 +953,6 @@ mod serde {
 									}
 								});
 							}
-							Field::SuitableForDiet => {
-								if r#suitable_for_diet_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"suitableForDiet",
-									));
-								}
-								r#suitable_for_diet_property = Some({
-									struct DeserializeWith(Vec<SuitableForDietProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
 							Field::Url => {
 								if r#url_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("url"));
@@ -873,6 +983,10 @@ mod serde {
 						}
 					}
 					Ok(MenuItem {
+						r#menu_add_on: r#menu_add_on_property.unwrap_or_default(),
+						r#nutrition: r#nutrition_property.unwrap_or_default(),
+						r#offers: r#offers_property.unwrap_or_default(),
+						r#suitable_for_diet: r#suitable_for_diet_property.unwrap_or_default(),
 						r#additional_type: r#additional_type_property.unwrap_or_default(),
 						r#alternate_name: r#alternate_name_property.unwrap_or_default(),
 						r#description: r#description_property.unwrap_or_default(),
@@ -881,19 +995,19 @@ mod serde {
 						r#identifier: r#identifier_property.unwrap_or_default(),
 						r#image: r#image_property.unwrap_or_default(),
 						r#main_entity_of_page: r#main_entity_of_page_property.unwrap_or_default(),
-						r#menu_add_on: r#menu_add_on_property.unwrap_or_default(),
 						r#name: r#name_property.unwrap_or_default(),
-						r#nutrition: r#nutrition_property.unwrap_or_default(),
-						r#offers: r#offers_property.unwrap_or_default(),
 						r#potential_action: r#potential_action_property.unwrap_or_default(),
 						r#same_as: r#same_as_property.unwrap_or_default(),
 						r#subject_of: r#subject_of_property.unwrap_or_default(),
-						r#suitable_for_diet: r#suitable_for_diet_property.unwrap_or_default(),
 						r#url: r#url_property.unwrap_or_default(),
 					})
 				}
 			}
 			const FIELDS: &[&str] = &[
+				"menuAddOn",
+				"nutrition",
+				"offers",
+				"suitableForDiet",
 				"additionalType",
 				"alternateName",
 				"description",
@@ -901,14 +1015,10 @@ mod serde {
 				"identifier",
 				"image",
 				"mainEntityOfPage",
-				"menuAddOn",
 				"name",
-				"nutrition",
-				"offers",
 				"potentialAction",
 				"sameAs",
 				"subjectOf",
-				"suitableForDiet",
 				"url",
 			];
 			deserializer.deserialize_struct("MenuItem", FIELDS, ClassVisitor)

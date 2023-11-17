@@ -4,6 +4,9 @@ use super::*;
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct OwnershipInfo {
 	pub r#acquired_from: Vec<AcquiredFromProperty>,
+	pub r#owned_from: Vec<OwnedFromProperty>,
+	pub r#owned_through: Vec<OwnedThroughProperty>,
+	pub r#type_of_good: Vec<TypeOfGoodProperty>,
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
 	pub r#alternate_name: Vec<AlternateNameProperty>,
 	pub r#description: Vec<DescriptionProperty>,
@@ -12,13 +15,121 @@ pub struct OwnershipInfo {
 	pub r#image: Vec<ImageProperty>,
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
 	pub r#name: Vec<NameProperty>,
-	pub r#owned_from: Vec<OwnedFromProperty>,
-	pub r#owned_through: Vec<OwnedThroughProperty>,
 	pub r#potential_action: Vec<PotentialActionProperty>,
 	pub r#same_as: Vec<SameAsProperty>,
 	pub r#subject_of: Vec<SubjectOfProperty>,
-	pub r#type_of_good: Vec<TypeOfGoodProperty>,
 	pub r#url: Vec<UrlProperty>,
+}
+pub trait OwnershipInfoTrait {
+	fn get_acquired_from(&self) -> &[AcquiredFromProperty];
+	fn take_acquired_from(&mut self) -> Vec<AcquiredFromProperty>;
+	fn get_owned_from(&self) -> &[OwnedFromProperty];
+	fn take_owned_from(&mut self) -> Vec<OwnedFromProperty>;
+	fn get_owned_through(&self) -> &[OwnedThroughProperty];
+	fn take_owned_through(&mut self) -> Vec<OwnedThroughProperty>;
+	fn get_type_of_good(&self) -> &[TypeOfGoodProperty];
+	fn take_type_of_good(&mut self) -> Vec<TypeOfGoodProperty>;
+}
+impl OwnershipInfoTrait for OwnershipInfo {
+	fn get_acquired_from(&self) -> &[AcquiredFromProperty] {
+		self.r#acquired_from.as_slice()
+	}
+	fn take_acquired_from(&mut self) -> Vec<AcquiredFromProperty> {
+		std::mem::take(&mut self.r#acquired_from)
+	}
+	fn get_owned_from(&self) -> &[OwnedFromProperty] {
+		self.r#owned_from.as_slice()
+	}
+	fn take_owned_from(&mut self) -> Vec<OwnedFromProperty> {
+		std::mem::take(&mut self.r#owned_from)
+	}
+	fn get_owned_through(&self) -> &[OwnedThroughProperty] {
+		self.r#owned_through.as_slice()
+	}
+	fn take_owned_through(&mut self) -> Vec<OwnedThroughProperty> {
+		std::mem::take(&mut self.r#owned_through)
+	}
+	fn get_type_of_good(&self) -> &[TypeOfGoodProperty] {
+		self.r#type_of_good.as_slice()
+	}
+	fn take_type_of_good(&mut self) -> Vec<TypeOfGoodProperty> {
+		std::mem::take(&mut self.r#type_of_good)
+	}
+}
+impl StructuredValueTrait for OwnershipInfo {}
+impl ThingTrait for OwnershipInfo {
+	fn get_additional_type(&self) -> &[AdditionalTypeProperty] {
+		self.r#additional_type.as_slice()
+	}
+	fn take_additional_type(&mut self) -> Vec<AdditionalTypeProperty> {
+		std::mem::take(&mut self.r#additional_type)
+	}
+	fn get_alternate_name(&self) -> &[AlternateNameProperty] {
+		self.r#alternate_name.as_slice()
+	}
+	fn take_alternate_name(&mut self) -> Vec<AlternateNameProperty> {
+		std::mem::take(&mut self.r#alternate_name)
+	}
+	fn get_description(&self) -> &[DescriptionProperty] {
+		self.r#description.as_slice()
+	}
+	fn take_description(&mut self) -> Vec<DescriptionProperty> {
+		std::mem::take(&mut self.r#description)
+	}
+	fn get_disambiguating_description(&self) -> &[DisambiguatingDescriptionProperty] {
+		self.r#disambiguating_description.as_slice()
+	}
+	fn take_disambiguating_description(&mut self) -> Vec<DisambiguatingDescriptionProperty> {
+		std::mem::take(&mut self.r#disambiguating_description)
+	}
+	fn get_identifier(&self) -> &[IdentifierProperty] {
+		self.r#identifier.as_slice()
+	}
+	fn take_identifier(&mut self) -> Vec<IdentifierProperty> {
+		std::mem::take(&mut self.r#identifier)
+	}
+	fn get_image(&self) -> &[ImageProperty] {
+		self.r#image.as_slice()
+	}
+	fn take_image(&mut self) -> Vec<ImageProperty> {
+		std::mem::take(&mut self.r#image)
+	}
+	fn get_main_entity_of_page(&self) -> &[MainEntityOfPageProperty] {
+		self.r#main_entity_of_page.as_slice()
+	}
+	fn take_main_entity_of_page(&mut self) -> Vec<MainEntityOfPageProperty> {
+		std::mem::take(&mut self.r#main_entity_of_page)
+	}
+	fn get_name(&self) -> &[NameProperty] {
+		self.r#name.as_slice()
+	}
+	fn take_name(&mut self) -> Vec<NameProperty> {
+		std::mem::take(&mut self.r#name)
+	}
+	fn get_potential_action(&self) -> &[PotentialActionProperty] {
+		self.r#potential_action.as_slice()
+	}
+	fn take_potential_action(&mut self) -> Vec<PotentialActionProperty> {
+		std::mem::take(&mut self.r#potential_action)
+	}
+	fn get_same_as(&self) -> &[SameAsProperty] {
+		self.r#same_as.as_slice()
+	}
+	fn take_same_as(&mut self) -> Vec<SameAsProperty> {
+		std::mem::take(&mut self.r#same_as)
+	}
+	fn get_subject_of(&self) -> &[SubjectOfProperty] {
+		self.r#subject_of.as_slice()
+	}
+	fn take_subject_of(&mut self) -> Vec<SubjectOfProperty> {
+		std::mem::take(&mut self.r#subject_of)
+	}
+	fn get_url(&self) -> &[UrlProperty] {
+		self.r#url.as_slice()
+	}
+	fn take_url(&mut self) -> Vec<UrlProperty> {
+		std::mem::take(&mut self.r#url)
+	}
 }
 #[cfg(feature = "serde")]
 mod serde {
@@ -36,6 +147,9 @@ mod serde {
 		{
 			let len: usize = [
 				!Vec::is_empty(&self.r#acquired_from) as usize,
+				!Vec::is_empty(&self.r#owned_from) as usize,
+				!Vec::is_empty(&self.r#owned_through) as usize,
+				!Vec::is_empty(&self.r#type_of_good) as usize,
 				!Vec::is_empty(&self.r#additional_type) as usize,
 				!Vec::is_empty(&self.r#alternate_name) as usize,
 				!Vec::is_empty(&self.r#description) as usize,
@@ -44,12 +158,9 @@ mod serde {
 				!Vec::is_empty(&self.r#image) as usize,
 				!Vec::is_empty(&self.r#main_entity_of_page) as usize,
 				!Vec::is_empty(&self.r#name) as usize,
-				!Vec::is_empty(&self.r#owned_from) as usize,
-				!Vec::is_empty(&self.r#owned_through) as usize,
 				!Vec::is_empty(&self.r#potential_action) as usize,
 				!Vec::is_empty(&self.r#same_as) as usize,
 				!Vec::is_empty(&self.r#subject_of) as usize,
-				!Vec::is_empty(&self.r#type_of_good) as usize,
 				!Vec::is_empty(&self.r#url) as usize,
 			]
 			.iter()
@@ -73,6 +184,60 @@ mod serde {
 				})?;
 			} else {
 				serialize_struct.skip_field("acquiredFrom")?;
+			}
+			if !Vec::is_empty(&self.r#owned_from) {
+				serialize_struct.serialize_field("ownedFrom", {
+					struct SerializeWith<'a>(&'a Vec<OwnedFromProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#owned_from)
+				})?;
+			} else {
+				serialize_struct.skip_field("ownedFrom")?;
+			}
+			if !Vec::is_empty(&self.r#owned_through) {
+				serialize_struct.serialize_field("ownedThrough", {
+					struct SerializeWith<'a>(&'a Vec<OwnedThroughProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#owned_through)
+				})?;
+			} else {
+				serialize_struct.skip_field("ownedThrough")?;
+			}
+			if !Vec::is_empty(&self.r#type_of_good) {
+				serialize_struct.serialize_field("typeOfGood", {
+					struct SerializeWith<'a>(&'a Vec<TypeOfGoodProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#type_of_good)
+				})?;
+			} else {
+				serialize_struct.skip_field("typeOfGood")?;
 			}
 			if !Vec::is_empty(&self.r#additional_type) {
 				serialize_struct.serialize_field("additionalType", {
@@ -218,42 +383,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("name")?;
 			}
-			if !Vec::is_empty(&self.r#owned_from) {
-				serialize_struct.serialize_field("ownedFrom", {
-					struct SerializeWith<'a>(&'a Vec<OwnedFromProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#owned_from)
-				})?;
-			} else {
-				serialize_struct.skip_field("ownedFrom")?;
-			}
-			if !Vec::is_empty(&self.r#owned_through) {
-				serialize_struct.serialize_field("ownedThrough", {
-					struct SerializeWith<'a>(&'a Vec<OwnedThroughProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#owned_through)
-				})?;
-			} else {
-				serialize_struct.skip_field("ownedThrough")?;
-			}
 			if !Vec::is_empty(&self.r#potential_action) {
 				serialize_struct.serialize_field("potentialAction", {
 					struct SerializeWith<'a>(&'a Vec<PotentialActionProperty>);
@@ -308,24 +437,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("subjectOf")?;
 			}
-			if !Vec::is_empty(&self.r#type_of_good) {
-				serialize_struct.serialize_field("typeOfGood", {
-					struct SerializeWith<'a>(&'a Vec<TypeOfGoodProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#type_of_good)
-				})?;
-			} else {
-				serialize_struct.skip_field("typeOfGood")?;
-			}
 			if !Vec::is_empty(&self.r#url) {
 				serialize_struct.serialize_field("url", {
 					struct SerializeWith<'a>(&'a Vec<UrlProperty>);
@@ -354,6 +465,9 @@ mod serde {
 		{
 			enum Field {
 				AcquiredFrom,
+				OwnedFrom,
+				OwnedThrough,
+				TypeOfGood,
 				AdditionalType,
 				AlternateName,
 				Description,
@@ -362,12 +476,9 @@ mod serde {
 				Image,
 				MainEntityOfPage,
 				Name,
-				OwnedFrom,
-				OwnedThrough,
 				PotentialAction,
 				SameAs,
 				SubjectOf,
-				TypeOfGood,
 				Url,
 				Ignore,
 			}
@@ -383,6 +494,9 @@ mod serde {
 				{
 					match value {
 						"acquiredFrom" => Ok(Field::AcquiredFrom),
+						"ownedFrom" => Ok(Field::OwnedFrom),
+						"ownedThrough" => Ok(Field::OwnedThrough),
+						"typeOfGood" => Ok(Field::TypeOfGood),
 						"additionalType" => Ok(Field::AdditionalType),
 						"alternateName" => Ok(Field::AlternateName),
 						"description" => Ok(Field::Description),
@@ -391,12 +505,9 @@ mod serde {
 						"image" => Ok(Field::Image),
 						"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
 						"name" => Ok(Field::Name),
-						"ownedFrom" => Ok(Field::OwnedFrom),
-						"ownedThrough" => Ok(Field::OwnedThrough),
 						"potentialAction" => Ok(Field::PotentialAction),
 						"sameAs" => Ok(Field::SameAs),
 						"subjectOf" => Ok(Field::SubjectOf),
-						"typeOfGood" => Ok(Field::TypeOfGood),
 						"url" => Ok(Field::Url),
 						_ => Ok(Field::Ignore),
 					}
@@ -407,6 +518,9 @@ mod serde {
 				{
 					match value {
 						b"acquiredFrom" => Ok(Field::AcquiredFrom),
+						b"ownedFrom" => Ok(Field::OwnedFrom),
+						b"ownedThrough" => Ok(Field::OwnedThrough),
+						b"typeOfGood" => Ok(Field::TypeOfGood),
 						b"additionalType" => Ok(Field::AdditionalType),
 						b"alternateName" => Ok(Field::AlternateName),
 						b"description" => Ok(Field::Description),
@@ -415,12 +529,9 @@ mod serde {
 						b"image" => Ok(Field::Image),
 						b"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
 						b"name" => Ok(Field::Name),
-						b"ownedFrom" => Ok(Field::OwnedFrom),
-						b"ownedThrough" => Ok(Field::OwnedThrough),
 						b"potentialAction" => Ok(Field::PotentialAction),
 						b"sameAs" => Ok(Field::SameAs),
 						b"subjectOf" => Ok(Field::SubjectOf),
-						b"typeOfGood" => Ok(Field::TypeOfGood),
 						b"url" => Ok(Field::Url),
 						_ => Ok(Field::Ignore),
 					}
@@ -445,6 +556,9 @@ mod serde {
 					A: de::MapAccess<'de>,
 				{
 					let mut r#acquired_from_property = None;
+					let mut r#owned_from_property = None;
+					let mut r#owned_through_property = None;
+					let mut r#type_of_good_property = None;
 					let mut r#additional_type_property = None;
 					let mut r#alternate_name_property = None;
 					let mut r#description_property = None;
@@ -453,12 +567,9 @@ mod serde {
 					let mut r#image_property = None;
 					let mut r#main_entity_of_page_property = None;
 					let mut r#name_property = None;
-					let mut r#owned_from_property = None;
-					let mut r#owned_through_property = None;
 					let mut r#potential_action_property = None;
 					let mut r#same_as_property = None;
 					let mut r#subject_of_property = None;
-					let mut r#type_of_good_property = None;
 					let mut r#url_property = None;
 					while let Some(key) = map.next_key::<Field>()? {
 						match key {
@@ -470,6 +581,84 @@ mod serde {
 								}
 								r#acquired_from_property = Some({
 									struct DeserializeWith(Vec<AcquiredFromProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::OwnedFrom => {
+								if r#owned_from_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"ownedFrom",
+									));
+								}
+								r#owned_from_property = Some({
+									struct DeserializeWith(Vec<OwnedFromProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::OwnedThrough => {
+								if r#owned_through_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"ownedThrough",
+									));
+								}
+								r#owned_through_property = Some({
+									struct DeserializeWith(Vec<OwnedThroughProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::TypeOfGood => {
+								if r#type_of_good_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"typeOfGood",
+									));
+								}
+								r#type_of_good_property = Some({
+									struct DeserializeWith(Vec<TypeOfGoodProperty>);
 									impl<'de> Deserialize<'de> for DeserializeWith {
 										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
 										where
@@ -692,58 +881,6 @@ mod serde {
 									}
 								});
 							}
-							Field::OwnedFrom => {
-								if r#owned_from_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"ownedFrom",
-									));
-								}
-								r#owned_from_property = Some({
-									struct DeserializeWith(Vec<OwnedFromProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::OwnedThrough => {
-								if r#owned_through_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"ownedThrough",
-									));
-								}
-								r#owned_through_property = Some({
-									struct DeserializeWith(Vec<OwnedThroughProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
 							Field::PotentialAction => {
 								if r#potential_action_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -820,32 +957,6 @@ mod serde {
 									}
 								});
 							}
-							Field::TypeOfGood => {
-								if r#type_of_good_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"typeOfGood",
-									));
-								}
-								r#type_of_good_property = Some({
-									struct DeserializeWith(Vec<TypeOfGoodProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
 							Field::Url => {
 								if r#url_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("url"));
@@ -877,6 +988,9 @@ mod serde {
 					}
 					Ok(OwnershipInfo {
 						r#acquired_from: r#acquired_from_property.unwrap_or_default(),
+						r#owned_from: r#owned_from_property.unwrap_or_default(),
+						r#owned_through: r#owned_through_property.unwrap_or_default(),
+						r#type_of_good: r#type_of_good_property.unwrap_or_default(),
 						r#additional_type: r#additional_type_property.unwrap_or_default(),
 						r#alternate_name: r#alternate_name_property.unwrap_or_default(),
 						r#description: r#description_property.unwrap_or_default(),
@@ -886,18 +1000,18 @@ mod serde {
 						r#image: r#image_property.unwrap_or_default(),
 						r#main_entity_of_page: r#main_entity_of_page_property.unwrap_or_default(),
 						r#name: r#name_property.unwrap_or_default(),
-						r#owned_from: r#owned_from_property.unwrap_or_default(),
-						r#owned_through: r#owned_through_property.unwrap_or_default(),
 						r#potential_action: r#potential_action_property.unwrap_or_default(),
 						r#same_as: r#same_as_property.unwrap_or_default(),
 						r#subject_of: r#subject_of_property.unwrap_or_default(),
-						r#type_of_good: r#type_of_good_property.unwrap_or_default(),
 						r#url: r#url_property.unwrap_or_default(),
 					})
 				}
 			}
 			const FIELDS: &[&str] = &[
 				"acquiredFrom",
+				"ownedFrom",
+				"ownedThrough",
+				"typeOfGood",
 				"additionalType",
 				"alternateName",
 				"description",
@@ -906,12 +1020,9 @@ mod serde {
 				"image",
 				"mainEntityOfPage",
 				"name",
-				"ownedFrom",
-				"ownedThrough",
 				"potentialAction",
 				"sameAs",
 				"subjectOf",
-				"typeOfGood",
 				"url",
 			];
 			deserializer.deserialize_struct("OwnershipInfo", FIELDS, ClassVisitor)

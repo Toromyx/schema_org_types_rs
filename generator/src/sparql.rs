@@ -1,10 +1,10 @@
 mod as_literal;
 mod as_named_node;
 mod into_solutions;
+pub mod node_type;
 
 use as_literal::AsLiteral;
 use as_named_node::AsNamedNode;
-use const_format::concatcp;
 use into_solutions::IntoSolutions;
 use oxigraph::{
 	sparql::{QueryResults, QuerySolution},
@@ -16,6 +16,28 @@ const PREFIXES: &str = r#"
 PREFIX schema: <https://schema.org/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+"#;
+
+/// The schemas which are ignored in this crate.
+///
+/// These don't work as types in rust:
+/// - <https://schema.org/True>
+/// - <https://schema.org/False>
+///
+/// These are never used:
+/// - <https://schema.org/DataType>
+/// - <https://schema.org/Intangible>
+/// - <https://schema.org/Series>
+const IGNORED_SCHEMAS_FILTER: &str = r#"
+FILTER NOT EXISTS {
+	VALUES ?node {
+		schema:True
+		schema:False
+		schema:DataType
+		schema:Intangible
+		schema:Series
+	}
+}
 "#;
 
 fn iri_from_solution(solution: &QuerySolution) -> String {
@@ -95,7 +117,11 @@ pub trait SchemaQueries {
 
 	fn is_property(&self, iri: &str) -> bool;
 
+	/// Get all direct properties of a class, not including parents' properties
 	fn get_properties_of_class(&self, class_iri: &str) -> Vec<SchemaQuerySolution>;
+
+	/// Get all parents of a class via rdfs:subClassOf
+	fn get_parents_of_class(&self, class_iri: &str) -> Vec<SchemaQuerySolution>;
 
 	/// Query for all value labels of a property.
 	fn get_variants_of_property(&self, property_iri: &str) -> Vec<SchemaQuerySolution>;
@@ -112,18 +138,20 @@ pub trait SchemaQueries {
 
 impl SchemaQueries for Store {
 	fn get_schemas(&self) -> Vec<SchemaQuerySolution> {
-		let query = concatcp!(
-			PREFIXES,
+		let query = format!(
 			r#"
+{}
 SELECT
 	?node
 	?label
-WHERE {
+WHERE {{
+	{}
 	?node rdfs:label ?label .
-}
+}}
 "#,
+			PREFIXES, IGNORED_SCHEMAS_FILTER
 		);
-		self.query(query)
+		self.query(&query)
 			.unwrap()
 			.into_solutions()
 			.iter()
@@ -203,22 +231,39 @@ WHERE {{
 		let query = format!(
 			r#"
 {}
+SELECT
+	?node
+	?label
+WHERE {{
+	{}
+	?node schema:domainIncludes <{}> .
+	?node rdfs:label ?label .
+}}
+"#,
+			PREFIXES, IGNORED_SCHEMAS_FILTER, class_iri
+		);
+		self.query(&query)
+			.unwrap()
+			.into_solutions()
+			.iter()
+			.map(SchemaQuerySolution::from)
+			.collect()
+	}
+
+	fn get_parents_of_class(&self, class_iri: &str) -> Vec<SchemaQuerySolution> {
+		let query = format!(
+			r#"
+{}
 SELECT DISTINCT
 	?node
 	?label
 WHERE {{
-	{{
-		<{}> rdfs:subClassOf* ?parent .
-		?node schema:domainIncludes ?parent .
-	}}
-	UNION
-	{{
-		?node schema:domainIncludes <{}> .
-	}}
+	{}
+	<{}> rdfs:subClassOf*/rdfs:subClassOf ?node .
 	?node rdfs:label ?label .
 }}
 "#,
-			PREFIXES, class_iri, class_iri
+			PREFIXES, IGNORED_SCHEMAS_FILTER, class_iri
 		);
 		self.query(&query)
 			.unwrap()
@@ -236,11 +281,12 @@ SELECT
 	?node
 	?label
 WHERE {{
+	{}
 	<{}> schema:rangeIncludes ?node .
 	?node rdfs:label ?label .
 }}
 "#,
-			PREFIXES, property_iri
+			PREFIXES, IGNORED_SCHEMAS_FILTER, property_iri
 		);
 		self.query(&query)
 			.unwrap()
@@ -261,11 +307,12 @@ SELECT
 	?node
 	?label
 WHERE {{
+	{}
 	?node a <{}> .
 	?node rdfs:label ?label .
 }}
 "#,
-			PREFIXES, enumeration_iri
+			PREFIXES, IGNORED_SCHEMAS_FILTER, enumeration_iri
 		);
 		self.query(&query)
 			.unwrap()

@@ -3,9 +3,12 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct DefinedRegion {
-	pub r#additional_type: Vec<AdditionalTypeProperty>,
 	pub r#address_country: Vec<AddressCountryProperty>,
 	pub r#address_region: Vec<AddressRegionProperty>,
+	pub r#postal_code: Vec<PostalCodeProperty>,
+	pub r#postal_code_prefix: Vec<PostalCodePrefixProperty>,
+	pub r#postal_code_range: Vec<PostalCodeRangeProperty>,
+	pub r#additional_type: Vec<AdditionalTypeProperty>,
 	pub r#alternate_name: Vec<AlternateNameProperty>,
 	pub r#description: Vec<DescriptionProperty>,
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
@@ -13,13 +16,129 @@ pub struct DefinedRegion {
 	pub r#image: Vec<ImageProperty>,
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
 	pub r#name: Vec<NameProperty>,
-	pub r#postal_code: Vec<PostalCodeProperty>,
-	pub r#postal_code_prefix: Vec<PostalCodePrefixProperty>,
-	pub r#postal_code_range: Vec<PostalCodeRangeProperty>,
 	pub r#potential_action: Vec<PotentialActionProperty>,
 	pub r#same_as: Vec<SameAsProperty>,
 	pub r#subject_of: Vec<SubjectOfProperty>,
 	pub r#url: Vec<UrlProperty>,
+}
+pub trait DefinedRegionTrait {
+	fn get_address_country(&self) -> &[AddressCountryProperty];
+	fn take_address_country(&mut self) -> Vec<AddressCountryProperty>;
+	fn get_address_region(&self) -> &[AddressRegionProperty];
+	fn take_address_region(&mut self) -> Vec<AddressRegionProperty>;
+	fn get_postal_code(&self) -> &[PostalCodeProperty];
+	fn take_postal_code(&mut self) -> Vec<PostalCodeProperty>;
+	fn get_postal_code_prefix(&self) -> &[PostalCodePrefixProperty];
+	fn take_postal_code_prefix(&mut self) -> Vec<PostalCodePrefixProperty>;
+	fn get_postal_code_range(&self) -> &[PostalCodeRangeProperty];
+	fn take_postal_code_range(&mut self) -> Vec<PostalCodeRangeProperty>;
+}
+impl DefinedRegionTrait for DefinedRegion {
+	fn get_address_country(&self) -> &[AddressCountryProperty] {
+		self.r#address_country.as_slice()
+	}
+	fn take_address_country(&mut self) -> Vec<AddressCountryProperty> {
+		std::mem::take(&mut self.r#address_country)
+	}
+	fn get_address_region(&self) -> &[AddressRegionProperty] {
+		self.r#address_region.as_slice()
+	}
+	fn take_address_region(&mut self) -> Vec<AddressRegionProperty> {
+		std::mem::take(&mut self.r#address_region)
+	}
+	fn get_postal_code(&self) -> &[PostalCodeProperty] {
+		self.r#postal_code.as_slice()
+	}
+	fn take_postal_code(&mut self) -> Vec<PostalCodeProperty> {
+		std::mem::take(&mut self.r#postal_code)
+	}
+	fn get_postal_code_prefix(&self) -> &[PostalCodePrefixProperty] {
+		self.r#postal_code_prefix.as_slice()
+	}
+	fn take_postal_code_prefix(&mut self) -> Vec<PostalCodePrefixProperty> {
+		std::mem::take(&mut self.r#postal_code_prefix)
+	}
+	fn get_postal_code_range(&self) -> &[PostalCodeRangeProperty] {
+		self.r#postal_code_range.as_slice()
+	}
+	fn take_postal_code_range(&mut self) -> Vec<PostalCodeRangeProperty> {
+		std::mem::take(&mut self.r#postal_code_range)
+	}
+}
+impl StructuredValueTrait for DefinedRegion {}
+impl ThingTrait for DefinedRegion {
+	fn get_additional_type(&self) -> &[AdditionalTypeProperty] {
+		self.r#additional_type.as_slice()
+	}
+	fn take_additional_type(&mut self) -> Vec<AdditionalTypeProperty> {
+		std::mem::take(&mut self.r#additional_type)
+	}
+	fn get_alternate_name(&self) -> &[AlternateNameProperty] {
+		self.r#alternate_name.as_slice()
+	}
+	fn take_alternate_name(&mut self) -> Vec<AlternateNameProperty> {
+		std::mem::take(&mut self.r#alternate_name)
+	}
+	fn get_description(&self) -> &[DescriptionProperty] {
+		self.r#description.as_slice()
+	}
+	fn take_description(&mut self) -> Vec<DescriptionProperty> {
+		std::mem::take(&mut self.r#description)
+	}
+	fn get_disambiguating_description(&self) -> &[DisambiguatingDescriptionProperty] {
+		self.r#disambiguating_description.as_slice()
+	}
+	fn take_disambiguating_description(&mut self) -> Vec<DisambiguatingDescriptionProperty> {
+		std::mem::take(&mut self.r#disambiguating_description)
+	}
+	fn get_identifier(&self) -> &[IdentifierProperty] {
+		self.r#identifier.as_slice()
+	}
+	fn take_identifier(&mut self) -> Vec<IdentifierProperty> {
+		std::mem::take(&mut self.r#identifier)
+	}
+	fn get_image(&self) -> &[ImageProperty] {
+		self.r#image.as_slice()
+	}
+	fn take_image(&mut self) -> Vec<ImageProperty> {
+		std::mem::take(&mut self.r#image)
+	}
+	fn get_main_entity_of_page(&self) -> &[MainEntityOfPageProperty] {
+		self.r#main_entity_of_page.as_slice()
+	}
+	fn take_main_entity_of_page(&mut self) -> Vec<MainEntityOfPageProperty> {
+		std::mem::take(&mut self.r#main_entity_of_page)
+	}
+	fn get_name(&self) -> &[NameProperty] {
+		self.r#name.as_slice()
+	}
+	fn take_name(&mut self) -> Vec<NameProperty> {
+		std::mem::take(&mut self.r#name)
+	}
+	fn get_potential_action(&self) -> &[PotentialActionProperty] {
+		self.r#potential_action.as_slice()
+	}
+	fn take_potential_action(&mut self) -> Vec<PotentialActionProperty> {
+		std::mem::take(&mut self.r#potential_action)
+	}
+	fn get_same_as(&self) -> &[SameAsProperty] {
+		self.r#same_as.as_slice()
+	}
+	fn take_same_as(&mut self) -> Vec<SameAsProperty> {
+		std::mem::take(&mut self.r#same_as)
+	}
+	fn get_subject_of(&self) -> &[SubjectOfProperty] {
+		self.r#subject_of.as_slice()
+	}
+	fn take_subject_of(&mut self) -> Vec<SubjectOfProperty> {
+		std::mem::take(&mut self.r#subject_of)
+	}
+	fn get_url(&self) -> &[UrlProperty] {
+		self.r#url.as_slice()
+	}
+	fn take_url(&mut self) -> Vec<UrlProperty> {
+		std::mem::take(&mut self.r#url)
+	}
 }
 #[cfg(feature = "serde")]
 mod serde {
@@ -36,9 +155,12 @@ mod serde {
 			S: Serializer,
 		{
 			let len: usize = [
-				!Vec::is_empty(&self.r#additional_type) as usize,
 				!Vec::is_empty(&self.r#address_country) as usize,
 				!Vec::is_empty(&self.r#address_region) as usize,
+				!Vec::is_empty(&self.r#postal_code) as usize,
+				!Vec::is_empty(&self.r#postal_code_prefix) as usize,
+				!Vec::is_empty(&self.r#postal_code_range) as usize,
+				!Vec::is_empty(&self.r#additional_type) as usize,
 				!Vec::is_empty(&self.r#alternate_name) as usize,
 				!Vec::is_empty(&self.r#description) as usize,
 				!Vec::is_empty(&self.r#disambiguating_description) as usize,
@@ -46,9 +168,6 @@ mod serde {
 				!Vec::is_empty(&self.r#image) as usize,
 				!Vec::is_empty(&self.r#main_entity_of_page) as usize,
 				!Vec::is_empty(&self.r#name) as usize,
-				!Vec::is_empty(&self.r#postal_code) as usize,
-				!Vec::is_empty(&self.r#postal_code_prefix) as usize,
-				!Vec::is_empty(&self.r#postal_code_range) as usize,
 				!Vec::is_empty(&self.r#potential_action) as usize,
 				!Vec::is_empty(&self.r#same_as) as usize,
 				!Vec::is_empty(&self.r#subject_of) as usize,
@@ -58,24 +177,6 @@ mod serde {
 			.sum();
 			let mut serialize_struct =
 				Serializer::serialize_struct(serializer, "DefinedRegion", len)?;
-			if !Vec::is_empty(&self.r#additional_type) {
-				serialize_struct.serialize_field("additionalType", {
-					struct SerializeWith<'a>(&'a Vec<AdditionalTypeProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#additional_type)
-				})?;
-			} else {
-				serialize_struct.skip_field("additionalType")?;
-			}
 			if !Vec::is_empty(&self.r#address_country) {
 				serialize_struct.serialize_field("addressCountry", {
 					struct SerializeWith<'a>(&'a Vec<AddressCountryProperty>);
@@ -111,6 +212,78 @@ mod serde {
 				})?;
 			} else {
 				serialize_struct.skip_field("addressRegion")?;
+			}
+			if !Vec::is_empty(&self.r#postal_code) {
+				serialize_struct.serialize_field("postalCode", {
+					struct SerializeWith<'a>(&'a Vec<PostalCodeProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#postal_code)
+				})?;
+			} else {
+				serialize_struct.skip_field("postalCode")?;
+			}
+			if !Vec::is_empty(&self.r#postal_code_prefix) {
+				serialize_struct.serialize_field("postalCodePrefix", {
+					struct SerializeWith<'a>(&'a Vec<PostalCodePrefixProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#postal_code_prefix)
+				})?;
+			} else {
+				serialize_struct.skip_field("postalCodePrefix")?;
+			}
+			if !Vec::is_empty(&self.r#postal_code_range) {
+				serialize_struct.serialize_field("postalCodeRange", {
+					struct SerializeWith<'a>(&'a Vec<PostalCodeRangeProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#postal_code_range)
+				})?;
+			} else {
+				serialize_struct.skip_field("postalCodeRange")?;
+			}
+			if !Vec::is_empty(&self.r#additional_type) {
+				serialize_struct.serialize_field("additionalType", {
+					struct SerializeWith<'a>(&'a Vec<AdditionalTypeProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#additional_type)
+				})?;
+			} else {
+				serialize_struct.skip_field("additionalType")?;
 			}
 			if !Vec::is_empty(&self.r#alternate_name) {
 				serialize_struct.serialize_field("alternateName", {
@@ -238,60 +411,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("name")?;
 			}
-			if !Vec::is_empty(&self.r#postal_code) {
-				serialize_struct.serialize_field("postalCode", {
-					struct SerializeWith<'a>(&'a Vec<PostalCodeProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#postal_code)
-				})?;
-			} else {
-				serialize_struct.skip_field("postalCode")?;
-			}
-			if !Vec::is_empty(&self.r#postal_code_prefix) {
-				serialize_struct.serialize_field("postalCodePrefix", {
-					struct SerializeWith<'a>(&'a Vec<PostalCodePrefixProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#postal_code_prefix)
-				})?;
-			} else {
-				serialize_struct.skip_field("postalCodePrefix")?;
-			}
-			if !Vec::is_empty(&self.r#postal_code_range) {
-				serialize_struct.serialize_field("postalCodeRange", {
-					struct SerializeWith<'a>(&'a Vec<PostalCodeRangeProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#postal_code_range)
-				})?;
-			} else {
-				serialize_struct.skip_field("postalCodeRange")?;
-			}
 			if !Vec::is_empty(&self.r#potential_action) {
 				serialize_struct.serialize_field("potentialAction", {
 					struct SerializeWith<'a>(&'a Vec<PotentialActionProperty>);
@@ -373,9 +492,12 @@ mod serde {
 			D: Deserializer<'de>,
 		{
 			enum Field {
-				AdditionalType,
 				AddressCountry,
 				AddressRegion,
+				PostalCode,
+				PostalCodePrefix,
+				PostalCodeRange,
+				AdditionalType,
 				AlternateName,
 				Description,
 				DisambiguatingDescription,
@@ -383,9 +505,6 @@ mod serde {
 				Image,
 				MainEntityOfPage,
 				Name,
-				PostalCode,
-				PostalCodePrefix,
-				PostalCodeRange,
 				PotentialAction,
 				SameAs,
 				SubjectOf,
@@ -403,9 +522,12 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
-						"additionalType" => Ok(Field::AdditionalType),
 						"addressCountry" => Ok(Field::AddressCountry),
 						"addressRegion" => Ok(Field::AddressRegion),
+						"postalCode" => Ok(Field::PostalCode),
+						"postalCodePrefix" => Ok(Field::PostalCodePrefix),
+						"postalCodeRange" => Ok(Field::PostalCodeRange),
+						"additionalType" => Ok(Field::AdditionalType),
 						"alternateName" => Ok(Field::AlternateName),
 						"description" => Ok(Field::Description),
 						"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
@@ -413,9 +535,6 @@ mod serde {
 						"image" => Ok(Field::Image),
 						"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
 						"name" => Ok(Field::Name),
-						"postalCode" => Ok(Field::PostalCode),
-						"postalCodePrefix" => Ok(Field::PostalCodePrefix),
-						"postalCodeRange" => Ok(Field::PostalCodeRange),
 						"potentialAction" => Ok(Field::PotentialAction),
 						"sameAs" => Ok(Field::SameAs),
 						"subjectOf" => Ok(Field::SubjectOf),
@@ -428,9 +547,12 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
-						b"additionalType" => Ok(Field::AdditionalType),
 						b"addressCountry" => Ok(Field::AddressCountry),
 						b"addressRegion" => Ok(Field::AddressRegion),
+						b"postalCode" => Ok(Field::PostalCode),
+						b"postalCodePrefix" => Ok(Field::PostalCodePrefix),
+						b"postalCodeRange" => Ok(Field::PostalCodeRange),
+						b"additionalType" => Ok(Field::AdditionalType),
 						b"alternateName" => Ok(Field::AlternateName),
 						b"description" => Ok(Field::Description),
 						b"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
@@ -438,9 +560,6 @@ mod serde {
 						b"image" => Ok(Field::Image),
 						b"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
 						b"name" => Ok(Field::Name),
-						b"postalCode" => Ok(Field::PostalCode),
-						b"postalCodePrefix" => Ok(Field::PostalCodePrefix),
-						b"postalCodeRange" => Ok(Field::PostalCodeRange),
 						b"potentialAction" => Ok(Field::PotentialAction),
 						b"sameAs" => Ok(Field::SameAs),
 						b"subjectOf" => Ok(Field::SubjectOf),
@@ -467,9 +586,12 @@ mod serde {
 				where
 					A: de::MapAccess<'de>,
 				{
-					let mut r#additional_type_property = None;
 					let mut r#address_country_property = None;
 					let mut r#address_region_property = None;
+					let mut r#postal_code_property = None;
+					let mut r#postal_code_prefix_property = None;
+					let mut r#postal_code_range_property = None;
+					let mut r#additional_type_property = None;
 					let mut r#alternate_name_property = None;
 					let mut r#description_property = None;
 					let mut r#disambiguating_description_property = None;
@@ -477,41 +599,12 @@ mod serde {
 					let mut r#image_property = None;
 					let mut r#main_entity_of_page_property = None;
 					let mut r#name_property = None;
-					let mut r#postal_code_property = None;
-					let mut r#postal_code_prefix_property = None;
-					let mut r#postal_code_range_property = None;
 					let mut r#potential_action_property = None;
 					let mut r#same_as_property = None;
 					let mut r#subject_of_property = None;
 					let mut r#url_property = None;
 					while let Some(key) = map.next_key::<Field>()? {
 						match key {
-							Field::AdditionalType => {
-								if r#additional_type_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"additionalType",
-									));
-								}
-								r#additional_type_property = Some({
-									struct DeserializeWith(Vec<AdditionalTypeProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
 							Field::AddressCountry => {
 								if r#address_country_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -546,6 +639,110 @@ mod serde {
 								}
 								r#address_region_property = Some({
 									struct DeserializeWith(Vec<AddressRegionProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::PostalCode => {
+								if r#postal_code_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"postalCode",
+									));
+								}
+								r#postal_code_property = Some({
+									struct DeserializeWith(Vec<PostalCodeProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::PostalCodePrefix => {
+								if r#postal_code_prefix_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"postalCodePrefix",
+									));
+								}
+								r#postal_code_prefix_property = Some({
+									struct DeserializeWith(Vec<PostalCodePrefixProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::PostalCodeRange => {
+								if r#postal_code_range_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"postalCodeRange",
+									));
+								}
+								r#postal_code_range_property = Some({
+									struct DeserializeWith(Vec<PostalCodeRangeProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::AdditionalType => {
+								if r#additional_type_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"additionalType",
+									));
+								}
+								r#additional_type_property = Some({
+									struct DeserializeWith(Vec<AdditionalTypeProperty>);
 									impl<'de> Deserialize<'de> for DeserializeWith {
 										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
 										where
@@ -742,84 +939,6 @@ mod serde {
 									}
 								});
 							}
-							Field::PostalCode => {
-								if r#postal_code_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"postalCode",
-									));
-								}
-								r#postal_code_property = Some({
-									struct DeserializeWith(Vec<PostalCodeProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::PostalCodePrefix => {
-								if r#postal_code_prefix_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"postalCodePrefix",
-									));
-								}
-								r#postal_code_prefix_property = Some({
-									struct DeserializeWith(Vec<PostalCodePrefixProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::PostalCodeRange => {
-								if r#postal_code_range_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"postalCodeRange",
-									));
-								}
-								r#postal_code_range_property = Some({
-									struct DeserializeWith(Vec<PostalCodeRangeProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
 							Field::PotentialAction => {
 								if r#potential_action_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -926,9 +1045,12 @@ mod serde {
 						}
 					}
 					Ok(DefinedRegion {
-						r#additional_type: r#additional_type_property.unwrap_or_default(),
 						r#address_country: r#address_country_property.unwrap_or_default(),
 						r#address_region: r#address_region_property.unwrap_or_default(),
+						r#postal_code: r#postal_code_property.unwrap_or_default(),
+						r#postal_code_prefix: r#postal_code_prefix_property.unwrap_or_default(),
+						r#postal_code_range: r#postal_code_range_property.unwrap_or_default(),
+						r#additional_type: r#additional_type_property.unwrap_or_default(),
 						r#alternate_name: r#alternate_name_property.unwrap_or_default(),
 						r#description: r#description_property.unwrap_or_default(),
 						r#disambiguating_description: r#disambiguating_description_property
@@ -937,9 +1059,6 @@ mod serde {
 						r#image: r#image_property.unwrap_or_default(),
 						r#main_entity_of_page: r#main_entity_of_page_property.unwrap_or_default(),
 						r#name: r#name_property.unwrap_or_default(),
-						r#postal_code: r#postal_code_property.unwrap_or_default(),
-						r#postal_code_prefix: r#postal_code_prefix_property.unwrap_or_default(),
-						r#postal_code_range: r#postal_code_range_property.unwrap_or_default(),
 						r#potential_action: r#potential_action_property.unwrap_or_default(),
 						r#same_as: r#same_as_property.unwrap_or_default(),
 						r#subject_of: r#subject_of_property.unwrap_or_default(),
@@ -948,9 +1067,12 @@ mod serde {
 				}
 			}
 			const FIELDS: &[&str] = &[
-				"additionalType",
 				"addressCountry",
 				"addressRegion",
+				"postalCode",
+				"postalCodePrefix",
+				"postalCodeRange",
+				"additionalType",
 				"alternateName",
 				"description",
 				"disambiguatingDescription",
@@ -958,9 +1080,6 @@ mod serde {
 				"image",
 				"mainEntityOfPage",
 				"name",
-				"postalCode",
-				"postalCodePrefix",
-				"postalCodeRange",
 				"potentialAction",
 				"sameAs",
 				"subjectOf",

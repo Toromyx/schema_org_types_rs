@@ -4,7 +4,7 @@ use convert_case::{Case, Casing};
 use quote::{__private::TokenStream, quote, ToTokens};
 
 use crate::{
-	schema::class::{property_name, property_type, Class},
+	schema::class::{get_property_name, get_property_type, Class},
 	serde_attributes::serde_as,
 };
 
@@ -21,17 +21,16 @@ pub fn serde_mod(class: &Class) -> TokenStream {
 		variant_name: TokenStream,
 	}
 	let property_token_streams: Vec<PropertyTokenStreams> = class
-		.properties
-		.iter()
+		.get_all_properties_iter()
 		.map(|referenced_schema| PropertyTokenStreams {
-			name: property_name(referenced_schema),
+			name: get_property_name(referenced_schema),
 			variable_name: TokenStream::from_str(&format!(
 				"{}_property",
-				property_name(referenced_schema)
+				get_property_name(referenced_schema)
 			))
 			.unwrap(),
 			serialized_name_string: referenced_schema.name.to_token_stream(),
-			r#type: property_type(referenced_schema),
+			r#type: get_property_type(referenced_schema),
 			variant_name: TokenStream::from_str(&referenced_schema.name.to_case(Case::UpperCamel))
 				.unwrap(),
 		})

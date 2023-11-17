@@ -4,33 +4,239 @@ use super::*;
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct Invoice {
 	pub r#account_id: Vec<AccountIdProperty>,
-	pub r#additional_type: Vec<AdditionalTypeProperty>,
-	pub r#alternate_name: Vec<AlternateNameProperty>,
 	pub r#billing_period: Vec<BillingPeriodProperty>,
 	pub r#broker: Vec<BrokerProperty>,
 	pub r#category: Vec<CategoryProperty>,
 	pub r#confirmation_number: Vec<ConfirmationNumberProperty>,
 	pub r#customer: Vec<CustomerProperty>,
-	pub r#description: Vec<DescriptionProperty>,
-	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
-	pub r#identifier: Vec<IdentifierProperty>,
-	pub r#image: Vec<ImageProperty>,
-	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
 	pub r#minimum_payment_due: Vec<MinimumPaymentDueProperty>,
-	pub r#name: Vec<NameProperty>,
 	pub r#payment_due: Vec<PaymentDueProperty>,
 	pub r#payment_due_date: Vec<PaymentDueDateProperty>,
 	pub r#payment_method: Vec<PaymentMethodProperty>,
 	pub r#payment_method_id: Vec<PaymentMethodIdProperty>,
 	pub r#payment_status: Vec<PaymentStatusProperty>,
-	pub r#potential_action: Vec<PotentialActionProperty>,
 	pub r#provider: Vec<ProviderProperty>,
 	pub r#references_order: Vec<ReferencesOrderProperty>,
-	pub r#same_as: Vec<SameAsProperty>,
 	pub r#scheduled_payment_date: Vec<ScheduledPaymentDateProperty>,
-	pub r#subject_of: Vec<SubjectOfProperty>,
 	pub r#total_payment_due: Vec<TotalPaymentDueProperty>,
+	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	pub r#alternate_name: Vec<AlternateNameProperty>,
+	pub r#description: Vec<DescriptionProperty>,
+	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	pub r#identifier: Vec<IdentifierProperty>,
+	pub r#image: Vec<ImageProperty>,
+	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	pub r#name: Vec<NameProperty>,
+	pub r#potential_action: Vec<PotentialActionProperty>,
+	pub r#same_as: Vec<SameAsProperty>,
+	pub r#subject_of: Vec<SubjectOfProperty>,
 	pub r#url: Vec<UrlProperty>,
+}
+pub trait InvoiceTrait {
+	fn get_account_id(&self) -> &[AccountIdProperty];
+	fn take_account_id(&mut self) -> Vec<AccountIdProperty>;
+	fn get_billing_period(&self) -> &[BillingPeriodProperty];
+	fn take_billing_period(&mut self) -> Vec<BillingPeriodProperty>;
+	fn get_broker(&self) -> &[BrokerProperty];
+	fn take_broker(&mut self) -> Vec<BrokerProperty>;
+	fn get_category(&self) -> &[CategoryProperty];
+	fn take_category(&mut self) -> Vec<CategoryProperty>;
+	fn get_confirmation_number(&self) -> &[ConfirmationNumberProperty];
+	fn take_confirmation_number(&mut self) -> Vec<ConfirmationNumberProperty>;
+	fn get_customer(&self) -> &[CustomerProperty];
+	fn take_customer(&mut self) -> Vec<CustomerProperty>;
+	fn get_minimum_payment_due(&self) -> &[MinimumPaymentDueProperty];
+	fn take_minimum_payment_due(&mut self) -> Vec<MinimumPaymentDueProperty>;
+	fn get_payment_due(&self) -> &[PaymentDueProperty];
+	fn take_payment_due(&mut self) -> Vec<PaymentDueProperty>;
+	fn get_payment_due_date(&self) -> &[PaymentDueDateProperty];
+	fn take_payment_due_date(&mut self) -> Vec<PaymentDueDateProperty>;
+	fn get_payment_method(&self) -> &[PaymentMethodProperty];
+	fn take_payment_method(&mut self) -> Vec<PaymentMethodProperty>;
+	fn get_payment_method_id(&self) -> &[PaymentMethodIdProperty];
+	fn take_payment_method_id(&mut self) -> Vec<PaymentMethodIdProperty>;
+	fn get_payment_status(&self) -> &[PaymentStatusProperty];
+	fn take_payment_status(&mut self) -> Vec<PaymentStatusProperty>;
+	fn get_provider(&self) -> &[ProviderProperty];
+	fn take_provider(&mut self) -> Vec<ProviderProperty>;
+	fn get_references_order(&self) -> &[ReferencesOrderProperty];
+	fn take_references_order(&mut self) -> Vec<ReferencesOrderProperty>;
+	fn get_scheduled_payment_date(&self) -> &[ScheduledPaymentDateProperty];
+	fn take_scheduled_payment_date(&mut self) -> Vec<ScheduledPaymentDateProperty>;
+	fn get_total_payment_due(&self) -> &[TotalPaymentDueProperty];
+	fn take_total_payment_due(&mut self) -> Vec<TotalPaymentDueProperty>;
+}
+impl InvoiceTrait for Invoice {
+	fn get_account_id(&self) -> &[AccountIdProperty] {
+		self.r#account_id.as_slice()
+	}
+	fn take_account_id(&mut self) -> Vec<AccountIdProperty> {
+		std::mem::take(&mut self.r#account_id)
+	}
+	fn get_billing_period(&self) -> &[BillingPeriodProperty] {
+		self.r#billing_period.as_slice()
+	}
+	fn take_billing_period(&mut self) -> Vec<BillingPeriodProperty> {
+		std::mem::take(&mut self.r#billing_period)
+	}
+	fn get_broker(&self) -> &[BrokerProperty] {
+		self.r#broker.as_slice()
+	}
+	fn take_broker(&mut self) -> Vec<BrokerProperty> {
+		std::mem::take(&mut self.r#broker)
+	}
+	fn get_category(&self) -> &[CategoryProperty] {
+		self.r#category.as_slice()
+	}
+	fn take_category(&mut self) -> Vec<CategoryProperty> {
+		std::mem::take(&mut self.r#category)
+	}
+	fn get_confirmation_number(&self) -> &[ConfirmationNumberProperty] {
+		self.r#confirmation_number.as_slice()
+	}
+	fn take_confirmation_number(&mut self) -> Vec<ConfirmationNumberProperty> {
+		std::mem::take(&mut self.r#confirmation_number)
+	}
+	fn get_customer(&self) -> &[CustomerProperty] {
+		self.r#customer.as_slice()
+	}
+	fn take_customer(&mut self) -> Vec<CustomerProperty> {
+		std::mem::take(&mut self.r#customer)
+	}
+	fn get_minimum_payment_due(&self) -> &[MinimumPaymentDueProperty] {
+		self.r#minimum_payment_due.as_slice()
+	}
+	fn take_minimum_payment_due(&mut self) -> Vec<MinimumPaymentDueProperty> {
+		std::mem::take(&mut self.r#minimum_payment_due)
+	}
+	fn get_payment_due(&self) -> &[PaymentDueProperty] {
+		self.r#payment_due.as_slice()
+	}
+	fn take_payment_due(&mut self) -> Vec<PaymentDueProperty> {
+		std::mem::take(&mut self.r#payment_due)
+	}
+	fn get_payment_due_date(&self) -> &[PaymentDueDateProperty] {
+		self.r#payment_due_date.as_slice()
+	}
+	fn take_payment_due_date(&mut self) -> Vec<PaymentDueDateProperty> {
+		std::mem::take(&mut self.r#payment_due_date)
+	}
+	fn get_payment_method(&self) -> &[PaymentMethodProperty] {
+		self.r#payment_method.as_slice()
+	}
+	fn take_payment_method(&mut self) -> Vec<PaymentMethodProperty> {
+		std::mem::take(&mut self.r#payment_method)
+	}
+	fn get_payment_method_id(&self) -> &[PaymentMethodIdProperty] {
+		self.r#payment_method_id.as_slice()
+	}
+	fn take_payment_method_id(&mut self) -> Vec<PaymentMethodIdProperty> {
+		std::mem::take(&mut self.r#payment_method_id)
+	}
+	fn get_payment_status(&self) -> &[PaymentStatusProperty] {
+		self.r#payment_status.as_slice()
+	}
+	fn take_payment_status(&mut self) -> Vec<PaymentStatusProperty> {
+		std::mem::take(&mut self.r#payment_status)
+	}
+	fn get_provider(&self) -> &[ProviderProperty] {
+		self.r#provider.as_slice()
+	}
+	fn take_provider(&mut self) -> Vec<ProviderProperty> {
+		std::mem::take(&mut self.r#provider)
+	}
+	fn get_references_order(&self) -> &[ReferencesOrderProperty] {
+		self.r#references_order.as_slice()
+	}
+	fn take_references_order(&mut self) -> Vec<ReferencesOrderProperty> {
+		std::mem::take(&mut self.r#references_order)
+	}
+	fn get_scheduled_payment_date(&self) -> &[ScheduledPaymentDateProperty] {
+		self.r#scheduled_payment_date.as_slice()
+	}
+	fn take_scheduled_payment_date(&mut self) -> Vec<ScheduledPaymentDateProperty> {
+		std::mem::take(&mut self.r#scheduled_payment_date)
+	}
+	fn get_total_payment_due(&self) -> &[TotalPaymentDueProperty] {
+		self.r#total_payment_due.as_slice()
+	}
+	fn take_total_payment_due(&mut self) -> Vec<TotalPaymentDueProperty> {
+		std::mem::take(&mut self.r#total_payment_due)
+	}
+}
+impl ThingTrait for Invoice {
+	fn get_additional_type(&self) -> &[AdditionalTypeProperty] {
+		self.r#additional_type.as_slice()
+	}
+	fn take_additional_type(&mut self) -> Vec<AdditionalTypeProperty> {
+		std::mem::take(&mut self.r#additional_type)
+	}
+	fn get_alternate_name(&self) -> &[AlternateNameProperty] {
+		self.r#alternate_name.as_slice()
+	}
+	fn take_alternate_name(&mut self) -> Vec<AlternateNameProperty> {
+		std::mem::take(&mut self.r#alternate_name)
+	}
+	fn get_description(&self) -> &[DescriptionProperty] {
+		self.r#description.as_slice()
+	}
+	fn take_description(&mut self) -> Vec<DescriptionProperty> {
+		std::mem::take(&mut self.r#description)
+	}
+	fn get_disambiguating_description(&self) -> &[DisambiguatingDescriptionProperty] {
+		self.r#disambiguating_description.as_slice()
+	}
+	fn take_disambiguating_description(&mut self) -> Vec<DisambiguatingDescriptionProperty> {
+		std::mem::take(&mut self.r#disambiguating_description)
+	}
+	fn get_identifier(&self) -> &[IdentifierProperty] {
+		self.r#identifier.as_slice()
+	}
+	fn take_identifier(&mut self) -> Vec<IdentifierProperty> {
+		std::mem::take(&mut self.r#identifier)
+	}
+	fn get_image(&self) -> &[ImageProperty] {
+		self.r#image.as_slice()
+	}
+	fn take_image(&mut self) -> Vec<ImageProperty> {
+		std::mem::take(&mut self.r#image)
+	}
+	fn get_main_entity_of_page(&self) -> &[MainEntityOfPageProperty] {
+		self.r#main_entity_of_page.as_slice()
+	}
+	fn take_main_entity_of_page(&mut self) -> Vec<MainEntityOfPageProperty> {
+		std::mem::take(&mut self.r#main_entity_of_page)
+	}
+	fn get_name(&self) -> &[NameProperty] {
+		self.r#name.as_slice()
+	}
+	fn take_name(&mut self) -> Vec<NameProperty> {
+		std::mem::take(&mut self.r#name)
+	}
+	fn get_potential_action(&self) -> &[PotentialActionProperty] {
+		self.r#potential_action.as_slice()
+	}
+	fn take_potential_action(&mut self) -> Vec<PotentialActionProperty> {
+		std::mem::take(&mut self.r#potential_action)
+	}
+	fn get_same_as(&self) -> &[SameAsProperty] {
+		self.r#same_as.as_slice()
+	}
+	fn take_same_as(&mut self) -> Vec<SameAsProperty> {
+		std::mem::take(&mut self.r#same_as)
+	}
+	fn get_subject_of(&self) -> &[SubjectOfProperty] {
+		self.r#subject_of.as_slice()
+	}
+	fn take_subject_of(&mut self) -> Vec<SubjectOfProperty> {
+		std::mem::take(&mut self.r#subject_of)
+	}
+	fn get_url(&self) -> &[UrlProperty] {
+		self.r#url.as_slice()
+	}
+	fn take_url(&mut self) -> Vec<UrlProperty> {
+		std::mem::take(&mut self.r#url)
+	}
 }
 #[cfg(feature = "serde")]
 mod serde {
@@ -48,32 +254,32 @@ mod serde {
 		{
 			let len: usize = [
 				!Vec::is_empty(&self.r#account_id) as usize,
-				!Vec::is_empty(&self.r#additional_type) as usize,
-				!Vec::is_empty(&self.r#alternate_name) as usize,
 				!Vec::is_empty(&self.r#billing_period) as usize,
 				!Vec::is_empty(&self.r#broker) as usize,
 				!Vec::is_empty(&self.r#category) as usize,
 				!Vec::is_empty(&self.r#confirmation_number) as usize,
 				!Vec::is_empty(&self.r#customer) as usize,
-				!Vec::is_empty(&self.r#description) as usize,
-				!Vec::is_empty(&self.r#disambiguating_description) as usize,
-				!Vec::is_empty(&self.r#identifier) as usize,
-				!Vec::is_empty(&self.r#image) as usize,
-				!Vec::is_empty(&self.r#main_entity_of_page) as usize,
 				!Vec::is_empty(&self.r#minimum_payment_due) as usize,
-				!Vec::is_empty(&self.r#name) as usize,
 				!Vec::is_empty(&self.r#payment_due) as usize,
 				!Vec::is_empty(&self.r#payment_due_date) as usize,
 				!Vec::is_empty(&self.r#payment_method) as usize,
 				!Vec::is_empty(&self.r#payment_method_id) as usize,
 				!Vec::is_empty(&self.r#payment_status) as usize,
-				!Vec::is_empty(&self.r#potential_action) as usize,
 				!Vec::is_empty(&self.r#provider) as usize,
 				!Vec::is_empty(&self.r#references_order) as usize,
-				!Vec::is_empty(&self.r#same_as) as usize,
 				!Vec::is_empty(&self.r#scheduled_payment_date) as usize,
-				!Vec::is_empty(&self.r#subject_of) as usize,
 				!Vec::is_empty(&self.r#total_payment_due) as usize,
+				!Vec::is_empty(&self.r#additional_type) as usize,
+				!Vec::is_empty(&self.r#alternate_name) as usize,
+				!Vec::is_empty(&self.r#description) as usize,
+				!Vec::is_empty(&self.r#disambiguating_description) as usize,
+				!Vec::is_empty(&self.r#identifier) as usize,
+				!Vec::is_empty(&self.r#image) as usize,
+				!Vec::is_empty(&self.r#main_entity_of_page) as usize,
+				!Vec::is_empty(&self.r#name) as usize,
+				!Vec::is_empty(&self.r#potential_action) as usize,
+				!Vec::is_empty(&self.r#same_as) as usize,
+				!Vec::is_empty(&self.r#subject_of) as usize,
 				!Vec::is_empty(&self.r#url) as usize,
 			]
 			.iter()
@@ -96,42 +302,6 @@ mod serde {
 				})?;
 			} else {
 				serialize_struct.skip_field("accountId")?;
-			}
-			if !Vec::is_empty(&self.r#additional_type) {
-				serialize_struct.serialize_field("additionalType", {
-					struct SerializeWith<'a>(&'a Vec<AdditionalTypeProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#additional_type)
-				})?;
-			} else {
-				serialize_struct.skip_field("additionalType")?;
-			}
-			if !Vec::is_empty(&self.r#alternate_name) {
-				serialize_struct.serialize_field("alternateName", {
-					struct SerializeWith<'a>(&'a Vec<AlternateNameProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#alternate_name)
-				})?;
-			} else {
-				serialize_struct.skip_field("alternateName")?;
 			}
 			if !Vec::is_empty(&self.r#billing_period) {
 				serialize_struct.serialize_field("billingPeriod", {
@@ -223,96 +393,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("customer")?;
 			}
-			if !Vec::is_empty(&self.r#description) {
-				serialize_struct.serialize_field("description", {
-					struct SerializeWith<'a>(&'a Vec<DescriptionProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#description)
-				})?;
-			} else {
-				serialize_struct.skip_field("description")?;
-			}
-			if !Vec::is_empty(&self.r#disambiguating_description) {
-				serialize_struct.serialize_field("disambiguatingDescription", {
-					struct SerializeWith<'a>(&'a Vec<DisambiguatingDescriptionProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#disambiguating_description)
-				})?;
-			} else {
-				serialize_struct.skip_field("disambiguatingDescription")?;
-			}
-			if !Vec::is_empty(&self.r#identifier) {
-				serialize_struct.serialize_field("identifier", {
-					struct SerializeWith<'a>(&'a Vec<IdentifierProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#identifier)
-				})?;
-			} else {
-				serialize_struct.skip_field("identifier")?;
-			}
-			if !Vec::is_empty(&self.r#image) {
-				serialize_struct.serialize_field("image", {
-					struct SerializeWith<'a>(&'a Vec<ImageProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#image)
-				})?;
-			} else {
-				serialize_struct.skip_field("image")?;
-			}
-			if !Vec::is_empty(&self.r#main_entity_of_page) {
-				serialize_struct.serialize_field("mainEntityOfPage", {
-					struct SerializeWith<'a>(&'a Vec<MainEntityOfPageProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#main_entity_of_page)
-				})?;
-			} else {
-				serialize_struct.skip_field("mainEntityOfPage")?;
-			}
 			if !Vec::is_empty(&self.r#minimum_payment_due) {
 				serialize_struct.serialize_field("minimumPaymentDue", {
 					struct SerializeWith<'a>(&'a Vec<MinimumPaymentDueProperty>);
@@ -330,24 +410,6 @@ mod serde {
 				})?;
 			} else {
 				serialize_struct.skip_field("minimumPaymentDue")?;
-			}
-			if !Vec::is_empty(&self.r#name) {
-				serialize_struct.serialize_field("name", {
-					struct SerializeWith<'a>(&'a Vec<NameProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#name)
-				})?;
-			} else {
-				serialize_struct.skip_field("name")?;
 			}
 			if !Vec::is_empty(&self.r#payment_due) {
 				serialize_struct.serialize_field("paymentDue", {
@@ -439,24 +501,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("paymentStatus")?;
 			}
-			if !Vec::is_empty(&self.r#potential_action) {
-				serialize_struct.serialize_field("potentialAction", {
-					struct SerializeWith<'a>(&'a Vec<PotentialActionProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#potential_action)
-				})?;
-			} else {
-				serialize_struct.skip_field("potentialAction")?;
-			}
 			if !Vec::is_empty(&self.r#provider) {
 				serialize_struct.serialize_field("provider", {
 					struct SerializeWith<'a>(&'a Vec<ProviderProperty>);
@@ -493,24 +537,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("referencesOrder")?;
 			}
-			if !Vec::is_empty(&self.r#same_as) {
-				serialize_struct.serialize_field("sameAs", {
-					struct SerializeWith<'a>(&'a Vec<SameAsProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#same_as)
-				})?;
-			} else {
-				serialize_struct.skip_field("sameAs")?;
-			}
 			if !Vec::is_empty(&self.r#scheduled_payment_date) {
 				serialize_struct.serialize_field("scheduledPaymentDate", {
 					struct SerializeWith<'a>(&'a Vec<ScheduledPaymentDateProperty>);
@@ -529,24 +555,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("scheduledPaymentDate")?;
 			}
-			if !Vec::is_empty(&self.r#subject_of) {
-				serialize_struct.serialize_field("subjectOf", {
-					struct SerializeWith<'a>(&'a Vec<SubjectOfProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#subject_of)
-				})?;
-			} else {
-				serialize_struct.skip_field("subjectOf")?;
-			}
 			if !Vec::is_empty(&self.r#total_payment_due) {
 				serialize_struct.serialize_field("totalPaymentDue", {
 					struct SerializeWith<'a>(&'a Vec<TotalPaymentDueProperty>);
@@ -564,6 +572,204 @@ mod serde {
 				})?;
 			} else {
 				serialize_struct.skip_field("totalPaymentDue")?;
+			}
+			if !Vec::is_empty(&self.r#additional_type) {
+				serialize_struct.serialize_field("additionalType", {
+					struct SerializeWith<'a>(&'a Vec<AdditionalTypeProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#additional_type)
+				})?;
+			} else {
+				serialize_struct.skip_field("additionalType")?;
+			}
+			if !Vec::is_empty(&self.r#alternate_name) {
+				serialize_struct.serialize_field("alternateName", {
+					struct SerializeWith<'a>(&'a Vec<AlternateNameProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#alternate_name)
+				})?;
+			} else {
+				serialize_struct.skip_field("alternateName")?;
+			}
+			if !Vec::is_empty(&self.r#description) {
+				serialize_struct.serialize_field("description", {
+					struct SerializeWith<'a>(&'a Vec<DescriptionProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#description)
+				})?;
+			} else {
+				serialize_struct.skip_field("description")?;
+			}
+			if !Vec::is_empty(&self.r#disambiguating_description) {
+				serialize_struct.serialize_field("disambiguatingDescription", {
+					struct SerializeWith<'a>(&'a Vec<DisambiguatingDescriptionProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#disambiguating_description)
+				})?;
+			} else {
+				serialize_struct.skip_field("disambiguatingDescription")?;
+			}
+			if !Vec::is_empty(&self.r#identifier) {
+				serialize_struct.serialize_field("identifier", {
+					struct SerializeWith<'a>(&'a Vec<IdentifierProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#identifier)
+				})?;
+			} else {
+				serialize_struct.skip_field("identifier")?;
+			}
+			if !Vec::is_empty(&self.r#image) {
+				serialize_struct.serialize_field("image", {
+					struct SerializeWith<'a>(&'a Vec<ImageProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#image)
+				})?;
+			} else {
+				serialize_struct.skip_field("image")?;
+			}
+			if !Vec::is_empty(&self.r#main_entity_of_page) {
+				serialize_struct.serialize_field("mainEntityOfPage", {
+					struct SerializeWith<'a>(&'a Vec<MainEntityOfPageProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#main_entity_of_page)
+				})?;
+			} else {
+				serialize_struct.skip_field("mainEntityOfPage")?;
+			}
+			if !Vec::is_empty(&self.r#name) {
+				serialize_struct.serialize_field("name", {
+					struct SerializeWith<'a>(&'a Vec<NameProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#name)
+				})?;
+			} else {
+				serialize_struct.skip_field("name")?;
+			}
+			if !Vec::is_empty(&self.r#potential_action) {
+				serialize_struct.serialize_field("potentialAction", {
+					struct SerializeWith<'a>(&'a Vec<PotentialActionProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#potential_action)
+				})?;
+			} else {
+				serialize_struct.skip_field("potentialAction")?;
+			}
+			if !Vec::is_empty(&self.r#same_as) {
+				serialize_struct.serialize_field("sameAs", {
+					struct SerializeWith<'a>(&'a Vec<SameAsProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#same_as)
+				})?;
+			} else {
+				serialize_struct.skip_field("sameAs")?;
+			}
+			if !Vec::is_empty(&self.r#subject_of) {
+				serialize_struct.serialize_field("subjectOf", {
+					struct SerializeWith<'a>(&'a Vec<SubjectOfProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#subject_of)
+				})?;
+			} else {
+				serialize_struct.skip_field("subjectOf")?;
 			}
 			if !Vec::is_empty(&self.r#url) {
 				serialize_struct.serialize_field("url", {
@@ -593,32 +799,32 @@ mod serde {
 		{
 			enum Field {
 				AccountId,
-				AdditionalType,
-				AlternateName,
 				BillingPeriod,
 				Broker,
 				Category,
 				ConfirmationNumber,
 				Customer,
-				Description,
-				DisambiguatingDescription,
-				Identifier,
-				Image,
-				MainEntityOfPage,
 				MinimumPaymentDue,
-				Name,
 				PaymentDue,
 				PaymentDueDate,
 				PaymentMethod,
 				PaymentMethodId,
 				PaymentStatus,
-				PotentialAction,
 				Provider,
 				ReferencesOrder,
-				SameAs,
 				ScheduledPaymentDate,
-				SubjectOf,
 				TotalPaymentDue,
+				AdditionalType,
+				AlternateName,
+				Description,
+				DisambiguatingDescription,
+				Identifier,
+				Image,
+				MainEntityOfPage,
+				Name,
+				PotentialAction,
+				SameAs,
+				SubjectOf,
 				Url,
 				Ignore,
 			}
@@ -634,32 +840,32 @@ mod serde {
 				{
 					match value {
 						"accountId" => Ok(Field::AccountId),
-						"additionalType" => Ok(Field::AdditionalType),
-						"alternateName" => Ok(Field::AlternateName),
 						"billingPeriod" => Ok(Field::BillingPeriod),
 						"broker" => Ok(Field::Broker),
 						"category" => Ok(Field::Category),
 						"confirmationNumber" => Ok(Field::ConfirmationNumber),
 						"customer" => Ok(Field::Customer),
-						"description" => Ok(Field::Description),
-						"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
-						"identifier" => Ok(Field::Identifier),
-						"image" => Ok(Field::Image),
-						"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
 						"minimumPaymentDue" => Ok(Field::MinimumPaymentDue),
-						"name" => Ok(Field::Name),
 						"paymentDue" => Ok(Field::PaymentDue),
 						"paymentDueDate" => Ok(Field::PaymentDueDate),
 						"paymentMethod" => Ok(Field::PaymentMethod),
 						"paymentMethodId" => Ok(Field::PaymentMethodId),
 						"paymentStatus" => Ok(Field::PaymentStatus),
-						"potentialAction" => Ok(Field::PotentialAction),
 						"provider" => Ok(Field::Provider),
 						"referencesOrder" => Ok(Field::ReferencesOrder),
-						"sameAs" => Ok(Field::SameAs),
 						"scheduledPaymentDate" => Ok(Field::ScheduledPaymentDate),
-						"subjectOf" => Ok(Field::SubjectOf),
 						"totalPaymentDue" => Ok(Field::TotalPaymentDue),
+						"additionalType" => Ok(Field::AdditionalType),
+						"alternateName" => Ok(Field::AlternateName),
+						"description" => Ok(Field::Description),
+						"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
+						"identifier" => Ok(Field::Identifier),
+						"image" => Ok(Field::Image),
+						"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
+						"name" => Ok(Field::Name),
+						"potentialAction" => Ok(Field::PotentialAction),
+						"sameAs" => Ok(Field::SameAs),
+						"subjectOf" => Ok(Field::SubjectOf),
 						"url" => Ok(Field::Url),
 						_ => Ok(Field::Ignore),
 					}
@@ -670,32 +876,32 @@ mod serde {
 				{
 					match value {
 						b"accountId" => Ok(Field::AccountId),
-						b"additionalType" => Ok(Field::AdditionalType),
-						b"alternateName" => Ok(Field::AlternateName),
 						b"billingPeriod" => Ok(Field::BillingPeriod),
 						b"broker" => Ok(Field::Broker),
 						b"category" => Ok(Field::Category),
 						b"confirmationNumber" => Ok(Field::ConfirmationNumber),
 						b"customer" => Ok(Field::Customer),
-						b"description" => Ok(Field::Description),
-						b"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
-						b"identifier" => Ok(Field::Identifier),
-						b"image" => Ok(Field::Image),
-						b"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
 						b"minimumPaymentDue" => Ok(Field::MinimumPaymentDue),
-						b"name" => Ok(Field::Name),
 						b"paymentDue" => Ok(Field::PaymentDue),
 						b"paymentDueDate" => Ok(Field::PaymentDueDate),
 						b"paymentMethod" => Ok(Field::PaymentMethod),
 						b"paymentMethodId" => Ok(Field::PaymentMethodId),
 						b"paymentStatus" => Ok(Field::PaymentStatus),
-						b"potentialAction" => Ok(Field::PotentialAction),
 						b"provider" => Ok(Field::Provider),
 						b"referencesOrder" => Ok(Field::ReferencesOrder),
-						b"sameAs" => Ok(Field::SameAs),
 						b"scheduledPaymentDate" => Ok(Field::ScheduledPaymentDate),
-						b"subjectOf" => Ok(Field::SubjectOf),
 						b"totalPaymentDue" => Ok(Field::TotalPaymentDue),
+						b"additionalType" => Ok(Field::AdditionalType),
+						b"alternateName" => Ok(Field::AlternateName),
+						b"description" => Ok(Field::Description),
+						b"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
+						b"identifier" => Ok(Field::Identifier),
+						b"image" => Ok(Field::Image),
+						b"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
+						b"name" => Ok(Field::Name),
+						b"potentialAction" => Ok(Field::PotentialAction),
+						b"sameAs" => Ok(Field::SameAs),
+						b"subjectOf" => Ok(Field::SubjectOf),
 						b"url" => Ok(Field::Url),
 						_ => Ok(Field::Ignore),
 					}
@@ -720,32 +926,32 @@ mod serde {
 					A: de::MapAccess<'de>,
 				{
 					let mut r#account_id_property = None;
-					let mut r#additional_type_property = None;
-					let mut r#alternate_name_property = None;
 					let mut r#billing_period_property = None;
 					let mut r#broker_property = None;
 					let mut r#category_property = None;
 					let mut r#confirmation_number_property = None;
 					let mut r#customer_property = None;
-					let mut r#description_property = None;
-					let mut r#disambiguating_description_property = None;
-					let mut r#identifier_property = None;
-					let mut r#image_property = None;
-					let mut r#main_entity_of_page_property = None;
 					let mut r#minimum_payment_due_property = None;
-					let mut r#name_property = None;
 					let mut r#payment_due_property = None;
 					let mut r#payment_due_date_property = None;
 					let mut r#payment_method_property = None;
 					let mut r#payment_method_id_property = None;
 					let mut r#payment_status_property = None;
-					let mut r#potential_action_property = None;
 					let mut r#provider_property = None;
 					let mut r#references_order_property = None;
-					let mut r#same_as_property = None;
 					let mut r#scheduled_payment_date_property = None;
-					let mut r#subject_of_property = None;
 					let mut r#total_payment_due_property = None;
+					let mut r#additional_type_property = None;
+					let mut r#alternate_name_property = None;
+					let mut r#description_property = None;
+					let mut r#disambiguating_description_property = None;
+					let mut r#identifier_property = None;
+					let mut r#image_property = None;
+					let mut r#main_entity_of_page_property = None;
+					let mut r#name_property = None;
+					let mut r#potential_action_property = None;
+					let mut r#same_as_property = None;
+					let mut r#subject_of_property = None;
 					let mut r#url_property = None;
 					while let Some(key) = map.next_key::<Field>()? {
 						match key {
@@ -757,58 +963,6 @@ mod serde {
 								}
 								r#account_id_property = Some({
 									struct DeserializeWith(Vec<AccountIdProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::AdditionalType => {
-								if r#additional_type_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"additionalType",
-									));
-								}
-								r#additional_type_property = Some({
-									struct DeserializeWith(Vec<AdditionalTypeProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::AlternateName => {
-								if r#alternate_name_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"alternateName",
-									));
-								}
-								r#alternate_name_property = Some({
-									struct DeserializeWith(Vec<AlternateNameProperty>);
 									impl<'de> Deserialize<'de> for DeserializeWith {
 										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
 										where
@@ -955,134 +1109,6 @@ mod serde {
 									}
 								});
 							}
-							Field::Description => {
-								if r#description_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"description",
-									));
-								}
-								r#description_property = Some({
-									struct DeserializeWith(Vec<DescriptionProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::DisambiguatingDescription => {
-								if r#disambiguating_description_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"disambiguatingDescription",
-									));
-								}
-								r#disambiguating_description_property = Some({
-									struct DeserializeWith(Vec<DisambiguatingDescriptionProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::Identifier => {
-								if r#identifier_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"identifier",
-									));
-								}
-								r#identifier_property = Some({
-									struct DeserializeWith(Vec<IdentifierProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::Image => {
-								if r#image_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field("image"));
-								}
-								r#image_property = Some({
-									struct DeserializeWith(Vec<ImageProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::MainEntityOfPage => {
-								if r#main_entity_of_page_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"mainEntityOfPage",
-									));
-								}
-								r#main_entity_of_page_property = Some({
-									struct DeserializeWith(Vec<MainEntityOfPageProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
 							Field::MinimumPaymentDue => {
 								if r#minimum_payment_due_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -1091,30 +1117,6 @@ mod serde {
 								}
 								r#minimum_payment_due_property = Some({
 									struct DeserializeWith(Vec<MinimumPaymentDueProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::Name => {
-								if r#name_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field("name"));
-								}
-								r#name_property = Some({
-									struct DeserializeWith(Vec<NameProperty>);
 									impl<'de> Deserialize<'de> for DeserializeWith {
 										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
 										where
@@ -1263,32 +1265,6 @@ mod serde {
 									}
 								});
 							}
-							Field::PotentialAction => {
-								if r#potential_action_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"potentialAction",
-									));
-								}
-								r#potential_action_property = Some({
-									struct DeserializeWith(Vec<PotentialActionProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
 							Field::Provider => {
 								if r#provider_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -1341,30 +1317,6 @@ mod serde {
 									}
 								});
 							}
-							Field::SameAs => {
-								if r#same_as_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field("sameAs"));
-								}
-								r#same_as_property = Some({
-									struct DeserializeWith(Vec<SameAsProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
 							Field::ScheduledPaymentDate => {
 								if r#scheduled_payment_date_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -1391,14 +1343,14 @@ mod serde {
 									}
 								});
 							}
-							Field::SubjectOf => {
-								if r#subject_of_property.is_some() {
+							Field::TotalPaymentDue => {
+								if r#total_payment_due_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
-										"subjectOf",
+										"totalPaymentDue",
 									));
 								}
-								r#subject_of_property = Some({
-									struct DeserializeWith(Vec<SubjectOfProperty>);
+								r#total_payment_due_property = Some({
+									struct DeserializeWith(Vec<TotalPaymentDueProperty>);
 									impl<'de> Deserialize<'de> for DeserializeWith {
 										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
 										where
@@ -1417,14 +1369,268 @@ mod serde {
 									}
 								});
 							}
-							Field::TotalPaymentDue => {
-								if r#total_payment_due_property.is_some() {
+							Field::AdditionalType => {
+								if r#additional_type_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
-										"totalPaymentDue",
+										"additionalType",
 									));
 								}
-								r#total_payment_due_property = Some({
-									struct DeserializeWith(Vec<TotalPaymentDueProperty>);
+								r#additional_type_property = Some({
+									struct DeserializeWith(Vec<AdditionalTypeProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::AlternateName => {
+								if r#alternate_name_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"alternateName",
+									));
+								}
+								r#alternate_name_property = Some({
+									struct DeserializeWith(Vec<AlternateNameProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::Description => {
+								if r#description_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"description",
+									));
+								}
+								r#description_property = Some({
+									struct DeserializeWith(Vec<DescriptionProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::DisambiguatingDescription => {
+								if r#disambiguating_description_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"disambiguatingDescription",
+									));
+								}
+								r#disambiguating_description_property = Some({
+									struct DeserializeWith(Vec<DisambiguatingDescriptionProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::Identifier => {
+								if r#identifier_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"identifier",
+									));
+								}
+								r#identifier_property = Some({
+									struct DeserializeWith(Vec<IdentifierProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::Image => {
+								if r#image_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field("image"));
+								}
+								r#image_property = Some({
+									struct DeserializeWith(Vec<ImageProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::MainEntityOfPage => {
+								if r#main_entity_of_page_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"mainEntityOfPage",
+									));
+								}
+								r#main_entity_of_page_property = Some({
+									struct DeserializeWith(Vec<MainEntityOfPageProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::Name => {
+								if r#name_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field("name"));
+								}
+								r#name_property = Some({
+									struct DeserializeWith(Vec<NameProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::PotentialAction => {
+								if r#potential_action_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"potentialAction",
+									));
+								}
+								r#potential_action_property = Some({
+									struct DeserializeWith(Vec<PotentialActionProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::SameAs => {
+								if r#same_as_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field("sameAs"));
+								}
+								r#same_as_property = Some({
+									struct DeserializeWith(Vec<SameAsProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::SubjectOf => {
+								if r#subject_of_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"subjectOf",
+									));
+								}
+								r#subject_of_property = Some({
+									struct DeserializeWith(Vec<SubjectOfProperty>);
 									impl<'de> Deserialize<'de> for DeserializeWith {
 										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
 										where
@@ -1474,66 +1680,66 @@ mod serde {
 					}
 					Ok(Invoice {
 						r#account_id: r#account_id_property.unwrap_or_default(),
-						r#additional_type: r#additional_type_property.unwrap_or_default(),
-						r#alternate_name: r#alternate_name_property.unwrap_or_default(),
 						r#billing_period: r#billing_period_property.unwrap_or_default(),
 						r#broker: r#broker_property.unwrap_or_default(),
 						r#category: r#category_property.unwrap_or_default(),
 						r#confirmation_number: r#confirmation_number_property.unwrap_or_default(),
 						r#customer: r#customer_property.unwrap_or_default(),
+						r#minimum_payment_due: r#minimum_payment_due_property.unwrap_or_default(),
+						r#payment_due: r#payment_due_property.unwrap_or_default(),
+						r#payment_due_date: r#payment_due_date_property.unwrap_or_default(),
+						r#payment_method: r#payment_method_property.unwrap_or_default(),
+						r#payment_method_id: r#payment_method_id_property.unwrap_or_default(),
+						r#payment_status: r#payment_status_property.unwrap_or_default(),
+						r#provider: r#provider_property.unwrap_or_default(),
+						r#references_order: r#references_order_property.unwrap_or_default(),
+						r#scheduled_payment_date: r#scheduled_payment_date_property
+							.unwrap_or_default(),
+						r#total_payment_due: r#total_payment_due_property.unwrap_or_default(),
+						r#additional_type: r#additional_type_property.unwrap_or_default(),
+						r#alternate_name: r#alternate_name_property.unwrap_or_default(),
 						r#description: r#description_property.unwrap_or_default(),
 						r#disambiguating_description: r#disambiguating_description_property
 							.unwrap_or_default(),
 						r#identifier: r#identifier_property.unwrap_or_default(),
 						r#image: r#image_property.unwrap_or_default(),
 						r#main_entity_of_page: r#main_entity_of_page_property.unwrap_or_default(),
-						r#minimum_payment_due: r#minimum_payment_due_property.unwrap_or_default(),
 						r#name: r#name_property.unwrap_or_default(),
-						r#payment_due: r#payment_due_property.unwrap_or_default(),
-						r#payment_due_date: r#payment_due_date_property.unwrap_or_default(),
-						r#payment_method: r#payment_method_property.unwrap_or_default(),
-						r#payment_method_id: r#payment_method_id_property.unwrap_or_default(),
-						r#payment_status: r#payment_status_property.unwrap_or_default(),
 						r#potential_action: r#potential_action_property.unwrap_or_default(),
-						r#provider: r#provider_property.unwrap_or_default(),
-						r#references_order: r#references_order_property.unwrap_or_default(),
 						r#same_as: r#same_as_property.unwrap_or_default(),
-						r#scheduled_payment_date: r#scheduled_payment_date_property
-							.unwrap_or_default(),
 						r#subject_of: r#subject_of_property.unwrap_or_default(),
-						r#total_payment_due: r#total_payment_due_property.unwrap_or_default(),
 						r#url: r#url_property.unwrap_or_default(),
 					})
 				}
 			}
 			const FIELDS: &[&str] = &[
 				"accountId",
-				"additionalType",
-				"alternateName",
 				"billingPeriod",
 				"broker",
 				"category",
 				"confirmationNumber",
 				"customer",
-				"description",
-				"disambiguatingDescription",
-				"identifier",
-				"image",
-				"mainEntityOfPage",
 				"minimumPaymentDue",
-				"name",
 				"paymentDue",
 				"paymentDueDate",
 				"paymentMethod",
 				"paymentMethodId",
 				"paymentStatus",
-				"potentialAction",
 				"provider",
 				"referencesOrder",
-				"sameAs",
 				"scheduledPaymentDate",
-				"subjectOf",
 				"totalPaymentDue",
+				"additionalType",
+				"alternateName",
+				"description",
+				"disambiguatingDescription",
+				"identifier",
+				"image",
+				"mainEntityOfPage",
+				"name",
+				"potentialAction",
+				"sameAs",
+				"subjectOf",
 				"url",
 			];
 			deserializer.deserialize_struct("Invoice", FIELDS, ClassVisitor)

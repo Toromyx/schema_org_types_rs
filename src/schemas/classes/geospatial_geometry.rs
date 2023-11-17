@@ -3,10 +3,6 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct GeospatialGeometry {
-	pub r#additional_type: Vec<AdditionalTypeProperty>,
-	pub r#alternate_name: Vec<AlternateNameProperty>,
-	pub r#description: Vec<DescriptionProperty>,
-	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
 	pub r#geo_contains: Vec<GeoContainsProperty>,
 	pub r#geo_covered_by: Vec<GeoCoveredByProperty>,
 	pub r#geo_covers: Vec<GeoCoversProperty>,
@@ -17,6 +13,10 @@ pub struct GeospatialGeometry {
 	pub r#geo_overlaps: Vec<GeoOverlapsProperty>,
 	pub r#geo_touches: Vec<GeoTouchesProperty>,
 	pub r#geo_within: Vec<GeoWithinProperty>,
+	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	pub r#alternate_name: Vec<AlternateNameProperty>,
+	pub r#description: Vec<DescriptionProperty>,
+	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
 	pub r#identifier: Vec<IdentifierProperty>,
 	pub r#image: Vec<ImageProperty>,
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
@@ -25,6 +25,164 @@ pub struct GeospatialGeometry {
 	pub r#same_as: Vec<SameAsProperty>,
 	pub r#subject_of: Vec<SubjectOfProperty>,
 	pub r#url: Vec<UrlProperty>,
+}
+pub trait GeospatialGeometryTrait {
+	fn get_geo_contains(&self) -> &[GeoContainsProperty];
+	fn take_geo_contains(&mut self) -> Vec<GeoContainsProperty>;
+	fn get_geo_covered_by(&self) -> &[GeoCoveredByProperty];
+	fn take_geo_covered_by(&mut self) -> Vec<GeoCoveredByProperty>;
+	fn get_geo_covers(&self) -> &[GeoCoversProperty];
+	fn take_geo_covers(&mut self) -> Vec<GeoCoversProperty>;
+	fn get_geo_crosses(&self) -> &[GeoCrossesProperty];
+	fn take_geo_crosses(&mut self) -> Vec<GeoCrossesProperty>;
+	fn get_geo_disjoint(&self) -> &[GeoDisjointProperty];
+	fn take_geo_disjoint(&mut self) -> Vec<GeoDisjointProperty>;
+	fn get_geo_equals(&self) -> &[GeoEqualsProperty];
+	fn take_geo_equals(&mut self) -> Vec<GeoEqualsProperty>;
+	fn get_geo_intersects(&self) -> &[GeoIntersectsProperty];
+	fn take_geo_intersects(&mut self) -> Vec<GeoIntersectsProperty>;
+	fn get_geo_overlaps(&self) -> &[GeoOverlapsProperty];
+	fn take_geo_overlaps(&mut self) -> Vec<GeoOverlapsProperty>;
+	fn get_geo_touches(&self) -> &[GeoTouchesProperty];
+	fn take_geo_touches(&mut self) -> Vec<GeoTouchesProperty>;
+	fn get_geo_within(&self) -> &[GeoWithinProperty];
+	fn take_geo_within(&mut self) -> Vec<GeoWithinProperty>;
+}
+impl GeospatialGeometryTrait for GeospatialGeometry {
+	fn get_geo_contains(&self) -> &[GeoContainsProperty] {
+		self.r#geo_contains.as_slice()
+	}
+	fn take_geo_contains(&mut self) -> Vec<GeoContainsProperty> {
+		std::mem::take(&mut self.r#geo_contains)
+	}
+	fn get_geo_covered_by(&self) -> &[GeoCoveredByProperty] {
+		self.r#geo_covered_by.as_slice()
+	}
+	fn take_geo_covered_by(&mut self) -> Vec<GeoCoveredByProperty> {
+		std::mem::take(&mut self.r#geo_covered_by)
+	}
+	fn get_geo_covers(&self) -> &[GeoCoversProperty] {
+		self.r#geo_covers.as_slice()
+	}
+	fn take_geo_covers(&mut self) -> Vec<GeoCoversProperty> {
+		std::mem::take(&mut self.r#geo_covers)
+	}
+	fn get_geo_crosses(&self) -> &[GeoCrossesProperty] {
+		self.r#geo_crosses.as_slice()
+	}
+	fn take_geo_crosses(&mut self) -> Vec<GeoCrossesProperty> {
+		std::mem::take(&mut self.r#geo_crosses)
+	}
+	fn get_geo_disjoint(&self) -> &[GeoDisjointProperty] {
+		self.r#geo_disjoint.as_slice()
+	}
+	fn take_geo_disjoint(&mut self) -> Vec<GeoDisjointProperty> {
+		std::mem::take(&mut self.r#geo_disjoint)
+	}
+	fn get_geo_equals(&self) -> &[GeoEqualsProperty] {
+		self.r#geo_equals.as_slice()
+	}
+	fn take_geo_equals(&mut self) -> Vec<GeoEqualsProperty> {
+		std::mem::take(&mut self.r#geo_equals)
+	}
+	fn get_geo_intersects(&self) -> &[GeoIntersectsProperty] {
+		self.r#geo_intersects.as_slice()
+	}
+	fn take_geo_intersects(&mut self) -> Vec<GeoIntersectsProperty> {
+		std::mem::take(&mut self.r#geo_intersects)
+	}
+	fn get_geo_overlaps(&self) -> &[GeoOverlapsProperty] {
+		self.r#geo_overlaps.as_slice()
+	}
+	fn take_geo_overlaps(&mut self) -> Vec<GeoOverlapsProperty> {
+		std::mem::take(&mut self.r#geo_overlaps)
+	}
+	fn get_geo_touches(&self) -> &[GeoTouchesProperty] {
+		self.r#geo_touches.as_slice()
+	}
+	fn take_geo_touches(&mut self) -> Vec<GeoTouchesProperty> {
+		std::mem::take(&mut self.r#geo_touches)
+	}
+	fn get_geo_within(&self) -> &[GeoWithinProperty] {
+		self.r#geo_within.as_slice()
+	}
+	fn take_geo_within(&mut self) -> Vec<GeoWithinProperty> {
+		std::mem::take(&mut self.r#geo_within)
+	}
+}
+impl ThingTrait for GeospatialGeometry {
+	fn get_additional_type(&self) -> &[AdditionalTypeProperty] {
+		self.r#additional_type.as_slice()
+	}
+	fn take_additional_type(&mut self) -> Vec<AdditionalTypeProperty> {
+		std::mem::take(&mut self.r#additional_type)
+	}
+	fn get_alternate_name(&self) -> &[AlternateNameProperty] {
+		self.r#alternate_name.as_slice()
+	}
+	fn take_alternate_name(&mut self) -> Vec<AlternateNameProperty> {
+		std::mem::take(&mut self.r#alternate_name)
+	}
+	fn get_description(&self) -> &[DescriptionProperty] {
+		self.r#description.as_slice()
+	}
+	fn take_description(&mut self) -> Vec<DescriptionProperty> {
+		std::mem::take(&mut self.r#description)
+	}
+	fn get_disambiguating_description(&self) -> &[DisambiguatingDescriptionProperty] {
+		self.r#disambiguating_description.as_slice()
+	}
+	fn take_disambiguating_description(&mut self) -> Vec<DisambiguatingDescriptionProperty> {
+		std::mem::take(&mut self.r#disambiguating_description)
+	}
+	fn get_identifier(&self) -> &[IdentifierProperty] {
+		self.r#identifier.as_slice()
+	}
+	fn take_identifier(&mut self) -> Vec<IdentifierProperty> {
+		std::mem::take(&mut self.r#identifier)
+	}
+	fn get_image(&self) -> &[ImageProperty] {
+		self.r#image.as_slice()
+	}
+	fn take_image(&mut self) -> Vec<ImageProperty> {
+		std::mem::take(&mut self.r#image)
+	}
+	fn get_main_entity_of_page(&self) -> &[MainEntityOfPageProperty] {
+		self.r#main_entity_of_page.as_slice()
+	}
+	fn take_main_entity_of_page(&mut self) -> Vec<MainEntityOfPageProperty> {
+		std::mem::take(&mut self.r#main_entity_of_page)
+	}
+	fn get_name(&self) -> &[NameProperty] {
+		self.r#name.as_slice()
+	}
+	fn take_name(&mut self) -> Vec<NameProperty> {
+		std::mem::take(&mut self.r#name)
+	}
+	fn get_potential_action(&self) -> &[PotentialActionProperty] {
+		self.r#potential_action.as_slice()
+	}
+	fn take_potential_action(&mut self) -> Vec<PotentialActionProperty> {
+		std::mem::take(&mut self.r#potential_action)
+	}
+	fn get_same_as(&self) -> &[SameAsProperty] {
+		self.r#same_as.as_slice()
+	}
+	fn take_same_as(&mut self) -> Vec<SameAsProperty> {
+		std::mem::take(&mut self.r#same_as)
+	}
+	fn get_subject_of(&self) -> &[SubjectOfProperty] {
+		self.r#subject_of.as_slice()
+	}
+	fn take_subject_of(&mut self) -> Vec<SubjectOfProperty> {
+		std::mem::take(&mut self.r#subject_of)
+	}
+	fn get_url(&self) -> &[UrlProperty] {
+		self.r#url.as_slice()
+	}
+	fn take_url(&mut self) -> Vec<UrlProperty> {
+		std::mem::take(&mut self.r#url)
+	}
 }
 #[cfg(feature = "serde")]
 mod serde {
@@ -41,10 +199,6 @@ mod serde {
 			S: Serializer,
 		{
 			let len: usize = [
-				!Vec::is_empty(&self.r#additional_type) as usize,
-				!Vec::is_empty(&self.r#alternate_name) as usize,
-				!Vec::is_empty(&self.r#description) as usize,
-				!Vec::is_empty(&self.r#disambiguating_description) as usize,
 				!Vec::is_empty(&self.r#geo_contains) as usize,
 				!Vec::is_empty(&self.r#geo_covered_by) as usize,
 				!Vec::is_empty(&self.r#geo_covers) as usize,
@@ -55,6 +209,10 @@ mod serde {
 				!Vec::is_empty(&self.r#geo_overlaps) as usize,
 				!Vec::is_empty(&self.r#geo_touches) as usize,
 				!Vec::is_empty(&self.r#geo_within) as usize,
+				!Vec::is_empty(&self.r#additional_type) as usize,
+				!Vec::is_empty(&self.r#alternate_name) as usize,
+				!Vec::is_empty(&self.r#description) as usize,
+				!Vec::is_empty(&self.r#disambiguating_description) as usize,
 				!Vec::is_empty(&self.r#identifier) as usize,
 				!Vec::is_empty(&self.r#image) as usize,
 				!Vec::is_empty(&self.r#main_entity_of_page) as usize,
@@ -68,78 +226,6 @@ mod serde {
 			.sum();
 			let mut serialize_struct =
 				Serializer::serialize_struct(serializer, "GeospatialGeometry", len)?;
-			if !Vec::is_empty(&self.r#additional_type) {
-				serialize_struct.serialize_field("additionalType", {
-					struct SerializeWith<'a>(&'a Vec<AdditionalTypeProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#additional_type)
-				})?;
-			} else {
-				serialize_struct.skip_field("additionalType")?;
-			}
-			if !Vec::is_empty(&self.r#alternate_name) {
-				serialize_struct.serialize_field("alternateName", {
-					struct SerializeWith<'a>(&'a Vec<AlternateNameProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#alternate_name)
-				})?;
-			} else {
-				serialize_struct.skip_field("alternateName")?;
-			}
-			if !Vec::is_empty(&self.r#description) {
-				serialize_struct.serialize_field("description", {
-					struct SerializeWith<'a>(&'a Vec<DescriptionProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#description)
-				})?;
-			} else {
-				serialize_struct.skip_field("description")?;
-			}
-			if !Vec::is_empty(&self.r#disambiguating_description) {
-				serialize_struct.serialize_field("disambiguatingDescription", {
-					struct SerializeWith<'a>(&'a Vec<DisambiguatingDescriptionProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#disambiguating_description)
-				})?;
-			} else {
-				serialize_struct.skip_field("disambiguatingDescription")?;
-			}
 			if !Vec::is_empty(&self.r#geo_contains) {
 				serialize_struct.serialize_field("geoContains", {
 					struct SerializeWith<'a>(&'a Vec<GeoContainsProperty>);
@@ -320,6 +406,78 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("geoWithin")?;
 			}
+			if !Vec::is_empty(&self.r#additional_type) {
+				serialize_struct.serialize_field("additionalType", {
+					struct SerializeWith<'a>(&'a Vec<AdditionalTypeProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#additional_type)
+				})?;
+			} else {
+				serialize_struct.skip_field("additionalType")?;
+			}
+			if !Vec::is_empty(&self.r#alternate_name) {
+				serialize_struct.serialize_field("alternateName", {
+					struct SerializeWith<'a>(&'a Vec<AlternateNameProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#alternate_name)
+				})?;
+			} else {
+				serialize_struct.skip_field("alternateName")?;
+			}
+			if !Vec::is_empty(&self.r#description) {
+				serialize_struct.serialize_field("description", {
+					struct SerializeWith<'a>(&'a Vec<DescriptionProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#description)
+				})?;
+			} else {
+				serialize_struct.skip_field("description")?;
+			}
+			if !Vec::is_empty(&self.r#disambiguating_description) {
+				serialize_struct.serialize_field("disambiguatingDescription", {
+					struct SerializeWith<'a>(&'a Vec<DisambiguatingDescriptionProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#disambiguating_description)
+				})?;
+			} else {
+				serialize_struct.skip_field("disambiguatingDescription")?;
+			}
 			if !Vec::is_empty(&self.r#identifier) {
 				serialize_struct.serialize_field("identifier", {
 					struct SerializeWith<'a>(&'a Vec<IdentifierProperty>);
@@ -473,10 +631,6 @@ mod serde {
 			D: Deserializer<'de>,
 		{
 			enum Field {
-				AdditionalType,
-				AlternateName,
-				Description,
-				DisambiguatingDescription,
 				GeoContains,
 				GeoCoveredBy,
 				GeoCovers,
@@ -487,6 +641,10 @@ mod serde {
 				GeoOverlaps,
 				GeoTouches,
 				GeoWithin,
+				AdditionalType,
+				AlternateName,
+				Description,
+				DisambiguatingDescription,
 				Identifier,
 				Image,
 				MainEntityOfPage,
@@ -508,10 +666,6 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
-						"additionalType" => Ok(Field::AdditionalType),
-						"alternateName" => Ok(Field::AlternateName),
-						"description" => Ok(Field::Description),
-						"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
 						"geoContains" => Ok(Field::GeoContains),
 						"geoCoveredBy" => Ok(Field::GeoCoveredBy),
 						"geoCovers" => Ok(Field::GeoCovers),
@@ -522,6 +676,10 @@ mod serde {
 						"geoOverlaps" => Ok(Field::GeoOverlaps),
 						"geoTouches" => Ok(Field::GeoTouches),
 						"geoWithin" => Ok(Field::GeoWithin),
+						"additionalType" => Ok(Field::AdditionalType),
+						"alternateName" => Ok(Field::AlternateName),
+						"description" => Ok(Field::Description),
+						"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
 						"identifier" => Ok(Field::Identifier),
 						"image" => Ok(Field::Image),
 						"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
@@ -538,10 +696,6 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
-						b"additionalType" => Ok(Field::AdditionalType),
-						b"alternateName" => Ok(Field::AlternateName),
-						b"description" => Ok(Field::Description),
-						b"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
 						b"geoContains" => Ok(Field::GeoContains),
 						b"geoCoveredBy" => Ok(Field::GeoCoveredBy),
 						b"geoCovers" => Ok(Field::GeoCovers),
@@ -552,6 +706,10 @@ mod serde {
 						b"geoOverlaps" => Ok(Field::GeoOverlaps),
 						b"geoTouches" => Ok(Field::GeoTouches),
 						b"geoWithin" => Ok(Field::GeoWithin),
+						b"additionalType" => Ok(Field::AdditionalType),
+						b"alternateName" => Ok(Field::AlternateName),
+						b"description" => Ok(Field::Description),
+						b"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
 						b"identifier" => Ok(Field::Identifier),
 						b"image" => Ok(Field::Image),
 						b"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
@@ -582,10 +740,6 @@ mod serde {
 				where
 					A: de::MapAccess<'de>,
 				{
-					let mut r#additional_type_property = None;
-					let mut r#alternate_name_property = None;
-					let mut r#description_property = None;
-					let mut r#disambiguating_description_property = None;
 					let mut r#geo_contains_property = None;
 					let mut r#geo_covered_by_property = None;
 					let mut r#geo_covers_property = None;
@@ -596,6 +750,10 @@ mod serde {
 					let mut r#geo_overlaps_property = None;
 					let mut r#geo_touches_property = None;
 					let mut r#geo_within_property = None;
+					let mut r#additional_type_property = None;
+					let mut r#alternate_name_property = None;
+					let mut r#description_property = None;
+					let mut r#disambiguating_description_property = None;
 					let mut r#identifier_property = None;
 					let mut r#image_property = None;
 					let mut r#main_entity_of_page_property = None;
@@ -606,110 +764,6 @@ mod serde {
 					let mut r#url_property = None;
 					while let Some(key) = map.next_key::<Field>()? {
 						match key {
-							Field::AdditionalType => {
-								if r#additional_type_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"additionalType",
-									));
-								}
-								r#additional_type_property = Some({
-									struct DeserializeWith(Vec<AdditionalTypeProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::AlternateName => {
-								if r#alternate_name_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"alternateName",
-									));
-								}
-								r#alternate_name_property = Some({
-									struct DeserializeWith(Vec<AlternateNameProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::Description => {
-								if r#description_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"description",
-									));
-								}
-								r#description_property = Some({
-									struct DeserializeWith(Vec<DescriptionProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::DisambiguatingDescription => {
-								if r#disambiguating_description_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"disambiguatingDescription",
-									));
-								}
-								r#disambiguating_description_property = Some({
-									struct DeserializeWith(Vec<DisambiguatingDescriptionProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
 							Field::GeoContains => {
 								if r#geo_contains_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -970,6 +1024,110 @@ mod serde {
 									}
 								});
 							}
+							Field::AdditionalType => {
+								if r#additional_type_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"additionalType",
+									));
+								}
+								r#additional_type_property = Some({
+									struct DeserializeWith(Vec<AdditionalTypeProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::AlternateName => {
+								if r#alternate_name_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"alternateName",
+									));
+								}
+								r#alternate_name_property = Some({
+									struct DeserializeWith(Vec<AlternateNameProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::Description => {
+								if r#description_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"description",
+									));
+								}
+								r#description_property = Some({
+									struct DeserializeWith(Vec<DescriptionProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::DisambiguatingDescription => {
+								if r#disambiguating_description_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"disambiguatingDescription",
+									));
+								}
+								r#disambiguating_description_property = Some({
+									struct DeserializeWith(Vec<DisambiguatingDescriptionProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
 							Field::Identifier => {
 								if r#identifier_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -1176,11 +1334,6 @@ mod serde {
 						}
 					}
 					Ok(GeospatialGeometry {
-						r#additional_type: r#additional_type_property.unwrap_or_default(),
-						r#alternate_name: r#alternate_name_property.unwrap_or_default(),
-						r#description: r#description_property.unwrap_or_default(),
-						r#disambiguating_description: r#disambiguating_description_property
-							.unwrap_or_default(),
 						r#geo_contains: r#geo_contains_property.unwrap_or_default(),
 						r#geo_covered_by: r#geo_covered_by_property.unwrap_or_default(),
 						r#geo_covers: r#geo_covers_property.unwrap_or_default(),
@@ -1191,6 +1344,11 @@ mod serde {
 						r#geo_overlaps: r#geo_overlaps_property.unwrap_or_default(),
 						r#geo_touches: r#geo_touches_property.unwrap_or_default(),
 						r#geo_within: r#geo_within_property.unwrap_or_default(),
+						r#additional_type: r#additional_type_property.unwrap_or_default(),
+						r#alternate_name: r#alternate_name_property.unwrap_or_default(),
+						r#description: r#description_property.unwrap_or_default(),
+						r#disambiguating_description: r#disambiguating_description_property
+							.unwrap_or_default(),
 						r#identifier: r#identifier_property.unwrap_or_default(),
 						r#image: r#image_property.unwrap_or_default(),
 						r#main_entity_of_page: r#main_entity_of_page_property.unwrap_or_default(),
@@ -1203,10 +1361,6 @@ mod serde {
 				}
 			}
 			const FIELDS: &[&str] = &[
-				"additionalType",
-				"alternateName",
-				"description",
-				"disambiguatingDescription",
 				"geoContains",
 				"geoCoveredBy",
 				"geoCovers",
@@ -1217,6 +1371,10 @@ mod serde {
 				"geoOverlaps",
 				"geoTouches",
 				"geoWithin",
+				"additionalType",
+				"alternateName",
+				"description",
+				"disambiguatingDescription",
 				"identifier",
 				"image",
 				"mainEntityOfPage",
