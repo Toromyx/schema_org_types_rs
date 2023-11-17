@@ -8,7 +8,6 @@ use derivative::Derivative;
 use enumeration_variant::EnumerationVariant;
 use oxigraph::store::Store;
 use quote::{__private::TokenStream, quote, ToTokens, TokenStreamExt};
-use rayon::prelude::*;
 
 use crate::{
 	doc_lines::DocLines,
@@ -53,7 +52,7 @@ impl Schema for Enumeration {
 	fn from_solution(store: &Store, solution: SchemaQuerySolution) -> Self {
 		let mut variants: Vec<EnumerationVariant> = store
 			.get_variants_of_enumeration(&solution.iri)
-			.into_par_iter()
+			.into_iter()
 			.map(|solution| EnumerationVariant {
 				iri: solution.iri,
 				name: map_schema_name(solution.label),

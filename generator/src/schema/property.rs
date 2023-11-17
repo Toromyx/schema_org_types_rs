@@ -6,7 +6,6 @@ use convert_case::{Case, Casing};
 use derivative::Derivative;
 use oxigraph::store::Store;
 use quote::{__private::TokenStream, quote, ToTokens, TokenStreamExt};
-use rayon::prelude::*;
 
 use crate::{
 	doc_lines::DocLines,
@@ -58,7 +57,7 @@ impl Schema for Property {
 	fn from_solution(store: &Store, solution: SchemaQuerySolution) -> Self {
 		let mut variants: Vec<ReferencedSchema> = store
 			.get_variants_of_property(&solution.iri)
-			.into_par_iter()
+			.into_iter()
 			.map(ReferencedSchema::from)
 			.collect();
 

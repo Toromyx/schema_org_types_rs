@@ -6,7 +6,6 @@ use convert_case::{Case, Casing};
 use derivative::Derivative;
 use oxigraph::store::Store;
 use quote::{__private::TokenStream, quote, ToTokens, TokenStreamExt};
-use rayon::prelude::*;
 
 use crate::{
 	doc_lines::DocLines,
@@ -59,7 +58,7 @@ impl Schema for Class {
 	fn from_solution(store: &Store, solution: SchemaQuerySolution) -> Self {
 		let mut properties: Vec<ReferencedSchema> = store
 			.get_properties_of_class(&solution.iri)
-			.into_par_iter()
+			.into_iter()
 			.map(ReferencedSchema::from)
 			.collect();
 		properties.sort_unstable();
