@@ -22,4 +22,4 @@ jobs:
           path: |
             target
             ~/.cargo
-      - run: cargo msrv verify
+      - run: cargo msrv verify -- cargo check --all-features
