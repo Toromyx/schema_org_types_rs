@@ -1,6 +1,11 @@
 name: MSRV Check
 
-on: push
+on:
+  push:
+    paths:
+      - src/**
+      - Cargo.toml
+      - .github/workflows/msrv-check.yml
 
 jobs:
   check:
