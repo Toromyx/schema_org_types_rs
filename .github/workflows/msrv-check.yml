@@ -24,4 +24,12 @@ jobs:
           path: |
             target
             ~/.cargo
+      - uses: actions/cache@v3
+        with:
+          key: rustup-msrv-check-${{ steps.toolchain.outputs.rustc_hash }}-${{ hashFiles('Cargo.toml') }}
+          restore-keys: |
+            rustup-msrv-check-${{ steps.toolchain.outputs.rustc_hash }}-
+            rustup-msrv-check-
+          path: |
+            ~/.rustup/toolchains
       - run: cargo msrv verify -- cargo check --all-features
