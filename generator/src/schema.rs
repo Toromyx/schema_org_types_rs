@@ -22,9 +22,6 @@ pub trait Schema {
 	/// Get the IRI of this schema.
 	fn iri(&self) -> &String;
 
-	/// Get a [`Vec`] of all features that the children of this schema depend on
-	fn child_feature_names(&self) -> Vec<String>;
-
 	/// Get the module name of this schema. Per default this is [`Case::Snake`] of the [`Self::name`].
 	fn module_name(&self) -> String {
 		self.name().to_case(Case::Snake)

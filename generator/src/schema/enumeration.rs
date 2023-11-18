@@ -45,10 +45,6 @@ impl Schema for Enumeration {
 		&self.iri
 	}
 
-	fn child_feature_names(&self) -> Vec<String> {
-		vec![]
-	}
-
 	fn from_solution(store: &Store, solution: SchemaQuerySolution) -> Self {
 		let mut variants: Vec<EnumerationVariant> = store
 			.get_variants_of_enumeration(&solution.iri)

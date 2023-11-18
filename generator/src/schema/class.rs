@@ -71,18 +71,6 @@ impl Schema for Class {
 		&self.iri
 	}
 
-	fn child_feature_names(&self) -> Vec<String> {
-		self.properties
-			.iter()
-			.map(|sectioned_label| {
-				format!(
-					"{}-property-schema",
-					sectioned_label.name.to_case(Case::Kebab)
-				)
-			})
-			.collect()
-	}
-
 	fn from_solution(store: &Store, solution: SchemaQuerySolution) -> Self {
 		let mut properties: Vec<_> = store
 			.get_properties_of_class(&solution.iri)

@@ -47,13 +47,6 @@ impl Schema for Property {
 		&self.iri
 	}
 
-	fn child_feature_names(&self) -> Vec<String> {
-		self.variants
-			.iter()
-			.map(|sectioned_label| format!("{}-schema", sectioned_label.name.to_case(Case::Kebab)))
-			.collect()
-	}
-
 	fn from_solution(store: &Store, solution: SchemaQuerySolution) -> Self {
 		let mut variants: Vec<ReferencedSchema> = store
 			.get_variants_of_property(&solution.iri)

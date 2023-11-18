@@ -43,10 +43,6 @@ impl Schema for DataType {
 		&self.iri
 	}
 
-	fn child_feature_names(&self) -> Vec<String> {
-		vec![]
-	}
-
 	fn from_solution(store: &Store, solution: SchemaQuerySolution) -> Self {
 		let transformable_type =
 			store.get_transformable_data_type_label_of_data_type(&solution.iri);
