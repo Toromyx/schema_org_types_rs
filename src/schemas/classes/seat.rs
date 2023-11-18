@@ -3,6 +3,10 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct Seat {
+	pub r#seat_number: Vec<SeatNumberProperty>,
+	pub r#seat_row: Vec<SeatRowProperty>,
+	pub r#seat_section: Vec<SeatSectionProperty>,
+	pub r#seating_type: Vec<SeatingTypeProperty>,
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
 	pub r#alternate_name: Vec<AlternateNameProperty>,
 	pub r#description: Vec<DescriptionProperty>,
@@ -13,12 +17,118 @@ pub struct Seat {
 	pub r#name: Vec<NameProperty>,
 	pub r#potential_action: Vec<PotentialActionProperty>,
 	pub r#same_as: Vec<SameAsProperty>,
-	pub r#seat_number: Vec<SeatNumberProperty>,
-	pub r#seat_row: Vec<SeatRowProperty>,
-	pub r#seat_section: Vec<SeatSectionProperty>,
-	pub r#seating_type: Vec<SeatingTypeProperty>,
 	pub r#subject_of: Vec<SubjectOfProperty>,
 	pub r#url: Vec<UrlProperty>,
+}
+pub trait SeatTrait {
+	fn get_seat_number(&self) -> &[SeatNumberProperty];
+	fn take_seat_number(&mut self) -> Vec<SeatNumberProperty>;
+	fn get_seat_row(&self) -> &[SeatRowProperty];
+	fn take_seat_row(&mut self) -> Vec<SeatRowProperty>;
+	fn get_seat_section(&self) -> &[SeatSectionProperty];
+	fn take_seat_section(&mut self) -> Vec<SeatSectionProperty>;
+	fn get_seating_type(&self) -> &[SeatingTypeProperty];
+	fn take_seating_type(&mut self) -> Vec<SeatingTypeProperty>;
+}
+impl SeatTrait for Seat {
+	fn get_seat_number(&self) -> &[SeatNumberProperty] {
+		self.r#seat_number.as_slice()
+	}
+	fn take_seat_number(&mut self) -> Vec<SeatNumberProperty> {
+		std::mem::take(&mut self.r#seat_number)
+	}
+	fn get_seat_row(&self) -> &[SeatRowProperty] {
+		self.r#seat_row.as_slice()
+	}
+	fn take_seat_row(&mut self) -> Vec<SeatRowProperty> {
+		std::mem::take(&mut self.r#seat_row)
+	}
+	fn get_seat_section(&self) -> &[SeatSectionProperty] {
+		self.r#seat_section.as_slice()
+	}
+	fn take_seat_section(&mut self) -> Vec<SeatSectionProperty> {
+		std::mem::take(&mut self.r#seat_section)
+	}
+	fn get_seating_type(&self) -> &[SeatingTypeProperty] {
+		self.r#seating_type.as_slice()
+	}
+	fn take_seating_type(&mut self) -> Vec<SeatingTypeProperty> {
+		std::mem::take(&mut self.r#seating_type)
+	}
+}
+impl ThingTrait for Seat {
+	fn get_additional_type(&self) -> &[AdditionalTypeProperty] {
+		self.r#additional_type.as_slice()
+	}
+	fn take_additional_type(&mut self) -> Vec<AdditionalTypeProperty> {
+		std::mem::take(&mut self.r#additional_type)
+	}
+	fn get_alternate_name(&self) -> &[AlternateNameProperty] {
+		self.r#alternate_name.as_slice()
+	}
+	fn take_alternate_name(&mut self) -> Vec<AlternateNameProperty> {
+		std::mem::take(&mut self.r#alternate_name)
+	}
+	fn get_description(&self) -> &[DescriptionProperty] {
+		self.r#description.as_slice()
+	}
+	fn take_description(&mut self) -> Vec<DescriptionProperty> {
+		std::mem::take(&mut self.r#description)
+	}
+	fn get_disambiguating_description(&self) -> &[DisambiguatingDescriptionProperty] {
+		self.r#disambiguating_description.as_slice()
+	}
+	fn take_disambiguating_description(&mut self) -> Vec<DisambiguatingDescriptionProperty> {
+		std::mem::take(&mut self.r#disambiguating_description)
+	}
+	fn get_identifier(&self) -> &[IdentifierProperty] {
+		self.r#identifier.as_slice()
+	}
+	fn take_identifier(&mut self) -> Vec<IdentifierProperty> {
+		std::mem::take(&mut self.r#identifier)
+	}
+	fn get_image(&self) -> &[ImageProperty] {
+		self.r#image.as_slice()
+	}
+	fn take_image(&mut self) -> Vec<ImageProperty> {
+		std::mem::take(&mut self.r#image)
+	}
+	fn get_main_entity_of_page(&self) -> &[MainEntityOfPageProperty] {
+		self.r#main_entity_of_page.as_slice()
+	}
+	fn take_main_entity_of_page(&mut self) -> Vec<MainEntityOfPageProperty> {
+		std::mem::take(&mut self.r#main_entity_of_page)
+	}
+	fn get_name(&self) -> &[NameProperty] {
+		self.r#name.as_slice()
+	}
+	fn take_name(&mut self) -> Vec<NameProperty> {
+		std::mem::take(&mut self.r#name)
+	}
+	fn get_potential_action(&self) -> &[PotentialActionProperty] {
+		self.r#potential_action.as_slice()
+	}
+	fn take_potential_action(&mut self) -> Vec<PotentialActionProperty> {
+		std::mem::take(&mut self.r#potential_action)
+	}
+	fn get_same_as(&self) -> &[SameAsProperty] {
+		self.r#same_as.as_slice()
+	}
+	fn take_same_as(&mut self) -> Vec<SameAsProperty> {
+		std::mem::take(&mut self.r#same_as)
+	}
+	fn get_subject_of(&self) -> &[SubjectOfProperty] {
+		self.r#subject_of.as_slice()
+	}
+	fn take_subject_of(&mut self) -> Vec<SubjectOfProperty> {
+		std::mem::take(&mut self.r#subject_of)
+	}
+	fn get_url(&self) -> &[UrlProperty] {
+		self.r#url.as_slice()
+	}
+	fn take_url(&mut self) -> Vec<UrlProperty> {
+		std::mem::take(&mut self.r#url)
+	}
 }
 #[cfg(feature = "serde")]
 mod serde {
@@ -35,6 +145,10 @@ mod serde {
 			S: Serializer,
 		{
 			let len: usize = [
+				!Vec::is_empty(&self.r#seat_number) as usize,
+				!Vec::is_empty(&self.r#seat_row) as usize,
+				!Vec::is_empty(&self.r#seat_section) as usize,
+				!Vec::is_empty(&self.r#seating_type) as usize,
 				!Vec::is_empty(&self.r#additional_type) as usize,
 				!Vec::is_empty(&self.r#alternate_name) as usize,
 				!Vec::is_empty(&self.r#description) as usize,
@@ -45,16 +159,84 @@ mod serde {
 				!Vec::is_empty(&self.r#name) as usize,
 				!Vec::is_empty(&self.r#potential_action) as usize,
 				!Vec::is_empty(&self.r#same_as) as usize,
-				!Vec::is_empty(&self.r#seat_number) as usize,
-				!Vec::is_empty(&self.r#seat_row) as usize,
-				!Vec::is_empty(&self.r#seat_section) as usize,
-				!Vec::is_empty(&self.r#seating_type) as usize,
 				!Vec::is_empty(&self.r#subject_of) as usize,
 				!Vec::is_empty(&self.r#url) as usize,
 			]
 			.iter()
 			.sum();
 			let mut serialize_struct = Serializer::serialize_struct(serializer, "Seat", len)?;
+			if !Vec::is_empty(&self.r#seat_number) {
+				serialize_struct.serialize_field("seatNumber", {
+					struct SerializeWith<'a>(&'a Vec<SeatNumberProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#seat_number)
+				})?;
+			} else {
+				serialize_struct.skip_field("seatNumber")?;
+			}
+			if !Vec::is_empty(&self.r#seat_row) {
+				serialize_struct.serialize_field("seatRow", {
+					struct SerializeWith<'a>(&'a Vec<SeatRowProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#seat_row)
+				})?;
+			} else {
+				serialize_struct.skip_field("seatRow")?;
+			}
+			if !Vec::is_empty(&self.r#seat_section) {
+				serialize_struct.serialize_field("seatSection", {
+					struct SerializeWith<'a>(&'a Vec<SeatSectionProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#seat_section)
+				})?;
+			} else {
+				serialize_struct.skip_field("seatSection")?;
+			}
+			if !Vec::is_empty(&self.r#seating_type) {
+				serialize_struct.serialize_field("seatingType", {
+					struct SerializeWith<'a>(&'a Vec<SeatingTypeProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#seating_type)
+				})?;
+			} else {
+				serialize_struct.skip_field("seatingType")?;
+			}
 			if !Vec::is_empty(&self.r#additional_type) {
 				serialize_struct.serialize_field("additionalType", {
 					struct SerializeWith<'a>(&'a Vec<AdditionalTypeProperty>);
@@ -235,78 +417,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("sameAs")?;
 			}
-			if !Vec::is_empty(&self.r#seat_number) {
-				serialize_struct.serialize_field("seatNumber", {
-					struct SerializeWith<'a>(&'a Vec<SeatNumberProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#seat_number)
-				})?;
-			} else {
-				serialize_struct.skip_field("seatNumber")?;
-			}
-			if !Vec::is_empty(&self.r#seat_row) {
-				serialize_struct.serialize_field("seatRow", {
-					struct SerializeWith<'a>(&'a Vec<SeatRowProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#seat_row)
-				})?;
-			} else {
-				serialize_struct.skip_field("seatRow")?;
-			}
-			if !Vec::is_empty(&self.r#seat_section) {
-				serialize_struct.serialize_field("seatSection", {
-					struct SerializeWith<'a>(&'a Vec<SeatSectionProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#seat_section)
-				})?;
-			} else {
-				serialize_struct.skip_field("seatSection")?;
-			}
-			if !Vec::is_empty(&self.r#seating_type) {
-				serialize_struct.serialize_field("seatingType", {
-					struct SerializeWith<'a>(&'a Vec<SeatingTypeProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#seating_type)
-				})?;
-			} else {
-				serialize_struct.skip_field("seatingType")?;
-			}
 			if !Vec::is_empty(&self.r#subject_of) {
 				serialize_struct.serialize_field("subjectOf", {
 					struct SerializeWith<'a>(&'a Vec<SubjectOfProperty>);
@@ -352,6 +462,10 @@ mod serde {
 			D: Deserializer<'de>,
 		{
 			enum Field {
+				SeatNumber,
+				SeatRow,
+				SeatSection,
+				SeatingType,
 				AdditionalType,
 				AlternateName,
 				Description,
@@ -362,10 +476,6 @@ mod serde {
 				Name,
 				PotentialAction,
 				SameAs,
-				SeatNumber,
-				SeatRow,
-				SeatSection,
-				SeatingType,
 				SubjectOf,
 				Url,
 				Ignore,
@@ -381,6 +491,10 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
+						"seatNumber" => Ok(Field::SeatNumber),
+						"seatRow" => Ok(Field::SeatRow),
+						"seatSection" => Ok(Field::SeatSection),
+						"seatingType" => Ok(Field::SeatingType),
 						"additionalType" => Ok(Field::AdditionalType),
 						"alternateName" => Ok(Field::AlternateName),
 						"description" => Ok(Field::Description),
@@ -391,10 +505,6 @@ mod serde {
 						"name" => Ok(Field::Name),
 						"potentialAction" => Ok(Field::PotentialAction),
 						"sameAs" => Ok(Field::SameAs),
-						"seatNumber" => Ok(Field::SeatNumber),
-						"seatRow" => Ok(Field::SeatRow),
-						"seatSection" => Ok(Field::SeatSection),
-						"seatingType" => Ok(Field::SeatingType),
 						"subjectOf" => Ok(Field::SubjectOf),
 						"url" => Ok(Field::Url),
 						_ => Ok(Field::Ignore),
@@ -405,6 +515,10 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
+						b"seatNumber" => Ok(Field::SeatNumber),
+						b"seatRow" => Ok(Field::SeatRow),
+						b"seatSection" => Ok(Field::SeatSection),
+						b"seatingType" => Ok(Field::SeatingType),
 						b"additionalType" => Ok(Field::AdditionalType),
 						b"alternateName" => Ok(Field::AlternateName),
 						b"description" => Ok(Field::Description),
@@ -415,10 +529,6 @@ mod serde {
 						b"name" => Ok(Field::Name),
 						b"potentialAction" => Ok(Field::PotentialAction),
 						b"sameAs" => Ok(Field::SameAs),
-						b"seatNumber" => Ok(Field::SeatNumber),
-						b"seatRow" => Ok(Field::SeatRow),
-						b"seatSection" => Ok(Field::SeatSection),
-						b"seatingType" => Ok(Field::SeatingType),
 						b"subjectOf" => Ok(Field::SubjectOf),
 						b"url" => Ok(Field::Url),
 						_ => Ok(Field::Ignore),
@@ -443,6 +553,10 @@ mod serde {
 				where
 					A: de::MapAccess<'de>,
 				{
+					let mut r#seat_number_property = None;
+					let mut r#seat_row_property = None;
+					let mut r#seat_section_property = None;
+					let mut r#seating_type_property = None;
 					let mut r#additional_type_property = None;
 					let mut r#alternate_name_property = None;
 					let mut r#description_property = None;
@@ -453,14 +567,114 @@ mod serde {
 					let mut r#name_property = None;
 					let mut r#potential_action_property = None;
 					let mut r#same_as_property = None;
-					let mut r#seat_number_property = None;
-					let mut r#seat_row_property = None;
-					let mut r#seat_section_property = None;
-					let mut r#seating_type_property = None;
 					let mut r#subject_of_property = None;
 					let mut r#url_property = None;
 					while let Some(key) = map.next_key::<Field>()? {
 						match key {
+							Field::SeatNumber => {
+								if r#seat_number_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"seatNumber",
+									));
+								}
+								r#seat_number_property = Some({
+									struct DeserializeWith(Vec<SeatNumberProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::SeatRow => {
+								if r#seat_row_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"seatRow",
+									));
+								}
+								r#seat_row_property = Some({
+									struct DeserializeWith(Vec<SeatRowProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::SeatSection => {
+								if r#seat_section_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"seatSection",
+									));
+								}
+								r#seat_section_property = Some({
+									struct DeserializeWith(Vec<SeatSectionProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::SeatingType => {
+								if r#seating_type_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"seatingType",
+									));
+								}
+								r#seating_type_property = Some({
+									struct DeserializeWith(Vec<SeatingTypeProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
 							Field::AdditionalType => {
 								if r#additional_type_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -715,110 +929,6 @@ mod serde {
 									}
 								});
 							}
-							Field::SeatNumber => {
-								if r#seat_number_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"seatNumber",
-									));
-								}
-								r#seat_number_property = Some({
-									struct DeserializeWith(Vec<SeatNumberProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::SeatRow => {
-								if r#seat_row_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"seatRow",
-									));
-								}
-								r#seat_row_property = Some({
-									struct DeserializeWith(Vec<SeatRowProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::SeatSection => {
-								if r#seat_section_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"seatSection",
-									));
-								}
-								r#seat_section_property = Some({
-									struct DeserializeWith(Vec<SeatSectionProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::SeatingType => {
-								if r#seating_type_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"seatingType",
-									));
-								}
-								r#seating_type_property = Some({
-									struct DeserializeWith(Vec<SeatingTypeProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
 							Field::SubjectOf => {
 								if r#subject_of_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -875,6 +985,10 @@ mod serde {
 						}
 					}
 					Ok(Seat {
+						r#seat_number: r#seat_number_property.unwrap_or_default(),
+						r#seat_row: r#seat_row_property.unwrap_or_default(),
+						r#seat_section: r#seat_section_property.unwrap_or_default(),
+						r#seating_type: r#seating_type_property.unwrap_or_default(),
 						r#additional_type: r#additional_type_property.unwrap_or_default(),
 						r#alternate_name: r#alternate_name_property.unwrap_or_default(),
 						r#description: r#description_property.unwrap_or_default(),
@@ -886,16 +1000,16 @@ mod serde {
 						r#name: r#name_property.unwrap_or_default(),
 						r#potential_action: r#potential_action_property.unwrap_or_default(),
 						r#same_as: r#same_as_property.unwrap_or_default(),
-						r#seat_number: r#seat_number_property.unwrap_or_default(),
-						r#seat_row: r#seat_row_property.unwrap_or_default(),
-						r#seat_section: r#seat_section_property.unwrap_or_default(),
-						r#seating_type: r#seating_type_property.unwrap_or_default(),
 						r#subject_of: r#subject_of_property.unwrap_or_default(),
 						r#url: r#url_property.unwrap_or_default(),
 					})
 				}
 			}
 			const FIELDS: &[&str] = &[
+				"seatNumber",
+				"seatRow",
+				"seatSection",
+				"seatingType",
 				"additionalType",
 				"alternateName",
 				"description",
@@ -906,10 +1020,6 @@ mod serde {
 				"name",
 				"potentialAction",
 				"sameAs",
-				"seatNumber",
-				"seatRow",
-				"seatSection",
-				"seatingType",
 				"subjectOf",
 				"url",
 			];

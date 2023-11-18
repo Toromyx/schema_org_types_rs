@@ -3,9 +3,10 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct SpeakableSpecification {
+	pub r#css_selector: Vec<CssSelectorProperty>,
+	pub r#xpath: Vec<XpathProperty>,
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
 	pub r#alternate_name: Vec<AlternateNameProperty>,
-	pub r#css_selector: Vec<CssSelectorProperty>,
 	pub r#description: Vec<DescriptionProperty>,
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
 	pub r#identifier: Vec<IdentifierProperty>,
@@ -16,7 +17,100 @@ pub struct SpeakableSpecification {
 	pub r#same_as: Vec<SameAsProperty>,
 	pub r#subject_of: Vec<SubjectOfProperty>,
 	pub r#url: Vec<UrlProperty>,
-	pub r#xpath: Vec<XpathProperty>,
+}
+pub trait SpeakableSpecificationTrait {
+	fn get_css_selector(&self) -> &[CssSelectorProperty];
+	fn take_css_selector(&mut self) -> Vec<CssSelectorProperty>;
+	fn get_xpath(&self) -> &[XpathProperty];
+	fn take_xpath(&mut self) -> Vec<XpathProperty>;
+}
+impl SpeakableSpecificationTrait for SpeakableSpecification {
+	fn get_css_selector(&self) -> &[CssSelectorProperty] {
+		self.r#css_selector.as_slice()
+	}
+	fn take_css_selector(&mut self) -> Vec<CssSelectorProperty> {
+		std::mem::take(&mut self.r#css_selector)
+	}
+	fn get_xpath(&self) -> &[XpathProperty] {
+		self.r#xpath.as_slice()
+	}
+	fn take_xpath(&mut self) -> Vec<XpathProperty> {
+		std::mem::take(&mut self.r#xpath)
+	}
+}
+impl ThingTrait for SpeakableSpecification {
+	fn get_additional_type(&self) -> &[AdditionalTypeProperty] {
+		self.r#additional_type.as_slice()
+	}
+	fn take_additional_type(&mut self) -> Vec<AdditionalTypeProperty> {
+		std::mem::take(&mut self.r#additional_type)
+	}
+	fn get_alternate_name(&self) -> &[AlternateNameProperty] {
+		self.r#alternate_name.as_slice()
+	}
+	fn take_alternate_name(&mut self) -> Vec<AlternateNameProperty> {
+		std::mem::take(&mut self.r#alternate_name)
+	}
+	fn get_description(&self) -> &[DescriptionProperty] {
+		self.r#description.as_slice()
+	}
+	fn take_description(&mut self) -> Vec<DescriptionProperty> {
+		std::mem::take(&mut self.r#description)
+	}
+	fn get_disambiguating_description(&self) -> &[DisambiguatingDescriptionProperty] {
+		self.r#disambiguating_description.as_slice()
+	}
+	fn take_disambiguating_description(&mut self) -> Vec<DisambiguatingDescriptionProperty> {
+		std::mem::take(&mut self.r#disambiguating_description)
+	}
+	fn get_identifier(&self) -> &[IdentifierProperty] {
+		self.r#identifier.as_slice()
+	}
+	fn take_identifier(&mut self) -> Vec<IdentifierProperty> {
+		std::mem::take(&mut self.r#identifier)
+	}
+	fn get_image(&self) -> &[ImageProperty] {
+		self.r#image.as_slice()
+	}
+	fn take_image(&mut self) -> Vec<ImageProperty> {
+		std::mem::take(&mut self.r#image)
+	}
+	fn get_main_entity_of_page(&self) -> &[MainEntityOfPageProperty] {
+		self.r#main_entity_of_page.as_slice()
+	}
+	fn take_main_entity_of_page(&mut self) -> Vec<MainEntityOfPageProperty> {
+		std::mem::take(&mut self.r#main_entity_of_page)
+	}
+	fn get_name(&self) -> &[NameProperty] {
+		self.r#name.as_slice()
+	}
+	fn take_name(&mut self) -> Vec<NameProperty> {
+		std::mem::take(&mut self.r#name)
+	}
+	fn get_potential_action(&self) -> &[PotentialActionProperty] {
+		self.r#potential_action.as_slice()
+	}
+	fn take_potential_action(&mut self) -> Vec<PotentialActionProperty> {
+		std::mem::take(&mut self.r#potential_action)
+	}
+	fn get_same_as(&self) -> &[SameAsProperty] {
+		self.r#same_as.as_slice()
+	}
+	fn take_same_as(&mut self) -> Vec<SameAsProperty> {
+		std::mem::take(&mut self.r#same_as)
+	}
+	fn get_subject_of(&self) -> &[SubjectOfProperty] {
+		self.r#subject_of.as_slice()
+	}
+	fn take_subject_of(&mut self) -> Vec<SubjectOfProperty> {
+		std::mem::take(&mut self.r#subject_of)
+	}
+	fn get_url(&self) -> &[UrlProperty] {
+		self.r#url.as_slice()
+	}
+	fn take_url(&mut self) -> Vec<UrlProperty> {
+		std::mem::take(&mut self.r#url)
+	}
 }
 #[cfg(feature = "serde")]
 mod serde {
@@ -33,9 +127,10 @@ mod serde {
 			S: Serializer,
 		{
 			let len: usize = [
+				!Vec::is_empty(&self.r#css_selector) as usize,
+				!Vec::is_empty(&self.r#xpath) as usize,
 				!Vec::is_empty(&self.r#additional_type) as usize,
 				!Vec::is_empty(&self.r#alternate_name) as usize,
-				!Vec::is_empty(&self.r#css_selector) as usize,
 				!Vec::is_empty(&self.r#description) as usize,
 				!Vec::is_empty(&self.r#disambiguating_description) as usize,
 				!Vec::is_empty(&self.r#identifier) as usize,
@@ -46,12 +141,47 @@ mod serde {
 				!Vec::is_empty(&self.r#same_as) as usize,
 				!Vec::is_empty(&self.r#subject_of) as usize,
 				!Vec::is_empty(&self.r#url) as usize,
-				!Vec::is_empty(&self.r#xpath) as usize,
 			]
 			.iter()
 			.sum();
 			let mut serialize_struct =
 				Serializer::serialize_struct(serializer, "SpeakableSpecification", len)?;
+			if !Vec::is_empty(&self.r#css_selector) {
+				serialize_struct.serialize_field("cssSelector", {
+					struct SerializeWith<'a>(&'a Vec<CssSelectorProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#css_selector)
+				})?;
+			} else {
+				serialize_struct.skip_field("cssSelector")?;
+			}
+			if !Vec::is_empty(&self.r#xpath) {
+				serialize_struct.serialize_field("xpath", {
+					struct SerializeWith<'a>(&'a Vec<XpathProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#xpath)
+				})?;
+			} else {
+				serialize_struct.skip_field("xpath")?;
+			}
 			if !Vec::is_empty(&self.r#additional_type) {
 				serialize_struct.serialize_field("additionalType", {
 					struct SerializeWith<'a>(&'a Vec<AdditionalTypeProperty>);
@@ -87,24 +217,6 @@ mod serde {
 				})?;
 			} else {
 				serialize_struct.skip_field("alternateName")?;
-			}
-			if !Vec::is_empty(&self.r#css_selector) {
-				serialize_struct.serialize_field("cssSelector", {
-					struct SerializeWith<'a>(&'a Vec<CssSelectorProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#css_selector)
-				})?;
-			} else {
-				serialize_struct.skip_field("cssSelector")?;
 			}
 			if !Vec::is_empty(&self.r#description) {
 				serialize_struct.serialize_field("description", {
@@ -286,24 +398,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("url")?;
 			}
-			if !Vec::is_empty(&self.r#xpath) {
-				serialize_struct.serialize_field("xpath", {
-					struct SerializeWith<'a>(&'a Vec<XpathProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#xpath)
-				})?;
-			} else {
-				serialize_struct.skip_field("xpath")?;
-			}
 			serialize_struct.end()
 		}
 	}
@@ -313,9 +407,10 @@ mod serde {
 			D: Deserializer<'de>,
 		{
 			enum Field {
+				CssSelector,
+				Xpath,
 				AdditionalType,
 				AlternateName,
-				CssSelector,
 				Description,
 				DisambiguatingDescription,
 				Identifier,
@@ -326,7 +421,6 @@ mod serde {
 				SameAs,
 				SubjectOf,
 				Url,
-				Xpath,
 				Ignore,
 			}
 			struct FieldVisitor;
@@ -340,9 +434,10 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
+						"cssSelector" => Ok(Field::CssSelector),
+						"xpath" => Ok(Field::Xpath),
 						"additionalType" => Ok(Field::AdditionalType),
 						"alternateName" => Ok(Field::AlternateName),
-						"cssSelector" => Ok(Field::CssSelector),
 						"description" => Ok(Field::Description),
 						"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
 						"identifier" => Ok(Field::Identifier),
@@ -353,7 +448,6 @@ mod serde {
 						"sameAs" => Ok(Field::SameAs),
 						"subjectOf" => Ok(Field::SubjectOf),
 						"url" => Ok(Field::Url),
-						"xpath" => Ok(Field::Xpath),
 						_ => Ok(Field::Ignore),
 					}
 				}
@@ -362,9 +456,10 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
+						b"cssSelector" => Ok(Field::CssSelector),
+						b"xpath" => Ok(Field::Xpath),
 						b"additionalType" => Ok(Field::AdditionalType),
 						b"alternateName" => Ok(Field::AlternateName),
-						b"cssSelector" => Ok(Field::CssSelector),
 						b"description" => Ok(Field::Description),
 						b"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
 						b"identifier" => Ok(Field::Identifier),
@@ -375,7 +470,6 @@ mod serde {
 						b"sameAs" => Ok(Field::SameAs),
 						b"subjectOf" => Ok(Field::SubjectOf),
 						b"url" => Ok(Field::Url),
-						b"xpath" => Ok(Field::Xpath),
 						_ => Ok(Field::Ignore),
 					}
 				}
@@ -398,9 +492,10 @@ mod serde {
 				where
 					A: de::MapAccess<'de>,
 				{
+					let mut r#css_selector_property = None;
+					let mut r#xpath_property = None;
 					let mut r#additional_type_property = None;
 					let mut r#alternate_name_property = None;
-					let mut r#css_selector_property = None;
 					let mut r#description_property = None;
 					let mut r#disambiguating_description_property = None;
 					let mut r#identifier_property = None;
@@ -411,9 +506,58 @@ mod serde {
 					let mut r#same_as_property = None;
 					let mut r#subject_of_property = None;
 					let mut r#url_property = None;
-					let mut r#xpath_property = None;
 					while let Some(key) = map.next_key::<Field>()? {
 						match key {
+							Field::CssSelector => {
+								if r#css_selector_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"cssSelector",
+									));
+								}
+								r#css_selector_property = Some({
+									struct DeserializeWith(Vec<CssSelectorProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::Xpath => {
+								if r#xpath_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field("xpath"));
+								}
+								r#xpath_property = Some({
+									struct DeserializeWith(Vec<XpathProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
 							Field::AdditionalType => {
 								if r#additional_type_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -448,32 +592,6 @@ mod serde {
 								}
 								r#alternate_name_property = Some({
 									struct DeserializeWith(Vec<AlternateNameProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::CssSelector => {
-								if r#css_selector_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"cssSelector",
-									));
-								}
-								r#css_selector_property = Some({
-									struct DeserializeWith(Vec<CssSelectorProperty>);
 									impl<'de> Deserialize<'de> for DeserializeWith {
 										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
 										where
@@ -744,39 +862,16 @@ mod serde {
 									}
 								});
 							}
-							Field::Xpath => {
-								if r#xpath_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field("xpath"));
-								}
-								r#xpath_property = Some({
-									struct DeserializeWith(Vec<XpathProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
 							_ => {
 								let _ = map.next_value::<de::IgnoredAny>()?;
 							}
 						}
 					}
 					Ok(SpeakableSpecification {
+						r#css_selector: r#css_selector_property.unwrap_or_default(),
+						r#xpath: r#xpath_property.unwrap_or_default(),
 						r#additional_type: r#additional_type_property.unwrap_or_default(),
 						r#alternate_name: r#alternate_name_property.unwrap_or_default(),
-						r#css_selector: r#css_selector_property.unwrap_or_default(),
 						r#description: r#description_property.unwrap_or_default(),
 						r#disambiguating_description: r#disambiguating_description_property
 							.unwrap_or_default(),
@@ -788,14 +883,14 @@ mod serde {
 						r#same_as: r#same_as_property.unwrap_or_default(),
 						r#subject_of: r#subject_of_property.unwrap_or_default(),
 						r#url: r#url_property.unwrap_or_default(),
-						r#xpath: r#xpath_property.unwrap_or_default(),
 					})
 				}
 			}
 			const FIELDS: &[&str] = &[
+				"cssSelector",
+				"xpath",
 				"additionalType",
 				"alternateName",
-				"cssSelector",
 				"description",
 				"disambiguatingDescription",
 				"identifier",
@@ -806,7 +901,6 @@ mod serde {
 				"sameAs",
 				"subjectOf",
 				"url",
-				"xpath",
 			];
 			deserializer.deserialize_struct("SpeakableSpecification", FIELDS, ClassVisitor)
 		}

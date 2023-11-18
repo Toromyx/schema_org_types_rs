@@ -3,6 +3,7 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct StupidType {
+	pub r#stupid_property: Vec<StupidPropertyProperty>,
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
 	pub r#alternate_name: Vec<AlternateNameProperty>,
 	pub r#description: Vec<DescriptionProperty>,
@@ -13,9 +14,94 @@ pub struct StupidType {
 	pub r#name: Vec<NameProperty>,
 	pub r#potential_action: Vec<PotentialActionProperty>,
 	pub r#same_as: Vec<SameAsProperty>,
-	pub r#stupid_property: Vec<StupidPropertyProperty>,
 	pub r#subject_of: Vec<SubjectOfProperty>,
 	pub r#url: Vec<UrlProperty>,
+}
+pub trait StupidTypeTrait {
+	fn get_stupid_property(&self) -> &[StupidPropertyProperty];
+	fn take_stupid_property(&mut self) -> Vec<StupidPropertyProperty>;
+}
+impl StupidTypeTrait for StupidType {
+	fn get_stupid_property(&self) -> &[StupidPropertyProperty] {
+		self.r#stupid_property.as_slice()
+	}
+	fn take_stupid_property(&mut self) -> Vec<StupidPropertyProperty> {
+		std::mem::take(&mut self.r#stupid_property)
+	}
+}
+impl ThingTrait for StupidType {
+	fn get_additional_type(&self) -> &[AdditionalTypeProperty] {
+		self.r#additional_type.as_slice()
+	}
+	fn take_additional_type(&mut self) -> Vec<AdditionalTypeProperty> {
+		std::mem::take(&mut self.r#additional_type)
+	}
+	fn get_alternate_name(&self) -> &[AlternateNameProperty] {
+		self.r#alternate_name.as_slice()
+	}
+	fn take_alternate_name(&mut self) -> Vec<AlternateNameProperty> {
+		std::mem::take(&mut self.r#alternate_name)
+	}
+	fn get_description(&self) -> &[DescriptionProperty] {
+		self.r#description.as_slice()
+	}
+	fn take_description(&mut self) -> Vec<DescriptionProperty> {
+		std::mem::take(&mut self.r#description)
+	}
+	fn get_disambiguating_description(&self) -> &[DisambiguatingDescriptionProperty] {
+		self.r#disambiguating_description.as_slice()
+	}
+	fn take_disambiguating_description(&mut self) -> Vec<DisambiguatingDescriptionProperty> {
+		std::mem::take(&mut self.r#disambiguating_description)
+	}
+	fn get_identifier(&self) -> &[IdentifierProperty] {
+		self.r#identifier.as_slice()
+	}
+	fn take_identifier(&mut self) -> Vec<IdentifierProperty> {
+		std::mem::take(&mut self.r#identifier)
+	}
+	fn get_image(&self) -> &[ImageProperty] {
+		self.r#image.as_slice()
+	}
+	fn take_image(&mut self) -> Vec<ImageProperty> {
+		std::mem::take(&mut self.r#image)
+	}
+	fn get_main_entity_of_page(&self) -> &[MainEntityOfPageProperty] {
+		self.r#main_entity_of_page.as_slice()
+	}
+	fn take_main_entity_of_page(&mut self) -> Vec<MainEntityOfPageProperty> {
+		std::mem::take(&mut self.r#main_entity_of_page)
+	}
+	fn get_name(&self) -> &[NameProperty] {
+		self.r#name.as_slice()
+	}
+	fn take_name(&mut self) -> Vec<NameProperty> {
+		std::mem::take(&mut self.r#name)
+	}
+	fn get_potential_action(&self) -> &[PotentialActionProperty] {
+		self.r#potential_action.as_slice()
+	}
+	fn take_potential_action(&mut self) -> Vec<PotentialActionProperty> {
+		std::mem::take(&mut self.r#potential_action)
+	}
+	fn get_same_as(&self) -> &[SameAsProperty] {
+		self.r#same_as.as_slice()
+	}
+	fn take_same_as(&mut self) -> Vec<SameAsProperty> {
+		std::mem::take(&mut self.r#same_as)
+	}
+	fn get_subject_of(&self) -> &[SubjectOfProperty] {
+		self.r#subject_of.as_slice()
+	}
+	fn take_subject_of(&mut self) -> Vec<SubjectOfProperty> {
+		std::mem::take(&mut self.r#subject_of)
+	}
+	fn get_url(&self) -> &[UrlProperty] {
+		self.r#url.as_slice()
+	}
+	fn take_url(&mut self) -> Vec<UrlProperty> {
+		std::mem::take(&mut self.r#url)
+	}
 }
 #[cfg(feature = "serde")]
 mod serde {
@@ -32,6 +118,7 @@ mod serde {
 			S: Serializer,
 		{
 			let len: usize = [
+				!Vec::is_empty(&self.r#stupid_property) as usize,
 				!Vec::is_empty(&self.r#additional_type) as usize,
 				!Vec::is_empty(&self.r#alternate_name) as usize,
 				!Vec::is_empty(&self.r#description) as usize,
@@ -42,13 +129,30 @@ mod serde {
 				!Vec::is_empty(&self.r#name) as usize,
 				!Vec::is_empty(&self.r#potential_action) as usize,
 				!Vec::is_empty(&self.r#same_as) as usize,
-				!Vec::is_empty(&self.r#stupid_property) as usize,
 				!Vec::is_empty(&self.r#subject_of) as usize,
 				!Vec::is_empty(&self.r#url) as usize,
 			]
 			.iter()
 			.sum();
 			let mut serialize_struct = Serializer::serialize_struct(serializer, "StupidType", len)?;
+			if !Vec::is_empty(&self.r#stupid_property) {
+				serialize_struct.serialize_field("stupidProperty", {
+					struct SerializeWith<'a>(&'a Vec<StupidPropertyProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#stupid_property)
+				})?;
+			} else {
+				serialize_struct.skip_field("stupidProperty")?;
+			}
 			if !Vec::is_empty(&self.r#additional_type) {
 				serialize_struct.serialize_field("additionalType", {
 					struct SerializeWith<'a>(&'a Vec<AdditionalTypeProperty>);
@@ -229,24 +333,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("sameAs")?;
 			}
-			if !Vec::is_empty(&self.r#stupid_property) {
-				serialize_struct.serialize_field("stupidProperty", {
-					struct SerializeWith<'a>(&'a Vec<StupidPropertyProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#stupid_property)
-				})?;
-			} else {
-				serialize_struct.skip_field("stupidProperty")?;
-			}
 			if !Vec::is_empty(&self.r#subject_of) {
 				serialize_struct.serialize_field("subjectOf", {
 					struct SerializeWith<'a>(&'a Vec<SubjectOfProperty>);
@@ -292,6 +378,7 @@ mod serde {
 			D: Deserializer<'de>,
 		{
 			enum Field {
+				StupidProperty,
 				AdditionalType,
 				AlternateName,
 				Description,
@@ -302,7 +389,6 @@ mod serde {
 				Name,
 				PotentialAction,
 				SameAs,
-				StupidProperty,
 				SubjectOf,
 				Url,
 				Ignore,
@@ -318,6 +404,7 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
+						"stupidProperty" => Ok(Field::StupidProperty),
 						"additionalType" => Ok(Field::AdditionalType),
 						"alternateName" => Ok(Field::AlternateName),
 						"description" => Ok(Field::Description),
@@ -328,7 +415,6 @@ mod serde {
 						"name" => Ok(Field::Name),
 						"potentialAction" => Ok(Field::PotentialAction),
 						"sameAs" => Ok(Field::SameAs),
-						"stupidProperty" => Ok(Field::StupidProperty),
 						"subjectOf" => Ok(Field::SubjectOf),
 						"url" => Ok(Field::Url),
 						_ => Ok(Field::Ignore),
@@ -339,6 +425,7 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
+						b"stupidProperty" => Ok(Field::StupidProperty),
 						b"additionalType" => Ok(Field::AdditionalType),
 						b"alternateName" => Ok(Field::AlternateName),
 						b"description" => Ok(Field::Description),
@@ -349,7 +436,6 @@ mod serde {
 						b"name" => Ok(Field::Name),
 						b"potentialAction" => Ok(Field::PotentialAction),
 						b"sameAs" => Ok(Field::SameAs),
-						b"stupidProperty" => Ok(Field::StupidProperty),
 						b"subjectOf" => Ok(Field::SubjectOf),
 						b"url" => Ok(Field::Url),
 						_ => Ok(Field::Ignore),
@@ -374,6 +460,7 @@ mod serde {
 				where
 					A: de::MapAccess<'de>,
 				{
+					let mut r#stupid_property_property = None;
 					let mut r#additional_type_property = None;
 					let mut r#alternate_name_property = None;
 					let mut r#description_property = None;
@@ -384,11 +471,36 @@ mod serde {
 					let mut r#name_property = None;
 					let mut r#potential_action_property = None;
 					let mut r#same_as_property = None;
-					let mut r#stupid_property_property = None;
 					let mut r#subject_of_property = None;
 					let mut r#url_property = None;
 					while let Some(key) = map.next_key::<Field>()? {
 						match key {
+							Field::StupidProperty => {
+								if r#stupid_property_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"stupidProperty",
+									));
+								}
+								r#stupid_property_property = Some({
+									struct DeserializeWith(Vec<StupidPropertyProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
 							Field::AdditionalType => {
 								if r#additional_type_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -643,32 +755,6 @@ mod serde {
 									}
 								});
 							}
-							Field::StupidProperty => {
-								if r#stupid_property_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"stupidProperty",
-									));
-								}
-								r#stupid_property_property = Some({
-									struct DeserializeWith(Vec<StupidPropertyProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
 							Field::SubjectOf => {
 								if r#subject_of_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -725,6 +811,7 @@ mod serde {
 						}
 					}
 					Ok(StupidType {
+						r#stupid_property: r#stupid_property_property.unwrap_or_default(),
 						r#additional_type: r#additional_type_property.unwrap_or_default(),
 						r#alternate_name: r#alternate_name_property.unwrap_or_default(),
 						r#description: r#description_property.unwrap_or_default(),
@@ -736,13 +823,13 @@ mod serde {
 						r#name: r#name_property.unwrap_or_default(),
 						r#potential_action: r#potential_action_property.unwrap_or_default(),
 						r#same_as: r#same_as_property.unwrap_or_default(),
-						r#stupid_property: r#stupid_property_property.unwrap_or_default(),
 						r#subject_of: r#subject_of_property.unwrap_or_default(),
 						r#url: r#url_property.unwrap_or_default(),
 					})
 				}
 			}
 			const FIELDS: &[&str] = &[
+				"stupidProperty",
 				"additionalType",
 				"alternateName",
 				"description",
@@ -753,7 +840,6 @@ mod serde {
 				"name",
 				"potentialAction",
 				"sameAs",
-				"stupidProperty",
 				"subjectOf",
 				"url",
 			];

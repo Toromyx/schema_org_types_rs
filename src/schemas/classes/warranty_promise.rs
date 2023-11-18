@@ -3,11 +3,12 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct WarrantyPromise {
+	pub r#duration_of_warranty: Vec<DurationOfWarrantyProperty>,
+	pub r#warranty_scope: Vec<WarrantyScopeProperty>,
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
 	pub r#alternate_name: Vec<AlternateNameProperty>,
 	pub r#description: Vec<DescriptionProperty>,
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
-	pub r#duration_of_warranty: Vec<DurationOfWarrantyProperty>,
 	pub r#identifier: Vec<IdentifierProperty>,
 	pub r#image: Vec<ImageProperty>,
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
@@ -16,7 +17,101 @@ pub struct WarrantyPromise {
 	pub r#same_as: Vec<SameAsProperty>,
 	pub r#subject_of: Vec<SubjectOfProperty>,
 	pub r#url: Vec<UrlProperty>,
-	pub r#warranty_scope: Vec<WarrantyScopeProperty>,
+}
+pub trait WarrantyPromiseTrait {
+	fn get_duration_of_warranty(&self) -> &[DurationOfWarrantyProperty];
+	fn take_duration_of_warranty(&mut self) -> Vec<DurationOfWarrantyProperty>;
+	fn get_warranty_scope(&self) -> &[WarrantyScopeProperty];
+	fn take_warranty_scope(&mut self) -> Vec<WarrantyScopeProperty>;
+}
+impl WarrantyPromiseTrait for WarrantyPromise {
+	fn get_duration_of_warranty(&self) -> &[DurationOfWarrantyProperty] {
+		self.r#duration_of_warranty.as_slice()
+	}
+	fn take_duration_of_warranty(&mut self) -> Vec<DurationOfWarrantyProperty> {
+		std::mem::take(&mut self.r#duration_of_warranty)
+	}
+	fn get_warranty_scope(&self) -> &[WarrantyScopeProperty] {
+		self.r#warranty_scope.as_slice()
+	}
+	fn take_warranty_scope(&mut self) -> Vec<WarrantyScopeProperty> {
+		std::mem::take(&mut self.r#warranty_scope)
+	}
+}
+impl StructuredValueTrait for WarrantyPromise {}
+impl ThingTrait for WarrantyPromise {
+	fn get_additional_type(&self) -> &[AdditionalTypeProperty] {
+		self.r#additional_type.as_slice()
+	}
+	fn take_additional_type(&mut self) -> Vec<AdditionalTypeProperty> {
+		std::mem::take(&mut self.r#additional_type)
+	}
+	fn get_alternate_name(&self) -> &[AlternateNameProperty] {
+		self.r#alternate_name.as_slice()
+	}
+	fn take_alternate_name(&mut self) -> Vec<AlternateNameProperty> {
+		std::mem::take(&mut self.r#alternate_name)
+	}
+	fn get_description(&self) -> &[DescriptionProperty] {
+		self.r#description.as_slice()
+	}
+	fn take_description(&mut self) -> Vec<DescriptionProperty> {
+		std::mem::take(&mut self.r#description)
+	}
+	fn get_disambiguating_description(&self) -> &[DisambiguatingDescriptionProperty] {
+		self.r#disambiguating_description.as_slice()
+	}
+	fn take_disambiguating_description(&mut self) -> Vec<DisambiguatingDescriptionProperty> {
+		std::mem::take(&mut self.r#disambiguating_description)
+	}
+	fn get_identifier(&self) -> &[IdentifierProperty] {
+		self.r#identifier.as_slice()
+	}
+	fn take_identifier(&mut self) -> Vec<IdentifierProperty> {
+		std::mem::take(&mut self.r#identifier)
+	}
+	fn get_image(&self) -> &[ImageProperty] {
+		self.r#image.as_slice()
+	}
+	fn take_image(&mut self) -> Vec<ImageProperty> {
+		std::mem::take(&mut self.r#image)
+	}
+	fn get_main_entity_of_page(&self) -> &[MainEntityOfPageProperty] {
+		self.r#main_entity_of_page.as_slice()
+	}
+	fn take_main_entity_of_page(&mut self) -> Vec<MainEntityOfPageProperty> {
+		std::mem::take(&mut self.r#main_entity_of_page)
+	}
+	fn get_name(&self) -> &[NameProperty] {
+		self.r#name.as_slice()
+	}
+	fn take_name(&mut self) -> Vec<NameProperty> {
+		std::mem::take(&mut self.r#name)
+	}
+	fn get_potential_action(&self) -> &[PotentialActionProperty] {
+		self.r#potential_action.as_slice()
+	}
+	fn take_potential_action(&mut self) -> Vec<PotentialActionProperty> {
+		std::mem::take(&mut self.r#potential_action)
+	}
+	fn get_same_as(&self) -> &[SameAsProperty] {
+		self.r#same_as.as_slice()
+	}
+	fn take_same_as(&mut self) -> Vec<SameAsProperty> {
+		std::mem::take(&mut self.r#same_as)
+	}
+	fn get_subject_of(&self) -> &[SubjectOfProperty] {
+		self.r#subject_of.as_slice()
+	}
+	fn take_subject_of(&mut self) -> Vec<SubjectOfProperty> {
+		std::mem::take(&mut self.r#subject_of)
+	}
+	fn get_url(&self) -> &[UrlProperty] {
+		self.r#url.as_slice()
+	}
+	fn take_url(&mut self) -> Vec<UrlProperty> {
+		std::mem::take(&mut self.r#url)
+	}
 }
 #[cfg(feature = "serde")]
 mod serde {
@@ -33,11 +128,12 @@ mod serde {
 			S: Serializer,
 		{
 			let len: usize = [
+				!Vec::is_empty(&self.r#duration_of_warranty) as usize,
+				!Vec::is_empty(&self.r#warranty_scope) as usize,
 				!Vec::is_empty(&self.r#additional_type) as usize,
 				!Vec::is_empty(&self.r#alternate_name) as usize,
 				!Vec::is_empty(&self.r#description) as usize,
 				!Vec::is_empty(&self.r#disambiguating_description) as usize,
-				!Vec::is_empty(&self.r#duration_of_warranty) as usize,
 				!Vec::is_empty(&self.r#identifier) as usize,
 				!Vec::is_empty(&self.r#image) as usize,
 				!Vec::is_empty(&self.r#main_entity_of_page) as usize,
@@ -46,12 +142,47 @@ mod serde {
 				!Vec::is_empty(&self.r#same_as) as usize,
 				!Vec::is_empty(&self.r#subject_of) as usize,
 				!Vec::is_empty(&self.r#url) as usize,
-				!Vec::is_empty(&self.r#warranty_scope) as usize,
 			]
 			.iter()
 			.sum();
 			let mut serialize_struct =
 				Serializer::serialize_struct(serializer, "WarrantyPromise", len)?;
+			if !Vec::is_empty(&self.r#duration_of_warranty) {
+				serialize_struct.serialize_field("durationOfWarranty", {
+					struct SerializeWith<'a>(&'a Vec<DurationOfWarrantyProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#duration_of_warranty)
+				})?;
+			} else {
+				serialize_struct.skip_field("durationOfWarranty")?;
+			}
+			if !Vec::is_empty(&self.r#warranty_scope) {
+				serialize_struct.serialize_field("warrantyScope", {
+					struct SerializeWith<'a>(&'a Vec<WarrantyScopeProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#warranty_scope)
+				})?;
+			} else {
+				serialize_struct.skip_field("warrantyScope")?;
+			}
 			if !Vec::is_empty(&self.r#additional_type) {
 				serialize_struct.serialize_field("additionalType", {
 					struct SerializeWith<'a>(&'a Vec<AdditionalTypeProperty>);
@@ -123,24 +254,6 @@ mod serde {
 				})?;
 			} else {
 				serialize_struct.skip_field("disambiguatingDescription")?;
-			}
-			if !Vec::is_empty(&self.r#duration_of_warranty) {
-				serialize_struct.serialize_field("durationOfWarranty", {
-					struct SerializeWith<'a>(&'a Vec<DurationOfWarrantyProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#duration_of_warranty)
-				})?;
-			} else {
-				serialize_struct.skip_field("durationOfWarranty")?;
 			}
 			if !Vec::is_empty(&self.r#identifier) {
 				serialize_struct.serialize_field("identifier", {
@@ -286,24 +399,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("url")?;
 			}
-			if !Vec::is_empty(&self.r#warranty_scope) {
-				serialize_struct.serialize_field("warrantyScope", {
-					struct SerializeWith<'a>(&'a Vec<WarrantyScopeProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#warranty_scope)
-				})?;
-			} else {
-				serialize_struct.skip_field("warrantyScope")?;
-			}
 			serialize_struct.end()
 		}
 	}
@@ -313,11 +408,12 @@ mod serde {
 			D: Deserializer<'de>,
 		{
 			enum Field {
+				DurationOfWarranty,
+				WarrantyScope,
 				AdditionalType,
 				AlternateName,
 				Description,
 				DisambiguatingDescription,
-				DurationOfWarranty,
 				Identifier,
 				Image,
 				MainEntityOfPage,
@@ -326,7 +422,6 @@ mod serde {
 				SameAs,
 				SubjectOf,
 				Url,
-				WarrantyScope,
 				Ignore,
 			}
 			struct FieldVisitor;
@@ -340,11 +435,12 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
+						"durationOfWarranty" => Ok(Field::DurationOfWarranty),
+						"warrantyScope" => Ok(Field::WarrantyScope),
 						"additionalType" => Ok(Field::AdditionalType),
 						"alternateName" => Ok(Field::AlternateName),
 						"description" => Ok(Field::Description),
 						"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
-						"durationOfWarranty" => Ok(Field::DurationOfWarranty),
 						"identifier" => Ok(Field::Identifier),
 						"image" => Ok(Field::Image),
 						"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
@@ -353,7 +449,6 @@ mod serde {
 						"sameAs" => Ok(Field::SameAs),
 						"subjectOf" => Ok(Field::SubjectOf),
 						"url" => Ok(Field::Url),
-						"warrantyScope" => Ok(Field::WarrantyScope),
 						_ => Ok(Field::Ignore),
 					}
 				}
@@ -362,11 +457,12 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
+						b"durationOfWarranty" => Ok(Field::DurationOfWarranty),
+						b"warrantyScope" => Ok(Field::WarrantyScope),
 						b"additionalType" => Ok(Field::AdditionalType),
 						b"alternateName" => Ok(Field::AlternateName),
 						b"description" => Ok(Field::Description),
 						b"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
-						b"durationOfWarranty" => Ok(Field::DurationOfWarranty),
 						b"identifier" => Ok(Field::Identifier),
 						b"image" => Ok(Field::Image),
 						b"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
@@ -375,7 +471,6 @@ mod serde {
 						b"sameAs" => Ok(Field::SameAs),
 						b"subjectOf" => Ok(Field::SubjectOf),
 						b"url" => Ok(Field::Url),
-						b"warrantyScope" => Ok(Field::WarrantyScope),
 						_ => Ok(Field::Ignore),
 					}
 				}
@@ -398,11 +493,12 @@ mod serde {
 				where
 					A: de::MapAccess<'de>,
 				{
+					let mut r#duration_of_warranty_property = None;
+					let mut r#warranty_scope_property = None;
 					let mut r#additional_type_property = None;
 					let mut r#alternate_name_property = None;
 					let mut r#description_property = None;
 					let mut r#disambiguating_description_property = None;
-					let mut r#duration_of_warranty_property = None;
 					let mut r#identifier_property = None;
 					let mut r#image_property = None;
 					let mut r#main_entity_of_page_property = None;
@@ -411,9 +507,60 @@ mod serde {
 					let mut r#same_as_property = None;
 					let mut r#subject_of_property = None;
 					let mut r#url_property = None;
-					let mut r#warranty_scope_property = None;
 					while let Some(key) = map.next_key::<Field>()? {
 						match key {
+							Field::DurationOfWarranty => {
+								if r#duration_of_warranty_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"durationOfWarranty",
+									));
+								}
+								r#duration_of_warranty_property = Some({
+									struct DeserializeWith(Vec<DurationOfWarrantyProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::WarrantyScope => {
+								if r#warranty_scope_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"warrantyScope",
+									));
+								}
+								r#warranty_scope_property = Some({
+									struct DeserializeWith(Vec<WarrantyScopeProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
 							Field::AdditionalType => {
 								if r#additional_type_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -500,32 +647,6 @@ mod serde {
 								}
 								r#disambiguating_description_property = Some({
 									struct DeserializeWith(Vec<DisambiguatingDescriptionProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::DurationOfWarranty => {
-								if r#duration_of_warranty_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"durationOfWarranty",
-									));
-								}
-								r#duration_of_warranty_property = Some({
-									struct DeserializeWith(Vec<DurationOfWarrantyProperty>);
 									impl<'de> Deserialize<'de> for DeserializeWith {
 										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
 										where
@@ -744,44 +865,19 @@ mod serde {
 									}
 								});
 							}
-							Field::WarrantyScope => {
-								if r#warranty_scope_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"warrantyScope",
-									));
-								}
-								r#warranty_scope_property = Some({
-									struct DeserializeWith(Vec<WarrantyScopeProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
 							_ => {
 								let _ = map.next_value::<de::IgnoredAny>()?;
 							}
 						}
 					}
 					Ok(WarrantyPromise {
+						r#duration_of_warranty: r#duration_of_warranty_property.unwrap_or_default(),
+						r#warranty_scope: r#warranty_scope_property.unwrap_or_default(),
 						r#additional_type: r#additional_type_property.unwrap_or_default(),
 						r#alternate_name: r#alternate_name_property.unwrap_or_default(),
 						r#description: r#description_property.unwrap_or_default(),
 						r#disambiguating_description: r#disambiguating_description_property
 							.unwrap_or_default(),
-						r#duration_of_warranty: r#duration_of_warranty_property.unwrap_or_default(),
 						r#identifier: r#identifier_property.unwrap_or_default(),
 						r#image: r#image_property.unwrap_or_default(),
 						r#main_entity_of_page: r#main_entity_of_page_property.unwrap_or_default(),
@@ -790,16 +886,16 @@ mod serde {
 						r#same_as: r#same_as_property.unwrap_or_default(),
 						r#subject_of: r#subject_of_property.unwrap_or_default(),
 						r#url: r#url_property.unwrap_or_default(),
-						r#warranty_scope: r#warranty_scope_property.unwrap_or_default(),
 					})
 				}
 			}
 			const FIELDS: &[&str] = &[
+				"durationOfWarranty",
+				"warrantyScope",
 				"additionalType",
 				"alternateName",
 				"description",
 				"disambiguatingDescription",
-				"durationOfWarranty",
 				"identifier",
 				"image",
 				"mainEntityOfPage",
@@ -808,7 +904,6 @@ mod serde {
 				"sameAs",
 				"subjectOf",
 				"url",
-				"warrantyScope",
 			];
 			deserializer.deserialize_struct("WarrantyPromise", FIELDS, ClassVisitor)
 		}

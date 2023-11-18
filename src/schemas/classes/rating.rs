@@ -3,10 +3,14 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct Rating {
-	pub r#additional_type: Vec<AdditionalTypeProperty>,
-	pub r#alternate_name: Vec<AlternateNameProperty>,
 	pub r#author: Vec<AuthorProperty>,
 	pub r#best_rating: Vec<BestRatingProperty>,
+	pub r#rating_explanation: Vec<RatingExplanationProperty>,
+	pub r#rating_value: Vec<RatingValueProperty>,
+	pub r#review_aspect: Vec<ReviewAspectProperty>,
+	pub r#worst_rating: Vec<WorstRatingProperty>,
+	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	pub r#alternate_name: Vec<AlternateNameProperty>,
 	pub r#description: Vec<DescriptionProperty>,
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
 	pub r#identifier: Vec<IdentifierProperty>,
@@ -14,13 +18,135 @@ pub struct Rating {
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
 	pub r#name: Vec<NameProperty>,
 	pub r#potential_action: Vec<PotentialActionProperty>,
-	pub r#rating_explanation: Vec<RatingExplanationProperty>,
-	pub r#rating_value: Vec<RatingValueProperty>,
-	pub r#review_aspect: Vec<ReviewAspectProperty>,
 	pub r#same_as: Vec<SameAsProperty>,
 	pub r#subject_of: Vec<SubjectOfProperty>,
 	pub r#url: Vec<UrlProperty>,
-	pub r#worst_rating: Vec<WorstRatingProperty>,
+}
+pub trait RatingTrait {
+	fn get_author(&self) -> &[AuthorProperty];
+	fn take_author(&mut self) -> Vec<AuthorProperty>;
+	fn get_best_rating(&self) -> &[BestRatingProperty];
+	fn take_best_rating(&mut self) -> Vec<BestRatingProperty>;
+	fn get_rating_explanation(&self) -> &[RatingExplanationProperty];
+	fn take_rating_explanation(&mut self) -> Vec<RatingExplanationProperty>;
+	fn get_rating_value(&self) -> &[RatingValueProperty];
+	fn take_rating_value(&mut self) -> Vec<RatingValueProperty>;
+	fn get_review_aspect(&self) -> &[ReviewAspectProperty];
+	fn take_review_aspect(&mut self) -> Vec<ReviewAspectProperty>;
+	fn get_worst_rating(&self) -> &[WorstRatingProperty];
+	fn take_worst_rating(&mut self) -> Vec<WorstRatingProperty>;
+}
+impl RatingTrait for Rating {
+	fn get_author(&self) -> &[AuthorProperty] {
+		self.r#author.as_slice()
+	}
+	fn take_author(&mut self) -> Vec<AuthorProperty> {
+		std::mem::take(&mut self.r#author)
+	}
+	fn get_best_rating(&self) -> &[BestRatingProperty] {
+		self.r#best_rating.as_slice()
+	}
+	fn take_best_rating(&mut self) -> Vec<BestRatingProperty> {
+		std::mem::take(&mut self.r#best_rating)
+	}
+	fn get_rating_explanation(&self) -> &[RatingExplanationProperty] {
+		self.r#rating_explanation.as_slice()
+	}
+	fn take_rating_explanation(&mut self) -> Vec<RatingExplanationProperty> {
+		std::mem::take(&mut self.r#rating_explanation)
+	}
+	fn get_rating_value(&self) -> &[RatingValueProperty] {
+		self.r#rating_value.as_slice()
+	}
+	fn take_rating_value(&mut self) -> Vec<RatingValueProperty> {
+		std::mem::take(&mut self.r#rating_value)
+	}
+	fn get_review_aspect(&self) -> &[ReviewAspectProperty] {
+		self.r#review_aspect.as_slice()
+	}
+	fn take_review_aspect(&mut self) -> Vec<ReviewAspectProperty> {
+		std::mem::take(&mut self.r#review_aspect)
+	}
+	fn get_worst_rating(&self) -> &[WorstRatingProperty] {
+		self.r#worst_rating.as_slice()
+	}
+	fn take_worst_rating(&mut self) -> Vec<WorstRatingProperty> {
+		std::mem::take(&mut self.r#worst_rating)
+	}
+}
+impl ThingTrait for Rating {
+	fn get_additional_type(&self) -> &[AdditionalTypeProperty] {
+		self.r#additional_type.as_slice()
+	}
+	fn take_additional_type(&mut self) -> Vec<AdditionalTypeProperty> {
+		std::mem::take(&mut self.r#additional_type)
+	}
+	fn get_alternate_name(&self) -> &[AlternateNameProperty] {
+		self.r#alternate_name.as_slice()
+	}
+	fn take_alternate_name(&mut self) -> Vec<AlternateNameProperty> {
+		std::mem::take(&mut self.r#alternate_name)
+	}
+	fn get_description(&self) -> &[DescriptionProperty] {
+		self.r#description.as_slice()
+	}
+	fn take_description(&mut self) -> Vec<DescriptionProperty> {
+		std::mem::take(&mut self.r#description)
+	}
+	fn get_disambiguating_description(&self) -> &[DisambiguatingDescriptionProperty] {
+		self.r#disambiguating_description.as_slice()
+	}
+	fn take_disambiguating_description(&mut self) -> Vec<DisambiguatingDescriptionProperty> {
+		std::mem::take(&mut self.r#disambiguating_description)
+	}
+	fn get_identifier(&self) -> &[IdentifierProperty] {
+		self.r#identifier.as_slice()
+	}
+	fn take_identifier(&mut self) -> Vec<IdentifierProperty> {
+		std::mem::take(&mut self.r#identifier)
+	}
+	fn get_image(&self) -> &[ImageProperty] {
+		self.r#image.as_slice()
+	}
+	fn take_image(&mut self) -> Vec<ImageProperty> {
+		std::mem::take(&mut self.r#image)
+	}
+	fn get_main_entity_of_page(&self) -> &[MainEntityOfPageProperty] {
+		self.r#main_entity_of_page.as_slice()
+	}
+	fn take_main_entity_of_page(&mut self) -> Vec<MainEntityOfPageProperty> {
+		std::mem::take(&mut self.r#main_entity_of_page)
+	}
+	fn get_name(&self) -> &[NameProperty] {
+		self.r#name.as_slice()
+	}
+	fn take_name(&mut self) -> Vec<NameProperty> {
+		std::mem::take(&mut self.r#name)
+	}
+	fn get_potential_action(&self) -> &[PotentialActionProperty] {
+		self.r#potential_action.as_slice()
+	}
+	fn take_potential_action(&mut self) -> Vec<PotentialActionProperty> {
+		std::mem::take(&mut self.r#potential_action)
+	}
+	fn get_same_as(&self) -> &[SameAsProperty] {
+		self.r#same_as.as_slice()
+	}
+	fn take_same_as(&mut self) -> Vec<SameAsProperty> {
+		std::mem::take(&mut self.r#same_as)
+	}
+	fn get_subject_of(&self) -> &[SubjectOfProperty] {
+		self.r#subject_of.as_slice()
+	}
+	fn take_subject_of(&mut self) -> Vec<SubjectOfProperty> {
+		std::mem::take(&mut self.r#subject_of)
+	}
+	fn get_url(&self) -> &[UrlProperty] {
+		self.r#url.as_slice()
+	}
+	fn take_url(&mut self) -> Vec<UrlProperty> {
+		std::mem::take(&mut self.r#url)
+	}
 }
 #[cfg(feature = "serde")]
 mod serde {
@@ -37,10 +163,14 @@ mod serde {
 			S: Serializer,
 		{
 			let len: usize = [
-				!Vec::is_empty(&self.r#additional_type) as usize,
-				!Vec::is_empty(&self.r#alternate_name) as usize,
 				!Vec::is_empty(&self.r#author) as usize,
 				!Vec::is_empty(&self.r#best_rating) as usize,
+				!Vec::is_empty(&self.r#rating_explanation) as usize,
+				!Vec::is_empty(&self.r#rating_value) as usize,
+				!Vec::is_empty(&self.r#review_aspect) as usize,
+				!Vec::is_empty(&self.r#worst_rating) as usize,
+				!Vec::is_empty(&self.r#additional_type) as usize,
+				!Vec::is_empty(&self.r#alternate_name) as usize,
 				!Vec::is_empty(&self.r#description) as usize,
 				!Vec::is_empty(&self.r#disambiguating_description) as usize,
 				!Vec::is_empty(&self.r#identifier) as usize,
@@ -48,53 +178,13 @@ mod serde {
 				!Vec::is_empty(&self.r#main_entity_of_page) as usize,
 				!Vec::is_empty(&self.r#name) as usize,
 				!Vec::is_empty(&self.r#potential_action) as usize,
-				!Vec::is_empty(&self.r#rating_explanation) as usize,
-				!Vec::is_empty(&self.r#rating_value) as usize,
-				!Vec::is_empty(&self.r#review_aspect) as usize,
 				!Vec::is_empty(&self.r#same_as) as usize,
 				!Vec::is_empty(&self.r#subject_of) as usize,
 				!Vec::is_empty(&self.r#url) as usize,
-				!Vec::is_empty(&self.r#worst_rating) as usize,
 			]
 			.iter()
 			.sum();
 			let mut serialize_struct = Serializer::serialize_struct(serializer, "Rating", len)?;
-			if !Vec::is_empty(&self.r#additional_type) {
-				serialize_struct.serialize_field("additionalType", {
-					struct SerializeWith<'a>(&'a Vec<AdditionalTypeProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#additional_type)
-				})?;
-			} else {
-				serialize_struct.skip_field("additionalType")?;
-			}
-			if !Vec::is_empty(&self.r#alternate_name) {
-				serialize_struct.serialize_field("alternateName", {
-					struct SerializeWith<'a>(&'a Vec<AlternateNameProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#alternate_name)
-				})?;
-			} else {
-				serialize_struct.skip_field("alternateName")?;
-			}
 			if !Vec::is_empty(&self.r#author) {
 				serialize_struct.serialize_field("author", {
 					struct SerializeWith<'a>(&'a Vec<AuthorProperty>);
@@ -130,6 +220,114 @@ mod serde {
 				})?;
 			} else {
 				serialize_struct.skip_field("bestRating")?;
+			}
+			if !Vec::is_empty(&self.r#rating_explanation) {
+				serialize_struct.serialize_field("ratingExplanation", {
+					struct SerializeWith<'a>(&'a Vec<RatingExplanationProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#rating_explanation)
+				})?;
+			} else {
+				serialize_struct.skip_field("ratingExplanation")?;
+			}
+			if !Vec::is_empty(&self.r#rating_value) {
+				serialize_struct.serialize_field("ratingValue", {
+					struct SerializeWith<'a>(&'a Vec<RatingValueProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#rating_value)
+				})?;
+			} else {
+				serialize_struct.skip_field("ratingValue")?;
+			}
+			if !Vec::is_empty(&self.r#review_aspect) {
+				serialize_struct.serialize_field("reviewAspect", {
+					struct SerializeWith<'a>(&'a Vec<ReviewAspectProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#review_aspect)
+				})?;
+			} else {
+				serialize_struct.skip_field("reviewAspect")?;
+			}
+			if !Vec::is_empty(&self.r#worst_rating) {
+				serialize_struct.serialize_field("worstRating", {
+					struct SerializeWith<'a>(&'a Vec<WorstRatingProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#worst_rating)
+				})?;
+			} else {
+				serialize_struct.skip_field("worstRating")?;
+			}
+			if !Vec::is_empty(&self.r#additional_type) {
+				serialize_struct.serialize_field("additionalType", {
+					struct SerializeWith<'a>(&'a Vec<AdditionalTypeProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#additional_type)
+				})?;
+			} else {
+				serialize_struct.skip_field("additionalType")?;
+			}
+			if !Vec::is_empty(&self.r#alternate_name) {
+				serialize_struct.serialize_field("alternateName", {
+					struct SerializeWith<'a>(&'a Vec<AlternateNameProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#alternate_name)
+				})?;
+			} else {
+				serialize_struct.skip_field("alternateName")?;
 			}
 			if !Vec::is_empty(&self.r#description) {
 				serialize_struct.serialize_field("description", {
@@ -257,60 +455,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("potentialAction")?;
 			}
-			if !Vec::is_empty(&self.r#rating_explanation) {
-				serialize_struct.serialize_field("ratingExplanation", {
-					struct SerializeWith<'a>(&'a Vec<RatingExplanationProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#rating_explanation)
-				})?;
-			} else {
-				serialize_struct.skip_field("ratingExplanation")?;
-			}
-			if !Vec::is_empty(&self.r#rating_value) {
-				serialize_struct.serialize_field("ratingValue", {
-					struct SerializeWith<'a>(&'a Vec<RatingValueProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#rating_value)
-				})?;
-			} else {
-				serialize_struct.skip_field("ratingValue")?;
-			}
-			if !Vec::is_empty(&self.r#review_aspect) {
-				serialize_struct.serialize_field("reviewAspect", {
-					struct SerializeWith<'a>(&'a Vec<ReviewAspectProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#review_aspect)
-				})?;
-			} else {
-				serialize_struct.skip_field("reviewAspect")?;
-			}
 			if !Vec::is_empty(&self.r#same_as) {
 				serialize_struct.serialize_field("sameAs", {
 					struct SerializeWith<'a>(&'a Vec<SameAsProperty>);
@@ -365,24 +509,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("url")?;
 			}
-			if !Vec::is_empty(&self.r#worst_rating) {
-				serialize_struct.serialize_field("worstRating", {
-					struct SerializeWith<'a>(&'a Vec<WorstRatingProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#worst_rating)
-				})?;
-			} else {
-				serialize_struct.skip_field("worstRating")?;
-			}
 			serialize_struct.end()
 		}
 	}
@@ -392,10 +518,14 @@ mod serde {
 			D: Deserializer<'de>,
 		{
 			enum Field {
-				AdditionalType,
-				AlternateName,
 				Author,
 				BestRating,
+				RatingExplanation,
+				RatingValue,
+				ReviewAspect,
+				WorstRating,
+				AdditionalType,
+				AlternateName,
 				Description,
 				DisambiguatingDescription,
 				Identifier,
@@ -403,13 +533,9 @@ mod serde {
 				MainEntityOfPage,
 				Name,
 				PotentialAction,
-				RatingExplanation,
-				RatingValue,
-				ReviewAspect,
 				SameAs,
 				SubjectOf,
 				Url,
-				WorstRating,
 				Ignore,
 			}
 			struct FieldVisitor;
@@ -423,10 +549,14 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
-						"additionalType" => Ok(Field::AdditionalType),
-						"alternateName" => Ok(Field::AlternateName),
 						"author" => Ok(Field::Author),
 						"bestRating" => Ok(Field::BestRating),
+						"ratingExplanation" => Ok(Field::RatingExplanation),
+						"ratingValue" => Ok(Field::RatingValue),
+						"reviewAspect" => Ok(Field::ReviewAspect),
+						"worstRating" => Ok(Field::WorstRating),
+						"additionalType" => Ok(Field::AdditionalType),
+						"alternateName" => Ok(Field::AlternateName),
 						"description" => Ok(Field::Description),
 						"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
 						"identifier" => Ok(Field::Identifier),
@@ -434,13 +564,9 @@ mod serde {
 						"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
 						"name" => Ok(Field::Name),
 						"potentialAction" => Ok(Field::PotentialAction),
-						"ratingExplanation" => Ok(Field::RatingExplanation),
-						"ratingValue" => Ok(Field::RatingValue),
-						"reviewAspect" => Ok(Field::ReviewAspect),
 						"sameAs" => Ok(Field::SameAs),
 						"subjectOf" => Ok(Field::SubjectOf),
 						"url" => Ok(Field::Url),
-						"worstRating" => Ok(Field::WorstRating),
 						_ => Ok(Field::Ignore),
 					}
 				}
@@ -449,10 +575,14 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
-						b"additionalType" => Ok(Field::AdditionalType),
-						b"alternateName" => Ok(Field::AlternateName),
 						b"author" => Ok(Field::Author),
 						b"bestRating" => Ok(Field::BestRating),
+						b"ratingExplanation" => Ok(Field::RatingExplanation),
+						b"ratingValue" => Ok(Field::RatingValue),
+						b"reviewAspect" => Ok(Field::ReviewAspect),
+						b"worstRating" => Ok(Field::WorstRating),
+						b"additionalType" => Ok(Field::AdditionalType),
+						b"alternateName" => Ok(Field::AlternateName),
 						b"description" => Ok(Field::Description),
 						b"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
 						b"identifier" => Ok(Field::Identifier),
@@ -460,13 +590,9 @@ mod serde {
 						b"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
 						b"name" => Ok(Field::Name),
 						b"potentialAction" => Ok(Field::PotentialAction),
-						b"ratingExplanation" => Ok(Field::RatingExplanation),
-						b"ratingValue" => Ok(Field::RatingValue),
-						b"reviewAspect" => Ok(Field::ReviewAspect),
 						b"sameAs" => Ok(Field::SameAs),
 						b"subjectOf" => Ok(Field::SubjectOf),
 						b"url" => Ok(Field::Url),
-						b"worstRating" => Ok(Field::WorstRating),
 						_ => Ok(Field::Ignore),
 					}
 				}
@@ -489,10 +615,14 @@ mod serde {
 				where
 					A: de::MapAccess<'de>,
 				{
-					let mut r#additional_type_property = None;
-					let mut r#alternate_name_property = None;
 					let mut r#author_property = None;
 					let mut r#best_rating_property = None;
+					let mut r#rating_explanation_property = None;
+					let mut r#rating_value_property = None;
+					let mut r#review_aspect_property = None;
+					let mut r#worst_rating_property = None;
+					let mut r#additional_type_property = None;
+					let mut r#alternate_name_property = None;
 					let mut r#description_property = None;
 					let mut r#disambiguating_description_property = None;
 					let mut r#identifier_property = None;
@@ -500,15 +630,165 @@ mod serde {
 					let mut r#main_entity_of_page_property = None;
 					let mut r#name_property = None;
 					let mut r#potential_action_property = None;
-					let mut r#rating_explanation_property = None;
-					let mut r#rating_value_property = None;
-					let mut r#review_aspect_property = None;
 					let mut r#same_as_property = None;
 					let mut r#subject_of_property = None;
 					let mut r#url_property = None;
-					let mut r#worst_rating_property = None;
 					while let Some(key) = map.next_key::<Field>()? {
 						match key {
+							Field::Author => {
+								if r#author_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field("author"));
+								}
+								r#author_property = Some({
+									struct DeserializeWith(Vec<AuthorProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::BestRating => {
+								if r#best_rating_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"bestRating",
+									));
+								}
+								r#best_rating_property = Some({
+									struct DeserializeWith(Vec<BestRatingProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::RatingExplanation => {
+								if r#rating_explanation_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"ratingExplanation",
+									));
+								}
+								r#rating_explanation_property = Some({
+									struct DeserializeWith(Vec<RatingExplanationProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::RatingValue => {
+								if r#rating_value_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"ratingValue",
+									));
+								}
+								r#rating_value_property = Some({
+									struct DeserializeWith(Vec<RatingValueProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::ReviewAspect => {
+								if r#review_aspect_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"reviewAspect",
+									));
+								}
+								r#review_aspect_property = Some({
+									struct DeserializeWith(Vec<ReviewAspectProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::WorstRating => {
+								if r#worst_rating_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"worstRating",
+									));
+								}
+								r#worst_rating_property = Some({
+									struct DeserializeWith(Vec<WorstRatingProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
 							Field::AdditionalType => {
 								if r#additional_type_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -543,56 +823,6 @@ mod serde {
 								}
 								r#alternate_name_property = Some({
 									struct DeserializeWith(Vec<AlternateNameProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::Author => {
-								if r#author_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field("author"));
-								}
-								r#author_property = Some({
-									struct DeserializeWith(Vec<AuthorProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::BestRating => {
-								if r#best_rating_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"bestRating",
-									));
-								}
-								r#best_rating_property = Some({
-									struct DeserializeWith(Vec<BestRatingProperty>);
 									impl<'de> Deserialize<'de> for DeserializeWith {
 										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
 										where
@@ -789,84 +1019,6 @@ mod serde {
 									}
 								});
 							}
-							Field::RatingExplanation => {
-								if r#rating_explanation_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"ratingExplanation",
-									));
-								}
-								r#rating_explanation_property = Some({
-									struct DeserializeWith(Vec<RatingExplanationProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::RatingValue => {
-								if r#rating_value_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"ratingValue",
-									));
-								}
-								r#rating_value_property = Some({
-									struct DeserializeWith(Vec<RatingValueProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::ReviewAspect => {
-								if r#review_aspect_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"reviewAspect",
-									));
-								}
-								r#review_aspect_property = Some({
-									struct DeserializeWith(Vec<ReviewAspectProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
 							Field::SameAs => {
 								if r#same_as_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("sameAs"));
@@ -941,42 +1093,20 @@ mod serde {
 									}
 								});
 							}
-							Field::WorstRating => {
-								if r#worst_rating_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"worstRating",
-									));
-								}
-								r#worst_rating_property = Some({
-									struct DeserializeWith(Vec<WorstRatingProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
 							_ => {
 								let _ = map.next_value::<de::IgnoredAny>()?;
 							}
 						}
 					}
 					Ok(Rating {
-						r#additional_type: r#additional_type_property.unwrap_or_default(),
-						r#alternate_name: r#alternate_name_property.unwrap_or_default(),
 						r#author: r#author_property.unwrap_or_default(),
 						r#best_rating: r#best_rating_property.unwrap_or_default(),
+						r#rating_explanation: r#rating_explanation_property.unwrap_or_default(),
+						r#rating_value: r#rating_value_property.unwrap_or_default(),
+						r#review_aspect: r#review_aspect_property.unwrap_or_default(),
+						r#worst_rating: r#worst_rating_property.unwrap_or_default(),
+						r#additional_type: r#additional_type_property.unwrap_or_default(),
+						r#alternate_name: r#alternate_name_property.unwrap_or_default(),
 						r#description: r#description_property.unwrap_or_default(),
 						r#disambiguating_description: r#disambiguating_description_property
 							.unwrap_or_default(),
@@ -985,21 +1115,21 @@ mod serde {
 						r#main_entity_of_page: r#main_entity_of_page_property.unwrap_or_default(),
 						r#name: r#name_property.unwrap_or_default(),
 						r#potential_action: r#potential_action_property.unwrap_or_default(),
-						r#rating_explanation: r#rating_explanation_property.unwrap_or_default(),
-						r#rating_value: r#rating_value_property.unwrap_or_default(),
-						r#review_aspect: r#review_aspect_property.unwrap_or_default(),
 						r#same_as: r#same_as_property.unwrap_or_default(),
 						r#subject_of: r#subject_of_property.unwrap_or_default(),
 						r#url: r#url_property.unwrap_or_default(),
-						r#worst_rating: r#worst_rating_property.unwrap_or_default(),
 					})
 				}
 			}
 			const FIELDS: &[&str] = &[
-				"additionalType",
-				"alternateName",
 				"author",
 				"bestRating",
+				"ratingExplanation",
+				"ratingValue",
+				"reviewAspect",
+				"worstRating",
+				"additionalType",
+				"alternateName",
 				"description",
 				"disambiguatingDescription",
 				"identifier",
@@ -1007,13 +1137,9 @@ mod serde {
 				"mainEntityOfPage",
 				"name",
 				"potentialAction",
-				"ratingExplanation",
-				"ratingValue",
-				"reviewAspect",
 				"sameAs",
 				"subjectOf",
 				"url",
-				"worstRating",
 			];
 			deserializer.deserialize_struct("Rating", FIELDS, ClassVisitor)
 		}

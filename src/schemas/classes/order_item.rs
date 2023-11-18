@@ -3,6 +3,11 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct OrderItem {
+	pub r#order_delivery: Vec<OrderDeliveryProperty>,
+	pub r#order_item_number: Vec<OrderItemNumberProperty>,
+	pub r#order_item_status: Vec<OrderItemStatusProperty>,
+	pub r#order_quantity: Vec<OrderQuantityProperty>,
+	pub r#ordered_item: Vec<OrderedItemProperty>,
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
 	pub r#alternate_name: Vec<AlternateNameProperty>,
 	pub r#description: Vec<DescriptionProperty>,
@@ -11,15 +16,128 @@ pub struct OrderItem {
 	pub r#image: Vec<ImageProperty>,
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
 	pub r#name: Vec<NameProperty>,
-	pub r#order_delivery: Vec<OrderDeliveryProperty>,
-	pub r#order_item_number: Vec<OrderItemNumberProperty>,
-	pub r#order_item_status: Vec<OrderItemStatusProperty>,
-	pub r#order_quantity: Vec<OrderQuantityProperty>,
-	pub r#ordered_item: Vec<OrderedItemProperty>,
 	pub r#potential_action: Vec<PotentialActionProperty>,
 	pub r#same_as: Vec<SameAsProperty>,
 	pub r#subject_of: Vec<SubjectOfProperty>,
 	pub r#url: Vec<UrlProperty>,
+}
+pub trait OrderItemTrait {
+	fn get_order_delivery(&self) -> &[OrderDeliveryProperty];
+	fn take_order_delivery(&mut self) -> Vec<OrderDeliveryProperty>;
+	fn get_order_item_number(&self) -> &[OrderItemNumberProperty];
+	fn take_order_item_number(&mut self) -> Vec<OrderItemNumberProperty>;
+	fn get_order_item_status(&self) -> &[OrderItemStatusProperty];
+	fn take_order_item_status(&mut self) -> Vec<OrderItemStatusProperty>;
+	fn get_order_quantity(&self) -> &[OrderQuantityProperty];
+	fn take_order_quantity(&mut self) -> Vec<OrderQuantityProperty>;
+	fn get_ordered_item(&self) -> &[OrderedItemProperty];
+	fn take_ordered_item(&mut self) -> Vec<OrderedItemProperty>;
+}
+impl OrderItemTrait for OrderItem {
+	fn get_order_delivery(&self) -> &[OrderDeliveryProperty] {
+		self.r#order_delivery.as_slice()
+	}
+	fn take_order_delivery(&mut self) -> Vec<OrderDeliveryProperty> {
+		std::mem::take(&mut self.r#order_delivery)
+	}
+	fn get_order_item_number(&self) -> &[OrderItemNumberProperty] {
+		self.r#order_item_number.as_slice()
+	}
+	fn take_order_item_number(&mut self) -> Vec<OrderItemNumberProperty> {
+		std::mem::take(&mut self.r#order_item_number)
+	}
+	fn get_order_item_status(&self) -> &[OrderItemStatusProperty] {
+		self.r#order_item_status.as_slice()
+	}
+	fn take_order_item_status(&mut self) -> Vec<OrderItemStatusProperty> {
+		std::mem::take(&mut self.r#order_item_status)
+	}
+	fn get_order_quantity(&self) -> &[OrderQuantityProperty] {
+		self.r#order_quantity.as_slice()
+	}
+	fn take_order_quantity(&mut self) -> Vec<OrderQuantityProperty> {
+		std::mem::take(&mut self.r#order_quantity)
+	}
+	fn get_ordered_item(&self) -> &[OrderedItemProperty] {
+		self.r#ordered_item.as_slice()
+	}
+	fn take_ordered_item(&mut self) -> Vec<OrderedItemProperty> {
+		std::mem::take(&mut self.r#ordered_item)
+	}
+}
+impl ThingTrait for OrderItem {
+	fn get_additional_type(&self) -> &[AdditionalTypeProperty] {
+		self.r#additional_type.as_slice()
+	}
+	fn take_additional_type(&mut self) -> Vec<AdditionalTypeProperty> {
+		std::mem::take(&mut self.r#additional_type)
+	}
+	fn get_alternate_name(&self) -> &[AlternateNameProperty] {
+		self.r#alternate_name.as_slice()
+	}
+	fn take_alternate_name(&mut self) -> Vec<AlternateNameProperty> {
+		std::mem::take(&mut self.r#alternate_name)
+	}
+	fn get_description(&self) -> &[DescriptionProperty] {
+		self.r#description.as_slice()
+	}
+	fn take_description(&mut self) -> Vec<DescriptionProperty> {
+		std::mem::take(&mut self.r#description)
+	}
+	fn get_disambiguating_description(&self) -> &[DisambiguatingDescriptionProperty] {
+		self.r#disambiguating_description.as_slice()
+	}
+	fn take_disambiguating_description(&mut self) -> Vec<DisambiguatingDescriptionProperty> {
+		std::mem::take(&mut self.r#disambiguating_description)
+	}
+	fn get_identifier(&self) -> &[IdentifierProperty] {
+		self.r#identifier.as_slice()
+	}
+	fn take_identifier(&mut self) -> Vec<IdentifierProperty> {
+		std::mem::take(&mut self.r#identifier)
+	}
+	fn get_image(&self) -> &[ImageProperty] {
+		self.r#image.as_slice()
+	}
+	fn take_image(&mut self) -> Vec<ImageProperty> {
+		std::mem::take(&mut self.r#image)
+	}
+	fn get_main_entity_of_page(&self) -> &[MainEntityOfPageProperty] {
+		self.r#main_entity_of_page.as_slice()
+	}
+	fn take_main_entity_of_page(&mut self) -> Vec<MainEntityOfPageProperty> {
+		std::mem::take(&mut self.r#main_entity_of_page)
+	}
+	fn get_name(&self) -> &[NameProperty] {
+		self.r#name.as_slice()
+	}
+	fn take_name(&mut self) -> Vec<NameProperty> {
+		std::mem::take(&mut self.r#name)
+	}
+	fn get_potential_action(&self) -> &[PotentialActionProperty] {
+		self.r#potential_action.as_slice()
+	}
+	fn take_potential_action(&mut self) -> Vec<PotentialActionProperty> {
+		std::mem::take(&mut self.r#potential_action)
+	}
+	fn get_same_as(&self) -> &[SameAsProperty] {
+		self.r#same_as.as_slice()
+	}
+	fn take_same_as(&mut self) -> Vec<SameAsProperty> {
+		std::mem::take(&mut self.r#same_as)
+	}
+	fn get_subject_of(&self) -> &[SubjectOfProperty] {
+		self.r#subject_of.as_slice()
+	}
+	fn take_subject_of(&mut self) -> Vec<SubjectOfProperty> {
+		std::mem::take(&mut self.r#subject_of)
+	}
+	fn get_url(&self) -> &[UrlProperty] {
+		self.r#url.as_slice()
+	}
+	fn take_url(&mut self) -> Vec<UrlProperty> {
+		std::mem::take(&mut self.r#url)
+	}
 }
 #[cfg(feature = "serde")]
 mod serde {
@@ -36,6 +154,11 @@ mod serde {
 			S: Serializer,
 		{
 			let len: usize = [
+				!Vec::is_empty(&self.r#order_delivery) as usize,
+				!Vec::is_empty(&self.r#order_item_number) as usize,
+				!Vec::is_empty(&self.r#order_item_status) as usize,
+				!Vec::is_empty(&self.r#order_quantity) as usize,
+				!Vec::is_empty(&self.r#ordered_item) as usize,
 				!Vec::is_empty(&self.r#additional_type) as usize,
 				!Vec::is_empty(&self.r#alternate_name) as usize,
 				!Vec::is_empty(&self.r#description) as usize,
@@ -44,11 +167,6 @@ mod serde {
 				!Vec::is_empty(&self.r#image) as usize,
 				!Vec::is_empty(&self.r#main_entity_of_page) as usize,
 				!Vec::is_empty(&self.r#name) as usize,
-				!Vec::is_empty(&self.r#order_delivery) as usize,
-				!Vec::is_empty(&self.r#order_item_number) as usize,
-				!Vec::is_empty(&self.r#order_item_status) as usize,
-				!Vec::is_empty(&self.r#order_quantity) as usize,
-				!Vec::is_empty(&self.r#ordered_item) as usize,
 				!Vec::is_empty(&self.r#potential_action) as usize,
 				!Vec::is_empty(&self.r#same_as) as usize,
 				!Vec::is_empty(&self.r#subject_of) as usize,
@@ -57,6 +175,96 @@ mod serde {
 			.iter()
 			.sum();
 			let mut serialize_struct = Serializer::serialize_struct(serializer, "OrderItem", len)?;
+			if !Vec::is_empty(&self.r#order_delivery) {
+				serialize_struct.serialize_field("orderDelivery", {
+					struct SerializeWith<'a>(&'a Vec<OrderDeliveryProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#order_delivery)
+				})?;
+			} else {
+				serialize_struct.skip_field("orderDelivery")?;
+			}
+			if !Vec::is_empty(&self.r#order_item_number) {
+				serialize_struct.serialize_field("orderItemNumber", {
+					struct SerializeWith<'a>(&'a Vec<OrderItemNumberProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#order_item_number)
+				})?;
+			} else {
+				serialize_struct.skip_field("orderItemNumber")?;
+			}
+			if !Vec::is_empty(&self.r#order_item_status) {
+				serialize_struct.serialize_field("orderItemStatus", {
+					struct SerializeWith<'a>(&'a Vec<OrderItemStatusProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#order_item_status)
+				})?;
+			} else {
+				serialize_struct.skip_field("orderItemStatus")?;
+			}
+			if !Vec::is_empty(&self.r#order_quantity) {
+				serialize_struct.serialize_field("orderQuantity", {
+					struct SerializeWith<'a>(&'a Vec<OrderQuantityProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#order_quantity)
+				})?;
+			} else {
+				serialize_struct.skip_field("orderQuantity")?;
+			}
+			if !Vec::is_empty(&self.r#ordered_item) {
+				serialize_struct.serialize_field("orderedItem", {
+					struct SerializeWith<'a>(&'a Vec<OrderedItemProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#ordered_item)
+				})?;
+			} else {
+				serialize_struct.skip_field("orderedItem")?;
+			}
 			if !Vec::is_empty(&self.r#additional_type) {
 				serialize_struct.serialize_field("additionalType", {
 					struct SerializeWith<'a>(&'a Vec<AdditionalTypeProperty>);
@@ -201,96 +409,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("name")?;
 			}
-			if !Vec::is_empty(&self.r#order_delivery) {
-				serialize_struct.serialize_field("orderDelivery", {
-					struct SerializeWith<'a>(&'a Vec<OrderDeliveryProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#order_delivery)
-				})?;
-			} else {
-				serialize_struct.skip_field("orderDelivery")?;
-			}
-			if !Vec::is_empty(&self.r#order_item_number) {
-				serialize_struct.serialize_field("orderItemNumber", {
-					struct SerializeWith<'a>(&'a Vec<OrderItemNumberProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#order_item_number)
-				})?;
-			} else {
-				serialize_struct.skip_field("orderItemNumber")?;
-			}
-			if !Vec::is_empty(&self.r#order_item_status) {
-				serialize_struct.serialize_field("orderItemStatus", {
-					struct SerializeWith<'a>(&'a Vec<OrderItemStatusProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#order_item_status)
-				})?;
-			} else {
-				serialize_struct.skip_field("orderItemStatus")?;
-			}
-			if !Vec::is_empty(&self.r#order_quantity) {
-				serialize_struct.serialize_field("orderQuantity", {
-					struct SerializeWith<'a>(&'a Vec<OrderQuantityProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#order_quantity)
-				})?;
-			} else {
-				serialize_struct.skip_field("orderQuantity")?;
-			}
-			if !Vec::is_empty(&self.r#ordered_item) {
-				serialize_struct.serialize_field("orderedItem", {
-					struct SerializeWith<'a>(&'a Vec<OrderedItemProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#ordered_item)
-				})?;
-			} else {
-				serialize_struct.skip_field("orderedItem")?;
-			}
 			if !Vec::is_empty(&self.r#potential_action) {
 				serialize_struct.serialize_field("potentialAction", {
 					struct SerializeWith<'a>(&'a Vec<PotentialActionProperty>);
@@ -372,6 +490,11 @@ mod serde {
 			D: Deserializer<'de>,
 		{
 			enum Field {
+				OrderDelivery,
+				OrderItemNumber,
+				OrderItemStatus,
+				OrderQuantity,
+				OrderedItem,
 				AdditionalType,
 				AlternateName,
 				Description,
@@ -380,11 +503,6 @@ mod serde {
 				Image,
 				MainEntityOfPage,
 				Name,
-				OrderDelivery,
-				OrderItemNumber,
-				OrderItemStatus,
-				OrderQuantity,
-				OrderedItem,
 				PotentialAction,
 				SameAs,
 				SubjectOf,
@@ -402,6 +520,11 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
+						"orderDelivery" => Ok(Field::OrderDelivery),
+						"orderItemNumber" => Ok(Field::OrderItemNumber),
+						"orderItemStatus" => Ok(Field::OrderItemStatus),
+						"orderQuantity" => Ok(Field::OrderQuantity),
+						"orderedItem" => Ok(Field::OrderedItem),
 						"additionalType" => Ok(Field::AdditionalType),
 						"alternateName" => Ok(Field::AlternateName),
 						"description" => Ok(Field::Description),
@@ -410,11 +533,6 @@ mod serde {
 						"image" => Ok(Field::Image),
 						"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
 						"name" => Ok(Field::Name),
-						"orderDelivery" => Ok(Field::OrderDelivery),
-						"orderItemNumber" => Ok(Field::OrderItemNumber),
-						"orderItemStatus" => Ok(Field::OrderItemStatus),
-						"orderQuantity" => Ok(Field::OrderQuantity),
-						"orderedItem" => Ok(Field::OrderedItem),
 						"potentialAction" => Ok(Field::PotentialAction),
 						"sameAs" => Ok(Field::SameAs),
 						"subjectOf" => Ok(Field::SubjectOf),
@@ -427,6 +545,11 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
+						b"orderDelivery" => Ok(Field::OrderDelivery),
+						b"orderItemNumber" => Ok(Field::OrderItemNumber),
+						b"orderItemStatus" => Ok(Field::OrderItemStatus),
+						b"orderQuantity" => Ok(Field::OrderQuantity),
+						b"orderedItem" => Ok(Field::OrderedItem),
 						b"additionalType" => Ok(Field::AdditionalType),
 						b"alternateName" => Ok(Field::AlternateName),
 						b"description" => Ok(Field::Description),
@@ -435,11 +558,6 @@ mod serde {
 						b"image" => Ok(Field::Image),
 						b"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
 						b"name" => Ok(Field::Name),
-						b"orderDelivery" => Ok(Field::OrderDelivery),
-						b"orderItemNumber" => Ok(Field::OrderItemNumber),
-						b"orderItemStatus" => Ok(Field::OrderItemStatus),
-						b"orderQuantity" => Ok(Field::OrderQuantity),
-						b"orderedItem" => Ok(Field::OrderedItem),
 						b"potentialAction" => Ok(Field::PotentialAction),
 						b"sameAs" => Ok(Field::SameAs),
 						b"subjectOf" => Ok(Field::SubjectOf),
@@ -466,6 +584,11 @@ mod serde {
 				where
 					A: de::MapAccess<'de>,
 				{
+					let mut r#order_delivery_property = None;
+					let mut r#order_item_number_property = None;
+					let mut r#order_item_status_property = None;
+					let mut r#order_quantity_property = None;
+					let mut r#ordered_item_property = None;
 					let mut r#additional_type_property = None;
 					let mut r#alternate_name_property = None;
 					let mut r#description_property = None;
@@ -474,17 +597,142 @@ mod serde {
 					let mut r#image_property = None;
 					let mut r#main_entity_of_page_property = None;
 					let mut r#name_property = None;
-					let mut r#order_delivery_property = None;
-					let mut r#order_item_number_property = None;
-					let mut r#order_item_status_property = None;
-					let mut r#order_quantity_property = None;
-					let mut r#ordered_item_property = None;
 					let mut r#potential_action_property = None;
 					let mut r#same_as_property = None;
 					let mut r#subject_of_property = None;
 					let mut r#url_property = None;
 					while let Some(key) = map.next_key::<Field>()? {
 						match key {
+							Field::OrderDelivery => {
+								if r#order_delivery_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"orderDelivery",
+									));
+								}
+								r#order_delivery_property = Some({
+									struct DeserializeWith(Vec<OrderDeliveryProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::OrderItemNumber => {
+								if r#order_item_number_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"orderItemNumber",
+									));
+								}
+								r#order_item_number_property = Some({
+									struct DeserializeWith(Vec<OrderItemNumberProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::OrderItemStatus => {
+								if r#order_item_status_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"orderItemStatus",
+									));
+								}
+								r#order_item_status_property = Some({
+									struct DeserializeWith(Vec<OrderItemStatusProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::OrderQuantity => {
+								if r#order_quantity_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"orderQuantity",
+									));
+								}
+								r#order_quantity_property = Some({
+									struct DeserializeWith(Vec<OrderQuantityProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::OrderedItem => {
+								if r#ordered_item_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"orderedItem",
+									));
+								}
+								r#ordered_item_property = Some({
+									struct DeserializeWith(Vec<OrderedItemProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
 							Field::AdditionalType => {
 								if r#additional_type_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -689,136 +937,6 @@ mod serde {
 									}
 								});
 							}
-							Field::OrderDelivery => {
-								if r#order_delivery_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"orderDelivery",
-									));
-								}
-								r#order_delivery_property = Some({
-									struct DeserializeWith(Vec<OrderDeliveryProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::OrderItemNumber => {
-								if r#order_item_number_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"orderItemNumber",
-									));
-								}
-								r#order_item_number_property = Some({
-									struct DeserializeWith(Vec<OrderItemNumberProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::OrderItemStatus => {
-								if r#order_item_status_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"orderItemStatus",
-									));
-								}
-								r#order_item_status_property = Some({
-									struct DeserializeWith(Vec<OrderItemStatusProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::OrderQuantity => {
-								if r#order_quantity_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"orderQuantity",
-									));
-								}
-								r#order_quantity_property = Some({
-									struct DeserializeWith(Vec<OrderQuantityProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::OrderedItem => {
-								if r#ordered_item_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"orderedItem",
-									));
-								}
-								r#ordered_item_property = Some({
-									struct DeserializeWith(Vec<OrderedItemProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
 							Field::PotentialAction => {
 								if r#potential_action_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -925,6 +1043,11 @@ mod serde {
 						}
 					}
 					Ok(OrderItem {
+						r#order_delivery: r#order_delivery_property.unwrap_or_default(),
+						r#order_item_number: r#order_item_number_property.unwrap_or_default(),
+						r#order_item_status: r#order_item_status_property.unwrap_or_default(),
+						r#order_quantity: r#order_quantity_property.unwrap_or_default(),
+						r#ordered_item: r#ordered_item_property.unwrap_or_default(),
 						r#additional_type: r#additional_type_property.unwrap_or_default(),
 						r#alternate_name: r#alternate_name_property.unwrap_or_default(),
 						r#description: r#description_property.unwrap_or_default(),
@@ -934,11 +1057,6 @@ mod serde {
 						r#image: r#image_property.unwrap_or_default(),
 						r#main_entity_of_page: r#main_entity_of_page_property.unwrap_or_default(),
 						r#name: r#name_property.unwrap_or_default(),
-						r#order_delivery: r#order_delivery_property.unwrap_or_default(),
-						r#order_item_number: r#order_item_number_property.unwrap_or_default(),
-						r#order_item_status: r#order_item_status_property.unwrap_or_default(),
-						r#order_quantity: r#order_quantity_property.unwrap_or_default(),
-						r#ordered_item: r#ordered_item_property.unwrap_or_default(),
 						r#potential_action: r#potential_action_property.unwrap_or_default(),
 						r#same_as: r#same_as_property.unwrap_or_default(),
 						r#subject_of: r#subject_of_property.unwrap_or_default(),
@@ -947,6 +1065,11 @@ mod serde {
 				}
 			}
 			const FIELDS: &[&str] = &[
+				"orderDelivery",
+				"orderItemNumber",
+				"orderItemStatus",
+				"orderQuantity",
+				"orderedItem",
 				"additionalType",
 				"alternateName",
 				"description",
@@ -955,11 +1078,6 @@ mod serde {
 				"image",
 				"mainEntityOfPage",
 				"name",
-				"orderDelivery",
-				"orderItemNumber",
-				"orderItemStatus",
-				"orderQuantity",
-				"orderedItem",
 				"potentialAction",
 				"sameAs",
 				"subjectOf",

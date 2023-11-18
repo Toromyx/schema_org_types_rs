@@ -3,20 +3,114 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct DigitalDocumentPermission {
+	pub r#grantee: Vec<GranteeProperty>,
+	pub r#permission_type: Vec<PermissionTypeProperty>,
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
 	pub r#alternate_name: Vec<AlternateNameProperty>,
 	pub r#description: Vec<DescriptionProperty>,
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
-	pub r#grantee: Vec<GranteeProperty>,
 	pub r#identifier: Vec<IdentifierProperty>,
 	pub r#image: Vec<ImageProperty>,
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
 	pub r#name: Vec<NameProperty>,
-	pub r#permission_type: Vec<PermissionTypeProperty>,
 	pub r#potential_action: Vec<PotentialActionProperty>,
 	pub r#same_as: Vec<SameAsProperty>,
 	pub r#subject_of: Vec<SubjectOfProperty>,
 	pub r#url: Vec<UrlProperty>,
+}
+pub trait DigitalDocumentPermissionTrait {
+	fn get_grantee(&self) -> &[GranteeProperty];
+	fn take_grantee(&mut self) -> Vec<GranteeProperty>;
+	fn get_permission_type(&self) -> &[PermissionTypeProperty];
+	fn take_permission_type(&mut self) -> Vec<PermissionTypeProperty>;
+}
+impl DigitalDocumentPermissionTrait for DigitalDocumentPermission {
+	fn get_grantee(&self) -> &[GranteeProperty] {
+		self.r#grantee.as_slice()
+	}
+	fn take_grantee(&mut self) -> Vec<GranteeProperty> {
+		std::mem::take(&mut self.r#grantee)
+	}
+	fn get_permission_type(&self) -> &[PermissionTypeProperty] {
+		self.r#permission_type.as_slice()
+	}
+	fn take_permission_type(&mut self) -> Vec<PermissionTypeProperty> {
+		std::mem::take(&mut self.r#permission_type)
+	}
+}
+impl ThingTrait for DigitalDocumentPermission {
+	fn get_additional_type(&self) -> &[AdditionalTypeProperty] {
+		self.r#additional_type.as_slice()
+	}
+	fn take_additional_type(&mut self) -> Vec<AdditionalTypeProperty> {
+		std::mem::take(&mut self.r#additional_type)
+	}
+	fn get_alternate_name(&self) -> &[AlternateNameProperty] {
+		self.r#alternate_name.as_slice()
+	}
+	fn take_alternate_name(&mut self) -> Vec<AlternateNameProperty> {
+		std::mem::take(&mut self.r#alternate_name)
+	}
+	fn get_description(&self) -> &[DescriptionProperty] {
+		self.r#description.as_slice()
+	}
+	fn take_description(&mut self) -> Vec<DescriptionProperty> {
+		std::mem::take(&mut self.r#description)
+	}
+	fn get_disambiguating_description(&self) -> &[DisambiguatingDescriptionProperty] {
+		self.r#disambiguating_description.as_slice()
+	}
+	fn take_disambiguating_description(&mut self) -> Vec<DisambiguatingDescriptionProperty> {
+		std::mem::take(&mut self.r#disambiguating_description)
+	}
+	fn get_identifier(&self) -> &[IdentifierProperty] {
+		self.r#identifier.as_slice()
+	}
+	fn take_identifier(&mut self) -> Vec<IdentifierProperty> {
+		std::mem::take(&mut self.r#identifier)
+	}
+	fn get_image(&self) -> &[ImageProperty] {
+		self.r#image.as_slice()
+	}
+	fn take_image(&mut self) -> Vec<ImageProperty> {
+		std::mem::take(&mut self.r#image)
+	}
+	fn get_main_entity_of_page(&self) -> &[MainEntityOfPageProperty] {
+		self.r#main_entity_of_page.as_slice()
+	}
+	fn take_main_entity_of_page(&mut self) -> Vec<MainEntityOfPageProperty> {
+		std::mem::take(&mut self.r#main_entity_of_page)
+	}
+	fn get_name(&self) -> &[NameProperty] {
+		self.r#name.as_slice()
+	}
+	fn take_name(&mut self) -> Vec<NameProperty> {
+		std::mem::take(&mut self.r#name)
+	}
+	fn get_potential_action(&self) -> &[PotentialActionProperty] {
+		self.r#potential_action.as_slice()
+	}
+	fn take_potential_action(&mut self) -> Vec<PotentialActionProperty> {
+		std::mem::take(&mut self.r#potential_action)
+	}
+	fn get_same_as(&self) -> &[SameAsProperty] {
+		self.r#same_as.as_slice()
+	}
+	fn take_same_as(&mut self) -> Vec<SameAsProperty> {
+		std::mem::take(&mut self.r#same_as)
+	}
+	fn get_subject_of(&self) -> &[SubjectOfProperty] {
+		self.r#subject_of.as_slice()
+	}
+	fn take_subject_of(&mut self) -> Vec<SubjectOfProperty> {
+		std::mem::take(&mut self.r#subject_of)
+	}
+	fn get_url(&self) -> &[UrlProperty] {
+		self.r#url.as_slice()
+	}
+	fn take_url(&mut self) -> Vec<UrlProperty> {
+		std::mem::take(&mut self.r#url)
+	}
 }
 #[cfg(feature = "serde")]
 mod serde {
@@ -33,16 +127,16 @@ mod serde {
 			S: Serializer,
 		{
 			let len: usize = [
+				!Vec::is_empty(&self.r#grantee) as usize,
+				!Vec::is_empty(&self.r#permission_type) as usize,
 				!Vec::is_empty(&self.r#additional_type) as usize,
 				!Vec::is_empty(&self.r#alternate_name) as usize,
 				!Vec::is_empty(&self.r#description) as usize,
 				!Vec::is_empty(&self.r#disambiguating_description) as usize,
-				!Vec::is_empty(&self.r#grantee) as usize,
 				!Vec::is_empty(&self.r#identifier) as usize,
 				!Vec::is_empty(&self.r#image) as usize,
 				!Vec::is_empty(&self.r#main_entity_of_page) as usize,
 				!Vec::is_empty(&self.r#name) as usize,
-				!Vec::is_empty(&self.r#permission_type) as usize,
 				!Vec::is_empty(&self.r#potential_action) as usize,
 				!Vec::is_empty(&self.r#same_as) as usize,
 				!Vec::is_empty(&self.r#subject_of) as usize,
@@ -52,6 +146,42 @@ mod serde {
 			.sum();
 			let mut serialize_struct =
 				Serializer::serialize_struct(serializer, "DigitalDocumentPermission", len)?;
+			if !Vec::is_empty(&self.r#grantee) {
+				serialize_struct.serialize_field("grantee", {
+					struct SerializeWith<'a>(&'a Vec<GranteeProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#grantee)
+				})?;
+			} else {
+				serialize_struct.skip_field("grantee")?;
+			}
+			if !Vec::is_empty(&self.r#permission_type) {
+				serialize_struct.serialize_field("permissionType", {
+					struct SerializeWith<'a>(&'a Vec<PermissionTypeProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#permission_type)
+				})?;
+			} else {
+				serialize_struct.skip_field("permissionType")?;
+			}
 			if !Vec::is_empty(&self.r#additional_type) {
 				serialize_struct.serialize_field("additionalType", {
 					struct SerializeWith<'a>(&'a Vec<AdditionalTypeProperty>);
@@ -124,24 +254,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("disambiguatingDescription")?;
 			}
-			if !Vec::is_empty(&self.r#grantee) {
-				serialize_struct.serialize_field("grantee", {
-					struct SerializeWith<'a>(&'a Vec<GranteeProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#grantee)
-				})?;
-			} else {
-				serialize_struct.skip_field("grantee")?;
-			}
 			if !Vec::is_empty(&self.r#identifier) {
 				serialize_struct.serialize_field("identifier", {
 					struct SerializeWith<'a>(&'a Vec<IdentifierProperty>);
@@ -213,24 +325,6 @@ mod serde {
 				})?;
 			} else {
 				serialize_struct.skip_field("name")?;
-			}
-			if !Vec::is_empty(&self.r#permission_type) {
-				serialize_struct.serialize_field("permissionType", {
-					struct SerializeWith<'a>(&'a Vec<PermissionTypeProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#permission_type)
-				})?;
-			} else {
-				serialize_struct.skip_field("permissionType")?;
 			}
 			if !Vec::is_empty(&self.r#potential_action) {
 				serialize_struct.serialize_field("potentialAction", {
@@ -313,16 +407,16 @@ mod serde {
 			D: Deserializer<'de>,
 		{
 			enum Field {
+				Grantee,
+				PermissionType,
 				AdditionalType,
 				AlternateName,
 				Description,
 				DisambiguatingDescription,
-				Grantee,
 				Identifier,
 				Image,
 				MainEntityOfPage,
 				Name,
-				PermissionType,
 				PotentialAction,
 				SameAs,
 				SubjectOf,
@@ -340,16 +434,16 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
+						"grantee" => Ok(Field::Grantee),
+						"permissionType" => Ok(Field::PermissionType),
 						"additionalType" => Ok(Field::AdditionalType),
 						"alternateName" => Ok(Field::AlternateName),
 						"description" => Ok(Field::Description),
 						"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
-						"grantee" => Ok(Field::Grantee),
 						"identifier" => Ok(Field::Identifier),
 						"image" => Ok(Field::Image),
 						"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
 						"name" => Ok(Field::Name),
-						"permissionType" => Ok(Field::PermissionType),
 						"potentialAction" => Ok(Field::PotentialAction),
 						"sameAs" => Ok(Field::SameAs),
 						"subjectOf" => Ok(Field::SubjectOf),
@@ -362,16 +456,16 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
+						b"grantee" => Ok(Field::Grantee),
+						b"permissionType" => Ok(Field::PermissionType),
 						b"additionalType" => Ok(Field::AdditionalType),
 						b"alternateName" => Ok(Field::AlternateName),
 						b"description" => Ok(Field::Description),
 						b"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
-						b"grantee" => Ok(Field::Grantee),
 						b"identifier" => Ok(Field::Identifier),
 						b"image" => Ok(Field::Image),
 						b"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
 						b"name" => Ok(Field::Name),
-						b"permissionType" => Ok(Field::PermissionType),
 						b"potentialAction" => Ok(Field::PotentialAction),
 						b"sameAs" => Ok(Field::SameAs),
 						b"subjectOf" => Ok(Field::SubjectOf),
@@ -398,22 +492,74 @@ mod serde {
 				where
 					A: de::MapAccess<'de>,
 				{
+					let mut r#grantee_property = None;
+					let mut r#permission_type_property = None;
 					let mut r#additional_type_property = None;
 					let mut r#alternate_name_property = None;
 					let mut r#description_property = None;
 					let mut r#disambiguating_description_property = None;
-					let mut r#grantee_property = None;
 					let mut r#identifier_property = None;
 					let mut r#image_property = None;
 					let mut r#main_entity_of_page_property = None;
 					let mut r#name_property = None;
-					let mut r#permission_type_property = None;
 					let mut r#potential_action_property = None;
 					let mut r#same_as_property = None;
 					let mut r#subject_of_property = None;
 					let mut r#url_property = None;
 					while let Some(key) = map.next_key::<Field>()? {
 						match key {
+							Field::Grantee => {
+								if r#grantee_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"grantee",
+									));
+								}
+								r#grantee_property = Some({
+									struct DeserializeWith(Vec<GranteeProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::PermissionType => {
+								if r#permission_type_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"permissionType",
+									));
+								}
+								r#permission_type_property = Some({
+									struct DeserializeWith(Vec<PermissionTypeProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
 							Field::AdditionalType => {
 								if r#additional_type_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -518,32 +664,6 @@ mod serde {
 									}
 								});
 							}
-							Field::Grantee => {
-								if r#grantee_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"grantee",
-									));
-								}
-								r#grantee_property = Some({
-									struct DeserializeWith(Vec<GranteeProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
 							Field::Identifier => {
 								if r#identifier_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -626,32 +746,6 @@ mod serde {
 								}
 								r#name_property = Some({
 									struct DeserializeWith(Vec<NameProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::PermissionType => {
-								if r#permission_type_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"permissionType",
-									));
-								}
-								r#permission_type_property = Some({
-									struct DeserializeWith(Vec<PermissionTypeProperty>);
 									impl<'de> Deserialize<'de> for DeserializeWith {
 										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
 										where
@@ -776,17 +870,17 @@ mod serde {
 						}
 					}
 					Ok(DigitalDocumentPermission {
+						r#grantee: r#grantee_property.unwrap_or_default(),
+						r#permission_type: r#permission_type_property.unwrap_or_default(),
 						r#additional_type: r#additional_type_property.unwrap_or_default(),
 						r#alternate_name: r#alternate_name_property.unwrap_or_default(),
 						r#description: r#description_property.unwrap_or_default(),
 						r#disambiguating_description: r#disambiguating_description_property
 							.unwrap_or_default(),
-						r#grantee: r#grantee_property.unwrap_or_default(),
 						r#identifier: r#identifier_property.unwrap_or_default(),
 						r#image: r#image_property.unwrap_or_default(),
 						r#main_entity_of_page: r#main_entity_of_page_property.unwrap_or_default(),
 						r#name: r#name_property.unwrap_or_default(),
-						r#permission_type: r#permission_type_property.unwrap_or_default(),
 						r#potential_action: r#potential_action_property.unwrap_or_default(),
 						r#same_as: r#same_as_property.unwrap_or_default(),
 						r#subject_of: r#subject_of_property.unwrap_or_default(),
@@ -795,16 +889,16 @@ mod serde {
 				}
 			}
 			const FIELDS: &[&str] = &[
+				"grantee",
+				"permissionType",
 				"additionalType",
 				"alternateName",
 				"description",
 				"disambiguatingDescription",
-				"grantee",
 				"identifier",
 				"image",
 				"mainEntityOfPage",
 				"name",
-				"permissionType",
 				"potentialAction",
 				"sameAs",
 				"subjectOf",

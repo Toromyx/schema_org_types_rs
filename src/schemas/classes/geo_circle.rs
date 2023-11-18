@@ -3,28 +3,173 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct GeoCircle {
-	pub r#additional_type: Vec<AdditionalTypeProperty>,
-	pub r#address: Vec<AddressProperty>,
-	pub r#address_country: Vec<AddressCountryProperty>,
-	pub r#alternate_name: Vec<AlternateNameProperty>,
-	pub r#box: Vec<BoxProperty>,
-	pub r#circle: Vec<CircleProperty>,
-	pub r#description: Vec<DescriptionProperty>,
-	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
-	pub r#elevation: Vec<ElevationProperty>,
 	pub r#geo_midpoint: Vec<GeoMidpointProperty>,
 	pub r#geo_radius: Vec<GeoRadiusProperty>,
-	pub r#identifier: Vec<IdentifierProperty>,
-	pub r#image: Vec<ImageProperty>,
+	pub r#address: Vec<AddressProperty>,
+	pub r#address_country: Vec<AddressCountryProperty>,
+	pub r#box: Vec<BoxProperty>,
+	pub r#circle: Vec<CircleProperty>,
+	pub r#elevation: Vec<ElevationProperty>,
 	pub r#line: Vec<LineProperty>,
-	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
-	pub r#name: Vec<NameProperty>,
 	pub r#polygon: Vec<PolygonProperty>,
 	pub r#postal_code: Vec<PostalCodeProperty>,
+	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	pub r#alternate_name: Vec<AlternateNameProperty>,
+	pub r#description: Vec<DescriptionProperty>,
+	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	pub r#identifier: Vec<IdentifierProperty>,
+	pub r#image: Vec<ImageProperty>,
+	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	pub r#name: Vec<NameProperty>,
 	pub r#potential_action: Vec<PotentialActionProperty>,
 	pub r#same_as: Vec<SameAsProperty>,
 	pub r#subject_of: Vec<SubjectOfProperty>,
 	pub r#url: Vec<UrlProperty>,
+}
+pub trait GeoCircleTrait {
+	fn get_geo_midpoint(&self) -> &[GeoMidpointProperty];
+	fn take_geo_midpoint(&mut self) -> Vec<GeoMidpointProperty>;
+	fn get_geo_radius(&self) -> &[GeoRadiusProperty];
+	fn take_geo_radius(&mut self) -> Vec<GeoRadiusProperty>;
+}
+impl GeoCircleTrait for GeoCircle {
+	fn get_geo_midpoint(&self) -> &[GeoMidpointProperty] {
+		self.r#geo_midpoint.as_slice()
+	}
+	fn take_geo_midpoint(&mut self) -> Vec<GeoMidpointProperty> {
+		std::mem::take(&mut self.r#geo_midpoint)
+	}
+	fn get_geo_radius(&self) -> &[GeoRadiusProperty] {
+		self.r#geo_radius.as_slice()
+	}
+	fn take_geo_radius(&mut self) -> Vec<GeoRadiusProperty> {
+		std::mem::take(&mut self.r#geo_radius)
+	}
+}
+impl GeoShapeTrait for GeoCircle {
+	fn get_address(&self) -> &[AddressProperty] {
+		self.r#address.as_slice()
+	}
+	fn take_address(&mut self) -> Vec<AddressProperty> {
+		std::mem::take(&mut self.r#address)
+	}
+	fn get_address_country(&self) -> &[AddressCountryProperty] {
+		self.r#address_country.as_slice()
+	}
+	fn take_address_country(&mut self) -> Vec<AddressCountryProperty> {
+		std::mem::take(&mut self.r#address_country)
+	}
+	fn get_box(&self) -> &[BoxProperty] {
+		self.r#box.as_slice()
+	}
+	fn take_box(&mut self) -> Vec<BoxProperty> {
+		std::mem::take(&mut self.r#box)
+	}
+	fn get_circle(&self) -> &[CircleProperty] {
+		self.r#circle.as_slice()
+	}
+	fn take_circle(&mut self) -> Vec<CircleProperty> {
+		std::mem::take(&mut self.r#circle)
+	}
+	fn get_elevation(&self) -> &[ElevationProperty] {
+		self.r#elevation.as_slice()
+	}
+	fn take_elevation(&mut self) -> Vec<ElevationProperty> {
+		std::mem::take(&mut self.r#elevation)
+	}
+	fn get_line(&self) -> &[LineProperty] {
+		self.r#line.as_slice()
+	}
+	fn take_line(&mut self) -> Vec<LineProperty> {
+		std::mem::take(&mut self.r#line)
+	}
+	fn get_polygon(&self) -> &[PolygonProperty] {
+		self.r#polygon.as_slice()
+	}
+	fn take_polygon(&mut self) -> Vec<PolygonProperty> {
+		std::mem::take(&mut self.r#polygon)
+	}
+	fn get_postal_code(&self) -> &[PostalCodeProperty] {
+		self.r#postal_code.as_slice()
+	}
+	fn take_postal_code(&mut self) -> Vec<PostalCodeProperty> {
+		std::mem::take(&mut self.r#postal_code)
+	}
+}
+impl StructuredValueTrait for GeoCircle {}
+impl ThingTrait for GeoCircle {
+	fn get_additional_type(&self) -> &[AdditionalTypeProperty] {
+		self.r#additional_type.as_slice()
+	}
+	fn take_additional_type(&mut self) -> Vec<AdditionalTypeProperty> {
+		std::mem::take(&mut self.r#additional_type)
+	}
+	fn get_alternate_name(&self) -> &[AlternateNameProperty] {
+		self.r#alternate_name.as_slice()
+	}
+	fn take_alternate_name(&mut self) -> Vec<AlternateNameProperty> {
+		std::mem::take(&mut self.r#alternate_name)
+	}
+	fn get_description(&self) -> &[DescriptionProperty] {
+		self.r#description.as_slice()
+	}
+	fn take_description(&mut self) -> Vec<DescriptionProperty> {
+		std::mem::take(&mut self.r#description)
+	}
+	fn get_disambiguating_description(&self) -> &[DisambiguatingDescriptionProperty] {
+		self.r#disambiguating_description.as_slice()
+	}
+	fn take_disambiguating_description(&mut self) -> Vec<DisambiguatingDescriptionProperty> {
+		std::mem::take(&mut self.r#disambiguating_description)
+	}
+	fn get_identifier(&self) -> &[IdentifierProperty] {
+		self.r#identifier.as_slice()
+	}
+	fn take_identifier(&mut self) -> Vec<IdentifierProperty> {
+		std::mem::take(&mut self.r#identifier)
+	}
+	fn get_image(&self) -> &[ImageProperty] {
+		self.r#image.as_slice()
+	}
+	fn take_image(&mut self) -> Vec<ImageProperty> {
+		std::mem::take(&mut self.r#image)
+	}
+	fn get_main_entity_of_page(&self) -> &[MainEntityOfPageProperty] {
+		self.r#main_entity_of_page.as_slice()
+	}
+	fn take_main_entity_of_page(&mut self) -> Vec<MainEntityOfPageProperty> {
+		std::mem::take(&mut self.r#main_entity_of_page)
+	}
+	fn get_name(&self) -> &[NameProperty] {
+		self.r#name.as_slice()
+	}
+	fn take_name(&mut self) -> Vec<NameProperty> {
+		std::mem::take(&mut self.r#name)
+	}
+	fn get_potential_action(&self) -> &[PotentialActionProperty] {
+		self.r#potential_action.as_slice()
+	}
+	fn take_potential_action(&mut self) -> Vec<PotentialActionProperty> {
+		std::mem::take(&mut self.r#potential_action)
+	}
+	fn get_same_as(&self) -> &[SameAsProperty] {
+		self.r#same_as.as_slice()
+	}
+	fn take_same_as(&mut self) -> Vec<SameAsProperty> {
+		std::mem::take(&mut self.r#same_as)
+	}
+	fn get_subject_of(&self) -> &[SubjectOfProperty] {
+		self.r#subject_of.as_slice()
+	}
+	fn take_subject_of(&mut self) -> Vec<SubjectOfProperty> {
+		std::mem::take(&mut self.r#subject_of)
+	}
+	fn get_url(&self) -> &[UrlProperty] {
+		self.r#url.as_slice()
+	}
+	fn take_url(&mut self) -> Vec<UrlProperty> {
+		std::mem::take(&mut self.r#url)
+	}
 }
 #[cfg(feature = "serde")]
 mod serde {
@@ -41,24 +186,24 @@ mod serde {
 			S: Serializer,
 		{
 			let len: usize = [
-				!Vec::is_empty(&self.r#additional_type) as usize,
-				!Vec::is_empty(&self.r#address) as usize,
-				!Vec::is_empty(&self.r#address_country) as usize,
-				!Vec::is_empty(&self.r#alternate_name) as usize,
-				!Vec::is_empty(&self.r#box) as usize,
-				!Vec::is_empty(&self.r#circle) as usize,
-				!Vec::is_empty(&self.r#description) as usize,
-				!Vec::is_empty(&self.r#disambiguating_description) as usize,
-				!Vec::is_empty(&self.r#elevation) as usize,
 				!Vec::is_empty(&self.r#geo_midpoint) as usize,
 				!Vec::is_empty(&self.r#geo_radius) as usize,
-				!Vec::is_empty(&self.r#identifier) as usize,
-				!Vec::is_empty(&self.r#image) as usize,
+				!Vec::is_empty(&self.r#address) as usize,
+				!Vec::is_empty(&self.r#address_country) as usize,
+				!Vec::is_empty(&self.r#box) as usize,
+				!Vec::is_empty(&self.r#circle) as usize,
+				!Vec::is_empty(&self.r#elevation) as usize,
 				!Vec::is_empty(&self.r#line) as usize,
-				!Vec::is_empty(&self.r#main_entity_of_page) as usize,
-				!Vec::is_empty(&self.r#name) as usize,
 				!Vec::is_empty(&self.r#polygon) as usize,
 				!Vec::is_empty(&self.r#postal_code) as usize,
+				!Vec::is_empty(&self.r#additional_type) as usize,
+				!Vec::is_empty(&self.r#alternate_name) as usize,
+				!Vec::is_empty(&self.r#description) as usize,
+				!Vec::is_empty(&self.r#disambiguating_description) as usize,
+				!Vec::is_empty(&self.r#identifier) as usize,
+				!Vec::is_empty(&self.r#image) as usize,
+				!Vec::is_empty(&self.r#main_entity_of_page) as usize,
+				!Vec::is_empty(&self.r#name) as usize,
 				!Vec::is_empty(&self.r#potential_action) as usize,
 				!Vec::is_empty(&self.r#same_as) as usize,
 				!Vec::is_empty(&self.r#subject_of) as usize,
@@ -67,9 +212,9 @@ mod serde {
 			.iter()
 			.sum();
 			let mut serialize_struct = Serializer::serialize_struct(serializer, "GeoCircle", len)?;
-			if !Vec::is_empty(&self.r#additional_type) {
-				serialize_struct.serialize_field("additionalType", {
-					struct SerializeWith<'a>(&'a Vec<AdditionalTypeProperty>);
+			if !Vec::is_empty(&self.r#geo_midpoint) {
+				serialize_struct.serialize_field("geoMidpoint", {
+					struct SerializeWith<'a>(&'a Vec<GeoMidpointProperty>);
 					impl<'a> Serialize for SerializeWith<'a> {
 						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
 						where
@@ -80,10 +225,28 @@ mod serde {
 							)
 						}
 					}
-					&SerializeWith(&self.r#additional_type)
+					&SerializeWith(&self.r#geo_midpoint)
 				})?;
 			} else {
-				serialize_struct.skip_field("additionalType")?;
+				serialize_struct.skip_field("geoMidpoint")?;
+			}
+			if !Vec::is_empty(&self.r#geo_radius) {
+				serialize_struct.serialize_field("geoRadius", {
+					struct SerializeWith<'a>(&'a Vec<GeoRadiusProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#geo_radius)
+				})?;
+			} else {
+				serialize_struct.skip_field("geoRadius")?;
 			}
 			if !Vec::is_empty(&self.r#address) {
 				serialize_struct.serialize_field("address", {
@@ -121,24 +284,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("addressCountry")?;
 			}
-			if !Vec::is_empty(&self.r#alternate_name) {
-				serialize_struct.serialize_field("alternateName", {
-					struct SerializeWith<'a>(&'a Vec<AlternateNameProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#alternate_name)
-				})?;
-			} else {
-				serialize_struct.skip_field("alternateName")?;
-			}
 			if !Vec::is_empty(&self.r#box) {
 				serialize_struct.serialize_field("box", {
 					struct SerializeWith<'a>(&'a Vec<BoxProperty>);
@@ -174,6 +319,114 @@ mod serde {
 				})?;
 			} else {
 				serialize_struct.skip_field("circle")?;
+			}
+			if !Vec::is_empty(&self.r#elevation) {
+				serialize_struct.serialize_field("elevation", {
+					struct SerializeWith<'a>(&'a Vec<ElevationProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#elevation)
+				})?;
+			} else {
+				serialize_struct.skip_field("elevation")?;
+			}
+			if !Vec::is_empty(&self.r#line) {
+				serialize_struct.serialize_field("line", {
+					struct SerializeWith<'a>(&'a Vec<LineProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#line)
+				})?;
+			} else {
+				serialize_struct.skip_field("line")?;
+			}
+			if !Vec::is_empty(&self.r#polygon) {
+				serialize_struct.serialize_field("polygon", {
+					struct SerializeWith<'a>(&'a Vec<PolygonProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#polygon)
+				})?;
+			} else {
+				serialize_struct.skip_field("polygon")?;
+			}
+			if !Vec::is_empty(&self.r#postal_code) {
+				serialize_struct.serialize_field("postalCode", {
+					struct SerializeWith<'a>(&'a Vec<PostalCodeProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#postal_code)
+				})?;
+			} else {
+				serialize_struct.skip_field("postalCode")?;
+			}
+			if !Vec::is_empty(&self.r#additional_type) {
+				serialize_struct.serialize_field("additionalType", {
+					struct SerializeWith<'a>(&'a Vec<AdditionalTypeProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#additional_type)
+				})?;
+			} else {
+				serialize_struct.skip_field("additionalType")?;
+			}
+			if !Vec::is_empty(&self.r#alternate_name) {
+				serialize_struct.serialize_field("alternateName", {
+					struct SerializeWith<'a>(&'a Vec<AlternateNameProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#alternate_name)
+				})?;
+			} else {
+				serialize_struct.skip_field("alternateName")?;
 			}
 			if !Vec::is_empty(&self.r#description) {
 				serialize_struct.serialize_field("description", {
@@ -211,60 +464,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("disambiguatingDescription")?;
 			}
-			if !Vec::is_empty(&self.r#elevation) {
-				serialize_struct.serialize_field("elevation", {
-					struct SerializeWith<'a>(&'a Vec<ElevationProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#elevation)
-				})?;
-			} else {
-				serialize_struct.skip_field("elevation")?;
-			}
-			if !Vec::is_empty(&self.r#geo_midpoint) {
-				serialize_struct.serialize_field("geoMidpoint", {
-					struct SerializeWith<'a>(&'a Vec<GeoMidpointProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#geo_midpoint)
-				})?;
-			} else {
-				serialize_struct.skip_field("geoMidpoint")?;
-			}
-			if !Vec::is_empty(&self.r#geo_radius) {
-				serialize_struct.serialize_field("geoRadius", {
-					struct SerializeWith<'a>(&'a Vec<GeoRadiusProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#geo_radius)
-				})?;
-			} else {
-				serialize_struct.skip_field("geoRadius")?;
-			}
 			if !Vec::is_empty(&self.r#identifier) {
 				serialize_struct.serialize_field("identifier", {
 					struct SerializeWith<'a>(&'a Vec<IdentifierProperty>);
@@ -301,24 +500,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("image")?;
 			}
-			if !Vec::is_empty(&self.r#line) {
-				serialize_struct.serialize_field("line", {
-					struct SerializeWith<'a>(&'a Vec<LineProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#line)
-				})?;
-			} else {
-				serialize_struct.skip_field("line")?;
-			}
 			if !Vec::is_empty(&self.r#main_entity_of_page) {
 				serialize_struct.serialize_field("mainEntityOfPage", {
 					struct SerializeWith<'a>(&'a Vec<MainEntityOfPageProperty>);
@@ -354,42 +535,6 @@ mod serde {
 				})?;
 			} else {
 				serialize_struct.skip_field("name")?;
-			}
-			if !Vec::is_empty(&self.r#polygon) {
-				serialize_struct.serialize_field("polygon", {
-					struct SerializeWith<'a>(&'a Vec<PolygonProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#polygon)
-				})?;
-			} else {
-				serialize_struct.skip_field("polygon")?;
-			}
-			if !Vec::is_empty(&self.r#postal_code) {
-				serialize_struct.serialize_field("postalCode", {
-					struct SerializeWith<'a>(&'a Vec<PostalCodeProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#postal_code)
-				})?;
-			} else {
-				serialize_struct.skip_field("postalCode")?;
 			}
 			if !Vec::is_empty(&self.r#potential_action) {
 				serialize_struct.serialize_field("potentialAction", {
@@ -472,24 +617,24 @@ mod serde {
 			D: Deserializer<'de>,
 		{
 			enum Field {
-				AdditionalType,
-				Address,
-				AddressCountry,
-				AlternateName,
-				Box,
-				Circle,
-				Description,
-				DisambiguatingDescription,
-				Elevation,
 				GeoMidpoint,
 				GeoRadius,
-				Identifier,
-				Image,
+				Address,
+				AddressCountry,
+				Box,
+				Circle,
+				Elevation,
 				Line,
-				MainEntityOfPage,
-				Name,
 				Polygon,
 				PostalCode,
+				AdditionalType,
+				AlternateName,
+				Description,
+				DisambiguatingDescription,
+				Identifier,
+				Image,
+				MainEntityOfPage,
+				Name,
 				PotentialAction,
 				SameAs,
 				SubjectOf,
@@ -507,24 +652,24 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
-						"additionalType" => Ok(Field::AdditionalType),
-						"address" => Ok(Field::Address),
-						"addressCountry" => Ok(Field::AddressCountry),
-						"alternateName" => Ok(Field::AlternateName),
-						"box" => Ok(Field::Box),
-						"circle" => Ok(Field::Circle),
-						"description" => Ok(Field::Description),
-						"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
-						"elevation" => Ok(Field::Elevation),
 						"geoMidpoint" => Ok(Field::GeoMidpoint),
 						"geoRadius" => Ok(Field::GeoRadius),
-						"identifier" => Ok(Field::Identifier),
-						"image" => Ok(Field::Image),
+						"address" => Ok(Field::Address),
+						"addressCountry" => Ok(Field::AddressCountry),
+						"box" => Ok(Field::Box),
+						"circle" => Ok(Field::Circle),
+						"elevation" => Ok(Field::Elevation),
 						"line" => Ok(Field::Line),
-						"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
-						"name" => Ok(Field::Name),
 						"polygon" => Ok(Field::Polygon),
 						"postalCode" => Ok(Field::PostalCode),
+						"additionalType" => Ok(Field::AdditionalType),
+						"alternateName" => Ok(Field::AlternateName),
+						"description" => Ok(Field::Description),
+						"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
+						"identifier" => Ok(Field::Identifier),
+						"image" => Ok(Field::Image),
+						"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
+						"name" => Ok(Field::Name),
 						"potentialAction" => Ok(Field::PotentialAction),
 						"sameAs" => Ok(Field::SameAs),
 						"subjectOf" => Ok(Field::SubjectOf),
@@ -537,24 +682,24 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
-						b"additionalType" => Ok(Field::AdditionalType),
-						b"address" => Ok(Field::Address),
-						b"addressCountry" => Ok(Field::AddressCountry),
-						b"alternateName" => Ok(Field::AlternateName),
-						b"box" => Ok(Field::Box),
-						b"circle" => Ok(Field::Circle),
-						b"description" => Ok(Field::Description),
-						b"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
-						b"elevation" => Ok(Field::Elevation),
 						b"geoMidpoint" => Ok(Field::GeoMidpoint),
 						b"geoRadius" => Ok(Field::GeoRadius),
-						b"identifier" => Ok(Field::Identifier),
-						b"image" => Ok(Field::Image),
+						b"address" => Ok(Field::Address),
+						b"addressCountry" => Ok(Field::AddressCountry),
+						b"box" => Ok(Field::Box),
+						b"circle" => Ok(Field::Circle),
+						b"elevation" => Ok(Field::Elevation),
 						b"line" => Ok(Field::Line),
-						b"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
-						b"name" => Ok(Field::Name),
 						b"polygon" => Ok(Field::Polygon),
 						b"postalCode" => Ok(Field::PostalCode),
+						b"additionalType" => Ok(Field::AdditionalType),
+						b"alternateName" => Ok(Field::AlternateName),
+						b"description" => Ok(Field::Description),
+						b"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
+						b"identifier" => Ok(Field::Identifier),
+						b"image" => Ok(Field::Image),
+						b"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
+						b"name" => Ok(Field::Name),
 						b"potentialAction" => Ok(Field::PotentialAction),
 						b"sameAs" => Ok(Field::SameAs),
 						b"subjectOf" => Ok(Field::SubjectOf),
@@ -581,38 +726,64 @@ mod serde {
 				where
 					A: de::MapAccess<'de>,
 				{
-					let mut r#additional_type_property = None;
-					let mut r#address_property = None;
-					let mut r#address_country_property = None;
-					let mut r#alternate_name_property = None;
-					let mut r#box_property = None;
-					let mut r#circle_property = None;
-					let mut r#description_property = None;
-					let mut r#disambiguating_description_property = None;
-					let mut r#elevation_property = None;
 					let mut r#geo_midpoint_property = None;
 					let mut r#geo_radius_property = None;
-					let mut r#identifier_property = None;
-					let mut r#image_property = None;
+					let mut r#address_property = None;
+					let mut r#address_country_property = None;
+					let mut r#box_property = None;
+					let mut r#circle_property = None;
+					let mut r#elevation_property = None;
 					let mut r#line_property = None;
-					let mut r#main_entity_of_page_property = None;
-					let mut r#name_property = None;
 					let mut r#polygon_property = None;
 					let mut r#postal_code_property = None;
+					let mut r#additional_type_property = None;
+					let mut r#alternate_name_property = None;
+					let mut r#description_property = None;
+					let mut r#disambiguating_description_property = None;
+					let mut r#identifier_property = None;
+					let mut r#image_property = None;
+					let mut r#main_entity_of_page_property = None;
+					let mut r#name_property = None;
 					let mut r#potential_action_property = None;
 					let mut r#same_as_property = None;
 					let mut r#subject_of_property = None;
 					let mut r#url_property = None;
 					while let Some(key) = map.next_key::<Field>()? {
 						match key {
-							Field::AdditionalType => {
-								if r#additional_type_property.is_some() {
+							Field::GeoMidpoint => {
+								if r#geo_midpoint_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
-										"additionalType",
+										"geoMidpoint",
 									));
 								}
-								r#additional_type_property = Some({
-									struct DeserializeWith(Vec<AdditionalTypeProperty>);
+								r#geo_midpoint_property = Some({
+									struct DeserializeWith(Vec<GeoMidpointProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::GeoRadius => {
+								if r#geo_radius_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"geoRadius",
+									));
+								}
+								r#geo_radius_property = Some({
+									struct DeserializeWith(Vec<GeoRadiusProperty>);
 									impl<'de> Deserialize<'de> for DeserializeWith {
 										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
 										where
@@ -683,32 +854,6 @@ mod serde {
 									}
 								});
 							}
-							Field::AlternateName => {
-								if r#alternate_name_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"alternateName",
-									));
-								}
-								r#alternate_name_property = Some({
-									struct DeserializeWith(Vec<AlternateNameProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
 							Field::Box => {
 								if r#box_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("box"));
@@ -739,6 +884,160 @@ mod serde {
 								}
 								r#circle_property = Some({
 									struct DeserializeWith(Vec<CircleProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::Elevation => {
+								if r#elevation_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"elevation",
+									));
+								}
+								r#elevation_property = Some({
+									struct DeserializeWith(Vec<ElevationProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::Line => {
+								if r#line_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field("line"));
+								}
+								r#line_property = Some({
+									struct DeserializeWith(Vec<LineProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::Polygon => {
+								if r#polygon_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"polygon",
+									));
+								}
+								r#polygon_property = Some({
+									struct DeserializeWith(Vec<PolygonProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::PostalCode => {
+								if r#postal_code_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"postalCode",
+									));
+								}
+								r#postal_code_property = Some({
+									struct DeserializeWith(Vec<PostalCodeProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::AdditionalType => {
+								if r#additional_type_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"additionalType",
+									));
+								}
+								r#additional_type_property = Some({
+									struct DeserializeWith(Vec<AdditionalTypeProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::AlternateName => {
+								if r#alternate_name_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"alternateName",
+									));
+								}
+								r#alternate_name_property = Some({
+									struct DeserializeWith(Vec<AlternateNameProperty>);
 									impl<'de> Deserialize<'de> for DeserializeWith {
 										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
 										where
@@ -809,84 +1108,6 @@ mod serde {
 									}
 								});
 							}
-							Field::Elevation => {
-								if r#elevation_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"elevation",
-									));
-								}
-								r#elevation_property = Some({
-									struct DeserializeWith(Vec<ElevationProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::GeoMidpoint => {
-								if r#geo_midpoint_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"geoMidpoint",
-									));
-								}
-								r#geo_midpoint_property = Some({
-									struct DeserializeWith(Vec<GeoMidpointProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::GeoRadius => {
-								if r#geo_radius_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"geoRadius",
-									));
-								}
-								r#geo_radius_property = Some({
-									struct DeserializeWith(Vec<GeoRadiusProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
 							Field::Identifier => {
 								if r#identifier_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -937,30 +1158,6 @@ mod serde {
 									}
 								});
 							}
-							Field::Line => {
-								if r#line_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field("line"));
-								}
-								r#line_property = Some({
-									struct DeserializeWith(Vec<LineProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
 							Field::MainEntityOfPage => {
 								if r#main_entity_of_page_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -993,58 +1190,6 @@ mod serde {
 								}
 								r#name_property = Some({
 									struct DeserializeWith(Vec<NameProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::Polygon => {
-								if r#polygon_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"polygon",
-									));
-								}
-								r#polygon_property = Some({
-									struct DeserializeWith(Vec<PolygonProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::PostalCode => {
-								if r#postal_code_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"postalCode",
-									));
-								}
-								r#postal_code_property = Some({
-									struct DeserializeWith(Vec<PostalCodeProperty>);
 									impl<'de> Deserialize<'de> for DeserializeWith {
 										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
 										where
@@ -1169,25 +1314,25 @@ mod serde {
 						}
 					}
 					Ok(GeoCircle {
-						r#additional_type: r#additional_type_property.unwrap_or_default(),
+						r#geo_midpoint: r#geo_midpoint_property.unwrap_or_default(),
+						r#geo_radius: r#geo_radius_property.unwrap_or_default(),
 						r#address: r#address_property.unwrap_or_default(),
 						r#address_country: r#address_country_property.unwrap_or_default(),
-						r#alternate_name: r#alternate_name_property.unwrap_or_default(),
 						r#box: r#box_property.unwrap_or_default(),
 						r#circle: r#circle_property.unwrap_or_default(),
+						r#elevation: r#elevation_property.unwrap_or_default(),
+						r#line: r#line_property.unwrap_or_default(),
+						r#polygon: r#polygon_property.unwrap_or_default(),
+						r#postal_code: r#postal_code_property.unwrap_or_default(),
+						r#additional_type: r#additional_type_property.unwrap_or_default(),
+						r#alternate_name: r#alternate_name_property.unwrap_or_default(),
 						r#description: r#description_property.unwrap_or_default(),
 						r#disambiguating_description: r#disambiguating_description_property
 							.unwrap_or_default(),
-						r#elevation: r#elevation_property.unwrap_or_default(),
-						r#geo_midpoint: r#geo_midpoint_property.unwrap_or_default(),
-						r#geo_radius: r#geo_radius_property.unwrap_or_default(),
 						r#identifier: r#identifier_property.unwrap_or_default(),
 						r#image: r#image_property.unwrap_or_default(),
-						r#line: r#line_property.unwrap_or_default(),
 						r#main_entity_of_page: r#main_entity_of_page_property.unwrap_or_default(),
 						r#name: r#name_property.unwrap_or_default(),
-						r#polygon: r#polygon_property.unwrap_or_default(),
-						r#postal_code: r#postal_code_property.unwrap_or_default(),
 						r#potential_action: r#potential_action_property.unwrap_or_default(),
 						r#same_as: r#same_as_property.unwrap_or_default(),
 						r#subject_of: r#subject_of_property.unwrap_or_default(),
@@ -1196,24 +1341,24 @@ mod serde {
 				}
 			}
 			const FIELDS: &[&str] = &[
-				"additionalType",
-				"address",
-				"addressCountry",
-				"alternateName",
-				"box",
-				"circle",
-				"description",
-				"disambiguatingDescription",
-				"elevation",
 				"geoMidpoint",
 				"geoRadius",
-				"identifier",
-				"image",
+				"address",
+				"addressCountry",
+				"box",
+				"circle",
+				"elevation",
 				"line",
-				"mainEntityOfPage",
-				"name",
 				"polygon",
 				"postalCode",
+				"additionalType",
+				"alternateName",
+				"description",
+				"disambiguatingDescription",
+				"identifier",
+				"image",
+				"mainEntityOfPage",
+				"name",
 				"potentialAction",
 				"sameAs",
 				"subjectOf",

@@ -3,13 +3,14 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct ShippingDeliveryTime {
-	pub r#additional_type: Vec<AdditionalTypeProperty>,
-	pub r#alternate_name: Vec<AlternateNameProperty>,
 	pub r#business_days: Vec<BusinessDaysProperty>,
 	pub r#cutoff_time: Vec<CutoffTimeProperty>,
+	pub r#handling_time: Vec<HandlingTimeProperty>,
+	pub r#transit_time: Vec<TransitTimeProperty>,
+	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	pub r#alternate_name: Vec<AlternateNameProperty>,
 	pub r#description: Vec<DescriptionProperty>,
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
-	pub r#handling_time: Vec<HandlingTimeProperty>,
 	pub r#identifier: Vec<IdentifierProperty>,
 	pub r#image: Vec<ImageProperty>,
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
@@ -17,8 +18,118 @@ pub struct ShippingDeliveryTime {
 	pub r#potential_action: Vec<PotentialActionProperty>,
 	pub r#same_as: Vec<SameAsProperty>,
 	pub r#subject_of: Vec<SubjectOfProperty>,
-	pub r#transit_time: Vec<TransitTimeProperty>,
 	pub r#url: Vec<UrlProperty>,
+}
+pub trait ShippingDeliveryTimeTrait {
+	fn get_business_days(&self) -> &[BusinessDaysProperty];
+	fn take_business_days(&mut self) -> Vec<BusinessDaysProperty>;
+	fn get_cutoff_time(&self) -> &[CutoffTimeProperty];
+	fn take_cutoff_time(&mut self) -> Vec<CutoffTimeProperty>;
+	fn get_handling_time(&self) -> &[HandlingTimeProperty];
+	fn take_handling_time(&mut self) -> Vec<HandlingTimeProperty>;
+	fn get_transit_time(&self) -> &[TransitTimeProperty];
+	fn take_transit_time(&mut self) -> Vec<TransitTimeProperty>;
+}
+impl ShippingDeliveryTimeTrait for ShippingDeliveryTime {
+	fn get_business_days(&self) -> &[BusinessDaysProperty] {
+		self.r#business_days.as_slice()
+	}
+	fn take_business_days(&mut self) -> Vec<BusinessDaysProperty> {
+		std::mem::take(&mut self.r#business_days)
+	}
+	fn get_cutoff_time(&self) -> &[CutoffTimeProperty] {
+		self.r#cutoff_time.as_slice()
+	}
+	fn take_cutoff_time(&mut self) -> Vec<CutoffTimeProperty> {
+		std::mem::take(&mut self.r#cutoff_time)
+	}
+	fn get_handling_time(&self) -> &[HandlingTimeProperty] {
+		self.r#handling_time.as_slice()
+	}
+	fn take_handling_time(&mut self) -> Vec<HandlingTimeProperty> {
+		std::mem::take(&mut self.r#handling_time)
+	}
+	fn get_transit_time(&self) -> &[TransitTimeProperty] {
+		self.r#transit_time.as_slice()
+	}
+	fn take_transit_time(&mut self) -> Vec<TransitTimeProperty> {
+		std::mem::take(&mut self.r#transit_time)
+	}
+}
+impl StructuredValueTrait for ShippingDeliveryTime {}
+impl ThingTrait for ShippingDeliveryTime {
+	fn get_additional_type(&self) -> &[AdditionalTypeProperty] {
+		self.r#additional_type.as_slice()
+	}
+	fn take_additional_type(&mut self) -> Vec<AdditionalTypeProperty> {
+		std::mem::take(&mut self.r#additional_type)
+	}
+	fn get_alternate_name(&self) -> &[AlternateNameProperty] {
+		self.r#alternate_name.as_slice()
+	}
+	fn take_alternate_name(&mut self) -> Vec<AlternateNameProperty> {
+		std::mem::take(&mut self.r#alternate_name)
+	}
+	fn get_description(&self) -> &[DescriptionProperty] {
+		self.r#description.as_slice()
+	}
+	fn take_description(&mut self) -> Vec<DescriptionProperty> {
+		std::mem::take(&mut self.r#description)
+	}
+	fn get_disambiguating_description(&self) -> &[DisambiguatingDescriptionProperty] {
+		self.r#disambiguating_description.as_slice()
+	}
+	fn take_disambiguating_description(&mut self) -> Vec<DisambiguatingDescriptionProperty> {
+		std::mem::take(&mut self.r#disambiguating_description)
+	}
+	fn get_identifier(&self) -> &[IdentifierProperty] {
+		self.r#identifier.as_slice()
+	}
+	fn take_identifier(&mut self) -> Vec<IdentifierProperty> {
+		std::mem::take(&mut self.r#identifier)
+	}
+	fn get_image(&self) -> &[ImageProperty] {
+		self.r#image.as_slice()
+	}
+	fn take_image(&mut self) -> Vec<ImageProperty> {
+		std::mem::take(&mut self.r#image)
+	}
+	fn get_main_entity_of_page(&self) -> &[MainEntityOfPageProperty] {
+		self.r#main_entity_of_page.as_slice()
+	}
+	fn take_main_entity_of_page(&mut self) -> Vec<MainEntityOfPageProperty> {
+		std::mem::take(&mut self.r#main_entity_of_page)
+	}
+	fn get_name(&self) -> &[NameProperty] {
+		self.r#name.as_slice()
+	}
+	fn take_name(&mut self) -> Vec<NameProperty> {
+		std::mem::take(&mut self.r#name)
+	}
+	fn get_potential_action(&self) -> &[PotentialActionProperty] {
+		self.r#potential_action.as_slice()
+	}
+	fn take_potential_action(&mut self) -> Vec<PotentialActionProperty> {
+		std::mem::take(&mut self.r#potential_action)
+	}
+	fn get_same_as(&self) -> &[SameAsProperty] {
+		self.r#same_as.as_slice()
+	}
+	fn take_same_as(&mut self) -> Vec<SameAsProperty> {
+		std::mem::take(&mut self.r#same_as)
+	}
+	fn get_subject_of(&self) -> &[SubjectOfProperty] {
+		self.r#subject_of.as_slice()
+	}
+	fn take_subject_of(&mut self) -> Vec<SubjectOfProperty> {
+		std::mem::take(&mut self.r#subject_of)
+	}
+	fn get_url(&self) -> &[UrlProperty] {
+		self.r#url.as_slice()
+	}
+	fn take_url(&mut self) -> Vec<UrlProperty> {
+		std::mem::take(&mut self.r#url)
+	}
 }
 #[cfg(feature = "serde")]
 mod serde {
@@ -35,13 +146,14 @@ mod serde {
 			S: Serializer,
 		{
 			let len: usize = [
-				!Vec::is_empty(&self.r#additional_type) as usize,
-				!Vec::is_empty(&self.r#alternate_name) as usize,
 				!Vec::is_empty(&self.r#business_days) as usize,
 				!Vec::is_empty(&self.r#cutoff_time) as usize,
+				!Vec::is_empty(&self.r#handling_time) as usize,
+				!Vec::is_empty(&self.r#transit_time) as usize,
+				!Vec::is_empty(&self.r#additional_type) as usize,
+				!Vec::is_empty(&self.r#alternate_name) as usize,
 				!Vec::is_empty(&self.r#description) as usize,
 				!Vec::is_empty(&self.r#disambiguating_description) as usize,
-				!Vec::is_empty(&self.r#handling_time) as usize,
 				!Vec::is_empty(&self.r#identifier) as usize,
 				!Vec::is_empty(&self.r#image) as usize,
 				!Vec::is_empty(&self.r#main_entity_of_page) as usize,
@@ -49,49 +161,12 @@ mod serde {
 				!Vec::is_empty(&self.r#potential_action) as usize,
 				!Vec::is_empty(&self.r#same_as) as usize,
 				!Vec::is_empty(&self.r#subject_of) as usize,
-				!Vec::is_empty(&self.r#transit_time) as usize,
 				!Vec::is_empty(&self.r#url) as usize,
 			]
 			.iter()
 			.sum();
 			let mut serialize_struct =
 				Serializer::serialize_struct(serializer, "ShippingDeliveryTime", len)?;
-			if !Vec::is_empty(&self.r#additional_type) {
-				serialize_struct.serialize_field("additionalType", {
-					struct SerializeWith<'a>(&'a Vec<AdditionalTypeProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#additional_type)
-				})?;
-			} else {
-				serialize_struct.skip_field("additionalType")?;
-			}
-			if !Vec::is_empty(&self.r#alternate_name) {
-				serialize_struct.serialize_field("alternateName", {
-					struct SerializeWith<'a>(&'a Vec<AlternateNameProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#alternate_name)
-				})?;
-			} else {
-				serialize_struct.skip_field("alternateName")?;
-			}
 			if !Vec::is_empty(&self.r#business_days) {
 				serialize_struct.serialize_field("businessDays", {
 					struct SerializeWith<'a>(&'a Vec<BusinessDaysProperty>);
@@ -128,6 +203,78 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("cutoffTime")?;
 			}
+			if !Vec::is_empty(&self.r#handling_time) {
+				serialize_struct.serialize_field("handlingTime", {
+					struct SerializeWith<'a>(&'a Vec<HandlingTimeProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#handling_time)
+				})?;
+			} else {
+				serialize_struct.skip_field("handlingTime")?;
+			}
+			if !Vec::is_empty(&self.r#transit_time) {
+				serialize_struct.serialize_field("transitTime", {
+					struct SerializeWith<'a>(&'a Vec<TransitTimeProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#transit_time)
+				})?;
+			} else {
+				serialize_struct.skip_field("transitTime")?;
+			}
+			if !Vec::is_empty(&self.r#additional_type) {
+				serialize_struct.serialize_field("additionalType", {
+					struct SerializeWith<'a>(&'a Vec<AdditionalTypeProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#additional_type)
+				})?;
+			} else {
+				serialize_struct.skip_field("additionalType")?;
+			}
+			if !Vec::is_empty(&self.r#alternate_name) {
+				serialize_struct.serialize_field("alternateName", {
+					struct SerializeWith<'a>(&'a Vec<AlternateNameProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#alternate_name)
+				})?;
+			} else {
+				serialize_struct.skip_field("alternateName")?;
+			}
 			if !Vec::is_empty(&self.r#description) {
 				serialize_struct.serialize_field("description", {
 					struct SerializeWith<'a>(&'a Vec<DescriptionProperty>);
@@ -163,24 +310,6 @@ mod serde {
 				})?;
 			} else {
 				serialize_struct.skip_field("disambiguatingDescription")?;
-			}
-			if !Vec::is_empty(&self.r#handling_time) {
-				serialize_struct.serialize_field("handlingTime", {
-					struct SerializeWith<'a>(&'a Vec<HandlingTimeProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#handling_time)
-				})?;
-			} else {
-				serialize_struct.skip_field("handlingTime")?;
 			}
 			if !Vec::is_empty(&self.r#identifier) {
 				serialize_struct.serialize_field("identifier", {
@@ -308,24 +437,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("subjectOf")?;
 			}
-			if !Vec::is_empty(&self.r#transit_time) {
-				serialize_struct.serialize_field("transitTime", {
-					struct SerializeWith<'a>(&'a Vec<TransitTimeProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#transit_time)
-				})?;
-			} else {
-				serialize_struct.skip_field("transitTime")?;
-			}
 			if !Vec::is_empty(&self.r#url) {
 				serialize_struct.serialize_field("url", {
 					struct SerializeWith<'a>(&'a Vec<UrlProperty>);
@@ -353,13 +464,14 @@ mod serde {
 			D: Deserializer<'de>,
 		{
 			enum Field {
-				AdditionalType,
-				AlternateName,
 				BusinessDays,
 				CutoffTime,
+				HandlingTime,
+				TransitTime,
+				AdditionalType,
+				AlternateName,
 				Description,
 				DisambiguatingDescription,
-				HandlingTime,
 				Identifier,
 				Image,
 				MainEntityOfPage,
@@ -367,7 +479,6 @@ mod serde {
 				PotentialAction,
 				SameAs,
 				SubjectOf,
-				TransitTime,
 				Url,
 				Ignore,
 			}
@@ -382,13 +493,14 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
-						"additionalType" => Ok(Field::AdditionalType),
-						"alternateName" => Ok(Field::AlternateName),
 						"businessDays" => Ok(Field::BusinessDays),
 						"cutoffTime" => Ok(Field::CutoffTime),
+						"handlingTime" => Ok(Field::HandlingTime),
+						"transitTime" => Ok(Field::TransitTime),
+						"additionalType" => Ok(Field::AdditionalType),
+						"alternateName" => Ok(Field::AlternateName),
 						"description" => Ok(Field::Description),
 						"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
-						"handlingTime" => Ok(Field::HandlingTime),
 						"identifier" => Ok(Field::Identifier),
 						"image" => Ok(Field::Image),
 						"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
@@ -396,7 +508,6 @@ mod serde {
 						"potentialAction" => Ok(Field::PotentialAction),
 						"sameAs" => Ok(Field::SameAs),
 						"subjectOf" => Ok(Field::SubjectOf),
-						"transitTime" => Ok(Field::TransitTime),
 						"url" => Ok(Field::Url),
 						_ => Ok(Field::Ignore),
 					}
@@ -406,13 +517,14 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
-						b"additionalType" => Ok(Field::AdditionalType),
-						b"alternateName" => Ok(Field::AlternateName),
 						b"businessDays" => Ok(Field::BusinessDays),
 						b"cutoffTime" => Ok(Field::CutoffTime),
+						b"handlingTime" => Ok(Field::HandlingTime),
+						b"transitTime" => Ok(Field::TransitTime),
+						b"additionalType" => Ok(Field::AdditionalType),
+						b"alternateName" => Ok(Field::AlternateName),
 						b"description" => Ok(Field::Description),
 						b"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
-						b"handlingTime" => Ok(Field::HandlingTime),
 						b"identifier" => Ok(Field::Identifier),
 						b"image" => Ok(Field::Image),
 						b"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
@@ -420,7 +532,6 @@ mod serde {
 						b"potentialAction" => Ok(Field::PotentialAction),
 						b"sameAs" => Ok(Field::SameAs),
 						b"subjectOf" => Ok(Field::SubjectOf),
-						b"transitTime" => Ok(Field::TransitTime),
 						b"url" => Ok(Field::Url),
 						_ => Ok(Field::Ignore),
 					}
@@ -444,13 +555,14 @@ mod serde {
 				where
 					A: de::MapAccess<'de>,
 				{
-					let mut r#additional_type_property = None;
-					let mut r#alternate_name_property = None;
 					let mut r#business_days_property = None;
 					let mut r#cutoff_time_property = None;
+					let mut r#handling_time_property = None;
+					let mut r#transit_time_property = None;
+					let mut r#additional_type_property = None;
+					let mut r#alternate_name_property = None;
 					let mut r#description_property = None;
 					let mut r#disambiguating_description_property = None;
-					let mut r#handling_time_property = None;
 					let mut r#identifier_property = None;
 					let mut r#image_property = None;
 					let mut r#main_entity_of_page_property = None;
@@ -458,62 +570,9 @@ mod serde {
 					let mut r#potential_action_property = None;
 					let mut r#same_as_property = None;
 					let mut r#subject_of_property = None;
-					let mut r#transit_time_property = None;
 					let mut r#url_property = None;
 					while let Some(key) = map.next_key::<Field>()? {
 						match key {
-							Field::AdditionalType => {
-								if r#additional_type_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"additionalType",
-									));
-								}
-								r#additional_type_property = Some({
-									struct DeserializeWith(Vec<AdditionalTypeProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::AlternateName => {
-								if r#alternate_name_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"alternateName",
-									));
-								}
-								r#alternate_name_property = Some({
-									struct DeserializeWith(Vec<AlternateNameProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
 							Field::BusinessDays => {
 								if r#business_days_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -566,6 +625,110 @@ mod serde {
 									}
 								});
 							}
+							Field::HandlingTime => {
+								if r#handling_time_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"handlingTime",
+									));
+								}
+								r#handling_time_property = Some({
+									struct DeserializeWith(Vec<HandlingTimeProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::TransitTime => {
+								if r#transit_time_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"transitTime",
+									));
+								}
+								r#transit_time_property = Some({
+									struct DeserializeWith(Vec<TransitTimeProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::AdditionalType => {
+								if r#additional_type_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"additionalType",
+									));
+								}
+								r#additional_type_property = Some({
+									struct DeserializeWith(Vec<AdditionalTypeProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::AlternateName => {
+								if r#alternate_name_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"alternateName",
+									));
+								}
+								r#alternate_name_property = Some({
+									struct DeserializeWith(Vec<AlternateNameProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
 							Field::Description => {
 								if r#description_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -600,32 +763,6 @@ mod serde {
 								}
 								r#disambiguating_description_property = Some({
 									struct DeserializeWith(Vec<DisambiguatingDescriptionProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::HandlingTime => {
-								if r#handling_time_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"handlingTime",
-									));
-								}
-								r#handling_time_property = Some({
-									struct DeserializeWith(Vec<HandlingTimeProperty>);
 									impl<'de> Deserialize<'de> for DeserializeWith {
 										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
 										where
@@ -820,32 +957,6 @@ mod serde {
 									}
 								});
 							}
-							Field::TransitTime => {
-								if r#transit_time_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"transitTime",
-									));
-								}
-								r#transit_time_property = Some({
-									struct DeserializeWith(Vec<TransitTimeProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
 							Field::Url => {
 								if r#url_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("url"));
@@ -876,14 +987,15 @@ mod serde {
 						}
 					}
 					Ok(ShippingDeliveryTime {
-						r#additional_type: r#additional_type_property.unwrap_or_default(),
-						r#alternate_name: r#alternate_name_property.unwrap_or_default(),
 						r#business_days: r#business_days_property.unwrap_or_default(),
 						r#cutoff_time: r#cutoff_time_property.unwrap_or_default(),
+						r#handling_time: r#handling_time_property.unwrap_or_default(),
+						r#transit_time: r#transit_time_property.unwrap_or_default(),
+						r#additional_type: r#additional_type_property.unwrap_or_default(),
+						r#alternate_name: r#alternate_name_property.unwrap_or_default(),
 						r#description: r#description_property.unwrap_or_default(),
 						r#disambiguating_description: r#disambiguating_description_property
 							.unwrap_or_default(),
-						r#handling_time: r#handling_time_property.unwrap_or_default(),
 						r#identifier: r#identifier_property.unwrap_or_default(),
 						r#image: r#image_property.unwrap_or_default(),
 						r#main_entity_of_page: r#main_entity_of_page_property.unwrap_or_default(),
@@ -891,19 +1003,19 @@ mod serde {
 						r#potential_action: r#potential_action_property.unwrap_or_default(),
 						r#same_as: r#same_as_property.unwrap_or_default(),
 						r#subject_of: r#subject_of_property.unwrap_or_default(),
-						r#transit_time: r#transit_time_property.unwrap_or_default(),
 						r#url: r#url_property.unwrap_or_default(),
 					})
 				}
 			}
 			const FIELDS: &[&str] = &[
-				"additionalType",
-				"alternateName",
 				"businessDays",
 				"cutoffTime",
+				"handlingTime",
+				"transitTime",
+				"additionalType",
+				"alternateName",
 				"description",
 				"disambiguatingDescription",
-				"handlingTime",
 				"identifier",
 				"image",
 				"mainEntityOfPage",
@@ -911,7 +1023,6 @@ mod serde {
 				"potentialAction",
 				"sameAs",
 				"subjectOf",
-				"transitTime",
 				"url",
 			];
 			deserializer.deserialize_struct("ShippingDeliveryTime", FIELDS, ClassVisitor)

@@ -3,23 +3,139 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct BusinessAudience {
+	pub r#number_of_employees: Vec<NumberOfEmployeesProperty>,
+	pub r#yearly_revenue: Vec<YearlyRevenueProperty>,
+	pub r#years_in_operation: Vec<YearsInOperationProperty>,
+	pub r#audience_type: Vec<AudienceTypeProperty>,
+	pub r#geographic_area: Vec<GeographicAreaProperty>,
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
 	pub r#alternate_name: Vec<AlternateNameProperty>,
-	pub r#audience_type: Vec<AudienceTypeProperty>,
 	pub r#description: Vec<DescriptionProperty>,
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
-	pub r#geographic_area: Vec<GeographicAreaProperty>,
 	pub r#identifier: Vec<IdentifierProperty>,
 	pub r#image: Vec<ImageProperty>,
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
 	pub r#name: Vec<NameProperty>,
-	pub r#number_of_employees: Vec<NumberOfEmployeesProperty>,
 	pub r#potential_action: Vec<PotentialActionProperty>,
 	pub r#same_as: Vec<SameAsProperty>,
 	pub r#subject_of: Vec<SubjectOfProperty>,
 	pub r#url: Vec<UrlProperty>,
-	pub r#yearly_revenue: Vec<YearlyRevenueProperty>,
-	pub r#years_in_operation: Vec<YearsInOperationProperty>,
+}
+pub trait BusinessAudienceTrait {
+	fn get_number_of_employees(&self) -> &[NumberOfEmployeesProperty];
+	fn take_number_of_employees(&mut self) -> Vec<NumberOfEmployeesProperty>;
+	fn get_yearly_revenue(&self) -> &[YearlyRevenueProperty];
+	fn take_yearly_revenue(&mut self) -> Vec<YearlyRevenueProperty>;
+	fn get_years_in_operation(&self) -> &[YearsInOperationProperty];
+	fn take_years_in_operation(&mut self) -> Vec<YearsInOperationProperty>;
+}
+impl BusinessAudienceTrait for BusinessAudience {
+	fn get_number_of_employees(&self) -> &[NumberOfEmployeesProperty] {
+		self.r#number_of_employees.as_slice()
+	}
+	fn take_number_of_employees(&mut self) -> Vec<NumberOfEmployeesProperty> {
+		std::mem::take(&mut self.r#number_of_employees)
+	}
+	fn get_yearly_revenue(&self) -> &[YearlyRevenueProperty] {
+		self.r#yearly_revenue.as_slice()
+	}
+	fn take_yearly_revenue(&mut self) -> Vec<YearlyRevenueProperty> {
+		std::mem::take(&mut self.r#yearly_revenue)
+	}
+	fn get_years_in_operation(&self) -> &[YearsInOperationProperty] {
+		self.r#years_in_operation.as_slice()
+	}
+	fn take_years_in_operation(&mut self) -> Vec<YearsInOperationProperty> {
+		std::mem::take(&mut self.r#years_in_operation)
+	}
+}
+impl AudienceTrait for BusinessAudience {
+	fn get_audience_type(&self) -> &[AudienceTypeProperty] {
+		self.r#audience_type.as_slice()
+	}
+	fn take_audience_type(&mut self) -> Vec<AudienceTypeProperty> {
+		std::mem::take(&mut self.r#audience_type)
+	}
+	fn get_geographic_area(&self) -> &[GeographicAreaProperty] {
+		self.r#geographic_area.as_slice()
+	}
+	fn take_geographic_area(&mut self) -> Vec<GeographicAreaProperty> {
+		std::mem::take(&mut self.r#geographic_area)
+	}
+}
+impl ThingTrait for BusinessAudience {
+	fn get_additional_type(&self) -> &[AdditionalTypeProperty] {
+		self.r#additional_type.as_slice()
+	}
+	fn take_additional_type(&mut self) -> Vec<AdditionalTypeProperty> {
+		std::mem::take(&mut self.r#additional_type)
+	}
+	fn get_alternate_name(&self) -> &[AlternateNameProperty] {
+		self.r#alternate_name.as_slice()
+	}
+	fn take_alternate_name(&mut self) -> Vec<AlternateNameProperty> {
+		std::mem::take(&mut self.r#alternate_name)
+	}
+	fn get_description(&self) -> &[DescriptionProperty] {
+		self.r#description.as_slice()
+	}
+	fn take_description(&mut self) -> Vec<DescriptionProperty> {
+		std::mem::take(&mut self.r#description)
+	}
+	fn get_disambiguating_description(&self) -> &[DisambiguatingDescriptionProperty] {
+		self.r#disambiguating_description.as_slice()
+	}
+	fn take_disambiguating_description(&mut self) -> Vec<DisambiguatingDescriptionProperty> {
+		std::mem::take(&mut self.r#disambiguating_description)
+	}
+	fn get_identifier(&self) -> &[IdentifierProperty] {
+		self.r#identifier.as_slice()
+	}
+	fn take_identifier(&mut self) -> Vec<IdentifierProperty> {
+		std::mem::take(&mut self.r#identifier)
+	}
+	fn get_image(&self) -> &[ImageProperty] {
+		self.r#image.as_slice()
+	}
+	fn take_image(&mut self) -> Vec<ImageProperty> {
+		std::mem::take(&mut self.r#image)
+	}
+	fn get_main_entity_of_page(&self) -> &[MainEntityOfPageProperty] {
+		self.r#main_entity_of_page.as_slice()
+	}
+	fn take_main_entity_of_page(&mut self) -> Vec<MainEntityOfPageProperty> {
+		std::mem::take(&mut self.r#main_entity_of_page)
+	}
+	fn get_name(&self) -> &[NameProperty] {
+		self.r#name.as_slice()
+	}
+	fn take_name(&mut self) -> Vec<NameProperty> {
+		std::mem::take(&mut self.r#name)
+	}
+	fn get_potential_action(&self) -> &[PotentialActionProperty] {
+		self.r#potential_action.as_slice()
+	}
+	fn take_potential_action(&mut self) -> Vec<PotentialActionProperty> {
+		std::mem::take(&mut self.r#potential_action)
+	}
+	fn get_same_as(&self) -> &[SameAsProperty] {
+		self.r#same_as.as_slice()
+	}
+	fn take_same_as(&mut self) -> Vec<SameAsProperty> {
+		std::mem::take(&mut self.r#same_as)
+	}
+	fn get_subject_of(&self) -> &[SubjectOfProperty] {
+		self.r#subject_of.as_slice()
+	}
+	fn take_subject_of(&mut self) -> Vec<SubjectOfProperty> {
+		std::mem::take(&mut self.r#subject_of)
+	}
+	fn get_url(&self) -> &[UrlProperty] {
+		self.r#url.as_slice()
+	}
+	fn take_url(&mut self) -> Vec<UrlProperty> {
+		std::mem::take(&mut self.r#url)
+	}
 }
 #[cfg(feature = "serde")]
 mod serde {
@@ -36,28 +152,118 @@ mod serde {
 			S: Serializer,
 		{
 			let len: usize = [
+				!Vec::is_empty(&self.r#number_of_employees) as usize,
+				!Vec::is_empty(&self.r#yearly_revenue) as usize,
+				!Vec::is_empty(&self.r#years_in_operation) as usize,
+				!Vec::is_empty(&self.r#audience_type) as usize,
+				!Vec::is_empty(&self.r#geographic_area) as usize,
 				!Vec::is_empty(&self.r#additional_type) as usize,
 				!Vec::is_empty(&self.r#alternate_name) as usize,
-				!Vec::is_empty(&self.r#audience_type) as usize,
 				!Vec::is_empty(&self.r#description) as usize,
 				!Vec::is_empty(&self.r#disambiguating_description) as usize,
-				!Vec::is_empty(&self.r#geographic_area) as usize,
 				!Vec::is_empty(&self.r#identifier) as usize,
 				!Vec::is_empty(&self.r#image) as usize,
 				!Vec::is_empty(&self.r#main_entity_of_page) as usize,
 				!Vec::is_empty(&self.r#name) as usize,
-				!Vec::is_empty(&self.r#number_of_employees) as usize,
 				!Vec::is_empty(&self.r#potential_action) as usize,
 				!Vec::is_empty(&self.r#same_as) as usize,
 				!Vec::is_empty(&self.r#subject_of) as usize,
 				!Vec::is_empty(&self.r#url) as usize,
-				!Vec::is_empty(&self.r#yearly_revenue) as usize,
-				!Vec::is_empty(&self.r#years_in_operation) as usize,
 			]
 			.iter()
 			.sum();
 			let mut serialize_struct =
 				Serializer::serialize_struct(serializer, "BusinessAudience", len)?;
+			if !Vec::is_empty(&self.r#number_of_employees) {
+				serialize_struct.serialize_field("numberOfEmployees", {
+					struct SerializeWith<'a>(&'a Vec<NumberOfEmployeesProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#number_of_employees)
+				})?;
+			} else {
+				serialize_struct.skip_field("numberOfEmployees")?;
+			}
+			if !Vec::is_empty(&self.r#yearly_revenue) {
+				serialize_struct.serialize_field("yearlyRevenue", {
+					struct SerializeWith<'a>(&'a Vec<YearlyRevenueProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#yearly_revenue)
+				})?;
+			} else {
+				serialize_struct.skip_field("yearlyRevenue")?;
+			}
+			if !Vec::is_empty(&self.r#years_in_operation) {
+				serialize_struct.serialize_field("yearsInOperation", {
+					struct SerializeWith<'a>(&'a Vec<YearsInOperationProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#years_in_operation)
+				})?;
+			} else {
+				serialize_struct.skip_field("yearsInOperation")?;
+			}
+			if !Vec::is_empty(&self.r#audience_type) {
+				serialize_struct.serialize_field("audienceType", {
+					struct SerializeWith<'a>(&'a Vec<AudienceTypeProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#audience_type)
+				})?;
+			} else {
+				serialize_struct.skip_field("audienceType")?;
+			}
+			if !Vec::is_empty(&self.r#geographic_area) {
+				serialize_struct.serialize_field("geographicArea", {
+					struct SerializeWith<'a>(&'a Vec<GeographicAreaProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#geographic_area)
+				})?;
+			} else {
+				serialize_struct.skip_field("geographicArea")?;
+			}
 			if !Vec::is_empty(&self.r#additional_type) {
 				serialize_struct.serialize_field("additionalType", {
 					struct SerializeWith<'a>(&'a Vec<AdditionalTypeProperty>);
@@ -94,24 +300,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("alternateName")?;
 			}
-			if !Vec::is_empty(&self.r#audience_type) {
-				serialize_struct.serialize_field("audienceType", {
-					struct SerializeWith<'a>(&'a Vec<AudienceTypeProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#audience_type)
-				})?;
-			} else {
-				serialize_struct.skip_field("audienceType")?;
-			}
 			if !Vec::is_empty(&self.r#description) {
 				serialize_struct.serialize_field("description", {
 					struct SerializeWith<'a>(&'a Vec<DescriptionProperty>);
@@ -147,24 +335,6 @@ mod serde {
 				})?;
 			} else {
 				serialize_struct.skip_field("disambiguatingDescription")?;
-			}
-			if !Vec::is_empty(&self.r#geographic_area) {
-				serialize_struct.serialize_field("geographicArea", {
-					struct SerializeWith<'a>(&'a Vec<GeographicAreaProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#geographic_area)
-				})?;
-			} else {
-				serialize_struct.skip_field("geographicArea")?;
 			}
 			if !Vec::is_empty(&self.r#identifier) {
 				serialize_struct.serialize_field("identifier", {
@@ -238,24 +408,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("name")?;
 			}
-			if !Vec::is_empty(&self.r#number_of_employees) {
-				serialize_struct.serialize_field("numberOfEmployees", {
-					struct SerializeWith<'a>(&'a Vec<NumberOfEmployeesProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#number_of_employees)
-				})?;
-			} else {
-				serialize_struct.skip_field("numberOfEmployees")?;
-			}
 			if !Vec::is_empty(&self.r#potential_action) {
 				serialize_struct.serialize_field("potentialAction", {
 					struct SerializeWith<'a>(&'a Vec<PotentialActionProperty>);
@@ -328,42 +480,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("url")?;
 			}
-			if !Vec::is_empty(&self.r#yearly_revenue) {
-				serialize_struct.serialize_field("yearlyRevenue", {
-					struct SerializeWith<'a>(&'a Vec<YearlyRevenueProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#yearly_revenue)
-				})?;
-			} else {
-				serialize_struct.skip_field("yearlyRevenue")?;
-			}
-			if !Vec::is_empty(&self.r#years_in_operation) {
-				serialize_struct.serialize_field("yearsInOperation", {
-					struct SerializeWith<'a>(&'a Vec<YearsInOperationProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#years_in_operation)
-				})?;
-			} else {
-				serialize_struct.skip_field("yearsInOperation")?;
-			}
 			serialize_struct.end()
 		}
 	}
@@ -373,23 +489,23 @@ mod serde {
 			D: Deserializer<'de>,
 		{
 			enum Field {
+				NumberOfEmployees,
+				YearlyRevenue,
+				YearsInOperation,
+				AudienceType,
+				GeographicArea,
 				AdditionalType,
 				AlternateName,
-				AudienceType,
 				Description,
 				DisambiguatingDescription,
-				GeographicArea,
 				Identifier,
 				Image,
 				MainEntityOfPage,
 				Name,
-				NumberOfEmployees,
 				PotentialAction,
 				SameAs,
 				SubjectOf,
 				Url,
-				YearlyRevenue,
-				YearsInOperation,
 				Ignore,
 			}
 			struct FieldVisitor;
@@ -403,23 +519,23 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
+						"numberOfEmployees" => Ok(Field::NumberOfEmployees),
+						"yearlyRevenue" => Ok(Field::YearlyRevenue),
+						"yearsInOperation" => Ok(Field::YearsInOperation),
+						"audienceType" => Ok(Field::AudienceType),
+						"geographicArea" => Ok(Field::GeographicArea),
 						"additionalType" => Ok(Field::AdditionalType),
 						"alternateName" => Ok(Field::AlternateName),
-						"audienceType" => Ok(Field::AudienceType),
 						"description" => Ok(Field::Description),
 						"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
-						"geographicArea" => Ok(Field::GeographicArea),
 						"identifier" => Ok(Field::Identifier),
 						"image" => Ok(Field::Image),
 						"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
 						"name" => Ok(Field::Name),
-						"numberOfEmployees" => Ok(Field::NumberOfEmployees),
 						"potentialAction" => Ok(Field::PotentialAction),
 						"sameAs" => Ok(Field::SameAs),
 						"subjectOf" => Ok(Field::SubjectOf),
 						"url" => Ok(Field::Url),
-						"yearlyRevenue" => Ok(Field::YearlyRevenue),
-						"yearsInOperation" => Ok(Field::YearsInOperation),
 						_ => Ok(Field::Ignore),
 					}
 				}
@@ -428,23 +544,23 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
+						b"numberOfEmployees" => Ok(Field::NumberOfEmployees),
+						b"yearlyRevenue" => Ok(Field::YearlyRevenue),
+						b"yearsInOperation" => Ok(Field::YearsInOperation),
+						b"audienceType" => Ok(Field::AudienceType),
+						b"geographicArea" => Ok(Field::GeographicArea),
 						b"additionalType" => Ok(Field::AdditionalType),
 						b"alternateName" => Ok(Field::AlternateName),
-						b"audienceType" => Ok(Field::AudienceType),
 						b"description" => Ok(Field::Description),
 						b"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
-						b"geographicArea" => Ok(Field::GeographicArea),
 						b"identifier" => Ok(Field::Identifier),
 						b"image" => Ok(Field::Image),
 						b"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
 						b"name" => Ok(Field::Name),
-						b"numberOfEmployees" => Ok(Field::NumberOfEmployees),
 						b"potentialAction" => Ok(Field::PotentialAction),
 						b"sameAs" => Ok(Field::SameAs),
 						b"subjectOf" => Ok(Field::SubjectOf),
 						b"url" => Ok(Field::Url),
-						b"yearlyRevenue" => Ok(Field::YearlyRevenue),
-						b"yearsInOperation" => Ok(Field::YearsInOperation),
 						_ => Ok(Field::Ignore),
 					}
 				}
@@ -467,25 +583,155 @@ mod serde {
 				where
 					A: de::MapAccess<'de>,
 				{
+					let mut r#number_of_employees_property = None;
+					let mut r#yearly_revenue_property = None;
+					let mut r#years_in_operation_property = None;
+					let mut r#audience_type_property = None;
+					let mut r#geographic_area_property = None;
 					let mut r#additional_type_property = None;
 					let mut r#alternate_name_property = None;
-					let mut r#audience_type_property = None;
 					let mut r#description_property = None;
 					let mut r#disambiguating_description_property = None;
-					let mut r#geographic_area_property = None;
 					let mut r#identifier_property = None;
 					let mut r#image_property = None;
 					let mut r#main_entity_of_page_property = None;
 					let mut r#name_property = None;
-					let mut r#number_of_employees_property = None;
 					let mut r#potential_action_property = None;
 					let mut r#same_as_property = None;
 					let mut r#subject_of_property = None;
 					let mut r#url_property = None;
-					let mut r#yearly_revenue_property = None;
-					let mut r#years_in_operation_property = None;
 					while let Some(key) = map.next_key::<Field>()? {
 						match key {
+							Field::NumberOfEmployees => {
+								if r#number_of_employees_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"numberOfEmployees",
+									));
+								}
+								r#number_of_employees_property = Some({
+									struct DeserializeWith(Vec<NumberOfEmployeesProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::YearlyRevenue => {
+								if r#yearly_revenue_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"yearlyRevenue",
+									));
+								}
+								r#yearly_revenue_property = Some({
+									struct DeserializeWith(Vec<YearlyRevenueProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::YearsInOperation => {
+								if r#years_in_operation_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"yearsInOperation",
+									));
+								}
+								r#years_in_operation_property = Some({
+									struct DeserializeWith(Vec<YearsInOperationProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::AudienceType => {
+								if r#audience_type_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"audienceType",
+									));
+								}
+								r#audience_type_property = Some({
+									struct DeserializeWith(Vec<AudienceTypeProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::GeographicArea => {
+								if r#geographic_area_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"geographicArea",
+									));
+								}
+								r#geographic_area_property = Some({
+									struct DeserializeWith(Vec<GeographicAreaProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
 							Field::AdditionalType => {
 								if r#additional_type_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -538,32 +784,6 @@ mod serde {
 									}
 								});
 							}
-							Field::AudienceType => {
-								if r#audience_type_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"audienceType",
-									));
-								}
-								r#audience_type_property = Some({
-									struct DeserializeWith(Vec<AudienceTypeProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
 							Field::Description => {
 								if r#description_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -598,32 +818,6 @@ mod serde {
 								}
 								r#disambiguating_description_property = Some({
 									struct DeserializeWith(Vec<DisambiguatingDescriptionProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::GeographicArea => {
-								if r#geographic_area_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"geographicArea",
-									));
-								}
-								r#geographic_area_property = Some({
-									struct DeserializeWith(Vec<GeographicAreaProperty>);
 									impl<'de> Deserialize<'de> for DeserializeWith {
 										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
 										where
@@ -742,32 +936,6 @@ mod serde {
 									}
 								});
 							}
-							Field::NumberOfEmployees => {
-								if r#number_of_employees_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"numberOfEmployees",
-									));
-								}
-								r#number_of_employees_property = Some({
-									struct DeserializeWith(Vec<NumberOfEmployeesProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
 							Field::PotentialAction => {
 								if r#potential_action_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -868,103 +1036,51 @@ mod serde {
 									}
 								});
 							}
-							Field::YearlyRevenue => {
-								if r#yearly_revenue_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"yearlyRevenue",
-									));
-								}
-								r#yearly_revenue_property = Some({
-									struct DeserializeWith(Vec<YearlyRevenueProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::YearsInOperation => {
-								if r#years_in_operation_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"yearsInOperation",
-									));
-								}
-								r#years_in_operation_property = Some({
-									struct DeserializeWith(Vec<YearsInOperationProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
 							_ => {
 								let _ = map.next_value::<de::IgnoredAny>()?;
 							}
 						}
 					}
 					Ok(BusinessAudience {
+						r#number_of_employees: r#number_of_employees_property.unwrap_or_default(),
+						r#yearly_revenue: r#yearly_revenue_property.unwrap_or_default(),
+						r#years_in_operation: r#years_in_operation_property.unwrap_or_default(),
+						r#audience_type: r#audience_type_property.unwrap_or_default(),
+						r#geographic_area: r#geographic_area_property.unwrap_or_default(),
 						r#additional_type: r#additional_type_property.unwrap_or_default(),
 						r#alternate_name: r#alternate_name_property.unwrap_or_default(),
-						r#audience_type: r#audience_type_property.unwrap_or_default(),
 						r#description: r#description_property.unwrap_or_default(),
 						r#disambiguating_description: r#disambiguating_description_property
 							.unwrap_or_default(),
-						r#geographic_area: r#geographic_area_property.unwrap_or_default(),
 						r#identifier: r#identifier_property.unwrap_or_default(),
 						r#image: r#image_property.unwrap_or_default(),
 						r#main_entity_of_page: r#main_entity_of_page_property.unwrap_or_default(),
 						r#name: r#name_property.unwrap_or_default(),
-						r#number_of_employees: r#number_of_employees_property.unwrap_or_default(),
 						r#potential_action: r#potential_action_property.unwrap_or_default(),
 						r#same_as: r#same_as_property.unwrap_or_default(),
 						r#subject_of: r#subject_of_property.unwrap_or_default(),
 						r#url: r#url_property.unwrap_or_default(),
-						r#yearly_revenue: r#yearly_revenue_property.unwrap_or_default(),
-						r#years_in_operation: r#years_in_operation_property.unwrap_or_default(),
 					})
 				}
 			}
 			const FIELDS: &[&str] = &[
+				"numberOfEmployees",
+				"yearlyRevenue",
+				"yearsInOperation",
+				"audienceType",
+				"geographicArea",
 				"additionalType",
 				"alternateName",
-				"audienceType",
 				"description",
 				"disambiguatingDescription",
-				"geographicArea",
 				"identifier",
 				"image",
 				"mainEntityOfPage",
 				"name",
-				"numberOfEmployees",
 				"potentialAction",
 				"sameAs",
 				"subjectOf",
 				"url",
-				"yearlyRevenue",
-				"yearsInOperation",
 			];
 			deserializer.deserialize_struct("BusinessAudience", FIELDS, ClassVisitor)
 		}

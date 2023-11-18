@@ -3,22 +3,130 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct CategoryCode {
+	pub r#code_value: Vec<CodeValueProperty>,
+	pub r#in_code_set: Vec<InCodeSetProperty>,
+	pub r#in_defined_term_set: Vec<InDefinedTermSetProperty>,
+	pub r#term_code: Vec<TermCodeProperty>,
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
 	pub r#alternate_name: Vec<AlternateNameProperty>,
-	pub r#code_value: Vec<CodeValueProperty>,
 	pub r#description: Vec<DescriptionProperty>,
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
 	pub r#identifier: Vec<IdentifierProperty>,
 	pub r#image: Vec<ImageProperty>,
-	pub r#in_code_set: Vec<InCodeSetProperty>,
-	pub r#in_defined_term_set: Vec<InDefinedTermSetProperty>,
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
 	pub r#name: Vec<NameProperty>,
 	pub r#potential_action: Vec<PotentialActionProperty>,
 	pub r#same_as: Vec<SameAsProperty>,
 	pub r#subject_of: Vec<SubjectOfProperty>,
-	pub r#term_code: Vec<TermCodeProperty>,
 	pub r#url: Vec<UrlProperty>,
+}
+pub trait CategoryCodeTrait {
+	fn get_code_value(&self) -> &[CodeValueProperty];
+	fn take_code_value(&mut self) -> Vec<CodeValueProperty>;
+	fn get_in_code_set(&self) -> &[InCodeSetProperty];
+	fn take_in_code_set(&mut self) -> Vec<InCodeSetProperty>;
+}
+impl CategoryCodeTrait for CategoryCode {
+	fn get_code_value(&self) -> &[CodeValueProperty] {
+		self.r#code_value.as_slice()
+	}
+	fn take_code_value(&mut self) -> Vec<CodeValueProperty> {
+		std::mem::take(&mut self.r#code_value)
+	}
+	fn get_in_code_set(&self) -> &[InCodeSetProperty] {
+		self.r#in_code_set.as_slice()
+	}
+	fn take_in_code_set(&mut self) -> Vec<InCodeSetProperty> {
+		std::mem::take(&mut self.r#in_code_set)
+	}
+}
+impl DefinedTermTrait for CategoryCode {
+	fn get_in_defined_term_set(&self) -> &[InDefinedTermSetProperty] {
+		self.r#in_defined_term_set.as_slice()
+	}
+	fn take_in_defined_term_set(&mut self) -> Vec<InDefinedTermSetProperty> {
+		std::mem::take(&mut self.r#in_defined_term_set)
+	}
+	fn get_term_code(&self) -> &[TermCodeProperty] {
+		self.r#term_code.as_slice()
+	}
+	fn take_term_code(&mut self) -> Vec<TermCodeProperty> {
+		std::mem::take(&mut self.r#term_code)
+	}
+}
+impl ThingTrait for CategoryCode {
+	fn get_additional_type(&self) -> &[AdditionalTypeProperty] {
+		self.r#additional_type.as_slice()
+	}
+	fn take_additional_type(&mut self) -> Vec<AdditionalTypeProperty> {
+		std::mem::take(&mut self.r#additional_type)
+	}
+	fn get_alternate_name(&self) -> &[AlternateNameProperty] {
+		self.r#alternate_name.as_slice()
+	}
+	fn take_alternate_name(&mut self) -> Vec<AlternateNameProperty> {
+		std::mem::take(&mut self.r#alternate_name)
+	}
+	fn get_description(&self) -> &[DescriptionProperty] {
+		self.r#description.as_slice()
+	}
+	fn take_description(&mut self) -> Vec<DescriptionProperty> {
+		std::mem::take(&mut self.r#description)
+	}
+	fn get_disambiguating_description(&self) -> &[DisambiguatingDescriptionProperty] {
+		self.r#disambiguating_description.as_slice()
+	}
+	fn take_disambiguating_description(&mut self) -> Vec<DisambiguatingDescriptionProperty> {
+		std::mem::take(&mut self.r#disambiguating_description)
+	}
+	fn get_identifier(&self) -> &[IdentifierProperty] {
+		self.r#identifier.as_slice()
+	}
+	fn take_identifier(&mut self) -> Vec<IdentifierProperty> {
+		std::mem::take(&mut self.r#identifier)
+	}
+	fn get_image(&self) -> &[ImageProperty] {
+		self.r#image.as_slice()
+	}
+	fn take_image(&mut self) -> Vec<ImageProperty> {
+		std::mem::take(&mut self.r#image)
+	}
+	fn get_main_entity_of_page(&self) -> &[MainEntityOfPageProperty] {
+		self.r#main_entity_of_page.as_slice()
+	}
+	fn take_main_entity_of_page(&mut self) -> Vec<MainEntityOfPageProperty> {
+		std::mem::take(&mut self.r#main_entity_of_page)
+	}
+	fn get_name(&self) -> &[NameProperty] {
+		self.r#name.as_slice()
+	}
+	fn take_name(&mut self) -> Vec<NameProperty> {
+		std::mem::take(&mut self.r#name)
+	}
+	fn get_potential_action(&self) -> &[PotentialActionProperty] {
+		self.r#potential_action.as_slice()
+	}
+	fn take_potential_action(&mut self) -> Vec<PotentialActionProperty> {
+		std::mem::take(&mut self.r#potential_action)
+	}
+	fn get_same_as(&self) -> &[SameAsProperty] {
+		self.r#same_as.as_slice()
+	}
+	fn take_same_as(&mut self) -> Vec<SameAsProperty> {
+		std::mem::take(&mut self.r#same_as)
+	}
+	fn get_subject_of(&self) -> &[SubjectOfProperty] {
+		self.r#subject_of.as_slice()
+	}
+	fn take_subject_of(&mut self) -> Vec<SubjectOfProperty> {
+		std::mem::take(&mut self.r#subject_of)
+	}
+	fn get_url(&self) -> &[UrlProperty] {
+		self.r#url.as_slice()
+	}
+	fn take_url(&mut self) -> Vec<UrlProperty> {
+		std::mem::take(&mut self.r#url)
+	}
 }
 #[cfg(feature = "serde")]
 mod serde {
@@ -35,27 +143,99 @@ mod serde {
 			S: Serializer,
 		{
 			let len: usize = [
+				!Vec::is_empty(&self.r#code_value) as usize,
+				!Vec::is_empty(&self.r#in_code_set) as usize,
+				!Vec::is_empty(&self.r#in_defined_term_set) as usize,
+				!Vec::is_empty(&self.r#term_code) as usize,
 				!Vec::is_empty(&self.r#additional_type) as usize,
 				!Vec::is_empty(&self.r#alternate_name) as usize,
-				!Vec::is_empty(&self.r#code_value) as usize,
 				!Vec::is_empty(&self.r#description) as usize,
 				!Vec::is_empty(&self.r#disambiguating_description) as usize,
 				!Vec::is_empty(&self.r#identifier) as usize,
 				!Vec::is_empty(&self.r#image) as usize,
-				!Vec::is_empty(&self.r#in_code_set) as usize,
-				!Vec::is_empty(&self.r#in_defined_term_set) as usize,
 				!Vec::is_empty(&self.r#main_entity_of_page) as usize,
 				!Vec::is_empty(&self.r#name) as usize,
 				!Vec::is_empty(&self.r#potential_action) as usize,
 				!Vec::is_empty(&self.r#same_as) as usize,
 				!Vec::is_empty(&self.r#subject_of) as usize,
-				!Vec::is_empty(&self.r#term_code) as usize,
 				!Vec::is_empty(&self.r#url) as usize,
 			]
 			.iter()
 			.sum();
 			let mut serialize_struct =
 				Serializer::serialize_struct(serializer, "CategoryCode", len)?;
+			if !Vec::is_empty(&self.r#code_value) {
+				serialize_struct.serialize_field("codeValue", {
+					struct SerializeWith<'a>(&'a Vec<CodeValueProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#code_value)
+				})?;
+			} else {
+				serialize_struct.skip_field("codeValue")?;
+			}
+			if !Vec::is_empty(&self.r#in_code_set) {
+				serialize_struct.serialize_field("inCodeSet", {
+					struct SerializeWith<'a>(&'a Vec<InCodeSetProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#in_code_set)
+				})?;
+			} else {
+				serialize_struct.skip_field("inCodeSet")?;
+			}
+			if !Vec::is_empty(&self.r#in_defined_term_set) {
+				serialize_struct.serialize_field("inDefinedTermSet", {
+					struct SerializeWith<'a>(&'a Vec<InDefinedTermSetProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#in_defined_term_set)
+				})?;
+			} else {
+				serialize_struct.skip_field("inDefinedTermSet")?;
+			}
+			if !Vec::is_empty(&self.r#term_code) {
+				serialize_struct.serialize_field("termCode", {
+					struct SerializeWith<'a>(&'a Vec<TermCodeProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#term_code)
+				})?;
+			} else {
+				serialize_struct.skip_field("termCode")?;
+			}
 			if !Vec::is_empty(&self.r#additional_type) {
 				serialize_struct.serialize_field("additionalType", {
 					struct SerializeWith<'a>(&'a Vec<AdditionalTypeProperty>);
@@ -91,24 +271,6 @@ mod serde {
 				})?;
 			} else {
 				serialize_struct.skip_field("alternateName")?;
-			}
-			if !Vec::is_empty(&self.r#code_value) {
-				serialize_struct.serialize_field("codeValue", {
-					struct SerializeWith<'a>(&'a Vec<CodeValueProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#code_value)
-				})?;
-			} else {
-				serialize_struct.skip_field("codeValue")?;
 			}
 			if !Vec::is_empty(&self.r#description) {
 				serialize_struct.serialize_field("description", {
@@ -181,42 +343,6 @@ mod serde {
 				})?;
 			} else {
 				serialize_struct.skip_field("image")?;
-			}
-			if !Vec::is_empty(&self.r#in_code_set) {
-				serialize_struct.serialize_field("inCodeSet", {
-					struct SerializeWith<'a>(&'a Vec<InCodeSetProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#in_code_set)
-				})?;
-			} else {
-				serialize_struct.skip_field("inCodeSet")?;
-			}
-			if !Vec::is_empty(&self.r#in_defined_term_set) {
-				serialize_struct.serialize_field("inDefinedTermSet", {
-					struct SerializeWith<'a>(&'a Vec<InDefinedTermSetProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#in_defined_term_set)
-				})?;
-			} else {
-				serialize_struct.skip_field("inDefinedTermSet")?;
 			}
 			if !Vec::is_empty(&self.r#main_entity_of_page) {
 				serialize_struct.serialize_field("mainEntityOfPage", {
@@ -308,24 +434,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("subjectOf")?;
 			}
-			if !Vec::is_empty(&self.r#term_code) {
-				serialize_struct.serialize_field("termCode", {
-					struct SerializeWith<'a>(&'a Vec<TermCodeProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#term_code)
-				})?;
-			} else {
-				serialize_struct.skip_field("termCode")?;
-			}
 			if !Vec::is_empty(&self.r#url) {
 				serialize_struct.serialize_field("url", {
 					struct SerializeWith<'a>(&'a Vec<UrlProperty>);
@@ -353,21 +461,21 @@ mod serde {
 			D: Deserializer<'de>,
 		{
 			enum Field {
+				CodeValue,
+				InCodeSet,
+				InDefinedTermSet,
+				TermCode,
 				AdditionalType,
 				AlternateName,
-				CodeValue,
 				Description,
 				DisambiguatingDescription,
 				Identifier,
 				Image,
-				InCodeSet,
-				InDefinedTermSet,
 				MainEntityOfPage,
 				Name,
 				PotentialAction,
 				SameAs,
 				SubjectOf,
-				TermCode,
 				Url,
 				Ignore,
 			}
@@ -382,21 +490,21 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
+						"codeValue" => Ok(Field::CodeValue),
+						"inCodeSet" => Ok(Field::InCodeSet),
+						"inDefinedTermSet" => Ok(Field::InDefinedTermSet),
+						"termCode" => Ok(Field::TermCode),
 						"additionalType" => Ok(Field::AdditionalType),
 						"alternateName" => Ok(Field::AlternateName),
-						"codeValue" => Ok(Field::CodeValue),
 						"description" => Ok(Field::Description),
 						"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
 						"identifier" => Ok(Field::Identifier),
 						"image" => Ok(Field::Image),
-						"inCodeSet" => Ok(Field::InCodeSet),
-						"inDefinedTermSet" => Ok(Field::InDefinedTermSet),
 						"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
 						"name" => Ok(Field::Name),
 						"potentialAction" => Ok(Field::PotentialAction),
 						"sameAs" => Ok(Field::SameAs),
 						"subjectOf" => Ok(Field::SubjectOf),
-						"termCode" => Ok(Field::TermCode),
 						"url" => Ok(Field::Url),
 						_ => Ok(Field::Ignore),
 					}
@@ -406,21 +514,21 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
+						b"codeValue" => Ok(Field::CodeValue),
+						b"inCodeSet" => Ok(Field::InCodeSet),
+						b"inDefinedTermSet" => Ok(Field::InDefinedTermSet),
+						b"termCode" => Ok(Field::TermCode),
 						b"additionalType" => Ok(Field::AdditionalType),
 						b"alternateName" => Ok(Field::AlternateName),
-						b"codeValue" => Ok(Field::CodeValue),
 						b"description" => Ok(Field::Description),
 						b"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
 						b"identifier" => Ok(Field::Identifier),
 						b"image" => Ok(Field::Image),
-						b"inCodeSet" => Ok(Field::InCodeSet),
-						b"inDefinedTermSet" => Ok(Field::InDefinedTermSet),
 						b"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
 						b"name" => Ok(Field::Name),
 						b"potentialAction" => Ok(Field::PotentialAction),
 						b"sameAs" => Ok(Field::SameAs),
 						b"subjectOf" => Ok(Field::SubjectOf),
-						b"termCode" => Ok(Field::TermCode),
 						b"url" => Ok(Field::Url),
 						_ => Ok(Field::Ignore),
 					}
@@ -444,24 +552,128 @@ mod serde {
 				where
 					A: de::MapAccess<'de>,
 				{
+					let mut r#code_value_property = None;
+					let mut r#in_code_set_property = None;
+					let mut r#in_defined_term_set_property = None;
+					let mut r#term_code_property = None;
 					let mut r#additional_type_property = None;
 					let mut r#alternate_name_property = None;
-					let mut r#code_value_property = None;
 					let mut r#description_property = None;
 					let mut r#disambiguating_description_property = None;
 					let mut r#identifier_property = None;
 					let mut r#image_property = None;
-					let mut r#in_code_set_property = None;
-					let mut r#in_defined_term_set_property = None;
 					let mut r#main_entity_of_page_property = None;
 					let mut r#name_property = None;
 					let mut r#potential_action_property = None;
 					let mut r#same_as_property = None;
 					let mut r#subject_of_property = None;
-					let mut r#term_code_property = None;
 					let mut r#url_property = None;
 					while let Some(key) = map.next_key::<Field>()? {
 						match key {
+							Field::CodeValue => {
+								if r#code_value_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"codeValue",
+									));
+								}
+								r#code_value_property = Some({
+									struct DeserializeWith(Vec<CodeValueProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::InCodeSet => {
+								if r#in_code_set_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"inCodeSet",
+									));
+								}
+								r#in_code_set_property = Some({
+									struct DeserializeWith(Vec<InCodeSetProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::InDefinedTermSet => {
+								if r#in_defined_term_set_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"inDefinedTermSet",
+									));
+								}
+								r#in_defined_term_set_property = Some({
+									struct DeserializeWith(Vec<InDefinedTermSetProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::TermCode => {
+								if r#term_code_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"termCode",
+									));
+								}
+								r#term_code_property = Some({
+									struct DeserializeWith(Vec<TermCodeProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
 							Field::AdditionalType => {
 								if r#additional_type_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -496,32 +708,6 @@ mod serde {
 								}
 								r#alternate_name_property = Some({
 									struct DeserializeWith(Vec<AlternateNameProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::CodeValue => {
-								if r#code_value_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"codeValue",
-									));
-								}
-								r#code_value_property = Some({
-									struct DeserializeWith(Vec<CodeValueProperty>);
 									impl<'de> Deserialize<'de> for DeserializeWith {
 										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
 										where
@@ -624,58 +810,6 @@ mod serde {
 								}
 								r#image_property = Some({
 									struct DeserializeWith(Vec<ImageProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::InCodeSet => {
-								if r#in_code_set_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"inCodeSet",
-									));
-								}
-								r#in_code_set_property = Some({
-									struct DeserializeWith(Vec<InCodeSetProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::InDefinedTermSet => {
-								if r#in_defined_term_set_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"inDefinedTermSet",
-									));
-								}
-								r#in_defined_term_set_property = Some({
-									struct DeserializeWith(Vec<InDefinedTermSetProperty>);
 									impl<'de> Deserialize<'de> for DeserializeWith {
 										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
 										where
@@ -820,32 +954,6 @@ mod serde {
 									}
 								});
 							}
-							Field::TermCode => {
-								if r#term_code_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"termCode",
-									));
-								}
-								r#term_code_property = Some({
-									struct DeserializeWith(Vec<TermCodeProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
 							Field::Url => {
 								if r#url_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("url"));
@@ -876,42 +984,42 @@ mod serde {
 						}
 					}
 					Ok(CategoryCode {
+						r#code_value: r#code_value_property.unwrap_or_default(),
+						r#in_code_set: r#in_code_set_property.unwrap_or_default(),
+						r#in_defined_term_set: r#in_defined_term_set_property.unwrap_or_default(),
+						r#term_code: r#term_code_property.unwrap_or_default(),
 						r#additional_type: r#additional_type_property.unwrap_or_default(),
 						r#alternate_name: r#alternate_name_property.unwrap_or_default(),
-						r#code_value: r#code_value_property.unwrap_or_default(),
 						r#description: r#description_property.unwrap_or_default(),
 						r#disambiguating_description: r#disambiguating_description_property
 							.unwrap_or_default(),
 						r#identifier: r#identifier_property.unwrap_or_default(),
 						r#image: r#image_property.unwrap_or_default(),
-						r#in_code_set: r#in_code_set_property.unwrap_or_default(),
-						r#in_defined_term_set: r#in_defined_term_set_property.unwrap_or_default(),
 						r#main_entity_of_page: r#main_entity_of_page_property.unwrap_or_default(),
 						r#name: r#name_property.unwrap_or_default(),
 						r#potential_action: r#potential_action_property.unwrap_or_default(),
 						r#same_as: r#same_as_property.unwrap_or_default(),
 						r#subject_of: r#subject_of_property.unwrap_or_default(),
-						r#term_code: r#term_code_property.unwrap_or_default(),
 						r#url: r#url_property.unwrap_or_default(),
 					})
 				}
 			}
 			const FIELDS: &[&str] = &[
+				"codeValue",
+				"inCodeSet",
+				"inDefinedTermSet",
+				"termCode",
 				"additionalType",
 				"alternateName",
-				"codeValue",
 				"description",
 				"disambiguatingDescription",
 				"identifier",
 				"image",
-				"inCodeSet",
-				"inDefinedTermSet",
 				"mainEntityOfPage",
 				"name",
 				"potentialAction",
 				"sameAs",
 				"subjectOf",
-				"termCode",
 				"url",
 			];
 			deserializer.deserialize_struct("CategoryCode", FIELDS, ClassVisitor)

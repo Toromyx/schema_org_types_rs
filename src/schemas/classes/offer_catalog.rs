@@ -3,21 +3,117 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct OfferCatalog {
+	pub r#item_list_element: Vec<ItemListElementProperty>,
+	pub r#item_list_order: Vec<ItemListOrderProperty>,
+	pub r#number_of_items: Vec<NumberOfItemsProperty>,
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
 	pub r#alternate_name: Vec<AlternateNameProperty>,
 	pub r#description: Vec<DescriptionProperty>,
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
 	pub r#identifier: Vec<IdentifierProperty>,
 	pub r#image: Vec<ImageProperty>,
-	pub r#item_list_element: Vec<ItemListElementProperty>,
-	pub r#item_list_order: Vec<ItemListOrderProperty>,
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
 	pub r#name: Vec<NameProperty>,
-	pub r#number_of_items: Vec<NumberOfItemsProperty>,
 	pub r#potential_action: Vec<PotentialActionProperty>,
 	pub r#same_as: Vec<SameAsProperty>,
 	pub r#subject_of: Vec<SubjectOfProperty>,
 	pub r#url: Vec<UrlProperty>,
+}
+pub trait OfferCatalogTrait {}
+impl OfferCatalogTrait for OfferCatalog {}
+impl ItemListTrait for OfferCatalog {
+	fn get_item_list_element(&self) -> &[ItemListElementProperty] {
+		self.r#item_list_element.as_slice()
+	}
+	fn take_item_list_element(&mut self) -> Vec<ItemListElementProperty> {
+		std::mem::take(&mut self.r#item_list_element)
+	}
+	fn get_item_list_order(&self) -> &[ItemListOrderProperty] {
+		self.r#item_list_order.as_slice()
+	}
+	fn take_item_list_order(&mut self) -> Vec<ItemListOrderProperty> {
+		std::mem::take(&mut self.r#item_list_order)
+	}
+	fn get_number_of_items(&self) -> &[NumberOfItemsProperty] {
+		self.r#number_of_items.as_slice()
+	}
+	fn take_number_of_items(&mut self) -> Vec<NumberOfItemsProperty> {
+		std::mem::take(&mut self.r#number_of_items)
+	}
+}
+impl ThingTrait for OfferCatalog {
+	fn get_additional_type(&self) -> &[AdditionalTypeProperty] {
+		self.r#additional_type.as_slice()
+	}
+	fn take_additional_type(&mut self) -> Vec<AdditionalTypeProperty> {
+		std::mem::take(&mut self.r#additional_type)
+	}
+	fn get_alternate_name(&self) -> &[AlternateNameProperty] {
+		self.r#alternate_name.as_slice()
+	}
+	fn take_alternate_name(&mut self) -> Vec<AlternateNameProperty> {
+		std::mem::take(&mut self.r#alternate_name)
+	}
+	fn get_description(&self) -> &[DescriptionProperty] {
+		self.r#description.as_slice()
+	}
+	fn take_description(&mut self) -> Vec<DescriptionProperty> {
+		std::mem::take(&mut self.r#description)
+	}
+	fn get_disambiguating_description(&self) -> &[DisambiguatingDescriptionProperty] {
+		self.r#disambiguating_description.as_slice()
+	}
+	fn take_disambiguating_description(&mut self) -> Vec<DisambiguatingDescriptionProperty> {
+		std::mem::take(&mut self.r#disambiguating_description)
+	}
+	fn get_identifier(&self) -> &[IdentifierProperty] {
+		self.r#identifier.as_slice()
+	}
+	fn take_identifier(&mut self) -> Vec<IdentifierProperty> {
+		std::mem::take(&mut self.r#identifier)
+	}
+	fn get_image(&self) -> &[ImageProperty] {
+		self.r#image.as_slice()
+	}
+	fn take_image(&mut self) -> Vec<ImageProperty> {
+		std::mem::take(&mut self.r#image)
+	}
+	fn get_main_entity_of_page(&self) -> &[MainEntityOfPageProperty] {
+		self.r#main_entity_of_page.as_slice()
+	}
+	fn take_main_entity_of_page(&mut self) -> Vec<MainEntityOfPageProperty> {
+		std::mem::take(&mut self.r#main_entity_of_page)
+	}
+	fn get_name(&self) -> &[NameProperty] {
+		self.r#name.as_slice()
+	}
+	fn take_name(&mut self) -> Vec<NameProperty> {
+		std::mem::take(&mut self.r#name)
+	}
+	fn get_potential_action(&self) -> &[PotentialActionProperty] {
+		self.r#potential_action.as_slice()
+	}
+	fn take_potential_action(&mut self) -> Vec<PotentialActionProperty> {
+		std::mem::take(&mut self.r#potential_action)
+	}
+	fn get_same_as(&self) -> &[SameAsProperty] {
+		self.r#same_as.as_slice()
+	}
+	fn take_same_as(&mut self) -> Vec<SameAsProperty> {
+		std::mem::take(&mut self.r#same_as)
+	}
+	fn get_subject_of(&self) -> &[SubjectOfProperty] {
+		self.r#subject_of.as_slice()
+	}
+	fn take_subject_of(&mut self) -> Vec<SubjectOfProperty> {
+		std::mem::take(&mut self.r#subject_of)
+	}
+	fn get_url(&self) -> &[UrlProperty] {
+		self.r#url.as_slice()
+	}
+	fn take_url(&mut self) -> Vec<UrlProperty> {
+		std::mem::take(&mut self.r#url)
+	}
 }
 #[cfg(feature = "serde")]
 mod serde {
@@ -34,17 +130,17 @@ mod serde {
 			S: Serializer,
 		{
 			let len: usize = [
+				!Vec::is_empty(&self.r#item_list_element) as usize,
+				!Vec::is_empty(&self.r#item_list_order) as usize,
+				!Vec::is_empty(&self.r#number_of_items) as usize,
 				!Vec::is_empty(&self.r#additional_type) as usize,
 				!Vec::is_empty(&self.r#alternate_name) as usize,
 				!Vec::is_empty(&self.r#description) as usize,
 				!Vec::is_empty(&self.r#disambiguating_description) as usize,
 				!Vec::is_empty(&self.r#identifier) as usize,
 				!Vec::is_empty(&self.r#image) as usize,
-				!Vec::is_empty(&self.r#item_list_element) as usize,
-				!Vec::is_empty(&self.r#item_list_order) as usize,
 				!Vec::is_empty(&self.r#main_entity_of_page) as usize,
 				!Vec::is_empty(&self.r#name) as usize,
-				!Vec::is_empty(&self.r#number_of_items) as usize,
 				!Vec::is_empty(&self.r#potential_action) as usize,
 				!Vec::is_empty(&self.r#same_as) as usize,
 				!Vec::is_empty(&self.r#subject_of) as usize,
@@ -54,6 +150,60 @@ mod serde {
 			.sum();
 			let mut serialize_struct =
 				Serializer::serialize_struct(serializer, "OfferCatalog", len)?;
+			if !Vec::is_empty(&self.r#item_list_element) {
+				serialize_struct.serialize_field("itemListElement", {
+					struct SerializeWith<'a>(&'a Vec<ItemListElementProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#item_list_element)
+				})?;
+			} else {
+				serialize_struct.skip_field("itemListElement")?;
+			}
+			if !Vec::is_empty(&self.r#item_list_order) {
+				serialize_struct.serialize_field("itemListOrder", {
+					struct SerializeWith<'a>(&'a Vec<ItemListOrderProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#item_list_order)
+				})?;
+			} else {
+				serialize_struct.skip_field("itemListOrder")?;
+			}
+			if !Vec::is_empty(&self.r#number_of_items) {
+				serialize_struct.serialize_field("numberOfItems", {
+					struct SerializeWith<'a>(&'a Vec<NumberOfItemsProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#number_of_items)
+				})?;
+			} else {
+				serialize_struct.skip_field("numberOfItems")?;
+			}
 			if !Vec::is_empty(&self.r#additional_type) {
 				serialize_struct.serialize_field("additionalType", {
 					struct SerializeWith<'a>(&'a Vec<AdditionalTypeProperty>);
@@ -162,42 +312,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("image")?;
 			}
-			if !Vec::is_empty(&self.r#item_list_element) {
-				serialize_struct.serialize_field("itemListElement", {
-					struct SerializeWith<'a>(&'a Vec<ItemListElementProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#item_list_element)
-				})?;
-			} else {
-				serialize_struct.skip_field("itemListElement")?;
-			}
-			if !Vec::is_empty(&self.r#item_list_order) {
-				serialize_struct.serialize_field("itemListOrder", {
-					struct SerializeWith<'a>(&'a Vec<ItemListOrderProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#item_list_order)
-				})?;
-			} else {
-				serialize_struct.skip_field("itemListOrder")?;
-			}
 			if !Vec::is_empty(&self.r#main_entity_of_page) {
 				serialize_struct.serialize_field("mainEntityOfPage", {
 					struct SerializeWith<'a>(&'a Vec<MainEntityOfPageProperty>);
@@ -233,24 +347,6 @@ mod serde {
 				})?;
 			} else {
 				serialize_struct.skip_field("name")?;
-			}
-			if !Vec::is_empty(&self.r#number_of_items) {
-				serialize_struct.serialize_field("numberOfItems", {
-					struct SerializeWith<'a>(&'a Vec<NumberOfItemsProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#number_of_items)
-				})?;
-			} else {
-				serialize_struct.skip_field("numberOfItems")?;
 			}
 			if !Vec::is_empty(&self.r#potential_action) {
 				serialize_struct.serialize_field("potentialAction", {
@@ -333,17 +429,17 @@ mod serde {
 			D: Deserializer<'de>,
 		{
 			enum Field {
+				ItemListElement,
+				ItemListOrder,
+				NumberOfItems,
 				AdditionalType,
 				AlternateName,
 				Description,
 				DisambiguatingDescription,
 				Identifier,
 				Image,
-				ItemListElement,
-				ItemListOrder,
 				MainEntityOfPage,
 				Name,
-				NumberOfItems,
 				PotentialAction,
 				SameAs,
 				SubjectOf,
@@ -361,17 +457,17 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
+						"itemListElement" => Ok(Field::ItemListElement),
+						"itemListOrder" => Ok(Field::ItemListOrder),
+						"numberOfItems" => Ok(Field::NumberOfItems),
 						"additionalType" => Ok(Field::AdditionalType),
 						"alternateName" => Ok(Field::AlternateName),
 						"description" => Ok(Field::Description),
 						"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
 						"identifier" => Ok(Field::Identifier),
 						"image" => Ok(Field::Image),
-						"itemListElement" => Ok(Field::ItemListElement),
-						"itemListOrder" => Ok(Field::ItemListOrder),
 						"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
 						"name" => Ok(Field::Name),
-						"numberOfItems" => Ok(Field::NumberOfItems),
 						"potentialAction" => Ok(Field::PotentialAction),
 						"sameAs" => Ok(Field::SameAs),
 						"subjectOf" => Ok(Field::SubjectOf),
@@ -384,17 +480,17 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
+						b"itemListElement" => Ok(Field::ItemListElement),
+						b"itemListOrder" => Ok(Field::ItemListOrder),
+						b"numberOfItems" => Ok(Field::NumberOfItems),
 						b"additionalType" => Ok(Field::AdditionalType),
 						b"alternateName" => Ok(Field::AlternateName),
 						b"description" => Ok(Field::Description),
 						b"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
 						b"identifier" => Ok(Field::Identifier),
 						b"image" => Ok(Field::Image),
-						b"itemListElement" => Ok(Field::ItemListElement),
-						b"itemListOrder" => Ok(Field::ItemListOrder),
 						b"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
 						b"name" => Ok(Field::Name),
-						b"numberOfItems" => Ok(Field::NumberOfItems),
 						b"potentialAction" => Ok(Field::PotentialAction),
 						b"sameAs" => Ok(Field::SameAs),
 						b"subjectOf" => Ok(Field::SubjectOf),
@@ -421,23 +517,101 @@ mod serde {
 				where
 					A: de::MapAccess<'de>,
 				{
+					let mut r#item_list_element_property = None;
+					let mut r#item_list_order_property = None;
+					let mut r#number_of_items_property = None;
 					let mut r#additional_type_property = None;
 					let mut r#alternate_name_property = None;
 					let mut r#description_property = None;
 					let mut r#disambiguating_description_property = None;
 					let mut r#identifier_property = None;
 					let mut r#image_property = None;
-					let mut r#item_list_element_property = None;
-					let mut r#item_list_order_property = None;
 					let mut r#main_entity_of_page_property = None;
 					let mut r#name_property = None;
-					let mut r#number_of_items_property = None;
 					let mut r#potential_action_property = None;
 					let mut r#same_as_property = None;
 					let mut r#subject_of_property = None;
 					let mut r#url_property = None;
 					while let Some(key) = map.next_key::<Field>()? {
 						match key {
+							Field::ItemListElement => {
+								if r#item_list_element_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"itemListElement",
+									));
+								}
+								r#item_list_element_property = Some({
+									struct DeserializeWith(Vec<ItemListElementProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::ItemListOrder => {
+								if r#item_list_order_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"itemListOrder",
+									));
+								}
+								r#item_list_order_property = Some({
+									struct DeserializeWith(Vec<ItemListOrderProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::NumberOfItems => {
+								if r#number_of_items_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"numberOfItems",
+									));
+								}
+								r#number_of_items_property = Some({
+									struct DeserializeWith(Vec<NumberOfItemsProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
 							Field::AdditionalType => {
 								if r#additional_type_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -592,58 +766,6 @@ mod serde {
 									}
 								});
 							}
-							Field::ItemListElement => {
-								if r#item_list_element_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"itemListElement",
-									));
-								}
-								r#item_list_element_property = Some({
-									struct DeserializeWith(Vec<ItemListElementProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::ItemListOrder => {
-								if r#item_list_order_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"itemListOrder",
-									));
-								}
-								r#item_list_order_property = Some({
-									struct DeserializeWith(Vec<ItemListOrderProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
 							Field::MainEntityOfPage => {
 								if r#main_entity_of_page_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -676,32 +798,6 @@ mod serde {
 								}
 								r#name_property = Some({
 									struct DeserializeWith(Vec<NameProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::NumberOfItems => {
-								if r#number_of_items_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"numberOfItems",
-									));
-								}
-								r#number_of_items_property = Some({
-									struct DeserializeWith(Vec<NumberOfItemsProperty>);
 									impl<'de> Deserialize<'de> for DeserializeWith {
 										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
 										where
@@ -826,6 +922,9 @@ mod serde {
 						}
 					}
 					Ok(OfferCatalog {
+						r#item_list_element: r#item_list_element_property.unwrap_or_default(),
+						r#item_list_order: r#item_list_order_property.unwrap_or_default(),
+						r#number_of_items: r#number_of_items_property.unwrap_or_default(),
 						r#additional_type: r#additional_type_property.unwrap_or_default(),
 						r#alternate_name: r#alternate_name_property.unwrap_or_default(),
 						r#description: r#description_property.unwrap_or_default(),
@@ -833,11 +932,8 @@ mod serde {
 							.unwrap_or_default(),
 						r#identifier: r#identifier_property.unwrap_or_default(),
 						r#image: r#image_property.unwrap_or_default(),
-						r#item_list_element: r#item_list_element_property.unwrap_or_default(),
-						r#item_list_order: r#item_list_order_property.unwrap_or_default(),
 						r#main_entity_of_page: r#main_entity_of_page_property.unwrap_or_default(),
 						r#name: r#name_property.unwrap_or_default(),
-						r#number_of_items: r#number_of_items_property.unwrap_or_default(),
 						r#potential_action: r#potential_action_property.unwrap_or_default(),
 						r#same_as: r#same_as_property.unwrap_or_default(),
 						r#subject_of: r#subject_of_property.unwrap_or_default(),
@@ -846,17 +942,17 @@ mod serde {
 				}
 			}
 			const FIELDS: &[&str] = &[
+				"itemListElement",
+				"itemListOrder",
+				"numberOfItems",
 				"additionalType",
 				"alternateName",
 				"description",
 				"disambiguatingDescription",
 				"identifier",
 				"image",
-				"itemListElement",
-				"itemListOrder",
 				"mainEntityOfPage",
 				"name",
-				"numberOfItems",
 				"potentialAction",
 				"sameAs",
 				"subjectOf",

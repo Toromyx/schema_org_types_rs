@@ -3,22 +3,136 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct MonetaryGrant {
+	pub r#amount: Vec<AmountProperty>,
+	pub r#funder: Vec<FunderProperty>,
+	pub r#funded_item: Vec<FundedItemProperty>,
+	pub r#sponsor: Vec<SponsorProperty>,
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
 	pub r#alternate_name: Vec<AlternateNameProperty>,
-	pub r#amount: Vec<AmountProperty>,
 	pub r#description: Vec<DescriptionProperty>,
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
-	pub r#funded_item: Vec<FundedItemProperty>,
-	pub r#funder: Vec<FunderProperty>,
 	pub r#identifier: Vec<IdentifierProperty>,
 	pub r#image: Vec<ImageProperty>,
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
 	pub r#name: Vec<NameProperty>,
 	pub r#potential_action: Vec<PotentialActionProperty>,
 	pub r#same_as: Vec<SameAsProperty>,
-	pub r#sponsor: Vec<SponsorProperty>,
 	pub r#subject_of: Vec<SubjectOfProperty>,
 	pub r#url: Vec<UrlProperty>,
+}
+pub trait MonetaryGrantTrait {
+	fn get_amount(&self) -> &[AmountProperty];
+	fn take_amount(&mut self) -> Vec<AmountProperty>;
+	fn get_funder(&self) -> &[FunderProperty];
+	fn take_funder(&mut self) -> Vec<FunderProperty>;
+}
+impl MonetaryGrantTrait for MonetaryGrant {
+	fn get_amount(&self) -> &[AmountProperty] {
+		self.r#amount.as_slice()
+	}
+	fn take_amount(&mut self) -> Vec<AmountProperty> {
+		std::mem::take(&mut self.r#amount)
+	}
+	fn get_funder(&self) -> &[FunderProperty] {
+		self.r#funder.as_slice()
+	}
+	fn take_funder(&mut self) -> Vec<FunderProperty> {
+		std::mem::take(&mut self.r#funder)
+	}
+}
+impl GrantTrait for MonetaryGrant {
+	fn get_funded_item(&self) -> &[FundedItemProperty] {
+		self.r#funded_item.as_slice()
+	}
+	fn take_funded_item(&mut self) -> Vec<FundedItemProperty> {
+		std::mem::take(&mut self.r#funded_item)
+	}
+	fn get_funder(&self) -> &[FunderProperty] {
+		self.r#funder.as_slice()
+	}
+	fn take_funder(&mut self) -> Vec<FunderProperty> {
+		std::mem::take(&mut self.r#funder)
+	}
+	fn get_sponsor(&self) -> &[SponsorProperty] {
+		self.r#sponsor.as_slice()
+	}
+	fn take_sponsor(&mut self) -> Vec<SponsorProperty> {
+		std::mem::take(&mut self.r#sponsor)
+	}
+}
+impl ThingTrait for MonetaryGrant {
+	fn get_additional_type(&self) -> &[AdditionalTypeProperty] {
+		self.r#additional_type.as_slice()
+	}
+	fn take_additional_type(&mut self) -> Vec<AdditionalTypeProperty> {
+		std::mem::take(&mut self.r#additional_type)
+	}
+	fn get_alternate_name(&self) -> &[AlternateNameProperty] {
+		self.r#alternate_name.as_slice()
+	}
+	fn take_alternate_name(&mut self) -> Vec<AlternateNameProperty> {
+		std::mem::take(&mut self.r#alternate_name)
+	}
+	fn get_description(&self) -> &[DescriptionProperty] {
+		self.r#description.as_slice()
+	}
+	fn take_description(&mut self) -> Vec<DescriptionProperty> {
+		std::mem::take(&mut self.r#description)
+	}
+	fn get_disambiguating_description(&self) -> &[DisambiguatingDescriptionProperty] {
+		self.r#disambiguating_description.as_slice()
+	}
+	fn take_disambiguating_description(&mut self) -> Vec<DisambiguatingDescriptionProperty> {
+		std::mem::take(&mut self.r#disambiguating_description)
+	}
+	fn get_identifier(&self) -> &[IdentifierProperty] {
+		self.r#identifier.as_slice()
+	}
+	fn take_identifier(&mut self) -> Vec<IdentifierProperty> {
+		std::mem::take(&mut self.r#identifier)
+	}
+	fn get_image(&self) -> &[ImageProperty] {
+		self.r#image.as_slice()
+	}
+	fn take_image(&mut self) -> Vec<ImageProperty> {
+		std::mem::take(&mut self.r#image)
+	}
+	fn get_main_entity_of_page(&self) -> &[MainEntityOfPageProperty] {
+		self.r#main_entity_of_page.as_slice()
+	}
+	fn take_main_entity_of_page(&mut self) -> Vec<MainEntityOfPageProperty> {
+		std::mem::take(&mut self.r#main_entity_of_page)
+	}
+	fn get_name(&self) -> &[NameProperty] {
+		self.r#name.as_slice()
+	}
+	fn take_name(&mut self) -> Vec<NameProperty> {
+		std::mem::take(&mut self.r#name)
+	}
+	fn get_potential_action(&self) -> &[PotentialActionProperty] {
+		self.r#potential_action.as_slice()
+	}
+	fn take_potential_action(&mut self) -> Vec<PotentialActionProperty> {
+		std::mem::take(&mut self.r#potential_action)
+	}
+	fn get_same_as(&self) -> &[SameAsProperty] {
+		self.r#same_as.as_slice()
+	}
+	fn take_same_as(&mut self) -> Vec<SameAsProperty> {
+		std::mem::take(&mut self.r#same_as)
+	}
+	fn get_subject_of(&self) -> &[SubjectOfProperty] {
+		self.r#subject_of.as_slice()
+	}
+	fn take_subject_of(&mut self) -> Vec<SubjectOfProperty> {
+		std::mem::take(&mut self.r#subject_of)
+	}
+	fn get_url(&self) -> &[UrlProperty] {
+		self.r#url.as_slice()
+	}
+	fn take_url(&mut self) -> Vec<UrlProperty> {
+		std::mem::take(&mut self.r#url)
+	}
 }
 #[cfg(feature = "serde")]
 mod serde {
@@ -35,20 +149,20 @@ mod serde {
 			S: Serializer,
 		{
 			let len: usize = [
+				!Vec::is_empty(&self.r#amount) as usize,
+				!Vec::is_empty(&self.r#funder) as usize,
+				!Vec::is_empty(&self.r#funded_item) as usize,
+				!Vec::is_empty(&self.r#sponsor) as usize,
 				!Vec::is_empty(&self.r#additional_type) as usize,
 				!Vec::is_empty(&self.r#alternate_name) as usize,
-				!Vec::is_empty(&self.r#amount) as usize,
 				!Vec::is_empty(&self.r#description) as usize,
 				!Vec::is_empty(&self.r#disambiguating_description) as usize,
-				!Vec::is_empty(&self.r#funded_item) as usize,
-				!Vec::is_empty(&self.r#funder) as usize,
 				!Vec::is_empty(&self.r#identifier) as usize,
 				!Vec::is_empty(&self.r#image) as usize,
 				!Vec::is_empty(&self.r#main_entity_of_page) as usize,
 				!Vec::is_empty(&self.r#name) as usize,
 				!Vec::is_empty(&self.r#potential_action) as usize,
 				!Vec::is_empty(&self.r#same_as) as usize,
-				!Vec::is_empty(&self.r#sponsor) as usize,
 				!Vec::is_empty(&self.r#subject_of) as usize,
 				!Vec::is_empty(&self.r#url) as usize,
 			]
@@ -56,6 +170,78 @@ mod serde {
 			.sum();
 			let mut serialize_struct =
 				Serializer::serialize_struct(serializer, "MonetaryGrant", len)?;
+			if !Vec::is_empty(&self.r#amount) {
+				serialize_struct.serialize_field("amount", {
+					struct SerializeWith<'a>(&'a Vec<AmountProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#amount)
+				})?;
+			} else {
+				serialize_struct.skip_field("amount")?;
+			}
+			if !Vec::is_empty(&self.r#funder) {
+				serialize_struct.serialize_field("funder", {
+					struct SerializeWith<'a>(&'a Vec<FunderProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#funder)
+				})?;
+			} else {
+				serialize_struct.skip_field("funder")?;
+			}
+			if !Vec::is_empty(&self.r#funded_item) {
+				serialize_struct.serialize_field("fundedItem", {
+					struct SerializeWith<'a>(&'a Vec<FundedItemProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#funded_item)
+				})?;
+			} else {
+				serialize_struct.skip_field("fundedItem")?;
+			}
+			if !Vec::is_empty(&self.r#sponsor) {
+				serialize_struct.serialize_field("sponsor", {
+					struct SerializeWith<'a>(&'a Vec<SponsorProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#sponsor)
+				})?;
+			} else {
+				serialize_struct.skip_field("sponsor")?;
+			}
 			if !Vec::is_empty(&self.r#additional_type) {
 				serialize_struct.serialize_field("additionalType", {
 					struct SerializeWith<'a>(&'a Vec<AdditionalTypeProperty>);
@@ -92,24 +278,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("alternateName")?;
 			}
-			if !Vec::is_empty(&self.r#amount) {
-				serialize_struct.serialize_field("amount", {
-					struct SerializeWith<'a>(&'a Vec<AmountProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#amount)
-				})?;
-			} else {
-				serialize_struct.skip_field("amount")?;
-			}
 			if !Vec::is_empty(&self.r#description) {
 				serialize_struct.serialize_field("description", {
 					struct SerializeWith<'a>(&'a Vec<DescriptionProperty>);
@@ -145,42 +313,6 @@ mod serde {
 				})?;
 			} else {
 				serialize_struct.skip_field("disambiguatingDescription")?;
-			}
-			if !Vec::is_empty(&self.r#funded_item) {
-				serialize_struct.serialize_field("fundedItem", {
-					struct SerializeWith<'a>(&'a Vec<FundedItemProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#funded_item)
-				})?;
-			} else {
-				serialize_struct.skip_field("fundedItem")?;
-			}
-			if !Vec::is_empty(&self.r#funder) {
-				serialize_struct.serialize_field("funder", {
-					struct SerializeWith<'a>(&'a Vec<FunderProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#funder)
-				})?;
-			} else {
-				serialize_struct.skip_field("funder")?;
 			}
 			if !Vec::is_empty(&self.r#identifier) {
 				serialize_struct.serialize_field("identifier", {
@@ -290,24 +422,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("sameAs")?;
 			}
-			if !Vec::is_empty(&self.r#sponsor) {
-				serialize_struct.serialize_field("sponsor", {
-					struct SerializeWith<'a>(&'a Vec<SponsorProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#sponsor)
-				})?;
-			} else {
-				serialize_struct.skip_field("sponsor")?;
-			}
 			if !Vec::is_empty(&self.r#subject_of) {
 				serialize_struct.serialize_field("subjectOf", {
 					struct SerializeWith<'a>(&'a Vec<SubjectOfProperty>);
@@ -353,20 +467,20 @@ mod serde {
 			D: Deserializer<'de>,
 		{
 			enum Field {
+				Amount,
+				Funder,
+				FundedItem,
+				Sponsor,
 				AdditionalType,
 				AlternateName,
-				Amount,
 				Description,
 				DisambiguatingDescription,
-				FundedItem,
-				Funder,
 				Identifier,
 				Image,
 				MainEntityOfPage,
 				Name,
 				PotentialAction,
 				SameAs,
-				Sponsor,
 				SubjectOf,
 				Url,
 				Ignore,
@@ -382,20 +496,20 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
+						"amount" => Ok(Field::Amount),
+						"funder" => Ok(Field::Funder),
+						"fundedItem" => Ok(Field::FundedItem),
+						"sponsor" => Ok(Field::Sponsor),
 						"additionalType" => Ok(Field::AdditionalType),
 						"alternateName" => Ok(Field::AlternateName),
-						"amount" => Ok(Field::Amount),
 						"description" => Ok(Field::Description),
 						"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
-						"fundedItem" => Ok(Field::FundedItem),
-						"funder" => Ok(Field::Funder),
 						"identifier" => Ok(Field::Identifier),
 						"image" => Ok(Field::Image),
 						"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
 						"name" => Ok(Field::Name),
 						"potentialAction" => Ok(Field::PotentialAction),
 						"sameAs" => Ok(Field::SameAs),
-						"sponsor" => Ok(Field::Sponsor),
 						"subjectOf" => Ok(Field::SubjectOf),
 						"url" => Ok(Field::Url),
 						_ => Ok(Field::Ignore),
@@ -406,20 +520,20 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
+						b"amount" => Ok(Field::Amount),
+						b"funder" => Ok(Field::Funder),
+						b"fundedItem" => Ok(Field::FundedItem),
+						b"sponsor" => Ok(Field::Sponsor),
 						b"additionalType" => Ok(Field::AdditionalType),
 						b"alternateName" => Ok(Field::AlternateName),
-						b"amount" => Ok(Field::Amount),
 						b"description" => Ok(Field::Description),
 						b"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
-						b"fundedItem" => Ok(Field::FundedItem),
-						b"funder" => Ok(Field::Funder),
 						b"identifier" => Ok(Field::Identifier),
 						b"image" => Ok(Field::Image),
 						b"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
 						b"name" => Ok(Field::Name),
 						b"potentialAction" => Ok(Field::PotentialAction),
 						b"sameAs" => Ok(Field::SameAs),
-						b"sponsor" => Ok(Field::Sponsor),
 						b"subjectOf" => Ok(Field::SubjectOf),
 						b"url" => Ok(Field::Url),
 						_ => Ok(Field::Ignore),
@@ -444,24 +558,124 @@ mod serde {
 				where
 					A: de::MapAccess<'de>,
 				{
+					let mut r#amount_property = None;
+					let mut r#funder_property = None;
+					let mut r#funded_item_property = None;
+					let mut r#sponsor_property = None;
 					let mut r#additional_type_property = None;
 					let mut r#alternate_name_property = None;
-					let mut r#amount_property = None;
 					let mut r#description_property = None;
 					let mut r#disambiguating_description_property = None;
-					let mut r#funded_item_property = None;
-					let mut r#funder_property = None;
 					let mut r#identifier_property = None;
 					let mut r#image_property = None;
 					let mut r#main_entity_of_page_property = None;
 					let mut r#name_property = None;
 					let mut r#potential_action_property = None;
 					let mut r#same_as_property = None;
-					let mut r#sponsor_property = None;
 					let mut r#subject_of_property = None;
 					let mut r#url_property = None;
 					while let Some(key) = map.next_key::<Field>()? {
 						match key {
+							Field::Amount => {
+								if r#amount_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field("amount"));
+								}
+								r#amount_property = Some({
+									struct DeserializeWith(Vec<AmountProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::Funder => {
+								if r#funder_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field("funder"));
+								}
+								r#funder_property = Some({
+									struct DeserializeWith(Vec<FunderProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::FundedItem => {
+								if r#funded_item_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"fundedItem",
+									));
+								}
+								r#funded_item_property = Some({
+									struct DeserializeWith(Vec<FundedItemProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::Sponsor => {
+								if r#sponsor_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"sponsor",
+									));
+								}
+								r#sponsor_property = Some({
+									struct DeserializeWith(Vec<SponsorProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
 							Field::AdditionalType => {
 								if r#additional_type_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -514,30 +728,6 @@ mod serde {
 									}
 								});
 							}
-							Field::Amount => {
-								if r#amount_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field("amount"));
-								}
-								r#amount_property = Some({
-									struct DeserializeWith(Vec<AmountProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
 							Field::Description => {
 								if r#description_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -572,56 +762,6 @@ mod serde {
 								}
 								r#disambiguating_description_property = Some({
 									struct DeserializeWith(Vec<DisambiguatingDescriptionProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::FundedItem => {
-								if r#funded_item_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"fundedItem",
-									));
-								}
-								r#funded_item_property = Some({
-									struct DeserializeWith(Vec<FundedItemProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::Funder => {
-								if r#funder_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field("funder"));
-								}
-								r#funder_property = Some({
-									struct DeserializeWith(Vec<FunderProperty>);
 									impl<'de> Deserialize<'de> for DeserializeWith {
 										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
 										where
@@ -790,32 +930,6 @@ mod serde {
 									}
 								});
 							}
-							Field::Sponsor => {
-								if r#sponsor_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"sponsor",
-									));
-								}
-								r#sponsor_property = Some({
-									struct DeserializeWith(Vec<SponsorProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
 							Field::SubjectOf => {
 								if r#subject_of_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -872,41 +986,41 @@ mod serde {
 						}
 					}
 					Ok(MonetaryGrant {
+						r#amount: r#amount_property.unwrap_or_default(),
+						r#funder: r#funder_property.unwrap_or_default(),
+						r#funded_item: r#funded_item_property.unwrap_or_default(),
+						r#sponsor: r#sponsor_property.unwrap_or_default(),
 						r#additional_type: r#additional_type_property.unwrap_or_default(),
 						r#alternate_name: r#alternate_name_property.unwrap_or_default(),
-						r#amount: r#amount_property.unwrap_or_default(),
 						r#description: r#description_property.unwrap_or_default(),
 						r#disambiguating_description: r#disambiguating_description_property
 							.unwrap_or_default(),
-						r#funded_item: r#funded_item_property.unwrap_or_default(),
-						r#funder: r#funder_property.unwrap_or_default(),
 						r#identifier: r#identifier_property.unwrap_or_default(),
 						r#image: r#image_property.unwrap_or_default(),
 						r#main_entity_of_page: r#main_entity_of_page_property.unwrap_or_default(),
 						r#name: r#name_property.unwrap_or_default(),
 						r#potential_action: r#potential_action_property.unwrap_or_default(),
 						r#same_as: r#same_as_property.unwrap_or_default(),
-						r#sponsor: r#sponsor_property.unwrap_or_default(),
 						r#subject_of: r#subject_of_property.unwrap_or_default(),
 						r#url: r#url_property.unwrap_or_default(),
 					})
 				}
 			}
 			const FIELDS: &[&str] = &[
+				"amount",
+				"funder",
+				"fundedItem",
+				"sponsor",
 				"additionalType",
 				"alternateName",
-				"amount",
 				"description",
 				"disambiguatingDescription",
-				"fundedItem",
-				"funder",
 				"identifier",
 				"image",
 				"mainEntityOfPage",
 				"name",
 				"potentialAction",
 				"sameAs",
-				"sponsor",
 				"subjectOf",
 				"url",
 			];

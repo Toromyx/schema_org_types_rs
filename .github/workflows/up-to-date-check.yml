@@ -7,7 +7,9 @@ on:
   workflow_dispatch: {}
   push:
     paths:
-      - generator/**
+      - generator/Cargo.lock
+      - generator/src/**
+      - generator/Cargo.toml
       - .github/workflows/up-to-date-check.yml
 
 jobs:
@@ -34,7 +36,7 @@ jobs:
             rust-
           path: |
             generator/target
-            ~/.cargo
+            ~/.cargo/registry
       - working-directory: generator
         run: cargo run --release
       - run: cargo +nightly fmt

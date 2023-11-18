@@ -3,45 +3,295 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct InfectiousDisease {
-	pub r#additional_type: Vec<AdditionalTypeProperty>,
-	pub r#alternate_name: Vec<AlternateNameProperty>,
+	pub r#infectious_agent: Vec<InfectiousAgentProperty>,
+	pub r#infectious_agent_class: Vec<InfectiousAgentClassProperty>,
+	pub r#transmission_method: Vec<TransmissionMethodProperty>,
 	pub r#associated_anatomy: Vec<AssociatedAnatomyProperty>,
-	pub r#code: Vec<CodeProperty>,
-	pub r#description: Vec<DescriptionProperty>,
 	pub r#differential_diagnosis: Vec<DifferentialDiagnosisProperty>,
-	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
 	pub r#drug: Vec<DrugProperty>,
 	pub r#epidemiology: Vec<EpidemiologyProperty>,
 	pub r#expected_prognosis: Vec<ExpectedPrognosisProperty>,
-	pub r#funding: Vec<FundingProperty>,
-	pub r#guideline: Vec<GuidelineProperty>,
-	pub r#identifier: Vec<IdentifierProperty>,
-	pub r#image: Vec<ImageProperty>,
-	pub r#infectious_agent: Vec<InfectiousAgentProperty>,
-	pub r#infectious_agent_class: Vec<InfectiousAgentClassProperty>,
-	pub r#legal_status: Vec<LegalStatusProperty>,
-	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
-	pub r#medicine_system: Vec<MedicineSystemProperty>,
-	pub r#name: Vec<NameProperty>,
 	pub r#natural_progression: Vec<NaturalProgressionProperty>,
 	pub r#pathophysiology: Vec<PathophysiologyProperty>,
 	pub r#possible_complication: Vec<PossibleComplicationProperty>,
 	pub r#possible_treatment: Vec<PossibleTreatmentProperty>,
-	pub r#potential_action: Vec<PotentialActionProperty>,
 	pub r#primary_prevention: Vec<PrimaryPreventionProperty>,
-	pub r#recognizing_authority: Vec<RecognizingAuthorityProperty>,
-	pub r#relevant_specialty: Vec<RelevantSpecialtyProperty>,
 	pub r#risk_factor: Vec<RiskFactorProperty>,
-	pub r#same_as: Vec<SameAsProperty>,
 	pub r#secondary_prevention: Vec<SecondaryPreventionProperty>,
 	pub r#sign_or_symptom: Vec<SignOrSymptomProperty>,
 	pub r#stage: Vec<StageProperty>,
 	pub r#status: Vec<StatusProperty>,
-	pub r#study: Vec<StudyProperty>,
-	pub r#subject_of: Vec<SubjectOfProperty>,
-	pub r#transmission_method: Vec<TransmissionMethodProperty>,
 	pub r#typical_test: Vec<TypicalTestProperty>,
+	pub r#code: Vec<CodeProperty>,
+	pub r#funding: Vec<FundingProperty>,
+	pub r#guideline: Vec<GuidelineProperty>,
+	pub r#legal_status: Vec<LegalStatusProperty>,
+	pub r#medicine_system: Vec<MedicineSystemProperty>,
+	pub r#recognizing_authority: Vec<RecognizingAuthorityProperty>,
+	pub r#relevant_specialty: Vec<RelevantSpecialtyProperty>,
+	pub r#study: Vec<StudyProperty>,
+	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	pub r#alternate_name: Vec<AlternateNameProperty>,
+	pub r#description: Vec<DescriptionProperty>,
+	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	pub r#identifier: Vec<IdentifierProperty>,
+	pub r#image: Vec<ImageProperty>,
+	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	pub r#name: Vec<NameProperty>,
+	pub r#potential_action: Vec<PotentialActionProperty>,
+	pub r#same_as: Vec<SameAsProperty>,
+	pub r#subject_of: Vec<SubjectOfProperty>,
 	pub r#url: Vec<UrlProperty>,
+}
+pub trait InfectiousDiseaseTrait {
+	fn get_infectious_agent(&self) -> &[InfectiousAgentProperty];
+	fn take_infectious_agent(&mut self) -> Vec<InfectiousAgentProperty>;
+	fn get_infectious_agent_class(&self) -> &[InfectiousAgentClassProperty];
+	fn take_infectious_agent_class(&mut self) -> Vec<InfectiousAgentClassProperty>;
+	fn get_transmission_method(&self) -> &[TransmissionMethodProperty];
+	fn take_transmission_method(&mut self) -> Vec<TransmissionMethodProperty>;
+}
+impl InfectiousDiseaseTrait for InfectiousDisease {
+	fn get_infectious_agent(&self) -> &[InfectiousAgentProperty] {
+		self.r#infectious_agent.as_slice()
+	}
+	fn take_infectious_agent(&mut self) -> Vec<InfectiousAgentProperty> {
+		std::mem::take(&mut self.r#infectious_agent)
+	}
+	fn get_infectious_agent_class(&self) -> &[InfectiousAgentClassProperty] {
+		self.r#infectious_agent_class.as_slice()
+	}
+	fn take_infectious_agent_class(&mut self) -> Vec<InfectiousAgentClassProperty> {
+		std::mem::take(&mut self.r#infectious_agent_class)
+	}
+	fn get_transmission_method(&self) -> &[TransmissionMethodProperty] {
+		self.r#transmission_method.as_slice()
+	}
+	fn take_transmission_method(&mut self) -> Vec<TransmissionMethodProperty> {
+		std::mem::take(&mut self.r#transmission_method)
+	}
+}
+impl MedicalConditionTrait for InfectiousDisease {
+	fn get_associated_anatomy(&self) -> &[AssociatedAnatomyProperty] {
+		self.r#associated_anatomy.as_slice()
+	}
+	fn take_associated_anatomy(&mut self) -> Vec<AssociatedAnatomyProperty> {
+		std::mem::take(&mut self.r#associated_anatomy)
+	}
+	fn get_differential_diagnosis(&self) -> &[DifferentialDiagnosisProperty] {
+		self.r#differential_diagnosis.as_slice()
+	}
+	fn take_differential_diagnosis(&mut self) -> Vec<DifferentialDiagnosisProperty> {
+		std::mem::take(&mut self.r#differential_diagnosis)
+	}
+	fn get_drug(&self) -> &[DrugProperty] {
+		self.r#drug.as_slice()
+	}
+	fn take_drug(&mut self) -> Vec<DrugProperty> {
+		std::mem::take(&mut self.r#drug)
+	}
+	fn get_epidemiology(&self) -> &[EpidemiologyProperty] {
+		self.r#epidemiology.as_slice()
+	}
+	fn take_epidemiology(&mut self) -> Vec<EpidemiologyProperty> {
+		std::mem::take(&mut self.r#epidemiology)
+	}
+	fn get_expected_prognosis(&self) -> &[ExpectedPrognosisProperty] {
+		self.r#expected_prognosis.as_slice()
+	}
+	fn take_expected_prognosis(&mut self) -> Vec<ExpectedPrognosisProperty> {
+		std::mem::take(&mut self.r#expected_prognosis)
+	}
+	fn get_natural_progression(&self) -> &[NaturalProgressionProperty] {
+		self.r#natural_progression.as_slice()
+	}
+	fn take_natural_progression(&mut self) -> Vec<NaturalProgressionProperty> {
+		std::mem::take(&mut self.r#natural_progression)
+	}
+	fn get_pathophysiology(&self) -> &[PathophysiologyProperty] {
+		self.r#pathophysiology.as_slice()
+	}
+	fn take_pathophysiology(&mut self) -> Vec<PathophysiologyProperty> {
+		std::mem::take(&mut self.r#pathophysiology)
+	}
+	fn get_possible_complication(&self) -> &[PossibleComplicationProperty] {
+		self.r#possible_complication.as_slice()
+	}
+	fn take_possible_complication(&mut self) -> Vec<PossibleComplicationProperty> {
+		std::mem::take(&mut self.r#possible_complication)
+	}
+	fn get_possible_treatment(&self) -> &[PossibleTreatmentProperty] {
+		self.r#possible_treatment.as_slice()
+	}
+	fn take_possible_treatment(&mut self) -> Vec<PossibleTreatmentProperty> {
+		std::mem::take(&mut self.r#possible_treatment)
+	}
+	fn get_primary_prevention(&self) -> &[PrimaryPreventionProperty] {
+		self.r#primary_prevention.as_slice()
+	}
+	fn take_primary_prevention(&mut self) -> Vec<PrimaryPreventionProperty> {
+		std::mem::take(&mut self.r#primary_prevention)
+	}
+	fn get_risk_factor(&self) -> &[RiskFactorProperty] {
+		self.r#risk_factor.as_slice()
+	}
+	fn take_risk_factor(&mut self) -> Vec<RiskFactorProperty> {
+		std::mem::take(&mut self.r#risk_factor)
+	}
+	fn get_secondary_prevention(&self) -> &[SecondaryPreventionProperty] {
+		self.r#secondary_prevention.as_slice()
+	}
+	fn take_secondary_prevention(&mut self) -> Vec<SecondaryPreventionProperty> {
+		std::mem::take(&mut self.r#secondary_prevention)
+	}
+	fn get_sign_or_symptom(&self) -> &[SignOrSymptomProperty] {
+		self.r#sign_or_symptom.as_slice()
+	}
+	fn take_sign_or_symptom(&mut self) -> Vec<SignOrSymptomProperty> {
+		std::mem::take(&mut self.r#sign_or_symptom)
+	}
+	fn get_stage(&self) -> &[StageProperty] {
+		self.r#stage.as_slice()
+	}
+	fn take_stage(&mut self) -> Vec<StageProperty> {
+		std::mem::take(&mut self.r#stage)
+	}
+	fn get_status(&self) -> &[StatusProperty] {
+		self.r#status.as_slice()
+	}
+	fn take_status(&mut self) -> Vec<StatusProperty> {
+		std::mem::take(&mut self.r#status)
+	}
+	fn get_typical_test(&self) -> &[TypicalTestProperty] {
+		self.r#typical_test.as_slice()
+	}
+	fn take_typical_test(&mut self) -> Vec<TypicalTestProperty> {
+		std::mem::take(&mut self.r#typical_test)
+	}
+}
+impl MedicalEntityTrait for InfectiousDisease {
+	fn get_code(&self) -> &[CodeProperty] {
+		self.r#code.as_slice()
+	}
+	fn take_code(&mut self) -> Vec<CodeProperty> {
+		std::mem::take(&mut self.r#code)
+	}
+	fn get_funding(&self) -> &[FundingProperty] {
+		self.r#funding.as_slice()
+	}
+	fn take_funding(&mut self) -> Vec<FundingProperty> {
+		std::mem::take(&mut self.r#funding)
+	}
+	fn get_guideline(&self) -> &[GuidelineProperty] {
+		self.r#guideline.as_slice()
+	}
+	fn take_guideline(&mut self) -> Vec<GuidelineProperty> {
+		std::mem::take(&mut self.r#guideline)
+	}
+	fn get_legal_status(&self) -> &[LegalStatusProperty] {
+		self.r#legal_status.as_slice()
+	}
+	fn take_legal_status(&mut self) -> Vec<LegalStatusProperty> {
+		std::mem::take(&mut self.r#legal_status)
+	}
+	fn get_medicine_system(&self) -> &[MedicineSystemProperty] {
+		self.r#medicine_system.as_slice()
+	}
+	fn take_medicine_system(&mut self) -> Vec<MedicineSystemProperty> {
+		std::mem::take(&mut self.r#medicine_system)
+	}
+	fn get_recognizing_authority(&self) -> &[RecognizingAuthorityProperty] {
+		self.r#recognizing_authority.as_slice()
+	}
+	fn take_recognizing_authority(&mut self) -> Vec<RecognizingAuthorityProperty> {
+		std::mem::take(&mut self.r#recognizing_authority)
+	}
+	fn get_relevant_specialty(&self) -> &[RelevantSpecialtyProperty] {
+		self.r#relevant_specialty.as_slice()
+	}
+	fn take_relevant_specialty(&mut self) -> Vec<RelevantSpecialtyProperty> {
+		std::mem::take(&mut self.r#relevant_specialty)
+	}
+	fn get_study(&self) -> &[StudyProperty] {
+		self.r#study.as_slice()
+	}
+	fn take_study(&mut self) -> Vec<StudyProperty> {
+		std::mem::take(&mut self.r#study)
+	}
+}
+impl ThingTrait for InfectiousDisease {
+	fn get_additional_type(&self) -> &[AdditionalTypeProperty] {
+		self.r#additional_type.as_slice()
+	}
+	fn take_additional_type(&mut self) -> Vec<AdditionalTypeProperty> {
+		std::mem::take(&mut self.r#additional_type)
+	}
+	fn get_alternate_name(&self) -> &[AlternateNameProperty] {
+		self.r#alternate_name.as_slice()
+	}
+	fn take_alternate_name(&mut self) -> Vec<AlternateNameProperty> {
+		std::mem::take(&mut self.r#alternate_name)
+	}
+	fn get_description(&self) -> &[DescriptionProperty] {
+		self.r#description.as_slice()
+	}
+	fn take_description(&mut self) -> Vec<DescriptionProperty> {
+		std::mem::take(&mut self.r#description)
+	}
+	fn get_disambiguating_description(&self) -> &[DisambiguatingDescriptionProperty] {
+		self.r#disambiguating_description.as_slice()
+	}
+	fn take_disambiguating_description(&mut self) -> Vec<DisambiguatingDescriptionProperty> {
+		std::mem::take(&mut self.r#disambiguating_description)
+	}
+	fn get_identifier(&self) -> &[IdentifierProperty] {
+		self.r#identifier.as_slice()
+	}
+	fn take_identifier(&mut self) -> Vec<IdentifierProperty> {
+		std::mem::take(&mut self.r#identifier)
+	}
+	fn get_image(&self) -> &[ImageProperty] {
+		self.r#image.as_slice()
+	}
+	fn take_image(&mut self) -> Vec<ImageProperty> {
+		std::mem::take(&mut self.r#image)
+	}
+	fn get_main_entity_of_page(&self) -> &[MainEntityOfPageProperty] {
+		self.r#main_entity_of_page.as_slice()
+	}
+	fn take_main_entity_of_page(&mut self) -> Vec<MainEntityOfPageProperty> {
+		std::mem::take(&mut self.r#main_entity_of_page)
+	}
+	fn get_name(&self) -> &[NameProperty] {
+		self.r#name.as_slice()
+	}
+	fn take_name(&mut self) -> Vec<NameProperty> {
+		std::mem::take(&mut self.r#name)
+	}
+	fn get_potential_action(&self) -> &[PotentialActionProperty] {
+		self.r#potential_action.as_slice()
+	}
+	fn take_potential_action(&mut self) -> Vec<PotentialActionProperty> {
+		std::mem::take(&mut self.r#potential_action)
+	}
+	fn get_same_as(&self) -> &[SameAsProperty] {
+		self.r#same_as.as_slice()
+	}
+	fn take_same_as(&mut self) -> Vec<SameAsProperty> {
+		std::mem::take(&mut self.r#same_as)
+	}
+	fn get_subject_of(&self) -> &[SubjectOfProperty] {
+		self.r#subject_of.as_slice()
+	}
+	fn take_subject_of(&mut self) -> Vec<SubjectOfProperty> {
+		std::mem::take(&mut self.r#subject_of)
+	}
+	fn get_url(&self) -> &[UrlProperty] {
+		self.r#url.as_slice()
+	}
+	fn take_url(&mut self) -> Vec<UrlProperty> {
+		std::mem::take(&mut self.r#url)
+	}
 }
 #[cfg(feature = "serde")]
 mod serde {
@@ -58,53 +308,53 @@ mod serde {
 			S: Serializer,
 		{
 			let len: usize = [
-				!Vec::is_empty(&self.r#additional_type) as usize,
-				!Vec::is_empty(&self.r#alternate_name) as usize,
+				!Vec::is_empty(&self.r#infectious_agent) as usize,
+				!Vec::is_empty(&self.r#infectious_agent_class) as usize,
+				!Vec::is_empty(&self.r#transmission_method) as usize,
 				!Vec::is_empty(&self.r#associated_anatomy) as usize,
-				!Vec::is_empty(&self.r#code) as usize,
-				!Vec::is_empty(&self.r#description) as usize,
 				!Vec::is_empty(&self.r#differential_diagnosis) as usize,
-				!Vec::is_empty(&self.r#disambiguating_description) as usize,
 				!Vec::is_empty(&self.r#drug) as usize,
 				!Vec::is_empty(&self.r#epidemiology) as usize,
 				!Vec::is_empty(&self.r#expected_prognosis) as usize,
-				!Vec::is_empty(&self.r#funding) as usize,
-				!Vec::is_empty(&self.r#guideline) as usize,
-				!Vec::is_empty(&self.r#identifier) as usize,
-				!Vec::is_empty(&self.r#image) as usize,
-				!Vec::is_empty(&self.r#infectious_agent) as usize,
-				!Vec::is_empty(&self.r#infectious_agent_class) as usize,
-				!Vec::is_empty(&self.r#legal_status) as usize,
-				!Vec::is_empty(&self.r#main_entity_of_page) as usize,
-				!Vec::is_empty(&self.r#medicine_system) as usize,
-				!Vec::is_empty(&self.r#name) as usize,
 				!Vec::is_empty(&self.r#natural_progression) as usize,
 				!Vec::is_empty(&self.r#pathophysiology) as usize,
 				!Vec::is_empty(&self.r#possible_complication) as usize,
 				!Vec::is_empty(&self.r#possible_treatment) as usize,
-				!Vec::is_empty(&self.r#potential_action) as usize,
 				!Vec::is_empty(&self.r#primary_prevention) as usize,
-				!Vec::is_empty(&self.r#recognizing_authority) as usize,
-				!Vec::is_empty(&self.r#relevant_specialty) as usize,
 				!Vec::is_empty(&self.r#risk_factor) as usize,
-				!Vec::is_empty(&self.r#same_as) as usize,
 				!Vec::is_empty(&self.r#secondary_prevention) as usize,
 				!Vec::is_empty(&self.r#sign_or_symptom) as usize,
 				!Vec::is_empty(&self.r#stage) as usize,
 				!Vec::is_empty(&self.r#status) as usize,
-				!Vec::is_empty(&self.r#study) as usize,
-				!Vec::is_empty(&self.r#subject_of) as usize,
-				!Vec::is_empty(&self.r#transmission_method) as usize,
 				!Vec::is_empty(&self.r#typical_test) as usize,
+				!Vec::is_empty(&self.r#code) as usize,
+				!Vec::is_empty(&self.r#funding) as usize,
+				!Vec::is_empty(&self.r#guideline) as usize,
+				!Vec::is_empty(&self.r#legal_status) as usize,
+				!Vec::is_empty(&self.r#medicine_system) as usize,
+				!Vec::is_empty(&self.r#recognizing_authority) as usize,
+				!Vec::is_empty(&self.r#relevant_specialty) as usize,
+				!Vec::is_empty(&self.r#study) as usize,
+				!Vec::is_empty(&self.r#additional_type) as usize,
+				!Vec::is_empty(&self.r#alternate_name) as usize,
+				!Vec::is_empty(&self.r#description) as usize,
+				!Vec::is_empty(&self.r#disambiguating_description) as usize,
+				!Vec::is_empty(&self.r#identifier) as usize,
+				!Vec::is_empty(&self.r#image) as usize,
+				!Vec::is_empty(&self.r#main_entity_of_page) as usize,
+				!Vec::is_empty(&self.r#name) as usize,
+				!Vec::is_empty(&self.r#potential_action) as usize,
+				!Vec::is_empty(&self.r#same_as) as usize,
+				!Vec::is_empty(&self.r#subject_of) as usize,
 				!Vec::is_empty(&self.r#url) as usize,
 			]
 			.iter()
 			.sum();
 			let mut serialize_struct =
 				Serializer::serialize_struct(serializer, "InfectiousDisease", len)?;
-			if !Vec::is_empty(&self.r#additional_type) {
-				serialize_struct.serialize_field("additionalType", {
-					struct SerializeWith<'a>(&'a Vec<AdditionalTypeProperty>);
+			if !Vec::is_empty(&self.r#infectious_agent) {
+				serialize_struct.serialize_field("infectiousAgent", {
+					struct SerializeWith<'a>(&'a Vec<InfectiousAgentProperty>);
 					impl<'a> Serialize for SerializeWith<'a> {
 						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
 						where
@@ -115,14 +365,14 @@ mod serde {
 							)
 						}
 					}
-					&SerializeWith(&self.r#additional_type)
+					&SerializeWith(&self.r#infectious_agent)
 				})?;
 			} else {
-				serialize_struct.skip_field("additionalType")?;
+				serialize_struct.skip_field("infectiousAgent")?;
 			}
-			if !Vec::is_empty(&self.r#alternate_name) {
-				serialize_struct.serialize_field("alternateName", {
-					struct SerializeWith<'a>(&'a Vec<AlternateNameProperty>);
+			if !Vec::is_empty(&self.r#infectious_agent_class) {
+				serialize_struct.serialize_field("infectiousAgentClass", {
+					struct SerializeWith<'a>(&'a Vec<InfectiousAgentClassProperty>);
 					impl<'a> Serialize for SerializeWith<'a> {
 						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
 						where
@@ -133,10 +383,28 @@ mod serde {
 							)
 						}
 					}
-					&SerializeWith(&self.r#alternate_name)
+					&SerializeWith(&self.r#infectious_agent_class)
 				})?;
 			} else {
-				serialize_struct.skip_field("alternateName")?;
+				serialize_struct.skip_field("infectiousAgentClass")?;
+			}
+			if !Vec::is_empty(&self.r#transmission_method) {
+				serialize_struct.serialize_field("transmissionMethod", {
+					struct SerializeWith<'a>(&'a Vec<TransmissionMethodProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#transmission_method)
+				})?;
+			} else {
+				serialize_struct.skip_field("transmissionMethod")?;
 			}
 			if !Vec::is_empty(&self.r#associated_anatomy) {
 				serialize_struct.serialize_field("associatedAnatomy", {
@@ -156,42 +424,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("associatedAnatomy")?;
 			}
-			if !Vec::is_empty(&self.r#code) {
-				serialize_struct.serialize_field("code", {
-					struct SerializeWith<'a>(&'a Vec<CodeProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#code)
-				})?;
-			} else {
-				serialize_struct.skip_field("code")?;
-			}
-			if !Vec::is_empty(&self.r#description) {
-				serialize_struct.serialize_field("description", {
-					struct SerializeWith<'a>(&'a Vec<DescriptionProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#description)
-				})?;
-			} else {
-				serialize_struct.skip_field("description")?;
-			}
 			if !Vec::is_empty(&self.r#differential_diagnosis) {
 				serialize_struct.serialize_field("differentialDiagnosis", {
 					struct SerializeWith<'a>(&'a Vec<DifferentialDiagnosisProperty>);
@@ -209,24 +441,6 @@ mod serde {
 				})?;
 			} else {
 				serialize_struct.skip_field("differentialDiagnosis")?;
-			}
-			if !Vec::is_empty(&self.r#disambiguating_description) {
-				serialize_struct.serialize_field("disambiguatingDescription", {
-					struct SerializeWith<'a>(&'a Vec<DisambiguatingDescriptionProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#disambiguating_description)
-				})?;
-			} else {
-				serialize_struct.skip_field("disambiguatingDescription")?;
 			}
 			if !Vec::is_empty(&self.r#drug) {
 				serialize_struct.serialize_field("drug", {
@@ -281,186 +495,6 @@ mod serde {
 				})?;
 			} else {
 				serialize_struct.skip_field("expectedPrognosis")?;
-			}
-			if !Vec::is_empty(&self.r#funding) {
-				serialize_struct.serialize_field("funding", {
-					struct SerializeWith<'a>(&'a Vec<FundingProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#funding)
-				})?;
-			} else {
-				serialize_struct.skip_field("funding")?;
-			}
-			if !Vec::is_empty(&self.r#guideline) {
-				serialize_struct.serialize_field("guideline", {
-					struct SerializeWith<'a>(&'a Vec<GuidelineProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#guideline)
-				})?;
-			} else {
-				serialize_struct.skip_field("guideline")?;
-			}
-			if !Vec::is_empty(&self.r#identifier) {
-				serialize_struct.serialize_field("identifier", {
-					struct SerializeWith<'a>(&'a Vec<IdentifierProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#identifier)
-				})?;
-			} else {
-				serialize_struct.skip_field("identifier")?;
-			}
-			if !Vec::is_empty(&self.r#image) {
-				serialize_struct.serialize_field("image", {
-					struct SerializeWith<'a>(&'a Vec<ImageProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#image)
-				})?;
-			} else {
-				serialize_struct.skip_field("image")?;
-			}
-			if !Vec::is_empty(&self.r#infectious_agent) {
-				serialize_struct.serialize_field("infectiousAgent", {
-					struct SerializeWith<'a>(&'a Vec<InfectiousAgentProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#infectious_agent)
-				})?;
-			} else {
-				serialize_struct.skip_field("infectiousAgent")?;
-			}
-			if !Vec::is_empty(&self.r#infectious_agent_class) {
-				serialize_struct.serialize_field("infectiousAgentClass", {
-					struct SerializeWith<'a>(&'a Vec<InfectiousAgentClassProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#infectious_agent_class)
-				})?;
-			} else {
-				serialize_struct.skip_field("infectiousAgentClass")?;
-			}
-			if !Vec::is_empty(&self.r#legal_status) {
-				serialize_struct.serialize_field("legalStatus", {
-					struct SerializeWith<'a>(&'a Vec<LegalStatusProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#legal_status)
-				})?;
-			} else {
-				serialize_struct.skip_field("legalStatus")?;
-			}
-			if !Vec::is_empty(&self.r#main_entity_of_page) {
-				serialize_struct.serialize_field("mainEntityOfPage", {
-					struct SerializeWith<'a>(&'a Vec<MainEntityOfPageProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#main_entity_of_page)
-				})?;
-			} else {
-				serialize_struct.skip_field("mainEntityOfPage")?;
-			}
-			if !Vec::is_empty(&self.r#medicine_system) {
-				serialize_struct.serialize_field("medicineSystem", {
-					struct SerializeWith<'a>(&'a Vec<MedicineSystemProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#medicine_system)
-				})?;
-			} else {
-				serialize_struct.skip_field("medicineSystem")?;
-			}
-			if !Vec::is_empty(&self.r#name) {
-				serialize_struct.serialize_field("name", {
-					struct SerializeWith<'a>(&'a Vec<NameProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#name)
-				})?;
-			} else {
-				serialize_struct.skip_field("name")?;
 			}
 			if !Vec::is_empty(&self.r#natural_progression) {
 				serialize_struct.serialize_field("naturalProgression", {
@@ -534,24 +568,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("possibleTreatment")?;
 			}
-			if !Vec::is_empty(&self.r#potential_action) {
-				serialize_struct.serialize_field("potentialAction", {
-					struct SerializeWith<'a>(&'a Vec<PotentialActionProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#potential_action)
-				})?;
-			} else {
-				serialize_struct.skip_field("potentialAction")?;
-			}
 			if !Vec::is_empty(&self.r#primary_prevention) {
 				serialize_struct.serialize_field("primaryPrevention", {
 					struct SerializeWith<'a>(&'a Vec<PrimaryPreventionProperty>);
@@ -570,42 +586,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("primaryPrevention")?;
 			}
-			if !Vec::is_empty(&self.r#recognizing_authority) {
-				serialize_struct.serialize_field("recognizingAuthority", {
-					struct SerializeWith<'a>(&'a Vec<RecognizingAuthorityProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#recognizing_authority)
-				})?;
-			} else {
-				serialize_struct.skip_field("recognizingAuthority")?;
-			}
-			if !Vec::is_empty(&self.r#relevant_specialty) {
-				serialize_struct.serialize_field("relevantSpecialty", {
-					struct SerializeWith<'a>(&'a Vec<RelevantSpecialtyProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#relevant_specialty)
-				})?;
-			} else {
-				serialize_struct.skip_field("relevantSpecialty")?;
-			}
 			if !Vec::is_empty(&self.r#risk_factor) {
 				serialize_struct.serialize_field("riskFactor", {
 					struct SerializeWith<'a>(&'a Vec<RiskFactorProperty>);
@@ -623,24 +603,6 @@ mod serde {
 				})?;
 			} else {
 				serialize_struct.skip_field("riskFactor")?;
-			}
-			if !Vec::is_empty(&self.r#same_as) {
-				serialize_struct.serialize_field("sameAs", {
-					struct SerializeWith<'a>(&'a Vec<SameAsProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#same_as)
-				})?;
-			} else {
-				serialize_struct.skip_field("sameAs")?;
 			}
 			if !Vec::is_empty(&self.r#secondary_prevention) {
 				serialize_struct.serialize_field("secondaryPrevention", {
@@ -714,6 +676,150 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("status")?;
 			}
+			if !Vec::is_empty(&self.r#typical_test) {
+				serialize_struct.serialize_field("typicalTest", {
+					struct SerializeWith<'a>(&'a Vec<TypicalTestProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#typical_test)
+				})?;
+			} else {
+				serialize_struct.skip_field("typicalTest")?;
+			}
+			if !Vec::is_empty(&self.r#code) {
+				serialize_struct.serialize_field("code", {
+					struct SerializeWith<'a>(&'a Vec<CodeProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#code)
+				})?;
+			} else {
+				serialize_struct.skip_field("code")?;
+			}
+			if !Vec::is_empty(&self.r#funding) {
+				serialize_struct.serialize_field("funding", {
+					struct SerializeWith<'a>(&'a Vec<FundingProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#funding)
+				})?;
+			} else {
+				serialize_struct.skip_field("funding")?;
+			}
+			if !Vec::is_empty(&self.r#guideline) {
+				serialize_struct.serialize_field("guideline", {
+					struct SerializeWith<'a>(&'a Vec<GuidelineProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#guideline)
+				})?;
+			} else {
+				serialize_struct.skip_field("guideline")?;
+			}
+			if !Vec::is_empty(&self.r#legal_status) {
+				serialize_struct.serialize_field("legalStatus", {
+					struct SerializeWith<'a>(&'a Vec<LegalStatusProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#legal_status)
+				})?;
+			} else {
+				serialize_struct.skip_field("legalStatus")?;
+			}
+			if !Vec::is_empty(&self.r#medicine_system) {
+				serialize_struct.serialize_field("medicineSystem", {
+					struct SerializeWith<'a>(&'a Vec<MedicineSystemProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#medicine_system)
+				})?;
+			} else {
+				serialize_struct.skip_field("medicineSystem")?;
+			}
+			if !Vec::is_empty(&self.r#recognizing_authority) {
+				serialize_struct.serialize_field("recognizingAuthority", {
+					struct SerializeWith<'a>(&'a Vec<RecognizingAuthorityProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#recognizing_authority)
+				})?;
+			} else {
+				serialize_struct.skip_field("recognizingAuthority")?;
+			}
+			if !Vec::is_empty(&self.r#relevant_specialty) {
+				serialize_struct.serialize_field("relevantSpecialty", {
+					struct SerializeWith<'a>(&'a Vec<RelevantSpecialtyProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#relevant_specialty)
+				})?;
+			} else {
+				serialize_struct.skip_field("relevantSpecialty")?;
+			}
 			if !Vec::is_empty(&self.r#study) {
 				serialize_struct.serialize_field("study", {
 					struct SerializeWith<'a>(&'a Vec<StudyProperty>);
@@ -732,6 +838,186 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("study")?;
 			}
+			if !Vec::is_empty(&self.r#additional_type) {
+				serialize_struct.serialize_field("additionalType", {
+					struct SerializeWith<'a>(&'a Vec<AdditionalTypeProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#additional_type)
+				})?;
+			} else {
+				serialize_struct.skip_field("additionalType")?;
+			}
+			if !Vec::is_empty(&self.r#alternate_name) {
+				serialize_struct.serialize_field("alternateName", {
+					struct SerializeWith<'a>(&'a Vec<AlternateNameProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#alternate_name)
+				})?;
+			} else {
+				serialize_struct.skip_field("alternateName")?;
+			}
+			if !Vec::is_empty(&self.r#description) {
+				serialize_struct.serialize_field("description", {
+					struct SerializeWith<'a>(&'a Vec<DescriptionProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#description)
+				})?;
+			} else {
+				serialize_struct.skip_field("description")?;
+			}
+			if !Vec::is_empty(&self.r#disambiguating_description) {
+				serialize_struct.serialize_field("disambiguatingDescription", {
+					struct SerializeWith<'a>(&'a Vec<DisambiguatingDescriptionProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#disambiguating_description)
+				})?;
+			} else {
+				serialize_struct.skip_field("disambiguatingDescription")?;
+			}
+			if !Vec::is_empty(&self.r#identifier) {
+				serialize_struct.serialize_field("identifier", {
+					struct SerializeWith<'a>(&'a Vec<IdentifierProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#identifier)
+				})?;
+			} else {
+				serialize_struct.skip_field("identifier")?;
+			}
+			if !Vec::is_empty(&self.r#image) {
+				serialize_struct.serialize_field("image", {
+					struct SerializeWith<'a>(&'a Vec<ImageProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#image)
+				})?;
+			} else {
+				serialize_struct.skip_field("image")?;
+			}
+			if !Vec::is_empty(&self.r#main_entity_of_page) {
+				serialize_struct.serialize_field("mainEntityOfPage", {
+					struct SerializeWith<'a>(&'a Vec<MainEntityOfPageProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#main_entity_of_page)
+				})?;
+			} else {
+				serialize_struct.skip_field("mainEntityOfPage")?;
+			}
+			if !Vec::is_empty(&self.r#name) {
+				serialize_struct.serialize_field("name", {
+					struct SerializeWith<'a>(&'a Vec<NameProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#name)
+				})?;
+			} else {
+				serialize_struct.skip_field("name")?;
+			}
+			if !Vec::is_empty(&self.r#potential_action) {
+				serialize_struct.serialize_field("potentialAction", {
+					struct SerializeWith<'a>(&'a Vec<PotentialActionProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#potential_action)
+				})?;
+			} else {
+				serialize_struct.skip_field("potentialAction")?;
+			}
+			if !Vec::is_empty(&self.r#same_as) {
+				serialize_struct.serialize_field("sameAs", {
+					struct SerializeWith<'a>(&'a Vec<SameAsProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#same_as)
+				})?;
+			} else {
+				serialize_struct.skip_field("sameAs")?;
+			}
 			if !Vec::is_empty(&self.r#subject_of) {
 				serialize_struct.serialize_field("subjectOf", {
 					struct SerializeWith<'a>(&'a Vec<SubjectOfProperty>);
@@ -749,42 +1035,6 @@ mod serde {
 				})?;
 			} else {
 				serialize_struct.skip_field("subjectOf")?;
-			}
-			if !Vec::is_empty(&self.r#transmission_method) {
-				serialize_struct.serialize_field("transmissionMethod", {
-					struct SerializeWith<'a>(&'a Vec<TransmissionMethodProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#transmission_method)
-				})?;
-			} else {
-				serialize_struct.skip_field("transmissionMethod")?;
-			}
-			if !Vec::is_empty(&self.r#typical_test) {
-				serialize_struct.serialize_field("typicalTest", {
-					struct SerializeWith<'a>(&'a Vec<TypicalTestProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#typical_test)
-				})?;
-			} else {
-				serialize_struct.skip_field("typicalTest")?;
 			}
 			if !Vec::is_empty(&self.r#url) {
 				serialize_struct.serialize_field("url", {
@@ -813,44 +1063,44 @@ mod serde {
 			D: Deserializer<'de>,
 		{
 			enum Field {
-				AdditionalType,
-				AlternateName,
+				InfectiousAgent,
+				InfectiousAgentClass,
+				TransmissionMethod,
 				AssociatedAnatomy,
-				Code,
-				Description,
 				DifferentialDiagnosis,
-				DisambiguatingDescription,
 				Drug,
 				Epidemiology,
 				ExpectedPrognosis,
-				Funding,
-				Guideline,
-				Identifier,
-				Image,
-				InfectiousAgent,
-				InfectiousAgentClass,
-				LegalStatus,
-				MainEntityOfPage,
-				MedicineSystem,
-				Name,
 				NaturalProgression,
 				Pathophysiology,
 				PossibleComplication,
 				PossibleTreatment,
-				PotentialAction,
 				PrimaryPrevention,
-				RecognizingAuthority,
-				RelevantSpecialty,
 				RiskFactor,
-				SameAs,
 				SecondaryPrevention,
 				SignOrSymptom,
 				Stage,
 				Status,
-				Study,
-				SubjectOf,
-				TransmissionMethod,
 				TypicalTest,
+				Code,
+				Funding,
+				Guideline,
+				LegalStatus,
+				MedicineSystem,
+				RecognizingAuthority,
+				RelevantSpecialty,
+				Study,
+				AdditionalType,
+				AlternateName,
+				Description,
+				DisambiguatingDescription,
+				Identifier,
+				Image,
+				MainEntityOfPage,
+				Name,
+				PotentialAction,
+				SameAs,
+				SubjectOf,
 				Url,
 				Ignore,
 			}
@@ -865,44 +1115,44 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
-						"additionalType" => Ok(Field::AdditionalType),
-						"alternateName" => Ok(Field::AlternateName),
+						"infectiousAgent" => Ok(Field::InfectiousAgent),
+						"infectiousAgentClass" => Ok(Field::InfectiousAgentClass),
+						"transmissionMethod" => Ok(Field::TransmissionMethod),
 						"associatedAnatomy" => Ok(Field::AssociatedAnatomy),
-						"code" => Ok(Field::Code),
-						"description" => Ok(Field::Description),
 						"differentialDiagnosis" => Ok(Field::DifferentialDiagnosis),
-						"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
 						"drug" => Ok(Field::Drug),
 						"epidemiology" => Ok(Field::Epidemiology),
 						"expectedPrognosis" => Ok(Field::ExpectedPrognosis),
-						"funding" => Ok(Field::Funding),
-						"guideline" => Ok(Field::Guideline),
-						"identifier" => Ok(Field::Identifier),
-						"image" => Ok(Field::Image),
-						"infectiousAgent" => Ok(Field::InfectiousAgent),
-						"infectiousAgentClass" => Ok(Field::InfectiousAgentClass),
-						"legalStatus" => Ok(Field::LegalStatus),
-						"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
-						"medicineSystem" => Ok(Field::MedicineSystem),
-						"name" => Ok(Field::Name),
 						"naturalProgression" => Ok(Field::NaturalProgression),
 						"pathophysiology" => Ok(Field::Pathophysiology),
 						"possibleComplication" => Ok(Field::PossibleComplication),
 						"possibleTreatment" => Ok(Field::PossibleTreatment),
-						"potentialAction" => Ok(Field::PotentialAction),
 						"primaryPrevention" => Ok(Field::PrimaryPrevention),
-						"recognizingAuthority" => Ok(Field::RecognizingAuthority),
-						"relevantSpecialty" => Ok(Field::RelevantSpecialty),
 						"riskFactor" => Ok(Field::RiskFactor),
-						"sameAs" => Ok(Field::SameAs),
 						"secondaryPrevention" => Ok(Field::SecondaryPrevention),
 						"signOrSymptom" => Ok(Field::SignOrSymptom),
 						"stage" => Ok(Field::Stage),
 						"status" => Ok(Field::Status),
-						"study" => Ok(Field::Study),
-						"subjectOf" => Ok(Field::SubjectOf),
-						"transmissionMethod" => Ok(Field::TransmissionMethod),
 						"typicalTest" => Ok(Field::TypicalTest),
+						"code" => Ok(Field::Code),
+						"funding" => Ok(Field::Funding),
+						"guideline" => Ok(Field::Guideline),
+						"legalStatus" => Ok(Field::LegalStatus),
+						"medicineSystem" => Ok(Field::MedicineSystem),
+						"recognizingAuthority" => Ok(Field::RecognizingAuthority),
+						"relevantSpecialty" => Ok(Field::RelevantSpecialty),
+						"study" => Ok(Field::Study),
+						"additionalType" => Ok(Field::AdditionalType),
+						"alternateName" => Ok(Field::AlternateName),
+						"description" => Ok(Field::Description),
+						"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
+						"identifier" => Ok(Field::Identifier),
+						"image" => Ok(Field::Image),
+						"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
+						"name" => Ok(Field::Name),
+						"potentialAction" => Ok(Field::PotentialAction),
+						"sameAs" => Ok(Field::SameAs),
+						"subjectOf" => Ok(Field::SubjectOf),
 						"url" => Ok(Field::Url),
 						_ => Ok(Field::Ignore),
 					}
@@ -912,44 +1162,44 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
-						b"additionalType" => Ok(Field::AdditionalType),
-						b"alternateName" => Ok(Field::AlternateName),
+						b"infectiousAgent" => Ok(Field::InfectiousAgent),
+						b"infectiousAgentClass" => Ok(Field::InfectiousAgentClass),
+						b"transmissionMethod" => Ok(Field::TransmissionMethod),
 						b"associatedAnatomy" => Ok(Field::AssociatedAnatomy),
-						b"code" => Ok(Field::Code),
-						b"description" => Ok(Field::Description),
 						b"differentialDiagnosis" => Ok(Field::DifferentialDiagnosis),
-						b"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
 						b"drug" => Ok(Field::Drug),
 						b"epidemiology" => Ok(Field::Epidemiology),
 						b"expectedPrognosis" => Ok(Field::ExpectedPrognosis),
-						b"funding" => Ok(Field::Funding),
-						b"guideline" => Ok(Field::Guideline),
-						b"identifier" => Ok(Field::Identifier),
-						b"image" => Ok(Field::Image),
-						b"infectiousAgent" => Ok(Field::InfectiousAgent),
-						b"infectiousAgentClass" => Ok(Field::InfectiousAgentClass),
-						b"legalStatus" => Ok(Field::LegalStatus),
-						b"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
-						b"medicineSystem" => Ok(Field::MedicineSystem),
-						b"name" => Ok(Field::Name),
 						b"naturalProgression" => Ok(Field::NaturalProgression),
 						b"pathophysiology" => Ok(Field::Pathophysiology),
 						b"possibleComplication" => Ok(Field::PossibleComplication),
 						b"possibleTreatment" => Ok(Field::PossibleTreatment),
-						b"potentialAction" => Ok(Field::PotentialAction),
 						b"primaryPrevention" => Ok(Field::PrimaryPrevention),
-						b"recognizingAuthority" => Ok(Field::RecognizingAuthority),
-						b"relevantSpecialty" => Ok(Field::RelevantSpecialty),
 						b"riskFactor" => Ok(Field::RiskFactor),
-						b"sameAs" => Ok(Field::SameAs),
 						b"secondaryPrevention" => Ok(Field::SecondaryPrevention),
 						b"signOrSymptom" => Ok(Field::SignOrSymptom),
 						b"stage" => Ok(Field::Stage),
 						b"status" => Ok(Field::Status),
-						b"study" => Ok(Field::Study),
-						b"subjectOf" => Ok(Field::SubjectOf),
-						b"transmissionMethod" => Ok(Field::TransmissionMethod),
 						b"typicalTest" => Ok(Field::TypicalTest),
+						b"code" => Ok(Field::Code),
+						b"funding" => Ok(Field::Funding),
+						b"guideline" => Ok(Field::Guideline),
+						b"legalStatus" => Ok(Field::LegalStatus),
+						b"medicineSystem" => Ok(Field::MedicineSystem),
+						b"recognizingAuthority" => Ok(Field::RecognizingAuthority),
+						b"relevantSpecialty" => Ok(Field::RelevantSpecialty),
+						b"study" => Ok(Field::Study),
+						b"additionalType" => Ok(Field::AdditionalType),
+						b"alternateName" => Ok(Field::AlternateName),
+						b"description" => Ok(Field::Description),
+						b"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
+						b"identifier" => Ok(Field::Identifier),
+						b"image" => Ok(Field::Image),
+						b"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
+						b"name" => Ok(Field::Name),
+						b"potentialAction" => Ok(Field::PotentialAction),
+						b"sameAs" => Ok(Field::SameAs),
+						b"subjectOf" => Ok(Field::SubjectOf),
 						b"url" => Ok(Field::Url),
 						_ => Ok(Field::Ignore),
 					}
@@ -973,55 +1223,55 @@ mod serde {
 				where
 					A: de::MapAccess<'de>,
 				{
-					let mut r#additional_type_property = None;
-					let mut r#alternate_name_property = None;
+					let mut r#infectious_agent_property = None;
+					let mut r#infectious_agent_class_property = None;
+					let mut r#transmission_method_property = None;
 					let mut r#associated_anatomy_property = None;
-					let mut r#code_property = None;
-					let mut r#description_property = None;
 					let mut r#differential_diagnosis_property = None;
-					let mut r#disambiguating_description_property = None;
 					let mut r#drug_property = None;
 					let mut r#epidemiology_property = None;
 					let mut r#expected_prognosis_property = None;
-					let mut r#funding_property = None;
-					let mut r#guideline_property = None;
-					let mut r#identifier_property = None;
-					let mut r#image_property = None;
-					let mut r#infectious_agent_property = None;
-					let mut r#infectious_agent_class_property = None;
-					let mut r#legal_status_property = None;
-					let mut r#main_entity_of_page_property = None;
-					let mut r#medicine_system_property = None;
-					let mut r#name_property = None;
 					let mut r#natural_progression_property = None;
 					let mut r#pathophysiology_property = None;
 					let mut r#possible_complication_property = None;
 					let mut r#possible_treatment_property = None;
-					let mut r#potential_action_property = None;
 					let mut r#primary_prevention_property = None;
-					let mut r#recognizing_authority_property = None;
-					let mut r#relevant_specialty_property = None;
 					let mut r#risk_factor_property = None;
-					let mut r#same_as_property = None;
 					let mut r#secondary_prevention_property = None;
 					let mut r#sign_or_symptom_property = None;
 					let mut r#stage_property = None;
 					let mut r#status_property = None;
-					let mut r#study_property = None;
-					let mut r#subject_of_property = None;
-					let mut r#transmission_method_property = None;
 					let mut r#typical_test_property = None;
+					let mut r#code_property = None;
+					let mut r#funding_property = None;
+					let mut r#guideline_property = None;
+					let mut r#legal_status_property = None;
+					let mut r#medicine_system_property = None;
+					let mut r#recognizing_authority_property = None;
+					let mut r#relevant_specialty_property = None;
+					let mut r#study_property = None;
+					let mut r#additional_type_property = None;
+					let mut r#alternate_name_property = None;
+					let mut r#description_property = None;
+					let mut r#disambiguating_description_property = None;
+					let mut r#identifier_property = None;
+					let mut r#image_property = None;
+					let mut r#main_entity_of_page_property = None;
+					let mut r#name_property = None;
+					let mut r#potential_action_property = None;
+					let mut r#same_as_property = None;
+					let mut r#subject_of_property = None;
 					let mut r#url_property = None;
 					while let Some(key) = map.next_key::<Field>()? {
 						match key {
-							Field::AdditionalType => {
-								if r#additional_type_property.is_some() {
+							Field::InfectiousAgent => {
+								if r#infectious_agent_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
-										"additionalType",
+										"infectiousAgent",
 									));
 								}
-								r#additional_type_property = Some({
-									struct DeserializeWith(Vec<AdditionalTypeProperty>);
+								r#infectious_agent_property = Some({
+									struct DeserializeWith(Vec<InfectiousAgentProperty>);
 									impl<'de> Deserialize<'de> for DeserializeWith {
 										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
 										where
@@ -1040,14 +1290,40 @@ mod serde {
 									}
 								});
 							}
-							Field::AlternateName => {
-								if r#alternate_name_property.is_some() {
+							Field::InfectiousAgentClass => {
+								if r#infectious_agent_class_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
-										"alternateName",
+										"infectiousAgentClass",
 									));
 								}
-								r#alternate_name_property = Some({
-									struct DeserializeWith(Vec<AlternateNameProperty>);
+								r#infectious_agent_class_property = Some({
+									struct DeserializeWith(Vec<InfectiousAgentClassProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::TransmissionMethod => {
+								if r#transmission_method_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"transmissionMethod",
+									));
+								}
+								r#transmission_method_property = Some({
+									struct DeserializeWith(Vec<TransmissionMethodProperty>);
 									impl<'de> Deserialize<'de> for DeserializeWith {
 										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
 										where
@@ -1092,56 +1368,6 @@ mod serde {
 									}
 								});
 							}
-							Field::Code => {
-								if r#code_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field("code"));
-								}
-								r#code_property = Some({
-									struct DeserializeWith(Vec<CodeProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::Description => {
-								if r#description_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"description",
-									));
-								}
-								r#description_property = Some({
-									struct DeserializeWith(Vec<DescriptionProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
 							Field::DifferentialDiagnosis => {
 								if r#differential_diagnosis_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -1150,32 +1376,6 @@ mod serde {
 								}
 								r#differential_diagnosis_property = Some({
 									struct DeserializeWith(Vec<DifferentialDiagnosisProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::DisambiguatingDescription => {
-								if r#disambiguating_description_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"disambiguatingDescription",
-									));
-								}
-								r#disambiguating_description_property = Some({
-									struct DeserializeWith(Vec<DisambiguatingDescriptionProperty>);
 									impl<'de> Deserialize<'de> for DeserializeWith {
 										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
 										where
@@ -1252,262 +1452,6 @@ mod serde {
 								}
 								r#expected_prognosis_property = Some({
 									struct DeserializeWith(Vec<ExpectedPrognosisProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::Funding => {
-								if r#funding_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"funding",
-									));
-								}
-								r#funding_property = Some({
-									struct DeserializeWith(Vec<FundingProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::Guideline => {
-								if r#guideline_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"guideline",
-									));
-								}
-								r#guideline_property = Some({
-									struct DeserializeWith(Vec<GuidelineProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::Identifier => {
-								if r#identifier_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"identifier",
-									));
-								}
-								r#identifier_property = Some({
-									struct DeserializeWith(Vec<IdentifierProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::Image => {
-								if r#image_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field("image"));
-								}
-								r#image_property = Some({
-									struct DeserializeWith(Vec<ImageProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::InfectiousAgent => {
-								if r#infectious_agent_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"infectiousAgent",
-									));
-								}
-								r#infectious_agent_property = Some({
-									struct DeserializeWith(Vec<InfectiousAgentProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::InfectiousAgentClass => {
-								if r#infectious_agent_class_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"infectiousAgentClass",
-									));
-								}
-								r#infectious_agent_class_property = Some({
-									struct DeserializeWith(Vec<InfectiousAgentClassProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::LegalStatus => {
-								if r#legal_status_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"legalStatus",
-									));
-								}
-								r#legal_status_property = Some({
-									struct DeserializeWith(Vec<LegalStatusProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::MainEntityOfPage => {
-								if r#main_entity_of_page_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"mainEntityOfPage",
-									));
-								}
-								r#main_entity_of_page_property = Some({
-									struct DeserializeWith(Vec<MainEntityOfPageProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::MedicineSystem => {
-								if r#medicine_system_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"medicineSystem",
-									));
-								}
-								r#medicine_system_property = Some({
-									struct DeserializeWith(Vec<MedicineSystemProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::Name => {
-								if r#name_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field("name"));
-								}
-								r#name_property = Some({
-									struct DeserializeWith(Vec<NameProperty>);
 									impl<'de> Deserialize<'de> for DeserializeWith {
 										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
 										where
@@ -1630,32 +1574,6 @@ mod serde {
 									}
 								});
 							}
-							Field::PotentialAction => {
-								if r#potential_action_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"potentialAction",
-									));
-								}
-								r#potential_action_property = Some({
-									struct DeserializeWith(Vec<PotentialActionProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
 							Field::PrimaryPrevention => {
 								if r#primary_prevention_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -1682,58 +1600,6 @@ mod serde {
 									}
 								});
 							}
-							Field::RecognizingAuthority => {
-								if r#recognizing_authority_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"recognizingAuthority",
-									));
-								}
-								r#recognizing_authority_property = Some({
-									struct DeserializeWith(Vec<RecognizingAuthorityProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::RelevantSpecialty => {
-								if r#relevant_specialty_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"relevantSpecialty",
-									));
-								}
-								r#relevant_specialty_property = Some({
-									struct DeserializeWith(Vec<RelevantSpecialtyProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
 							Field::RiskFactor => {
 								if r#risk_factor_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -1742,30 +1608,6 @@ mod serde {
 								}
 								r#risk_factor_property = Some({
 									struct DeserializeWith(Vec<RiskFactorProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::SameAs => {
-								if r#same_as_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field("sameAs"));
-								}
-								r#same_as_property = Some({
-									struct DeserializeWith(Vec<SameAsProperty>);
 									impl<'de> Deserialize<'de> for DeserializeWith {
 										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
 										where
@@ -1884,12 +1726,472 @@ mod serde {
 									}
 								});
 							}
+							Field::TypicalTest => {
+								if r#typical_test_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"typicalTest",
+									));
+								}
+								r#typical_test_property = Some({
+									struct DeserializeWith(Vec<TypicalTestProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::Code => {
+								if r#code_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field("code"));
+								}
+								r#code_property = Some({
+									struct DeserializeWith(Vec<CodeProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::Funding => {
+								if r#funding_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"funding",
+									));
+								}
+								r#funding_property = Some({
+									struct DeserializeWith(Vec<FundingProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::Guideline => {
+								if r#guideline_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"guideline",
+									));
+								}
+								r#guideline_property = Some({
+									struct DeserializeWith(Vec<GuidelineProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::LegalStatus => {
+								if r#legal_status_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"legalStatus",
+									));
+								}
+								r#legal_status_property = Some({
+									struct DeserializeWith(Vec<LegalStatusProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::MedicineSystem => {
+								if r#medicine_system_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"medicineSystem",
+									));
+								}
+								r#medicine_system_property = Some({
+									struct DeserializeWith(Vec<MedicineSystemProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::RecognizingAuthority => {
+								if r#recognizing_authority_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"recognizingAuthority",
+									));
+								}
+								r#recognizing_authority_property = Some({
+									struct DeserializeWith(Vec<RecognizingAuthorityProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::RelevantSpecialty => {
+								if r#relevant_specialty_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"relevantSpecialty",
+									));
+								}
+								r#relevant_specialty_property = Some({
+									struct DeserializeWith(Vec<RelevantSpecialtyProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
 							Field::Study => {
 								if r#study_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("study"));
 								}
 								r#study_property = Some({
 									struct DeserializeWith(Vec<StudyProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::AdditionalType => {
+								if r#additional_type_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"additionalType",
+									));
+								}
+								r#additional_type_property = Some({
+									struct DeserializeWith(Vec<AdditionalTypeProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::AlternateName => {
+								if r#alternate_name_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"alternateName",
+									));
+								}
+								r#alternate_name_property = Some({
+									struct DeserializeWith(Vec<AlternateNameProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::Description => {
+								if r#description_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"description",
+									));
+								}
+								r#description_property = Some({
+									struct DeserializeWith(Vec<DescriptionProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::DisambiguatingDescription => {
+								if r#disambiguating_description_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"disambiguatingDescription",
+									));
+								}
+								r#disambiguating_description_property = Some({
+									struct DeserializeWith(Vec<DisambiguatingDescriptionProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::Identifier => {
+								if r#identifier_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"identifier",
+									));
+								}
+								r#identifier_property = Some({
+									struct DeserializeWith(Vec<IdentifierProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::Image => {
+								if r#image_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field("image"));
+								}
+								r#image_property = Some({
+									struct DeserializeWith(Vec<ImageProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::MainEntityOfPage => {
+								if r#main_entity_of_page_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"mainEntityOfPage",
+									));
+								}
+								r#main_entity_of_page_property = Some({
+									struct DeserializeWith(Vec<MainEntityOfPageProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::Name => {
+								if r#name_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field("name"));
+								}
+								r#name_property = Some({
+									struct DeserializeWith(Vec<NameProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::PotentialAction => {
+								if r#potential_action_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"potentialAction",
+									));
+								}
+								r#potential_action_property = Some({
+									struct DeserializeWith(Vec<PotentialActionProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::SameAs => {
+								if r#same_as_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field("sameAs"));
+								}
+								r#same_as_property = Some({
+									struct DeserializeWith(Vec<SameAsProperty>);
 									impl<'de> Deserialize<'de> for DeserializeWith {
 										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
 										where
@@ -1916,58 +2218,6 @@ mod serde {
 								}
 								r#subject_of_property = Some({
 									struct DeserializeWith(Vec<SubjectOfProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::TransmissionMethod => {
-								if r#transmission_method_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"transmissionMethod",
-									));
-								}
-								r#transmission_method_property = Some({
-									struct DeserializeWith(Vec<TransmissionMethodProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::TypicalTest => {
-								if r#typical_test_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"typicalTest",
-									));
-								}
-								r#typical_test_property = Some({
-									struct DeserializeWith(Vec<TypicalTestProperty>);
 									impl<'de> Deserialize<'de> for DeserializeWith {
 										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
 										where
@@ -2016,92 +2266,92 @@ mod serde {
 						}
 					}
 					Ok(InfectiousDisease {
-						r#additional_type: r#additional_type_property.unwrap_or_default(),
-						r#alternate_name: r#alternate_name_property.unwrap_or_default(),
-						r#associated_anatomy: r#associated_anatomy_property.unwrap_or_default(),
-						r#code: r#code_property.unwrap_or_default(),
-						r#description: r#description_property.unwrap_or_default(),
-						r#differential_diagnosis: r#differential_diagnosis_property
+						r#infectious_agent: r#infectious_agent_property.unwrap_or_default(),
+						r#infectious_agent_class: r#infectious_agent_class_property
 							.unwrap_or_default(),
-						r#disambiguating_description: r#disambiguating_description_property
+						r#transmission_method: r#transmission_method_property.unwrap_or_default(),
+						r#associated_anatomy: r#associated_anatomy_property.unwrap_or_default(),
+						r#differential_diagnosis: r#differential_diagnosis_property
 							.unwrap_or_default(),
 						r#drug: r#drug_property.unwrap_or_default(),
 						r#epidemiology: r#epidemiology_property.unwrap_or_default(),
 						r#expected_prognosis: r#expected_prognosis_property.unwrap_or_default(),
-						r#funding: r#funding_property.unwrap_or_default(),
-						r#guideline: r#guideline_property.unwrap_or_default(),
-						r#identifier: r#identifier_property.unwrap_or_default(),
-						r#image: r#image_property.unwrap_or_default(),
-						r#infectious_agent: r#infectious_agent_property.unwrap_or_default(),
-						r#infectious_agent_class: r#infectious_agent_class_property
-							.unwrap_or_default(),
-						r#legal_status: r#legal_status_property.unwrap_or_default(),
-						r#main_entity_of_page: r#main_entity_of_page_property.unwrap_or_default(),
-						r#medicine_system: r#medicine_system_property.unwrap_or_default(),
-						r#name: r#name_property.unwrap_or_default(),
 						r#natural_progression: r#natural_progression_property.unwrap_or_default(),
 						r#pathophysiology: r#pathophysiology_property.unwrap_or_default(),
 						r#possible_complication: r#possible_complication_property
 							.unwrap_or_default(),
 						r#possible_treatment: r#possible_treatment_property.unwrap_or_default(),
-						r#potential_action: r#potential_action_property.unwrap_or_default(),
 						r#primary_prevention: r#primary_prevention_property.unwrap_or_default(),
-						r#recognizing_authority: r#recognizing_authority_property
-							.unwrap_or_default(),
-						r#relevant_specialty: r#relevant_specialty_property.unwrap_or_default(),
 						r#risk_factor: r#risk_factor_property.unwrap_or_default(),
-						r#same_as: r#same_as_property.unwrap_or_default(),
 						r#secondary_prevention: r#secondary_prevention_property.unwrap_or_default(),
 						r#sign_or_symptom: r#sign_or_symptom_property.unwrap_or_default(),
 						r#stage: r#stage_property.unwrap_or_default(),
 						r#status: r#status_property.unwrap_or_default(),
-						r#study: r#study_property.unwrap_or_default(),
-						r#subject_of: r#subject_of_property.unwrap_or_default(),
-						r#transmission_method: r#transmission_method_property.unwrap_or_default(),
 						r#typical_test: r#typical_test_property.unwrap_or_default(),
+						r#code: r#code_property.unwrap_or_default(),
+						r#funding: r#funding_property.unwrap_or_default(),
+						r#guideline: r#guideline_property.unwrap_or_default(),
+						r#legal_status: r#legal_status_property.unwrap_or_default(),
+						r#medicine_system: r#medicine_system_property.unwrap_or_default(),
+						r#recognizing_authority: r#recognizing_authority_property
+							.unwrap_or_default(),
+						r#relevant_specialty: r#relevant_specialty_property.unwrap_or_default(),
+						r#study: r#study_property.unwrap_or_default(),
+						r#additional_type: r#additional_type_property.unwrap_or_default(),
+						r#alternate_name: r#alternate_name_property.unwrap_or_default(),
+						r#description: r#description_property.unwrap_or_default(),
+						r#disambiguating_description: r#disambiguating_description_property
+							.unwrap_or_default(),
+						r#identifier: r#identifier_property.unwrap_or_default(),
+						r#image: r#image_property.unwrap_or_default(),
+						r#main_entity_of_page: r#main_entity_of_page_property.unwrap_or_default(),
+						r#name: r#name_property.unwrap_or_default(),
+						r#potential_action: r#potential_action_property.unwrap_or_default(),
+						r#same_as: r#same_as_property.unwrap_or_default(),
+						r#subject_of: r#subject_of_property.unwrap_or_default(),
 						r#url: r#url_property.unwrap_or_default(),
 					})
 				}
 			}
 			const FIELDS: &[&str] = &[
-				"additionalType",
-				"alternateName",
+				"infectiousAgent",
+				"infectiousAgentClass",
+				"transmissionMethod",
 				"associatedAnatomy",
-				"code",
-				"description",
 				"differentialDiagnosis",
-				"disambiguatingDescription",
 				"drug",
 				"epidemiology",
 				"expectedPrognosis",
-				"funding",
-				"guideline",
-				"identifier",
-				"image",
-				"infectiousAgent",
-				"infectiousAgentClass",
-				"legalStatus",
-				"mainEntityOfPage",
-				"medicineSystem",
-				"name",
 				"naturalProgression",
 				"pathophysiology",
 				"possibleComplication",
 				"possibleTreatment",
-				"potentialAction",
 				"primaryPrevention",
-				"recognizingAuthority",
-				"relevantSpecialty",
 				"riskFactor",
-				"sameAs",
 				"secondaryPrevention",
 				"signOrSymptom",
 				"stage",
 				"status",
-				"study",
-				"subjectOf",
-				"transmissionMethod",
 				"typicalTest",
+				"code",
+				"funding",
+				"guideline",
+				"legalStatus",
+				"medicineSystem",
+				"recognizingAuthority",
+				"relevantSpecialty",
+				"study",
+				"additionalType",
+				"alternateName",
+				"description",
+				"disambiguatingDescription",
+				"identifier",
+				"image",
+				"mainEntityOfPage",
+				"name",
+				"potentialAction",
+				"sameAs",
+				"subjectOf",
 				"url",
 			];
 			deserializer.deserialize_struct("InfectiousDisease", FIELDS, ClassVisitor)

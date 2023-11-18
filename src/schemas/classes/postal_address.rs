@@ -3,34 +3,223 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct PostalAddress {
-	pub r#additional_type: Vec<AdditionalTypeProperty>,
 	pub r#address_country: Vec<AddressCountryProperty>,
 	pub r#address_locality: Vec<AddressLocalityProperty>,
 	pub r#address_region: Vec<AddressRegionProperty>,
-	pub r#alternate_name: Vec<AlternateNameProperty>,
+	pub r#post_office_box_number: Vec<PostOfficeBoxNumberProperty>,
+	pub r#postal_code: Vec<PostalCodeProperty>,
+	pub r#street_address: Vec<StreetAddressProperty>,
 	pub r#area_served: Vec<AreaServedProperty>,
 	pub r#available_language: Vec<AvailableLanguageProperty>,
 	pub r#contact_option: Vec<ContactOptionProperty>,
 	pub r#contact_type: Vec<ContactTypeProperty>,
-	pub r#description: Vec<DescriptionProperty>,
-	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
 	pub r#email: Vec<EmailProperty>,
 	pub r#fax_number: Vec<FaxNumberProperty>,
 	pub r#hours_available: Vec<HoursAvailableProperty>,
+	pub r#product_supported: Vec<ProductSupportedProperty>,
+	pub r#service_area: Vec<ServiceAreaProperty>,
+	pub r#telephone: Vec<TelephoneProperty>,
+	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	pub r#alternate_name: Vec<AlternateNameProperty>,
+	pub r#description: Vec<DescriptionProperty>,
+	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
 	pub r#identifier: Vec<IdentifierProperty>,
 	pub r#image: Vec<ImageProperty>,
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
 	pub r#name: Vec<NameProperty>,
-	pub r#post_office_box_number: Vec<PostOfficeBoxNumberProperty>,
-	pub r#postal_code: Vec<PostalCodeProperty>,
 	pub r#potential_action: Vec<PotentialActionProperty>,
-	pub r#product_supported: Vec<ProductSupportedProperty>,
 	pub r#same_as: Vec<SameAsProperty>,
-	pub r#service_area: Vec<ServiceAreaProperty>,
-	pub r#street_address: Vec<StreetAddressProperty>,
 	pub r#subject_of: Vec<SubjectOfProperty>,
-	pub r#telephone: Vec<TelephoneProperty>,
 	pub r#url: Vec<UrlProperty>,
+}
+pub trait PostalAddressTrait {
+	fn get_address_country(&self) -> &[AddressCountryProperty];
+	fn take_address_country(&mut self) -> Vec<AddressCountryProperty>;
+	fn get_address_locality(&self) -> &[AddressLocalityProperty];
+	fn take_address_locality(&mut self) -> Vec<AddressLocalityProperty>;
+	fn get_address_region(&self) -> &[AddressRegionProperty];
+	fn take_address_region(&mut self) -> Vec<AddressRegionProperty>;
+	fn get_post_office_box_number(&self) -> &[PostOfficeBoxNumberProperty];
+	fn take_post_office_box_number(&mut self) -> Vec<PostOfficeBoxNumberProperty>;
+	fn get_postal_code(&self) -> &[PostalCodeProperty];
+	fn take_postal_code(&mut self) -> Vec<PostalCodeProperty>;
+	fn get_street_address(&self) -> &[StreetAddressProperty];
+	fn take_street_address(&mut self) -> Vec<StreetAddressProperty>;
+}
+impl PostalAddressTrait for PostalAddress {
+	fn get_address_country(&self) -> &[AddressCountryProperty] {
+		self.r#address_country.as_slice()
+	}
+	fn take_address_country(&mut self) -> Vec<AddressCountryProperty> {
+		std::mem::take(&mut self.r#address_country)
+	}
+	fn get_address_locality(&self) -> &[AddressLocalityProperty] {
+		self.r#address_locality.as_slice()
+	}
+	fn take_address_locality(&mut self) -> Vec<AddressLocalityProperty> {
+		std::mem::take(&mut self.r#address_locality)
+	}
+	fn get_address_region(&self) -> &[AddressRegionProperty] {
+		self.r#address_region.as_slice()
+	}
+	fn take_address_region(&mut self) -> Vec<AddressRegionProperty> {
+		std::mem::take(&mut self.r#address_region)
+	}
+	fn get_post_office_box_number(&self) -> &[PostOfficeBoxNumberProperty] {
+		self.r#post_office_box_number.as_slice()
+	}
+	fn take_post_office_box_number(&mut self) -> Vec<PostOfficeBoxNumberProperty> {
+		std::mem::take(&mut self.r#post_office_box_number)
+	}
+	fn get_postal_code(&self) -> &[PostalCodeProperty] {
+		self.r#postal_code.as_slice()
+	}
+	fn take_postal_code(&mut self) -> Vec<PostalCodeProperty> {
+		std::mem::take(&mut self.r#postal_code)
+	}
+	fn get_street_address(&self) -> &[StreetAddressProperty] {
+		self.r#street_address.as_slice()
+	}
+	fn take_street_address(&mut self) -> Vec<StreetAddressProperty> {
+		std::mem::take(&mut self.r#street_address)
+	}
+}
+impl ContactPointTrait for PostalAddress {
+	fn get_area_served(&self) -> &[AreaServedProperty] {
+		self.r#area_served.as_slice()
+	}
+	fn take_area_served(&mut self) -> Vec<AreaServedProperty> {
+		std::mem::take(&mut self.r#area_served)
+	}
+	fn get_available_language(&self) -> &[AvailableLanguageProperty] {
+		self.r#available_language.as_slice()
+	}
+	fn take_available_language(&mut self) -> Vec<AvailableLanguageProperty> {
+		std::mem::take(&mut self.r#available_language)
+	}
+	fn get_contact_option(&self) -> &[ContactOptionProperty] {
+		self.r#contact_option.as_slice()
+	}
+	fn take_contact_option(&mut self) -> Vec<ContactOptionProperty> {
+		std::mem::take(&mut self.r#contact_option)
+	}
+	fn get_contact_type(&self) -> &[ContactTypeProperty] {
+		self.r#contact_type.as_slice()
+	}
+	fn take_contact_type(&mut self) -> Vec<ContactTypeProperty> {
+		std::mem::take(&mut self.r#contact_type)
+	}
+	fn get_email(&self) -> &[EmailProperty] {
+		self.r#email.as_slice()
+	}
+	fn take_email(&mut self) -> Vec<EmailProperty> {
+		std::mem::take(&mut self.r#email)
+	}
+	fn get_fax_number(&self) -> &[FaxNumberProperty] {
+		self.r#fax_number.as_slice()
+	}
+	fn take_fax_number(&mut self) -> Vec<FaxNumberProperty> {
+		std::mem::take(&mut self.r#fax_number)
+	}
+	fn get_hours_available(&self) -> &[HoursAvailableProperty] {
+		self.r#hours_available.as_slice()
+	}
+	fn take_hours_available(&mut self) -> Vec<HoursAvailableProperty> {
+		std::mem::take(&mut self.r#hours_available)
+	}
+	fn get_product_supported(&self) -> &[ProductSupportedProperty] {
+		self.r#product_supported.as_slice()
+	}
+	fn take_product_supported(&mut self) -> Vec<ProductSupportedProperty> {
+		std::mem::take(&mut self.r#product_supported)
+	}
+	fn get_service_area(&self) -> &[ServiceAreaProperty] {
+		self.r#service_area.as_slice()
+	}
+	fn take_service_area(&mut self) -> Vec<ServiceAreaProperty> {
+		std::mem::take(&mut self.r#service_area)
+	}
+	fn get_telephone(&self) -> &[TelephoneProperty] {
+		self.r#telephone.as_slice()
+	}
+	fn take_telephone(&mut self) -> Vec<TelephoneProperty> {
+		std::mem::take(&mut self.r#telephone)
+	}
+}
+impl StructuredValueTrait for PostalAddress {}
+impl ThingTrait for PostalAddress {
+	fn get_additional_type(&self) -> &[AdditionalTypeProperty] {
+		self.r#additional_type.as_slice()
+	}
+	fn take_additional_type(&mut self) -> Vec<AdditionalTypeProperty> {
+		std::mem::take(&mut self.r#additional_type)
+	}
+	fn get_alternate_name(&self) -> &[AlternateNameProperty] {
+		self.r#alternate_name.as_slice()
+	}
+	fn take_alternate_name(&mut self) -> Vec<AlternateNameProperty> {
+		std::mem::take(&mut self.r#alternate_name)
+	}
+	fn get_description(&self) -> &[DescriptionProperty] {
+		self.r#description.as_slice()
+	}
+	fn take_description(&mut self) -> Vec<DescriptionProperty> {
+		std::mem::take(&mut self.r#description)
+	}
+	fn get_disambiguating_description(&self) -> &[DisambiguatingDescriptionProperty] {
+		self.r#disambiguating_description.as_slice()
+	}
+	fn take_disambiguating_description(&mut self) -> Vec<DisambiguatingDescriptionProperty> {
+		std::mem::take(&mut self.r#disambiguating_description)
+	}
+	fn get_identifier(&self) -> &[IdentifierProperty] {
+		self.r#identifier.as_slice()
+	}
+	fn take_identifier(&mut self) -> Vec<IdentifierProperty> {
+		std::mem::take(&mut self.r#identifier)
+	}
+	fn get_image(&self) -> &[ImageProperty] {
+		self.r#image.as_slice()
+	}
+	fn take_image(&mut self) -> Vec<ImageProperty> {
+		std::mem::take(&mut self.r#image)
+	}
+	fn get_main_entity_of_page(&self) -> &[MainEntityOfPageProperty] {
+		self.r#main_entity_of_page.as_slice()
+	}
+	fn take_main_entity_of_page(&mut self) -> Vec<MainEntityOfPageProperty> {
+		std::mem::take(&mut self.r#main_entity_of_page)
+	}
+	fn get_name(&self) -> &[NameProperty] {
+		self.r#name.as_slice()
+	}
+	fn take_name(&mut self) -> Vec<NameProperty> {
+		std::mem::take(&mut self.r#name)
+	}
+	fn get_potential_action(&self) -> &[PotentialActionProperty] {
+		self.r#potential_action.as_slice()
+	}
+	fn take_potential_action(&mut self) -> Vec<PotentialActionProperty> {
+		std::mem::take(&mut self.r#potential_action)
+	}
+	fn get_same_as(&self) -> &[SameAsProperty] {
+		self.r#same_as.as_slice()
+	}
+	fn take_same_as(&mut self) -> Vec<SameAsProperty> {
+		std::mem::take(&mut self.r#same_as)
+	}
+	fn get_subject_of(&self) -> &[SubjectOfProperty] {
+		self.r#subject_of.as_slice()
+	}
+	fn take_subject_of(&mut self) -> Vec<SubjectOfProperty> {
+		std::mem::take(&mut self.r#subject_of)
+	}
+	fn get_url(&self) -> &[UrlProperty] {
+		self.r#url.as_slice()
+	}
+	fn take_url(&mut self) -> Vec<UrlProperty> {
+		std::mem::take(&mut self.r#url)
+	}
 }
 #[cfg(feature = "serde")]
 mod serde {
@@ -47,57 +236,39 @@ mod serde {
 			S: Serializer,
 		{
 			let len: usize = [
-				!Vec::is_empty(&self.r#additional_type) as usize,
 				!Vec::is_empty(&self.r#address_country) as usize,
 				!Vec::is_empty(&self.r#address_locality) as usize,
 				!Vec::is_empty(&self.r#address_region) as usize,
-				!Vec::is_empty(&self.r#alternate_name) as usize,
+				!Vec::is_empty(&self.r#post_office_box_number) as usize,
+				!Vec::is_empty(&self.r#postal_code) as usize,
+				!Vec::is_empty(&self.r#street_address) as usize,
 				!Vec::is_empty(&self.r#area_served) as usize,
 				!Vec::is_empty(&self.r#available_language) as usize,
 				!Vec::is_empty(&self.r#contact_option) as usize,
 				!Vec::is_empty(&self.r#contact_type) as usize,
-				!Vec::is_empty(&self.r#description) as usize,
-				!Vec::is_empty(&self.r#disambiguating_description) as usize,
 				!Vec::is_empty(&self.r#email) as usize,
 				!Vec::is_empty(&self.r#fax_number) as usize,
 				!Vec::is_empty(&self.r#hours_available) as usize,
+				!Vec::is_empty(&self.r#product_supported) as usize,
+				!Vec::is_empty(&self.r#service_area) as usize,
+				!Vec::is_empty(&self.r#telephone) as usize,
+				!Vec::is_empty(&self.r#additional_type) as usize,
+				!Vec::is_empty(&self.r#alternate_name) as usize,
+				!Vec::is_empty(&self.r#description) as usize,
+				!Vec::is_empty(&self.r#disambiguating_description) as usize,
 				!Vec::is_empty(&self.r#identifier) as usize,
 				!Vec::is_empty(&self.r#image) as usize,
 				!Vec::is_empty(&self.r#main_entity_of_page) as usize,
 				!Vec::is_empty(&self.r#name) as usize,
-				!Vec::is_empty(&self.r#post_office_box_number) as usize,
-				!Vec::is_empty(&self.r#postal_code) as usize,
 				!Vec::is_empty(&self.r#potential_action) as usize,
-				!Vec::is_empty(&self.r#product_supported) as usize,
 				!Vec::is_empty(&self.r#same_as) as usize,
-				!Vec::is_empty(&self.r#service_area) as usize,
-				!Vec::is_empty(&self.r#street_address) as usize,
 				!Vec::is_empty(&self.r#subject_of) as usize,
-				!Vec::is_empty(&self.r#telephone) as usize,
 				!Vec::is_empty(&self.r#url) as usize,
 			]
 			.iter()
 			.sum();
 			let mut serialize_struct =
 				Serializer::serialize_struct(serializer, "PostalAddress", len)?;
-			if !Vec::is_empty(&self.r#additional_type) {
-				serialize_struct.serialize_field("additionalType", {
-					struct SerializeWith<'a>(&'a Vec<AdditionalTypeProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#additional_type)
-				})?;
-			} else {
-				serialize_struct.skip_field("additionalType")?;
-			}
 			if !Vec::is_empty(&self.r#address_country) {
 				serialize_struct.serialize_field("addressCountry", {
 					struct SerializeWith<'a>(&'a Vec<AddressCountryProperty>);
@@ -152,9 +323,9 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("addressRegion")?;
 			}
-			if !Vec::is_empty(&self.r#alternate_name) {
-				serialize_struct.serialize_field("alternateName", {
-					struct SerializeWith<'a>(&'a Vec<AlternateNameProperty>);
+			if !Vec::is_empty(&self.r#post_office_box_number) {
+				serialize_struct.serialize_field("postOfficeBoxNumber", {
+					struct SerializeWith<'a>(&'a Vec<PostOfficeBoxNumberProperty>);
 					impl<'a> Serialize for SerializeWith<'a> {
 						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
 						where
@@ -165,10 +336,46 @@ mod serde {
 							)
 						}
 					}
-					&SerializeWith(&self.r#alternate_name)
+					&SerializeWith(&self.r#post_office_box_number)
 				})?;
 			} else {
-				serialize_struct.skip_field("alternateName")?;
+				serialize_struct.skip_field("postOfficeBoxNumber")?;
+			}
+			if !Vec::is_empty(&self.r#postal_code) {
+				serialize_struct.serialize_field("postalCode", {
+					struct SerializeWith<'a>(&'a Vec<PostalCodeProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#postal_code)
+				})?;
+			} else {
+				serialize_struct.skip_field("postalCode")?;
+			}
+			if !Vec::is_empty(&self.r#street_address) {
+				serialize_struct.serialize_field("streetAddress", {
+					struct SerializeWith<'a>(&'a Vec<StreetAddressProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#street_address)
+				})?;
+			} else {
+				serialize_struct.skip_field("streetAddress")?;
 			}
 			if !Vec::is_empty(&self.r#area_served) {
 				serialize_struct.serialize_field("areaServed", {
@@ -242,42 +449,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("contactType")?;
 			}
-			if !Vec::is_empty(&self.r#description) {
-				serialize_struct.serialize_field("description", {
-					struct SerializeWith<'a>(&'a Vec<DescriptionProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#description)
-				})?;
-			} else {
-				serialize_struct.skip_field("description")?;
-			}
-			if !Vec::is_empty(&self.r#disambiguating_description) {
-				serialize_struct.serialize_field("disambiguatingDescription", {
-					struct SerializeWith<'a>(&'a Vec<DisambiguatingDescriptionProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#disambiguating_description)
-				})?;
-			} else {
-				serialize_struct.skip_field("disambiguatingDescription")?;
-			}
 			if !Vec::is_empty(&self.r#email) {
 				serialize_struct.serialize_field("email", {
 					struct SerializeWith<'a>(&'a Vec<EmailProperty>);
@@ -331,6 +502,132 @@ mod serde {
 				})?;
 			} else {
 				serialize_struct.skip_field("hoursAvailable")?;
+			}
+			if !Vec::is_empty(&self.r#product_supported) {
+				serialize_struct.serialize_field("productSupported", {
+					struct SerializeWith<'a>(&'a Vec<ProductSupportedProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#product_supported)
+				})?;
+			} else {
+				serialize_struct.skip_field("productSupported")?;
+			}
+			if !Vec::is_empty(&self.r#service_area) {
+				serialize_struct.serialize_field("serviceArea", {
+					struct SerializeWith<'a>(&'a Vec<ServiceAreaProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#service_area)
+				})?;
+			} else {
+				serialize_struct.skip_field("serviceArea")?;
+			}
+			if !Vec::is_empty(&self.r#telephone) {
+				serialize_struct.serialize_field("telephone", {
+					struct SerializeWith<'a>(&'a Vec<TelephoneProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#telephone)
+				})?;
+			} else {
+				serialize_struct.skip_field("telephone")?;
+			}
+			if !Vec::is_empty(&self.r#additional_type) {
+				serialize_struct.serialize_field("additionalType", {
+					struct SerializeWith<'a>(&'a Vec<AdditionalTypeProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#additional_type)
+				})?;
+			} else {
+				serialize_struct.skip_field("additionalType")?;
+			}
+			if !Vec::is_empty(&self.r#alternate_name) {
+				serialize_struct.serialize_field("alternateName", {
+					struct SerializeWith<'a>(&'a Vec<AlternateNameProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#alternate_name)
+				})?;
+			} else {
+				serialize_struct.skip_field("alternateName")?;
+			}
+			if !Vec::is_empty(&self.r#description) {
+				serialize_struct.serialize_field("description", {
+					struct SerializeWith<'a>(&'a Vec<DescriptionProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#description)
+				})?;
+			} else {
+				serialize_struct.skip_field("description")?;
+			}
+			if !Vec::is_empty(&self.r#disambiguating_description) {
+				serialize_struct.serialize_field("disambiguatingDescription", {
+					struct SerializeWith<'a>(&'a Vec<DisambiguatingDescriptionProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#disambiguating_description)
+				})?;
+			} else {
+				serialize_struct.skip_field("disambiguatingDescription")?;
 			}
 			if !Vec::is_empty(&self.r#identifier) {
 				serialize_struct.serialize_field("identifier", {
@@ -404,42 +701,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("name")?;
 			}
-			if !Vec::is_empty(&self.r#post_office_box_number) {
-				serialize_struct.serialize_field("postOfficeBoxNumber", {
-					struct SerializeWith<'a>(&'a Vec<PostOfficeBoxNumberProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#post_office_box_number)
-				})?;
-			} else {
-				serialize_struct.skip_field("postOfficeBoxNumber")?;
-			}
-			if !Vec::is_empty(&self.r#postal_code) {
-				serialize_struct.serialize_field("postalCode", {
-					struct SerializeWith<'a>(&'a Vec<PostalCodeProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#postal_code)
-				})?;
-			} else {
-				serialize_struct.skip_field("postalCode")?;
-			}
 			if !Vec::is_empty(&self.r#potential_action) {
 				serialize_struct.serialize_field("potentialAction", {
 					struct SerializeWith<'a>(&'a Vec<PotentialActionProperty>);
@@ -457,24 +718,6 @@ mod serde {
 				})?;
 			} else {
 				serialize_struct.skip_field("potentialAction")?;
-			}
-			if !Vec::is_empty(&self.r#product_supported) {
-				serialize_struct.serialize_field("productSupported", {
-					struct SerializeWith<'a>(&'a Vec<ProductSupportedProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#product_supported)
-				})?;
-			} else {
-				serialize_struct.skip_field("productSupported")?;
 			}
 			if !Vec::is_empty(&self.r#same_as) {
 				serialize_struct.serialize_field("sameAs", {
@@ -494,42 +737,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("sameAs")?;
 			}
-			if !Vec::is_empty(&self.r#service_area) {
-				serialize_struct.serialize_field("serviceArea", {
-					struct SerializeWith<'a>(&'a Vec<ServiceAreaProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#service_area)
-				})?;
-			} else {
-				serialize_struct.skip_field("serviceArea")?;
-			}
-			if !Vec::is_empty(&self.r#street_address) {
-				serialize_struct.serialize_field("streetAddress", {
-					struct SerializeWith<'a>(&'a Vec<StreetAddressProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#street_address)
-				})?;
-			} else {
-				serialize_struct.skip_field("streetAddress")?;
-			}
 			if !Vec::is_empty(&self.r#subject_of) {
 				serialize_struct.serialize_field("subjectOf", {
 					struct SerializeWith<'a>(&'a Vec<SubjectOfProperty>);
@@ -547,24 +754,6 @@ mod serde {
 				})?;
 			} else {
 				serialize_struct.skip_field("subjectOf")?;
-			}
-			if !Vec::is_empty(&self.r#telephone) {
-				serialize_struct.serialize_field("telephone", {
-					struct SerializeWith<'a>(&'a Vec<TelephoneProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#telephone)
-				})?;
-			} else {
-				serialize_struct.skip_field("telephone")?;
 			}
 			if !Vec::is_empty(&self.r#url) {
 				serialize_struct.serialize_field("url", {
@@ -593,33 +782,33 @@ mod serde {
 			D: Deserializer<'de>,
 		{
 			enum Field {
-				AdditionalType,
 				AddressCountry,
 				AddressLocality,
 				AddressRegion,
-				AlternateName,
+				PostOfficeBoxNumber,
+				PostalCode,
+				StreetAddress,
 				AreaServed,
 				AvailableLanguage,
 				ContactOption,
 				ContactType,
-				Description,
-				DisambiguatingDescription,
 				Email,
 				FaxNumber,
 				HoursAvailable,
+				ProductSupported,
+				ServiceArea,
+				Telephone,
+				AdditionalType,
+				AlternateName,
+				Description,
+				DisambiguatingDescription,
 				Identifier,
 				Image,
 				MainEntityOfPage,
 				Name,
-				PostOfficeBoxNumber,
-				PostalCode,
 				PotentialAction,
-				ProductSupported,
 				SameAs,
-				ServiceArea,
-				StreetAddress,
 				SubjectOf,
-				Telephone,
 				Url,
 				Ignore,
 			}
@@ -634,33 +823,33 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
-						"additionalType" => Ok(Field::AdditionalType),
 						"addressCountry" => Ok(Field::AddressCountry),
 						"addressLocality" => Ok(Field::AddressLocality),
 						"addressRegion" => Ok(Field::AddressRegion),
-						"alternateName" => Ok(Field::AlternateName),
+						"postOfficeBoxNumber" => Ok(Field::PostOfficeBoxNumber),
+						"postalCode" => Ok(Field::PostalCode),
+						"streetAddress" => Ok(Field::StreetAddress),
 						"areaServed" => Ok(Field::AreaServed),
 						"availableLanguage" => Ok(Field::AvailableLanguage),
 						"contactOption" => Ok(Field::ContactOption),
 						"contactType" => Ok(Field::ContactType),
-						"description" => Ok(Field::Description),
-						"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
 						"email" => Ok(Field::Email),
 						"faxNumber" => Ok(Field::FaxNumber),
 						"hoursAvailable" => Ok(Field::HoursAvailable),
+						"productSupported" => Ok(Field::ProductSupported),
+						"serviceArea" => Ok(Field::ServiceArea),
+						"telephone" => Ok(Field::Telephone),
+						"additionalType" => Ok(Field::AdditionalType),
+						"alternateName" => Ok(Field::AlternateName),
+						"description" => Ok(Field::Description),
+						"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
 						"identifier" => Ok(Field::Identifier),
 						"image" => Ok(Field::Image),
 						"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
 						"name" => Ok(Field::Name),
-						"postOfficeBoxNumber" => Ok(Field::PostOfficeBoxNumber),
-						"postalCode" => Ok(Field::PostalCode),
 						"potentialAction" => Ok(Field::PotentialAction),
-						"productSupported" => Ok(Field::ProductSupported),
 						"sameAs" => Ok(Field::SameAs),
-						"serviceArea" => Ok(Field::ServiceArea),
-						"streetAddress" => Ok(Field::StreetAddress),
 						"subjectOf" => Ok(Field::SubjectOf),
-						"telephone" => Ok(Field::Telephone),
 						"url" => Ok(Field::Url),
 						_ => Ok(Field::Ignore),
 					}
@@ -670,33 +859,33 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
-						b"additionalType" => Ok(Field::AdditionalType),
 						b"addressCountry" => Ok(Field::AddressCountry),
 						b"addressLocality" => Ok(Field::AddressLocality),
 						b"addressRegion" => Ok(Field::AddressRegion),
-						b"alternateName" => Ok(Field::AlternateName),
+						b"postOfficeBoxNumber" => Ok(Field::PostOfficeBoxNumber),
+						b"postalCode" => Ok(Field::PostalCode),
+						b"streetAddress" => Ok(Field::StreetAddress),
 						b"areaServed" => Ok(Field::AreaServed),
 						b"availableLanguage" => Ok(Field::AvailableLanguage),
 						b"contactOption" => Ok(Field::ContactOption),
 						b"contactType" => Ok(Field::ContactType),
-						b"description" => Ok(Field::Description),
-						b"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
 						b"email" => Ok(Field::Email),
 						b"faxNumber" => Ok(Field::FaxNumber),
 						b"hoursAvailable" => Ok(Field::HoursAvailable),
+						b"productSupported" => Ok(Field::ProductSupported),
+						b"serviceArea" => Ok(Field::ServiceArea),
+						b"telephone" => Ok(Field::Telephone),
+						b"additionalType" => Ok(Field::AdditionalType),
+						b"alternateName" => Ok(Field::AlternateName),
+						b"description" => Ok(Field::Description),
+						b"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
 						b"identifier" => Ok(Field::Identifier),
 						b"image" => Ok(Field::Image),
 						b"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
 						b"name" => Ok(Field::Name),
-						b"postOfficeBoxNumber" => Ok(Field::PostOfficeBoxNumber),
-						b"postalCode" => Ok(Field::PostalCode),
 						b"potentialAction" => Ok(Field::PotentialAction),
-						b"productSupported" => Ok(Field::ProductSupported),
 						b"sameAs" => Ok(Field::SameAs),
-						b"serviceArea" => Ok(Field::ServiceArea),
-						b"streetAddress" => Ok(Field::StreetAddress),
 						b"subjectOf" => Ok(Field::SubjectOf),
-						b"telephone" => Ok(Field::Telephone),
 						b"url" => Ok(Field::Url),
 						_ => Ok(Field::Ignore),
 					}
@@ -720,62 +909,36 @@ mod serde {
 				where
 					A: de::MapAccess<'de>,
 				{
-					let mut r#additional_type_property = None;
 					let mut r#address_country_property = None;
 					let mut r#address_locality_property = None;
 					let mut r#address_region_property = None;
-					let mut r#alternate_name_property = None;
+					let mut r#post_office_box_number_property = None;
+					let mut r#postal_code_property = None;
+					let mut r#street_address_property = None;
 					let mut r#area_served_property = None;
 					let mut r#available_language_property = None;
 					let mut r#contact_option_property = None;
 					let mut r#contact_type_property = None;
-					let mut r#description_property = None;
-					let mut r#disambiguating_description_property = None;
 					let mut r#email_property = None;
 					let mut r#fax_number_property = None;
 					let mut r#hours_available_property = None;
+					let mut r#product_supported_property = None;
+					let mut r#service_area_property = None;
+					let mut r#telephone_property = None;
+					let mut r#additional_type_property = None;
+					let mut r#alternate_name_property = None;
+					let mut r#description_property = None;
+					let mut r#disambiguating_description_property = None;
 					let mut r#identifier_property = None;
 					let mut r#image_property = None;
 					let mut r#main_entity_of_page_property = None;
 					let mut r#name_property = None;
-					let mut r#post_office_box_number_property = None;
-					let mut r#postal_code_property = None;
 					let mut r#potential_action_property = None;
-					let mut r#product_supported_property = None;
 					let mut r#same_as_property = None;
-					let mut r#service_area_property = None;
-					let mut r#street_address_property = None;
 					let mut r#subject_of_property = None;
-					let mut r#telephone_property = None;
 					let mut r#url_property = None;
 					while let Some(key) = map.next_key::<Field>()? {
 						match key {
-							Field::AdditionalType => {
-								if r#additional_type_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"additionalType",
-									));
-								}
-								r#additional_type_property = Some({
-									struct DeserializeWith(Vec<AdditionalTypeProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
 							Field::AddressCountry => {
 								if r#address_country_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -854,14 +1017,66 @@ mod serde {
 									}
 								});
 							}
-							Field::AlternateName => {
-								if r#alternate_name_property.is_some() {
+							Field::PostOfficeBoxNumber => {
+								if r#post_office_box_number_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
-										"alternateName",
+										"postOfficeBoxNumber",
 									));
 								}
-								r#alternate_name_property = Some({
-									struct DeserializeWith(Vec<AlternateNameProperty>);
+								r#post_office_box_number_property = Some({
+									struct DeserializeWith(Vec<PostOfficeBoxNumberProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::PostalCode => {
+								if r#postal_code_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"postalCode",
+									));
+								}
+								r#postal_code_property = Some({
+									struct DeserializeWith(Vec<PostalCodeProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::StreetAddress => {
+								if r#street_address_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"streetAddress",
+									));
+								}
+								r#street_address_property = Some({
+									struct DeserializeWith(Vec<StreetAddressProperty>);
 									impl<'de> Deserialize<'de> for DeserializeWith {
 										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
 										where
@@ -984,58 +1199,6 @@ mod serde {
 									}
 								});
 							}
-							Field::Description => {
-								if r#description_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"description",
-									));
-								}
-								r#description_property = Some({
-									struct DeserializeWith(Vec<DescriptionProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::DisambiguatingDescription => {
-								if r#disambiguating_description_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"disambiguatingDescription",
-									));
-								}
-								r#disambiguating_description_property = Some({
-									struct DeserializeWith(Vec<DisambiguatingDescriptionProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
 							Field::Email => {
 								if r#email_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("email"));
@@ -1094,6 +1257,188 @@ mod serde {
 								}
 								r#hours_available_property = Some({
 									struct DeserializeWith(Vec<HoursAvailableProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::ProductSupported => {
+								if r#product_supported_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"productSupported",
+									));
+								}
+								r#product_supported_property = Some({
+									struct DeserializeWith(Vec<ProductSupportedProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::ServiceArea => {
+								if r#service_area_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"serviceArea",
+									));
+								}
+								r#service_area_property = Some({
+									struct DeserializeWith(Vec<ServiceAreaProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::Telephone => {
+								if r#telephone_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"telephone",
+									));
+								}
+								r#telephone_property = Some({
+									struct DeserializeWith(Vec<TelephoneProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::AdditionalType => {
+								if r#additional_type_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"additionalType",
+									));
+								}
+								r#additional_type_property = Some({
+									struct DeserializeWith(Vec<AdditionalTypeProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::AlternateName => {
+								if r#alternate_name_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"alternateName",
+									));
+								}
+								r#alternate_name_property = Some({
+									struct DeserializeWith(Vec<AlternateNameProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::Description => {
+								if r#description_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"description",
+									));
+								}
+								r#description_property = Some({
+									struct DeserializeWith(Vec<DescriptionProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::DisambiguatingDescription => {
+								if r#disambiguating_description_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"disambiguatingDescription",
+									));
+								}
+								r#disambiguating_description_property = Some({
+									struct DeserializeWith(Vec<DisambiguatingDescriptionProperty>);
 									impl<'de> Deserialize<'de> for DeserializeWith {
 										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
 										where
@@ -1212,58 +1557,6 @@ mod serde {
 									}
 								});
 							}
-							Field::PostOfficeBoxNumber => {
-								if r#post_office_box_number_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"postOfficeBoxNumber",
-									));
-								}
-								r#post_office_box_number_property = Some({
-									struct DeserializeWith(Vec<PostOfficeBoxNumberProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::PostalCode => {
-								if r#postal_code_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"postalCode",
-									));
-								}
-								r#postal_code_property = Some({
-									struct DeserializeWith(Vec<PostalCodeProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
 							Field::PotentialAction => {
 								if r#potential_action_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -1272,32 +1565,6 @@ mod serde {
 								}
 								r#potential_action_property = Some({
 									struct DeserializeWith(Vec<PotentialActionProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::ProductSupported => {
-								if r#product_supported_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"productSupported",
-									));
-								}
-								r#product_supported_property = Some({
-									struct DeserializeWith(Vec<ProductSupportedProperty>);
 									impl<'de> Deserialize<'de> for DeserializeWith {
 										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
 										where
@@ -1340,58 +1607,6 @@ mod serde {
 									}
 								});
 							}
-							Field::ServiceArea => {
-								if r#service_area_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"serviceArea",
-									));
-								}
-								r#service_area_property = Some({
-									struct DeserializeWith(Vec<ServiceAreaProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::StreetAddress => {
-								if r#street_address_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"streetAddress",
-									));
-								}
-								r#street_address_property = Some({
-									struct DeserializeWith(Vec<StreetAddressProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
 							Field::SubjectOf => {
 								if r#subject_of_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -1400,32 +1615,6 @@ mod serde {
 								}
 								r#subject_of_property = Some({
 									struct DeserializeWith(Vec<SubjectOfProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::Telephone => {
-								if r#telephone_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"telephone",
-									));
-								}
-								r#telephone_property = Some({
-									struct DeserializeWith(Vec<TelephoneProperty>);
 									impl<'de> Deserialize<'de> for DeserializeWith {
 										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
 										where
@@ -1474,67 +1663,67 @@ mod serde {
 						}
 					}
 					Ok(PostalAddress {
-						r#additional_type: r#additional_type_property.unwrap_or_default(),
 						r#address_country: r#address_country_property.unwrap_or_default(),
 						r#address_locality: r#address_locality_property.unwrap_or_default(),
 						r#address_region: r#address_region_property.unwrap_or_default(),
-						r#alternate_name: r#alternate_name_property.unwrap_or_default(),
+						r#post_office_box_number: r#post_office_box_number_property
+							.unwrap_or_default(),
+						r#postal_code: r#postal_code_property.unwrap_or_default(),
+						r#street_address: r#street_address_property.unwrap_or_default(),
 						r#area_served: r#area_served_property.unwrap_or_default(),
 						r#available_language: r#available_language_property.unwrap_or_default(),
 						r#contact_option: r#contact_option_property.unwrap_or_default(),
 						r#contact_type: r#contact_type_property.unwrap_or_default(),
-						r#description: r#description_property.unwrap_or_default(),
-						r#disambiguating_description: r#disambiguating_description_property
-							.unwrap_or_default(),
 						r#email: r#email_property.unwrap_or_default(),
 						r#fax_number: r#fax_number_property.unwrap_or_default(),
 						r#hours_available: r#hours_available_property.unwrap_or_default(),
+						r#product_supported: r#product_supported_property.unwrap_or_default(),
+						r#service_area: r#service_area_property.unwrap_or_default(),
+						r#telephone: r#telephone_property.unwrap_or_default(),
+						r#additional_type: r#additional_type_property.unwrap_or_default(),
+						r#alternate_name: r#alternate_name_property.unwrap_or_default(),
+						r#description: r#description_property.unwrap_or_default(),
+						r#disambiguating_description: r#disambiguating_description_property
+							.unwrap_or_default(),
 						r#identifier: r#identifier_property.unwrap_or_default(),
 						r#image: r#image_property.unwrap_or_default(),
 						r#main_entity_of_page: r#main_entity_of_page_property.unwrap_or_default(),
 						r#name: r#name_property.unwrap_or_default(),
-						r#post_office_box_number: r#post_office_box_number_property
-							.unwrap_or_default(),
-						r#postal_code: r#postal_code_property.unwrap_or_default(),
 						r#potential_action: r#potential_action_property.unwrap_or_default(),
-						r#product_supported: r#product_supported_property.unwrap_or_default(),
 						r#same_as: r#same_as_property.unwrap_or_default(),
-						r#service_area: r#service_area_property.unwrap_or_default(),
-						r#street_address: r#street_address_property.unwrap_or_default(),
 						r#subject_of: r#subject_of_property.unwrap_or_default(),
-						r#telephone: r#telephone_property.unwrap_or_default(),
 						r#url: r#url_property.unwrap_or_default(),
 					})
 				}
 			}
 			const FIELDS: &[&str] = &[
-				"additionalType",
 				"addressCountry",
 				"addressLocality",
 				"addressRegion",
-				"alternateName",
+				"postOfficeBoxNumber",
+				"postalCode",
+				"streetAddress",
 				"areaServed",
 				"availableLanguage",
 				"contactOption",
 				"contactType",
-				"description",
-				"disambiguatingDescription",
 				"email",
 				"faxNumber",
 				"hoursAvailable",
+				"productSupported",
+				"serviceArea",
+				"telephone",
+				"additionalType",
+				"alternateName",
+				"description",
+				"disambiguatingDescription",
 				"identifier",
 				"image",
 				"mainEntityOfPage",
 				"name",
-				"postOfficeBoxNumber",
-				"postalCode",
 				"potentialAction",
-				"productSupported",
 				"sameAs",
-				"serviceArea",
-				"streetAddress",
 				"subjectOf",
-				"telephone",
 				"url",
 			];
 			deserializer.deserialize_struct("PostalAddress", FIELDS, ClassVisitor)

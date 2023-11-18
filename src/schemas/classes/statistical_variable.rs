@@ -3,27 +3,175 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct StatisticalVariable {
-	pub r#additional_type: Vec<AdditionalTypeProperty>,
-	pub r#alternate_name: Vec<AlternateNameProperty>,
-	pub r#constraint_property: Vec<ConstraintPropertyProperty>,
-	pub r#description: Vec<DescriptionProperty>,
-	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
-	pub r#identifier: Vec<IdentifierProperty>,
-	pub r#image: Vec<ImageProperty>,
-	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
 	pub r#measured_property: Vec<MeasuredPropertyProperty>,
 	pub r#measurement_denominator: Vec<MeasurementDenominatorProperty>,
 	pub r#measurement_method: Vec<MeasurementMethodProperty>,
 	pub r#measurement_qualifier: Vec<MeasurementQualifierProperty>,
 	pub r#measurement_technique: Vec<MeasurementTechniqueProperty>,
-	pub r#name: Vec<NameProperty>,
-	pub r#num_constraints: Vec<NumConstraintsProperty>,
 	pub r#population_type: Vec<PopulationTypeProperty>,
+	pub r#stat_type: Vec<StatTypeProperty>,
+	pub r#constraint_property: Vec<ConstraintPropertyProperty>,
+	pub r#num_constraints: Vec<NumConstraintsProperty>,
+	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	pub r#alternate_name: Vec<AlternateNameProperty>,
+	pub r#description: Vec<DescriptionProperty>,
+	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	pub r#identifier: Vec<IdentifierProperty>,
+	pub r#image: Vec<ImageProperty>,
+	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	pub r#name: Vec<NameProperty>,
 	pub r#potential_action: Vec<PotentialActionProperty>,
 	pub r#same_as: Vec<SameAsProperty>,
-	pub r#stat_type: Vec<StatTypeProperty>,
 	pub r#subject_of: Vec<SubjectOfProperty>,
 	pub r#url: Vec<UrlProperty>,
+}
+pub trait StatisticalVariableTrait {
+	fn get_measured_property(&self) -> &[MeasuredPropertyProperty];
+	fn take_measured_property(&mut self) -> Vec<MeasuredPropertyProperty>;
+	fn get_measurement_denominator(&self) -> &[MeasurementDenominatorProperty];
+	fn take_measurement_denominator(&mut self) -> Vec<MeasurementDenominatorProperty>;
+	fn get_measurement_method(&self) -> &[MeasurementMethodProperty];
+	fn take_measurement_method(&mut self) -> Vec<MeasurementMethodProperty>;
+	fn get_measurement_qualifier(&self) -> &[MeasurementQualifierProperty];
+	fn take_measurement_qualifier(&mut self) -> Vec<MeasurementQualifierProperty>;
+	fn get_measurement_technique(&self) -> &[MeasurementTechniqueProperty];
+	fn take_measurement_technique(&mut self) -> Vec<MeasurementTechniqueProperty>;
+	fn get_population_type(&self) -> &[PopulationTypeProperty];
+	fn take_population_type(&mut self) -> Vec<PopulationTypeProperty>;
+	fn get_stat_type(&self) -> &[StatTypeProperty];
+	fn take_stat_type(&mut self) -> Vec<StatTypeProperty>;
+}
+impl StatisticalVariableTrait for StatisticalVariable {
+	fn get_measured_property(&self) -> &[MeasuredPropertyProperty] {
+		self.r#measured_property.as_slice()
+	}
+	fn take_measured_property(&mut self) -> Vec<MeasuredPropertyProperty> {
+		std::mem::take(&mut self.r#measured_property)
+	}
+	fn get_measurement_denominator(&self) -> &[MeasurementDenominatorProperty] {
+		self.r#measurement_denominator.as_slice()
+	}
+	fn take_measurement_denominator(&mut self) -> Vec<MeasurementDenominatorProperty> {
+		std::mem::take(&mut self.r#measurement_denominator)
+	}
+	fn get_measurement_method(&self) -> &[MeasurementMethodProperty] {
+		self.r#measurement_method.as_slice()
+	}
+	fn take_measurement_method(&mut self) -> Vec<MeasurementMethodProperty> {
+		std::mem::take(&mut self.r#measurement_method)
+	}
+	fn get_measurement_qualifier(&self) -> &[MeasurementQualifierProperty] {
+		self.r#measurement_qualifier.as_slice()
+	}
+	fn take_measurement_qualifier(&mut self) -> Vec<MeasurementQualifierProperty> {
+		std::mem::take(&mut self.r#measurement_qualifier)
+	}
+	fn get_measurement_technique(&self) -> &[MeasurementTechniqueProperty] {
+		self.r#measurement_technique.as_slice()
+	}
+	fn take_measurement_technique(&mut self) -> Vec<MeasurementTechniqueProperty> {
+		std::mem::take(&mut self.r#measurement_technique)
+	}
+	fn get_population_type(&self) -> &[PopulationTypeProperty] {
+		self.r#population_type.as_slice()
+	}
+	fn take_population_type(&mut self) -> Vec<PopulationTypeProperty> {
+		std::mem::take(&mut self.r#population_type)
+	}
+	fn get_stat_type(&self) -> &[StatTypeProperty] {
+		self.r#stat_type.as_slice()
+	}
+	fn take_stat_type(&mut self) -> Vec<StatTypeProperty> {
+		std::mem::take(&mut self.r#stat_type)
+	}
+}
+impl ConstraintNodeTrait for StatisticalVariable {
+	fn get_constraint_property(&self) -> &[ConstraintPropertyProperty] {
+		self.r#constraint_property.as_slice()
+	}
+	fn take_constraint_property(&mut self) -> Vec<ConstraintPropertyProperty> {
+		std::mem::take(&mut self.r#constraint_property)
+	}
+	fn get_num_constraints(&self) -> &[NumConstraintsProperty] {
+		self.r#num_constraints.as_slice()
+	}
+	fn take_num_constraints(&mut self) -> Vec<NumConstraintsProperty> {
+		std::mem::take(&mut self.r#num_constraints)
+	}
+}
+impl ThingTrait for StatisticalVariable {
+	fn get_additional_type(&self) -> &[AdditionalTypeProperty] {
+		self.r#additional_type.as_slice()
+	}
+	fn take_additional_type(&mut self) -> Vec<AdditionalTypeProperty> {
+		std::mem::take(&mut self.r#additional_type)
+	}
+	fn get_alternate_name(&self) -> &[AlternateNameProperty] {
+		self.r#alternate_name.as_slice()
+	}
+	fn take_alternate_name(&mut self) -> Vec<AlternateNameProperty> {
+		std::mem::take(&mut self.r#alternate_name)
+	}
+	fn get_description(&self) -> &[DescriptionProperty] {
+		self.r#description.as_slice()
+	}
+	fn take_description(&mut self) -> Vec<DescriptionProperty> {
+		std::mem::take(&mut self.r#description)
+	}
+	fn get_disambiguating_description(&self) -> &[DisambiguatingDescriptionProperty] {
+		self.r#disambiguating_description.as_slice()
+	}
+	fn take_disambiguating_description(&mut self) -> Vec<DisambiguatingDescriptionProperty> {
+		std::mem::take(&mut self.r#disambiguating_description)
+	}
+	fn get_identifier(&self) -> &[IdentifierProperty] {
+		self.r#identifier.as_slice()
+	}
+	fn take_identifier(&mut self) -> Vec<IdentifierProperty> {
+		std::mem::take(&mut self.r#identifier)
+	}
+	fn get_image(&self) -> &[ImageProperty] {
+		self.r#image.as_slice()
+	}
+	fn take_image(&mut self) -> Vec<ImageProperty> {
+		std::mem::take(&mut self.r#image)
+	}
+	fn get_main_entity_of_page(&self) -> &[MainEntityOfPageProperty] {
+		self.r#main_entity_of_page.as_slice()
+	}
+	fn take_main_entity_of_page(&mut self) -> Vec<MainEntityOfPageProperty> {
+		std::mem::take(&mut self.r#main_entity_of_page)
+	}
+	fn get_name(&self) -> &[NameProperty] {
+		self.r#name.as_slice()
+	}
+	fn take_name(&mut self) -> Vec<NameProperty> {
+		std::mem::take(&mut self.r#name)
+	}
+	fn get_potential_action(&self) -> &[PotentialActionProperty] {
+		self.r#potential_action.as_slice()
+	}
+	fn take_potential_action(&mut self) -> Vec<PotentialActionProperty> {
+		std::mem::take(&mut self.r#potential_action)
+	}
+	fn get_same_as(&self) -> &[SameAsProperty] {
+		self.r#same_as.as_slice()
+	}
+	fn take_same_as(&mut self) -> Vec<SameAsProperty> {
+		std::mem::take(&mut self.r#same_as)
+	}
+	fn get_subject_of(&self) -> &[SubjectOfProperty] {
+		self.r#subject_of.as_slice()
+	}
+	fn take_subject_of(&mut self) -> Vec<SubjectOfProperty> {
+		std::mem::take(&mut self.r#subject_of)
+	}
+	fn get_url(&self) -> &[UrlProperty] {
+		self.r#url.as_slice()
+	}
+	fn take_url(&mut self) -> Vec<UrlProperty> {
+		std::mem::take(&mut self.r#url)
+	}
 }
 #[cfg(feature = "serde")]
 mod serde {
@@ -40,25 +188,25 @@ mod serde {
 			S: Serializer,
 		{
 			let len: usize = [
-				!Vec::is_empty(&self.r#additional_type) as usize,
-				!Vec::is_empty(&self.r#alternate_name) as usize,
-				!Vec::is_empty(&self.r#constraint_property) as usize,
-				!Vec::is_empty(&self.r#description) as usize,
-				!Vec::is_empty(&self.r#disambiguating_description) as usize,
-				!Vec::is_empty(&self.r#identifier) as usize,
-				!Vec::is_empty(&self.r#image) as usize,
-				!Vec::is_empty(&self.r#main_entity_of_page) as usize,
 				!Vec::is_empty(&self.r#measured_property) as usize,
 				!Vec::is_empty(&self.r#measurement_denominator) as usize,
 				!Vec::is_empty(&self.r#measurement_method) as usize,
 				!Vec::is_empty(&self.r#measurement_qualifier) as usize,
 				!Vec::is_empty(&self.r#measurement_technique) as usize,
-				!Vec::is_empty(&self.r#name) as usize,
-				!Vec::is_empty(&self.r#num_constraints) as usize,
 				!Vec::is_empty(&self.r#population_type) as usize,
+				!Vec::is_empty(&self.r#stat_type) as usize,
+				!Vec::is_empty(&self.r#constraint_property) as usize,
+				!Vec::is_empty(&self.r#num_constraints) as usize,
+				!Vec::is_empty(&self.r#additional_type) as usize,
+				!Vec::is_empty(&self.r#alternate_name) as usize,
+				!Vec::is_empty(&self.r#description) as usize,
+				!Vec::is_empty(&self.r#disambiguating_description) as usize,
+				!Vec::is_empty(&self.r#identifier) as usize,
+				!Vec::is_empty(&self.r#image) as usize,
+				!Vec::is_empty(&self.r#main_entity_of_page) as usize,
+				!Vec::is_empty(&self.r#name) as usize,
 				!Vec::is_empty(&self.r#potential_action) as usize,
 				!Vec::is_empty(&self.r#same_as) as usize,
-				!Vec::is_empty(&self.r#stat_type) as usize,
 				!Vec::is_empty(&self.r#subject_of) as usize,
 				!Vec::is_empty(&self.r#url) as usize,
 			]
@@ -66,6 +214,168 @@ mod serde {
 			.sum();
 			let mut serialize_struct =
 				Serializer::serialize_struct(serializer, "StatisticalVariable", len)?;
+			if !Vec::is_empty(&self.r#measured_property) {
+				serialize_struct.serialize_field("measuredProperty", {
+					struct SerializeWith<'a>(&'a Vec<MeasuredPropertyProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#measured_property)
+				})?;
+			} else {
+				serialize_struct.skip_field("measuredProperty")?;
+			}
+			if !Vec::is_empty(&self.r#measurement_denominator) {
+				serialize_struct.serialize_field("measurementDenominator", {
+					struct SerializeWith<'a>(&'a Vec<MeasurementDenominatorProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#measurement_denominator)
+				})?;
+			} else {
+				serialize_struct.skip_field("measurementDenominator")?;
+			}
+			if !Vec::is_empty(&self.r#measurement_method) {
+				serialize_struct.serialize_field("measurementMethod", {
+					struct SerializeWith<'a>(&'a Vec<MeasurementMethodProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#measurement_method)
+				})?;
+			} else {
+				serialize_struct.skip_field("measurementMethod")?;
+			}
+			if !Vec::is_empty(&self.r#measurement_qualifier) {
+				serialize_struct.serialize_field("measurementQualifier", {
+					struct SerializeWith<'a>(&'a Vec<MeasurementQualifierProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#measurement_qualifier)
+				})?;
+			} else {
+				serialize_struct.skip_field("measurementQualifier")?;
+			}
+			if !Vec::is_empty(&self.r#measurement_technique) {
+				serialize_struct.serialize_field("measurementTechnique", {
+					struct SerializeWith<'a>(&'a Vec<MeasurementTechniqueProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#measurement_technique)
+				})?;
+			} else {
+				serialize_struct.skip_field("measurementTechnique")?;
+			}
+			if !Vec::is_empty(&self.r#population_type) {
+				serialize_struct.serialize_field("populationType", {
+					struct SerializeWith<'a>(&'a Vec<PopulationTypeProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#population_type)
+				})?;
+			} else {
+				serialize_struct.skip_field("populationType")?;
+			}
+			if !Vec::is_empty(&self.r#stat_type) {
+				serialize_struct.serialize_field("statType", {
+					struct SerializeWith<'a>(&'a Vec<StatTypeProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#stat_type)
+				})?;
+			} else {
+				serialize_struct.skip_field("statType")?;
+			}
+			if !Vec::is_empty(&self.r#constraint_property) {
+				serialize_struct.serialize_field("constraintProperty", {
+					struct SerializeWith<'a>(&'a Vec<ConstraintPropertyProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#constraint_property)
+				})?;
+			} else {
+				serialize_struct.skip_field("constraintProperty")?;
+			}
+			if !Vec::is_empty(&self.r#num_constraints) {
+				serialize_struct.serialize_field("numConstraints", {
+					struct SerializeWith<'a>(&'a Vec<NumConstraintsProperty>);
+					impl<'a> Serialize for SerializeWith<'a> {
+						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+						where
+							S: Serializer,
+						{
+							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
+								self.0, serializer,
+							)
+						}
+					}
+					&SerializeWith(&self.r#num_constraints)
+				})?;
+			} else {
+				serialize_struct.skip_field("numConstraints")?;
+			}
 			if !Vec::is_empty(&self.r#additional_type) {
 				serialize_struct.serialize_field("additionalType", {
 					struct SerializeWith<'a>(&'a Vec<AdditionalTypeProperty>);
@@ -101,24 +411,6 @@ mod serde {
 				})?;
 			} else {
 				serialize_struct.skip_field("alternateName")?;
-			}
-			if !Vec::is_empty(&self.r#constraint_property) {
-				serialize_struct.serialize_field("constraintProperty", {
-					struct SerializeWith<'a>(&'a Vec<ConstraintPropertyProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#constraint_property)
-				})?;
-			} else {
-				serialize_struct.skip_field("constraintProperty")?;
 			}
 			if !Vec::is_empty(&self.r#description) {
 				serialize_struct.serialize_field("description", {
@@ -210,96 +502,6 @@ mod serde {
 			} else {
 				serialize_struct.skip_field("mainEntityOfPage")?;
 			}
-			if !Vec::is_empty(&self.r#measured_property) {
-				serialize_struct.serialize_field("measuredProperty", {
-					struct SerializeWith<'a>(&'a Vec<MeasuredPropertyProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#measured_property)
-				})?;
-			} else {
-				serialize_struct.skip_field("measuredProperty")?;
-			}
-			if !Vec::is_empty(&self.r#measurement_denominator) {
-				serialize_struct.serialize_field("measurementDenominator", {
-					struct SerializeWith<'a>(&'a Vec<MeasurementDenominatorProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#measurement_denominator)
-				})?;
-			} else {
-				serialize_struct.skip_field("measurementDenominator")?;
-			}
-			if !Vec::is_empty(&self.r#measurement_method) {
-				serialize_struct.serialize_field("measurementMethod", {
-					struct SerializeWith<'a>(&'a Vec<MeasurementMethodProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#measurement_method)
-				})?;
-			} else {
-				serialize_struct.skip_field("measurementMethod")?;
-			}
-			if !Vec::is_empty(&self.r#measurement_qualifier) {
-				serialize_struct.serialize_field("measurementQualifier", {
-					struct SerializeWith<'a>(&'a Vec<MeasurementQualifierProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#measurement_qualifier)
-				})?;
-			} else {
-				serialize_struct.skip_field("measurementQualifier")?;
-			}
-			if !Vec::is_empty(&self.r#measurement_technique) {
-				serialize_struct.serialize_field("measurementTechnique", {
-					struct SerializeWith<'a>(&'a Vec<MeasurementTechniqueProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#measurement_technique)
-				})?;
-			} else {
-				serialize_struct.skip_field("measurementTechnique")?;
-			}
 			if !Vec::is_empty(&self.r#name) {
 				serialize_struct.serialize_field("name", {
 					struct SerializeWith<'a>(&'a Vec<NameProperty>);
@@ -317,42 +519,6 @@ mod serde {
 				})?;
 			} else {
 				serialize_struct.skip_field("name")?;
-			}
-			if !Vec::is_empty(&self.r#num_constraints) {
-				serialize_struct.serialize_field("numConstraints", {
-					struct SerializeWith<'a>(&'a Vec<NumConstraintsProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#num_constraints)
-				})?;
-			} else {
-				serialize_struct.skip_field("numConstraints")?;
-			}
-			if !Vec::is_empty(&self.r#population_type) {
-				serialize_struct.serialize_field("populationType", {
-					struct SerializeWith<'a>(&'a Vec<PopulationTypeProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#population_type)
-				})?;
-			} else {
-				serialize_struct.skip_field("populationType")?;
 			}
 			if !Vec::is_empty(&self.r#potential_action) {
 				serialize_struct.serialize_field("potentialAction", {
@@ -389,24 +555,6 @@ mod serde {
 				})?;
 			} else {
 				serialize_struct.skip_field("sameAs")?;
-			}
-			if !Vec::is_empty(&self.r#stat_type) {
-				serialize_struct.serialize_field("statType", {
-					struct SerializeWith<'a>(&'a Vec<StatTypeProperty>);
-					impl<'a> Serialize for SerializeWith<'a> {
-						fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-						where
-							S: Serializer,
-						{
-							serde_with::As::<serde_with::OneOrMany<serde_with::Same>>::serialize(
-								self.0, serializer,
-							)
-						}
-					}
-					&SerializeWith(&self.r#stat_type)
-				})?;
-			} else {
-				serialize_struct.skip_field("statType")?;
 			}
 			if !Vec::is_empty(&self.r#subject_of) {
 				serialize_struct.serialize_field("subjectOf", {
@@ -453,25 +601,25 @@ mod serde {
 			D: Deserializer<'de>,
 		{
 			enum Field {
-				AdditionalType,
-				AlternateName,
-				ConstraintProperty,
-				Description,
-				DisambiguatingDescription,
-				Identifier,
-				Image,
-				MainEntityOfPage,
 				MeasuredProperty,
 				MeasurementDenominator,
 				MeasurementMethod,
 				MeasurementQualifier,
 				MeasurementTechnique,
-				Name,
-				NumConstraints,
 				PopulationType,
+				StatType,
+				ConstraintProperty,
+				NumConstraints,
+				AdditionalType,
+				AlternateName,
+				Description,
+				DisambiguatingDescription,
+				Identifier,
+				Image,
+				MainEntityOfPage,
+				Name,
 				PotentialAction,
 				SameAs,
-				StatType,
 				SubjectOf,
 				Url,
 				Ignore,
@@ -487,25 +635,25 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
-						"additionalType" => Ok(Field::AdditionalType),
-						"alternateName" => Ok(Field::AlternateName),
-						"constraintProperty" => Ok(Field::ConstraintProperty),
-						"description" => Ok(Field::Description),
-						"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
-						"identifier" => Ok(Field::Identifier),
-						"image" => Ok(Field::Image),
-						"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
 						"measuredProperty" => Ok(Field::MeasuredProperty),
 						"measurementDenominator" => Ok(Field::MeasurementDenominator),
 						"measurementMethod" => Ok(Field::MeasurementMethod),
 						"measurementQualifier" => Ok(Field::MeasurementQualifier),
 						"measurementTechnique" => Ok(Field::MeasurementTechnique),
-						"name" => Ok(Field::Name),
-						"numConstraints" => Ok(Field::NumConstraints),
 						"populationType" => Ok(Field::PopulationType),
+						"statType" => Ok(Field::StatType),
+						"constraintProperty" => Ok(Field::ConstraintProperty),
+						"numConstraints" => Ok(Field::NumConstraints),
+						"additionalType" => Ok(Field::AdditionalType),
+						"alternateName" => Ok(Field::AlternateName),
+						"description" => Ok(Field::Description),
+						"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
+						"identifier" => Ok(Field::Identifier),
+						"image" => Ok(Field::Image),
+						"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
+						"name" => Ok(Field::Name),
 						"potentialAction" => Ok(Field::PotentialAction),
 						"sameAs" => Ok(Field::SameAs),
-						"statType" => Ok(Field::StatType),
 						"subjectOf" => Ok(Field::SubjectOf),
 						"url" => Ok(Field::Url),
 						_ => Ok(Field::Ignore),
@@ -516,25 +664,25 @@ mod serde {
 					E: de::Error,
 				{
 					match value {
-						b"additionalType" => Ok(Field::AdditionalType),
-						b"alternateName" => Ok(Field::AlternateName),
-						b"constraintProperty" => Ok(Field::ConstraintProperty),
-						b"description" => Ok(Field::Description),
-						b"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
-						b"identifier" => Ok(Field::Identifier),
-						b"image" => Ok(Field::Image),
-						b"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
 						b"measuredProperty" => Ok(Field::MeasuredProperty),
 						b"measurementDenominator" => Ok(Field::MeasurementDenominator),
 						b"measurementMethod" => Ok(Field::MeasurementMethod),
 						b"measurementQualifier" => Ok(Field::MeasurementQualifier),
 						b"measurementTechnique" => Ok(Field::MeasurementTechnique),
-						b"name" => Ok(Field::Name),
-						b"numConstraints" => Ok(Field::NumConstraints),
 						b"populationType" => Ok(Field::PopulationType),
+						b"statType" => Ok(Field::StatType),
+						b"constraintProperty" => Ok(Field::ConstraintProperty),
+						b"numConstraints" => Ok(Field::NumConstraints),
+						b"additionalType" => Ok(Field::AdditionalType),
+						b"alternateName" => Ok(Field::AlternateName),
+						b"description" => Ok(Field::Description),
+						b"disambiguatingDescription" => Ok(Field::DisambiguatingDescription),
+						b"identifier" => Ok(Field::Identifier),
+						b"image" => Ok(Field::Image),
+						b"mainEntityOfPage" => Ok(Field::MainEntityOfPage),
+						b"name" => Ok(Field::Name),
 						b"potentialAction" => Ok(Field::PotentialAction),
 						b"sameAs" => Ok(Field::SameAs),
-						b"statType" => Ok(Field::StatType),
 						b"subjectOf" => Ok(Field::SubjectOf),
 						b"url" => Ok(Field::Url),
 						_ => Ok(Field::Ignore),
@@ -559,29 +707,263 @@ mod serde {
 				where
 					A: de::MapAccess<'de>,
 				{
-					let mut r#additional_type_property = None;
-					let mut r#alternate_name_property = None;
-					let mut r#constraint_property_property = None;
-					let mut r#description_property = None;
-					let mut r#disambiguating_description_property = None;
-					let mut r#identifier_property = None;
-					let mut r#image_property = None;
-					let mut r#main_entity_of_page_property = None;
 					let mut r#measured_property_property = None;
 					let mut r#measurement_denominator_property = None;
 					let mut r#measurement_method_property = None;
 					let mut r#measurement_qualifier_property = None;
 					let mut r#measurement_technique_property = None;
-					let mut r#name_property = None;
-					let mut r#num_constraints_property = None;
 					let mut r#population_type_property = None;
+					let mut r#stat_type_property = None;
+					let mut r#constraint_property_property = None;
+					let mut r#num_constraints_property = None;
+					let mut r#additional_type_property = None;
+					let mut r#alternate_name_property = None;
+					let mut r#description_property = None;
+					let mut r#disambiguating_description_property = None;
+					let mut r#identifier_property = None;
+					let mut r#image_property = None;
+					let mut r#main_entity_of_page_property = None;
+					let mut r#name_property = None;
 					let mut r#potential_action_property = None;
 					let mut r#same_as_property = None;
-					let mut r#stat_type_property = None;
 					let mut r#subject_of_property = None;
 					let mut r#url_property = None;
 					while let Some(key) = map.next_key::<Field>()? {
 						match key {
+							Field::MeasuredProperty => {
+								if r#measured_property_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"measuredProperty",
+									));
+								}
+								r#measured_property_property = Some({
+									struct DeserializeWith(Vec<MeasuredPropertyProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::MeasurementDenominator => {
+								if r#measurement_denominator_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"measurementDenominator",
+									));
+								}
+								r#measurement_denominator_property = Some({
+									struct DeserializeWith(Vec<MeasurementDenominatorProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::MeasurementMethod => {
+								if r#measurement_method_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"measurementMethod",
+									));
+								}
+								r#measurement_method_property = Some({
+									struct DeserializeWith(Vec<MeasurementMethodProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::MeasurementQualifier => {
+								if r#measurement_qualifier_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"measurementQualifier",
+									));
+								}
+								r#measurement_qualifier_property = Some({
+									struct DeserializeWith(Vec<MeasurementQualifierProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::MeasurementTechnique => {
+								if r#measurement_technique_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"measurementTechnique",
+									));
+								}
+								r#measurement_technique_property = Some({
+									struct DeserializeWith(Vec<MeasurementTechniqueProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::PopulationType => {
+								if r#population_type_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"populationType",
+									));
+								}
+								r#population_type_property = Some({
+									struct DeserializeWith(Vec<PopulationTypeProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::StatType => {
+								if r#stat_type_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"statType",
+									));
+								}
+								r#stat_type_property = Some({
+									struct DeserializeWith(Vec<StatTypeProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::ConstraintProperty => {
+								if r#constraint_property_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"constraintProperty",
+									));
+								}
+								r#constraint_property_property = Some({
+									struct DeserializeWith(Vec<ConstraintPropertyProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
+							Field::NumConstraints => {
+								if r#num_constraints_property.is_some() {
+									return Err(<A::Error as de::Error>::duplicate_field(
+										"numConstraints",
+									));
+								}
+								r#num_constraints_property = Some({
+									struct DeserializeWith(Vec<NumConstraintsProperty>);
+									impl<'de> Deserialize<'de> for DeserializeWith {
+										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+										where
+											D: Deserializer<'de>,
+										{
+											Ok(DeserializeWith(serde_with::As::<
+												serde_with::OneOrMany<serde_with::Same>,
+											>::deserialize(deserializer)?))
+										}
+									}
+									match map.next_value::<DeserializeWith>() {
+										Ok(deserialize_with) => deserialize_with.0,
+										Err(err) => {
+											return Err(err);
+										}
+									}
+								});
+							}
 							Field::AdditionalType => {
 								if r#additional_type_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field(
@@ -616,32 +998,6 @@ mod serde {
 								}
 								r#alternate_name_property = Some({
 									struct DeserializeWith(Vec<AlternateNameProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::ConstraintProperty => {
-								if r#constraint_property_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"constraintProperty",
-									));
-								}
-								r#constraint_property_property = Some({
-									struct DeserializeWith(Vec<ConstraintPropertyProperty>);
 									impl<'de> Deserialize<'de> for DeserializeWith {
 										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
 										where
@@ -788,194 +1144,12 @@ mod serde {
 									}
 								});
 							}
-							Field::MeasuredProperty => {
-								if r#measured_property_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"measuredProperty",
-									));
-								}
-								r#measured_property_property = Some({
-									struct DeserializeWith(Vec<MeasuredPropertyProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::MeasurementDenominator => {
-								if r#measurement_denominator_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"measurementDenominator",
-									));
-								}
-								r#measurement_denominator_property = Some({
-									struct DeserializeWith(Vec<MeasurementDenominatorProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::MeasurementMethod => {
-								if r#measurement_method_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"measurementMethod",
-									));
-								}
-								r#measurement_method_property = Some({
-									struct DeserializeWith(Vec<MeasurementMethodProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::MeasurementQualifier => {
-								if r#measurement_qualifier_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"measurementQualifier",
-									));
-								}
-								r#measurement_qualifier_property = Some({
-									struct DeserializeWith(Vec<MeasurementQualifierProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::MeasurementTechnique => {
-								if r#measurement_technique_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"measurementTechnique",
-									));
-								}
-								r#measurement_technique_property = Some({
-									struct DeserializeWith(Vec<MeasurementTechniqueProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
 							Field::Name => {
 								if r#name_property.is_some() {
 									return Err(<A::Error as de::Error>::duplicate_field("name"));
 								}
 								r#name_property = Some({
 									struct DeserializeWith(Vec<NameProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::NumConstraints => {
-								if r#num_constraints_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"numConstraints",
-									));
-								}
-								r#num_constraints_property = Some({
-									struct DeserializeWith(Vec<NumConstraintsProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::PopulationType => {
-								if r#population_type_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"populationType",
-									));
-								}
-								r#population_type_property = Some({
-									struct DeserializeWith(Vec<PopulationTypeProperty>);
 									impl<'de> Deserialize<'de> for DeserializeWith {
 										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
 										where
@@ -1026,32 +1200,6 @@ mod serde {
 								}
 								r#same_as_property = Some({
 									struct DeserializeWith(Vec<SameAsProperty>);
-									impl<'de> Deserialize<'de> for DeserializeWith {
-										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-										where
-											D: Deserializer<'de>,
-										{
-											Ok(DeserializeWith(serde_with::As::<
-												serde_with::OneOrMany<serde_with::Same>,
-											>::deserialize(deserializer)?))
-										}
-									}
-									match map.next_value::<DeserializeWith>() {
-										Ok(deserialize_with) => deserialize_with.0,
-										Err(err) => {
-											return Err(err);
-										}
-									}
-								});
-							}
-							Field::StatType => {
-								if r#stat_type_property.is_some() {
-									return Err(<A::Error as de::Error>::duplicate_field(
-										"statType",
-									));
-								}
-								r#stat_type_property = Some({
-									struct DeserializeWith(Vec<StatTypeProperty>);
 									impl<'de> Deserialize<'de> for DeserializeWith {
 										fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
 										where
@@ -1126,15 +1274,6 @@ mod serde {
 						}
 					}
 					Ok(StatisticalVariable {
-						r#additional_type: r#additional_type_property.unwrap_or_default(),
-						r#alternate_name: r#alternate_name_property.unwrap_or_default(),
-						r#constraint_property: r#constraint_property_property.unwrap_or_default(),
-						r#description: r#description_property.unwrap_or_default(),
-						r#disambiguating_description: r#disambiguating_description_property
-							.unwrap_or_default(),
-						r#identifier: r#identifier_property.unwrap_or_default(),
-						r#image: r#image_property.unwrap_or_default(),
-						r#main_entity_of_page: r#main_entity_of_page_property.unwrap_or_default(),
 						r#measured_property: r#measured_property_property.unwrap_or_default(),
 						r#measurement_denominator: r#measurement_denominator_property
 							.unwrap_or_default(),
@@ -1143,37 +1282,46 @@ mod serde {
 							.unwrap_or_default(),
 						r#measurement_technique: r#measurement_technique_property
 							.unwrap_or_default(),
-						r#name: r#name_property.unwrap_or_default(),
-						r#num_constraints: r#num_constraints_property.unwrap_or_default(),
 						r#population_type: r#population_type_property.unwrap_or_default(),
+						r#stat_type: r#stat_type_property.unwrap_or_default(),
+						r#constraint_property: r#constraint_property_property.unwrap_or_default(),
+						r#num_constraints: r#num_constraints_property.unwrap_or_default(),
+						r#additional_type: r#additional_type_property.unwrap_or_default(),
+						r#alternate_name: r#alternate_name_property.unwrap_or_default(),
+						r#description: r#description_property.unwrap_or_default(),
+						r#disambiguating_description: r#disambiguating_description_property
+							.unwrap_or_default(),
+						r#identifier: r#identifier_property.unwrap_or_default(),
+						r#image: r#image_property.unwrap_or_default(),
+						r#main_entity_of_page: r#main_entity_of_page_property.unwrap_or_default(),
+						r#name: r#name_property.unwrap_or_default(),
 						r#potential_action: r#potential_action_property.unwrap_or_default(),
 						r#same_as: r#same_as_property.unwrap_or_default(),
-						r#stat_type: r#stat_type_property.unwrap_or_default(),
 						r#subject_of: r#subject_of_property.unwrap_or_default(),
 						r#url: r#url_property.unwrap_or_default(),
 					})
 				}
 			}
 			const FIELDS: &[&str] = &[
-				"additionalType",
-				"alternateName",
-				"constraintProperty",
-				"description",
-				"disambiguatingDescription",
-				"identifier",
-				"image",
-				"mainEntityOfPage",
 				"measuredProperty",
 				"measurementDenominator",
 				"measurementMethod",
 				"measurementQualifier",
 				"measurementTechnique",
-				"name",
-				"numConstraints",
 				"populationType",
+				"statType",
+				"constraintProperty",
+				"numConstraints",
+				"additionalType",
+				"alternateName",
+				"description",
+				"disambiguatingDescription",
+				"identifier",
+				"image",
+				"mainEntityOfPage",
+				"name",
 				"potentialAction",
 				"sameAs",
-				"statType",
 				"subjectOf",
 				"url",
 			];
