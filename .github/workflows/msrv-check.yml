@@ -9,7 +9,8 @@ on:
 
 jobs:
   check:
-    runs-on: ubuntu-latest
+    # macOS runners provide more RAM
+    runs-on: macos-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions-rs/toolchain@v1
