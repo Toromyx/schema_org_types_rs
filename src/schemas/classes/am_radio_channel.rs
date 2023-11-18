@@ -3,25 +3,44 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct AmRadioChannel {
+	/// <https://schema.org/broadcastChannelId>
 	pub r#broadcast_channel_id: Vec<BroadcastChannelIdProperty>,
+	/// <https://schema.org/broadcastFrequency>
 	pub r#broadcast_frequency: Vec<BroadcastFrequencyProperty>,
+	/// <https://schema.org/broadcastServiceTier>
 	pub r#broadcast_service_tier: Vec<BroadcastServiceTierProperty>,
+	/// <https://schema.org/genre>
 	pub r#genre: Vec<GenreProperty>,
+	/// <https://schema.org/inBroadcastLineup>
 	pub r#in_broadcast_lineup: Vec<InBroadcastLineupProperty>,
+	/// <https://schema.org/providesBroadcastService>
 	pub r#provides_broadcast_service: Vec<ProvidesBroadcastServiceProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/AMRadioChannel>.
 pub trait AmRadioChannelTrait {}
 impl AmRadioChannelTrait for AmRadioChannel {}
 impl BroadcastChannelTrait for AmRadioChannel {

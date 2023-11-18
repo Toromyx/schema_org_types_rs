@@ -3,72 +3,138 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct Flight {
+	/// <https://schema.org/aircraft>
 	pub r#aircraft: Vec<AircraftProperty>,
+	/// <https://schema.org/arrivalAirport>
 	pub r#arrival_airport: Vec<ArrivalAirportProperty>,
+	/// <https://schema.org/arrivalGate>
 	pub r#arrival_gate: Vec<ArrivalGateProperty>,
+	/// <https://schema.org/arrivalTerminal>
 	pub r#arrival_terminal: Vec<ArrivalTerminalProperty>,
+	/// <https://schema.org/boardingPolicy>
 	pub r#boarding_policy: Vec<BoardingPolicyProperty>,
+	/// <https://schema.org/carrier>
 	pub r#carrier: Vec<CarrierProperty>,
+	/// <https://schema.org/departureAirport>
 	pub r#departure_airport: Vec<DepartureAirportProperty>,
+	/// <https://schema.org/departureGate>
 	pub r#departure_gate: Vec<DepartureGateProperty>,
+	/// <https://schema.org/departureTerminal>
 	pub r#departure_terminal: Vec<DepartureTerminalProperty>,
+	/// <https://schema.org/estimatedFlightDuration>
 	pub r#estimated_flight_duration: Vec<EstimatedFlightDurationProperty>,
+	/// <https://schema.org/flightDistance>
 	pub r#flight_distance: Vec<FlightDistanceProperty>,
+	/// <https://schema.org/flightNumber>
 	pub r#flight_number: Vec<FlightNumberProperty>,
+	/// <https://schema.org/mealService>
 	pub r#meal_service: Vec<MealServiceProperty>,
+	/// <https://schema.org/seller>
 	pub r#seller: Vec<SellerProperty>,
+	/// <https://schema.org/webCheckinTime>
 	pub r#web_checkin_time: Vec<WebCheckinTimeProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
+	/// <https://schema.org/arrivalTime>
 	pub r#arrival_time: Vec<ArrivalTimeProperty>,
+	/// <https://schema.org/departureTime>
 	pub r#departure_time: Vec<DepartureTimeProperty>,
+	/// <https://schema.org/itinerary>
 	pub r#itinerary: Vec<ItineraryProperty>,
+	/// <https://schema.org/offers>
 	pub r#offers: Vec<OffersProperty>,
+	/// <https://schema.org/partOfTrip>
 	pub r#part_of_trip: Vec<PartOfTripProperty>,
+	/// <https://schema.org/provider>
 	pub r#provider: Vec<ProviderProperty>,
+	/// <https://schema.org/subTrip>
 	pub r#sub_trip: Vec<SubTripProperty>,
+	/// <https://schema.org/tripOrigin>
 	pub r#trip_origin: Vec<TripOriginProperty>,
 }
+/// This trait is for properties from <https://schema.org/Flight>.
 pub trait FlightTrait {
+	/// Get <https://schema.org/aircraft> from [`Self`] as borrowed slice.
 	fn get_aircraft(&self) -> &[AircraftProperty];
+	/// Take <https://schema.org/aircraft> from [`Self`] as owned vector.
 	fn take_aircraft(&mut self) -> Vec<AircraftProperty>;
+	/// Get <https://schema.org/arrivalAirport> from [`Self`] as borrowed slice.
 	fn get_arrival_airport(&self) -> &[ArrivalAirportProperty];
+	/// Take <https://schema.org/arrivalAirport> from [`Self`] as owned vector.
 	fn take_arrival_airport(&mut self) -> Vec<ArrivalAirportProperty>;
+	/// Get <https://schema.org/arrivalGate> from [`Self`] as borrowed slice.
 	fn get_arrival_gate(&self) -> &[ArrivalGateProperty];
+	/// Take <https://schema.org/arrivalGate> from [`Self`] as owned vector.
 	fn take_arrival_gate(&mut self) -> Vec<ArrivalGateProperty>;
+	/// Get <https://schema.org/arrivalTerminal> from [`Self`] as borrowed slice.
 	fn get_arrival_terminal(&self) -> &[ArrivalTerminalProperty];
+	/// Take <https://schema.org/arrivalTerminal> from [`Self`] as owned vector.
 	fn take_arrival_terminal(&mut self) -> Vec<ArrivalTerminalProperty>;
+	/// Get <https://schema.org/boardingPolicy> from [`Self`] as borrowed slice.
 	fn get_boarding_policy(&self) -> &[BoardingPolicyProperty];
+	/// Take <https://schema.org/boardingPolicy> from [`Self`] as owned vector.
 	fn take_boarding_policy(&mut self) -> Vec<BoardingPolicyProperty>;
+	/// Get <https://schema.org/carrier> from [`Self`] as borrowed slice.
 	fn get_carrier(&self) -> &[CarrierProperty];
+	/// Take <https://schema.org/carrier> from [`Self`] as owned vector.
 	fn take_carrier(&mut self) -> Vec<CarrierProperty>;
+	/// Get <https://schema.org/departureAirport> from [`Self`] as borrowed slice.
 	fn get_departure_airport(&self) -> &[DepartureAirportProperty];
+	/// Take <https://schema.org/departureAirport> from [`Self`] as owned vector.
 	fn take_departure_airport(&mut self) -> Vec<DepartureAirportProperty>;
+	/// Get <https://schema.org/departureGate> from [`Self`] as borrowed slice.
 	fn get_departure_gate(&self) -> &[DepartureGateProperty];
+	/// Take <https://schema.org/departureGate> from [`Self`] as owned vector.
 	fn take_departure_gate(&mut self) -> Vec<DepartureGateProperty>;
+	/// Get <https://schema.org/departureTerminal> from [`Self`] as borrowed slice.
 	fn get_departure_terminal(&self) -> &[DepartureTerminalProperty];
+	/// Take <https://schema.org/departureTerminal> from [`Self`] as owned vector.
 	fn take_departure_terminal(&mut self) -> Vec<DepartureTerminalProperty>;
+	/// Get <https://schema.org/estimatedFlightDuration> from [`Self`] as borrowed slice.
 	fn get_estimated_flight_duration(&self) -> &[EstimatedFlightDurationProperty];
+	/// Take <https://schema.org/estimatedFlightDuration> from [`Self`] as owned vector.
 	fn take_estimated_flight_duration(&mut self) -> Vec<EstimatedFlightDurationProperty>;
+	/// Get <https://schema.org/flightDistance> from [`Self`] as borrowed slice.
 	fn get_flight_distance(&self) -> &[FlightDistanceProperty];
+	/// Take <https://schema.org/flightDistance> from [`Self`] as owned vector.
 	fn take_flight_distance(&mut self) -> Vec<FlightDistanceProperty>;
+	/// Get <https://schema.org/flightNumber> from [`Self`] as borrowed slice.
 	fn get_flight_number(&self) -> &[FlightNumberProperty];
+	/// Take <https://schema.org/flightNumber> from [`Self`] as owned vector.
 	fn take_flight_number(&mut self) -> Vec<FlightNumberProperty>;
+	/// Get <https://schema.org/mealService> from [`Self`] as borrowed slice.
 	fn get_meal_service(&self) -> &[MealServiceProperty];
+	/// Take <https://schema.org/mealService> from [`Self`] as owned vector.
 	fn take_meal_service(&mut self) -> Vec<MealServiceProperty>;
+	/// Get <https://schema.org/seller> from [`Self`] as borrowed slice.
 	fn get_seller(&self) -> &[SellerProperty];
+	/// Take <https://schema.org/seller> from [`Self`] as owned vector.
 	fn take_seller(&mut self) -> Vec<SellerProperty>;
+	/// Get <https://schema.org/webCheckinTime> from [`Self`] as borrowed slice.
 	fn get_web_checkin_time(&self) -> &[WebCheckinTimeProperty];
+	/// Take <https://schema.org/webCheckinTime> from [`Self`] as owned vector.
 	fn take_web_checkin_time(&mut self) -> Vec<WebCheckinTimeProperty>;
 }
 impl FlightTrait for Flight {

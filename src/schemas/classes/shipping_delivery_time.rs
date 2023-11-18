@@ -3,31 +3,56 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct ShippingDeliveryTime {
+	/// <https://schema.org/businessDays>
 	pub r#business_days: Vec<BusinessDaysProperty>,
+	/// <https://schema.org/cutoffTime>
 	pub r#cutoff_time: Vec<CutoffTimeProperty>,
+	/// <https://schema.org/handlingTime>
 	pub r#handling_time: Vec<HandlingTimeProperty>,
+	/// <https://schema.org/transitTime>
 	pub r#transit_time: Vec<TransitTimeProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/ShippingDeliveryTime>.
 pub trait ShippingDeliveryTimeTrait {
+	/// Get <https://schema.org/businessDays> from [`Self`] as borrowed slice.
 	fn get_business_days(&self) -> &[BusinessDaysProperty];
+	/// Take <https://schema.org/businessDays> from [`Self`] as owned vector.
 	fn take_business_days(&mut self) -> Vec<BusinessDaysProperty>;
+	/// Get <https://schema.org/cutoffTime> from [`Self`] as borrowed slice.
 	fn get_cutoff_time(&self) -> &[CutoffTimeProperty];
+	/// Take <https://schema.org/cutoffTime> from [`Self`] as owned vector.
 	fn take_cutoff_time(&mut self) -> Vec<CutoffTimeProperty>;
+	/// Get <https://schema.org/handlingTime> from [`Self`] as borrowed slice.
 	fn get_handling_time(&self) -> &[HandlingTimeProperty];
+	/// Take <https://schema.org/handlingTime> from [`Self`] as owned vector.
 	fn take_handling_time(&mut self) -> Vec<HandlingTimeProperty>;
+	/// Get <https://schema.org/transitTime> from [`Self`] as borrowed slice.
 	fn get_transit_time(&self) -> &[TransitTimeProperty];
+	/// Take <https://schema.org/transitTime> from [`Self`] as owned vector.
 	fn take_transit_time(&mut self) -> Vec<TransitTimeProperty>;
 }
 impl ShippingDeliveryTimeTrait for ShippingDeliveryTime {

@@ -3,25 +3,44 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct DigitalDocumentPermission {
+	/// <https://schema.org/grantee>
 	pub r#grantee: Vec<GranteeProperty>,
+	/// <https://schema.org/permissionType>
 	pub r#permission_type: Vec<PermissionTypeProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/DigitalDocumentPermission>.
 pub trait DigitalDocumentPermissionTrait {
+	/// Get <https://schema.org/grantee> from [`Self`] as borrowed slice.
 	fn get_grantee(&self) -> &[GranteeProperty];
+	/// Take <https://schema.org/grantee> from [`Self`] as owned vector.
 	fn take_grantee(&mut self) -> Vec<GranteeProperty>;
+	/// Get <https://schema.org/permissionType> from [`Self`] as borrowed slice.
 	fn get_permission_type(&self) -> &[PermissionTypeProperty];
+	/// Take <https://schema.org/permissionType> from [`Self`] as owned vector.
 	fn take_permission_type(&mut self) -> Vec<PermissionTypeProperty>;
 }
 impl DigitalDocumentPermissionTrait for DigitalDocumentPermission {

@@ -3,31 +3,56 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct DataFeedItem {
+	/// <https://schema.org/dateCreated>
 	pub r#date_created: Vec<DateCreatedProperty>,
+	/// <https://schema.org/dateDeleted>
 	pub r#date_deleted: Vec<DateDeletedProperty>,
+	/// <https://schema.org/dateModified>
 	pub r#date_modified: Vec<DateModifiedProperty>,
+	/// <https://schema.org/item>
 	pub r#item: Vec<ItemProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/DataFeedItem>.
 pub trait DataFeedItemTrait {
+	/// Get <https://schema.org/dateCreated> from [`Self`] as borrowed slice.
 	fn get_date_created(&self) -> &[DateCreatedProperty];
+	/// Take <https://schema.org/dateCreated> from [`Self`] as owned vector.
 	fn take_date_created(&mut self) -> Vec<DateCreatedProperty>;
+	/// Get <https://schema.org/dateDeleted> from [`Self`] as borrowed slice.
 	fn get_date_deleted(&self) -> &[DateDeletedProperty];
+	/// Take <https://schema.org/dateDeleted> from [`Self`] as owned vector.
 	fn take_date_deleted(&mut self) -> Vec<DateDeletedProperty>;
+	/// Get <https://schema.org/dateModified> from [`Self`] as borrowed slice.
 	fn get_date_modified(&self) -> &[DateModifiedProperty];
+	/// Take <https://schema.org/dateModified> from [`Self`] as owned vector.
 	fn take_date_modified(&mut self) -> Vec<DateModifiedProperty>;
+	/// Get <https://schema.org/item> from [`Self`] as borrowed slice.
 	fn get_item(&self) -> &[ItemProperty];
+	/// Take <https://schema.org/item> from [`Self`] as owned vector.
 	fn take_item(&mut self) -> Vec<ItemProperty>;
 }
 impl DataFeedItemTrait for DataFeedItem {

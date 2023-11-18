@@ -3,55 +3,104 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct NutritionInformation {
+	/// <https://schema.org/calories>
 	pub r#calories: Vec<CaloriesProperty>,
+	/// <https://schema.org/carbohydrateContent>
 	pub r#carbohydrate_content: Vec<CarbohydrateContentProperty>,
+	/// <https://schema.org/cholesterolContent>
 	pub r#cholesterol_content: Vec<CholesterolContentProperty>,
+	/// <https://schema.org/fatContent>
 	pub r#fat_content: Vec<FatContentProperty>,
+	/// <https://schema.org/fiberContent>
 	pub r#fiber_content: Vec<FiberContentProperty>,
+	/// <https://schema.org/proteinContent>
 	pub r#protein_content: Vec<ProteinContentProperty>,
+	/// <https://schema.org/saturatedFatContent>
 	pub r#saturated_fat_content: Vec<SaturatedFatContentProperty>,
+	/// <https://schema.org/servingSize>
 	pub r#serving_size: Vec<ServingSizeProperty>,
+	/// <https://schema.org/sodiumContent>
 	pub r#sodium_content: Vec<SodiumContentProperty>,
+	/// <https://schema.org/sugarContent>
 	pub r#sugar_content: Vec<SugarContentProperty>,
+	/// <https://schema.org/transFatContent>
 	pub r#trans_fat_content: Vec<TransFatContentProperty>,
+	/// <https://schema.org/unsaturatedFatContent>
 	pub r#unsaturated_fat_content: Vec<UnsaturatedFatContentProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/NutritionInformation>.
 pub trait NutritionInformationTrait {
+	/// Get <https://schema.org/calories> from [`Self`] as borrowed slice.
 	fn get_calories(&self) -> &[CaloriesProperty];
+	/// Take <https://schema.org/calories> from [`Self`] as owned vector.
 	fn take_calories(&mut self) -> Vec<CaloriesProperty>;
+	/// Get <https://schema.org/carbohydrateContent> from [`Self`] as borrowed slice.
 	fn get_carbohydrate_content(&self) -> &[CarbohydrateContentProperty];
+	/// Take <https://schema.org/carbohydrateContent> from [`Self`] as owned vector.
 	fn take_carbohydrate_content(&mut self) -> Vec<CarbohydrateContentProperty>;
+	/// Get <https://schema.org/cholesterolContent> from [`Self`] as borrowed slice.
 	fn get_cholesterol_content(&self) -> &[CholesterolContentProperty];
+	/// Take <https://schema.org/cholesterolContent> from [`Self`] as owned vector.
 	fn take_cholesterol_content(&mut self) -> Vec<CholesterolContentProperty>;
+	/// Get <https://schema.org/fatContent> from [`Self`] as borrowed slice.
 	fn get_fat_content(&self) -> &[FatContentProperty];
+	/// Take <https://schema.org/fatContent> from [`Self`] as owned vector.
 	fn take_fat_content(&mut self) -> Vec<FatContentProperty>;
+	/// Get <https://schema.org/fiberContent> from [`Self`] as borrowed slice.
 	fn get_fiber_content(&self) -> &[FiberContentProperty];
+	/// Take <https://schema.org/fiberContent> from [`Self`] as owned vector.
 	fn take_fiber_content(&mut self) -> Vec<FiberContentProperty>;
+	/// Get <https://schema.org/proteinContent> from [`Self`] as borrowed slice.
 	fn get_protein_content(&self) -> &[ProteinContentProperty];
+	/// Take <https://schema.org/proteinContent> from [`Self`] as owned vector.
 	fn take_protein_content(&mut self) -> Vec<ProteinContentProperty>;
+	/// Get <https://schema.org/saturatedFatContent> from [`Self`] as borrowed slice.
 	fn get_saturated_fat_content(&self) -> &[SaturatedFatContentProperty];
+	/// Take <https://schema.org/saturatedFatContent> from [`Self`] as owned vector.
 	fn take_saturated_fat_content(&mut self) -> Vec<SaturatedFatContentProperty>;
+	/// Get <https://schema.org/servingSize> from [`Self`] as borrowed slice.
 	fn get_serving_size(&self) -> &[ServingSizeProperty];
+	/// Take <https://schema.org/servingSize> from [`Self`] as owned vector.
 	fn take_serving_size(&mut self) -> Vec<ServingSizeProperty>;
+	/// Get <https://schema.org/sodiumContent> from [`Self`] as borrowed slice.
 	fn get_sodium_content(&self) -> &[SodiumContentProperty];
+	/// Take <https://schema.org/sodiumContent> from [`Self`] as owned vector.
 	fn take_sodium_content(&mut self) -> Vec<SodiumContentProperty>;
+	/// Get <https://schema.org/sugarContent> from [`Self`] as borrowed slice.
 	fn get_sugar_content(&self) -> &[SugarContentProperty];
+	/// Take <https://schema.org/sugarContent> from [`Self`] as owned vector.
 	fn take_sugar_content(&mut self) -> Vec<SugarContentProperty>;
+	/// Get <https://schema.org/transFatContent> from [`Self`] as borrowed slice.
 	fn get_trans_fat_content(&self) -> &[TransFatContentProperty];
+	/// Take <https://schema.org/transFatContent> from [`Self`] as owned vector.
 	fn take_trans_fat_content(&mut self) -> Vec<TransFatContentProperty>;
+	/// Get <https://schema.org/unsaturatedFatContent> from [`Self`] as borrowed slice.
 	fn get_unsaturated_fat_content(&self) -> &[UnsaturatedFatContentProperty];
+	/// Take <https://schema.org/unsaturatedFatContent> from [`Self`] as owned vector.
 	fn take_unsaturated_fat_content(&mut self) -> Vec<UnsaturatedFatContentProperty>;
 }
 impl NutritionInformationTrait for NutritionInformation {

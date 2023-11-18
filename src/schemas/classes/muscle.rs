@@ -3,50 +3,94 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct Muscle {
+	/// <https://schema.org/antagonist>
 	pub r#antagonist: Vec<AntagonistProperty>,
+	/// <https://schema.org/bloodSupply>
 	pub r#blood_supply: Vec<BloodSupplyProperty>,
+	/// <https://schema.org/insertion>
 	pub r#insertion: Vec<InsertionProperty>,
+	/// <https://schema.org/muscleAction>
 	pub r#muscle_action: Vec<MuscleActionProperty>,
+	/// <https://schema.org/nerve>
 	pub r#nerve: Vec<NerveProperty>,
+	/// <https://schema.org/associatedPathophysiology>
 	pub r#associated_pathophysiology: Vec<AssociatedPathophysiologyProperty>,
+	/// <https://schema.org/bodyLocation>
 	pub r#body_location: Vec<BodyLocationProperty>,
+	/// <https://schema.org/connectedTo>
 	pub r#connected_to: Vec<ConnectedToProperty>,
+	/// <https://schema.org/diagram>
 	pub r#diagram: Vec<DiagramProperty>,
+	/// <https://schema.org/partOfSystem>
 	pub r#part_of_system: Vec<PartOfSystemProperty>,
+	/// <https://schema.org/relatedCondition>
 	pub r#related_condition: Vec<RelatedConditionProperty>,
+	/// <https://schema.org/relatedTherapy>
 	pub r#related_therapy: Vec<RelatedTherapyProperty>,
+	/// <https://schema.org/subStructure>
 	pub r#sub_structure: Vec<SubStructureProperty>,
+	/// <https://schema.org/code>
 	pub r#code: Vec<CodeProperty>,
+	/// <https://schema.org/funding>
 	pub r#funding: Vec<FundingProperty>,
+	/// <https://schema.org/guideline>
 	pub r#guideline: Vec<GuidelineProperty>,
+	/// <https://schema.org/legalStatus>
 	pub r#legal_status: Vec<LegalStatusProperty>,
+	/// <https://schema.org/medicineSystem>
 	pub r#medicine_system: Vec<MedicineSystemProperty>,
+	/// <https://schema.org/recognizingAuthority>
 	pub r#recognizing_authority: Vec<RecognizingAuthorityProperty>,
+	/// <https://schema.org/relevantSpecialty>
 	pub r#relevant_specialty: Vec<RelevantSpecialtyProperty>,
+	/// <https://schema.org/study>
 	pub r#study: Vec<StudyProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/Muscle>.
 pub trait MuscleTrait {
+	/// Get <https://schema.org/antagonist> from [`Self`] as borrowed slice.
 	fn get_antagonist(&self) -> &[AntagonistProperty];
+	/// Take <https://schema.org/antagonist> from [`Self`] as owned vector.
 	fn take_antagonist(&mut self) -> Vec<AntagonistProperty>;
+	/// Get <https://schema.org/bloodSupply> from [`Self`] as borrowed slice.
 	fn get_blood_supply(&self) -> &[BloodSupplyProperty];
+	/// Take <https://schema.org/bloodSupply> from [`Self`] as owned vector.
 	fn take_blood_supply(&mut self) -> Vec<BloodSupplyProperty>;
+	/// Get <https://schema.org/insertion> from [`Self`] as borrowed slice.
 	fn get_insertion(&self) -> &[InsertionProperty];
+	/// Take <https://schema.org/insertion> from [`Self`] as owned vector.
 	fn take_insertion(&mut self) -> Vec<InsertionProperty>;
+	/// Get <https://schema.org/muscleAction> from [`Self`] as borrowed slice.
 	fn get_muscle_action(&self) -> &[MuscleActionProperty];
+	/// Take <https://schema.org/muscleAction> from [`Self`] as owned vector.
 	fn take_muscle_action(&mut self) -> Vec<MuscleActionProperty>;
+	/// Get <https://schema.org/nerve> from [`Self`] as borrowed slice.
 	fn get_nerve(&self) -> &[NerveProperty];
+	/// Take <https://schema.org/nerve> from [`Self`] as owned vector.
 	fn take_nerve(&mut self) -> Vec<NerveProperty>;
 }
 impl MuscleTrait for Muscle {

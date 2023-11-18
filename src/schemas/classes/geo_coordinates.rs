@@ -3,37 +3,68 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct GeoCoordinates {
+	/// <https://schema.org/address>
 	pub r#address: Vec<AddressProperty>,
+	/// <https://schema.org/addressCountry>
 	pub r#address_country: Vec<AddressCountryProperty>,
+	/// <https://schema.org/elevation>
 	pub r#elevation: Vec<ElevationProperty>,
+	/// <https://schema.org/latitude>
 	pub r#latitude: Vec<LatitudeProperty>,
+	/// <https://schema.org/longitude>
 	pub r#longitude: Vec<LongitudeProperty>,
+	/// <https://schema.org/postalCode>
 	pub r#postal_code: Vec<PostalCodeProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/GeoCoordinates>.
 pub trait GeoCoordinatesTrait {
+	/// Get <https://schema.org/address> from [`Self`] as borrowed slice.
 	fn get_address(&self) -> &[AddressProperty];
+	/// Take <https://schema.org/address> from [`Self`] as owned vector.
 	fn take_address(&mut self) -> Vec<AddressProperty>;
+	/// Get <https://schema.org/addressCountry> from [`Self`] as borrowed slice.
 	fn get_address_country(&self) -> &[AddressCountryProperty];
+	/// Take <https://schema.org/addressCountry> from [`Self`] as owned vector.
 	fn take_address_country(&mut self) -> Vec<AddressCountryProperty>;
+	/// Get <https://schema.org/elevation> from [`Self`] as borrowed slice.
 	fn get_elevation(&self) -> &[ElevationProperty];
+	/// Take <https://schema.org/elevation> from [`Self`] as owned vector.
 	fn take_elevation(&mut self) -> Vec<ElevationProperty>;
+	/// Get <https://schema.org/latitude> from [`Self`] as borrowed slice.
 	fn get_latitude(&self) -> &[LatitudeProperty];
+	/// Take <https://schema.org/latitude> from [`Self`] as owned vector.
 	fn take_latitude(&mut self) -> Vec<LatitudeProperty>;
+	/// Get <https://schema.org/longitude> from [`Self`] as borrowed slice.
 	fn get_longitude(&self) -> &[LongitudeProperty];
+	/// Take <https://schema.org/longitude> from [`Self`] as owned vector.
 	fn take_longitude(&mut self) -> Vec<LongitudeProperty>;
+	/// Get <https://schema.org/postalCode> from [`Self`] as borrowed slice.
 	fn get_postal_code(&self) -> &[PostalCodeProperty];
+	/// Take <https://schema.org/postalCode> from [`Self`] as owned vector.
 	fn take_postal_code(&mut self) -> Vec<PostalCodeProperty>;
 }
 impl GeoCoordinatesTrait for GeoCoordinates {

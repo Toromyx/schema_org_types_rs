@@ -3,34 +3,62 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct OpeningHoursSpecification {
+	/// <https://schema.org/closes>
 	pub r#closes: Vec<ClosesProperty>,
+	/// <https://schema.org/dayOfWeek>
 	pub r#day_of_week: Vec<DayOfWeekProperty>,
+	/// <https://schema.org/opens>
 	pub r#opens: Vec<OpensProperty>,
+	/// <https://schema.org/validFrom>
 	pub r#valid_from: Vec<ValidFromProperty>,
+	/// <https://schema.org/validThrough>
 	pub r#valid_through: Vec<ValidThroughProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/OpeningHoursSpecification>.
 pub trait OpeningHoursSpecificationTrait {
+	/// Get <https://schema.org/closes> from [`Self`] as borrowed slice.
 	fn get_closes(&self) -> &[ClosesProperty];
+	/// Take <https://schema.org/closes> from [`Self`] as owned vector.
 	fn take_closes(&mut self) -> Vec<ClosesProperty>;
+	/// Get <https://schema.org/dayOfWeek> from [`Self`] as borrowed slice.
 	fn get_day_of_week(&self) -> &[DayOfWeekProperty];
+	/// Take <https://schema.org/dayOfWeek> from [`Self`] as owned vector.
 	fn take_day_of_week(&mut self) -> Vec<DayOfWeekProperty>;
+	/// Get <https://schema.org/opens> from [`Self`] as borrowed slice.
 	fn get_opens(&self) -> &[OpensProperty];
+	/// Take <https://schema.org/opens> from [`Self`] as owned vector.
 	fn take_opens(&mut self) -> Vec<OpensProperty>;
+	/// Get <https://schema.org/validFrom> from [`Self`] as borrowed slice.
 	fn get_valid_from(&self) -> &[ValidFromProperty];
+	/// Take <https://schema.org/validFrom> from [`Self`] as owned vector.
 	fn take_valid_from(&mut self) -> Vec<ValidFromProperty>;
+	/// Get <https://schema.org/validThrough> from [`Self`] as borrowed slice.
 	fn get_valid_through(&self) -> &[ValidThroughProperty];
+	/// Take <https://schema.org/validThrough> from [`Self`] as owned vector.
 	fn take_valid_through(&mut self) -> Vec<ValidThroughProperty>;
 }
 impl OpeningHoursSpecificationTrait for OpeningHoursSpecification {

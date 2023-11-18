@@ -3,28 +3,50 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct Grant {
+	/// <https://schema.org/fundedItem>
 	pub r#funded_item: Vec<FundedItemProperty>,
+	/// <https://schema.org/funder>
 	pub r#funder: Vec<FunderProperty>,
+	/// <https://schema.org/sponsor>
 	pub r#sponsor: Vec<SponsorProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/Grant>.
 pub trait GrantTrait {
+	/// Get <https://schema.org/fundedItem> from [`Self`] as borrowed slice.
 	fn get_funded_item(&self) -> &[FundedItemProperty];
+	/// Take <https://schema.org/fundedItem> from [`Self`] as owned vector.
 	fn take_funded_item(&mut self) -> Vec<FundedItemProperty>;
+	/// Get <https://schema.org/funder> from [`Self`] as borrowed slice.
 	fn get_funder(&self) -> &[FunderProperty];
+	/// Take <https://schema.org/funder> from [`Self`] as owned vector.
 	fn take_funder(&mut self) -> Vec<FunderProperty>;
+	/// Get <https://schema.org/sponsor> from [`Self`] as borrowed slice.
 	fn get_sponsor(&self) -> &[SponsorProperty];
+	/// Take <https://schema.org/sponsor> from [`Self`] as owned vector.
 	fn take_sponsor(&mut self) -> Vec<SponsorProperty>;
 }
 impl GrantTrait for Grant {

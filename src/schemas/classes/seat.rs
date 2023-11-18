@@ -3,31 +3,56 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct Seat {
+	/// <https://schema.org/seatNumber>
 	pub r#seat_number: Vec<SeatNumberProperty>,
+	/// <https://schema.org/seatRow>
 	pub r#seat_row: Vec<SeatRowProperty>,
+	/// <https://schema.org/seatSection>
 	pub r#seat_section: Vec<SeatSectionProperty>,
+	/// <https://schema.org/seatingType>
 	pub r#seating_type: Vec<SeatingTypeProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/Seat>.
 pub trait SeatTrait {
+	/// Get <https://schema.org/seatNumber> from [`Self`] as borrowed slice.
 	fn get_seat_number(&self) -> &[SeatNumberProperty];
+	/// Take <https://schema.org/seatNumber> from [`Self`] as owned vector.
 	fn take_seat_number(&mut self) -> Vec<SeatNumberProperty>;
+	/// Get <https://schema.org/seatRow> from [`Self`] as borrowed slice.
 	fn get_seat_row(&self) -> &[SeatRowProperty];
+	/// Take <https://schema.org/seatRow> from [`Self`] as owned vector.
 	fn take_seat_row(&mut self) -> Vec<SeatRowProperty>;
+	/// Get <https://schema.org/seatSection> from [`Self`] as borrowed slice.
 	fn get_seat_section(&self) -> &[SeatSectionProperty];
+	/// Take <https://schema.org/seatSection> from [`Self`] as owned vector.
 	fn take_seat_section(&mut self) -> Vec<SeatSectionProperty>;
+	/// Get <https://schema.org/seatingType> from [`Self`] as borrowed slice.
 	fn get_seating_type(&self) -> &[SeatingTypeProperty];
+	/// Take <https://schema.org/seatingType> from [`Self`] as owned vector.
 	fn take_seating_type(&mut self) -> Vec<SeatingTypeProperty>;
 }
 impl SeatTrait for Seat {

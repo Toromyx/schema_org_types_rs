@@ -3,34 +3,62 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct EngineSpecification {
+	/// <https://schema.org/engineDisplacement>
 	pub r#engine_displacement: Vec<EngineDisplacementProperty>,
+	/// <https://schema.org/enginePower>
 	pub r#engine_power: Vec<EnginePowerProperty>,
+	/// <https://schema.org/engineType>
 	pub r#engine_type: Vec<EngineTypeProperty>,
+	/// <https://schema.org/fuelType>
 	pub r#fuel_type: Vec<FuelTypeProperty>,
+	/// <https://schema.org/torque>
 	pub r#torque: Vec<TorqueProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/EngineSpecification>.
 pub trait EngineSpecificationTrait {
+	/// Get <https://schema.org/engineDisplacement> from [`Self`] as borrowed slice.
 	fn get_engine_displacement(&self) -> &[EngineDisplacementProperty];
+	/// Take <https://schema.org/engineDisplacement> from [`Self`] as owned vector.
 	fn take_engine_displacement(&mut self) -> Vec<EngineDisplacementProperty>;
+	/// Get <https://schema.org/enginePower> from [`Self`] as borrowed slice.
 	fn get_engine_power(&self) -> &[EnginePowerProperty];
+	/// Take <https://schema.org/enginePower> from [`Self`] as owned vector.
 	fn take_engine_power(&mut self) -> Vec<EnginePowerProperty>;
+	/// Get <https://schema.org/engineType> from [`Self`] as borrowed slice.
 	fn get_engine_type(&self) -> &[EngineTypeProperty];
+	/// Take <https://schema.org/engineType> from [`Self`] as owned vector.
 	fn take_engine_type(&mut self) -> Vec<EngineTypeProperty>;
+	/// Get <https://schema.org/fuelType> from [`Self`] as borrowed slice.
 	fn get_fuel_type(&self) -> &[FuelTypeProperty];
+	/// Take <https://schema.org/fuelType> from [`Self`] as owned vector.
 	fn take_fuel_type(&mut self) -> Vec<FuelTypeProperty>;
+	/// Get <https://schema.org/torque> from [`Self`] as borrowed slice.
 	fn get_torque(&self) -> &[TorqueProperty];
+	/// Take <https://schema.org/torque> from [`Self`] as owned vector.
 	fn take_torque(&mut self) -> Vec<TorqueProperty>;
 }
 impl EngineSpecificationTrait for EngineSpecification {

@@ -3,102 +3,198 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct Patient {
+	/// <https://schema.org/diagnosis>
 	pub r#diagnosis: Vec<DiagnosisProperty>,
+	/// <https://schema.org/drug>
 	pub r#drug: Vec<DrugProperty>,
+	/// <https://schema.org/healthCondition>
 	pub r#health_condition: Vec<HealthConditionProperty>,
+	/// <https://schema.org/audienceType>
 	pub r#audience_type: Vec<AudienceTypeProperty>,
+	/// <https://schema.org/geographicArea>
 	pub r#geographic_area: Vec<GeographicAreaProperty>,
+	/// <https://schema.org/requiredGender>
 	pub r#required_gender: Vec<RequiredGenderProperty>,
+	/// <https://schema.org/requiredMaxAge>
 	pub r#required_max_age: Vec<RequiredMaxAgeProperty>,
+	/// <https://schema.org/requiredMinAge>
 	pub r#required_min_age: Vec<RequiredMinAgeProperty>,
+	/// <https://schema.org/suggestedAge>
 	pub r#suggested_age: Vec<SuggestedAgeProperty>,
+	/// <https://schema.org/suggestedGender>
 	pub r#suggested_gender: Vec<SuggestedGenderProperty>,
+	/// <https://schema.org/suggestedMaxAge>
 	pub r#suggested_max_age: Vec<SuggestedMaxAgeProperty>,
+	/// <https://schema.org/suggestedMeasurement>
 	pub r#suggested_measurement: Vec<SuggestedMeasurementProperty>,
+	/// <https://schema.org/suggestedMinAge>
 	pub r#suggested_min_age: Vec<SuggestedMinAgeProperty>,
+	/// <https://schema.org/additionalName>
 	pub r#additional_name: Vec<AdditionalNameProperty>,
+	/// <https://schema.org/address>
 	pub r#address: Vec<AddressProperty>,
+	/// <https://schema.org/affiliation>
 	pub r#affiliation: Vec<AffiliationProperty>,
+	/// <https://schema.org/agentInteractionStatistic>
 	pub r#agent_interaction_statistic: Vec<AgentInteractionStatisticProperty>,
+	/// <https://schema.org/alumniOf>
 	pub r#alumni_of: Vec<AlumniOfProperty>,
+	/// <https://schema.org/award>
 	pub r#award: Vec<AwardProperty>,
+	/// <https://schema.org/awards>
 	pub r#awards: Vec<AwardsProperty>,
+	/// <https://schema.org/birthDate>
 	pub r#birth_date: Vec<BirthDateProperty>,
+	/// <https://schema.org/birthPlace>
 	pub r#birth_place: Vec<BirthPlaceProperty>,
+	/// <https://schema.org/brand>
 	pub r#brand: Vec<BrandProperty>,
+	/// <https://schema.org/callSign>
 	pub r#call_sign: Vec<CallSignProperty>,
+	/// <https://schema.org/children>
 	pub r#children: Vec<ChildrenProperty>,
+	/// <https://schema.org/colleague>
 	pub r#colleague: Vec<ColleagueProperty>,
+	/// <https://schema.org/colleagues>
 	pub r#colleagues: Vec<ColleaguesProperty>,
+	/// <https://schema.org/contactPoint>
 	pub r#contact_point: Vec<ContactPointProperty>,
+	/// <https://schema.org/contactPoints>
 	pub r#contact_points: Vec<ContactPointsProperty>,
+	/// <https://schema.org/deathDate>
 	pub r#death_date: Vec<DeathDateProperty>,
+	/// <https://schema.org/deathPlace>
 	pub r#death_place: Vec<DeathPlaceProperty>,
+	/// <https://schema.org/duns>
 	pub r#duns: Vec<DunsProperty>,
+	/// <https://schema.org/email>
 	pub r#email: Vec<EmailProperty>,
+	/// <https://schema.org/familyName>
 	pub r#family_name: Vec<FamilyNameProperty>,
+	/// <https://schema.org/faxNumber>
 	pub r#fax_number: Vec<FaxNumberProperty>,
+	/// <https://schema.org/follows>
 	pub r#follows: Vec<FollowsProperty>,
+	/// <https://schema.org/funder>
 	pub r#funder: Vec<FunderProperty>,
+	/// <https://schema.org/funding>
 	pub r#funding: Vec<FundingProperty>,
+	/// <https://schema.org/gender>
 	pub r#gender: Vec<GenderProperty>,
+	/// <https://schema.org/givenName>
 	pub r#given_name: Vec<GivenNameProperty>,
+	/// <https://schema.org/globalLocationNumber>
 	pub r#global_location_number: Vec<GlobalLocationNumberProperty>,
+	/// <https://schema.org/hasCredential>
 	pub r#has_credential: Vec<HasCredentialProperty>,
+	/// <https://schema.org/hasOccupation>
 	pub r#has_occupation: Vec<HasOccupationProperty>,
+	/// <https://schema.org/hasOfferCatalog>
 	pub r#has_offer_catalog: Vec<HasOfferCatalogProperty>,
+	/// <https://schema.org/hasPOS>
 	pub r#has_pos: Vec<HasPosProperty>,
+	/// <https://schema.org/height>
 	pub r#height: Vec<HeightProperty>,
+	/// <https://schema.org/homeLocation>
 	pub r#home_location: Vec<HomeLocationProperty>,
+	/// <https://schema.org/honorificPrefix>
 	pub r#honorific_prefix: Vec<HonorificPrefixProperty>,
+	/// <https://schema.org/honorificSuffix>
 	pub r#honorific_suffix: Vec<HonorificSuffixProperty>,
+	/// <https://schema.org/interactionStatistic>
 	pub r#interaction_statistic: Vec<InteractionStatisticProperty>,
+	/// <https://schema.org/isicV4>
 	pub r#isic_v_4: Vec<IsicV4Property>,
+	/// <https://schema.org/jobTitle>
 	pub r#job_title: Vec<JobTitleProperty>,
+	/// <https://schema.org/knows>
 	pub r#knows: Vec<KnowsProperty>,
+	/// <https://schema.org/knowsAbout>
 	pub r#knows_about: Vec<KnowsAboutProperty>,
+	/// <https://schema.org/knowsLanguage>
 	pub r#knows_language: Vec<KnowsLanguageProperty>,
+	/// <https://schema.org/makesOffer>
 	pub r#makes_offer: Vec<MakesOfferProperty>,
+	/// <https://schema.org/memberOf>
 	pub r#member_of: Vec<MemberOfProperty>,
+	/// <https://schema.org/naics>
 	pub r#naics: Vec<NaicsProperty>,
+	/// <https://schema.org/nationality>
 	pub r#nationality: Vec<NationalityProperty>,
+	/// <https://schema.org/netWorth>
 	pub r#net_worth: Vec<NetWorthProperty>,
+	/// <https://schema.org/owns>
 	pub r#owns: Vec<OwnsProperty>,
+	/// <https://schema.org/parent>
 	pub r#parent: Vec<ParentProperty>,
+	/// <https://schema.org/parents>
 	pub r#parents: Vec<ParentsProperty>,
+	/// <https://schema.org/performerIn>
 	pub r#performer_in: Vec<PerformerInProperty>,
+	/// <https://schema.org/publishingPrinciples>
 	pub r#publishing_principles: Vec<PublishingPrinciplesProperty>,
+	/// <https://schema.org/relatedTo>
 	pub r#related_to: Vec<RelatedToProperty>,
+	/// <https://schema.org/seeks>
 	pub r#seeks: Vec<SeeksProperty>,
+	/// <https://schema.org/sibling>
 	pub r#sibling: Vec<SiblingProperty>,
+	/// <https://schema.org/siblings>
 	pub r#siblings: Vec<SiblingsProperty>,
+	/// <https://schema.org/sponsor>
 	pub r#sponsor: Vec<SponsorProperty>,
+	/// <https://schema.org/spouse>
 	pub r#spouse: Vec<SpouseProperty>,
+	/// <https://schema.org/taxID>
 	pub r#tax_id: Vec<TaxIdProperty>,
+	/// <https://schema.org/telephone>
 	pub r#telephone: Vec<TelephoneProperty>,
+	/// <https://schema.org/vatID>
 	pub r#vat_id: Vec<VatIdProperty>,
+	/// <https://schema.org/weight>
 	pub r#weight: Vec<WeightProperty>,
+	/// <https://schema.org/workLocation>
 	pub r#work_location: Vec<WorkLocationProperty>,
+	/// <https://schema.org/worksFor>
 	pub r#works_for: Vec<WorksForProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/Patient>.
 pub trait PatientTrait {
+	/// Get <https://schema.org/diagnosis> from [`Self`] as borrowed slice.
 	fn get_diagnosis(&self) -> &[DiagnosisProperty];
+	/// Take <https://schema.org/diagnosis> from [`Self`] as owned vector.
 	fn take_diagnosis(&mut self) -> Vec<DiagnosisProperty>;
+	/// Get <https://schema.org/drug> from [`Self`] as borrowed slice.
 	fn get_drug(&self) -> &[DrugProperty];
+	/// Take <https://schema.org/drug> from [`Self`] as owned vector.
 	fn take_drug(&mut self) -> Vec<DrugProperty>;
+	/// Get <https://schema.org/healthCondition> from [`Self`] as borrowed slice.
 	fn get_health_condition(&self) -> &[HealthConditionProperty];
+	/// Take <https://schema.org/healthCondition> from [`Self`] as owned vector.
 	fn take_health_condition(&mut self) -> Vec<HealthConditionProperty>;
 }
 impl PatientTrait for Patient {

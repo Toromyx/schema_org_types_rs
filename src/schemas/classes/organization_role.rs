@@ -3,26 +3,46 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct OrganizationRole {
+	/// <https://schema.org/numberedPosition>
 	pub r#numbered_position: Vec<NumberedPositionProperty>,
+	/// <https://schema.org/endDate>
 	pub r#end_date: Vec<EndDateProperty>,
+	/// <https://schema.org/namedPosition>
 	pub r#named_position: Vec<NamedPositionProperty>,
+	/// <https://schema.org/roleName>
 	pub r#role_name: Vec<RoleNameProperty>,
+	/// <https://schema.org/startDate>
 	pub r#start_date: Vec<StartDateProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/OrganizationRole>.
 pub trait OrganizationRoleTrait {
+	/// Get <https://schema.org/numberedPosition> from [`Self`] as borrowed slice.
 	fn get_numbered_position(&self) -> &[NumberedPositionProperty];
+	/// Take <https://schema.org/numberedPosition> from [`Self`] as owned vector.
 	fn take_numbered_position(&mut self) -> Vec<NumberedPositionProperty>;
 }
 impl OrganizationRoleTrait for OrganizationRole {

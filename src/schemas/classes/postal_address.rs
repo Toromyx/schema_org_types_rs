@@ -3,47 +3,88 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct PostalAddress {
+	/// <https://schema.org/addressCountry>
 	pub r#address_country: Vec<AddressCountryProperty>,
+	/// <https://schema.org/addressLocality>
 	pub r#address_locality: Vec<AddressLocalityProperty>,
+	/// <https://schema.org/addressRegion>
 	pub r#address_region: Vec<AddressRegionProperty>,
+	/// <https://schema.org/postOfficeBoxNumber>
 	pub r#post_office_box_number: Vec<PostOfficeBoxNumberProperty>,
+	/// <https://schema.org/postalCode>
 	pub r#postal_code: Vec<PostalCodeProperty>,
+	/// <https://schema.org/streetAddress>
 	pub r#street_address: Vec<StreetAddressProperty>,
+	/// <https://schema.org/areaServed>
 	pub r#area_served: Vec<AreaServedProperty>,
+	/// <https://schema.org/availableLanguage>
 	pub r#available_language: Vec<AvailableLanguageProperty>,
+	/// <https://schema.org/contactOption>
 	pub r#contact_option: Vec<ContactOptionProperty>,
+	/// <https://schema.org/contactType>
 	pub r#contact_type: Vec<ContactTypeProperty>,
+	/// <https://schema.org/email>
 	pub r#email: Vec<EmailProperty>,
+	/// <https://schema.org/faxNumber>
 	pub r#fax_number: Vec<FaxNumberProperty>,
+	/// <https://schema.org/hoursAvailable>
 	pub r#hours_available: Vec<HoursAvailableProperty>,
+	/// <https://schema.org/productSupported>
 	pub r#product_supported: Vec<ProductSupportedProperty>,
+	/// <https://schema.org/serviceArea>
 	pub r#service_area: Vec<ServiceAreaProperty>,
+	/// <https://schema.org/telephone>
 	pub r#telephone: Vec<TelephoneProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/PostalAddress>.
 pub trait PostalAddressTrait {
+	/// Get <https://schema.org/addressCountry> from [`Self`] as borrowed slice.
 	fn get_address_country(&self) -> &[AddressCountryProperty];
+	/// Take <https://schema.org/addressCountry> from [`Self`] as owned vector.
 	fn take_address_country(&mut self) -> Vec<AddressCountryProperty>;
+	/// Get <https://schema.org/addressLocality> from [`Self`] as borrowed slice.
 	fn get_address_locality(&self) -> &[AddressLocalityProperty];
+	/// Take <https://schema.org/addressLocality> from [`Self`] as owned vector.
 	fn take_address_locality(&mut self) -> Vec<AddressLocalityProperty>;
+	/// Get <https://schema.org/addressRegion> from [`Self`] as borrowed slice.
 	fn get_address_region(&self) -> &[AddressRegionProperty];
+	/// Take <https://schema.org/addressRegion> from [`Self`] as owned vector.
 	fn take_address_region(&mut self) -> Vec<AddressRegionProperty>;
+	/// Get <https://schema.org/postOfficeBoxNumber> from [`Self`] as borrowed slice.
 	fn get_post_office_box_number(&self) -> &[PostOfficeBoxNumberProperty];
+	/// Take <https://schema.org/postOfficeBoxNumber> from [`Self`] as owned vector.
 	fn take_post_office_box_number(&mut self) -> Vec<PostOfficeBoxNumberProperty>;
+	/// Get <https://schema.org/postalCode> from [`Self`] as borrowed slice.
 	fn get_postal_code(&self) -> &[PostalCodeProperty];
+	/// Take <https://schema.org/postalCode> from [`Self`] as owned vector.
 	fn take_postal_code(&mut self) -> Vec<PostalCodeProperty>;
+	/// Get <https://schema.org/streetAddress> from [`Self`] as borrowed slice.
 	fn get_street_address(&self) -> &[StreetAddressProperty];
+	/// Take <https://schema.org/streetAddress> from [`Self`] as owned vector.
 	fn take_street_address(&mut self) -> Vec<StreetAddressProperty>;
 }
 impl PostalAddressTrait for PostalAddress {

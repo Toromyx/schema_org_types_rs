@@ -3,43 +3,80 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct MedicalEntity {
+	/// <https://schema.org/code>
 	pub r#code: Vec<CodeProperty>,
+	/// <https://schema.org/funding>
 	pub r#funding: Vec<FundingProperty>,
+	/// <https://schema.org/guideline>
 	pub r#guideline: Vec<GuidelineProperty>,
+	/// <https://schema.org/legalStatus>
 	pub r#legal_status: Vec<LegalStatusProperty>,
+	/// <https://schema.org/medicineSystem>
 	pub r#medicine_system: Vec<MedicineSystemProperty>,
+	/// <https://schema.org/recognizingAuthority>
 	pub r#recognizing_authority: Vec<RecognizingAuthorityProperty>,
+	/// <https://schema.org/relevantSpecialty>
 	pub r#relevant_specialty: Vec<RelevantSpecialtyProperty>,
+	/// <https://schema.org/study>
 	pub r#study: Vec<StudyProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/MedicalEntity>.
 pub trait MedicalEntityTrait {
+	/// Get <https://schema.org/code> from [`Self`] as borrowed slice.
 	fn get_code(&self) -> &[CodeProperty];
+	/// Take <https://schema.org/code> from [`Self`] as owned vector.
 	fn take_code(&mut self) -> Vec<CodeProperty>;
+	/// Get <https://schema.org/funding> from [`Self`] as borrowed slice.
 	fn get_funding(&self) -> &[FundingProperty];
+	/// Take <https://schema.org/funding> from [`Self`] as owned vector.
 	fn take_funding(&mut self) -> Vec<FundingProperty>;
+	/// Get <https://schema.org/guideline> from [`Self`] as borrowed slice.
 	fn get_guideline(&self) -> &[GuidelineProperty];
+	/// Take <https://schema.org/guideline> from [`Self`] as owned vector.
 	fn take_guideline(&mut self) -> Vec<GuidelineProperty>;
+	/// Get <https://schema.org/legalStatus> from [`Self`] as borrowed slice.
 	fn get_legal_status(&self) -> &[LegalStatusProperty];
+	/// Take <https://schema.org/legalStatus> from [`Self`] as owned vector.
 	fn take_legal_status(&mut self) -> Vec<LegalStatusProperty>;
+	/// Get <https://schema.org/medicineSystem> from [`Self`] as borrowed slice.
 	fn get_medicine_system(&self) -> &[MedicineSystemProperty];
+	/// Take <https://schema.org/medicineSystem> from [`Self`] as owned vector.
 	fn take_medicine_system(&mut self) -> Vec<MedicineSystemProperty>;
+	/// Get <https://schema.org/recognizingAuthority> from [`Self`] as borrowed slice.
 	fn get_recognizing_authority(&self) -> &[RecognizingAuthorityProperty];
+	/// Take <https://schema.org/recognizingAuthority> from [`Self`] as owned vector.
 	fn take_recognizing_authority(&mut self) -> Vec<RecognizingAuthorityProperty>;
+	/// Get <https://schema.org/relevantSpecialty> from [`Self`] as borrowed slice.
 	fn get_relevant_specialty(&self) -> &[RelevantSpecialtyProperty];
+	/// Take <https://schema.org/relevantSpecialty> from [`Self`] as owned vector.
 	fn take_relevant_specialty(&mut self) -> Vec<RelevantSpecialtyProperty>;
+	/// Get <https://schema.org/study> from [`Self`] as borrowed slice.
 	fn get_study(&self) -> &[StudyProperty];
+	/// Take <https://schema.org/study> from [`Self`] as owned vector.
 	fn take_study(&mut self) -> Vec<StudyProperty>;
 }
 impl MedicalEntityTrait for MedicalEntity {

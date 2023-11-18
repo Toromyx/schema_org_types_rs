@@ -3,50 +3,94 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct LodgingReservation {
+	/// <https://schema.org/checkinTime>
 	pub r#checkin_time: Vec<CheckinTimeProperty>,
+	/// <https://schema.org/checkoutTime>
 	pub r#checkout_time: Vec<CheckoutTimeProperty>,
+	/// <https://schema.org/lodgingUnitDescription>
 	pub r#lodging_unit_description: Vec<LodgingUnitDescriptionProperty>,
+	/// <https://schema.org/lodgingUnitType>
 	pub r#lodging_unit_type: Vec<LodgingUnitTypeProperty>,
+	/// <https://schema.org/numAdults>
 	pub r#num_adults: Vec<NumAdultsProperty>,
+	/// <https://schema.org/numChildren>
 	pub r#num_children: Vec<NumChildrenProperty>,
+	/// <https://schema.org/bookingAgent>
 	pub r#booking_agent: Vec<BookingAgentProperty>,
+	/// <https://schema.org/bookingTime>
 	pub r#booking_time: Vec<BookingTimeProperty>,
+	/// <https://schema.org/broker>
 	pub r#broker: Vec<BrokerProperty>,
+	/// <https://schema.org/modifiedTime>
 	pub r#modified_time: Vec<ModifiedTimeProperty>,
+	/// <https://schema.org/priceCurrency>
 	pub r#price_currency: Vec<PriceCurrencyProperty>,
+	/// <https://schema.org/programMembershipUsed>
 	pub r#program_membership_used: Vec<ProgramMembershipUsedProperty>,
+	/// <https://schema.org/provider>
 	pub r#provider: Vec<ProviderProperty>,
+	/// <https://schema.org/reservationFor>
 	pub r#reservation_for: Vec<ReservationForProperty>,
+	/// <https://schema.org/reservationId>
 	pub r#reservation_id: Vec<ReservationIdProperty>,
+	/// <https://schema.org/reservationStatus>
 	pub r#reservation_status: Vec<ReservationStatusProperty>,
+	/// <https://schema.org/reservedTicket>
 	pub r#reserved_ticket: Vec<ReservedTicketProperty>,
+	/// <https://schema.org/totalPrice>
 	pub r#total_price: Vec<TotalPriceProperty>,
+	/// <https://schema.org/underName>
 	pub r#under_name: Vec<UnderNameProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/LodgingReservation>.
 pub trait LodgingReservationTrait {
+	/// Get <https://schema.org/checkinTime> from [`Self`] as borrowed slice.
 	fn get_checkin_time(&self) -> &[CheckinTimeProperty];
+	/// Take <https://schema.org/checkinTime> from [`Self`] as owned vector.
 	fn take_checkin_time(&mut self) -> Vec<CheckinTimeProperty>;
+	/// Get <https://schema.org/checkoutTime> from [`Self`] as borrowed slice.
 	fn get_checkout_time(&self) -> &[CheckoutTimeProperty];
+	/// Take <https://schema.org/checkoutTime> from [`Self`] as owned vector.
 	fn take_checkout_time(&mut self) -> Vec<CheckoutTimeProperty>;
+	/// Get <https://schema.org/lodgingUnitDescription> from [`Self`] as borrowed slice.
 	fn get_lodging_unit_description(&self) -> &[LodgingUnitDescriptionProperty];
+	/// Take <https://schema.org/lodgingUnitDescription> from [`Self`] as owned vector.
 	fn take_lodging_unit_description(&mut self) -> Vec<LodgingUnitDescriptionProperty>;
+	/// Get <https://schema.org/lodgingUnitType> from [`Self`] as borrowed slice.
 	fn get_lodging_unit_type(&self) -> &[LodgingUnitTypeProperty];
+	/// Take <https://schema.org/lodgingUnitType> from [`Self`] as owned vector.
 	fn take_lodging_unit_type(&mut self) -> Vec<LodgingUnitTypeProperty>;
+	/// Get <https://schema.org/numAdults> from [`Self`] as borrowed slice.
 	fn get_num_adults(&self) -> &[NumAdultsProperty];
+	/// Take <https://schema.org/numAdults> from [`Self`] as owned vector.
 	fn take_num_adults(&mut self) -> Vec<NumAdultsProperty>;
+	/// Get <https://schema.org/numChildren> from [`Self`] as borrowed slice.
 	fn get_num_children(&self) -> &[NumChildrenProperty];
+	/// Take <https://schema.org/numChildren> from [`Self`] as owned vector.
 	fn take_num_children(&mut self) -> Vec<NumChildrenProperty>;
 }
 impl LodgingReservationTrait for LodgingReservation {

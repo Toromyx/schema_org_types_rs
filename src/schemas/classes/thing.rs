@@ -3,43 +3,80 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct Thing {
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/Thing>.
 pub trait ThingTrait {
+	/// Get <https://schema.org/additionalType> from [`Self`] as borrowed slice.
 	fn get_additional_type(&self) -> &[AdditionalTypeProperty];
+	/// Take <https://schema.org/additionalType> from [`Self`] as owned vector.
 	fn take_additional_type(&mut self) -> Vec<AdditionalTypeProperty>;
+	/// Get <https://schema.org/alternateName> from [`Self`] as borrowed slice.
 	fn get_alternate_name(&self) -> &[AlternateNameProperty];
+	/// Take <https://schema.org/alternateName> from [`Self`] as owned vector.
 	fn take_alternate_name(&mut self) -> Vec<AlternateNameProperty>;
+	/// Get <https://schema.org/description> from [`Self`] as borrowed slice.
 	fn get_description(&self) -> &[DescriptionProperty];
+	/// Take <https://schema.org/description> from [`Self`] as owned vector.
 	fn take_description(&mut self) -> Vec<DescriptionProperty>;
+	/// Get <https://schema.org/disambiguatingDescription> from [`Self`] as borrowed slice.
 	fn get_disambiguating_description(&self) -> &[DisambiguatingDescriptionProperty];
+	/// Take <https://schema.org/disambiguatingDescription> from [`Self`] as owned vector.
 	fn take_disambiguating_description(&mut self) -> Vec<DisambiguatingDescriptionProperty>;
+	/// Get <https://schema.org/identifier> from [`Self`] as borrowed slice.
 	fn get_identifier(&self) -> &[IdentifierProperty];
+	/// Take <https://schema.org/identifier> from [`Self`] as owned vector.
 	fn take_identifier(&mut self) -> Vec<IdentifierProperty>;
+	/// Get <https://schema.org/image> from [`Self`] as borrowed slice.
 	fn get_image(&self) -> &[ImageProperty];
+	/// Take <https://schema.org/image> from [`Self`] as owned vector.
 	fn take_image(&mut self) -> Vec<ImageProperty>;
+	/// Get <https://schema.org/mainEntityOfPage> from [`Self`] as borrowed slice.
 	fn get_main_entity_of_page(&self) -> &[MainEntityOfPageProperty];
+	/// Take <https://schema.org/mainEntityOfPage> from [`Self`] as owned vector.
 	fn take_main_entity_of_page(&mut self) -> Vec<MainEntityOfPageProperty>;
+	/// Get <https://schema.org/name> from [`Self`] as borrowed slice.
 	fn get_name(&self) -> &[NameProperty];
+	/// Take <https://schema.org/name> from [`Self`] as owned vector.
 	fn take_name(&mut self) -> Vec<NameProperty>;
+	/// Get <https://schema.org/potentialAction> from [`Self`] as borrowed slice.
 	fn get_potential_action(&self) -> &[PotentialActionProperty];
+	/// Take <https://schema.org/potentialAction> from [`Self`] as owned vector.
 	fn take_potential_action(&mut self) -> Vec<PotentialActionProperty>;
+	/// Get <https://schema.org/sameAs> from [`Self`] as borrowed slice.
 	fn get_same_as(&self) -> &[SameAsProperty];
+	/// Take <https://schema.org/sameAs> from [`Self`] as owned vector.
 	fn take_same_as(&mut self) -> Vec<SameAsProperty>;
+	/// Get <https://schema.org/subjectOf> from [`Self`] as borrowed slice.
 	fn get_subject_of(&self) -> &[SubjectOfProperty];
+	/// Take <https://schema.org/subjectOf> from [`Self`] as owned vector.
 	fn take_subject_of(&mut self) -> Vec<SubjectOfProperty>;
+	/// Get <https://schema.org/url> from [`Self`] as borrowed slice.
 	fn get_url(&self) -> &[UrlProperty];
+	/// Take <https://schema.org/url> from [`Self`] as owned vector.
 	fn take_url(&mut self) -> Vec<UrlProperty>;
 }
 impl ThingTrait for Thing {

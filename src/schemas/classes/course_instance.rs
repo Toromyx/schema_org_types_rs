@@ -3,72 +3,138 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct CourseInstance {
+	/// <https://schema.org/courseMode>
 	pub r#course_mode: Vec<CourseModeProperty>,
+	/// <https://schema.org/courseSchedule>
 	pub r#course_schedule: Vec<CourseScheduleProperty>,
+	/// <https://schema.org/courseWorkload>
 	pub r#course_workload: Vec<CourseWorkloadProperty>,
+	/// <https://schema.org/instructor>
 	pub r#instructor: Vec<InstructorProperty>,
+	/// <https://schema.org/about>
 	pub r#about: Vec<AboutProperty>,
+	/// <https://schema.org/actor>
 	pub r#actor: Vec<ActorProperty>,
+	/// <https://schema.org/aggregateRating>
 	pub r#aggregate_rating: Vec<AggregateRatingProperty>,
+	/// <https://schema.org/attendee>
 	pub r#attendee: Vec<AttendeeProperty>,
+	/// <https://schema.org/attendees>
 	pub r#attendees: Vec<AttendeesProperty>,
+	/// <https://schema.org/audience>
 	pub r#audience: Vec<AudienceProperty>,
+	/// <https://schema.org/composer>
 	pub r#composer: Vec<ComposerProperty>,
+	/// <https://schema.org/contributor>
 	pub r#contributor: Vec<ContributorProperty>,
+	/// <https://schema.org/director>
 	pub r#director: Vec<DirectorProperty>,
+	/// <https://schema.org/doorTime>
 	pub r#door_time: Vec<DoorTimeProperty>,
+	/// <https://schema.org/duration>
 	pub r#duration: Vec<DurationProperty>,
+	/// <https://schema.org/endDate>
 	pub r#end_date: Vec<EndDateProperty>,
+	/// <https://schema.org/eventAttendanceMode>
 	pub r#event_attendance_mode: Vec<EventAttendanceModeProperty>,
+	/// <https://schema.org/eventSchedule>
 	pub r#event_schedule: Vec<EventScheduleProperty>,
+	/// <https://schema.org/eventStatus>
 	pub r#event_status: Vec<EventStatusProperty>,
+	/// <https://schema.org/funder>
 	pub r#funder: Vec<FunderProperty>,
+	/// <https://schema.org/funding>
 	pub r#funding: Vec<FundingProperty>,
+	/// <https://schema.org/inLanguage>
 	pub r#in_language: Vec<InLanguageProperty>,
+	/// <https://schema.org/isAccessibleForFree>
 	pub r#is_accessible_for_free: Vec<IsAccessibleForFreeProperty>,
+	/// <https://schema.org/keywords>
 	pub r#keywords: Vec<KeywordsProperty>,
+	/// <https://schema.org/location>
 	pub r#location: Vec<LocationProperty>,
+	/// <https://schema.org/maximumAttendeeCapacity>
 	pub r#maximum_attendee_capacity: Vec<MaximumAttendeeCapacityProperty>,
+	/// <https://schema.org/maximumPhysicalAttendeeCapacity>
 	pub r#maximum_physical_attendee_capacity: Vec<MaximumPhysicalAttendeeCapacityProperty>,
+	/// <https://schema.org/maximumVirtualAttendeeCapacity>
 	pub r#maximum_virtual_attendee_capacity: Vec<MaximumVirtualAttendeeCapacityProperty>,
+	/// <https://schema.org/offers>
 	pub r#offers: Vec<OffersProperty>,
+	/// <https://schema.org/organizer>
 	pub r#organizer: Vec<OrganizerProperty>,
+	/// <https://schema.org/performer>
 	pub r#performer: Vec<PerformerProperty>,
+	/// <https://schema.org/performers>
 	pub r#performers: Vec<PerformersProperty>,
+	/// <https://schema.org/previousStartDate>
 	pub r#previous_start_date: Vec<PreviousStartDateProperty>,
+	/// <https://schema.org/recordedIn>
 	pub r#recorded_in: Vec<RecordedInProperty>,
+	/// <https://schema.org/remainingAttendeeCapacity>
 	pub r#remaining_attendee_capacity: Vec<RemainingAttendeeCapacityProperty>,
+	/// <https://schema.org/review>
 	pub r#review: Vec<ReviewProperty>,
+	/// <https://schema.org/sponsor>
 	pub r#sponsor: Vec<SponsorProperty>,
+	/// <https://schema.org/startDate>
 	pub r#start_date: Vec<StartDateProperty>,
+	/// <https://schema.org/subEvent>
 	pub r#sub_event: Vec<SubEventProperty>,
+	/// <https://schema.org/subEvents>
 	pub r#sub_events: Vec<SubEventsProperty>,
+	/// <https://schema.org/superEvent>
 	pub r#super_event: Vec<SuperEventProperty>,
+	/// <https://schema.org/translator>
 	pub r#translator: Vec<TranslatorProperty>,
+	/// <https://schema.org/typicalAgeRange>
 	pub r#typical_age_range: Vec<TypicalAgeRangeProperty>,
+	/// <https://schema.org/workFeatured>
 	pub r#work_featured: Vec<WorkFeaturedProperty>,
+	/// <https://schema.org/workPerformed>
 	pub r#work_performed: Vec<WorkPerformedProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/CourseInstance>.
 pub trait CourseInstanceTrait {
+	/// Get <https://schema.org/courseMode> from [`Self`] as borrowed slice.
 	fn get_course_mode(&self) -> &[CourseModeProperty];
+	/// Take <https://schema.org/courseMode> from [`Self`] as owned vector.
 	fn take_course_mode(&mut self) -> Vec<CourseModeProperty>;
+	/// Get <https://schema.org/courseSchedule> from [`Self`] as borrowed slice.
 	fn get_course_schedule(&self) -> &[CourseScheduleProperty];
+	/// Take <https://schema.org/courseSchedule> from [`Self`] as owned vector.
 	fn take_course_schedule(&mut self) -> Vec<CourseScheduleProperty>;
+	/// Get <https://schema.org/courseWorkload> from [`Self`] as borrowed slice.
 	fn get_course_workload(&self) -> &[CourseWorkloadProperty];
+	/// Take <https://schema.org/courseWorkload> from [`Self`] as owned vector.
 	fn take_course_workload(&mut self) -> Vec<CourseWorkloadProperty>;
+	/// Get <https://schema.org/instructor> from [`Self`] as borrowed slice.
 	fn get_instructor(&self) -> &[InstructorProperty];
+	/// Take <https://schema.org/instructor> from [`Self`] as owned vector.
 	fn take_instructor(&mut self) -> Vec<InstructorProperty>;
 }
 impl CourseInstanceTrait for CourseInstance {

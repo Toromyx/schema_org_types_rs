@@ -3,30 +3,54 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct BusinessAudience {
+	/// <https://schema.org/numberOfEmployees>
 	pub r#number_of_employees: Vec<NumberOfEmployeesProperty>,
+	/// <https://schema.org/yearlyRevenue>
 	pub r#yearly_revenue: Vec<YearlyRevenueProperty>,
+	/// <https://schema.org/yearsInOperation>
 	pub r#years_in_operation: Vec<YearsInOperationProperty>,
+	/// <https://schema.org/audienceType>
 	pub r#audience_type: Vec<AudienceTypeProperty>,
+	/// <https://schema.org/geographicArea>
 	pub r#geographic_area: Vec<GeographicAreaProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/BusinessAudience>.
 pub trait BusinessAudienceTrait {
+	/// Get <https://schema.org/numberOfEmployees> from [`Self`] as borrowed slice.
 	fn get_number_of_employees(&self) -> &[NumberOfEmployeesProperty];
+	/// Take <https://schema.org/numberOfEmployees> from [`Self`] as owned vector.
 	fn take_number_of_employees(&mut self) -> Vec<NumberOfEmployeesProperty>;
+	/// Get <https://schema.org/yearlyRevenue> from [`Self`] as borrowed slice.
 	fn get_yearly_revenue(&self) -> &[YearlyRevenueProperty];
+	/// Take <https://schema.org/yearlyRevenue> from [`Self`] as owned vector.
 	fn take_yearly_revenue(&mut self) -> Vec<YearlyRevenueProperty>;
+	/// Get <https://schema.org/yearsInOperation> from [`Self`] as borrowed slice.
 	fn get_years_in_operation(&self) -> &[YearsInOperationProperty];
+	/// Take <https://schema.org/yearsInOperation> from [`Self`] as owned vector.
 	fn take_years_in_operation(&mut self) -> Vec<YearsInOperationProperty>;
 }
 impl BusinessAudienceTrait for BusinessAudience {

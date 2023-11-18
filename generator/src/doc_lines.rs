@@ -11,23 +11,26 @@ pub trait DocLines {
 	fn doc_lines(&self) -> Vec<String>;
 
 	fn doc_lines_token_stream(&self) -> TokenStream {
-		let doc_lines: Vec<String> = self
-			.doc_lines()
-			.iter()
-			.flat_map(|line| line.split('\n'))
-			.map(|line| {
-				let trimmed_line = line.trim();
-				if trimmed_line.is_empty() {
-					trimmed_line.to_string()
-				} else {
-					format!(" {}", trimmed_line)
-				}
-			})
-			.collect();
-		quote!(
-			#( #[doc = #doc_lines] )*
-		)
+		strings_as_doc_lines(&self.doc_lines())
 	}
+}
+
+pub fn strings_as_doc_lines(strings: &[String]) -> TokenStream {
+	let doc_lines: Vec<String> = strings
+		.iter()
+		.flat_map(|line| line.split('\n'))
+		.map(|line| {
+			let trimmed_line = line.trim();
+			if trimmed_line.is_empty() {
+				trimmed_line.to_string()
+			} else {
+				format!(" {}", trimmed_line)
+			}
+		})
+		.collect();
+	quote!(
+		#( #[doc = #doc_lines] )*
+	)
 }
 
 impl<T: Schema> DocLines for T {

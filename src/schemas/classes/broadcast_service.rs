@@ -3,76 +3,146 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct BroadcastService {
+	/// <https://schema.org/area>
 	pub r#area: Vec<AreaProperty>,
+	/// <https://schema.org/broadcastAffiliateOf>
 	pub r#broadcast_affiliate_of: Vec<BroadcastAffiliateOfProperty>,
+	/// <https://schema.org/broadcastDisplayName>
 	pub r#broadcast_display_name: Vec<BroadcastDisplayNameProperty>,
+	/// <https://schema.org/broadcastFrequency>
 	pub r#broadcast_frequency: Vec<BroadcastFrequencyProperty>,
+	/// <https://schema.org/broadcastTimezone>
 	pub r#broadcast_timezone: Vec<BroadcastTimezoneProperty>,
+	/// <https://schema.org/broadcaster>
 	pub r#broadcaster: Vec<BroadcasterProperty>,
+	/// <https://schema.org/callSign>
 	pub r#call_sign: Vec<CallSignProperty>,
+	/// <https://schema.org/hasBroadcastChannel>
 	pub r#has_broadcast_channel: Vec<HasBroadcastChannelProperty>,
+	/// <https://schema.org/inLanguage>
 	pub r#in_language: Vec<InLanguageProperty>,
+	/// <https://schema.org/parentService>
 	pub r#parent_service: Vec<ParentServiceProperty>,
+	/// <https://schema.org/videoFormat>
 	pub r#video_format: Vec<VideoFormatProperty>,
+	/// <https://schema.org/aggregateRating>
 	pub r#aggregate_rating: Vec<AggregateRatingProperty>,
+	/// <https://schema.org/areaServed>
 	pub r#area_served: Vec<AreaServedProperty>,
+	/// <https://schema.org/audience>
 	pub r#audience: Vec<AudienceProperty>,
+	/// <https://schema.org/availableChannel>
 	pub r#available_channel: Vec<AvailableChannelProperty>,
+	/// <https://schema.org/award>
 	pub r#award: Vec<AwardProperty>,
+	/// <https://schema.org/brand>
 	pub r#brand: Vec<BrandProperty>,
+	/// <https://schema.org/broker>
 	pub r#broker: Vec<BrokerProperty>,
+	/// <https://schema.org/category>
 	pub r#category: Vec<CategoryProperty>,
+	/// <https://schema.org/hasOfferCatalog>
 	pub r#has_offer_catalog: Vec<HasOfferCatalogProperty>,
+	/// <https://schema.org/hoursAvailable>
 	pub r#hours_available: Vec<HoursAvailableProperty>,
+	/// <https://schema.org/isRelatedTo>
 	pub r#is_related_to: Vec<IsRelatedToProperty>,
+	/// <https://schema.org/isSimilarTo>
 	pub r#is_similar_to: Vec<IsSimilarToProperty>,
+	/// <https://schema.org/logo>
 	pub r#logo: Vec<LogoProperty>,
+	/// <https://schema.org/offers>
 	pub r#offers: Vec<OffersProperty>,
+	/// <https://schema.org/produces>
 	pub r#produces: Vec<ProducesProperty>,
+	/// <https://schema.org/provider>
 	pub r#provider: Vec<ProviderProperty>,
+	/// <https://schema.org/providerMobility>
 	pub r#provider_mobility: Vec<ProviderMobilityProperty>,
+	/// <https://schema.org/review>
 	pub r#review: Vec<ReviewProperty>,
+	/// <https://schema.org/serviceArea>
 	pub r#service_area: Vec<ServiceAreaProperty>,
+	/// <https://schema.org/serviceAudience>
 	pub r#service_audience: Vec<ServiceAudienceProperty>,
+	/// <https://schema.org/serviceOutput>
 	pub r#service_output: Vec<ServiceOutputProperty>,
+	/// <https://schema.org/serviceType>
 	pub r#service_type: Vec<ServiceTypeProperty>,
+	/// <https://schema.org/slogan>
 	pub r#slogan: Vec<SloganProperty>,
+	/// <https://schema.org/termsOfService>
 	pub r#terms_of_service: Vec<TermsOfServiceProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/BroadcastService>.
 pub trait BroadcastServiceTrait {
+	/// Get <https://schema.org/area> from [`Self`] as borrowed slice.
 	fn get_area(&self) -> &[AreaProperty];
+	/// Take <https://schema.org/area> from [`Self`] as owned vector.
 	fn take_area(&mut self) -> Vec<AreaProperty>;
+	/// Get <https://schema.org/broadcastAffiliateOf> from [`Self`] as borrowed slice.
 	fn get_broadcast_affiliate_of(&self) -> &[BroadcastAffiliateOfProperty];
+	/// Take <https://schema.org/broadcastAffiliateOf> from [`Self`] as owned vector.
 	fn take_broadcast_affiliate_of(&mut self) -> Vec<BroadcastAffiliateOfProperty>;
+	/// Get <https://schema.org/broadcastDisplayName> from [`Self`] as borrowed slice.
 	fn get_broadcast_display_name(&self) -> &[BroadcastDisplayNameProperty];
+	/// Take <https://schema.org/broadcastDisplayName> from [`Self`] as owned vector.
 	fn take_broadcast_display_name(&mut self) -> Vec<BroadcastDisplayNameProperty>;
+	/// Get <https://schema.org/broadcastFrequency> from [`Self`] as borrowed slice.
 	fn get_broadcast_frequency(&self) -> &[BroadcastFrequencyProperty];
+	/// Take <https://schema.org/broadcastFrequency> from [`Self`] as owned vector.
 	fn take_broadcast_frequency(&mut self) -> Vec<BroadcastFrequencyProperty>;
+	/// Get <https://schema.org/broadcastTimezone> from [`Self`] as borrowed slice.
 	fn get_broadcast_timezone(&self) -> &[BroadcastTimezoneProperty];
+	/// Take <https://schema.org/broadcastTimezone> from [`Self`] as owned vector.
 	fn take_broadcast_timezone(&mut self) -> Vec<BroadcastTimezoneProperty>;
+	/// Get <https://schema.org/broadcaster> from [`Self`] as borrowed slice.
 	fn get_broadcaster(&self) -> &[BroadcasterProperty];
+	/// Take <https://schema.org/broadcaster> from [`Self`] as owned vector.
 	fn take_broadcaster(&mut self) -> Vec<BroadcasterProperty>;
+	/// Get <https://schema.org/callSign> from [`Self`] as borrowed slice.
 	fn get_call_sign(&self) -> &[CallSignProperty];
+	/// Take <https://schema.org/callSign> from [`Self`] as owned vector.
 	fn take_call_sign(&mut self) -> Vec<CallSignProperty>;
+	/// Get <https://schema.org/hasBroadcastChannel> from [`Self`] as borrowed slice.
 	fn get_has_broadcast_channel(&self) -> &[HasBroadcastChannelProperty];
+	/// Take <https://schema.org/hasBroadcastChannel> from [`Self`] as owned vector.
 	fn take_has_broadcast_channel(&mut self) -> Vec<HasBroadcastChannelProperty>;
+	/// Get <https://schema.org/inLanguage> from [`Self`] as borrowed slice.
 	fn get_in_language(&self) -> &[InLanguageProperty];
+	/// Take <https://schema.org/inLanguage> from [`Self`] as owned vector.
 	fn take_in_language(&mut self) -> Vec<InLanguageProperty>;
+	/// Get <https://schema.org/parentService> from [`Self`] as borrowed slice.
 	fn get_parent_service(&self) -> &[ParentServiceProperty];
+	/// Take <https://schema.org/parentService> from [`Self`] as owned vector.
 	fn take_parent_service(&mut self) -> Vec<ParentServiceProperty>;
+	/// Get <https://schema.org/videoFormat> from [`Self`] as borrowed slice.
 	fn get_video_format(&self) -> &[VideoFormatProperty];
+	/// Take <https://schema.org/videoFormat> from [`Self`] as owned vector.
 	fn take_video_format(&mut self) -> Vec<VideoFormatProperty>;
 }
 impl BroadcastServiceTrait for BroadcastService {

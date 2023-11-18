@@ -3,48 +3,90 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct PeopleAudience {
+	/// <https://schema.org/healthCondition>
 	pub r#health_condition: Vec<HealthConditionProperty>,
+	/// <https://schema.org/requiredGender>
 	pub r#required_gender: Vec<RequiredGenderProperty>,
+	/// <https://schema.org/requiredMaxAge>
 	pub r#required_max_age: Vec<RequiredMaxAgeProperty>,
+	/// <https://schema.org/requiredMinAge>
 	pub r#required_min_age: Vec<RequiredMinAgeProperty>,
+	/// <https://schema.org/suggestedAge>
 	pub r#suggested_age: Vec<SuggestedAgeProperty>,
+	/// <https://schema.org/suggestedGender>
 	pub r#suggested_gender: Vec<SuggestedGenderProperty>,
+	/// <https://schema.org/suggestedMaxAge>
 	pub r#suggested_max_age: Vec<SuggestedMaxAgeProperty>,
+	/// <https://schema.org/suggestedMeasurement>
 	pub r#suggested_measurement: Vec<SuggestedMeasurementProperty>,
+	/// <https://schema.org/suggestedMinAge>
 	pub r#suggested_min_age: Vec<SuggestedMinAgeProperty>,
+	/// <https://schema.org/audienceType>
 	pub r#audience_type: Vec<AudienceTypeProperty>,
+	/// <https://schema.org/geographicArea>
 	pub r#geographic_area: Vec<GeographicAreaProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/PeopleAudience>.
 pub trait PeopleAudienceTrait {
+	/// Get <https://schema.org/healthCondition> from [`Self`] as borrowed slice.
 	fn get_health_condition(&self) -> &[HealthConditionProperty];
+	/// Take <https://schema.org/healthCondition> from [`Self`] as owned vector.
 	fn take_health_condition(&mut self) -> Vec<HealthConditionProperty>;
+	/// Get <https://schema.org/requiredGender> from [`Self`] as borrowed slice.
 	fn get_required_gender(&self) -> &[RequiredGenderProperty];
+	/// Take <https://schema.org/requiredGender> from [`Self`] as owned vector.
 	fn take_required_gender(&mut self) -> Vec<RequiredGenderProperty>;
+	/// Get <https://schema.org/requiredMaxAge> from [`Self`] as borrowed slice.
 	fn get_required_max_age(&self) -> &[RequiredMaxAgeProperty];
+	/// Take <https://schema.org/requiredMaxAge> from [`Self`] as owned vector.
 	fn take_required_max_age(&mut self) -> Vec<RequiredMaxAgeProperty>;
+	/// Get <https://schema.org/requiredMinAge> from [`Self`] as borrowed slice.
 	fn get_required_min_age(&self) -> &[RequiredMinAgeProperty];
+	/// Take <https://schema.org/requiredMinAge> from [`Self`] as owned vector.
 	fn take_required_min_age(&mut self) -> Vec<RequiredMinAgeProperty>;
+	/// Get <https://schema.org/suggestedAge> from [`Self`] as borrowed slice.
 	fn get_suggested_age(&self) -> &[SuggestedAgeProperty];
+	/// Take <https://schema.org/suggestedAge> from [`Self`] as owned vector.
 	fn take_suggested_age(&mut self) -> Vec<SuggestedAgeProperty>;
+	/// Get <https://schema.org/suggestedGender> from [`Self`] as borrowed slice.
 	fn get_suggested_gender(&self) -> &[SuggestedGenderProperty];
+	/// Take <https://schema.org/suggestedGender> from [`Self`] as owned vector.
 	fn take_suggested_gender(&mut self) -> Vec<SuggestedGenderProperty>;
+	/// Get <https://schema.org/suggestedMaxAge> from [`Self`] as borrowed slice.
 	fn get_suggested_max_age(&self) -> &[SuggestedMaxAgeProperty];
+	/// Take <https://schema.org/suggestedMaxAge> from [`Self`] as owned vector.
 	fn take_suggested_max_age(&mut self) -> Vec<SuggestedMaxAgeProperty>;
+	/// Get <https://schema.org/suggestedMeasurement> from [`Self`] as borrowed slice.
 	fn get_suggested_measurement(&self) -> &[SuggestedMeasurementProperty];
+	/// Take <https://schema.org/suggestedMeasurement> from [`Self`] as owned vector.
 	fn take_suggested_measurement(&mut self) -> Vec<SuggestedMeasurementProperty>;
+	/// Get <https://schema.org/suggestedMinAge> from [`Self`] as borrowed slice.
 	fn get_suggested_min_age(&self) -> &[SuggestedMinAgeProperty];
+	/// Take <https://schema.org/suggestedMinAge> from [`Self`] as owned vector.
 	fn take_suggested_min_age(&mut self) -> Vec<SuggestedMinAgeProperty>;
 }
 impl PeopleAudienceTrait for PeopleAudience {

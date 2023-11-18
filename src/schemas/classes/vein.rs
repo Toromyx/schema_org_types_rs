@@ -3,44 +3,82 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct Vein {
+	/// <https://schema.org/drainsTo>
 	pub r#drains_to: Vec<DrainsToProperty>,
+	/// <https://schema.org/regionDrained>
 	pub r#region_drained: Vec<RegionDrainedProperty>,
+	/// <https://schema.org/tributary>
 	pub r#tributary: Vec<TributaryProperty>,
+	/// <https://schema.org/associatedPathophysiology>
 	pub r#associated_pathophysiology: Vec<AssociatedPathophysiologyProperty>,
+	/// <https://schema.org/bodyLocation>
 	pub r#body_location: Vec<BodyLocationProperty>,
+	/// <https://schema.org/connectedTo>
 	pub r#connected_to: Vec<ConnectedToProperty>,
+	/// <https://schema.org/diagram>
 	pub r#diagram: Vec<DiagramProperty>,
+	/// <https://schema.org/partOfSystem>
 	pub r#part_of_system: Vec<PartOfSystemProperty>,
+	/// <https://schema.org/relatedCondition>
 	pub r#related_condition: Vec<RelatedConditionProperty>,
+	/// <https://schema.org/relatedTherapy>
 	pub r#related_therapy: Vec<RelatedTherapyProperty>,
+	/// <https://schema.org/subStructure>
 	pub r#sub_structure: Vec<SubStructureProperty>,
+	/// <https://schema.org/code>
 	pub r#code: Vec<CodeProperty>,
+	/// <https://schema.org/funding>
 	pub r#funding: Vec<FundingProperty>,
+	/// <https://schema.org/guideline>
 	pub r#guideline: Vec<GuidelineProperty>,
+	/// <https://schema.org/legalStatus>
 	pub r#legal_status: Vec<LegalStatusProperty>,
+	/// <https://schema.org/medicineSystem>
 	pub r#medicine_system: Vec<MedicineSystemProperty>,
+	/// <https://schema.org/recognizingAuthority>
 	pub r#recognizing_authority: Vec<RecognizingAuthorityProperty>,
+	/// <https://schema.org/relevantSpecialty>
 	pub r#relevant_specialty: Vec<RelevantSpecialtyProperty>,
+	/// <https://schema.org/study>
 	pub r#study: Vec<StudyProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/Vein>.
 pub trait VeinTrait {
+	/// Get <https://schema.org/drainsTo> from [`Self`] as borrowed slice.
 	fn get_drains_to(&self) -> &[DrainsToProperty];
+	/// Take <https://schema.org/drainsTo> from [`Self`] as owned vector.
 	fn take_drains_to(&mut self) -> Vec<DrainsToProperty>;
+	/// Get <https://schema.org/regionDrained> from [`Self`] as borrowed slice.
 	fn get_region_drained(&self) -> &[RegionDrainedProperty];
+	/// Take <https://schema.org/regionDrained> from [`Self`] as owned vector.
 	fn take_region_drained(&mut self) -> Vec<RegionDrainedProperty>;
+	/// Get <https://schema.org/tributary> from [`Self`] as borrowed slice.
 	fn get_tributary(&self) -> &[TributaryProperty];
+	/// Take <https://schema.org/tributary> from [`Self`] as owned vector.
 	fn take_tributary(&mut self) -> Vec<TributaryProperty>;
 }
 impl VeinTrait for Vein {

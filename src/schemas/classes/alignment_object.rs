@@ -3,34 +3,62 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct AlignmentObject {
+	/// <https://schema.org/alignmentType>
 	pub r#alignment_type: Vec<AlignmentTypeProperty>,
+	/// <https://schema.org/educationalFramework>
 	pub r#educational_framework: Vec<EducationalFrameworkProperty>,
+	/// <https://schema.org/targetDescription>
 	pub r#target_description: Vec<TargetDescriptionProperty>,
+	/// <https://schema.org/targetName>
 	pub r#target_name: Vec<TargetNameProperty>,
+	/// <https://schema.org/targetUrl>
 	pub r#target_url: Vec<TargetUrlProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/AlignmentObject>.
 pub trait AlignmentObjectTrait {
+	/// Get <https://schema.org/alignmentType> from [`Self`] as borrowed slice.
 	fn get_alignment_type(&self) -> &[AlignmentTypeProperty];
+	/// Take <https://schema.org/alignmentType> from [`Self`] as owned vector.
 	fn take_alignment_type(&mut self) -> Vec<AlignmentTypeProperty>;
+	/// Get <https://schema.org/educationalFramework> from [`Self`] as borrowed slice.
 	fn get_educational_framework(&self) -> &[EducationalFrameworkProperty];
+	/// Take <https://schema.org/educationalFramework> from [`Self`] as owned vector.
 	fn take_educational_framework(&mut self) -> Vec<EducationalFrameworkProperty>;
+	/// Get <https://schema.org/targetDescription> from [`Self`] as borrowed slice.
 	fn get_target_description(&self) -> &[TargetDescriptionProperty];
+	/// Take <https://schema.org/targetDescription> from [`Self`] as owned vector.
 	fn take_target_description(&mut self) -> Vec<TargetDescriptionProperty>;
+	/// Get <https://schema.org/targetName> from [`Self`] as borrowed slice.
 	fn get_target_name(&self) -> &[TargetNameProperty];
+	/// Take <https://schema.org/targetName> from [`Self`] as owned vector.
 	fn take_target_name(&mut self) -> Vec<TargetNameProperty>;
+	/// Get <https://schema.org/targetUrl> from [`Self`] as borrowed slice.
 	fn get_target_url(&self) -> &[TargetUrlProperty];
+	/// Take <https://schema.org/targetUrl> from [`Self`] as owned vector.
 	fn take_target_url(&mut self) -> Vec<TargetUrlProperty>;
 }
 impl AlignmentObjectTrait for AlignmentObject {

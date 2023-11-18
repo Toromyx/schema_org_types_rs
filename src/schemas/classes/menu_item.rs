@@ -3,31 +3,56 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct MenuItem {
+	/// <https://schema.org/menuAddOn>
 	pub r#menu_add_on: Vec<MenuAddOnProperty>,
+	/// <https://schema.org/nutrition>
 	pub r#nutrition: Vec<NutritionProperty>,
+	/// <https://schema.org/offers>
 	pub r#offers: Vec<OffersProperty>,
+	/// <https://schema.org/suitableForDiet>
 	pub r#suitable_for_diet: Vec<SuitableForDietProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/MenuItem>.
 pub trait MenuItemTrait {
+	/// Get <https://schema.org/menuAddOn> from [`Self`] as borrowed slice.
 	fn get_menu_add_on(&self) -> &[MenuAddOnProperty];
+	/// Take <https://schema.org/menuAddOn> from [`Self`] as owned vector.
 	fn take_menu_add_on(&mut self) -> Vec<MenuAddOnProperty>;
+	/// Get <https://schema.org/nutrition> from [`Self`] as borrowed slice.
 	fn get_nutrition(&self) -> &[NutritionProperty];
+	/// Take <https://schema.org/nutrition> from [`Self`] as owned vector.
 	fn take_nutrition(&mut self) -> Vec<NutritionProperty>;
+	/// Get <https://schema.org/offers> from [`Self`] as borrowed slice.
 	fn get_offers(&self) -> &[OffersProperty];
+	/// Take <https://schema.org/offers> from [`Self`] as owned vector.
 	fn take_offers(&mut self) -> Vec<OffersProperty>;
+	/// Get <https://schema.org/suitableForDiet> from [`Self`] as borrowed slice.
 	fn get_suitable_for_diet(&self) -> &[SuitableForDietProperty];
+	/// Take <https://schema.org/suitableForDiet> from [`Self`] as owned vector.
 	fn take_suitable_for_diet(&mut self) -> Vec<SuitableForDietProperty>;
 }
 impl MenuItemTrait for MenuItem {

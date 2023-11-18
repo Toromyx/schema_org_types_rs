@@ -3,52 +3,98 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct UnitPriceSpecification {
+	/// <https://schema.org/billingDuration>
 	pub r#billing_duration: Vec<BillingDurationProperty>,
+	/// <https://schema.org/billingIncrement>
 	pub r#billing_increment: Vec<BillingIncrementProperty>,
+	/// <https://schema.org/billingStart>
 	pub r#billing_start: Vec<BillingStartProperty>,
+	/// <https://schema.org/priceComponentType>
 	pub r#price_component_type: Vec<PriceComponentTypeProperty>,
+	/// <https://schema.org/priceType>
 	pub r#price_type: Vec<PriceTypeProperty>,
+	/// <https://schema.org/referenceQuantity>
 	pub r#reference_quantity: Vec<ReferenceQuantityProperty>,
+	/// <https://schema.org/unitCode>
 	pub r#unit_code: Vec<UnitCodeProperty>,
+	/// <https://schema.org/unitText>
 	pub r#unit_text: Vec<UnitTextProperty>,
+	/// <https://schema.org/eligibleQuantity>
 	pub r#eligible_quantity: Vec<EligibleQuantityProperty>,
+	/// <https://schema.org/eligibleTransactionVolume>
 	pub r#eligible_transaction_volume: Vec<EligibleTransactionVolumeProperty>,
+	/// <https://schema.org/maxPrice>
 	pub r#max_price: Vec<MaxPriceProperty>,
+	/// <https://schema.org/minPrice>
 	pub r#min_price: Vec<MinPriceProperty>,
+	/// <https://schema.org/price>
 	pub r#price: Vec<PriceProperty>,
+	/// <https://schema.org/priceCurrency>
 	pub r#price_currency: Vec<PriceCurrencyProperty>,
+	/// <https://schema.org/validFrom>
 	pub r#valid_from: Vec<ValidFromProperty>,
+	/// <https://schema.org/validThrough>
 	pub r#valid_through: Vec<ValidThroughProperty>,
+	/// <https://schema.org/valueAddedTaxIncluded>
 	pub r#value_added_tax_included: Vec<ValueAddedTaxIncludedProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/UnitPriceSpecification>.
 pub trait UnitPriceSpecificationTrait {
+	/// Get <https://schema.org/billingDuration> from [`Self`] as borrowed slice.
 	fn get_billing_duration(&self) -> &[BillingDurationProperty];
+	/// Take <https://schema.org/billingDuration> from [`Self`] as owned vector.
 	fn take_billing_duration(&mut self) -> Vec<BillingDurationProperty>;
+	/// Get <https://schema.org/billingIncrement> from [`Self`] as borrowed slice.
 	fn get_billing_increment(&self) -> &[BillingIncrementProperty];
+	/// Take <https://schema.org/billingIncrement> from [`Self`] as owned vector.
 	fn take_billing_increment(&mut self) -> Vec<BillingIncrementProperty>;
+	/// Get <https://schema.org/billingStart> from [`Self`] as borrowed slice.
 	fn get_billing_start(&self) -> &[BillingStartProperty];
+	/// Take <https://schema.org/billingStart> from [`Self`] as owned vector.
 	fn take_billing_start(&mut self) -> Vec<BillingStartProperty>;
+	/// Get <https://schema.org/priceComponentType> from [`Self`] as borrowed slice.
 	fn get_price_component_type(&self) -> &[PriceComponentTypeProperty];
+	/// Take <https://schema.org/priceComponentType> from [`Self`] as owned vector.
 	fn take_price_component_type(&mut self) -> Vec<PriceComponentTypeProperty>;
+	/// Get <https://schema.org/priceType> from [`Self`] as borrowed slice.
 	fn get_price_type(&self) -> &[PriceTypeProperty];
+	/// Take <https://schema.org/priceType> from [`Self`] as owned vector.
 	fn take_price_type(&mut self) -> Vec<PriceTypeProperty>;
+	/// Get <https://schema.org/referenceQuantity> from [`Self`] as borrowed slice.
 	fn get_reference_quantity(&self) -> &[ReferenceQuantityProperty];
+	/// Take <https://schema.org/referenceQuantity> from [`Self`] as owned vector.
 	fn take_reference_quantity(&mut self) -> Vec<ReferenceQuantityProperty>;
+	/// Get <https://schema.org/unitCode> from [`Self`] as borrowed slice.
 	fn get_unit_code(&self) -> &[UnitCodeProperty];
+	/// Take <https://schema.org/unitCode> from [`Self`] as owned vector.
 	fn take_unit_code(&mut self) -> Vec<UnitCodeProperty>;
+	/// Get <https://schema.org/unitText> from [`Self`] as borrowed slice.
 	fn get_unit_text(&self) -> &[UnitTextProperty];
+	/// Take <https://schema.org/unitText> from [`Self`] as owned vector.
 	fn take_unit_text(&mut self) -> Vec<UnitTextProperty>;
 }
 impl UnitPriceSpecificationTrait for UnitPriceSpecification {

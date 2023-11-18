@@ -3,31 +3,56 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct Taxon {
+	/// <https://schema.org/childTaxon>
 	pub r#child_taxon: Vec<ChildTaxonProperty>,
+	/// <https://schema.org/hasDefinedTerm>
 	pub r#has_defined_term: Vec<HasDefinedTermProperty>,
+	/// <https://schema.org/parentTaxon>
 	pub r#parent_taxon: Vec<ParentTaxonProperty>,
+	/// <https://schema.org/taxonRank>
 	pub r#taxon_rank: Vec<TaxonRankProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/Taxon>.
 pub trait TaxonTrait {
+	/// Get <https://schema.org/childTaxon> from [`Self`] as borrowed slice.
 	fn get_child_taxon(&self) -> &[ChildTaxonProperty];
+	/// Take <https://schema.org/childTaxon> from [`Self`] as owned vector.
 	fn take_child_taxon(&mut self) -> Vec<ChildTaxonProperty>;
+	/// Get <https://schema.org/hasDefinedTerm> from [`Self`] as borrowed slice.
 	fn get_has_defined_term(&self) -> &[HasDefinedTermProperty];
+	/// Take <https://schema.org/hasDefinedTerm> from [`Self`] as owned vector.
 	fn take_has_defined_term(&mut self) -> Vec<HasDefinedTermProperty>;
+	/// Get <https://schema.org/parentTaxon> from [`Self`] as borrowed slice.
 	fn get_parent_taxon(&self) -> &[ParentTaxonProperty];
+	/// Take <https://schema.org/parentTaxon> from [`Self`] as owned vector.
 	fn take_parent_taxon(&mut self) -> Vec<ParentTaxonProperty>;
+	/// Get <https://schema.org/taxonRank> from [`Self`] as borrowed slice.
 	fn get_taxon_rank(&self) -> &[TaxonRankProperty];
+	/// Take <https://schema.org/taxonRank> from [`Self`] as owned vector.
 	fn take_taxon_rank(&mut self) -> Vec<TaxonRankProperty>;
 }
 impl TaxonTrait for Taxon {

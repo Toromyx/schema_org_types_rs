@@ -3,47 +3,88 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct WorkBasedProgram {
+	/// <https://schema.org/occupationalCategory>
 	pub r#occupational_category: Vec<OccupationalCategoryProperty>,
+	/// <https://schema.org/trainingSalary>
 	pub r#training_salary: Vec<TrainingSalaryProperty>,
+	/// <https://schema.org/applicationDeadline>
 	pub r#application_deadline: Vec<ApplicationDeadlineProperty>,
+	/// <https://schema.org/applicationStartDate>
 	pub r#application_start_date: Vec<ApplicationStartDateProperty>,
+	/// <https://schema.org/dayOfWeek>
 	pub r#day_of_week: Vec<DayOfWeekProperty>,
+	/// <https://schema.org/educationalCredentialAwarded>
 	pub r#educational_credential_awarded: Vec<EducationalCredentialAwardedProperty>,
+	/// <https://schema.org/educationalProgramMode>
 	pub r#educational_program_mode: Vec<EducationalProgramModeProperty>,
+	/// <https://schema.org/endDate>
 	pub r#end_date: Vec<EndDateProperty>,
+	/// <https://schema.org/financialAidEligible>
 	pub r#financial_aid_eligible: Vec<FinancialAidEligibleProperty>,
+	/// <https://schema.org/hasCourse>
 	pub r#has_course: Vec<HasCourseProperty>,
+	/// <https://schema.org/maximumEnrollment>
 	pub r#maximum_enrollment: Vec<MaximumEnrollmentProperty>,
+	/// <https://schema.org/numberOfCredits>
 	pub r#number_of_credits: Vec<NumberOfCreditsProperty>,
+	/// <https://schema.org/occupationalCredentialAwarded>
 	pub r#occupational_credential_awarded: Vec<OccupationalCredentialAwardedProperty>,
+	/// <https://schema.org/offers>
 	pub r#offers: Vec<OffersProperty>,
+	/// <https://schema.org/programPrerequisites>
 	pub r#program_prerequisites: Vec<ProgramPrerequisitesProperty>,
+	/// <https://schema.org/programType>
 	pub r#program_type: Vec<ProgramTypeProperty>,
+	/// <https://schema.org/provider>
 	pub r#provider: Vec<ProviderProperty>,
+	/// <https://schema.org/salaryUponCompletion>
 	pub r#salary_upon_completion: Vec<SalaryUponCompletionProperty>,
+	/// <https://schema.org/startDate>
 	pub r#start_date: Vec<StartDateProperty>,
+	/// <https://schema.org/termDuration>
 	pub r#term_duration: Vec<TermDurationProperty>,
+	/// <https://schema.org/termsPerYear>
 	pub r#terms_per_year: Vec<TermsPerYearProperty>,
+	/// <https://schema.org/timeOfDay>
 	pub r#time_of_day: Vec<TimeOfDayProperty>,
+	/// <https://schema.org/timeToComplete>
 	pub r#time_to_complete: Vec<TimeToCompleteProperty>,
+	/// <https://schema.org/typicalCreditsPerTerm>
 	pub r#typical_credits_per_term: Vec<TypicalCreditsPerTermProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/WorkBasedProgram>.
 pub trait WorkBasedProgramTrait {
+	/// Get <https://schema.org/occupationalCategory> from [`Self`] as borrowed slice.
 	fn get_occupational_category(&self) -> &[OccupationalCategoryProperty];
+	/// Take <https://schema.org/occupationalCategory> from [`Self`] as owned vector.
 	fn take_occupational_category(&mut self) -> Vec<OccupationalCategoryProperty>;
+	/// Get <https://schema.org/trainingSalary> from [`Self`] as borrowed slice.
 	fn get_training_salary(&self) -> &[TrainingSalaryProperty];
+	/// Take <https://schema.org/trainingSalary> from [`Self`] as owned vector.
 	fn take_training_salary(&mut self) -> Vec<TrainingSalaryProperty>;
 }
 impl WorkBasedProgramTrait for WorkBasedProgram {

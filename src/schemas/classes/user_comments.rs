@@ -3,75 +3,144 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct UserComments {
+	/// <https://schema.org/commentText>
 	pub r#comment_text: Vec<CommentTextProperty>,
+	/// <https://schema.org/commentTime>
 	pub r#comment_time: Vec<CommentTimeProperty>,
+	/// <https://schema.org/creator>
 	pub r#creator: Vec<CreatorProperty>,
+	/// <https://schema.org/discusses>
 	pub r#discusses: Vec<DiscussesProperty>,
+	/// <https://schema.org/replyToUrl>
 	pub r#reply_to_url: Vec<ReplyToUrlProperty>,
+	/// <https://schema.org/about>
 	pub r#about: Vec<AboutProperty>,
+	/// <https://schema.org/actor>
 	pub r#actor: Vec<ActorProperty>,
+	/// <https://schema.org/aggregateRating>
 	pub r#aggregate_rating: Vec<AggregateRatingProperty>,
+	/// <https://schema.org/attendee>
 	pub r#attendee: Vec<AttendeeProperty>,
+	/// <https://schema.org/attendees>
 	pub r#attendees: Vec<AttendeesProperty>,
+	/// <https://schema.org/audience>
 	pub r#audience: Vec<AudienceProperty>,
+	/// <https://schema.org/composer>
 	pub r#composer: Vec<ComposerProperty>,
+	/// <https://schema.org/contributor>
 	pub r#contributor: Vec<ContributorProperty>,
+	/// <https://schema.org/director>
 	pub r#director: Vec<DirectorProperty>,
+	/// <https://schema.org/doorTime>
 	pub r#door_time: Vec<DoorTimeProperty>,
+	/// <https://schema.org/duration>
 	pub r#duration: Vec<DurationProperty>,
+	/// <https://schema.org/endDate>
 	pub r#end_date: Vec<EndDateProperty>,
+	/// <https://schema.org/eventAttendanceMode>
 	pub r#event_attendance_mode: Vec<EventAttendanceModeProperty>,
+	/// <https://schema.org/eventSchedule>
 	pub r#event_schedule: Vec<EventScheduleProperty>,
+	/// <https://schema.org/eventStatus>
 	pub r#event_status: Vec<EventStatusProperty>,
+	/// <https://schema.org/funder>
 	pub r#funder: Vec<FunderProperty>,
+	/// <https://schema.org/funding>
 	pub r#funding: Vec<FundingProperty>,
+	/// <https://schema.org/inLanguage>
 	pub r#in_language: Vec<InLanguageProperty>,
+	/// <https://schema.org/isAccessibleForFree>
 	pub r#is_accessible_for_free: Vec<IsAccessibleForFreeProperty>,
+	/// <https://schema.org/keywords>
 	pub r#keywords: Vec<KeywordsProperty>,
+	/// <https://schema.org/location>
 	pub r#location: Vec<LocationProperty>,
+	/// <https://schema.org/maximumAttendeeCapacity>
 	pub r#maximum_attendee_capacity: Vec<MaximumAttendeeCapacityProperty>,
+	/// <https://schema.org/maximumPhysicalAttendeeCapacity>
 	pub r#maximum_physical_attendee_capacity: Vec<MaximumPhysicalAttendeeCapacityProperty>,
+	/// <https://schema.org/maximumVirtualAttendeeCapacity>
 	pub r#maximum_virtual_attendee_capacity: Vec<MaximumVirtualAttendeeCapacityProperty>,
+	/// <https://schema.org/offers>
 	pub r#offers: Vec<OffersProperty>,
+	/// <https://schema.org/organizer>
 	pub r#organizer: Vec<OrganizerProperty>,
+	/// <https://schema.org/performer>
 	pub r#performer: Vec<PerformerProperty>,
+	/// <https://schema.org/performers>
 	pub r#performers: Vec<PerformersProperty>,
+	/// <https://schema.org/previousStartDate>
 	pub r#previous_start_date: Vec<PreviousStartDateProperty>,
+	/// <https://schema.org/recordedIn>
 	pub r#recorded_in: Vec<RecordedInProperty>,
+	/// <https://schema.org/remainingAttendeeCapacity>
 	pub r#remaining_attendee_capacity: Vec<RemainingAttendeeCapacityProperty>,
+	/// <https://schema.org/review>
 	pub r#review: Vec<ReviewProperty>,
+	/// <https://schema.org/sponsor>
 	pub r#sponsor: Vec<SponsorProperty>,
+	/// <https://schema.org/startDate>
 	pub r#start_date: Vec<StartDateProperty>,
+	/// <https://schema.org/subEvent>
 	pub r#sub_event: Vec<SubEventProperty>,
+	/// <https://schema.org/subEvents>
 	pub r#sub_events: Vec<SubEventsProperty>,
+	/// <https://schema.org/superEvent>
 	pub r#super_event: Vec<SuperEventProperty>,
+	/// <https://schema.org/translator>
 	pub r#translator: Vec<TranslatorProperty>,
+	/// <https://schema.org/typicalAgeRange>
 	pub r#typical_age_range: Vec<TypicalAgeRangeProperty>,
+	/// <https://schema.org/workFeatured>
 	pub r#work_featured: Vec<WorkFeaturedProperty>,
+	/// <https://schema.org/workPerformed>
 	pub r#work_performed: Vec<WorkPerformedProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/UserComments>.
 pub trait UserCommentsTrait {
+	/// Get <https://schema.org/commentText> from [`Self`] as borrowed slice.
 	fn get_comment_text(&self) -> &[CommentTextProperty];
+	/// Take <https://schema.org/commentText> from [`Self`] as owned vector.
 	fn take_comment_text(&mut self) -> Vec<CommentTextProperty>;
+	/// Get <https://schema.org/commentTime> from [`Self`] as borrowed slice.
 	fn get_comment_time(&self) -> &[CommentTimeProperty];
+	/// Take <https://schema.org/commentTime> from [`Self`] as owned vector.
 	fn take_comment_time(&mut self) -> Vec<CommentTimeProperty>;
+	/// Get <https://schema.org/creator> from [`Self`] as borrowed slice.
 	fn get_creator(&self) -> &[CreatorProperty];
+	/// Take <https://schema.org/creator> from [`Self`] as owned vector.
 	fn take_creator(&mut self) -> Vec<CreatorProperty>;
+	/// Get <https://schema.org/discusses> from [`Self`] as borrowed slice.
 	fn get_discusses(&self) -> &[DiscussesProperty];
+	/// Take <https://schema.org/discusses> from [`Self`] as owned vector.
 	fn take_discusses(&mut self) -> Vec<DiscussesProperty>;
+	/// Get <https://schema.org/replyToUrl> from [`Self`] as borrowed slice.
 	fn get_reply_to_url(&self) -> &[ReplyToUrlProperty];
+	/// Take <https://schema.org/replyToUrl> from [`Self`] as owned vector.
 	fn take_reply_to_url(&mut self) -> Vec<ReplyToUrlProperty>;
 }
 impl UserCommentsTrait for UserComments {

@@ -3,40 +3,74 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct ActionAccessSpecification {
+	/// <https://schema.org/availabilityEnds>
 	pub r#availability_ends: Vec<AvailabilityEndsProperty>,
+	/// <https://schema.org/availabilityStarts>
 	pub r#availability_starts: Vec<AvailabilityStartsProperty>,
+	/// <https://schema.org/category>
 	pub r#category: Vec<CategoryProperty>,
+	/// <https://schema.org/eligibleRegion>
 	pub r#eligible_region: Vec<EligibleRegionProperty>,
+	/// <https://schema.org/expectsAcceptanceOf>
 	pub r#expects_acceptance_of: Vec<ExpectsAcceptanceOfProperty>,
+	/// <https://schema.org/ineligibleRegion>
 	pub r#ineligible_region: Vec<IneligibleRegionProperty>,
+	/// <https://schema.org/requiresSubscription>
 	pub r#requires_subscription: Vec<RequiresSubscriptionProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/ActionAccessSpecification>.
 pub trait ActionAccessSpecificationTrait {
+	/// Get <https://schema.org/availabilityEnds> from [`Self`] as borrowed slice.
 	fn get_availability_ends(&self) -> &[AvailabilityEndsProperty];
+	/// Take <https://schema.org/availabilityEnds> from [`Self`] as owned vector.
 	fn take_availability_ends(&mut self) -> Vec<AvailabilityEndsProperty>;
+	/// Get <https://schema.org/availabilityStarts> from [`Self`] as borrowed slice.
 	fn get_availability_starts(&self) -> &[AvailabilityStartsProperty];
+	/// Take <https://schema.org/availabilityStarts> from [`Self`] as owned vector.
 	fn take_availability_starts(&mut self) -> Vec<AvailabilityStartsProperty>;
+	/// Get <https://schema.org/category> from [`Self`] as borrowed slice.
 	fn get_category(&self) -> &[CategoryProperty];
+	/// Take <https://schema.org/category> from [`Self`] as owned vector.
 	fn take_category(&mut self) -> Vec<CategoryProperty>;
+	/// Get <https://schema.org/eligibleRegion> from [`Self`] as borrowed slice.
 	fn get_eligible_region(&self) -> &[EligibleRegionProperty];
+	/// Take <https://schema.org/eligibleRegion> from [`Self`] as owned vector.
 	fn take_eligible_region(&mut self) -> Vec<EligibleRegionProperty>;
+	/// Get <https://schema.org/expectsAcceptanceOf> from [`Self`] as borrowed slice.
 	fn get_expects_acceptance_of(&self) -> &[ExpectsAcceptanceOfProperty];
+	/// Take <https://schema.org/expectsAcceptanceOf> from [`Self`] as owned vector.
 	fn take_expects_acceptance_of(&mut self) -> Vec<ExpectsAcceptanceOfProperty>;
+	/// Get <https://schema.org/ineligibleRegion> from [`Self`] as borrowed slice.
 	fn get_ineligible_region(&self) -> &[IneligibleRegionProperty];
+	/// Take <https://schema.org/ineligibleRegion> from [`Self`] as owned vector.
 	fn take_ineligible_region(&mut self) -> Vec<IneligibleRegionProperty>;
+	/// Get <https://schema.org/requiresSubscription> from [`Self`] as borrowed slice.
 	fn get_requires_subscription(&self) -> &[RequiresSubscriptionProperty];
+	/// Take <https://schema.org/requiresSubscription> from [`Self`] as owned vector.
 	fn take_requires_subscription(&mut self) -> Vec<RequiresSubscriptionProperty>;
 }
 impl ActionAccessSpecificationTrait for ActionAccessSpecification {

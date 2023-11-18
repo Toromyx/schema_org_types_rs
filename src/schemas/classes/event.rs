@@ -3,146 +3,282 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct Event {
+	/// <https://schema.org/about>
 	pub r#about: Vec<AboutProperty>,
+	/// <https://schema.org/actor>
 	pub r#actor: Vec<ActorProperty>,
+	/// <https://schema.org/aggregateRating>
 	pub r#aggregate_rating: Vec<AggregateRatingProperty>,
+	/// <https://schema.org/attendee>
 	pub r#attendee: Vec<AttendeeProperty>,
+	/// <https://schema.org/attendees>
 	pub r#attendees: Vec<AttendeesProperty>,
+	/// <https://schema.org/audience>
 	pub r#audience: Vec<AudienceProperty>,
+	/// <https://schema.org/composer>
 	pub r#composer: Vec<ComposerProperty>,
+	/// <https://schema.org/contributor>
 	pub r#contributor: Vec<ContributorProperty>,
+	/// <https://schema.org/director>
 	pub r#director: Vec<DirectorProperty>,
+	/// <https://schema.org/doorTime>
 	pub r#door_time: Vec<DoorTimeProperty>,
+	/// <https://schema.org/duration>
 	pub r#duration: Vec<DurationProperty>,
+	/// <https://schema.org/endDate>
 	pub r#end_date: Vec<EndDateProperty>,
+	/// <https://schema.org/eventAttendanceMode>
 	pub r#event_attendance_mode: Vec<EventAttendanceModeProperty>,
+	/// <https://schema.org/eventSchedule>
 	pub r#event_schedule: Vec<EventScheduleProperty>,
+	/// <https://schema.org/eventStatus>
 	pub r#event_status: Vec<EventStatusProperty>,
+	/// <https://schema.org/funder>
 	pub r#funder: Vec<FunderProperty>,
+	/// <https://schema.org/funding>
 	pub r#funding: Vec<FundingProperty>,
+	/// <https://schema.org/inLanguage>
 	pub r#in_language: Vec<InLanguageProperty>,
+	/// <https://schema.org/isAccessibleForFree>
 	pub r#is_accessible_for_free: Vec<IsAccessibleForFreeProperty>,
+	/// <https://schema.org/keywords>
 	pub r#keywords: Vec<KeywordsProperty>,
+	/// <https://schema.org/location>
 	pub r#location: Vec<LocationProperty>,
+	/// <https://schema.org/maximumAttendeeCapacity>
 	pub r#maximum_attendee_capacity: Vec<MaximumAttendeeCapacityProperty>,
+	/// <https://schema.org/maximumPhysicalAttendeeCapacity>
 	pub r#maximum_physical_attendee_capacity: Vec<MaximumPhysicalAttendeeCapacityProperty>,
+	/// <https://schema.org/maximumVirtualAttendeeCapacity>
 	pub r#maximum_virtual_attendee_capacity: Vec<MaximumVirtualAttendeeCapacityProperty>,
+	/// <https://schema.org/offers>
 	pub r#offers: Vec<OffersProperty>,
+	/// <https://schema.org/organizer>
 	pub r#organizer: Vec<OrganizerProperty>,
+	/// <https://schema.org/performer>
 	pub r#performer: Vec<PerformerProperty>,
+	/// <https://schema.org/performers>
 	pub r#performers: Vec<PerformersProperty>,
+	/// <https://schema.org/previousStartDate>
 	pub r#previous_start_date: Vec<PreviousStartDateProperty>,
+	/// <https://schema.org/recordedIn>
 	pub r#recorded_in: Vec<RecordedInProperty>,
+	/// <https://schema.org/remainingAttendeeCapacity>
 	pub r#remaining_attendee_capacity: Vec<RemainingAttendeeCapacityProperty>,
+	/// <https://schema.org/review>
 	pub r#review: Vec<ReviewProperty>,
+	/// <https://schema.org/sponsor>
 	pub r#sponsor: Vec<SponsorProperty>,
+	/// <https://schema.org/startDate>
 	pub r#start_date: Vec<StartDateProperty>,
+	/// <https://schema.org/subEvent>
 	pub r#sub_event: Vec<SubEventProperty>,
+	/// <https://schema.org/subEvents>
 	pub r#sub_events: Vec<SubEventsProperty>,
+	/// <https://schema.org/superEvent>
 	pub r#super_event: Vec<SuperEventProperty>,
+	/// <https://schema.org/translator>
 	pub r#translator: Vec<TranslatorProperty>,
+	/// <https://schema.org/typicalAgeRange>
 	pub r#typical_age_range: Vec<TypicalAgeRangeProperty>,
+	/// <https://schema.org/workFeatured>
 	pub r#work_featured: Vec<WorkFeaturedProperty>,
+	/// <https://schema.org/workPerformed>
 	pub r#work_performed: Vec<WorkPerformedProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/Event>.
 pub trait EventTrait {
+	/// Get <https://schema.org/about> from [`Self`] as borrowed slice.
 	fn get_about(&self) -> &[AboutProperty];
+	/// Take <https://schema.org/about> from [`Self`] as owned vector.
 	fn take_about(&mut self) -> Vec<AboutProperty>;
+	/// Get <https://schema.org/actor> from [`Self`] as borrowed slice.
 	fn get_actor(&self) -> &[ActorProperty];
+	/// Take <https://schema.org/actor> from [`Self`] as owned vector.
 	fn take_actor(&mut self) -> Vec<ActorProperty>;
+	/// Get <https://schema.org/aggregateRating> from [`Self`] as borrowed slice.
 	fn get_aggregate_rating(&self) -> &[AggregateRatingProperty];
+	/// Take <https://schema.org/aggregateRating> from [`Self`] as owned vector.
 	fn take_aggregate_rating(&mut self) -> Vec<AggregateRatingProperty>;
+	/// Get <https://schema.org/attendee> from [`Self`] as borrowed slice.
 	fn get_attendee(&self) -> &[AttendeeProperty];
+	/// Take <https://schema.org/attendee> from [`Self`] as owned vector.
 	fn take_attendee(&mut self) -> Vec<AttendeeProperty>;
+	/// Get <https://schema.org/attendees> from [`Self`] as borrowed slice.
 	fn get_attendees(&self) -> &[AttendeesProperty];
+	/// Take <https://schema.org/attendees> from [`Self`] as owned vector.
 	fn take_attendees(&mut self) -> Vec<AttendeesProperty>;
+	/// Get <https://schema.org/audience> from [`Self`] as borrowed slice.
 	fn get_audience(&self) -> &[AudienceProperty];
+	/// Take <https://schema.org/audience> from [`Self`] as owned vector.
 	fn take_audience(&mut self) -> Vec<AudienceProperty>;
+	/// Get <https://schema.org/composer> from [`Self`] as borrowed slice.
 	fn get_composer(&self) -> &[ComposerProperty];
+	/// Take <https://schema.org/composer> from [`Self`] as owned vector.
 	fn take_composer(&mut self) -> Vec<ComposerProperty>;
+	/// Get <https://schema.org/contributor> from [`Self`] as borrowed slice.
 	fn get_contributor(&self) -> &[ContributorProperty];
+	/// Take <https://schema.org/contributor> from [`Self`] as owned vector.
 	fn take_contributor(&mut self) -> Vec<ContributorProperty>;
+	/// Get <https://schema.org/director> from [`Self`] as borrowed slice.
 	fn get_director(&self) -> &[DirectorProperty];
+	/// Take <https://schema.org/director> from [`Self`] as owned vector.
 	fn take_director(&mut self) -> Vec<DirectorProperty>;
+	/// Get <https://schema.org/doorTime> from [`Self`] as borrowed slice.
 	fn get_door_time(&self) -> &[DoorTimeProperty];
+	/// Take <https://schema.org/doorTime> from [`Self`] as owned vector.
 	fn take_door_time(&mut self) -> Vec<DoorTimeProperty>;
+	/// Get <https://schema.org/duration> from [`Self`] as borrowed slice.
 	fn get_duration(&self) -> &[DurationProperty];
+	/// Take <https://schema.org/duration> from [`Self`] as owned vector.
 	fn take_duration(&mut self) -> Vec<DurationProperty>;
+	/// Get <https://schema.org/endDate> from [`Self`] as borrowed slice.
 	fn get_end_date(&self) -> &[EndDateProperty];
+	/// Take <https://schema.org/endDate> from [`Self`] as owned vector.
 	fn take_end_date(&mut self) -> Vec<EndDateProperty>;
+	/// Get <https://schema.org/eventAttendanceMode> from [`Self`] as borrowed slice.
 	fn get_event_attendance_mode(&self) -> &[EventAttendanceModeProperty];
+	/// Take <https://schema.org/eventAttendanceMode> from [`Self`] as owned vector.
 	fn take_event_attendance_mode(&mut self) -> Vec<EventAttendanceModeProperty>;
+	/// Get <https://schema.org/eventSchedule> from [`Self`] as borrowed slice.
 	fn get_event_schedule(&self) -> &[EventScheduleProperty];
+	/// Take <https://schema.org/eventSchedule> from [`Self`] as owned vector.
 	fn take_event_schedule(&mut self) -> Vec<EventScheduleProperty>;
+	/// Get <https://schema.org/eventStatus> from [`Self`] as borrowed slice.
 	fn get_event_status(&self) -> &[EventStatusProperty];
+	/// Take <https://schema.org/eventStatus> from [`Self`] as owned vector.
 	fn take_event_status(&mut self) -> Vec<EventStatusProperty>;
+	/// Get <https://schema.org/funder> from [`Self`] as borrowed slice.
 	fn get_funder(&self) -> &[FunderProperty];
+	/// Take <https://schema.org/funder> from [`Self`] as owned vector.
 	fn take_funder(&mut self) -> Vec<FunderProperty>;
+	/// Get <https://schema.org/funding> from [`Self`] as borrowed slice.
 	fn get_funding(&self) -> &[FundingProperty];
+	/// Take <https://schema.org/funding> from [`Self`] as owned vector.
 	fn take_funding(&mut self) -> Vec<FundingProperty>;
+	/// Get <https://schema.org/inLanguage> from [`Self`] as borrowed slice.
 	fn get_in_language(&self) -> &[InLanguageProperty];
+	/// Take <https://schema.org/inLanguage> from [`Self`] as owned vector.
 	fn take_in_language(&mut self) -> Vec<InLanguageProperty>;
+	/// Get <https://schema.org/isAccessibleForFree> from [`Self`] as borrowed slice.
 	fn get_is_accessible_for_free(&self) -> &[IsAccessibleForFreeProperty];
+	/// Take <https://schema.org/isAccessibleForFree> from [`Self`] as owned vector.
 	fn take_is_accessible_for_free(&mut self) -> Vec<IsAccessibleForFreeProperty>;
+	/// Get <https://schema.org/keywords> from [`Self`] as borrowed slice.
 	fn get_keywords(&self) -> &[KeywordsProperty];
+	/// Take <https://schema.org/keywords> from [`Self`] as owned vector.
 	fn take_keywords(&mut self) -> Vec<KeywordsProperty>;
+	/// Get <https://schema.org/location> from [`Self`] as borrowed slice.
 	fn get_location(&self) -> &[LocationProperty];
+	/// Take <https://schema.org/location> from [`Self`] as owned vector.
 	fn take_location(&mut self) -> Vec<LocationProperty>;
+	/// Get <https://schema.org/maximumAttendeeCapacity> from [`Self`] as borrowed slice.
 	fn get_maximum_attendee_capacity(&self) -> &[MaximumAttendeeCapacityProperty];
+	/// Take <https://schema.org/maximumAttendeeCapacity> from [`Self`] as owned vector.
 	fn take_maximum_attendee_capacity(&mut self) -> Vec<MaximumAttendeeCapacityProperty>;
+	/// Get <https://schema.org/maximumPhysicalAttendeeCapacity> from [`Self`] as borrowed slice.
 	fn get_maximum_physical_attendee_capacity(&self) -> &[MaximumPhysicalAttendeeCapacityProperty];
+	/// Take <https://schema.org/maximumPhysicalAttendeeCapacity> from [`Self`] as owned vector.
 	fn take_maximum_physical_attendee_capacity(
 		&mut self,
 	) -> Vec<MaximumPhysicalAttendeeCapacityProperty>;
+	/// Get <https://schema.org/maximumVirtualAttendeeCapacity> from [`Self`] as borrowed slice.
 	fn get_maximum_virtual_attendee_capacity(&self) -> &[MaximumVirtualAttendeeCapacityProperty];
+	/// Take <https://schema.org/maximumVirtualAttendeeCapacity> from [`Self`] as owned vector.
 	fn take_maximum_virtual_attendee_capacity(
 		&mut self,
 	) -> Vec<MaximumVirtualAttendeeCapacityProperty>;
+	/// Get <https://schema.org/offers> from [`Self`] as borrowed slice.
 	fn get_offers(&self) -> &[OffersProperty];
+	/// Take <https://schema.org/offers> from [`Self`] as owned vector.
 	fn take_offers(&mut self) -> Vec<OffersProperty>;
+	/// Get <https://schema.org/organizer> from [`Self`] as borrowed slice.
 	fn get_organizer(&self) -> &[OrganizerProperty];
+	/// Take <https://schema.org/organizer> from [`Self`] as owned vector.
 	fn take_organizer(&mut self) -> Vec<OrganizerProperty>;
+	/// Get <https://schema.org/performer> from [`Self`] as borrowed slice.
 	fn get_performer(&self) -> &[PerformerProperty];
+	/// Take <https://schema.org/performer> from [`Self`] as owned vector.
 	fn take_performer(&mut self) -> Vec<PerformerProperty>;
+	/// Get <https://schema.org/performers> from [`Self`] as borrowed slice.
 	fn get_performers(&self) -> &[PerformersProperty];
+	/// Take <https://schema.org/performers> from [`Self`] as owned vector.
 	fn take_performers(&mut self) -> Vec<PerformersProperty>;
+	/// Get <https://schema.org/previousStartDate> from [`Self`] as borrowed slice.
 	fn get_previous_start_date(&self) -> &[PreviousStartDateProperty];
+	/// Take <https://schema.org/previousStartDate> from [`Self`] as owned vector.
 	fn take_previous_start_date(&mut self) -> Vec<PreviousStartDateProperty>;
+	/// Get <https://schema.org/recordedIn> from [`Self`] as borrowed slice.
 	fn get_recorded_in(&self) -> &[RecordedInProperty];
+	/// Take <https://schema.org/recordedIn> from [`Self`] as owned vector.
 	fn take_recorded_in(&mut self) -> Vec<RecordedInProperty>;
+	/// Get <https://schema.org/remainingAttendeeCapacity> from [`Self`] as borrowed slice.
 	fn get_remaining_attendee_capacity(&self) -> &[RemainingAttendeeCapacityProperty];
+	/// Take <https://schema.org/remainingAttendeeCapacity> from [`Self`] as owned vector.
 	fn take_remaining_attendee_capacity(&mut self) -> Vec<RemainingAttendeeCapacityProperty>;
+	/// Get <https://schema.org/review> from [`Self`] as borrowed slice.
 	fn get_review(&self) -> &[ReviewProperty];
+	/// Take <https://schema.org/review> from [`Self`] as owned vector.
 	fn take_review(&mut self) -> Vec<ReviewProperty>;
+	/// Get <https://schema.org/sponsor> from [`Self`] as borrowed slice.
 	fn get_sponsor(&self) -> &[SponsorProperty];
+	/// Take <https://schema.org/sponsor> from [`Self`] as owned vector.
 	fn take_sponsor(&mut self) -> Vec<SponsorProperty>;
+	/// Get <https://schema.org/startDate> from [`Self`] as borrowed slice.
 	fn get_start_date(&self) -> &[StartDateProperty];
+	/// Take <https://schema.org/startDate> from [`Self`] as owned vector.
 	fn take_start_date(&mut self) -> Vec<StartDateProperty>;
+	/// Get <https://schema.org/subEvent> from [`Self`] as borrowed slice.
 	fn get_sub_event(&self) -> &[SubEventProperty];
+	/// Take <https://schema.org/subEvent> from [`Self`] as owned vector.
 	fn take_sub_event(&mut self) -> Vec<SubEventProperty>;
+	/// Get <https://schema.org/subEvents> from [`Self`] as borrowed slice.
 	fn get_sub_events(&self) -> &[SubEventsProperty];
+	/// Take <https://schema.org/subEvents> from [`Self`] as owned vector.
 	fn take_sub_events(&mut self) -> Vec<SubEventsProperty>;
+	/// Get <https://schema.org/superEvent> from [`Self`] as borrowed slice.
 	fn get_super_event(&self) -> &[SuperEventProperty];
+	/// Take <https://schema.org/superEvent> from [`Self`] as owned vector.
 	fn take_super_event(&mut self) -> Vec<SuperEventProperty>;
+	/// Get <https://schema.org/translator> from [`Self`] as borrowed slice.
 	fn get_translator(&self) -> &[TranslatorProperty];
+	/// Take <https://schema.org/translator> from [`Self`] as owned vector.
 	fn take_translator(&mut self) -> Vec<TranslatorProperty>;
+	/// Get <https://schema.org/typicalAgeRange> from [`Self`] as borrowed slice.
 	fn get_typical_age_range(&self) -> &[TypicalAgeRangeProperty];
+	/// Take <https://schema.org/typicalAgeRange> from [`Self`] as owned vector.
 	fn take_typical_age_range(&mut self) -> Vec<TypicalAgeRangeProperty>;
+	/// Get <https://schema.org/workFeatured> from [`Self`] as borrowed slice.
 	fn get_work_featured(&self) -> &[WorkFeaturedProperty];
+	/// Take <https://schema.org/workFeatured> from [`Self`] as owned vector.
 	fn take_work_featured(&mut self) -> Vec<WorkFeaturedProperty>;
+	/// Get <https://schema.org/workPerformed> from [`Self`] as borrowed slice.
 	fn get_work_performed(&self) -> &[WorkPerformedProperty];
+	/// Take <https://schema.org/workPerformed> from [`Self`] as owned vector.
 	fn take_work_performed(&mut self) -> Vec<WorkPerformedProperty>;
 }
 impl EventTrait for Event {

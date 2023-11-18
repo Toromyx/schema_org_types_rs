@@ -3,28 +3,50 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct EnergyConsumptionDetails {
+	/// <https://schema.org/energyEfficiencyScaleMax>
 	pub r#energy_efficiency_scale_max: Vec<EnergyEfficiencyScaleMaxProperty>,
+	/// <https://schema.org/energyEfficiencyScaleMin>
 	pub r#energy_efficiency_scale_min: Vec<EnergyEfficiencyScaleMinProperty>,
+	/// <https://schema.org/hasEnergyEfficiencyCategory>
 	pub r#has_energy_efficiency_category: Vec<HasEnergyEfficiencyCategoryProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/EnergyConsumptionDetails>.
 pub trait EnergyConsumptionDetailsTrait {
+	/// Get <https://schema.org/energyEfficiencyScaleMax> from [`Self`] as borrowed slice.
 	fn get_energy_efficiency_scale_max(&self) -> &[EnergyEfficiencyScaleMaxProperty];
+	/// Take <https://schema.org/energyEfficiencyScaleMax> from [`Self`] as owned vector.
 	fn take_energy_efficiency_scale_max(&mut self) -> Vec<EnergyEfficiencyScaleMaxProperty>;
+	/// Get <https://schema.org/energyEfficiencyScaleMin> from [`Self`] as borrowed slice.
 	fn get_energy_efficiency_scale_min(&self) -> &[EnergyEfficiencyScaleMinProperty];
+	/// Take <https://schema.org/energyEfficiencyScaleMin> from [`Self`] as owned vector.
 	fn take_energy_efficiency_scale_min(&mut self) -> Vec<EnergyEfficiencyScaleMinProperty>;
+	/// Get <https://schema.org/hasEnergyEfficiencyCategory> from [`Self`] as borrowed slice.
 	fn get_has_energy_efficiency_category(&self) -> &[HasEnergyEfficiencyCategoryProperty];
+	/// Take <https://schema.org/hasEnergyEfficiencyCategory> from [`Self`] as owned vector.
 	fn take_has_energy_efficiency_category(&mut self) -> Vec<HasEnergyEfficiencyCategoryProperty>;
 }
 impl EnergyConsumptionDetailsTrait for EnergyConsumptionDetails {

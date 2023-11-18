@@ -3,40 +3,74 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct DeliveryChargeSpecification {
+	/// <https://schema.org/appliesToDeliveryMethod>
 	pub r#applies_to_delivery_method: Vec<AppliesToDeliveryMethodProperty>,
+	/// <https://schema.org/areaServed>
 	pub r#area_served: Vec<AreaServedProperty>,
+	/// <https://schema.org/eligibleRegion>
 	pub r#eligible_region: Vec<EligibleRegionProperty>,
+	/// <https://schema.org/ineligibleRegion>
 	pub r#ineligible_region: Vec<IneligibleRegionProperty>,
+	/// <https://schema.org/eligibleQuantity>
 	pub r#eligible_quantity: Vec<EligibleQuantityProperty>,
+	/// <https://schema.org/eligibleTransactionVolume>
 	pub r#eligible_transaction_volume: Vec<EligibleTransactionVolumeProperty>,
+	/// <https://schema.org/maxPrice>
 	pub r#max_price: Vec<MaxPriceProperty>,
+	/// <https://schema.org/minPrice>
 	pub r#min_price: Vec<MinPriceProperty>,
+	/// <https://schema.org/price>
 	pub r#price: Vec<PriceProperty>,
+	/// <https://schema.org/priceCurrency>
 	pub r#price_currency: Vec<PriceCurrencyProperty>,
+	/// <https://schema.org/validFrom>
 	pub r#valid_from: Vec<ValidFromProperty>,
+	/// <https://schema.org/validThrough>
 	pub r#valid_through: Vec<ValidThroughProperty>,
+	/// <https://schema.org/valueAddedTaxIncluded>
 	pub r#value_added_tax_included: Vec<ValueAddedTaxIncludedProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/DeliveryChargeSpecification>.
 pub trait DeliveryChargeSpecificationTrait {
+	/// Get <https://schema.org/appliesToDeliveryMethod> from [`Self`] as borrowed slice.
 	fn get_applies_to_delivery_method(&self) -> &[AppliesToDeliveryMethodProperty];
+	/// Take <https://schema.org/appliesToDeliveryMethod> from [`Self`] as owned vector.
 	fn take_applies_to_delivery_method(&mut self) -> Vec<AppliesToDeliveryMethodProperty>;
+	/// Get <https://schema.org/areaServed> from [`Self`] as borrowed slice.
 	fn get_area_served(&self) -> &[AreaServedProperty];
+	/// Take <https://schema.org/areaServed> from [`Self`] as owned vector.
 	fn take_area_served(&mut self) -> Vec<AreaServedProperty>;
+	/// Get <https://schema.org/eligibleRegion> from [`Self`] as borrowed slice.
 	fn get_eligible_region(&self) -> &[EligibleRegionProperty];
+	/// Take <https://schema.org/eligibleRegion> from [`Self`] as owned vector.
 	fn take_eligible_region(&mut self) -> Vec<EligibleRegionProperty>;
+	/// Get <https://schema.org/ineligibleRegion> from [`Self`] as borrowed slice.
 	fn get_ineligible_region(&self) -> &[IneligibleRegionProperty];
+	/// Take <https://schema.org/ineligibleRegion> from [`Self`] as owned vector.
 	fn take_ineligible_region(&mut self) -> Vec<IneligibleRegionProperty>;
 }
 impl DeliveryChargeSpecificationTrait for DeliveryChargeSpecification {

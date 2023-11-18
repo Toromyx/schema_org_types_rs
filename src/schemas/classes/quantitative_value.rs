@@ -3,40 +3,74 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct QuantitativeValue {
+	/// <https://schema.org/additionalProperty>
 	pub r#additional_property: Vec<AdditionalPropertyProperty>,
+	/// <https://schema.org/maxValue>
 	pub r#max_value: Vec<MaxValueProperty>,
+	/// <https://schema.org/minValue>
 	pub r#min_value: Vec<MinValueProperty>,
+	/// <https://schema.org/unitCode>
 	pub r#unit_code: Vec<UnitCodeProperty>,
+	/// <https://schema.org/unitText>
 	pub r#unit_text: Vec<UnitTextProperty>,
+	/// <https://schema.org/value>
 	pub r#value: Vec<ValueProperty>,
+	/// <https://schema.org/valueReference>
 	pub r#value_reference: Vec<ValueReferenceProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/QuantitativeValue>.
 pub trait QuantitativeValueTrait {
+	/// Get <https://schema.org/additionalProperty> from [`Self`] as borrowed slice.
 	fn get_additional_property(&self) -> &[AdditionalPropertyProperty];
+	/// Take <https://schema.org/additionalProperty> from [`Self`] as owned vector.
 	fn take_additional_property(&mut self) -> Vec<AdditionalPropertyProperty>;
+	/// Get <https://schema.org/maxValue> from [`Self`] as borrowed slice.
 	fn get_max_value(&self) -> &[MaxValueProperty];
+	/// Take <https://schema.org/maxValue> from [`Self`] as owned vector.
 	fn take_max_value(&mut self) -> Vec<MaxValueProperty>;
+	/// Get <https://schema.org/minValue> from [`Self`] as borrowed slice.
 	fn get_min_value(&self) -> &[MinValueProperty];
+	/// Take <https://schema.org/minValue> from [`Self`] as owned vector.
 	fn take_min_value(&mut self) -> Vec<MinValueProperty>;
+	/// Get <https://schema.org/unitCode> from [`Self`] as borrowed slice.
 	fn get_unit_code(&self) -> &[UnitCodeProperty];
+	/// Take <https://schema.org/unitCode> from [`Self`] as owned vector.
 	fn take_unit_code(&mut self) -> Vec<UnitCodeProperty>;
+	/// Get <https://schema.org/unitText> from [`Self`] as borrowed slice.
 	fn get_unit_text(&self) -> &[UnitTextProperty];
+	/// Take <https://schema.org/unitText> from [`Self`] as owned vector.
 	fn take_unit_text(&mut self) -> Vec<UnitTextProperty>;
+	/// Get <https://schema.org/value> from [`Self`] as borrowed slice.
 	fn get_value(&self) -> &[ValueProperty];
+	/// Take <https://schema.org/value> from [`Self`] as owned vector.
 	fn take_value(&mut self) -> Vec<ValueProperty>;
+	/// Get <https://schema.org/valueReference> from [`Self`] as borrowed slice.
 	fn get_value_reference(&self) -> &[ValueReferenceProperty];
+	/// Take <https://schema.org/valueReference> from [`Self`] as owned vector.
 	fn take_value_reference(&mut self) -> Vec<ValueReferenceProperty>;
 }
 impl QuantitativeValueTrait for QuantitativeValue {

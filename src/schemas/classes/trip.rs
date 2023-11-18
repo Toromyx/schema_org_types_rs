@@ -3,43 +3,80 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct Trip {
+	/// <https://schema.org/arrivalTime>
 	pub r#arrival_time: Vec<ArrivalTimeProperty>,
+	/// <https://schema.org/departureTime>
 	pub r#departure_time: Vec<DepartureTimeProperty>,
+	/// <https://schema.org/itinerary>
 	pub r#itinerary: Vec<ItineraryProperty>,
+	/// <https://schema.org/offers>
 	pub r#offers: Vec<OffersProperty>,
+	/// <https://schema.org/partOfTrip>
 	pub r#part_of_trip: Vec<PartOfTripProperty>,
+	/// <https://schema.org/provider>
 	pub r#provider: Vec<ProviderProperty>,
+	/// <https://schema.org/subTrip>
 	pub r#sub_trip: Vec<SubTripProperty>,
+	/// <https://schema.org/tripOrigin>
 	pub r#trip_origin: Vec<TripOriginProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/Trip>.
 pub trait TripTrait {
+	/// Get <https://schema.org/arrivalTime> from [`Self`] as borrowed slice.
 	fn get_arrival_time(&self) -> &[ArrivalTimeProperty];
+	/// Take <https://schema.org/arrivalTime> from [`Self`] as owned vector.
 	fn take_arrival_time(&mut self) -> Vec<ArrivalTimeProperty>;
+	/// Get <https://schema.org/departureTime> from [`Self`] as borrowed slice.
 	fn get_departure_time(&self) -> &[DepartureTimeProperty];
+	/// Take <https://schema.org/departureTime> from [`Self`] as owned vector.
 	fn take_departure_time(&mut self) -> Vec<DepartureTimeProperty>;
+	/// Get <https://schema.org/itinerary> from [`Self`] as borrowed slice.
 	fn get_itinerary(&self) -> &[ItineraryProperty];
+	/// Take <https://schema.org/itinerary> from [`Self`] as owned vector.
 	fn take_itinerary(&mut self) -> Vec<ItineraryProperty>;
+	/// Get <https://schema.org/offers> from [`Self`] as borrowed slice.
 	fn get_offers(&self) -> &[OffersProperty];
+	/// Take <https://schema.org/offers> from [`Self`] as owned vector.
 	fn take_offers(&mut self) -> Vec<OffersProperty>;
+	/// Get <https://schema.org/partOfTrip> from [`Self`] as borrowed slice.
 	fn get_part_of_trip(&self) -> &[PartOfTripProperty];
+	/// Take <https://schema.org/partOfTrip> from [`Self`] as owned vector.
 	fn take_part_of_trip(&mut self) -> Vec<PartOfTripProperty>;
+	/// Get <https://schema.org/provider> from [`Self`] as borrowed slice.
 	fn get_provider(&self) -> &[ProviderProperty];
+	/// Take <https://schema.org/provider> from [`Self`] as owned vector.
 	fn take_provider(&mut self) -> Vec<ProviderProperty>;
+	/// Get <https://schema.org/subTrip> from [`Self`] as borrowed slice.
 	fn get_sub_trip(&self) -> &[SubTripProperty];
+	/// Take <https://schema.org/subTrip> from [`Self`] as owned vector.
 	fn take_sub_trip(&mut self) -> Vec<SubTripProperty>;
+	/// Get <https://schema.org/tripOrigin> from [`Self`] as borrowed slice.
 	fn get_trip_origin(&self) -> &[TripOriginProperty];
+	/// Take <https://schema.org/tripOrigin> from [`Self`] as owned vector.
 	fn take_trip_origin(&mut self) -> Vec<TripOriginProperty>;
 }
 impl TripTrait for Trip {

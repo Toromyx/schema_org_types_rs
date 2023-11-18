@@ -3,85 +3,164 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct Order {
+	/// <https://schema.org/acceptedOffer>
 	pub r#accepted_offer: Vec<AcceptedOfferProperty>,
+	/// <https://schema.org/billingAddress>
 	pub r#billing_address: Vec<BillingAddressProperty>,
+	/// <https://schema.org/broker>
 	pub r#broker: Vec<BrokerProperty>,
+	/// <https://schema.org/confirmationNumber>
 	pub r#confirmation_number: Vec<ConfirmationNumberProperty>,
+	/// <https://schema.org/customer>
 	pub r#customer: Vec<CustomerProperty>,
+	/// <https://schema.org/discount>
 	pub r#discount: Vec<DiscountProperty>,
+	/// <https://schema.org/discountCode>
 	pub r#discount_code: Vec<DiscountCodeProperty>,
+	/// <https://schema.org/discountCurrency>
 	pub r#discount_currency: Vec<DiscountCurrencyProperty>,
+	/// <https://schema.org/isGift>
 	pub r#is_gift: Vec<IsGiftProperty>,
+	/// <https://schema.org/merchant>
 	pub r#merchant: Vec<MerchantProperty>,
+	/// <https://schema.org/orderDate>
 	pub r#order_date: Vec<OrderDateProperty>,
+	/// <https://schema.org/orderDelivery>
 	pub r#order_delivery: Vec<OrderDeliveryProperty>,
+	/// <https://schema.org/orderNumber>
 	pub r#order_number: Vec<OrderNumberProperty>,
+	/// <https://schema.org/orderStatus>
 	pub r#order_status: Vec<OrderStatusProperty>,
+	/// <https://schema.org/orderedItem>
 	pub r#ordered_item: Vec<OrderedItemProperty>,
+	/// <https://schema.org/partOfInvoice>
 	pub r#part_of_invoice: Vec<PartOfInvoiceProperty>,
+	/// <https://schema.org/paymentDue>
 	pub r#payment_due: Vec<PaymentDueProperty>,
+	/// <https://schema.org/paymentDueDate>
 	pub r#payment_due_date: Vec<PaymentDueDateProperty>,
+	/// <https://schema.org/paymentMethod>
 	pub r#payment_method: Vec<PaymentMethodProperty>,
+	/// <https://schema.org/paymentMethodId>
 	pub r#payment_method_id: Vec<PaymentMethodIdProperty>,
+	/// <https://schema.org/paymentUrl>
 	pub r#payment_url: Vec<PaymentUrlProperty>,
+	/// <https://schema.org/seller>
 	pub r#seller: Vec<SellerProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/Order>.
 pub trait OrderTrait {
+	/// Get <https://schema.org/acceptedOffer> from [`Self`] as borrowed slice.
 	fn get_accepted_offer(&self) -> &[AcceptedOfferProperty];
+	/// Take <https://schema.org/acceptedOffer> from [`Self`] as owned vector.
 	fn take_accepted_offer(&mut self) -> Vec<AcceptedOfferProperty>;
+	/// Get <https://schema.org/billingAddress> from [`Self`] as borrowed slice.
 	fn get_billing_address(&self) -> &[BillingAddressProperty];
+	/// Take <https://schema.org/billingAddress> from [`Self`] as owned vector.
 	fn take_billing_address(&mut self) -> Vec<BillingAddressProperty>;
+	/// Get <https://schema.org/broker> from [`Self`] as borrowed slice.
 	fn get_broker(&self) -> &[BrokerProperty];
+	/// Take <https://schema.org/broker> from [`Self`] as owned vector.
 	fn take_broker(&mut self) -> Vec<BrokerProperty>;
+	/// Get <https://schema.org/confirmationNumber> from [`Self`] as borrowed slice.
 	fn get_confirmation_number(&self) -> &[ConfirmationNumberProperty];
+	/// Take <https://schema.org/confirmationNumber> from [`Self`] as owned vector.
 	fn take_confirmation_number(&mut self) -> Vec<ConfirmationNumberProperty>;
+	/// Get <https://schema.org/customer> from [`Self`] as borrowed slice.
 	fn get_customer(&self) -> &[CustomerProperty];
+	/// Take <https://schema.org/customer> from [`Self`] as owned vector.
 	fn take_customer(&mut self) -> Vec<CustomerProperty>;
+	/// Get <https://schema.org/discount> from [`Self`] as borrowed slice.
 	fn get_discount(&self) -> &[DiscountProperty];
+	/// Take <https://schema.org/discount> from [`Self`] as owned vector.
 	fn take_discount(&mut self) -> Vec<DiscountProperty>;
+	/// Get <https://schema.org/discountCode> from [`Self`] as borrowed slice.
 	fn get_discount_code(&self) -> &[DiscountCodeProperty];
+	/// Take <https://schema.org/discountCode> from [`Self`] as owned vector.
 	fn take_discount_code(&mut self) -> Vec<DiscountCodeProperty>;
+	/// Get <https://schema.org/discountCurrency> from [`Self`] as borrowed slice.
 	fn get_discount_currency(&self) -> &[DiscountCurrencyProperty];
+	/// Take <https://schema.org/discountCurrency> from [`Self`] as owned vector.
 	fn take_discount_currency(&mut self) -> Vec<DiscountCurrencyProperty>;
+	/// Get <https://schema.org/isGift> from [`Self`] as borrowed slice.
 	fn get_is_gift(&self) -> &[IsGiftProperty];
+	/// Take <https://schema.org/isGift> from [`Self`] as owned vector.
 	fn take_is_gift(&mut self) -> Vec<IsGiftProperty>;
+	/// Get <https://schema.org/merchant> from [`Self`] as borrowed slice.
 	fn get_merchant(&self) -> &[MerchantProperty];
+	/// Take <https://schema.org/merchant> from [`Self`] as owned vector.
 	fn take_merchant(&mut self) -> Vec<MerchantProperty>;
+	/// Get <https://schema.org/orderDate> from [`Self`] as borrowed slice.
 	fn get_order_date(&self) -> &[OrderDateProperty];
+	/// Take <https://schema.org/orderDate> from [`Self`] as owned vector.
 	fn take_order_date(&mut self) -> Vec<OrderDateProperty>;
+	/// Get <https://schema.org/orderDelivery> from [`Self`] as borrowed slice.
 	fn get_order_delivery(&self) -> &[OrderDeliveryProperty];
+	/// Take <https://schema.org/orderDelivery> from [`Self`] as owned vector.
 	fn take_order_delivery(&mut self) -> Vec<OrderDeliveryProperty>;
+	/// Get <https://schema.org/orderNumber> from [`Self`] as borrowed slice.
 	fn get_order_number(&self) -> &[OrderNumberProperty];
+	/// Take <https://schema.org/orderNumber> from [`Self`] as owned vector.
 	fn take_order_number(&mut self) -> Vec<OrderNumberProperty>;
+	/// Get <https://schema.org/orderStatus> from [`Self`] as borrowed slice.
 	fn get_order_status(&self) -> &[OrderStatusProperty];
+	/// Take <https://schema.org/orderStatus> from [`Self`] as owned vector.
 	fn take_order_status(&mut self) -> Vec<OrderStatusProperty>;
+	/// Get <https://schema.org/orderedItem> from [`Self`] as borrowed slice.
 	fn get_ordered_item(&self) -> &[OrderedItemProperty];
+	/// Take <https://schema.org/orderedItem> from [`Self`] as owned vector.
 	fn take_ordered_item(&mut self) -> Vec<OrderedItemProperty>;
+	/// Get <https://schema.org/partOfInvoice> from [`Self`] as borrowed slice.
 	fn get_part_of_invoice(&self) -> &[PartOfInvoiceProperty];
+	/// Take <https://schema.org/partOfInvoice> from [`Self`] as owned vector.
 	fn take_part_of_invoice(&mut self) -> Vec<PartOfInvoiceProperty>;
+	/// Get <https://schema.org/paymentDue> from [`Self`] as borrowed slice.
 	fn get_payment_due(&self) -> &[PaymentDueProperty];
+	/// Take <https://schema.org/paymentDue> from [`Self`] as owned vector.
 	fn take_payment_due(&mut self) -> Vec<PaymentDueProperty>;
+	/// Get <https://schema.org/paymentDueDate> from [`Self`] as borrowed slice.
 	fn get_payment_due_date(&self) -> &[PaymentDueDateProperty];
+	/// Take <https://schema.org/paymentDueDate> from [`Self`] as owned vector.
 	fn take_payment_due_date(&mut self) -> Vec<PaymentDueDateProperty>;
+	/// Get <https://schema.org/paymentMethod> from [`Self`] as borrowed slice.
 	fn get_payment_method(&self) -> &[PaymentMethodProperty];
+	/// Take <https://schema.org/paymentMethod> from [`Self`] as owned vector.
 	fn take_payment_method(&mut self) -> Vec<PaymentMethodProperty>;
+	/// Get <https://schema.org/paymentMethodId> from [`Self`] as borrowed slice.
 	fn get_payment_method_id(&self) -> &[PaymentMethodIdProperty];
+	/// Take <https://schema.org/paymentMethodId> from [`Self`] as owned vector.
 	fn take_payment_method_id(&mut self) -> Vec<PaymentMethodIdProperty>;
+	/// Get <https://schema.org/paymentUrl> from [`Self`] as borrowed slice.
 	fn get_payment_url(&self) -> &[PaymentUrlProperty];
+	/// Take <https://schema.org/paymentUrl> from [`Self`] as owned vector.
 	fn take_payment_url(&mut self) -> Vec<PaymentUrlProperty>;
+	/// Get <https://schema.org/seller> from [`Self`] as borrowed slice.
 	fn get_seller(&self) -> &[SellerProperty];
+	/// Take <https://schema.org/seller> from [`Self`] as owned vector.
 	fn take_seller(&mut self) -> Vec<SellerProperty>;
 }
 impl OrderTrait for Order {

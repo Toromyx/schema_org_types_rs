@@ -3,46 +3,86 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct SizeSpecification {
+	/// <https://schema.org/hasMeasurement>
 	pub r#has_measurement: Vec<HasMeasurementProperty>,
+	/// <https://schema.org/sizeGroup>
 	pub r#size_group: Vec<SizeGroupProperty>,
+	/// <https://schema.org/sizeSystem>
 	pub r#size_system: Vec<SizeSystemProperty>,
+	/// <https://schema.org/suggestedAge>
 	pub r#suggested_age: Vec<SuggestedAgeProperty>,
+	/// <https://schema.org/suggestedGender>
 	pub r#suggested_gender: Vec<SuggestedGenderProperty>,
+	/// <https://schema.org/suggestedMeasurement>
 	pub r#suggested_measurement: Vec<SuggestedMeasurementProperty>,
+	/// <https://schema.org/supersededBy>
 	pub r#superseded_by: Vec<SupersededByProperty>,
+	/// <https://schema.org/additionalProperty>
 	pub r#additional_property: Vec<AdditionalPropertyProperty>,
+	/// <https://schema.org/equal>
 	pub r#equal: Vec<EqualProperty>,
+	/// <https://schema.org/greater>
 	pub r#greater: Vec<GreaterProperty>,
+	/// <https://schema.org/greaterOrEqual>
 	pub r#greater_or_equal: Vec<GreaterOrEqualProperty>,
+	/// <https://schema.org/lesser>
 	pub r#lesser: Vec<LesserProperty>,
+	/// <https://schema.org/lesserOrEqual>
 	pub r#lesser_or_equal: Vec<LesserOrEqualProperty>,
+	/// <https://schema.org/nonEqual>
 	pub r#non_equal: Vec<NonEqualProperty>,
+	/// <https://schema.org/valueReference>
 	pub r#value_reference: Vec<ValueReferenceProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/SizeSpecification>.
 pub trait SizeSpecificationTrait {
+	/// Get <https://schema.org/hasMeasurement> from [`Self`] as borrowed slice.
 	fn get_has_measurement(&self) -> &[HasMeasurementProperty];
+	/// Take <https://schema.org/hasMeasurement> from [`Self`] as owned vector.
 	fn take_has_measurement(&mut self) -> Vec<HasMeasurementProperty>;
+	/// Get <https://schema.org/sizeGroup> from [`Self`] as borrowed slice.
 	fn get_size_group(&self) -> &[SizeGroupProperty];
+	/// Take <https://schema.org/sizeGroup> from [`Self`] as owned vector.
 	fn take_size_group(&mut self) -> Vec<SizeGroupProperty>;
+	/// Get <https://schema.org/sizeSystem> from [`Self`] as borrowed slice.
 	fn get_size_system(&self) -> &[SizeSystemProperty];
+	/// Take <https://schema.org/sizeSystem> from [`Self`] as owned vector.
 	fn take_size_system(&mut self) -> Vec<SizeSystemProperty>;
+	/// Get <https://schema.org/suggestedAge> from [`Self`] as borrowed slice.
 	fn get_suggested_age(&self) -> &[SuggestedAgeProperty];
+	/// Take <https://schema.org/suggestedAge> from [`Self`] as owned vector.
 	fn take_suggested_age(&mut self) -> Vec<SuggestedAgeProperty>;
+	/// Get <https://schema.org/suggestedGender> from [`Self`] as borrowed slice.
 	fn get_suggested_gender(&self) -> &[SuggestedGenderProperty];
+	/// Take <https://schema.org/suggestedGender> from [`Self`] as owned vector.
 	fn take_suggested_gender(&mut self) -> Vec<SuggestedGenderProperty>;
+	/// Get <https://schema.org/suggestedMeasurement> from [`Self`] as borrowed slice.
 	fn get_suggested_measurement(&self) -> &[SuggestedMeasurementProperty];
+	/// Take <https://schema.org/suggestedMeasurement> from [`Self`] as owned vector.
 	fn take_suggested_measurement(&mut self) -> Vec<SuggestedMeasurementProperty>;
 }
 impl SizeSpecificationTrait for SizeSpecification {

@@ -3,55 +3,104 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct Action {
+	/// <https://schema.org/actionStatus>
 	pub r#action_status: Vec<ActionStatusProperty>,
+	/// <https://schema.org/agent>
 	pub r#agent: Vec<AgentProperty>,
+	/// <https://schema.org/endTime>
 	pub r#end_time: Vec<EndTimeProperty>,
+	/// <https://schema.org/error>
 	pub r#error: Vec<ErrorProperty>,
+	/// <https://schema.org/instrument>
 	pub r#instrument: Vec<InstrumentProperty>,
+	/// <https://schema.org/location>
 	pub r#location: Vec<LocationProperty>,
+	/// <https://schema.org/object>
 	pub r#object: Vec<ObjectProperty>,
+	/// <https://schema.org/participant>
 	pub r#participant: Vec<ParticipantProperty>,
+	/// <https://schema.org/provider>
 	pub r#provider: Vec<ProviderProperty>,
+	/// <https://schema.org/result>
 	pub r#result: Vec<ResultProperty>,
+	/// <https://schema.org/startTime>
 	pub r#start_time: Vec<StartTimeProperty>,
+	/// <https://schema.org/target>
 	pub r#target: Vec<TargetProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/Action>.
 pub trait ActionTrait {
+	/// Get <https://schema.org/actionStatus> from [`Self`] as borrowed slice.
 	fn get_action_status(&self) -> &[ActionStatusProperty];
+	/// Take <https://schema.org/actionStatus> from [`Self`] as owned vector.
 	fn take_action_status(&mut self) -> Vec<ActionStatusProperty>;
+	/// Get <https://schema.org/agent> from [`Self`] as borrowed slice.
 	fn get_agent(&self) -> &[AgentProperty];
+	/// Take <https://schema.org/agent> from [`Self`] as owned vector.
 	fn take_agent(&mut self) -> Vec<AgentProperty>;
+	/// Get <https://schema.org/endTime> from [`Self`] as borrowed slice.
 	fn get_end_time(&self) -> &[EndTimeProperty];
+	/// Take <https://schema.org/endTime> from [`Self`] as owned vector.
 	fn take_end_time(&mut self) -> Vec<EndTimeProperty>;
+	/// Get <https://schema.org/error> from [`Self`] as borrowed slice.
 	fn get_error(&self) -> &[ErrorProperty];
+	/// Take <https://schema.org/error> from [`Self`] as owned vector.
 	fn take_error(&mut self) -> Vec<ErrorProperty>;
+	/// Get <https://schema.org/instrument> from [`Self`] as borrowed slice.
 	fn get_instrument(&self) -> &[InstrumentProperty];
+	/// Take <https://schema.org/instrument> from [`Self`] as owned vector.
 	fn take_instrument(&mut self) -> Vec<InstrumentProperty>;
+	/// Get <https://schema.org/location> from [`Self`] as borrowed slice.
 	fn get_location(&self) -> &[LocationProperty];
+	/// Take <https://schema.org/location> from [`Self`] as owned vector.
 	fn take_location(&mut self) -> Vec<LocationProperty>;
+	/// Get <https://schema.org/object> from [`Self`] as borrowed slice.
 	fn get_object(&self) -> &[ObjectProperty];
+	/// Take <https://schema.org/object> from [`Self`] as owned vector.
 	fn take_object(&mut self) -> Vec<ObjectProperty>;
+	/// Get <https://schema.org/participant> from [`Self`] as borrowed slice.
 	fn get_participant(&self) -> &[ParticipantProperty];
+	/// Take <https://schema.org/participant> from [`Self`] as owned vector.
 	fn take_participant(&mut self) -> Vec<ParticipantProperty>;
+	/// Get <https://schema.org/provider> from [`Self`] as borrowed slice.
 	fn get_provider(&self) -> &[ProviderProperty];
+	/// Take <https://schema.org/provider> from [`Self`] as owned vector.
 	fn take_provider(&mut self) -> Vec<ProviderProperty>;
+	/// Get <https://schema.org/result> from [`Self`] as borrowed slice.
 	fn get_result(&self) -> &[ResultProperty];
+	/// Take <https://schema.org/result> from [`Self`] as owned vector.
 	fn take_result(&mut self) -> Vec<ResultProperty>;
+	/// Get <https://schema.org/startTime> from [`Self`] as borrowed slice.
 	fn get_start_time(&self) -> &[StartTimeProperty];
+	/// Take <https://schema.org/startTime> from [`Self`] as owned vector.
 	fn take_start_time(&mut self) -> Vec<StartTimeProperty>;
+	/// Get <https://schema.org/target> from [`Self`] as borrowed slice.
 	fn get_target(&self) -> &[TargetProperty];
+	/// Take <https://schema.org/target> from [`Self`] as owned vector.
 	fn take_target(&mut self) -> Vec<TargetProperty>;
 }
 impl ActionTrait for Action {

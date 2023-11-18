@@ -3,58 +3,110 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct Schedule {
+	/// <https://schema.org/byDay>
 	pub r#by_day: Vec<ByDayProperty>,
+	/// <https://schema.org/byMonth>
 	pub r#by_month: Vec<ByMonthProperty>,
+	/// <https://schema.org/byMonthDay>
 	pub r#by_month_day: Vec<ByMonthDayProperty>,
+	/// <https://schema.org/byMonthWeek>
 	pub r#by_month_week: Vec<ByMonthWeekProperty>,
+	/// <https://schema.org/duration>
 	pub r#duration: Vec<DurationProperty>,
+	/// <https://schema.org/endDate>
 	pub r#end_date: Vec<EndDateProperty>,
+	/// <https://schema.org/endTime>
 	pub r#end_time: Vec<EndTimeProperty>,
+	/// <https://schema.org/exceptDate>
 	pub r#except_date: Vec<ExceptDateProperty>,
+	/// <https://schema.org/repeatCount>
 	pub r#repeat_count: Vec<RepeatCountProperty>,
+	/// <https://schema.org/repeatFrequency>
 	pub r#repeat_frequency: Vec<RepeatFrequencyProperty>,
+	/// <https://schema.org/scheduleTimezone>
 	pub r#schedule_timezone: Vec<ScheduleTimezoneProperty>,
+	/// <https://schema.org/startDate>
 	pub r#start_date: Vec<StartDateProperty>,
+	/// <https://schema.org/startTime>
 	pub r#start_time: Vec<StartTimeProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/Schedule>.
 pub trait ScheduleTrait {
+	/// Get <https://schema.org/byDay> from [`Self`] as borrowed slice.
 	fn get_by_day(&self) -> &[ByDayProperty];
+	/// Take <https://schema.org/byDay> from [`Self`] as owned vector.
 	fn take_by_day(&mut self) -> Vec<ByDayProperty>;
+	/// Get <https://schema.org/byMonth> from [`Self`] as borrowed slice.
 	fn get_by_month(&self) -> &[ByMonthProperty];
+	/// Take <https://schema.org/byMonth> from [`Self`] as owned vector.
 	fn take_by_month(&mut self) -> Vec<ByMonthProperty>;
+	/// Get <https://schema.org/byMonthDay> from [`Self`] as borrowed slice.
 	fn get_by_month_day(&self) -> &[ByMonthDayProperty];
+	/// Take <https://schema.org/byMonthDay> from [`Self`] as owned vector.
 	fn take_by_month_day(&mut self) -> Vec<ByMonthDayProperty>;
+	/// Get <https://schema.org/byMonthWeek> from [`Self`] as borrowed slice.
 	fn get_by_month_week(&self) -> &[ByMonthWeekProperty];
+	/// Take <https://schema.org/byMonthWeek> from [`Self`] as owned vector.
 	fn take_by_month_week(&mut self) -> Vec<ByMonthWeekProperty>;
+	/// Get <https://schema.org/duration> from [`Self`] as borrowed slice.
 	fn get_duration(&self) -> &[DurationProperty];
+	/// Take <https://schema.org/duration> from [`Self`] as owned vector.
 	fn take_duration(&mut self) -> Vec<DurationProperty>;
+	/// Get <https://schema.org/endDate> from [`Self`] as borrowed slice.
 	fn get_end_date(&self) -> &[EndDateProperty];
+	/// Take <https://schema.org/endDate> from [`Self`] as owned vector.
 	fn take_end_date(&mut self) -> Vec<EndDateProperty>;
+	/// Get <https://schema.org/endTime> from [`Self`] as borrowed slice.
 	fn get_end_time(&self) -> &[EndTimeProperty];
+	/// Take <https://schema.org/endTime> from [`Self`] as owned vector.
 	fn take_end_time(&mut self) -> Vec<EndTimeProperty>;
+	/// Get <https://schema.org/exceptDate> from [`Self`] as borrowed slice.
 	fn get_except_date(&self) -> &[ExceptDateProperty];
+	/// Take <https://schema.org/exceptDate> from [`Self`] as owned vector.
 	fn take_except_date(&mut self) -> Vec<ExceptDateProperty>;
+	/// Get <https://schema.org/repeatCount> from [`Self`] as borrowed slice.
 	fn get_repeat_count(&self) -> &[RepeatCountProperty];
+	/// Take <https://schema.org/repeatCount> from [`Self`] as owned vector.
 	fn take_repeat_count(&mut self) -> Vec<RepeatCountProperty>;
+	/// Get <https://schema.org/repeatFrequency> from [`Self`] as borrowed slice.
 	fn get_repeat_frequency(&self) -> &[RepeatFrequencyProperty];
+	/// Take <https://schema.org/repeatFrequency> from [`Self`] as owned vector.
 	fn take_repeat_frequency(&mut self) -> Vec<RepeatFrequencyProperty>;
+	/// Get <https://schema.org/scheduleTimezone> from [`Self`] as borrowed slice.
 	fn get_schedule_timezone(&self) -> &[ScheduleTimezoneProperty];
+	/// Take <https://schema.org/scheduleTimezone> from [`Self`] as owned vector.
 	fn take_schedule_timezone(&mut self) -> Vec<ScheduleTimezoneProperty>;
+	/// Get <https://schema.org/startDate> from [`Self`] as borrowed slice.
 	fn get_start_date(&self) -> &[StartDateProperty];
+	/// Take <https://schema.org/startDate> from [`Self`] as owned vector.
 	fn take_start_date(&mut self) -> Vec<StartDateProperty>;
+	/// Get <https://schema.org/startTime> from [`Self`] as borrowed slice.
 	fn get_start_time(&self) -> &[StartTimeProperty];
+	/// Take <https://schema.org/startTime> from [`Self`] as owned vector.
 	fn take_start_time(&mut self) -> Vec<StartTimeProperty>;
 }
 impl ScheduleTrait for Schedule {

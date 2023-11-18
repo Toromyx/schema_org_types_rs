@@ -3,55 +3,104 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct OfferShippingDetails {
+	/// <https://schema.org/deliveryTime>
 	pub r#delivery_time: Vec<DeliveryTimeProperty>,
+	/// <https://schema.org/depth>
 	pub r#depth: Vec<DepthProperty>,
+	/// <https://schema.org/doesNotShip>
 	pub r#does_not_ship: Vec<DoesNotShipProperty>,
+	/// <https://schema.org/height>
 	pub r#height: Vec<HeightProperty>,
+	/// <https://schema.org/shippingDestination>
 	pub r#shipping_destination: Vec<ShippingDestinationProperty>,
+	/// <https://schema.org/shippingLabel>
 	pub r#shipping_label: Vec<ShippingLabelProperty>,
+	/// <https://schema.org/shippingOrigin>
 	pub r#shipping_origin: Vec<ShippingOriginProperty>,
+	/// <https://schema.org/shippingRate>
 	pub r#shipping_rate: Vec<ShippingRateProperty>,
+	/// <https://schema.org/shippingSettingsLink>
 	pub r#shipping_settings_link: Vec<ShippingSettingsLinkProperty>,
+	/// <https://schema.org/transitTimeLabel>
 	pub r#transit_time_label: Vec<TransitTimeLabelProperty>,
+	/// <https://schema.org/weight>
 	pub r#weight: Vec<WeightProperty>,
+	/// <https://schema.org/width>
 	pub r#width: Vec<WidthProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/OfferShippingDetails>.
 pub trait OfferShippingDetailsTrait {
+	/// Get <https://schema.org/deliveryTime> from [`Self`] as borrowed slice.
 	fn get_delivery_time(&self) -> &[DeliveryTimeProperty];
+	/// Take <https://schema.org/deliveryTime> from [`Self`] as owned vector.
 	fn take_delivery_time(&mut self) -> Vec<DeliveryTimeProperty>;
+	/// Get <https://schema.org/depth> from [`Self`] as borrowed slice.
 	fn get_depth(&self) -> &[DepthProperty];
+	/// Take <https://schema.org/depth> from [`Self`] as owned vector.
 	fn take_depth(&mut self) -> Vec<DepthProperty>;
+	/// Get <https://schema.org/doesNotShip> from [`Self`] as borrowed slice.
 	fn get_does_not_ship(&self) -> &[DoesNotShipProperty];
+	/// Take <https://schema.org/doesNotShip> from [`Self`] as owned vector.
 	fn take_does_not_ship(&mut self) -> Vec<DoesNotShipProperty>;
+	/// Get <https://schema.org/height> from [`Self`] as borrowed slice.
 	fn get_height(&self) -> &[HeightProperty];
+	/// Take <https://schema.org/height> from [`Self`] as owned vector.
 	fn take_height(&mut self) -> Vec<HeightProperty>;
+	/// Get <https://schema.org/shippingDestination> from [`Self`] as borrowed slice.
 	fn get_shipping_destination(&self) -> &[ShippingDestinationProperty];
+	/// Take <https://schema.org/shippingDestination> from [`Self`] as owned vector.
 	fn take_shipping_destination(&mut self) -> Vec<ShippingDestinationProperty>;
+	/// Get <https://schema.org/shippingLabel> from [`Self`] as borrowed slice.
 	fn get_shipping_label(&self) -> &[ShippingLabelProperty];
+	/// Take <https://schema.org/shippingLabel> from [`Self`] as owned vector.
 	fn take_shipping_label(&mut self) -> Vec<ShippingLabelProperty>;
+	/// Get <https://schema.org/shippingOrigin> from [`Self`] as borrowed slice.
 	fn get_shipping_origin(&self) -> &[ShippingOriginProperty];
+	/// Take <https://schema.org/shippingOrigin> from [`Self`] as owned vector.
 	fn take_shipping_origin(&mut self) -> Vec<ShippingOriginProperty>;
+	/// Get <https://schema.org/shippingRate> from [`Self`] as borrowed slice.
 	fn get_shipping_rate(&self) -> &[ShippingRateProperty];
+	/// Take <https://schema.org/shippingRate> from [`Self`] as owned vector.
 	fn take_shipping_rate(&mut self) -> Vec<ShippingRateProperty>;
+	/// Get <https://schema.org/shippingSettingsLink> from [`Self`] as borrowed slice.
 	fn get_shipping_settings_link(&self) -> &[ShippingSettingsLinkProperty];
+	/// Take <https://schema.org/shippingSettingsLink> from [`Self`] as owned vector.
 	fn take_shipping_settings_link(&mut self) -> Vec<ShippingSettingsLinkProperty>;
+	/// Get <https://schema.org/transitTimeLabel> from [`Self`] as borrowed slice.
 	fn get_transit_time_label(&self) -> &[TransitTimeLabelProperty];
+	/// Take <https://schema.org/transitTimeLabel> from [`Self`] as owned vector.
 	fn take_transit_time_label(&mut self) -> Vec<TransitTimeLabelProperty>;
+	/// Get <https://schema.org/weight> from [`Self`] as borrowed slice.
 	fn get_weight(&self) -> &[WeightProperty];
+	/// Take <https://schema.org/weight> from [`Self`] as owned vector.
 	fn take_weight(&mut self) -> Vec<WeightProperty>;
+	/// Get <https://schema.org/width> from [`Self`] as borrowed slice.
 	fn get_width(&self) -> &[WidthProperty];
+	/// Take <https://schema.org/width> from [`Self`] as owned vector.
 	fn take_width(&mut self) -> Vec<WidthProperty>;
 }
 impl OfferShippingDetailsTrait for OfferShippingDetails {

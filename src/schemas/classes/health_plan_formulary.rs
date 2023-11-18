@@ -3,28 +3,50 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct HealthPlanFormulary {
+	/// <https://schema.org/healthPlanCostSharing>
 	pub r#health_plan_cost_sharing: Vec<HealthPlanCostSharingProperty>,
+	/// <https://schema.org/healthPlanDrugTier>
 	pub r#health_plan_drug_tier: Vec<HealthPlanDrugTierProperty>,
+	/// <https://schema.org/offersPrescriptionByMail>
 	pub r#offers_prescription_by_mail: Vec<OffersPrescriptionByMailProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/HealthPlanFormulary>.
 pub trait HealthPlanFormularyTrait {
+	/// Get <https://schema.org/healthPlanCostSharing> from [`Self`] as borrowed slice.
 	fn get_health_plan_cost_sharing(&self) -> &[HealthPlanCostSharingProperty];
+	/// Take <https://schema.org/healthPlanCostSharing> from [`Self`] as owned vector.
 	fn take_health_plan_cost_sharing(&mut self) -> Vec<HealthPlanCostSharingProperty>;
+	/// Get <https://schema.org/healthPlanDrugTier> from [`Self`] as borrowed slice.
 	fn get_health_plan_drug_tier(&self) -> &[HealthPlanDrugTierProperty];
+	/// Take <https://schema.org/healthPlanDrugTier> from [`Self`] as owned vector.
 	fn take_health_plan_drug_tier(&mut self) -> Vec<HealthPlanDrugTierProperty>;
+	/// Get <https://schema.org/offersPrescriptionByMail> from [`Self`] as borrowed slice.
 	fn get_offers_prescription_by_mail(&self) -> &[OffersPrescriptionByMailProperty];
+	/// Take <https://schema.org/offersPrescriptionByMail> from [`Self`] as owned vector.
 	fn take_offers_prescription_by_mail(&mut self) -> Vec<OffersPrescriptionByMailProperty>;
 }
 impl HealthPlanFormularyTrait for HealthPlanFormulary {

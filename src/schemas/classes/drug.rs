@@ -3,173 +3,338 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct Drug {
+	/// <https://schema.org/activeIngredient>
 	pub r#active_ingredient: Vec<ActiveIngredientProperty>,
+	/// <https://schema.org/administrationRoute>
 	pub r#administration_route: Vec<AdministrationRouteProperty>,
+	/// <https://schema.org/alcoholWarning>
 	pub r#alcohol_warning: Vec<AlcoholWarningProperty>,
+	/// <https://schema.org/availableStrength>
 	pub r#available_strength: Vec<AvailableStrengthProperty>,
+	/// <https://schema.org/breastfeedingWarning>
 	pub r#breastfeeding_warning: Vec<BreastfeedingWarningProperty>,
+	/// <https://schema.org/clincalPharmacology>
 	pub r#clincal_pharmacology: Vec<ClincalPharmacologyProperty>,
+	/// <https://schema.org/clinicalPharmacology>
 	pub r#clinical_pharmacology: Vec<ClinicalPharmacologyProperty>,
+	/// <https://schema.org/dosageForm>
 	pub r#dosage_form: Vec<DosageFormProperty>,
+	/// <https://schema.org/doseSchedule>
 	pub r#dose_schedule: Vec<DoseScheduleProperty>,
+	/// <https://schema.org/drugClass>
 	pub r#drug_class: Vec<DrugClassProperty>,
+	/// <https://schema.org/drugUnit>
 	pub r#drug_unit: Vec<DrugUnitProperty>,
+	/// <https://schema.org/foodWarning>
 	pub r#food_warning: Vec<FoodWarningProperty>,
+	/// <https://schema.org/includedInHealthInsurancePlan>
 	pub r#included_in_health_insurance_plan: Vec<IncludedInHealthInsurancePlanProperty>,
+	/// <https://schema.org/interactingDrug>
 	pub r#interacting_drug: Vec<InteractingDrugProperty>,
+	/// <https://schema.org/isAvailableGenerically>
 	pub r#is_available_generically: Vec<IsAvailableGenericallyProperty>,
+	/// <https://schema.org/isProprietary>
 	pub r#is_proprietary: Vec<IsProprietaryProperty>,
+	/// <https://schema.org/labelDetails>
 	pub r#label_details: Vec<LabelDetailsProperty>,
+	/// <https://schema.org/legalStatus>
 	pub r#legal_status: Vec<LegalStatusProperty>,
+	/// <https://schema.org/maximumIntake>
 	pub r#maximum_intake: Vec<MaximumIntakeProperty>,
+	/// <https://schema.org/mechanismOfAction>
 	pub r#mechanism_of_action: Vec<MechanismOfActionProperty>,
+	/// <https://schema.org/nonProprietaryName>
 	pub r#non_proprietary_name: Vec<NonProprietaryNameProperty>,
+	/// <https://schema.org/overdosage>
 	pub r#overdosage: Vec<OverdosageProperty>,
+	/// <https://schema.org/pregnancyCategory>
 	pub r#pregnancy_category: Vec<PregnancyCategoryProperty>,
+	/// <https://schema.org/pregnancyWarning>
 	pub r#pregnancy_warning: Vec<PregnancyWarningProperty>,
+	/// <https://schema.org/prescribingInfo>
 	pub r#prescribing_info: Vec<PrescribingInfoProperty>,
+	/// <https://schema.org/prescriptionStatus>
 	pub r#prescription_status: Vec<PrescriptionStatusProperty>,
+	/// <https://schema.org/proprietaryName>
 	pub r#proprietary_name: Vec<ProprietaryNameProperty>,
+	/// <https://schema.org/relatedDrug>
 	pub r#related_drug: Vec<RelatedDrugProperty>,
+	/// <https://schema.org/rxcui>
 	pub r#rxcui: Vec<RxcuiProperty>,
+	/// <https://schema.org/warning>
 	pub r#warning: Vec<WarningProperty>,
+	/// <https://schema.org/code>
 	pub r#code: Vec<CodeProperty>,
+	/// <https://schema.org/funding>
 	pub r#funding: Vec<FundingProperty>,
+	/// <https://schema.org/guideline>
 	pub r#guideline: Vec<GuidelineProperty>,
+	/// <https://schema.org/medicineSystem>
 	pub r#medicine_system: Vec<MedicineSystemProperty>,
+	/// <https://schema.org/recognizingAuthority>
 	pub r#recognizing_authority: Vec<RecognizingAuthorityProperty>,
+	/// <https://schema.org/relevantSpecialty>
 	pub r#relevant_specialty: Vec<RelevantSpecialtyProperty>,
+	/// <https://schema.org/study>
 	pub r#study: Vec<StudyProperty>,
+	/// <https://schema.org/additionalProperty>
 	pub r#additional_property: Vec<AdditionalPropertyProperty>,
+	/// <https://schema.org/aggregateRating>
 	pub r#aggregate_rating: Vec<AggregateRatingProperty>,
+	/// <https://schema.org/asin>
 	pub r#asin: Vec<AsinProperty>,
+	/// <https://schema.org/audience>
 	pub r#audience: Vec<AudienceProperty>,
+	/// <https://schema.org/award>
 	pub r#award: Vec<AwardProperty>,
+	/// <https://schema.org/awards>
 	pub r#awards: Vec<AwardsProperty>,
+	/// <https://schema.org/brand>
 	pub r#brand: Vec<BrandProperty>,
+	/// <https://schema.org/category>
 	pub r#category: Vec<CategoryProperty>,
+	/// <https://schema.org/color>
 	pub r#color: Vec<ColorProperty>,
+	/// <https://schema.org/countryOfAssembly>
 	pub r#country_of_assembly: Vec<CountryOfAssemblyProperty>,
+	/// <https://schema.org/countryOfLastProcessing>
 	pub r#country_of_last_processing: Vec<CountryOfLastProcessingProperty>,
+	/// <https://schema.org/countryOfOrigin>
 	pub r#country_of_origin: Vec<CountryOfOriginProperty>,
+	/// <https://schema.org/depth>
 	pub r#depth: Vec<DepthProperty>,
+	/// <https://schema.org/gtin>
 	pub r#gtin: Vec<GtinProperty>,
+	/// <https://schema.org/gtin12>
 	pub r#gtin_12: Vec<Gtin12Property>,
+	/// <https://schema.org/gtin13>
 	pub r#gtin_13: Vec<Gtin13Property>,
+	/// <https://schema.org/gtin14>
 	pub r#gtin_14: Vec<Gtin14Property>,
+	/// <https://schema.org/gtin8>
 	pub r#gtin_8: Vec<Gtin8Property>,
+	/// <https://schema.org/hasAdultConsideration>
 	pub r#has_adult_consideration: Vec<HasAdultConsiderationProperty>,
+	/// <https://schema.org/hasEnergyConsumptionDetails>
 	pub r#has_energy_consumption_details: Vec<HasEnergyConsumptionDetailsProperty>,
+	/// <https://schema.org/hasMeasurement>
 	pub r#has_measurement: Vec<HasMeasurementProperty>,
+	/// <https://schema.org/hasMerchantReturnPolicy>
 	pub r#has_merchant_return_policy: Vec<HasMerchantReturnPolicyProperty>,
+	/// <https://schema.org/hasProductReturnPolicy>
 	pub r#has_product_return_policy: Vec<HasProductReturnPolicyProperty>,
+	/// <https://schema.org/height>
 	pub r#height: Vec<HeightProperty>,
+	/// <https://schema.org/inProductGroupWithID>
 	pub r#in_product_group_with_id: Vec<InProductGroupWithIdProperty>,
+	/// <https://schema.org/isAccessoryOrSparePartFor>
 	pub r#is_accessory_or_spare_part_for: Vec<IsAccessoryOrSparePartForProperty>,
+	/// <https://schema.org/isConsumableFor>
 	pub r#is_consumable_for: Vec<IsConsumableForProperty>,
+	/// <https://schema.org/isFamilyFriendly>
 	pub r#is_family_friendly: Vec<IsFamilyFriendlyProperty>,
+	/// <https://schema.org/isRelatedTo>
 	pub r#is_related_to: Vec<IsRelatedToProperty>,
+	/// <https://schema.org/isSimilarTo>
 	pub r#is_similar_to: Vec<IsSimilarToProperty>,
+	/// <https://schema.org/isVariantOf>
 	pub r#is_variant_of: Vec<IsVariantOfProperty>,
+	/// <https://schema.org/itemCondition>
 	pub r#item_condition: Vec<ItemConditionProperty>,
+	/// <https://schema.org/keywords>
 	pub r#keywords: Vec<KeywordsProperty>,
+	/// <https://schema.org/logo>
 	pub r#logo: Vec<LogoProperty>,
+	/// <https://schema.org/manufacturer>
 	pub r#manufacturer: Vec<ManufacturerProperty>,
+	/// <https://schema.org/material>
 	pub r#material: Vec<MaterialProperty>,
+	/// <https://schema.org/mobileUrl>
 	pub r#mobile_url: Vec<MobileUrlProperty>,
+	/// <https://schema.org/model>
 	pub r#model: Vec<ModelProperty>,
+	/// <https://schema.org/mpn>
 	pub r#mpn: Vec<MpnProperty>,
+	/// <https://schema.org/negativeNotes>
 	pub r#negative_notes: Vec<NegativeNotesProperty>,
+	/// <https://schema.org/nsn>
 	pub r#nsn: Vec<NsnProperty>,
+	/// <https://schema.org/offers>
 	pub r#offers: Vec<OffersProperty>,
+	/// <https://schema.org/pattern>
 	pub r#pattern: Vec<PatternProperty>,
+	/// <https://schema.org/positiveNotes>
 	pub r#positive_notes: Vec<PositiveNotesProperty>,
+	/// <https://schema.org/productID>
 	pub r#product_id: Vec<ProductIdProperty>,
+	/// <https://schema.org/productionDate>
 	pub r#production_date: Vec<ProductionDateProperty>,
+	/// <https://schema.org/purchaseDate>
 	pub r#purchase_date: Vec<PurchaseDateProperty>,
+	/// <https://schema.org/releaseDate>
 	pub r#release_date: Vec<ReleaseDateProperty>,
+	/// <https://schema.org/review>
 	pub r#review: Vec<ReviewProperty>,
+	/// <https://schema.org/reviews>
 	pub r#reviews: Vec<ReviewsProperty>,
+	/// <https://schema.org/size>
 	pub r#size: Vec<SizeProperty>,
+	/// <https://schema.org/sku>
 	pub r#sku: Vec<SkuProperty>,
+	/// <https://schema.org/slogan>
 	pub r#slogan: Vec<SloganProperty>,
+	/// <https://schema.org/weight>
 	pub r#weight: Vec<WeightProperty>,
+	/// <https://schema.org/width>
 	pub r#width: Vec<WidthProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/Drug>.
 pub trait DrugTrait {
+	/// Get <https://schema.org/activeIngredient> from [`Self`] as borrowed slice.
 	fn get_active_ingredient(&self) -> &[ActiveIngredientProperty];
+	/// Take <https://schema.org/activeIngredient> from [`Self`] as owned vector.
 	fn take_active_ingredient(&mut self) -> Vec<ActiveIngredientProperty>;
+	/// Get <https://schema.org/administrationRoute> from [`Self`] as borrowed slice.
 	fn get_administration_route(&self) -> &[AdministrationRouteProperty];
+	/// Take <https://schema.org/administrationRoute> from [`Self`] as owned vector.
 	fn take_administration_route(&mut self) -> Vec<AdministrationRouteProperty>;
+	/// Get <https://schema.org/alcoholWarning> from [`Self`] as borrowed slice.
 	fn get_alcohol_warning(&self) -> &[AlcoholWarningProperty];
+	/// Take <https://schema.org/alcoholWarning> from [`Self`] as owned vector.
 	fn take_alcohol_warning(&mut self) -> Vec<AlcoholWarningProperty>;
+	/// Get <https://schema.org/availableStrength> from [`Self`] as borrowed slice.
 	fn get_available_strength(&self) -> &[AvailableStrengthProperty];
+	/// Take <https://schema.org/availableStrength> from [`Self`] as owned vector.
 	fn take_available_strength(&mut self) -> Vec<AvailableStrengthProperty>;
+	/// Get <https://schema.org/breastfeedingWarning> from [`Self`] as borrowed slice.
 	fn get_breastfeeding_warning(&self) -> &[BreastfeedingWarningProperty];
+	/// Take <https://schema.org/breastfeedingWarning> from [`Self`] as owned vector.
 	fn take_breastfeeding_warning(&mut self) -> Vec<BreastfeedingWarningProperty>;
+	/// Get <https://schema.org/clincalPharmacology> from [`Self`] as borrowed slice.
 	fn get_clincal_pharmacology(&self) -> &[ClincalPharmacologyProperty];
+	/// Take <https://schema.org/clincalPharmacology> from [`Self`] as owned vector.
 	fn take_clincal_pharmacology(&mut self) -> Vec<ClincalPharmacologyProperty>;
+	/// Get <https://schema.org/clinicalPharmacology> from [`Self`] as borrowed slice.
 	fn get_clinical_pharmacology(&self) -> &[ClinicalPharmacologyProperty];
+	/// Take <https://schema.org/clinicalPharmacology> from [`Self`] as owned vector.
 	fn take_clinical_pharmacology(&mut self) -> Vec<ClinicalPharmacologyProperty>;
+	/// Get <https://schema.org/dosageForm> from [`Self`] as borrowed slice.
 	fn get_dosage_form(&self) -> &[DosageFormProperty];
+	/// Take <https://schema.org/dosageForm> from [`Self`] as owned vector.
 	fn take_dosage_form(&mut self) -> Vec<DosageFormProperty>;
+	/// Get <https://schema.org/doseSchedule> from [`Self`] as borrowed slice.
 	fn get_dose_schedule(&self) -> &[DoseScheduleProperty];
+	/// Take <https://schema.org/doseSchedule> from [`Self`] as owned vector.
 	fn take_dose_schedule(&mut self) -> Vec<DoseScheduleProperty>;
+	/// Get <https://schema.org/drugClass> from [`Self`] as borrowed slice.
 	fn get_drug_class(&self) -> &[DrugClassProperty];
+	/// Take <https://schema.org/drugClass> from [`Self`] as owned vector.
 	fn take_drug_class(&mut self) -> Vec<DrugClassProperty>;
+	/// Get <https://schema.org/drugUnit> from [`Self`] as borrowed slice.
 	fn get_drug_unit(&self) -> &[DrugUnitProperty];
+	/// Take <https://schema.org/drugUnit> from [`Self`] as owned vector.
 	fn take_drug_unit(&mut self) -> Vec<DrugUnitProperty>;
+	/// Get <https://schema.org/foodWarning> from [`Self`] as borrowed slice.
 	fn get_food_warning(&self) -> &[FoodWarningProperty];
+	/// Take <https://schema.org/foodWarning> from [`Self`] as owned vector.
 	fn take_food_warning(&mut self) -> Vec<FoodWarningProperty>;
+	/// Get <https://schema.org/includedInHealthInsurancePlan> from [`Self`] as borrowed slice.
 	fn get_included_in_health_insurance_plan(&self) -> &[IncludedInHealthInsurancePlanProperty];
+	/// Take <https://schema.org/includedInHealthInsurancePlan> from [`Self`] as owned vector.
 	fn take_included_in_health_insurance_plan(
 		&mut self,
 	) -> Vec<IncludedInHealthInsurancePlanProperty>;
+	/// Get <https://schema.org/interactingDrug> from [`Self`] as borrowed slice.
 	fn get_interacting_drug(&self) -> &[InteractingDrugProperty];
+	/// Take <https://schema.org/interactingDrug> from [`Self`] as owned vector.
 	fn take_interacting_drug(&mut self) -> Vec<InteractingDrugProperty>;
+	/// Get <https://schema.org/isAvailableGenerically> from [`Self`] as borrowed slice.
 	fn get_is_available_generically(&self) -> &[IsAvailableGenericallyProperty];
+	/// Take <https://schema.org/isAvailableGenerically> from [`Self`] as owned vector.
 	fn take_is_available_generically(&mut self) -> Vec<IsAvailableGenericallyProperty>;
+	/// Get <https://schema.org/isProprietary> from [`Self`] as borrowed slice.
 	fn get_is_proprietary(&self) -> &[IsProprietaryProperty];
+	/// Take <https://schema.org/isProprietary> from [`Self`] as owned vector.
 	fn take_is_proprietary(&mut self) -> Vec<IsProprietaryProperty>;
+	/// Get <https://schema.org/labelDetails> from [`Self`] as borrowed slice.
 	fn get_label_details(&self) -> &[LabelDetailsProperty];
+	/// Take <https://schema.org/labelDetails> from [`Self`] as owned vector.
 	fn take_label_details(&mut self) -> Vec<LabelDetailsProperty>;
+	/// Get <https://schema.org/legalStatus> from [`Self`] as borrowed slice.
 	fn get_legal_status(&self) -> &[LegalStatusProperty];
+	/// Take <https://schema.org/legalStatus> from [`Self`] as owned vector.
 	fn take_legal_status(&mut self) -> Vec<LegalStatusProperty>;
+	/// Get <https://schema.org/maximumIntake> from [`Self`] as borrowed slice.
 	fn get_maximum_intake(&self) -> &[MaximumIntakeProperty];
+	/// Take <https://schema.org/maximumIntake> from [`Self`] as owned vector.
 	fn take_maximum_intake(&mut self) -> Vec<MaximumIntakeProperty>;
+	/// Get <https://schema.org/mechanismOfAction> from [`Self`] as borrowed slice.
 	fn get_mechanism_of_action(&self) -> &[MechanismOfActionProperty];
+	/// Take <https://schema.org/mechanismOfAction> from [`Self`] as owned vector.
 	fn take_mechanism_of_action(&mut self) -> Vec<MechanismOfActionProperty>;
+	/// Get <https://schema.org/nonProprietaryName> from [`Self`] as borrowed slice.
 	fn get_non_proprietary_name(&self) -> &[NonProprietaryNameProperty];
+	/// Take <https://schema.org/nonProprietaryName> from [`Self`] as owned vector.
 	fn take_non_proprietary_name(&mut self) -> Vec<NonProprietaryNameProperty>;
+	/// Get <https://schema.org/overdosage> from [`Self`] as borrowed slice.
 	fn get_overdosage(&self) -> &[OverdosageProperty];
+	/// Take <https://schema.org/overdosage> from [`Self`] as owned vector.
 	fn take_overdosage(&mut self) -> Vec<OverdosageProperty>;
+	/// Get <https://schema.org/pregnancyCategory> from [`Self`] as borrowed slice.
 	fn get_pregnancy_category(&self) -> &[PregnancyCategoryProperty];
+	/// Take <https://schema.org/pregnancyCategory> from [`Self`] as owned vector.
 	fn take_pregnancy_category(&mut self) -> Vec<PregnancyCategoryProperty>;
+	/// Get <https://schema.org/pregnancyWarning> from [`Self`] as borrowed slice.
 	fn get_pregnancy_warning(&self) -> &[PregnancyWarningProperty];
+	/// Take <https://schema.org/pregnancyWarning> from [`Self`] as owned vector.
 	fn take_pregnancy_warning(&mut self) -> Vec<PregnancyWarningProperty>;
+	/// Get <https://schema.org/prescribingInfo> from [`Self`] as borrowed slice.
 	fn get_prescribing_info(&self) -> &[PrescribingInfoProperty];
+	/// Take <https://schema.org/prescribingInfo> from [`Self`] as owned vector.
 	fn take_prescribing_info(&mut self) -> Vec<PrescribingInfoProperty>;
+	/// Get <https://schema.org/prescriptionStatus> from [`Self`] as borrowed slice.
 	fn get_prescription_status(&self) -> &[PrescriptionStatusProperty];
+	/// Take <https://schema.org/prescriptionStatus> from [`Self`] as owned vector.
 	fn take_prescription_status(&mut self) -> Vec<PrescriptionStatusProperty>;
+	/// Get <https://schema.org/proprietaryName> from [`Self`] as borrowed slice.
 	fn get_proprietary_name(&self) -> &[ProprietaryNameProperty];
+	/// Take <https://schema.org/proprietaryName> from [`Self`] as owned vector.
 	fn take_proprietary_name(&mut self) -> Vec<ProprietaryNameProperty>;
+	/// Get <https://schema.org/relatedDrug> from [`Self`] as borrowed slice.
 	fn get_related_drug(&self) -> &[RelatedDrugProperty];
+	/// Take <https://schema.org/relatedDrug> from [`Self`] as owned vector.
 	fn take_related_drug(&mut self) -> Vec<RelatedDrugProperty>;
+	/// Get <https://schema.org/rxcui> from [`Self`] as borrowed slice.
 	fn get_rxcui(&self) -> &[RxcuiProperty];
+	/// Take <https://schema.org/rxcui> from [`Self`] as owned vector.
 	fn take_rxcui(&mut self) -> Vec<RxcuiProperty>;
+	/// Get <https://schema.org/warning> from [`Self`] as borrowed slice.
 	fn get_warning(&self) -> &[WarningProperty];
+	/// Take <https://schema.org/warning> from [`Self`] as owned vector.
 	fn take_warning(&mut self) -> Vec<WarningProperty>;
 }
 impl DrugTrait for Drug {

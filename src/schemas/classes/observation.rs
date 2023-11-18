@@ -3,56 +3,106 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct Observation {
+	/// <https://schema.org/marginOfError>
 	pub r#margin_of_error: Vec<MarginOfErrorProperty>,
+	/// <https://schema.org/measuredProperty>
 	pub r#measured_property: Vec<MeasuredPropertyProperty>,
+	/// <https://schema.org/measurementDenominator>
 	pub r#measurement_denominator: Vec<MeasurementDenominatorProperty>,
+	/// <https://schema.org/measurementMethod>
 	pub r#measurement_method: Vec<MeasurementMethodProperty>,
+	/// <https://schema.org/measurementQualifier>
 	pub r#measurement_qualifier: Vec<MeasurementQualifierProperty>,
+	/// <https://schema.org/measurementTechnique>
 	pub r#measurement_technique: Vec<MeasurementTechniqueProperty>,
+	/// <https://schema.org/observationAbout>
 	pub r#observation_about: Vec<ObservationAboutProperty>,
+	/// <https://schema.org/observationDate>
 	pub r#observation_date: Vec<ObservationDateProperty>,
+	/// <https://schema.org/observationPeriod>
 	pub r#observation_period: Vec<ObservationPeriodProperty>,
+	/// <https://schema.org/variableMeasured>
 	pub r#variable_measured: Vec<VariableMeasuredProperty>,
+	/// <https://schema.org/additionalProperty>
 	pub r#additional_property: Vec<AdditionalPropertyProperty>,
+	/// <https://schema.org/maxValue>
 	pub r#max_value: Vec<MaxValueProperty>,
+	/// <https://schema.org/minValue>
 	pub r#min_value: Vec<MinValueProperty>,
+	/// <https://schema.org/unitCode>
 	pub r#unit_code: Vec<UnitCodeProperty>,
+	/// <https://schema.org/unitText>
 	pub r#unit_text: Vec<UnitTextProperty>,
+	/// <https://schema.org/value>
 	pub r#value: Vec<ValueProperty>,
+	/// <https://schema.org/valueReference>
 	pub r#value_reference: Vec<ValueReferenceProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/Observation>.
 pub trait ObservationTrait {
+	/// Get <https://schema.org/marginOfError> from [`Self`] as borrowed slice.
 	fn get_margin_of_error(&self) -> &[MarginOfErrorProperty];
+	/// Take <https://schema.org/marginOfError> from [`Self`] as owned vector.
 	fn take_margin_of_error(&mut self) -> Vec<MarginOfErrorProperty>;
+	/// Get <https://schema.org/measuredProperty> from [`Self`] as borrowed slice.
 	fn get_measured_property(&self) -> &[MeasuredPropertyProperty];
+	/// Take <https://schema.org/measuredProperty> from [`Self`] as owned vector.
 	fn take_measured_property(&mut self) -> Vec<MeasuredPropertyProperty>;
+	/// Get <https://schema.org/measurementDenominator> from [`Self`] as borrowed slice.
 	fn get_measurement_denominator(&self) -> &[MeasurementDenominatorProperty];
+	/// Take <https://schema.org/measurementDenominator> from [`Self`] as owned vector.
 	fn take_measurement_denominator(&mut self) -> Vec<MeasurementDenominatorProperty>;
+	/// Get <https://schema.org/measurementMethod> from [`Self`] as borrowed slice.
 	fn get_measurement_method(&self) -> &[MeasurementMethodProperty];
+	/// Take <https://schema.org/measurementMethod> from [`Self`] as owned vector.
 	fn take_measurement_method(&mut self) -> Vec<MeasurementMethodProperty>;
+	/// Get <https://schema.org/measurementQualifier> from [`Self`] as borrowed slice.
 	fn get_measurement_qualifier(&self) -> &[MeasurementQualifierProperty];
+	/// Take <https://schema.org/measurementQualifier> from [`Self`] as owned vector.
 	fn take_measurement_qualifier(&mut self) -> Vec<MeasurementQualifierProperty>;
+	/// Get <https://schema.org/measurementTechnique> from [`Self`] as borrowed slice.
 	fn get_measurement_technique(&self) -> &[MeasurementTechniqueProperty];
+	/// Take <https://schema.org/measurementTechnique> from [`Self`] as owned vector.
 	fn take_measurement_technique(&mut self) -> Vec<MeasurementTechniqueProperty>;
+	/// Get <https://schema.org/observationAbout> from [`Self`] as borrowed slice.
 	fn get_observation_about(&self) -> &[ObservationAboutProperty];
+	/// Take <https://schema.org/observationAbout> from [`Self`] as owned vector.
 	fn take_observation_about(&mut self) -> Vec<ObservationAboutProperty>;
+	/// Get <https://schema.org/observationDate> from [`Self`] as borrowed slice.
 	fn get_observation_date(&self) -> &[ObservationDateProperty];
+	/// Take <https://schema.org/observationDate> from [`Self`] as owned vector.
 	fn take_observation_date(&mut self) -> Vec<ObservationDateProperty>;
+	/// Get <https://schema.org/observationPeriod> from [`Self`] as borrowed slice.
 	fn get_observation_period(&self) -> &[ObservationPeriodProperty];
+	/// Take <https://schema.org/observationPeriod> from [`Self`] as owned vector.
 	fn take_observation_period(&mut self) -> Vec<ObservationPeriodProperty>;
+	/// Get <https://schema.org/variableMeasured> from [`Self`] as borrowed slice.
 	fn get_variable_measured(&self) -> &[VariableMeasuredProperty];
+	/// Take <https://schema.org/variableMeasured> from [`Self`] as owned vector.
 	fn take_variable_measured(&mut self) -> Vec<VariableMeasuredProperty>;
 }
 impl ObservationTrait for Observation {

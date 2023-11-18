@@ -3,197 +3,388 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct VideoGame {
+	/// <https://schema.org/actor>
 	pub r#actor: Vec<ActorProperty>,
+	/// <https://schema.org/actors>
 	pub r#actors: Vec<ActorsProperty>,
+	/// <https://schema.org/cheatCode>
 	pub r#cheat_code: Vec<CheatCodeProperty>,
+	/// <https://schema.org/director>
 	pub r#director: Vec<DirectorProperty>,
+	/// <https://schema.org/directors>
 	pub r#directors: Vec<DirectorsProperty>,
+	/// <https://schema.org/gameEdition>
 	pub r#game_edition: Vec<GameEditionProperty>,
+	/// <https://schema.org/gamePlatform>
 	pub r#game_platform: Vec<GamePlatformProperty>,
+	/// <https://schema.org/gameServer>
 	pub r#game_server: Vec<GameServerProperty>,
+	/// <https://schema.org/gameTip>
 	pub r#game_tip: Vec<GameTipProperty>,
+	/// <https://schema.org/musicBy>
 	pub r#music_by: Vec<MusicByProperty>,
+	/// <https://schema.org/playMode>
 	pub r#play_mode: Vec<PlayModeProperty>,
+	/// <https://schema.org/trailer>
 	pub r#trailer: Vec<TrailerProperty>,
+	/// <https://schema.org/about>
 	pub r#about: Vec<AboutProperty>,
+	/// <https://schema.org/abstract>
 	pub r#abstract: Vec<AbstractProperty>,
+	/// <https://schema.org/accessMode>
 	pub r#access_mode: Vec<AccessModeProperty>,
+	/// <https://schema.org/accessModeSufficient>
 	pub r#access_mode_sufficient: Vec<AccessModeSufficientProperty>,
+	/// <https://schema.org/accessibilityAPI>
 	pub r#accessibility_api: Vec<AccessibilityApiProperty>,
+	/// <https://schema.org/accessibilityControl>
 	pub r#accessibility_control: Vec<AccessibilityControlProperty>,
+	/// <https://schema.org/accessibilityFeature>
 	pub r#accessibility_feature: Vec<AccessibilityFeatureProperty>,
+	/// <https://schema.org/accessibilityHazard>
 	pub r#accessibility_hazard: Vec<AccessibilityHazardProperty>,
+	/// <https://schema.org/accessibilitySummary>
 	pub r#accessibility_summary: Vec<AccessibilitySummaryProperty>,
+	/// <https://schema.org/accountablePerson>
 	pub r#accountable_person: Vec<AccountablePersonProperty>,
+	/// <https://schema.org/acquireLicensePage>
 	pub r#acquire_license_page: Vec<AcquireLicensePageProperty>,
+	/// <https://schema.org/aggregateRating>
 	pub r#aggregate_rating: Vec<AggregateRatingProperty>,
+	/// <https://schema.org/alternativeHeadline>
 	pub r#alternative_headline: Vec<AlternativeHeadlineProperty>,
+	/// <https://schema.org/archivedAt>
 	pub r#archived_at: Vec<ArchivedAtProperty>,
+	/// <https://schema.org/assesses>
 	pub r#assesses: Vec<AssessesProperty>,
+	/// <https://schema.org/associatedMedia>
 	pub r#associated_media: Vec<AssociatedMediaProperty>,
+	/// <https://schema.org/audience>
 	pub r#audience: Vec<AudienceProperty>,
+	/// <https://schema.org/audio>
 	pub r#audio: Vec<AudioProperty>,
+	/// <https://schema.org/author>
 	pub r#author: Vec<AuthorProperty>,
+	/// <https://schema.org/award>
 	pub r#award: Vec<AwardProperty>,
+	/// <https://schema.org/awards>
 	pub r#awards: Vec<AwardsProperty>,
+	/// <https://schema.org/character>
 	pub r#character: Vec<CharacterProperty>,
+	/// <https://schema.org/citation>
 	pub r#citation: Vec<CitationProperty>,
+	/// <https://schema.org/comment>
 	pub r#comment: Vec<CommentProperty>,
+	/// <https://schema.org/commentCount>
 	pub r#comment_count: Vec<CommentCountProperty>,
+	/// <https://schema.org/conditionsOfAccess>
 	pub r#conditions_of_access: Vec<ConditionsOfAccessProperty>,
+	/// <https://schema.org/contentLocation>
 	pub r#content_location: Vec<ContentLocationProperty>,
+	/// <https://schema.org/contentRating>
 	pub r#content_rating: Vec<ContentRatingProperty>,
+	/// <https://schema.org/contentReferenceTime>
 	pub r#content_reference_time: Vec<ContentReferenceTimeProperty>,
+	/// <https://schema.org/contributor>
 	pub r#contributor: Vec<ContributorProperty>,
+	/// <https://schema.org/copyrightHolder>
 	pub r#copyright_holder: Vec<CopyrightHolderProperty>,
+	/// <https://schema.org/copyrightNotice>
 	pub r#copyright_notice: Vec<CopyrightNoticeProperty>,
+	/// <https://schema.org/copyrightYear>
 	pub r#copyright_year: Vec<CopyrightYearProperty>,
+	/// <https://schema.org/correction>
 	pub r#correction: Vec<CorrectionProperty>,
+	/// <https://schema.org/countryOfOrigin>
 	pub r#country_of_origin: Vec<CountryOfOriginProperty>,
+	/// <https://schema.org/creativeWorkStatus>
 	pub r#creative_work_status: Vec<CreativeWorkStatusProperty>,
+	/// <https://schema.org/creator>
 	pub r#creator: Vec<CreatorProperty>,
+	/// <https://schema.org/creditText>
 	pub r#credit_text: Vec<CreditTextProperty>,
+	/// <https://schema.org/dateCreated>
 	pub r#date_created: Vec<DateCreatedProperty>,
+	/// <https://schema.org/dateModified>
 	pub r#date_modified: Vec<DateModifiedProperty>,
+	/// <https://schema.org/datePublished>
 	pub r#date_published: Vec<DatePublishedProperty>,
+	/// <https://schema.org/discussionUrl>
 	pub r#discussion_url: Vec<DiscussionUrlProperty>,
+	/// <https://schema.org/editEIDR>
 	pub r#edit_eidr: Vec<EditEidrProperty>,
+	/// <https://schema.org/editor>
 	pub r#editor: Vec<EditorProperty>,
+	/// <https://schema.org/educationalAlignment>
 	pub r#educational_alignment: Vec<EducationalAlignmentProperty>,
+	/// <https://schema.org/educationalLevel>
 	pub r#educational_level: Vec<EducationalLevelProperty>,
+	/// <https://schema.org/educationalUse>
 	pub r#educational_use: Vec<EducationalUseProperty>,
+	/// <https://schema.org/encoding>
 	pub r#encoding: Vec<EncodingProperty>,
+	/// <https://schema.org/encodingFormat>
 	pub r#encoding_format: Vec<EncodingFormatProperty>,
+	/// <https://schema.org/encodings>
 	pub r#encodings: Vec<EncodingsProperty>,
+	/// <https://schema.org/exampleOfWork>
 	pub r#example_of_work: Vec<ExampleOfWorkProperty>,
+	/// <https://schema.org/expires>
 	pub r#expires: Vec<ExpiresProperty>,
+	/// <https://schema.org/fileFormat>
 	pub r#file_format: Vec<FileFormatProperty>,
+	/// <https://schema.org/funder>
 	pub r#funder: Vec<FunderProperty>,
+	/// <https://schema.org/funding>
 	pub r#funding: Vec<FundingProperty>,
+	/// <https://schema.org/genre>
 	pub r#genre: Vec<GenreProperty>,
+	/// <https://schema.org/hasPart>
 	pub r#has_part: Vec<HasPartProperty>,
+	/// <https://schema.org/headline>
 	pub r#headline: Vec<HeadlineProperty>,
+	/// <https://schema.org/inLanguage>
 	pub r#in_language: Vec<InLanguageProperty>,
+	/// <https://schema.org/interactionStatistic>
 	pub r#interaction_statistic: Vec<InteractionStatisticProperty>,
+	/// <https://schema.org/interactivityType>
 	pub r#interactivity_type: Vec<InteractivityTypeProperty>,
+	/// <https://schema.org/interpretedAsClaim>
 	pub r#interpreted_as_claim: Vec<InterpretedAsClaimProperty>,
+	/// <https://schema.org/isAccessibleForFree>
 	pub r#is_accessible_for_free: Vec<IsAccessibleForFreeProperty>,
+	/// <https://schema.org/isBasedOn>
 	pub r#is_based_on: Vec<IsBasedOnProperty>,
+	/// <https://schema.org/isBasedOnUrl>
 	pub r#is_based_on_url: Vec<IsBasedOnUrlProperty>,
+	/// <https://schema.org/isFamilyFriendly>
 	pub r#is_family_friendly: Vec<IsFamilyFriendlyProperty>,
+	/// <https://schema.org/isPartOf>
 	pub r#is_part_of: Vec<IsPartOfProperty>,
+	/// <https://schema.org/keywords>
 	pub r#keywords: Vec<KeywordsProperty>,
+	/// <https://schema.org/learningResourceType>
 	pub r#learning_resource_type: Vec<LearningResourceTypeProperty>,
+	/// <https://schema.org/license>
 	pub r#license: Vec<LicenseProperty>,
+	/// <https://schema.org/locationCreated>
 	pub r#location_created: Vec<LocationCreatedProperty>,
+	/// <https://schema.org/mainEntity>
 	pub r#main_entity: Vec<MainEntityProperty>,
+	/// <https://schema.org/maintainer>
 	pub r#maintainer: Vec<MaintainerProperty>,
+	/// <https://schema.org/material>
 	pub r#material: Vec<MaterialProperty>,
+	/// <https://schema.org/materialExtent>
 	pub r#material_extent: Vec<MaterialExtentProperty>,
+	/// <https://schema.org/mentions>
 	pub r#mentions: Vec<MentionsProperty>,
+	/// <https://schema.org/offers>
 	pub r#offers: Vec<OffersProperty>,
+	/// <https://schema.org/pattern>
 	pub r#pattern: Vec<PatternProperty>,
+	/// <https://schema.org/position>
 	pub r#position: Vec<PositionProperty>,
+	/// <https://schema.org/producer>
 	pub r#producer: Vec<ProducerProperty>,
+	/// <https://schema.org/provider>
 	pub r#provider: Vec<ProviderProperty>,
+	/// <https://schema.org/publication>
 	pub r#publication: Vec<PublicationProperty>,
+	/// <https://schema.org/publisher>
 	pub r#publisher: Vec<PublisherProperty>,
+	/// <https://schema.org/publisherImprint>
 	pub r#publisher_imprint: Vec<PublisherImprintProperty>,
+	/// <https://schema.org/publishingPrinciples>
 	pub r#publishing_principles: Vec<PublishingPrinciplesProperty>,
+	/// <https://schema.org/recordedAt>
 	pub r#recorded_at: Vec<RecordedAtProperty>,
+	/// <https://schema.org/releasedEvent>
 	pub r#released_event: Vec<ReleasedEventProperty>,
+	/// <https://schema.org/review>
 	pub r#review: Vec<ReviewProperty>,
+	/// <https://schema.org/reviews>
 	pub r#reviews: Vec<ReviewsProperty>,
+	/// <https://schema.org/schemaVersion>
 	pub r#schema_version: Vec<SchemaVersionProperty>,
+	/// <https://schema.org/sdDatePublished>
 	pub r#sd_date_published: Vec<SdDatePublishedProperty>,
+	/// <https://schema.org/sdLicense>
 	pub r#sd_license: Vec<SdLicenseProperty>,
+	/// <https://schema.org/sdPublisher>
 	pub r#sd_publisher: Vec<SdPublisherProperty>,
+	/// <https://schema.org/size>
 	pub r#size: Vec<SizeProperty>,
+	/// <https://schema.org/sourceOrganization>
 	pub r#source_organization: Vec<SourceOrganizationProperty>,
+	/// <https://schema.org/spatial>
 	pub r#spatial: Vec<SpatialProperty>,
+	/// <https://schema.org/spatialCoverage>
 	pub r#spatial_coverage: Vec<SpatialCoverageProperty>,
+	/// <https://schema.org/sponsor>
 	pub r#sponsor: Vec<SponsorProperty>,
+	/// <https://schema.org/teaches>
 	pub r#teaches: Vec<TeachesProperty>,
+	/// <https://schema.org/temporal>
 	pub r#temporal: Vec<TemporalProperty>,
+	/// <https://schema.org/temporalCoverage>
 	pub r#temporal_coverage: Vec<TemporalCoverageProperty>,
+	/// <https://schema.org/text>
 	pub r#text: Vec<TextProperty>,
+	/// <https://schema.org/thumbnail>
 	pub r#thumbnail: Vec<ThumbnailProperty>,
+	/// <https://schema.org/thumbnailUrl>
 	pub r#thumbnail_url: Vec<ThumbnailUrlProperty>,
+	/// <https://schema.org/timeRequired>
 	pub r#time_required: Vec<TimeRequiredProperty>,
+	/// <https://schema.org/translationOfWork>
 	pub r#translation_of_work: Vec<TranslationOfWorkProperty>,
+	/// <https://schema.org/translator>
 	pub r#translator: Vec<TranslatorProperty>,
+	/// <https://schema.org/typicalAgeRange>
 	pub r#typical_age_range: Vec<TypicalAgeRangeProperty>,
+	/// <https://schema.org/usageInfo>
 	pub r#usage_info: Vec<UsageInfoProperty>,
+	/// <https://schema.org/version>
 	pub r#version: Vec<VersionProperty>,
+	/// <https://schema.org/video>
 	pub r#video: Vec<VideoProperty>,
+	/// <https://schema.org/workExample>
 	pub r#work_example: Vec<WorkExampleProperty>,
+	/// <https://schema.org/workTranslation>
 	pub r#work_translation: Vec<WorkTranslationProperty>,
+	/// <https://schema.org/characterAttribute>
 	pub r#character_attribute: Vec<CharacterAttributeProperty>,
+	/// <https://schema.org/gameItem>
 	pub r#game_item: Vec<GameItemProperty>,
+	/// <https://schema.org/gameLocation>
 	pub r#game_location: Vec<GameLocationProperty>,
+	/// <https://schema.org/numberOfPlayers>
 	pub r#number_of_players: Vec<NumberOfPlayersProperty>,
+	/// <https://schema.org/quest>
 	pub r#quest: Vec<QuestProperty>,
+	/// <https://schema.org/applicationCategory>
 	pub r#application_category: Vec<ApplicationCategoryProperty>,
+	/// <https://schema.org/applicationSubCategory>
 	pub r#application_sub_category: Vec<ApplicationSubCategoryProperty>,
+	/// <https://schema.org/applicationSuite>
 	pub r#application_suite: Vec<ApplicationSuiteProperty>,
+	/// <https://schema.org/availableOnDevice>
 	pub r#available_on_device: Vec<AvailableOnDeviceProperty>,
+	/// <https://schema.org/countriesNotSupported>
 	pub r#countries_not_supported: Vec<CountriesNotSupportedProperty>,
+	/// <https://schema.org/countriesSupported>
 	pub r#countries_supported: Vec<CountriesSupportedProperty>,
+	/// <https://schema.org/device>
 	pub r#device: Vec<DeviceProperty>,
+	/// <https://schema.org/downloadUrl>
 	pub r#download_url: Vec<DownloadUrlProperty>,
+	/// <https://schema.org/featureList>
 	pub r#feature_list: Vec<FeatureListProperty>,
+	/// <https://schema.org/fileSize>
 	pub r#file_size: Vec<FileSizeProperty>,
+	/// <https://schema.org/installUrl>
 	pub r#install_url: Vec<InstallUrlProperty>,
+	/// <https://schema.org/memoryRequirements>
 	pub r#memory_requirements: Vec<MemoryRequirementsProperty>,
+	/// <https://schema.org/operatingSystem>
 	pub r#operating_system: Vec<OperatingSystemProperty>,
+	/// <https://schema.org/permissions>
 	pub r#permissions: Vec<PermissionsProperty>,
+	/// <https://schema.org/processorRequirements>
 	pub r#processor_requirements: Vec<ProcessorRequirementsProperty>,
+	/// <https://schema.org/releaseNotes>
 	pub r#release_notes: Vec<ReleaseNotesProperty>,
+	/// <https://schema.org/requirements>
 	pub r#requirements: Vec<RequirementsProperty>,
+	/// <https://schema.org/screenshot>
 	pub r#screenshot: Vec<ScreenshotProperty>,
+	/// <https://schema.org/softwareAddOn>
 	pub r#software_add_on: Vec<SoftwareAddOnProperty>,
+	/// <https://schema.org/softwareHelp>
 	pub r#software_help: Vec<SoftwareHelpProperty>,
+	/// <https://schema.org/softwareRequirements>
 	pub r#software_requirements: Vec<SoftwareRequirementsProperty>,
+	/// <https://schema.org/softwareVersion>
 	pub r#software_version: Vec<SoftwareVersionProperty>,
+	/// <https://schema.org/storageRequirements>
 	pub r#storage_requirements: Vec<StorageRequirementsProperty>,
+	/// <https://schema.org/supportingData>
 	pub r#supporting_data: Vec<SupportingDataProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/VideoGame>.
 pub trait VideoGameTrait {
+	/// Get <https://schema.org/actor> from [`Self`] as borrowed slice.
 	fn get_actor(&self) -> &[ActorProperty];
+	/// Take <https://schema.org/actor> from [`Self`] as owned vector.
 	fn take_actor(&mut self) -> Vec<ActorProperty>;
+	/// Get <https://schema.org/actors> from [`Self`] as borrowed slice.
 	fn get_actors(&self) -> &[ActorsProperty];
+	/// Take <https://schema.org/actors> from [`Self`] as owned vector.
 	fn take_actors(&mut self) -> Vec<ActorsProperty>;
+	/// Get <https://schema.org/cheatCode> from [`Self`] as borrowed slice.
 	fn get_cheat_code(&self) -> &[CheatCodeProperty];
+	/// Take <https://schema.org/cheatCode> from [`Self`] as owned vector.
 	fn take_cheat_code(&mut self) -> Vec<CheatCodeProperty>;
+	/// Get <https://schema.org/director> from [`Self`] as borrowed slice.
 	fn get_director(&self) -> &[DirectorProperty];
+	/// Take <https://schema.org/director> from [`Self`] as owned vector.
 	fn take_director(&mut self) -> Vec<DirectorProperty>;
+	/// Get <https://schema.org/directors> from [`Self`] as borrowed slice.
 	fn get_directors(&self) -> &[DirectorsProperty];
+	/// Take <https://schema.org/directors> from [`Self`] as owned vector.
 	fn take_directors(&mut self) -> Vec<DirectorsProperty>;
+	/// Get <https://schema.org/gameEdition> from [`Self`] as borrowed slice.
 	fn get_game_edition(&self) -> &[GameEditionProperty];
+	/// Take <https://schema.org/gameEdition> from [`Self`] as owned vector.
 	fn take_game_edition(&mut self) -> Vec<GameEditionProperty>;
+	/// Get <https://schema.org/gamePlatform> from [`Self`] as borrowed slice.
 	fn get_game_platform(&self) -> &[GamePlatformProperty];
+	/// Take <https://schema.org/gamePlatform> from [`Self`] as owned vector.
 	fn take_game_platform(&mut self) -> Vec<GamePlatformProperty>;
+	/// Get <https://schema.org/gameServer> from [`Self`] as borrowed slice.
 	fn get_game_server(&self) -> &[GameServerProperty];
+	/// Take <https://schema.org/gameServer> from [`Self`] as owned vector.
 	fn take_game_server(&mut self) -> Vec<GameServerProperty>;
+	/// Get <https://schema.org/gameTip> from [`Self`] as borrowed slice.
 	fn get_game_tip(&self) -> &[GameTipProperty];
+	/// Take <https://schema.org/gameTip> from [`Self`] as owned vector.
 	fn take_game_tip(&mut self) -> Vec<GameTipProperty>;
+	/// Get <https://schema.org/musicBy> from [`Self`] as borrowed slice.
 	fn get_music_by(&self) -> &[MusicByProperty];
+	/// Take <https://schema.org/musicBy> from [`Self`] as owned vector.
 	fn take_music_by(&mut self) -> Vec<MusicByProperty>;
+	/// Get <https://schema.org/playMode> from [`Self`] as borrowed slice.
 	fn get_play_mode(&self) -> &[PlayModeProperty];
+	/// Take <https://schema.org/playMode> from [`Self`] as owned vector.
 	fn take_play_mode(&mut self) -> Vec<PlayModeProperty>;
+	/// Get <https://schema.org/trailer> from [`Self`] as borrowed slice.
 	fn get_trailer(&self) -> &[TrailerProperty];
+	/// Take <https://schema.org/trailer> from [`Self`] as owned vector.
 	fn take_trailer(&mut self) -> Vec<TrailerProperty>;
 }
 impl VideoGameTrait for VideoGame {

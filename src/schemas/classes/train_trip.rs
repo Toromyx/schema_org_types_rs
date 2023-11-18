@@ -3,45 +3,84 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct TrainTrip {
+	/// <https://schema.org/arrivalPlatform>
 	pub r#arrival_platform: Vec<ArrivalPlatformProperty>,
+	/// <https://schema.org/arrivalStation>
 	pub r#arrival_station: Vec<ArrivalStationProperty>,
+	/// <https://schema.org/departurePlatform>
 	pub r#departure_platform: Vec<DeparturePlatformProperty>,
+	/// <https://schema.org/departureStation>
 	pub r#departure_station: Vec<DepartureStationProperty>,
+	/// <https://schema.org/trainName>
 	pub r#train_name: Vec<TrainNameProperty>,
+	/// <https://schema.org/trainNumber>
 	pub r#train_number: Vec<TrainNumberProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
+	/// <https://schema.org/arrivalTime>
 	pub r#arrival_time: Vec<ArrivalTimeProperty>,
+	/// <https://schema.org/departureTime>
 	pub r#departure_time: Vec<DepartureTimeProperty>,
+	/// <https://schema.org/itinerary>
 	pub r#itinerary: Vec<ItineraryProperty>,
+	/// <https://schema.org/offers>
 	pub r#offers: Vec<OffersProperty>,
+	/// <https://schema.org/partOfTrip>
 	pub r#part_of_trip: Vec<PartOfTripProperty>,
+	/// <https://schema.org/provider>
 	pub r#provider: Vec<ProviderProperty>,
+	/// <https://schema.org/subTrip>
 	pub r#sub_trip: Vec<SubTripProperty>,
+	/// <https://schema.org/tripOrigin>
 	pub r#trip_origin: Vec<TripOriginProperty>,
 }
+/// This trait is for properties from <https://schema.org/TrainTrip>.
 pub trait TrainTripTrait {
+	/// Get <https://schema.org/arrivalPlatform> from [`Self`] as borrowed slice.
 	fn get_arrival_platform(&self) -> &[ArrivalPlatformProperty];
+	/// Take <https://schema.org/arrivalPlatform> from [`Self`] as owned vector.
 	fn take_arrival_platform(&mut self) -> Vec<ArrivalPlatformProperty>;
+	/// Get <https://schema.org/arrivalStation> from [`Self`] as borrowed slice.
 	fn get_arrival_station(&self) -> &[ArrivalStationProperty];
+	/// Take <https://schema.org/arrivalStation> from [`Self`] as owned vector.
 	fn take_arrival_station(&mut self) -> Vec<ArrivalStationProperty>;
+	/// Get <https://schema.org/departurePlatform> from [`Self`] as borrowed slice.
 	fn get_departure_platform(&self) -> &[DeparturePlatformProperty];
+	/// Take <https://schema.org/departurePlatform> from [`Self`] as owned vector.
 	fn take_departure_platform(&mut self) -> Vec<DeparturePlatformProperty>;
+	/// Get <https://schema.org/departureStation> from [`Self`] as borrowed slice.
 	fn get_departure_station(&self) -> &[DepartureStationProperty];
+	/// Take <https://schema.org/departureStation> from [`Self`] as owned vector.
 	fn take_departure_station(&mut self) -> Vec<DepartureStationProperty>;
+	/// Get <https://schema.org/trainName> from [`Self`] as borrowed slice.
 	fn get_train_name(&self) -> &[TrainNameProperty];
+	/// Take <https://schema.org/trainName> from [`Self`] as owned vector.
 	fn take_train_name(&mut self) -> Vec<TrainNameProperty>;
+	/// Get <https://schema.org/trainNumber> from [`Self`] as borrowed slice.
 	fn get_train_number(&self) -> &[TrainNumberProperty];
+	/// Take <https://schema.org/trainNumber> from [`Self`] as owned vector.
 	fn take_train_number(&mut self) -> Vec<TrainNumberProperty>;
 }
 impl TrainTripTrait for TrainTrip {

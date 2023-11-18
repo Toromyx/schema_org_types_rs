@@ -3,44 +3,82 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct QualitativeValue {
+	/// <https://schema.org/additionalProperty>
 	pub r#additional_property: Vec<AdditionalPropertyProperty>,
+	/// <https://schema.org/equal>
 	pub r#equal: Vec<EqualProperty>,
+	/// <https://schema.org/greater>
 	pub r#greater: Vec<GreaterProperty>,
+	/// <https://schema.org/greaterOrEqual>
 	pub r#greater_or_equal: Vec<GreaterOrEqualProperty>,
+	/// <https://schema.org/lesser>
 	pub r#lesser: Vec<LesserProperty>,
+	/// <https://schema.org/lesserOrEqual>
 	pub r#lesser_or_equal: Vec<LesserOrEqualProperty>,
+	/// <https://schema.org/nonEqual>
 	pub r#non_equal: Vec<NonEqualProperty>,
+	/// <https://schema.org/valueReference>
 	pub r#value_reference: Vec<ValueReferenceProperty>,
+	/// <https://schema.org/supersededBy>
 	pub r#superseded_by: Vec<SupersededByProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/QualitativeValue>.
 pub trait QualitativeValueTrait {
+	/// Get <https://schema.org/additionalProperty> from [`Self`] as borrowed slice.
 	fn get_additional_property(&self) -> &[AdditionalPropertyProperty];
+	/// Take <https://schema.org/additionalProperty> from [`Self`] as owned vector.
 	fn take_additional_property(&mut self) -> Vec<AdditionalPropertyProperty>;
+	/// Get <https://schema.org/equal> from [`Self`] as borrowed slice.
 	fn get_equal(&self) -> &[EqualProperty];
+	/// Take <https://schema.org/equal> from [`Self`] as owned vector.
 	fn take_equal(&mut self) -> Vec<EqualProperty>;
+	/// Get <https://schema.org/greater> from [`Self`] as borrowed slice.
 	fn get_greater(&self) -> &[GreaterProperty];
+	/// Take <https://schema.org/greater> from [`Self`] as owned vector.
 	fn take_greater(&mut self) -> Vec<GreaterProperty>;
+	/// Get <https://schema.org/greaterOrEqual> from [`Self`] as borrowed slice.
 	fn get_greater_or_equal(&self) -> &[GreaterOrEqualProperty];
+	/// Take <https://schema.org/greaterOrEqual> from [`Self`] as owned vector.
 	fn take_greater_or_equal(&mut self) -> Vec<GreaterOrEqualProperty>;
+	/// Get <https://schema.org/lesser> from [`Self`] as borrowed slice.
 	fn get_lesser(&self) -> &[LesserProperty];
+	/// Take <https://schema.org/lesser> from [`Self`] as owned vector.
 	fn take_lesser(&mut self) -> Vec<LesserProperty>;
+	/// Get <https://schema.org/lesserOrEqual> from [`Self`] as borrowed slice.
 	fn get_lesser_or_equal(&self) -> &[LesserOrEqualProperty];
+	/// Take <https://schema.org/lesserOrEqual> from [`Self`] as owned vector.
 	fn take_lesser_or_equal(&mut self) -> Vec<LesserOrEqualProperty>;
+	/// Get <https://schema.org/nonEqual> from [`Self`] as borrowed slice.
 	fn get_non_equal(&self) -> &[NonEqualProperty];
+	/// Take <https://schema.org/nonEqual> from [`Self`] as owned vector.
 	fn take_non_equal(&mut self) -> Vec<NonEqualProperty>;
+	/// Get <https://schema.org/valueReference> from [`Self`] as borrowed slice.
 	fn get_value_reference(&self) -> &[ValueReferenceProperty];
+	/// Take <https://schema.org/valueReference> from [`Self`] as owned vector.
 	fn take_value_reference(&mut self) -> Vec<ValueReferenceProperty>;
 }
 impl QualitativeValueTrait for QualitativeValue {

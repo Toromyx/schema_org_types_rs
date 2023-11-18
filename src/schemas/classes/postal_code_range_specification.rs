@@ -3,25 +3,44 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct PostalCodeRangeSpecification {
+	/// <https://schema.org/postalCodeBegin>
 	pub r#postal_code_begin: Vec<PostalCodeBeginProperty>,
+	/// <https://schema.org/postalCodeEnd>
 	pub r#postal_code_end: Vec<PostalCodeEndProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/PostalCodeRangeSpecification>.
 pub trait PostalCodeRangeSpecificationTrait {
+	/// Get <https://schema.org/postalCodeBegin> from [`Self`] as borrowed slice.
 	fn get_postal_code_begin(&self) -> &[PostalCodeBeginProperty];
+	/// Take <https://schema.org/postalCodeBegin> from [`Self`] as owned vector.
 	fn take_postal_code_begin(&mut self) -> Vec<PostalCodeBeginProperty>;
+	/// Get <https://schema.org/postalCodeEnd> from [`Self`] as borrowed slice.
 	fn get_postal_code_end(&self) -> &[PostalCodeEndProperty];
+	/// Take <https://schema.org/postalCodeEnd> from [`Self`] as owned vector.
 	fn take_postal_code_end(&mut self) -> Vec<PostalCodeEndProperty>;
 }
 impl PostalCodeRangeSpecificationTrait for PostalCodeRangeSpecification {

@@ -3,28 +3,50 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct ItemList {
+	/// <https://schema.org/itemListElement>
 	pub r#item_list_element: Vec<ItemListElementProperty>,
+	/// <https://schema.org/itemListOrder>
 	pub r#item_list_order: Vec<ItemListOrderProperty>,
+	/// <https://schema.org/numberOfItems>
 	pub r#number_of_items: Vec<NumberOfItemsProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/ItemList>.
 pub trait ItemListTrait {
+	/// Get <https://schema.org/itemListElement> from [`Self`] as borrowed slice.
 	fn get_item_list_element(&self) -> &[ItemListElementProperty];
+	/// Take <https://schema.org/itemListElement> from [`Self`] as owned vector.
 	fn take_item_list_element(&mut self) -> Vec<ItemListElementProperty>;
+	/// Get <https://schema.org/itemListOrder> from [`Self`] as borrowed slice.
 	fn get_item_list_order(&self) -> &[ItemListOrderProperty];
+	/// Take <https://schema.org/itemListOrder> from [`Self`] as owned vector.
 	fn take_item_list_order(&mut self) -> Vec<ItemListOrderProperty>;
+	/// Get <https://schema.org/numberOfItems> from [`Self`] as borrowed slice.
 	fn get_number_of_items(&self) -> &[NumberOfItemsProperty];
+	/// Take <https://schema.org/numberOfItems> from [`Self`] as owned vector.
 	fn take_number_of_items(&mut self) -> Vec<NumberOfItemsProperty>;
 }
 impl ItemListTrait for ItemList {

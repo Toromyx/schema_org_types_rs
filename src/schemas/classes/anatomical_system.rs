@@ -3,42 +3,78 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct AnatomicalSystem {
+	/// <https://schema.org/associatedPathophysiology>
 	pub r#associated_pathophysiology: Vec<AssociatedPathophysiologyProperty>,
+	/// <https://schema.org/comprisedOf>
 	pub r#comprised_of: Vec<ComprisedOfProperty>,
+	/// <https://schema.org/relatedCondition>
 	pub r#related_condition: Vec<RelatedConditionProperty>,
+	/// <https://schema.org/relatedStructure>
 	pub r#related_structure: Vec<RelatedStructureProperty>,
+	/// <https://schema.org/relatedTherapy>
 	pub r#related_therapy: Vec<RelatedTherapyProperty>,
+	/// <https://schema.org/code>
 	pub r#code: Vec<CodeProperty>,
+	/// <https://schema.org/funding>
 	pub r#funding: Vec<FundingProperty>,
+	/// <https://schema.org/guideline>
 	pub r#guideline: Vec<GuidelineProperty>,
+	/// <https://schema.org/legalStatus>
 	pub r#legal_status: Vec<LegalStatusProperty>,
+	/// <https://schema.org/medicineSystem>
 	pub r#medicine_system: Vec<MedicineSystemProperty>,
+	/// <https://schema.org/recognizingAuthority>
 	pub r#recognizing_authority: Vec<RecognizingAuthorityProperty>,
+	/// <https://schema.org/relevantSpecialty>
 	pub r#relevant_specialty: Vec<RelevantSpecialtyProperty>,
+	/// <https://schema.org/study>
 	pub r#study: Vec<StudyProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/AnatomicalSystem>.
 pub trait AnatomicalSystemTrait {
+	/// Get <https://schema.org/associatedPathophysiology> from [`Self`] as borrowed slice.
 	fn get_associated_pathophysiology(&self) -> &[AssociatedPathophysiologyProperty];
+	/// Take <https://schema.org/associatedPathophysiology> from [`Self`] as owned vector.
 	fn take_associated_pathophysiology(&mut self) -> Vec<AssociatedPathophysiologyProperty>;
+	/// Get <https://schema.org/comprisedOf> from [`Self`] as borrowed slice.
 	fn get_comprised_of(&self) -> &[ComprisedOfProperty];
+	/// Take <https://schema.org/comprisedOf> from [`Self`] as owned vector.
 	fn take_comprised_of(&mut self) -> Vec<ComprisedOfProperty>;
+	/// Get <https://schema.org/relatedCondition> from [`Self`] as borrowed slice.
 	fn get_related_condition(&self) -> &[RelatedConditionProperty];
+	/// Take <https://schema.org/relatedCondition> from [`Self`] as owned vector.
 	fn take_related_condition(&mut self) -> Vec<RelatedConditionProperty>;
+	/// Get <https://schema.org/relatedStructure> from [`Self`] as borrowed slice.
 	fn get_related_structure(&self) -> &[RelatedStructureProperty];
+	/// Take <https://schema.org/relatedStructure> from [`Self`] as owned vector.
 	fn take_related_structure(&mut self) -> Vec<RelatedStructureProperty>;
+	/// Get <https://schema.org/relatedTherapy> from [`Self`] as borrowed slice.
 	fn get_related_therapy(&self) -> &[RelatedTherapyProperty];
+	/// Take <https://schema.org/relatedTherapy> from [`Self`] as owned vector.
 	fn take_related_therapy(&mut self) -> Vec<RelatedTherapyProperty>;
 }
 impl AnatomicalSystemTrait for AnatomicalSystem {

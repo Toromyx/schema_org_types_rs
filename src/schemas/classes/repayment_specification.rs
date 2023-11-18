@@ -3,34 +3,62 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct RepaymentSpecification {
+	/// <https://schema.org/downPayment>
 	pub r#down_payment: Vec<DownPaymentProperty>,
+	/// <https://schema.org/earlyPrepaymentPenalty>
 	pub r#early_prepayment_penalty: Vec<EarlyPrepaymentPenaltyProperty>,
+	/// <https://schema.org/loanPaymentAmount>
 	pub r#loan_payment_amount: Vec<LoanPaymentAmountProperty>,
+	/// <https://schema.org/loanPaymentFrequency>
 	pub r#loan_payment_frequency: Vec<LoanPaymentFrequencyProperty>,
+	/// <https://schema.org/numberOfLoanPayments>
 	pub r#number_of_loan_payments: Vec<NumberOfLoanPaymentsProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/RepaymentSpecification>.
 pub trait RepaymentSpecificationTrait {
+	/// Get <https://schema.org/downPayment> from [`Self`] as borrowed slice.
 	fn get_down_payment(&self) -> &[DownPaymentProperty];
+	/// Take <https://schema.org/downPayment> from [`Self`] as owned vector.
 	fn take_down_payment(&mut self) -> Vec<DownPaymentProperty>;
+	/// Get <https://schema.org/earlyPrepaymentPenalty> from [`Self`] as borrowed slice.
 	fn get_early_prepayment_penalty(&self) -> &[EarlyPrepaymentPenaltyProperty];
+	/// Take <https://schema.org/earlyPrepaymentPenalty> from [`Self`] as owned vector.
 	fn take_early_prepayment_penalty(&mut self) -> Vec<EarlyPrepaymentPenaltyProperty>;
+	/// Get <https://schema.org/loanPaymentAmount> from [`Self`] as borrowed slice.
 	fn get_loan_payment_amount(&self) -> &[LoanPaymentAmountProperty];
+	/// Take <https://schema.org/loanPaymentAmount> from [`Self`] as owned vector.
 	fn take_loan_payment_amount(&mut self) -> Vec<LoanPaymentAmountProperty>;
+	/// Get <https://schema.org/loanPaymentFrequency> from [`Self`] as borrowed slice.
 	fn get_loan_payment_frequency(&self) -> &[LoanPaymentFrequencyProperty];
+	/// Take <https://schema.org/loanPaymentFrequency> from [`Self`] as owned vector.
 	fn take_loan_payment_frequency(&mut self) -> Vec<LoanPaymentFrequencyProperty>;
+	/// Get <https://schema.org/numberOfLoanPayments> from [`Self`] as borrowed slice.
 	fn get_number_of_loan_payments(&self) -> &[NumberOfLoanPaymentsProperty];
+	/// Take <https://schema.org/numberOfLoanPayments> from [`Self`] as owned vector.
 	fn take_number_of_loan_payments(&mut self) -> Vec<NumberOfLoanPaymentsProperty>;
 }
 impl RepaymentSpecificationTrait for RepaymentSpecification {

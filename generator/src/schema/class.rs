@@ -8,7 +8,7 @@ use oxigraph::store::Store;
 use quote::{__private::TokenStream, quote, ToTokens, TokenStreamExt};
 
 use crate::{
-	doc_lines::DocLines,
+	doc_lines::{strings_as_doc_lines, DocLines},
 	schema::{class::serde::serde_mod, map_schema_name, ReferencedSchema, Schema},
 	sparql::{node_type::NodeType, SchemaQueries, SchemaQuerySolution},
 };
@@ -154,6 +154,7 @@ impl ToTokens for Class {
 		let doc_lines = self.doc_lines_token_stream();
 		let name = TokenStream::from_str(&self.name.to_case(Case::UpperCamel)).unwrap();
 		let fields = self.get_all_properties_iter().map(|referenced_schema| {
+			let doc_lines = strings_as_doc_lines(&[format!("<{}>", referenced_schema.iri)]);
 			let property = TokenStream::from_str(&format!(
 				"pub {}: {}",
 				get_property_name(referenced_schema),
@@ -161,9 +162,12 @@ impl ToTokens for Class {
 			))
 			.unwrap();
 			quote!(
+				#doc_lines
 				#property,
 			)
 		});
+		let trait_doc_lines =
+			strings_as_doc_lines(&[format!("This trait is for properties from <{}>.", self.iri)]);
 		let trait_name = get_trait_name(&self.name);
 
 		fn get_get_function_signature(property: &ReferencedSchema) -> TokenStream {
@@ -187,10 +191,20 @@ impl ToTokens for Class {
 		}
 
 		let trait_functions = self.properties.iter().map(|referenced_schema| {
+			let get_function_doc_lines = strings_as_doc_lines(&[format!(
+				"Get <{}> from [`Self`] as borrowed slice.",
+				referenced_schema.iri
+			)]);
 			let get_function_signature = get_get_function_signature(referenced_schema);
+			let take_function_doc_lines = strings_as_doc_lines(&[format!(
+				"Take <{}> from [`Self`] as owned vector.",
+				referenced_schema.iri
+			)]);
 			let take_function_signature = get_take_function_signature(referenced_schema);
 			quote!(
+				#get_function_doc_lines
 				#get_function_signature;
+				#take_function_doc_lines
 				#take_function_signature;
 			)
 		});
@@ -233,6 +247,7 @@ impl ToTokens for Class {
 			pub struct #name {
 				#(#fields)*
 			}
+			#trait_doc_lines
 			pub trait #trait_name {
 				#(#trait_functions)*
 			}

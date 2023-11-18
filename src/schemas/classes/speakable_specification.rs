@@ -3,25 +3,44 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct SpeakableSpecification {
+	/// <https://schema.org/cssSelector>
 	pub r#css_selector: Vec<CssSelectorProperty>,
+	/// <https://schema.org/xpath>
 	pub r#xpath: Vec<XpathProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/SpeakableSpecification>.
 pub trait SpeakableSpecificationTrait {
+	/// Get <https://schema.org/cssSelector> from [`Self`] as borrowed slice.
 	fn get_css_selector(&self) -> &[CssSelectorProperty];
+	/// Take <https://schema.org/cssSelector> from [`Self`] as owned vector.
 	fn take_css_selector(&mut self) -> Vec<CssSelectorProperty>;
+	/// Get <https://schema.org/xpath> from [`Self`] as borrowed slice.
 	fn get_xpath(&self) -> &[XpathProperty];
+	/// Take <https://schema.org/xpath> from [`Self`] as owned vector.
 	fn take_xpath(&mut self) -> Vec<XpathProperty>;
 }
 impl SpeakableSpecificationTrait for SpeakableSpecification {

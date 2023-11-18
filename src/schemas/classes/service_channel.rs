@@ -3,43 +3,80 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct ServiceChannel {
+	/// <https://schema.org/availableLanguage>
 	pub r#available_language: Vec<AvailableLanguageProperty>,
+	/// <https://schema.org/processingTime>
 	pub r#processing_time: Vec<ProcessingTimeProperty>,
+	/// <https://schema.org/providesService>
 	pub r#provides_service: Vec<ProvidesServiceProperty>,
+	/// <https://schema.org/serviceLocation>
 	pub r#service_location: Vec<ServiceLocationProperty>,
+	/// <https://schema.org/servicePhone>
 	pub r#service_phone: Vec<ServicePhoneProperty>,
+	/// <https://schema.org/servicePostalAddress>
 	pub r#service_postal_address: Vec<ServicePostalAddressProperty>,
+	/// <https://schema.org/serviceSmsNumber>
 	pub r#service_sms_number: Vec<ServiceSmsNumberProperty>,
+	/// <https://schema.org/serviceUrl>
 	pub r#service_url: Vec<ServiceUrlProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/ServiceChannel>.
 pub trait ServiceChannelTrait {
+	/// Get <https://schema.org/availableLanguage> from [`Self`] as borrowed slice.
 	fn get_available_language(&self) -> &[AvailableLanguageProperty];
+	/// Take <https://schema.org/availableLanguage> from [`Self`] as owned vector.
 	fn take_available_language(&mut self) -> Vec<AvailableLanguageProperty>;
+	/// Get <https://schema.org/processingTime> from [`Self`] as borrowed slice.
 	fn get_processing_time(&self) -> &[ProcessingTimeProperty];
+	/// Take <https://schema.org/processingTime> from [`Self`] as owned vector.
 	fn take_processing_time(&mut self) -> Vec<ProcessingTimeProperty>;
+	/// Get <https://schema.org/providesService> from [`Self`] as borrowed slice.
 	fn get_provides_service(&self) -> &[ProvidesServiceProperty];
+	/// Take <https://schema.org/providesService> from [`Self`] as owned vector.
 	fn take_provides_service(&mut self) -> Vec<ProvidesServiceProperty>;
+	/// Get <https://schema.org/serviceLocation> from [`Self`] as borrowed slice.
 	fn get_service_location(&self) -> &[ServiceLocationProperty];
+	/// Take <https://schema.org/serviceLocation> from [`Self`] as owned vector.
 	fn take_service_location(&mut self) -> Vec<ServiceLocationProperty>;
+	/// Get <https://schema.org/servicePhone> from [`Self`] as borrowed slice.
 	fn get_service_phone(&self) -> &[ServicePhoneProperty];
+	/// Take <https://schema.org/servicePhone> from [`Self`] as owned vector.
 	fn take_service_phone(&mut self) -> Vec<ServicePhoneProperty>;
+	/// Get <https://schema.org/servicePostalAddress> from [`Self`] as borrowed slice.
 	fn get_service_postal_address(&self) -> &[ServicePostalAddressProperty];
+	/// Take <https://schema.org/servicePostalAddress> from [`Self`] as owned vector.
 	fn take_service_postal_address(&mut self) -> Vec<ServicePostalAddressProperty>;
+	/// Get <https://schema.org/serviceSmsNumber> from [`Self`] as borrowed slice.
 	fn get_service_sms_number(&self) -> &[ServiceSmsNumberProperty];
+	/// Take <https://schema.org/serviceSmsNumber> from [`Self`] as owned vector.
 	fn take_service_sms_number(&mut self) -> Vec<ServiceSmsNumberProperty>;
+	/// Get <https://schema.org/serviceUrl> from [`Self`] as borrowed slice.
 	fn get_service_url(&self) -> &[ServiceUrlProperty];
+	/// Take <https://schema.org/serviceUrl> from [`Self`] as owned vector.
 	fn take_service_url(&mut self) -> Vec<ServiceUrlProperty>;
 }
 impl ServiceChannelTrait for ServiceChannel {

@@ -3,52 +3,98 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct PropertyValueSpecification {
+	/// <https://schema.org/defaultValue>
 	pub r#default_value: Vec<DefaultValueProperty>,
+	/// <https://schema.org/maxValue>
 	pub r#max_value: Vec<MaxValueProperty>,
+	/// <https://schema.org/minValue>
 	pub r#min_value: Vec<MinValueProperty>,
+	/// <https://schema.org/multipleValues>
 	pub r#multiple_values: Vec<MultipleValuesProperty>,
+	/// <https://schema.org/readonlyValue>
 	pub r#readonly_value: Vec<ReadonlyValueProperty>,
+	/// <https://schema.org/stepValue>
 	pub r#step_value: Vec<StepValueProperty>,
+	/// <https://schema.org/valueMaxLength>
 	pub r#value_max_length: Vec<ValueMaxLengthProperty>,
+	/// <https://schema.org/valueMinLength>
 	pub r#value_min_length: Vec<ValueMinLengthProperty>,
+	/// <https://schema.org/valueName>
 	pub r#value_name: Vec<ValueNameProperty>,
+	/// <https://schema.org/valuePattern>
 	pub r#value_pattern: Vec<ValuePatternProperty>,
+	/// <https://schema.org/valueRequired>
 	pub r#value_required: Vec<ValueRequiredProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/PropertyValueSpecification>.
 pub trait PropertyValueSpecificationTrait {
+	/// Get <https://schema.org/defaultValue> from [`Self`] as borrowed slice.
 	fn get_default_value(&self) -> &[DefaultValueProperty];
+	/// Take <https://schema.org/defaultValue> from [`Self`] as owned vector.
 	fn take_default_value(&mut self) -> Vec<DefaultValueProperty>;
+	/// Get <https://schema.org/maxValue> from [`Self`] as borrowed slice.
 	fn get_max_value(&self) -> &[MaxValueProperty];
+	/// Take <https://schema.org/maxValue> from [`Self`] as owned vector.
 	fn take_max_value(&mut self) -> Vec<MaxValueProperty>;
+	/// Get <https://schema.org/minValue> from [`Self`] as borrowed slice.
 	fn get_min_value(&self) -> &[MinValueProperty];
+	/// Take <https://schema.org/minValue> from [`Self`] as owned vector.
 	fn take_min_value(&mut self) -> Vec<MinValueProperty>;
+	/// Get <https://schema.org/multipleValues> from [`Self`] as borrowed slice.
 	fn get_multiple_values(&self) -> &[MultipleValuesProperty];
+	/// Take <https://schema.org/multipleValues> from [`Self`] as owned vector.
 	fn take_multiple_values(&mut self) -> Vec<MultipleValuesProperty>;
+	/// Get <https://schema.org/readonlyValue> from [`Self`] as borrowed slice.
 	fn get_readonly_value(&self) -> &[ReadonlyValueProperty];
+	/// Take <https://schema.org/readonlyValue> from [`Self`] as owned vector.
 	fn take_readonly_value(&mut self) -> Vec<ReadonlyValueProperty>;
+	/// Get <https://schema.org/stepValue> from [`Self`] as borrowed slice.
 	fn get_step_value(&self) -> &[StepValueProperty];
+	/// Take <https://schema.org/stepValue> from [`Self`] as owned vector.
 	fn take_step_value(&mut self) -> Vec<StepValueProperty>;
+	/// Get <https://schema.org/valueMaxLength> from [`Self`] as borrowed slice.
 	fn get_value_max_length(&self) -> &[ValueMaxLengthProperty];
+	/// Take <https://schema.org/valueMaxLength> from [`Self`] as owned vector.
 	fn take_value_max_length(&mut self) -> Vec<ValueMaxLengthProperty>;
+	/// Get <https://schema.org/valueMinLength> from [`Self`] as borrowed slice.
 	fn get_value_min_length(&self) -> &[ValueMinLengthProperty];
+	/// Take <https://schema.org/valueMinLength> from [`Self`] as owned vector.
 	fn take_value_min_length(&mut self) -> Vec<ValueMinLengthProperty>;
+	/// Get <https://schema.org/valueName> from [`Self`] as borrowed slice.
 	fn get_value_name(&self) -> &[ValueNameProperty];
+	/// Take <https://schema.org/valueName> from [`Self`] as owned vector.
 	fn take_value_name(&mut self) -> Vec<ValueNameProperty>;
+	/// Get <https://schema.org/valuePattern> from [`Self`] as borrowed slice.
 	fn get_value_pattern(&self) -> &[ValuePatternProperty];
+	/// Take <https://schema.org/valuePattern> from [`Self`] as owned vector.
 	fn take_value_pattern(&mut self) -> Vec<ValuePatternProperty>;
+	/// Get <https://schema.org/valueRequired> from [`Self`] as borrowed slice.
 	fn get_value_required(&self) -> &[ValueRequiredProperty];
+	/// Take <https://schema.org/valueRequired> from [`Self`] as owned vector.
 	fn take_value_required(&mut self) -> Vec<ValueRequiredProperty>;
 }
 impl PropertyValueSpecificationTrait for PropertyValueSpecification {

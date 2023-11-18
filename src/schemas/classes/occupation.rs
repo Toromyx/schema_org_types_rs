@@ -3,43 +3,80 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct Occupation {
+	/// <https://schema.org/educationRequirements>
 	pub r#education_requirements: Vec<EducationRequirementsProperty>,
+	/// <https://schema.org/estimatedSalary>
 	pub r#estimated_salary: Vec<EstimatedSalaryProperty>,
+	/// <https://schema.org/experienceRequirements>
 	pub r#experience_requirements: Vec<ExperienceRequirementsProperty>,
+	/// <https://schema.org/occupationLocation>
 	pub r#occupation_location: Vec<OccupationLocationProperty>,
+	/// <https://schema.org/occupationalCategory>
 	pub r#occupational_category: Vec<OccupationalCategoryProperty>,
+	/// <https://schema.org/qualifications>
 	pub r#qualifications: Vec<QualificationsProperty>,
+	/// <https://schema.org/responsibilities>
 	pub r#responsibilities: Vec<ResponsibilitiesProperty>,
+	/// <https://schema.org/skills>
 	pub r#skills: Vec<SkillsProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/Occupation>.
 pub trait OccupationTrait {
+	/// Get <https://schema.org/educationRequirements> from [`Self`] as borrowed slice.
 	fn get_education_requirements(&self) -> &[EducationRequirementsProperty];
+	/// Take <https://schema.org/educationRequirements> from [`Self`] as owned vector.
 	fn take_education_requirements(&mut self) -> Vec<EducationRequirementsProperty>;
+	/// Get <https://schema.org/estimatedSalary> from [`Self`] as borrowed slice.
 	fn get_estimated_salary(&self) -> &[EstimatedSalaryProperty];
+	/// Take <https://schema.org/estimatedSalary> from [`Self`] as owned vector.
 	fn take_estimated_salary(&mut self) -> Vec<EstimatedSalaryProperty>;
+	/// Get <https://schema.org/experienceRequirements> from [`Self`] as borrowed slice.
 	fn get_experience_requirements(&self) -> &[ExperienceRequirementsProperty];
+	/// Take <https://schema.org/experienceRequirements> from [`Self`] as owned vector.
 	fn take_experience_requirements(&mut self) -> Vec<ExperienceRequirementsProperty>;
+	/// Get <https://schema.org/occupationLocation> from [`Self`] as borrowed slice.
 	fn get_occupation_location(&self) -> &[OccupationLocationProperty];
+	/// Take <https://schema.org/occupationLocation> from [`Self`] as owned vector.
 	fn take_occupation_location(&mut self) -> Vec<OccupationLocationProperty>;
+	/// Get <https://schema.org/occupationalCategory> from [`Self`] as borrowed slice.
 	fn get_occupational_category(&self) -> &[OccupationalCategoryProperty];
+	/// Take <https://schema.org/occupationalCategory> from [`Self`] as owned vector.
 	fn take_occupational_category(&mut self) -> Vec<OccupationalCategoryProperty>;
+	/// Get <https://schema.org/qualifications> from [`Self`] as borrowed slice.
 	fn get_qualifications(&self) -> &[QualificationsProperty];
+	/// Take <https://schema.org/qualifications> from [`Self`] as owned vector.
 	fn take_qualifications(&mut self) -> Vec<QualificationsProperty>;
+	/// Get <https://schema.org/responsibilities> from [`Self`] as borrowed slice.
 	fn get_responsibilities(&self) -> &[ResponsibilitiesProperty];
+	/// Take <https://schema.org/responsibilities> from [`Self`] as owned vector.
 	fn take_responsibilities(&mut self) -> Vec<ResponsibilitiesProperty>;
+	/// Get <https://schema.org/skills> from [`Self`] as borrowed slice.
 	fn get_skills(&self) -> &[SkillsProperty];
+	/// Take <https://schema.org/skills> from [`Self`] as owned vector.
 	fn take_skills(&mut self) -> Vec<SkillsProperty>;
 }
 impl OccupationTrait for Occupation {

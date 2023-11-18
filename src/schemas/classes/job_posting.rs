@@ -3,135 +3,259 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct JobPosting {
+	/// <https://schema.org/applicantLocationRequirements>
 	pub r#applicant_location_requirements: Vec<ApplicantLocationRequirementsProperty>,
+	/// <https://schema.org/applicationContact>
 	pub r#application_contact: Vec<ApplicationContactProperty>,
+	/// <https://schema.org/baseSalary>
 	pub r#base_salary: Vec<BaseSalaryProperty>,
+	/// <https://schema.org/benefits>
 	pub r#benefits: Vec<BenefitsProperty>,
+	/// <https://schema.org/datePosted>
 	pub r#date_posted: Vec<DatePostedProperty>,
+	/// <https://schema.org/directApply>
 	pub r#direct_apply: Vec<DirectApplyProperty>,
+	/// <https://schema.org/educationRequirements>
 	pub r#education_requirements: Vec<EducationRequirementsProperty>,
+	/// <https://schema.org/eligibilityToWorkRequirement>
 	pub r#eligibility_to_work_requirement: Vec<EligibilityToWorkRequirementProperty>,
+	/// <https://schema.org/employerOverview>
 	pub r#employer_overview: Vec<EmployerOverviewProperty>,
+	/// <https://schema.org/employmentType>
 	pub r#employment_type: Vec<EmploymentTypeProperty>,
+	/// <https://schema.org/employmentUnit>
 	pub r#employment_unit: Vec<EmploymentUnitProperty>,
+	/// <https://schema.org/estimatedSalary>
 	pub r#estimated_salary: Vec<EstimatedSalaryProperty>,
+	/// <https://schema.org/experienceInPlaceOfEducation>
 	pub r#experience_in_place_of_education: Vec<ExperienceInPlaceOfEducationProperty>,
+	/// <https://schema.org/experienceRequirements>
 	pub r#experience_requirements: Vec<ExperienceRequirementsProperty>,
+	/// <https://schema.org/hiringOrganization>
 	pub r#hiring_organization: Vec<HiringOrganizationProperty>,
+	/// <https://schema.org/incentiveCompensation>
 	pub r#incentive_compensation: Vec<IncentiveCompensationProperty>,
+	/// <https://schema.org/incentives>
 	pub r#incentives: Vec<IncentivesProperty>,
+	/// <https://schema.org/industry>
 	pub r#industry: Vec<IndustryProperty>,
+	/// <https://schema.org/jobBenefits>
 	pub r#job_benefits: Vec<JobBenefitsProperty>,
+	/// <https://schema.org/jobImmediateStart>
 	pub r#job_immediate_start: Vec<JobImmediateStartProperty>,
+	/// <https://schema.org/jobLocation>
 	pub r#job_location: Vec<JobLocationProperty>,
+	/// <https://schema.org/jobLocationType>
 	pub r#job_location_type: Vec<JobLocationTypeProperty>,
+	/// <https://schema.org/jobStartDate>
 	pub r#job_start_date: Vec<JobStartDateProperty>,
+	/// <https://schema.org/occupationalCategory>
 	pub r#occupational_category: Vec<OccupationalCategoryProperty>,
+	/// <https://schema.org/physicalRequirement>
 	pub r#physical_requirement: Vec<PhysicalRequirementProperty>,
+	/// <https://schema.org/qualifications>
 	pub r#qualifications: Vec<QualificationsProperty>,
+	/// <https://schema.org/relevantOccupation>
 	pub r#relevant_occupation: Vec<RelevantOccupationProperty>,
+	/// <https://schema.org/responsibilities>
 	pub r#responsibilities: Vec<ResponsibilitiesProperty>,
+	/// <https://schema.org/salaryCurrency>
 	pub r#salary_currency: Vec<SalaryCurrencyProperty>,
+	/// <https://schema.org/securityClearanceRequirement>
 	pub r#security_clearance_requirement: Vec<SecurityClearanceRequirementProperty>,
+	/// <https://schema.org/sensoryRequirement>
 	pub r#sensory_requirement: Vec<SensoryRequirementProperty>,
+	/// <https://schema.org/skills>
 	pub r#skills: Vec<SkillsProperty>,
+	/// <https://schema.org/specialCommitments>
 	pub r#special_commitments: Vec<SpecialCommitmentsProperty>,
+	/// <https://schema.org/title>
 	pub r#title: Vec<TitleProperty>,
+	/// <https://schema.org/totalJobOpenings>
 	pub r#total_job_openings: Vec<TotalJobOpeningsProperty>,
+	/// <https://schema.org/validThrough>
 	pub r#valid_through: Vec<ValidThroughProperty>,
+	/// <https://schema.org/workHours>
 	pub r#work_hours: Vec<WorkHoursProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/JobPosting>.
 pub trait JobPostingTrait {
+	/// Get <https://schema.org/applicantLocationRequirements> from [`Self`] as borrowed slice.
 	fn get_applicant_location_requirements(&self) -> &[ApplicantLocationRequirementsProperty];
+	/// Take <https://schema.org/applicantLocationRequirements> from [`Self`] as owned vector.
 	fn take_applicant_location_requirements(
 		&mut self,
 	) -> Vec<ApplicantLocationRequirementsProperty>;
+	/// Get <https://schema.org/applicationContact> from [`Self`] as borrowed slice.
 	fn get_application_contact(&self) -> &[ApplicationContactProperty];
+	/// Take <https://schema.org/applicationContact> from [`Self`] as owned vector.
 	fn take_application_contact(&mut self) -> Vec<ApplicationContactProperty>;
+	/// Get <https://schema.org/baseSalary> from [`Self`] as borrowed slice.
 	fn get_base_salary(&self) -> &[BaseSalaryProperty];
+	/// Take <https://schema.org/baseSalary> from [`Self`] as owned vector.
 	fn take_base_salary(&mut self) -> Vec<BaseSalaryProperty>;
+	/// Get <https://schema.org/benefits> from [`Self`] as borrowed slice.
 	fn get_benefits(&self) -> &[BenefitsProperty];
+	/// Take <https://schema.org/benefits> from [`Self`] as owned vector.
 	fn take_benefits(&mut self) -> Vec<BenefitsProperty>;
+	/// Get <https://schema.org/datePosted> from [`Self`] as borrowed slice.
 	fn get_date_posted(&self) -> &[DatePostedProperty];
+	/// Take <https://schema.org/datePosted> from [`Self`] as owned vector.
 	fn take_date_posted(&mut self) -> Vec<DatePostedProperty>;
+	/// Get <https://schema.org/directApply> from [`Self`] as borrowed slice.
 	fn get_direct_apply(&self) -> &[DirectApplyProperty];
+	/// Take <https://schema.org/directApply> from [`Self`] as owned vector.
 	fn take_direct_apply(&mut self) -> Vec<DirectApplyProperty>;
+	/// Get <https://schema.org/educationRequirements> from [`Self`] as borrowed slice.
 	fn get_education_requirements(&self) -> &[EducationRequirementsProperty];
+	/// Take <https://schema.org/educationRequirements> from [`Self`] as owned vector.
 	fn take_education_requirements(&mut self) -> Vec<EducationRequirementsProperty>;
+	/// Get <https://schema.org/eligibilityToWorkRequirement> from [`Self`] as borrowed slice.
 	fn get_eligibility_to_work_requirement(&self) -> &[EligibilityToWorkRequirementProperty];
+	/// Take <https://schema.org/eligibilityToWorkRequirement> from [`Self`] as owned vector.
 	fn take_eligibility_to_work_requirement(&mut self)
 	-> Vec<EligibilityToWorkRequirementProperty>;
+	/// Get <https://schema.org/employerOverview> from [`Self`] as borrowed slice.
 	fn get_employer_overview(&self) -> &[EmployerOverviewProperty];
+	/// Take <https://schema.org/employerOverview> from [`Self`] as owned vector.
 	fn take_employer_overview(&mut self) -> Vec<EmployerOverviewProperty>;
+	/// Get <https://schema.org/employmentType> from [`Self`] as borrowed slice.
 	fn get_employment_type(&self) -> &[EmploymentTypeProperty];
+	/// Take <https://schema.org/employmentType> from [`Self`] as owned vector.
 	fn take_employment_type(&mut self) -> Vec<EmploymentTypeProperty>;
+	/// Get <https://schema.org/employmentUnit> from [`Self`] as borrowed slice.
 	fn get_employment_unit(&self) -> &[EmploymentUnitProperty];
+	/// Take <https://schema.org/employmentUnit> from [`Self`] as owned vector.
 	fn take_employment_unit(&mut self) -> Vec<EmploymentUnitProperty>;
+	/// Get <https://schema.org/estimatedSalary> from [`Self`] as borrowed slice.
 	fn get_estimated_salary(&self) -> &[EstimatedSalaryProperty];
+	/// Take <https://schema.org/estimatedSalary> from [`Self`] as owned vector.
 	fn take_estimated_salary(&mut self) -> Vec<EstimatedSalaryProperty>;
+	/// Get <https://schema.org/experienceInPlaceOfEducation> from [`Self`] as borrowed slice.
 	fn get_experience_in_place_of_education(&self) -> &[ExperienceInPlaceOfEducationProperty];
+	/// Take <https://schema.org/experienceInPlaceOfEducation> from [`Self`] as owned vector.
 	fn take_experience_in_place_of_education(
 		&mut self,
 	) -> Vec<ExperienceInPlaceOfEducationProperty>;
+	/// Get <https://schema.org/experienceRequirements> from [`Self`] as borrowed slice.
 	fn get_experience_requirements(&self) -> &[ExperienceRequirementsProperty];
+	/// Take <https://schema.org/experienceRequirements> from [`Self`] as owned vector.
 	fn take_experience_requirements(&mut self) -> Vec<ExperienceRequirementsProperty>;
+	/// Get <https://schema.org/hiringOrganization> from [`Self`] as borrowed slice.
 	fn get_hiring_organization(&self) -> &[HiringOrganizationProperty];
+	/// Take <https://schema.org/hiringOrganization> from [`Self`] as owned vector.
 	fn take_hiring_organization(&mut self) -> Vec<HiringOrganizationProperty>;
+	/// Get <https://schema.org/incentiveCompensation> from [`Self`] as borrowed slice.
 	fn get_incentive_compensation(&self) -> &[IncentiveCompensationProperty];
+	/// Take <https://schema.org/incentiveCompensation> from [`Self`] as owned vector.
 	fn take_incentive_compensation(&mut self) -> Vec<IncentiveCompensationProperty>;
+	/// Get <https://schema.org/incentives> from [`Self`] as borrowed slice.
 	fn get_incentives(&self) -> &[IncentivesProperty];
+	/// Take <https://schema.org/incentives> from [`Self`] as owned vector.
 	fn take_incentives(&mut self) -> Vec<IncentivesProperty>;
+	/// Get <https://schema.org/industry> from [`Self`] as borrowed slice.
 	fn get_industry(&self) -> &[IndustryProperty];
+	/// Take <https://schema.org/industry> from [`Self`] as owned vector.
 	fn take_industry(&mut self) -> Vec<IndustryProperty>;
+	/// Get <https://schema.org/jobBenefits> from [`Self`] as borrowed slice.
 	fn get_job_benefits(&self) -> &[JobBenefitsProperty];
+	/// Take <https://schema.org/jobBenefits> from [`Self`] as owned vector.
 	fn take_job_benefits(&mut self) -> Vec<JobBenefitsProperty>;
+	/// Get <https://schema.org/jobImmediateStart> from [`Self`] as borrowed slice.
 	fn get_job_immediate_start(&self) -> &[JobImmediateStartProperty];
+	/// Take <https://schema.org/jobImmediateStart> from [`Self`] as owned vector.
 	fn take_job_immediate_start(&mut self) -> Vec<JobImmediateStartProperty>;
+	/// Get <https://schema.org/jobLocation> from [`Self`] as borrowed slice.
 	fn get_job_location(&self) -> &[JobLocationProperty];
+	/// Take <https://schema.org/jobLocation> from [`Self`] as owned vector.
 	fn take_job_location(&mut self) -> Vec<JobLocationProperty>;
+	/// Get <https://schema.org/jobLocationType> from [`Self`] as borrowed slice.
 	fn get_job_location_type(&self) -> &[JobLocationTypeProperty];
+	/// Take <https://schema.org/jobLocationType> from [`Self`] as owned vector.
 	fn take_job_location_type(&mut self) -> Vec<JobLocationTypeProperty>;
+	/// Get <https://schema.org/jobStartDate> from [`Self`] as borrowed slice.
 	fn get_job_start_date(&self) -> &[JobStartDateProperty];
+	/// Take <https://schema.org/jobStartDate> from [`Self`] as owned vector.
 	fn take_job_start_date(&mut self) -> Vec<JobStartDateProperty>;
+	/// Get <https://schema.org/occupationalCategory> from [`Self`] as borrowed slice.
 	fn get_occupational_category(&self) -> &[OccupationalCategoryProperty];
+	/// Take <https://schema.org/occupationalCategory> from [`Self`] as owned vector.
 	fn take_occupational_category(&mut self) -> Vec<OccupationalCategoryProperty>;
+	/// Get <https://schema.org/physicalRequirement> from [`Self`] as borrowed slice.
 	fn get_physical_requirement(&self) -> &[PhysicalRequirementProperty];
+	/// Take <https://schema.org/physicalRequirement> from [`Self`] as owned vector.
 	fn take_physical_requirement(&mut self) -> Vec<PhysicalRequirementProperty>;
+	/// Get <https://schema.org/qualifications> from [`Self`] as borrowed slice.
 	fn get_qualifications(&self) -> &[QualificationsProperty];
+	/// Take <https://schema.org/qualifications> from [`Self`] as owned vector.
 	fn take_qualifications(&mut self) -> Vec<QualificationsProperty>;
+	/// Get <https://schema.org/relevantOccupation> from [`Self`] as borrowed slice.
 	fn get_relevant_occupation(&self) -> &[RelevantOccupationProperty];
+	/// Take <https://schema.org/relevantOccupation> from [`Self`] as owned vector.
 	fn take_relevant_occupation(&mut self) -> Vec<RelevantOccupationProperty>;
+	/// Get <https://schema.org/responsibilities> from [`Self`] as borrowed slice.
 	fn get_responsibilities(&self) -> &[ResponsibilitiesProperty];
+	/// Take <https://schema.org/responsibilities> from [`Self`] as owned vector.
 	fn take_responsibilities(&mut self) -> Vec<ResponsibilitiesProperty>;
+	/// Get <https://schema.org/salaryCurrency> from [`Self`] as borrowed slice.
 	fn get_salary_currency(&self) -> &[SalaryCurrencyProperty];
+	/// Take <https://schema.org/salaryCurrency> from [`Self`] as owned vector.
 	fn take_salary_currency(&mut self) -> Vec<SalaryCurrencyProperty>;
+	/// Get <https://schema.org/securityClearanceRequirement> from [`Self`] as borrowed slice.
 	fn get_security_clearance_requirement(&self) -> &[SecurityClearanceRequirementProperty];
+	/// Take <https://schema.org/securityClearanceRequirement> from [`Self`] as owned vector.
 	fn take_security_clearance_requirement(&mut self) -> Vec<SecurityClearanceRequirementProperty>;
+	/// Get <https://schema.org/sensoryRequirement> from [`Self`] as borrowed slice.
 	fn get_sensory_requirement(&self) -> &[SensoryRequirementProperty];
+	/// Take <https://schema.org/sensoryRequirement> from [`Self`] as owned vector.
 	fn take_sensory_requirement(&mut self) -> Vec<SensoryRequirementProperty>;
+	/// Get <https://schema.org/skills> from [`Self`] as borrowed slice.
 	fn get_skills(&self) -> &[SkillsProperty];
+	/// Take <https://schema.org/skills> from [`Self`] as owned vector.
 	fn take_skills(&mut self) -> Vec<SkillsProperty>;
+	/// Get <https://schema.org/specialCommitments> from [`Self`] as borrowed slice.
 	fn get_special_commitments(&self) -> &[SpecialCommitmentsProperty];
+	/// Take <https://schema.org/specialCommitments> from [`Self`] as owned vector.
 	fn take_special_commitments(&mut self) -> Vec<SpecialCommitmentsProperty>;
+	/// Get <https://schema.org/title> from [`Self`] as borrowed slice.
 	fn get_title(&self) -> &[TitleProperty];
+	/// Take <https://schema.org/title> from [`Self`] as owned vector.
 	fn take_title(&mut self) -> Vec<TitleProperty>;
+	/// Get <https://schema.org/totalJobOpenings> from [`Self`] as borrowed slice.
 	fn get_total_job_openings(&self) -> &[TotalJobOpeningsProperty];
+	/// Take <https://schema.org/totalJobOpenings> from [`Self`] as owned vector.
 	fn take_total_job_openings(&mut self) -> Vec<TotalJobOpeningsProperty>;
+	/// Get <https://schema.org/validThrough> from [`Self`] as borrowed slice.
 	fn get_valid_through(&self) -> &[ValidThroughProperty];
+	/// Take <https://schema.org/validThrough> from [`Self`] as owned vector.
 	fn take_valid_through(&mut self) -> Vec<ValidThroughProperty>;
+	/// Get <https://schema.org/workHours> from [`Self`] as borrowed slice.
 	fn get_work_hours(&self) -> &[WorkHoursProperty];
+	/// Take <https://schema.org/workHours> from [`Self`] as owned vector.
 	fn take_work_hours(&mut self) -> Vec<WorkHoursProperty>;
 }
 impl JobPostingTrait for JobPosting {

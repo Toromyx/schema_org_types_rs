@@ -3,49 +3,92 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct GeospatialGeometry {
+	/// <https://schema.org/geoContains>
 	pub r#geo_contains: Vec<GeoContainsProperty>,
+	/// <https://schema.org/geoCoveredBy>
 	pub r#geo_covered_by: Vec<GeoCoveredByProperty>,
+	/// <https://schema.org/geoCovers>
 	pub r#geo_covers: Vec<GeoCoversProperty>,
+	/// <https://schema.org/geoCrosses>
 	pub r#geo_crosses: Vec<GeoCrossesProperty>,
+	/// <https://schema.org/geoDisjoint>
 	pub r#geo_disjoint: Vec<GeoDisjointProperty>,
+	/// <https://schema.org/geoEquals>
 	pub r#geo_equals: Vec<GeoEqualsProperty>,
+	/// <https://schema.org/geoIntersects>
 	pub r#geo_intersects: Vec<GeoIntersectsProperty>,
+	/// <https://schema.org/geoOverlaps>
 	pub r#geo_overlaps: Vec<GeoOverlapsProperty>,
+	/// <https://schema.org/geoTouches>
 	pub r#geo_touches: Vec<GeoTouchesProperty>,
+	/// <https://schema.org/geoWithin>
 	pub r#geo_within: Vec<GeoWithinProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/GeospatialGeometry>.
 pub trait GeospatialGeometryTrait {
+	/// Get <https://schema.org/geoContains> from [`Self`] as borrowed slice.
 	fn get_geo_contains(&self) -> &[GeoContainsProperty];
+	/// Take <https://schema.org/geoContains> from [`Self`] as owned vector.
 	fn take_geo_contains(&mut self) -> Vec<GeoContainsProperty>;
+	/// Get <https://schema.org/geoCoveredBy> from [`Self`] as borrowed slice.
 	fn get_geo_covered_by(&self) -> &[GeoCoveredByProperty];
+	/// Take <https://schema.org/geoCoveredBy> from [`Self`] as owned vector.
 	fn take_geo_covered_by(&mut self) -> Vec<GeoCoveredByProperty>;
+	/// Get <https://schema.org/geoCovers> from [`Self`] as borrowed slice.
 	fn get_geo_covers(&self) -> &[GeoCoversProperty];
+	/// Take <https://schema.org/geoCovers> from [`Self`] as owned vector.
 	fn take_geo_covers(&mut self) -> Vec<GeoCoversProperty>;
+	/// Get <https://schema.org/geoCrosses> from [`Self`] as borrowed slice.
 	fn get_geo_crosses(&self) -> &[GeoCrossesProperty];
+	/// Take <https://schema.org/geoCrosses> from [`Self`] as owned vector.
 	fn take_geo_crosses(&mut self) -> Vec<GeoCrossesProperty>;
+	/// Get <https://schema.org/geoDisjoint> from [`Self`] as borrowed slice.
 	fn get_geo_disjoint(&self) -> &[GeoDisjointProperty];
+	/// Take <https://schema.org/geoDisjoint> from [`Self`] as owned vector.
 	fn take_geo_disjoint(&mut self) -> Vec<GeoDisjointProperty>;
+	/// Get <https://schema.org/geoEquals> from [`Self`] as borrowed slice.
 	fn get_geo_equals(&self) -> &[GeoEqualsProperty];
+	/// Take <https://schema.org/geoEquals> from [`Self`] as owned vector.
 	fn take_geo_equals(&mut self) -> Vec<GeoEqualsProperty>;
+	/// Get <https://schema.org/geoIntersects> from [`Self`] as borrowed slice.
 	fn get_geo_intersects(&self) -> &[GeoIntersectsProperty];
+	/// Take <https://schema.org/geoIntersects> from [`Self`] as owned vector.
 	fn take_geo_intersects(&mut self) -> Vec<GeoIntersectsProperty>;
+	/// Get <https://schema.org/geoOverlaps> from [`Self`] as borrowed slice.
 	fn get_geo_overlaps(&self) -> &[GeoOverlapsProperty];
+	/// Take <https://schema.org/geoOverlaps> from [`Self`] as owned vector.
 	fn take_geo_overlaps(&mut self) -> Vec<GeoOverlapsProperty>;
+	/// Get <https://schema.org/geoTouches> from [`Self`] as borrowed slice.
 	fn get_geo_touches(&self) -> &[GeoTouchesProperty];
+	/// Take <https://schema.org/geoTouches> from [`Self`] as owned vector.
 	fn take_geo_touches(&mut self) -> Vec<GeoTouchesProperty>;
+	/// Get <https://schema.org/geoWithin> from [`Self`] as borrowed slice.
 	fn get_geo_within(&self) -> &[GeoWithinProperty];
+	/// Take <https://schema.org/geoWithin> from [`Self`] as owned vector.
 	fn take_geo_within(&mut self) -> Vec<GeoWithinProperty>;
 }
 impl GeospatialGeometryTrait for GeospatialGeometry {

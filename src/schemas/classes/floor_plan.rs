@@ -3,59 +3,108 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct FloorPlan {
+	/// <https://schema.org/amenityFeature>
 	pub r#amenity_feature: Vec<AmenityFeatureProperty>,
+	/// <https://schema.org/floorSize>
 	pub r#floor_size: Vec<FloorSizeProperty>,
+	/// <https://schema.org/isPlanForApartment>
 	pub r#is_plan_for_apartment: Vec<IsPlanForApartmentProperty>,
+	/// <https://schema.org/layoutImage>
 	pub r#layout_image: Vec<LayoutImageProperty>,
+	/// <https://schema.org/numberOfAccommodationUnits>
 	pub r#number_of_accommodation_units: Vec<NumberOfAccommodationUnitsProperty>,
+	/// <https://schema.org/numberOfAvailableAccommodationUnits>
 	pub r#number_of_available_accommodation_units: Vec<NumberOfAvailableAccommodationUnitsProperty>,
+	/// <https://schema.org/numberOfBathroomsTotal>
 	pub r#number_of_bathrooms_total: Vec<NumberOfBathroomsTotalProperty>,
+	/// <https://schema.org/numberOfBedrooms>
 	pub r#number_of_bedrooms: Vec<NumberOfBedroomsProperty>,
+	/// <https://schema.org/numberOfFullBathrooms>
 	pub r#number_of_full_bathrooms: Vec<NumberOfFullBathroomsProperty>,
+	/// <https://schema.org/numberOfPartialBathrooms>
 	pub r#number_of_partial_bathrooms: Vec<NumberOfPartialBathroomsProperty>,
+	/// <https://schema.org/numberOfRooms>
 	pub r#number_of_rooms: Vec<NumberOfRoomsProperty>,
+	/// <https://schema.org/petsAllowed>
 	pub r#pets_allowed: Vec<PetsAllowedProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/FloorPlan>.
 pub trait FloorPlanTrait {
+	/// Get <https://schema.org/amenityFeature> from [`Self`] as borrowed slice.
 	fn get_amenity_feature(&self) -> &[AmenityFeatureProperty];
+	/// Take <https://schema.org/amenityFeature> from [`Self`] as owned vector.
 	fn take_amenity_feature(&mut self) -> Vec<AmenityFeatureProperty>;
+	/// Get <https://schema.org/floorSize> from [`Self`] as borrowed slice.
 	fn get_floor_size(&self) -> &[FloorSizeProperty];
+	/// Take <https://schema.org/floorSize> from [`Self`] as owned vector.
 	fn take_floor_size(&mut self) -> Vec<FloorSizeProperty>;
+	/// Get <https://schema.org/isPlanForApartment> from [`Self`] as borrowed slice.
 	fn get_is_plan_for_apartment(&self) -> &[IsPlanForApartmentProperty];
+	/// Take <https://schema.org/isPlanForApartment> from [`Self`] as owned vector.
 	fn take_is_plan_for_apartment(&mut self) -> Vec<IsPlanForApartmentProperty>;
+	/// Get <https://schema.org/layoutImage> from [`Self`] as borrowed slice.
 	fn get_layout_image(&self) -> &[LayoutImageProperty];
+	/// Take <https://schema.org/layoutImage> from [`Self`] as owned vector.
 	fn take_layout_image(&mut self) -> Vec<LayoutImageProperty>;
+	/// Get <https://schema.org/numberOfAccommodationUnits> from [`Self`] as borrowed slice.
 	fn get_number_of_accommodation_units(&self) -> &[NumberOfAccommodationUnitsProperty];
+	/// Take <https://schema.org/numberOfAccommodationUnits> from [`Self`] as owned vector.
 	fn take_number_of_accommodation_units(&mut self) -> Vec<NumberOfAccommodationUnitsProperty>;
+	/// Get <https://schema.org/numberOfAvailableAccommodationUnits> from [`Self`] as borrowed slice.
 	fn get_number_of_available_accommodation_units(
 		&self,
 	) -> &[NumberOfAvailableAccommodationUnitsProperty];
+	/// Take <https://schema.org/numberOfAvailableAccommodationUnits> from [`Self`] as owned vector.
 	fn take_number_of_available_accommodation_units(
 		&mut self,
 	) -> Vec<NumberOfAvailableAccommodationUnitsProperty>;
+	/// Get <https://schema.org/numberOfBathroomsTotal> from [`Self`] as borrowed slice.
 	fn get_number_of_bathrooms_total(&self) -> &[NumberOfBathroomsTotalProperty];
+	/// Take <https://schema.org/numberOfBathroomsTotal> from [`Self`] as owned vector.
 	fn take_number_of_bathrooms_total(&mut self) -> Vec<NumberOfBathroomsTotalProperty>;
+	/// Get <https://schema.org/numberOfBedrooms> from [`Self`] as borrowed slice.
 	fn get_number_of_bedrooms(&self) -> &[NumberOfBedroomsProperty];
+	/// Take <https://schema.org/numberOfBedrooms> from [`Self`] as owned vector.
 	fn take_number_of_bedrooms(&mut self) -> Vec<NumberOfBedroomsProperty>;
+	/// Get <https://schema.org/numberOfFullBathrooms> from [`Self`] as borrowed slice.
 	fn get_number_of_full_bathrooms(&self) -> &[NumberOfFullBathroomsProperty];
+	/// Take <https://schema.org/numberOfFullBathrooms> from [`Self`] as owned vector.
 	fn take_number_of_full_bathrooms(&mut self) -> Vec<NumberOfFullBathroomsProperty>;
+	/// Get <https://schema.org/numberOfPartialBathrooms> from [`Self`] as borrowed slice.
 	fn get_number_of_partial_bathrooms(&self) -> &[NumberOfPartialBathroomsProperty];
+	/// Take <https://schema.org/numberOfPartialBathrooms> from [`Self`] as owned vector.
 	fn take_number_of_partial_bathrooms(&mut self) -> Vec<NumberOfPartialBathroomsProperty>;
+	/// Get <https://schema.org/numberOfRooms> from [`Self`] as borrowed slice.
 	fn get_number_of_rooms(&self) -> &[NumberOfRoomsProperty];
+	/// Take <https://schema.org/numberOfRooms> from [`Self`] as owned vector.
 	fn take_number_of_rooms(&mut self) -> Vec<NumberOfRoomsProperty>;
+	/// Get <https://schema.org/petsAllowed> from [`Self`] as borrowed slice.
 	fn get_pets_allowed(&self) -> &[PetsAllowedProperty];
+	/// Take <https://schema.org/petsAllowed> from [`Self`] as owned vector.
 	fn take_pets_allowed(&mut self) -> Vec<PetsAllowedProperty>;
 }
 impl FloorPlanTrait for FloorPlan {

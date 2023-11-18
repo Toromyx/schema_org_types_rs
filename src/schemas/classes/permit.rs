@@ -3,40 +3,74 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct Permit {
+	/// <https://schema.org/issuedBy>
 	pub r#issued_by: Vec<IssuedByProperty>,
+	/// <https://schema.org/issuedThrough>
 	pub r#issued_through: Vec<IssuedThroughProperty>,
+	/// <https://schema.org/permitAudience>
 	pub r#permit_audience: Vec<PermitAudienceProperty>,
+	/// <https://schema.org/validFor>
 	pub r#valid_for: Vec<ValidForProperty>,
+	/// <https://schema.org/validFrom>
 	pub r#valid_from: Vec<ValidFromProperty>,
+	/// <https://schema.org/validIn>
 	pub r#valid_in: Vec<ValidInProperty>,
+	/// <https://schema.org/validUntil>
 	pub r#valid_until: Vec<ValidUntilProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/Permit>.
 pub trait PermitTrait {
+	/// Get <https://schema.org/issuedBy> from [`Self`] as borrowed slice.
 	fn get_issued_by(&self) -> &[IssuedByProperty];
+	/// Take <https://schema.org/issuedBy> from [`Self`] as owned vector.
 	fn take_issued_by(&mut self) -> Vec<IssuedByProperty>;
+	/// Get <https://schema.org/issuedThrough> from [`Self`] as borrowed slice.
 	fn get_issued_through(&self) -> &[IssuedThroughProperty];
+	/// Take <https://schema.org/issuedThrough> from [`Self`] as owned vector.
 	fn take_issued_through(&mut self) -> Vec<IssuedThroughProperty>;
+	/// Get <https://schema.org/permitAudience> from [`Self`] as borrowed slice.
 	fn get_permit_audience(&self) -> &[PermitAudienceProperty];
+	/// Take <https://schema.org/permitAudience> from [`Self`] as owned vector.
 	fn take_permit_audience(&mut self) -> Vec<PermitAudienceProperty>;
+	/// Get <https://schema.org/validFor> from [`Self`] as borrowed slice.
 	fn get_valid_for(&self) -> &[ValidForProperty];
+	/// Take <https://schema.org/validFor> from [`Self`] as owned vector.
 	fn take_valid_for(&mut self) -> Vec<ValidForProperty>;
+	/// Get <https://schema.org/validFrom> from [`Self`] as borrowed slice.
 	fn get_valid_from(&self) -> &[ValidFromProperty];
+	/// Take <https://schema.org/validFrom> from [`Self`] as owned vector.
 	fn take_valid_from(&mut self) -> Vec<ValidFromProperty>;
+	/// Get <https://schema.org/validIn> from [`Self`] as borrowed slice.
 	fn get_valid_in(&self) -> &[ValidInProperty];
+	/// Take <https://schema.org/validIn> from [`Self`] as owned vector.
 	fn take_valid_in(&mut self) -> Vec<ValidInProperty>;
+	/// Get <https://schema.org/validUntil> from [`Self`] as borrowed slice.
 	fn get_valid_until(&self) -> &[ValidUntilProperty];
+	/// Take <https://schema.org/validUntil> from [`Self`] as owned vector.
 	fn take_valid_until(&mut self) -> Vec<ValidUntilProperty>;
 }
 impl PermitTrait for Permit {

@@ -3,187 +3,368 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct Product {
+	/// <https://schema.org/additionalProperty>
 	pub r#additional_property: Vec<AdditionalPropertyProperty>,
+	/// <https://schema.org/aggregateRating>
 	pub r#aggregate_rating: Vec<AggregateRatingProperty>,
+	/// <https://schema.org/asin>
 	pub r#asin: Vec<AsinProperty>,
+	/// <https://schema.org/audience>
 	pub r#audience: Vec<AudienceProperty>,
+	/// <https://schema.org/award>
 	pub r#award: Vec<AwardProperty>,
+	/// <https://schema.org/awards>
 	pub r#awards: Vec<AwardsProperty>,
+	/// <https://schema.org/brand>
 	pub r#brand: Vec<BrandProperty>,
+	/// <https://schema.org/category>
 	pub r#category: Vec<CategoryProperty>,
+	/// <https://schema.org/color>
 	pub r#color: Vec<ColorProperty>,
+	/// <https://schema.org/countryOfAssembly>
 	pub r#country_of_assembly: Vec<CountryOfAssemblyProperty>,
+	/// <https://schema.org/countryOfLastProcessing>
 	pub r#country_of_last_processing: Vec<CountryOfLastProcessingProperty>,
+	/// <https://schema.org/countryOfOrigin>
 	pub r#country_of_origin: Vec<CountryOfOriginProperty>,
+	/// <https://schema.org/depth>
 	pub r#depth: Vec<DepthProperty>,
+	/// <https://schema.org/funding>
 	pub r#funding: Vec<FundingProperty>,
+	/// <https://schema.org/gtin>
 	pub r#gtin: Vec<GtinProperty>,
+	/// <https://schema.org/gtin12>
 	pub r#gtin_12: Vec<Gtin12Property>,
+	/// <https://schema.org/gtin13>
 	pub r#gtin_13: Vec<Gtin13Property>,
+	/// <https://schema.org/gtin14>
 	pub r#gtin_14: Vec<Gtin14Property>,
+	/// <https://schema.org/gtin8>
 	pub r#gtin_8: Vec<Gtin8Property>,
+	/// <https://schema.org/hasAdultConsideration>
 	pub r#has_adult_consideration: Vec<HasAdultConsiderationProperty>,
+	/// <https://schema.org/hasEnergyConsumptionDetails>
 	pub r#has_energy_consumption_details: Vec<HasEnergyConsumptionDetailsProperty>,
+	/// <https://schema.org/hasMeasurement>
 	pub r#has_measurement: Vec<HasMeasurementProperty>,
+	/// <https://schema.org/hasMerchantReturnPolicy>
 	pub r#has_merchant_return_policy: Vec<HasMerchantReturnPolicyProperty>,
+	/// <https://schema.org/hasProductReturnPolicy>
 	pub r#has_product_return_policy: Vec<HasProductReturnPolicyProperty>,
+	/// <https://schema.org/height>
 	pub r#height: Vec<HeightProperty>,
+	/// <https://schema.org/inProductGroupWithID>
 	pub r#in_product_group_with_id: Vec<InProductGroupWithIdProperty>,
+	/// <https://schema.org/isAccessoryOrSparePartFor>
 	pub r#is_accessory_or_spare_part_for: Vec<IsAccessoryOrSparePartForProperty>,
+	/// <https://schema.org/isConsumableFor>
 	pub r#is_consumable_for: Vec<IsConsumableForProperty>,
+	/// <https://schema.org/isFamilyFriendly>
 	pub r#is_family_friendly: Vec<IsFamilyFriendlyProperty>,
+	/// <https://schema.org/isRelatedTo>
 	pub r#is_related_to: Vec<IsRelatedToProperty>,
+	/// <https://schema.org/isSimilarTo>
 	pub r#is_similar_to: Vec<IsSimilarToProperty>,
+	/// <https://schema.org/isVariantOf>
 	pub r#is_variant_of: Vec<IsVariantOfProperty>,
+	/// <https://schema.org/itemCondition>
 	pub r#item_condition: Vec<ItemConditionProperty>,
+	/// <https://schema.org/keywords>
 	pub r#keywords: Vec<KeywordsProperty>,
+	/// <https://schema.org/logo>
 	pub r#logo: Vec<LogoProperty>,
+	/// <https://schema.org/manufacturer>
 	pub r#manufacturer: Vec<ManufacturerProperty>,
+	/// <https://schema.org/material>
 	pub r#material: Vec<MaterialProperty>,
+	/// <https://schema.org/mobileUrl>
 	pub r#mobile_url: Vec<MobileUrlProperty>,
+	/// <https://schema.org/model>
 	pub r#model: Vec<ModelProperty>,
+	/// <https://schema.org/mpn>
 	pub r#mpn: Vec<MpnProperty>,
+	/// <https://schema.org/negativeNotes>
 	pub r#negative_notes: Vec<NegativeNotesProperty>,
+	/// <https://schema.org/nsn>
 	pub r#nsn: Vec<NsnProperty>,
+	/// <https://schema.org/offers>
 	pub r#offers: Vec<OffersProperty>,
+	/// <https://schema.org/pattern>
 	pub r#pattern: Vec<PatternProperty>,
+	/// <https://schema.org/positiveNotes>
 	pub r#positive_notes: Vec<PositiveNotesProperty>,
+	/// <https://schema.org/productID>
 	pub r#product_id: Vec<ProductIdProperty>,
+	/// <https://schema.org/productionDate>
 	pub r#production_date: Vec<ProductionDateProperty>,
+	/// <https://schema.org/purchaseDate>
 	pub r#purchase_date: Vec<PurchaseDateProperty>,
+	/// <https://schema.org/releaseDate>
 	pub r#release_date: Vec<ReleaseDateProperty>,
+	/// <https://schema.org/review>
 	pub r#review: Vec<ReviewProperty>,
+	/// <https://schema.org/reviews>
 	pub r#reviews: Vec<ReviewsProperty>,
+	/// <https://schema.org/size>
 	pub r#size: Vec<SizeProperty>,
+	/// <https://schema.org/sku>
 	pub r#sku: Vec<SkuProperty>,
+	/// <https://schema.org/slogan>
 	pub r#slogan: Vec<SloganProperty>,
+	/// <https://schema.org/weight>
 	pub r#weight: Vec<WeightProperty>,
+	/// <https://schema.org/width>
 	pub r#width: Vec<WidthProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/Product>.
 pub trait ProductTrait {
+	/// Get <https://schema.org/additionalProperty> from [`Self`] as borrowed slice.
 	fn get_additional_property(&self) -> &[AdditionalPropertyProperty];
+	/// Take <https://schema.org/additionalProperty> from [`Self`] as owned vector.
 	fn take_additional_property(&mut self) -> Vec<AdditionalPropertyProperty>;
+	/// Get <https://schema.org/aggregateRating> from [`Self`] as borrowed slice.
 	fn get_aggregate_rating(&self) -> &[AggregateRatingProperty];
+	/// Take <https://schema.org/aggregateRating> from [`Self`] as owned vector.
 	fn take_aggregate_rating(&mut self) -> Vec<AggregateRatingProperty>;
+	/// Get <https://schema.org/asin> from [`Self`] as borrowed slice.
 	fn get_asin(&self) -> &[AsinProperty];
+	/// Take <https://schema.org/asin> from [`Self`] as owned vector.
 	fn take_asin(&mut self) -> Vec<AsinProperty>;
+	/// Get <https://schema.org/audience> from [`Self`] as borrowed slice.
 	fn get_audience(&self) -> &[AudienceProperty];
+	/// Take <https://schema.org/audience> from [`Self`] as owned vector.
 	fn take_audience(&mut self) -> Vec<AudienceProperty>;
+	/// Get <https://schema.org/award> from [`Self`] as borrowed slice.
 	fn get_award(&self) -> &[AwardProperty];
+	/// Take <https://schema.org/award> from [`Self`] as owned vector.
 	fn take_award(&mut self) -> Vec<AwardProperty>;
+	/// Get <https://schema.org/awards> from [`Self`] as borrowed slice.
 	fn get_awards(&self) -> &[AwardsProperty];
+	/// Take <https://schema.org/awards> from [`Self`] as owned vector.
 	fn take_awards(&mut self) -> Vec<AwardsProperty>;
+	/// Get <https://schema.org/brand> from [`Self`] as borrowed slice.
 	fn get_brand(&self) -> &[BrandProperty];
+	/// Take <https://schema.org/brand> from [`Self`] as owned vector.
 	fn take_brand(&mut self) -> Vec<BrandProperty>;
+	/// Get <https://schema.org/category> from [`Self`] as borrowed slice.
 	fn get_category(&self) -> &[CategoryProperty];
+	/// Take <https://schema.org/category> from [`Self`] as owned vector.
 	fn take_category(&mut self) -> Vec<CategoryProperty>;
+	/// Get <https://schema.org/color> from [`Self`] as borrowed slice.
 	fn get_color(&self) -> &[ColorProperty];
+	/// Take <https://schema.org/color> from [`Self`] as owned vector.
 	fn take_color(&mut self) -> Vec<ColorProperty>;
+	/// Get <https://schema.org/countryOfAssembly> from [`Self`] as borrowed slice.
 	fn get_country_of_assembly(&self) -> &[CountryOfAssemblyProperty];
+	/// Take <https://schema.org/countryOfAssembly> from [`Self`] as owned vector.
 	fn take_country_of_assembly(&mut self) -> Vec<CountryOfAssemblyProperty>;
+	/// Get <https://schema.org/countryOfLastProcessing> from [`Self`] as borrowed slice.
 	fn get_country_of_last_processing(&self) -> &[CountryOfLastProcessingProperty];
+	/// Take <https://schema.org/countryOfLastProcessing> from [`Self`] as owned vector.
 	fn take_country_of_last_processing(&mut self) -> Vec<CountryOfLastProcessingProperty>;
+	/// Get <https://schema.org/countryOfOrigin> from [`Self`] as borrowed slice.
 	fn get_country_of_origin(&self) -> &[CountryOfOriginProperty];
+	/// Take <https://schema.org/countryOfOrigin> from [`Self`] as owned vector.
 	fn take_country_of_origin(&mut self) -> Vec<CountryOfOriginProperty>;
+	/// Get <https://schema.org/depth> from [`Self`] as borrowed slice.
 	fn get_depth(&self) -> &[DepthProperty];
+	/// Take <https://schema.org/depth> from [`Self`] as owned vector.
 	fn take_depth(&mut self) -> Vec<DepthProperty>;
+	/// Get <https://schema.org/funding> from [`Self`] as borrowed slice.
 	fn get_funding(&self) -> &[FundingProperty];
+	/// Take <https://schema.org/funding> from [`Self`] as owned vector.
 	fn take_funding(&mut self) -> Vec<FundingProperty>;
+	/// Get <https://schema.org/gtin> from [`Self`] as borrowed slice.
 	fn get_gtin(&self) -> &[GtinProperty];
+	/// Take <https://schema.org/gtin> from [`Self`] as owned vector.
 	fn take_gtin(&mut self) -> Vec<GtinProperty>;
+	/// Get <https://schema.org/gtin12> from [`Self`] as borrowed slice.
 	fn get_gtin_12(&self) -> &[Gtin12Property];
+	/// Take <https://schema.org/gtin12> from [`Self`] as owned vector.
 	fn take_gtin_12(&mut self) -> Vec<Gtin12Property>;
+	/// Get <https://schema.org/gtin13> from [`Self`] as borrowed slice.
 	fn get_gtin_13(&self) -> &[Gtin13Property];
+	/// Take <https://schema.org/gtin13> from [`Self`] as owned vector.
 	fn take_gtin_13(&mut self) -> Vec<Gtin13Property>;
+	/// Get <https://schema.org/gtin14> from [`Self`] as borrowed slice.
 	fn get_gtin_14(&self) -> &[Gtin14Property];
+	/// Take <https://schema.org/gtin14> from [`Self`] as owned vector.
 	fn take_gtin_14(&mut self) -> Vec<Gtin14Property>;
+	/// Get <https://schema.org/gtin8> from [`Self`] as borrowed slice.
 	fn get_gtin_8(&self) -> &[Gtin8Property];
+	/// Take <https://schema.org/gtin8> from [`Self`] as owned vector.
 	fn take_gtin_8(&mut self) -> Vec<Gtin8Property>;
+	/// Get <https://schema.org/hasAdultConsideration> from [`Self`] as borrowed slice.
 	fn get_has_adult_consideration(&self) -> &[HasAdultConsiderationProperty];
+	/// Take <https://schema.org/hasAdultConsideration> from [`Self`] as owned vector.
 	fn take_has_adult_consideration(&mut self) -> Vec<HasAdultConsiderationProperty>;
+	/// Get <https://schema.org/hasEnergyConsumptionDetails> from [`Self`] as borrowed slice.
 	fn get_has_energy_consumption_details(&self) -> &[HasEnergyConsumptionDetailsProperty];
+	/// Take <https://schema.org/hasEnergyConsumptionDetails> from [`Self`] as owned vector.
 	fn take_has_energy_consumption_details(&mut self) -> Vec<HasEnergyConsumptionDetailsProperty>;
+	/// Get <https://schema.org/hasMeasurement> from [`Self`] as borrowed slice.
 	fn get_has_measurement(&self) -> &[HasMeasurementProperty];
+	/// Take <https://schema.org/hasMeasurement> from [`Self`] as owned vector.
 	fn take_has_measurement(&mut self) -> Vec<HasMeasurementProperty>;
+	/// Get <https://schema.org/hasMerchantReturnPolicy> from [`Self`] as borrowed slice.
 	fn get_has_merchant_return_policy(&self) -> &[HasMerchantReturnPolicyProperty];
+	/// Take <https://schema.org/hasMerchantReturnPolicy> from [`Self`] as owned vector.
 	fn take_has_merchant_return_policy(&mut self) -> Vec<HasMerchantReturnPolicyProperty>;
+	/// Get <https://schema.org/hasProductReturnPolicy> from [`Self`] as borrowed slice.
 	fn get_has_product_return_policy(&self) -> &[HasProductReturnPolicyProperty];
+	/// Take <https://schema.org/hasProductReturnPolicy> from [`Self`] as owned vector.
 	fn take_has_product_return_policy(&mut self) -> Vec<HasProductReturnPolicyProperty>;
+	/// Get <https://schema.org/height> from [`Self`] as borrowed slice.
 	fn get_height(&self) -> &[HeightProperty];
+	/// Take <https://schema.org/height> from [`Self`] as owned vector.
 	fn take_height(&mut self) -> Vec<HeightProperty>;
+	/// Get <https://schema.org/inProductGroupWithID> from [`Self`] as borrowed slice.
 	fn get_in_product_group_with_id(&self) -> &[InProductGroupWithIdProperty];
+	/// Take <https://schema.org/inProductGroupWithID> from [`Self`] as owned vector.
 	fn take_in_product_group_with_id(&mut self) -> Vec<InProductGroupWithIdProperty>;
+	/// Get <https://schema.org/isAccessoryOrSparePartFor> from [`Self`] as borrowed slice.
 	fn get_is_accessory_or_spare_part_for(&self) -> &[IsAccessoryOrSparePartForProperty];
+	/// Take <https://schema.org/isAccessoryOrSparePartFor> from [`Self`] as owned vector.
 	fn take_is_accessory_or_spare_part_for(&mut self) -> Vec<IsAccessoryOrSparePartForProperty>;
+	/// Get <https://schema.org/isConsumableFor> from [`Self`] as borrowed slice.
 	fn get_is_consumable_for(&self) -> &[IsConsumableForProperty];
+	/// Take <https://schema.org/isConsumableFor> from [`Self`] as owned vector.
 	fn take_is_consumable_for(&mut self) -> Vec<IsConsumableForProperty>;
+	/// Get <https://schema.org/isFamilyFriendly> from [`Self`] as borrowed slice.
 	fn get_is_family_friendly(&self) -> &[IsFamilyFriendlyProperty];
+	/// Take <https://schema.org/isFamilyFriendly> from [`Self`] as owned vector.
 	fn take_is_family_friendly(&mut self) -> Vec<IsFamilyFriendlyProperty>;
+	/// Get <https://schema.org/isRelatedTo> from [`Self`] as borrowed slice.
 	fn get_is_related_to(&self) -> &[IsRelatedToProperty];
+	/// Take <https://schema.org/isRelatedTo> from [`Self`] as owned vector.
 	fn take_is_related_to(&mut self) -> Vec<IsRelatedToProperty>;
+	/// Get <https://schema.org/isSimilarTo> from [`Self`] as borrowed slice.
 	fn get_is_similar_to(&self) -> &[IsSimilarToProperty];
+	/// Take <https://schema.org/isSimilarTo> from [`Self`] as owned vector.
 	fn take_is_similar_to(&mut self) -> Vec<IsSimilarToProperty>;
+	/// Get <https://schema.org/isVariantOf> from [`Self`] as borrowed slice.
 	fn get_is_variant_of(&self) -> &[IsVariantOfProperty];
+	/// Take <https://schema.org/isVariantOf> from [`Self`] as owned vector.
 	fn take_is_variant_of(&mut self) -> Vec<IsVariantOfProperty>;
+	/// Get <https://schema.org/itemCondition> from [`Self`] as borrowed slice.
 	fn get_item_condition(&self) -> &[ItemConditionProperty];
+	/// Take <https://schema.org/itemCondition> from [`Self`] as owned vector.
 	fn take_item_condition(&mut self) -> Vec<ItemConditionProperty>;
+	/// Get <https://schema.org/keywords> from [`Self`] as borrowed slice.
 	fn get_keywords(&self) -> &[KeywordsProperty];
+	/// Take <https://schema.org/keywords> from [`Self`] as owned vector.
 	fn take_keywords(&mut self) -> Vec<KeywordsProperty>;
+	/// Get <https://schema.org/logo> from [`Self`] as borrowed slice.
 	fn get_logo(&self) -> &[LogoProperty];
+	/// Take <https://schema.org/logo> from [`Self`] as owned vector.
 	fn take_logo(&mut self) -> Vec<LogoProperty>;
+	/// Get <https://schema.org/manufacturer> from [`Self`] as borrowed slice.
 	fn get_manufacturer(&self) -> &[ManufacturerProperty];
+	/// Take <https://schema.org/manufacturer> from [`Self`] as owned vector.
 	fn take_manufacturer(&mut self) -> Vec<ManufacturerProperty>;
+	/// Get <https://schema.org/material> from [`Self`] as borrowed slice.
 	fn get_material(&self) -> &[MaterialProperty];
+	/// Take <https://schema.org/material> from [`Self`] as owned vector.
 	fn take_material(&mut self) -> Vec<MaterialProperty>;
+	/// Get <https://schema.org/mobileUrl> from [`Self`] as borrowed slice.
 	fn get_mobile_url(&self) -> &[MobileUrlProperty];
+	/// Take <https://schema.org/mobileUrl> from [`Self`] as owned vector.
 	fn take_mobile_url(&mut self) -> Vec<MobileUrlProperty>;
+	/// Get <https://schema.org/model> from [`Self`] as borrowed slice.
 	fn get_model(&self) -> &[ModelProperty];
+	/// Take <https://schema.org/model> from [`Self`] as owned vector.
 	fn take_model(&mut self) -> Vec<ModelProperty>;
+	/// Get <https://schema.org/mpn> from [`Self`] as borrowed slice.
 	fn get_mpn(&self) -> &[MpnProperty];
+	/// Take <https://schema.org/mpn> from [`Self`] as owned vector.
 	fn take_mpn(&mut self) -> Vec<MpnProperty>;
+	/// Get <https://schema.org/negativeNotes> from [`Self`] as borrowed slice.
 	fn get_negative_notes(&self) -> &[NegativeNotesProperty];
+	/// Take <https://schema.org/negativeNotes> from [`Self`] as owned vector.
 	fn take_negative_notes(&mut self) -> Vec<NegativeNotesProperty>;
+	/// Get <https://schema.org/nsn> from [`Self`] as borrowed slice.
 	fn get_nsn(&self) -> &[NsnProperty];
+	/// Take <https://schema.org/nsn> from [`Self`] as owned vector.
 	fn take_nsn(&mut self) -> Vec<NsnProperty>;
+	/// Get <https://schema.org/offers> from [`Self`] as borrowed slice.
 	fn get_offers(&self) -> &[OffersProperty];
+	/// Take <https://schema.org/offers> from [`Self`] as owned vector.
 	fn take_offers(&mut self) -> Vec<OffersProperty>;
+	/// Get <https://schema.org/pattern> from [`Self`] as borrowed slice.
 	fn get_pattern(&self) -> &[PatternProperty];
+	/// Take <https://schema.org/pattern> from [`Self`] as owned vector.
 	fn take_pattern(&mut self) -> Vec<PatternProperty>;
+	/// Get <https://schema.org/positiveNotes> from [`Self`] as borrowed slice.
 	fn get_positive_notes(&self) -> &[PositiveNotesProperty];
+	/// Take <https://schema.org/positiveNotes> from [`Self`] as owned vector.
 	fn take_positive_notes(&mut self) -> Vec<PositiveNotesProperty>;
+	/// Get <https://schema.org/productID> from [`Self`] as borrowed slice.
 	fn get_product_id(&self) -> &[ProductIdProperty];
+	/// Take <https://schema.org/productID> from [`Self`] as owned vector.
 	fn take_product_id(&mut self) -> Vec<ProductIdProperty>;
+	/// Get <https://schema.org/productionDate> from [`Self`] as borrowed slice.
 	fn get_production_date(&self) -> &[ProductionDateProperty];
+	/// Take <https://schema.org/productionDate> from [`Self`] as owned vector.
 	fn take_production_date(&mut self) -> Vec<ProductionDateProperty>;
+	/// Get <https://schema.org/purchaseDate> from [`Self`] as borrowed slice.
 	fn get_purchase_date(&self) -> &[PurchaseDateProperty];
+	/// Take <https://schema.org/purchaseDate> from [`Self`] as owned vector.
 	fn take_purchase_date(&mut self) -> Vec<PurchaseDateProperty>;
+	/// Get <https://schema.org/releaseDate> from [`Self`] as borrowed slice.
 	fn get_release_date(&self) -> &[ReleaseDateProperty];
+	/// Take <https://schema.org/releaseDate> from [`Self`] as owned vector.
 	fn take_release_date(&mut self) -> Vec<ReleaseDateProperty>;
+	/// Get <https://schema.org/review> from [`Self`] as borrowed slice.
 	fn get_review(&self) -> &[ReviewProperty];
+	/// Take <https://schema.org/review> from [`Self`] as owned vector.
 	fn take_review(&mut self) -> Vec<ReviewProperty>;
+	/// Get <https://schema.org/reviews> from [`Self`] as borrowed slice.
 	fn get_reviews(&self) -> &[ReviewsProperty];
+	/// Take <https://schema.org/reviews> from [`Self`] as owned vector.
 	fn take_reviews(&mut self) -> Vec<ReviewsProperty>;
+	/// Get <https://schema.org/size> from [`Self`] as borrowed slice.
 	fn get_size(&self) -> &[SizeProperty];
+	/// Take <https://schema.org/size> from [`Self`] as owned vector.
 	fn take_size(&mut self) -> Vec<SizeProperty>;
+	/// Get <https://schema.org/sku> from [`Self`] as borrowed slice.
 	fn get_sku(&self) -> &[SkuProperty];
+	/// Take <https://schema.org/sku> from [`Self`] as owned vector.
 	fn take_sku(&mut self) -> Vec<SkuProperty>;
+	/// Get <https://schema.org/slogan> from [`Self`] as borrowed slice.
 	fn get_slogan(&self) -> &[SloganProperty];
+	/// Take <https://schema.org/slogan> from [`Self`] as owned vector.
 	fn take_slogan(&mut self) -> Vec<SloganProperty>;
+	/// Get <https://schema.org/weight> from [`Self`] as borrowed slice.
 	fn get_weight(&self) -> &[WeightProperty];
+	/// Take <https://schema.org/weight> from [`Self`] as owned vector.
 	fn take_weight(&mut self) -> Vec<WeightProperty>;
+	/// Get <https://schema.org/width> from [`Self`] as borrowed slice.
 	fn get_width(&self) -> &[WidthProperty];
+	/// Take <https://schema.org/width> from [`Self`] as owned vector.
 	fn take_width(&mut self) -> Vec<WidthProperty>;
 }
 impl ProductTrait for Product {

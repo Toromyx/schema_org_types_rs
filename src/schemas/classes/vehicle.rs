@@ -3,193 +3,380 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct Vehicle {
+	/// <https://schema.org/accelerationTime>
 	pub r#acceleration_time: Vec<AccelerationTimeProperty>,
+	/// <https://schema.org/bodyType>
 	pub r#body_type: Vec<BodyTypeProperty>,
+	/// <https://schema.org/callSign>
 	pub r#call_sign: Vec<CallSignProperty>,
+	/// <https://schema.org/cargoVolume>
 	pub r#cargo_volume: Vec<CargoVolumeProperty>,
+	/// <https://schema.org/dateVehicleFirstRegistered>
 	pub r#date_vehicle_first_registered: Vec<DateVehicleFirstRegisteredProperty>,
+	/// <https://schema.org/driveWheelConfiguration>
 	pub r#drive_wheel_configuration: Vec<DriveWheelConfigurationProperty>,
+	/// <https://schema.org/emissionsCO2>
 	pub r#emissions_co_2: Vec<EmissionsCo2Property>,
+	/// <https://schema.org/fuelCapacity>
 	pub r#fuel_capacity: Vec<FuelCapacityProperty>,
+	/// <https://schema.org/fuelConsumption>
 	pub r#fuel_consumption: Vec<FuelConsumptionProperty>,
+	/// <https://schema.org/fuelEfficiency>
 	pub r#fuel_efficiency: Vec<FuelEfficiencyProperty>,
+	/// <https://schema.org/fuelType>
 	pub r#fuel_type: Vec<FuelTypeProperty>,
+	/// <https://schema.org/knownVehicleDamages>
 	pub r#known_vehicle_damages: Vec<KnownVehicleDamagesProperty>,
+	/// <https://schema.org/meetsEmissionStandard>
 	pub r#meets_emission_standard: Vec<MeetsEmissionStandardProperty>,
+	/// <https://schema.org/mileageFromOdometer>
 	pub r#mileage_from_odometer: Vec<MileageFromOdometerProperty>,
+	/// <https://schema.org/modelDate>
 	pub r#model_date: Vec<ModelDateProperty>,
+	/// <https://schema.org/numberOfAirbags>
 	pub r#number_of_airbags: Vec<NumberOfAirbagsProperty>,
+	/// <https://schema.org/numberOfAxles>
 	pub r#number_of_axles: Vec<NumberOfAxlesProperty>,
+	/// <https://schema.org/numberOfDoors>
 	pub r#number_of_doors: Vec<NumberOfDoorsProperty>,
+	/// <https://schema.org/numberOfForwardGears>
 	pub r#number_of_forward_gears: Vec<NumberOfForwardGearsProperty>,
+	/// <https://schema.org/numberOfPreviousOwners>
 	pub r#number_of_previous_owners: Vec<NumberOfPreviousOwnersProperty>,
+	/// <https://schema.org/payload>
 	pub r#payload: Vec<PayloadProperty>,
+	/// <https://schema.org/productionDate>
 	pub r#production_date: Vec<ProductionDateProperty>,
+	/// <https://schema.org/purchaseDate>
 	pub r#purchase_date: Vec<PurchaseDateProperty>,
+	/// <https://schema.org/seatingCapacity>
 	pub r#seating_capacity: Vec<SeatingCapacityProperty>,
+	/// <https://schema.org/speed>
 	pub r#speed: Vec<SpeedProperty>,
+	/// <https://schema.org/steeringPosition>
 	pub r#steering_position: Vec<SteeringPositionProperty>,
+	/// <https://schema.org/stupidProperty>
 	pub r#stupid_property: Vec<StupidPropertyProperty>,
+	/// <https://schema.org/tongueWeight>
 	pub r#tongue_weight: Vec<TongueWeightProperty>,
+	/// <https://schema.org/trailerWeight>
 	pub r#trailer_weight: Vec<TrailerWeightProperty>,
+	/// <https://schema.org/vehicleConfiguration>
 	pub r#vehicle_configuration: Vec<VehicleConfigurationProperty>,
+	/// <https://schema.org/vehicleEngine>
 	pub r#vehicle_engine: Vec<VehicleEngineProperty>,
+	/// <https://schema.org/vehicleIdentificationNumber>
 	pub r#vehicle_identification_number: Vec<VehicleIdentificationNumberProperty>,
+	/// <https://schema.org/vehicleInteriorColor>
 	pub r#vehicle_interior_color: Vec<VehicleInteriorColorProperty>,
+	/// <https://schema.org/vehicleInteriorType>
 	pub r#vehicle_interior_type: Vec<VehicleInteriorTypeProperty>,
+	/// <https://schema.org/vehicleModelDate>
 	pub r#vehicle_model_date: Vec<VehicleModelDateProperty>,
+	/// <https://schema.org/vehicleSeatingCapacity>
 	pub r#vehicle_seating_capacity: Vec<VehicleSeatingCapacityProperty>,
+	/// <https://schema.org/vehicleSpecialUsage>
 	pub r#vehicle_special_usage: Vec<VehicleSpecialUsageProperty>,
+	/// <https://schema.org/vehicleTransmission>
 	pub r#vehicle_transmission: Vec<VehicleTransmissionProperty>,
+	/// <https://schema.org/weightTotal>
 	pub r#weight_total: Vec<WeightTotalProperty>,
+	/// <https://schema.org/wheelbase>
 	pub r#wheelbase: Vec<WheelbaseProperty>,
+	/// <https://schema.org/additionalProperty>
 	pub r#additional_property: Vec<AdditionalPropertyProperty>,
+	/// <https://schema.org/aggregateRating>
 	pub r#aggregate_rating: Vec<AggregateRatingProperty>,
+	/// <https://schema.org/asin>
 	pub r#asin: Vec<AsinProperty>,
+	/// <https://schema.org/audience>
 	pub r#audience: Vec<AudienceProperty>,
+	/// <https://schema.org/award>
 	pub r#award: Vec<AwardProperty>,
+	/// <https://schema.org/awards>
 	pub r#awards: Vec<AwardsProperty>,
+	/// <https://schema.org/brand>
 	pub r#brand: Vec<BrandProperty>,
+	/// <https://schema.org/category>
 	pub r#category: Vec<CategoryProperty>,
+	/// <https://schema.org/color>
 	pub r#color: Vec<ColorProperty>,
+	/// <https://schema.org/countryOfAssembly>
 	pub r#country_of_assembly: Vec<CountryOfAssemblyProperty>,
+	/// <https://schema.org/countryOfLastProcessing>
 	pub r#country_of_last_processing: Vec<CountryOfLastProcessingProperty>,
+	/// <https://schema.org/countryOfOrigin>
 	pub r#country_of_origin: Vec<CountryOfOriginProperty>,
+	/// <https://schema.org/depth>
 	pub r#depth: Vec<DepthProperty>,
+	/// <https://schema.org/funding>
 	pub r#funding: Vec<FundingProperty>,
+	/// <https://schema.org/gtin>
 	pub r#gtin: Vec<GtinProperty>,
+	/// <https://schema.org/gtin12>
 	pub r#gtin_12: Vec<Gtin12Property>,
+	/// <https://schema.org/gtin13>
 	pub r#gtin_13: Vec<Gtin13Property>,
+	/// <https://schema.org/gtin14>
 	pub r#gtin_14: Vec<Gtin14Property>,
+	/// <https://schema.org/gtin8>
 	pub r#gtin_8: Vec<Gtin8Property>,
+	/// <https://schema.org/hasAdultConsideration>
 	pub r#has_adult_consideration: Vec<HasAdultConsiderationProperty>,
+	/// <https://schema.org/hasEnergyConsumptionDetails>
 	pub r#has_energy_consumption_details: Vec<HasEnergyConsumptionDetailsProperty>,
+	/// <https://schema.org/hasMeasurement>
 	pub r#has_measurement: Vec<HasMeasurementProperty>,
+	/// <https://schema.org/hasMerchantReturnPolicy>
 	pub r#has_merchant_return_policy: Vec<HasMerchantReturnPolicyProperty>,
+	/// <https://schema.org/hasProductReturnPolicy>
 	pub r#has_product_return_policy: Vec<HasProductReturnPolicyProperty>,
+	/// <https://schema.org/height>
 	pub r#height: Vec<HeightProperty>,
+	/// <https://schema.org/inProductGroupWithID>
 	pub r#in_product_group_with_id: Vec<InProductGroupWithIdProperty>,
+	/// <https://schema.org/isAccessoryOrSparePartFor>
 	pub r#is_accessory_or_spare_part_for: Vec<IsAccessoryOrSparePartForProperty>,
+	/// <https://schema.org/isConsumableFor>
 	pub r#is_consumable_for: Vec<IsConsumableForProperty>,
+	/// <https://schema.org/isFamilyFriendly>
 	pub r#is_family_friendly: Vec<IsFamilyFriendlyProperty>,
+	/// <https://schema.org/isRelatedTo>
 	pub r#is_related_to: Vec<IsRelatedToProperty>,
+	/// <https://schema.org/isSimilarTo>
 	pub r#is_similar_to: Vec<IsSimilarToProperty>,
+	/// <https://schema.org/isVariantOf>
 	pub r#is_variant_of: Vec<IsVariantOfProperty>,
+	/// <https://schema.org/itemCondition>
 	pub r#item_condition: Vec<ItemConditionProperty>,
+	/// <https://schema.org/keywords>
 	pub r#keywords: Vec<KeywordsProperty>,
+	/// <https://schema.org/logo>
 	pub r#logo: Vec<LogoProperty>,
+	/// <https://schema.org/manufacturer>
 	pub r#manufacturer: Vec<ManufacturerProperty>,
+	/// <https://schema.org/material>
 	pub r#material: Vec<MaterialProperty>,
+	/// <https://schema.org/mobileUrl>
 	pub r#mobile_url: Vec<MobileUrlProperty>,
+	/// <https://schema.org/model>
 	pub r#model: Vec<ModelProperty>,
+	/// <https://schema.org/mpn>
 	pub r#mpn: Vec<MpnProperty>,
+	/// <https://schema.org/negativeNotes>
 	pub r#negative_notes: Vec<NegativeNotesProperty>,
+	/// <https://schema.org/nsn>
 	pub r#nsn: Vec<NsnProperty>,
+	/// <https://schema.org/offers>
 	pub r#offers: Vec<OffersProperty>,
+	/// <https://schema.org/pattern>
 	pub r#pattern: Vec<PatternProperty>,
+	/// <https://schema.org/positiveNotes>
 	pub r#positive_notes: Vec<PositiveNotesProperty>,
+	/// <https://schema.org/productID>
 	pub r#product_id: Vec<ProductIdProperty>,
+	/// <https://schema.org/releaseDate>
 	pub r#release_date: Vec<ReleaseDateProperty>,
+	/// <https://schema.org/review>
 	pub r#review: Vec<ReviewProperty>,
+	/// <https://schema.org/reviews>
 	pub r#reviews: Vec<ReviewsProperty>,
+	/// <https://schema.org/size>
 	pub r#size: Vec<SizeProperty>,
+	/// <https://schema.org/sku>
 	pub r#sku: Vec<SkuProperty>,
+	/// <https://schema.org/slogan>
 	pub r#slogan: Vec<SloganProperty>,
+	/// <https://schema.org/weight>
 	pub r#weight: Vec<WeightProperty>,
+	/// <https://schema.org/width>
 	pub r#width: Vec<WidthProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/Vehicle>.
 pub trait VehicleTrait {
+	/// Get <https://schema.org/accelerationTime> from [`Self`] as borrowed slice.
 	fn get_acceleration_time(&self) -> &[AccelerationTimeProperty];
+	/// Take <https://schema.org/accelerationTime> from [`Self`] as owned vector.
 	fn take_acceleration_time(&mut self) -> Vec<AccelerationTimeProperty>;
+	/// Get <https://schema.org/bodyType> from [`Self`] as borrowed slice.
 	fn get_body_type(&self) -> &[BodyTypeProperty];
+	/// Take <https://schema.org/bodyType> from [`Self`] as owned vector.
 	fn take_body_type(&mut self) -> Vec<BodyTypeProperty>;
+	/// Get <https://schema.org/callSign> from [`Self`] as borrowed slice.
 	fn get_call_sign(&self) -> &[CallSignProperty];
+	/// Take <https://schema.org/callSign> from [`Self`] as owned vector.
 	fn take_call_sign(&mut self) -> Vec<CallSignProperty>;
+	/// Get <https://schema.org/cargoVolume> from [`Self`] as borrowed slice.
 	fn get_cargo_volume(&self) -> &[CargoVolumeProperty];
+	/// Take <https://schema.org/cargoVolume> from [`Self`] as owned vector.
 	fn take_cargo_volume(&mut self) -> Vec<CargoVolumeProperty>;
+	/// Get <https://schema.org/dateVehicleFirstRegistered> from [`Self`] as borrowed slice.
 	fn get_date_vehicle_first_registered(&self) -> &[DateVehicleFirstRegisteredProperty];
+	/// Take <https://schema.org/dateVehicleFirstRegistered> from [`Self`] as owned vector.
 	fn take_date_vehicle_first_registered(&mut self) -> Vec<DateVehicleFirstRegisteredProperty>;
+	/// Get <https://schema.org/driveWheelConfiguration> from [`Self`] as borrowed slice.
 	fn get_drive_wheel_configuration(&self) -> &[DriveWheelConfigurationProperty];
+	/// Take <https://schema.org/driveWheelConfiguration> from [`Self`] as owned vector.
 	fn take_drive_wheel_configuration(&mut self) -> Vec<DriveWheelConfigurationProperty>;
+	/// Get <https://schema.org/emissionsCO2> from [`Self`] as borrowed slice.
 	fn get_emissions_co_2(&self) -> &[EmissionsCo2Property];
+	/// Take <https://schema.org/emissionsCO2> from [`Self`] as owned vector.
 	fn take_emissions_co_2(&mut self) -> Vec<EmissionsCo2Property>;
+	/// Get <https://schema.org/fuelCapacity> from [`Self`] as borrowed slice.
 	fn get_fuel_capacity(&self) -> &[FuelCapacityProperty];
+	/// Take <https://schema.org/fuelCapacity> from [`Self`] as owned vector.
 	fn take_fuel_capacity(&mut self) -> Vec<FuelCapacityProperty>;
+	/// Get <https://schema.org/fuelConsumption> from [`Self`] as borrowed slice.
 	fn get_fuel_consumption(&self) -> &[FuelConsumptionProperty];
+	/// Take <https://schema.org/fuelConsumption> from [`Self`] as owned vector.
 	fn take_fuel_consumption(&mut self) -> Vec<FuelConsumptionProperty>;
+	/// Get <https://schema.org/fuelEfficiency> from [`Self`] as borrowed slice.
 	fn get_fuel_efficiency(&self) -> &[FuelEfficiencyProperty];
+	/// Take <https://schema.org/fuelEfficiency> from [`Self`] as owned vector.
 	fn take_fuel_efficiency(&mut self) -> Vec<FuelEfficiencyProperty>;
+	/// Get <https://schema.org/fuelType> from [`Self`] as borrowed slice.
 	fn get_fuel_type(&self) -> &[FuelTypeProperty];
+	/// Take <https://schema.org/fuelType> from [`Self`] as owned vector.
 	fn take_fuel_type(&mut self) -> Vec<FuelTypeProperty>;
+	/// Get <https://schema.org/knownVehicleDamages> from [`Self`] as borrowed slice.
 	fn get_known_vehicle_damages(&self) -> &[KnownVehicleDamagesProperty];
+	/// Take <https://schema.org/knownVehicleDamages> from [`Self`] as owned vector.
 	fn take_known_vehicle_damages(&mut self) -> Vec<KnownVehicleDamagesProperty>;
+	/// Get <https://schema.org/meetsEmissionStandard> from [`Self`] as borrowed slice.
 	fn get_meets_emission_standard(&self) -> &[MeetsEmissionStandardProperty];
+	/// Take <https://schema.org/meetsEmissionStandard> from [`Self`] as owned vector.
 	fn take_meets_emission_standard(&mut self) -> Vec<MeetsEmissionStandardProperty>;
+	/// Get <https://schema.org/mileageFromOdometer> from [`Self`] as borrowed slice.
 	fn get_mileage_from_odometer(&self) -> &[MileageFromOdometerProperty];
+	/// Take <https://schema.org/mileageFromOdometer> from [`Self`] as owned vector.
 	fn take_mileage_from_odometer(&mut self) -> Vec<MileageFromOdometerProperty>;
+	/// Get <https://schema.org/modelDate> from [`Self`] as borrowed slice.
 	fn get_model_date(&self) -> &[ModelDateProperty];
+	/// Take <https://schema.org/modelDate> from [`Self`] as owned vector.
 	fn take_model_date(&mut self) -> Vec<ModelDateProperty>;
+	/// Get <https://schema.org/numberOfAirbags> from [`Self`] as borrowed slice.
 	fn get_number_of_airbags(&self) -> &[NumberOfAirbagsProperty];
+	/// Take <https://schema.org/numberOfAirbags> from [`Self`] as owned vector.
 	fn take_number_of_airbags(&mut self) -> Vec<NumberOfAirbagsProperty>;
+	/// Get <https://schema.org/numberOfAxles> from [`Self`] as borrowed slice.
 	fn get_number_of_axles(&self) -> &[NumberOfAxlesProperty];
+	/// Take <https://schema.org/numberOfAxles> from [`Self`] as owned vector.
 	fn take_number_of_axles(&mut self) -> Vec<NumberOfAxlesProperty>;
+	/// Get <https://schema.org/numberOfDoors> from [`Self`] as borrowed slice.
 	fn get_number_of_doors(&self) -> &[NumberOfDoorsProperty];
+	/// Take <https://schema.org/numberOfDoors> from [`Self`] as owned vector.
 	fn take_number_of_doors(&mut self) -> Vec<NumberOfDoorsProperty>;
+	/// Get <https://schema.org/numberOfForwardGears> from [`Self`] as borrowed slice.
 	fn get_number_of_forward_gears(&self) -> &[NumberOfForwardGearsProperty];
+	/// Take <https://schema.org/numberOfForwardGears> from [`Self`] as owned vector.
 	fn take_number_of_forward_gears(&mut self) -> Vec<NumberOfForwardGearsProperty>;
+	/// Get <https://schema.org/numberOfPreviousOwners> from [`Self`] as borrowed slice.
 	fn get_number_of_previous_owners(&self) -> &[NumberOfPreviousOwnersProperty];
+	/// Take <https://schema.org/numberOfPreviousOwners> from [`Self`] as owned vector.
 	fn take_number_of_previous_owners(&mut self) -> Vec<NumberOfPreviousOwnersProperty>;
+	/// Get <https://schema.org/payload> from [`Self`] as borrowed slice.
 	fn get_payload(&self) -> &[PayloadProperty];
+	/// Take <https://schema.org/payload> from [`Self`] as owned vector.
 	fn take_payload(&mut self) -> Vec<PayloadProperty>;
+	/// Get <https://schema.org/productionDate> from [`Self`] as borrowed slice.
 	fn get_production_date(&self) -> &[ProductionDateProperty];
+	/// Take <https://schema.org/productionDate> from [`Self`] as owned vector.
 	fn take_production_date(&mut self) -> Vec<ProductionDateProperty>;
+	/// Get <https://schema.org/purchaseDate> from [`Self`] as borrowed slice.
 	fn get_purchase_date(&self) -> &[PurchaseDateProperty];
+	/// Take <https://schema.org/purchaseDate> from [`Self`] as owned vector.
 	fn take_purchase_date(&mut self) -> Vec<PurchaseDateProperty>;
+	/// Get <https://schema.org/seatingCapacity> from [`Self`] as borrowed slice.
 	fn get_seating_capacity(&self) -> &[SeatingCapacityProperty];
+	/// Take <https://schema.org/seatingCapacity> from [`Self`] as owned vector.
 	fn take_seating_capacity(&mut self) -> Vec<SeatingCapacityProperty>;
+	/// Get <https://schema.org/speed> from [`Self`] as borrowed slice.
 	fn get_speed(&self) -> &[SpeedProperty];
+	/// Take <https://schema.org/speed> from [`Self`] as owned vector.
 	fn take_speed(&mut self) -> Vec<SpeedProperty>;
+	/// Get <https://schema.org/steeringPosition> from [`Self`] as borrowed slice.
 	fn get_steering_position(&self) -> &[SteeringPositionProperty];
+	/// Take <https://schema.org/steeringPosition> from [`Self`] as owned vector.
 	fn take_steering_position(&mut self) -> Vec<SteeringPositionProperty>;
+	/// Get <https://schema.org/stupidProperty> from [`Self`] as borrowed slice.
 	fn get_stupid_property(&self) -> &[StupidPropertyProperty];
+	/// Take <https://schema.org/stupidProperty> from [`Self`] as owned vector.
 	fn take_stupid_property(&mut self) -> Vec<StupidPropertyProperty>;
+	/// Get <https://schema.org/tongueWeight> from [`Self`] as borrowed slice.
 	fn get_tongue_weight(&self) -> &[TongueWeightProperty];
+	/// Take <https://schema.org/tongueWeight> from [`Self`] as owned vector.
 	fn take_tongue_weight(&mut self) -> Vec<TongueWeightProperty>;
+	/// Get <https://schema.org/trailerWeight> from [`Self`] as borrowed slice.
 	fn get_trailer_weight(&self) -> &[TrailerWeightProperty];
+	/// Take <https://schema.org/trailerWeight> from [`Self`] as owned vector.
 	fn take_trailer_weight(&mut self) -> Vec<TrailerWeightProperty>;
+	/// Get <https://schema.org/vehicleConfiguration> from [`Self`] as borrowed slice.
 	fn get_vehicle_configuration(&self) -> &[VehicleConfigurationProperty];
+	/// Take <https://schema.org/vehicleConfiguration> from [`Self`] as owned vector.
 	fn take_vehicle_configuration(&mut self) -> Vec<VehicleConfigurationProperty>;
+	/// Get <https://schema.org/vehicleEngine> from [`Self`] as borrowed slice.
 	fn get_vehicle_engine(&self) -> &[VehicleEngineProperty];
+	/// Take <https://schema.org/vehicleEngine> from [`Self`] as owned vector.
 	fn take_vehicle_engine(&mut self) -> Vec<VehicleEngineProperty>;
+	/// Get <https://schema.org/vehicleIdentificationNumber> from [`Self`] as borrowed slice.
 	fn get_vehicle_identification_number(&self) -> &[VehicleIdentificationNumberProperty];
+	/// Take <https://schema.org/vehicleIdentificationNumber> from [`Self`] as owned vector.
 	fn take_vehicle_identification_number(&mut self) -> Vec<VehicleIdentificationNumberProperty>;
+	/// Get <https://schema.org/vehicleInteriorColor> from [`Self`] as borrowed slice.
 	fn get_vehicle_interior_color(&self) -> &[VehicleInteriorColorProperty];
+	/// Take <https://schema.org/vehicleInteriorColor> from [`Self`] as owned vector.
 	fn take_vehicle_interior_color(&mut self) -> Vec<VehicleInteriorColorProperty>;
+	/// Get <https://schema.org/vehicleInteriorType> from [`Self`] as borrowed slice.
 	fn get_vehicle_interior_type(&self) -> &[VehicleInteriorTypeProperty];
+	/// Take <https://schema.org/vehicleInteriorType> from [`Self`] as owned vector.
 	fn take_vehicle_interior_type(&mut self) -> Vec<VehicleInteriorTypeProperty>;
+	/// Get <https://schema.org/vehicleModelDate> from [`Self`] as borrowed slice.
 	fn get_vehicle_model_date(&self) -> &[VehicleModelDateProperty];
+	/// Take <https://schema.org/vehicleModelDate> from [`Self`] as owned vector.
 	fn take_vehicle_model_date(&mut self) -> Vec<VehicleModelDateProperty>;
+	/// Get <https://schema.org/vehicleSeatingCapacity> from [`Self`] as borrowed slice.
 	fn get_vehicle_seating_capacity(&self) -> &[VehicleSeatingCapacityProperty];
+	/// Take <https://schema.org/vehicleSeatingCapacity> from [`Self`] as owned vector.
 	fn take_vehicle_seating_capacity(&mut self) -> Vec<VehicleSeatingCapacityProperty>;
+	/// Get <https://schema.org/vehicleSpecialUsage> from [`Self`] as borrowed slice.
 	fn get_vehicle_special_usage(&self) -> &[VehicleSpecialUsageProperty];
+	/// Take <https://schema.org/vehicleSpecialUsage> from [`Self`] as owned vector.
 	fn take_vehicle_special_usage(&mut self) -> Vec<VehicleSpecialUsageProperty>;
+	/// Get <https://schema.org/vehicleTransmission> from [`Self`] as borrowed slice.
 	fn get_vehicle_transmission(&self) -> &[VehicleTransmissionProperty];
+	/// Take <https://schema.org/vehicleTransmission> from [`Self`] as owned vector.
 	fn take_vehicle_transmission(&mut self) -> Vec<VehicleTransmissionProperty>;
+	/// Get <https://schema.org/weightTotal> from [`Self`] as borrowed slice.
 	fn get_weight_total(&self) -> &[WeightTotalProperty];
+	/// Take <https://schema.org/weightTotal> from [`Self`] as owned vector.
 	fn take_weight_total(&mut self) -> Vec<WeightTotalProperty>;
+	/// Get <https://schema.org/wheelbase> from [`Self`] as borrowed slice.
 	fn get_wheelbase(&self) -> &[WheelbaseProperty];
+	/// Take <https://schema.org/wheelbase> from [`Self`] as owned vector.
 	fn take_wheelbase(&mut self) -> Vec<WheelbaseProperty>;
 }
 impl VehicleTrait for Vehicle {

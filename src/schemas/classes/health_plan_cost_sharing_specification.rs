@@ -3,34 +3,62 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct HealthPlanCostSharingSpecification {
+	/// <https://schema.org/healthPlanCoinsuranceOption>
 	pub r#health_plan_coinsurance_option: Vec<HealthPlanCoinsuranceOptionProperty>,
+	/// <https://schema.org/healthPlanCoinsuranceRate>
 	pub r#health_plan_coinsurance_rate: Vec<HealthPlanCoinsuranceRateProperty>,
+	/// <https://schema.org/healthPlanCopay>
 	pub r#health_plan_copay: Vec<HealthPlanCopayProperty>,
+	/// <https://schema.org/healthPlanCopayOption>
 	pub r#health_plan_copay_option: Vec<HealthPlanCopayOptionProperty>,
+	/// <https://schema.org/healthPlanPharmacyCategory>
 	pub r#health_plan_pharmacy_category: Vec<HealthPlanPharmacyCategoryProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/HealthPlanCostSharingSpecification>.
 pub trait HealthPlanCostSharingSpecificationTrait {
+	/// Get <https://schema.org/healthPlanCoinsuranceOption> from [`Self`] as borrowed slice.
 	fn get_health_plan_coinsurance_option(&self) -> &[HealthPlanCoinsuranceOptionProperty];
+	/// Take <https://schema.org/healthPlanCoinsuranceOption> from [`Self`] as owned vector.
 	fn take_health_plan_coinsurance_option(&mut self) -> Vec<HealthPlanCoinsuranceOptionProperty>;
+	/// Get <https://schema.org/healthPlanCoinsuranceRate> from [`Self`] as borrowed slice.
 	fn get_health_plan_coinsurance_rate(&self) -> &[HealthPlanCoinsuranceRateProperty];
+	/// Take <https://schema.org/healthPlanCoinsuranceRate> from [`Self`] as owned vector.
 	fn take_health_plan_coinsurance_rate(&mut self) -> Vec<HealthPlanCoinsuranceRateProperty>;
+	/// Get <https://schema.org/healthPlanCopay> from [`Self`] as borrowed slice.
 	fn get_health_plan_copay(&self) -> &[HealthPlanCopayProperty];
+	/// Take <https://schema.org/healthPlanCopay> from [`Self`] as owned vector.
 	fn take_health_plan_copay(&mut self) -> Vec<HealthPlanCopayProperty>;
+	/// Get <https://schema.org/healthPlanCopayOption> from [`Self`] as borrowed slice.
 	fn get_health_plan_copay_option(&self) -> &[HealthPlanCopayOptionProperty];
+	/// Take <https://schema.org/healthPlanCopayOption> from [`Self`] as owned vector.
 	fn take_health_plan_copay_option(&mut self) -> Vec<HealthPlanCopayOptionProperty>;
+	/// Get <https://schema.org/healthPlanPharmacyCategory> from [`Self`] as borrowed slice.
 	fn get_health_plan_pharmacy_category(&self) -> &[HealthPlanPharmacyCategoryProperty];
+	/// Take <https://schema.org/healthPlanPharmacyCategory> from [`Self`] as owned vector.
 	fn take_health_plan_pharmacy_category(&mut self) -> Vec<HealthPlanPharmacyCategoryProperty>;
 }
 impl HealthPlanCostSharingSpecificationTrait for HealthPlanCostSharingSpecification {

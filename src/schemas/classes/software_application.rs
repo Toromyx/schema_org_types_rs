@@ -3,204 +3,402 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct SoftwareApplication {
+	/// <https://schema.org/applicationCategory>
 	pub r#application_category: Vec<ApplicationCategoryProperty>,
+	/// <https://schema.org/applicationSubCategory>
 	pub r#application_sub_category: Vec<ApplicationSubCategoryProperty>,
+	/// <https://schema.org/applicationSuite>
 	pub r#application_suite: Vec<ApplicationSuiteProperty>,
+	/// <https://schema.org/availableOnDevice>
 	pub r#available_on_device: Vec<AvailableOnDeviceProperty>,
+	/// <https://schema.org/countriesNotSupported>
 	pub r#countries_not_supported: Vec<CountriesNotSupportedProperty>,
+	/// <https://schema.org/countriesSupported>
 	pub r#countries_supported: Vec<CountriesSupportedProperty>,
+	/// <https://schema.org/device>
 	pub r#device: Vec<DeviceProperty>,
+	/// <https://schema.org/downloadUrl>
 	pub r#download_url: Vec<DownloadUrlProperty>,
+	/// <https://schema.org/featureList>
 	pub r#feature_list: Vec<FeatureListProperty>,
+	/// <https://schema.org/fileSize>
 	pub r#file_size: Vec<FileSizeProperty>,
+	/// <https://schema.org/installUrl>
 	pub r#install_url: Vec<InstallUrlProperty>,
+	/// <https://schema.org/memoryRequirements>
 	pub r#memory_requirements: Vec<MemoryRequirementsProperty>,
+	/// <https://schema.org/operatingSystem>
 	pub r#operating_system: Vec<OperatingSystemProperty>,
+	/// <https://schema.org/permissions>
 	pub r#permissions: Vec<PermissionsProperty>,
+	/// <https://schema.org/processorRequirements>
 	pub r#processor_requirements: Vec<ProcessorRequirementsProperty>,
+	/// <https://schema.org/releaseNotes>
 	pub r#release_notes: Vec<ReleaseNotesProperty>,
+	/// <https://schema.org/requirements>
 	pub r#requirements: Vec<RequirementsProperty>,
+	/// <https://schema.org/screenshot>
 	pub r#screenshot: Vec<ScreenshotProperty>,
+	/// <https://schema.org/softwareAddOn>
 	pub r#software_add_on: Vec<SoftwareAddOnProperty>,
+	/// <https://schema.org/softwareHelp>
 	pub r#software_help: Vec<SoftwareHelpProperty>,
+	/// <https://schema.org/softwareRequirements>
 	pub r#software_requirements: Vec<SoftwareRequirementsProperty>,
+	/// <https://schema.org/softwareVersion>
 	pub r#software_version: Vec<SoftwareVersionProperty>,
+	/// <https://schema.org/storageRequirements>
 	pub r#storage_requirements: Vec<StorageRequirementsProperty>,
+	/// <https://schema.org/supportingData>
 	pub r#supporting_data: Vec<SupportingDataProperty>,
+	/// <https://schema.org/about>
 	pub r#about: Vec<AboutProperty>,
+	/// <https://schema.org/abstract>
 	pub r#abstract: Vec<AbstractProperty>,
+	/// <https://schema.org/accessMode>
 	pub r#access_mode: Vec<AccessModeProperty>,
+	/// <https://schema.org/accessModeSufficient>
 	pub r#access_mode_sufficient: Vec<AccessModeSufficientProperty>,
+	/// <https://schema.org/accessibilityAPI>
 	pub r#accessibility_api: Vec<AccessibilityApiProperty>,
+	/// <https://schema.org/accessibilityControl>
 	pub r#accessibility_control: Vec<AccessibilityControlProperty>,
+	/// <https://schema.org/accessibilityFeature>
 	pub r#accessibility_feature: Vec<AccessibilityFeatureProperty>,
+	/// <https://schema.org/accessibilityHazard>
 	pub r#accessibility_hazard: Vec<AccessibilityHazardProperty>,
+	/// <https://schema.org/accessibilitySummary>
 	pub r#accessibility_summary: Vec<AccessibilitySummaryProperty>,
+	/// <https://schema.org/accountablePerson>
 	pub r#accountable_person: Vec<AccountablePersonProperty>,
+	/// <https://schema.org/acquireLicensePage>
 	pub r#acquire_license_page: Vec<AcquireLicensePageProperty>,
+	/// <https://schema.org/aggregateRating>
 	pub r#aggregate_rating: Vec<AggregateRatingProperty>,
+	/// <https://schema.org/alternativeHeadline>
 	pub r#alternative_headline: Vec<AlternativeHeadlineProperty>,
+	/// <https://schema.org/archivedAt>
 	pub r#archived_at: Vec<ArchivedAtProperty>,
+	/// <https://schema.org/assesses>
 	pub r#assesses: Vec<AssessesProperty>,
+	/// <https://schema.org/associatedMedia>
 	pub r#associated_media: Vec<AssociatedMediaProperty>,
+	/// <https://schema.org/audience>
 	pub r#audience: Vec<AudienceProperty>,
+	/// <https://schema.org/audio>
 	pub r#audio: Vec<AudioProperty>,
+	/// <https://schema.org/author>
 	pub r#author: Vec<AuthorProperty>,
+	/// <https://schema.org/award>
 	pub r#award: Vec<AwardProperty>,
+	/// <https://schema.org/awards>
 	pub r#awards: Vec<AwardsProperty>,
+	/// <https://schema.org/character>
 	pub r#character: Vec<CharacterProperty>,
+	/// <https://schema.org/citation>
 	pub r#citation: Vec<CitationProperty>,
+	/// <https://schema.org/comment>
 	pub r#comment: Vec<CommentProperty>,
+	/// <https://schema.org/commentCount>
 	pub r#comment_count: Vec<CommentCountProperty>,
+	/// <https://schema.org/conditionsOfAccess>
 	pub r#conditions_of_access: Vec<ConditionsOfAccessProperty>,
+	/// <https://schema.org/contentLocation>
 	pub r#content_location: Vec<ContentLocationProperty>,
+	/// <https://schema.org/contentRating>
 	pub r#content_rating: Vec<ContentRatingProperty>,
+	/// <https://schema.org/contentReferenceTime>
 	pub r#content_reference_time: Vec<ContentReferenceTimeProperty>,
+	/// <https://schema.org/contributor>
 	pub r#contributor: Vec<ContributorProperty>,
+	/// <https://schema.org/copyrightHolder>
 	pub r#copyright_holder: Vec<CopyrightHolderProperty>,
+	/// <https://schema.org/copyrightNotice>
 	pub r#copyright_notice: Vec<CopyrightNoticeProperty>,
+	/// <https://schema.org/copyrightYear>
 	pub r#copyright_year: Vec<CopyrightYearProperty>,
+	/// <https://schema.org/correction>
 	pub r#correction: Vec<CorrectionProperty>,
+	/// <https://schema.org/countryOfOrigin>
 	pub r#country_of_origin: Vec<CountryOfOriginProperty>,
+	/// <https://schema.org/creativeWorkStatus>
 	pub r#creative_work_status: Vec<CreativeWorkStatusProperty>,
+	/// <https://schema.org/creator>
 	pub r#creator: Vec<CreatorProperty>,
+	/// <https://schema.org/creditText>
 	pub r#credit_text: Vec<CreditTextProperty>,
+	/// <https://schema.org/dateCreated>
 	pub r#date_created: Vec<DateCreatedProperty>,
+	/// <https://schema.org/dateModified>
 	pub r#date_modified: Vec<DateModifiedProperty>,
+	/// <https://schema.org/datePublished>
 	pub r#date_published: Vec<DatePublishedProperty>,
+	/// <https://schema.org/discussionUrl>
 	pub r#discussion_url: Vec<DiscussionUrlProperty>,
+	/// <https://schema.org/editEIDR>
 	pub r#edit_eidr: Vec<EditEidrProperty>,
+	/// <https://schema.org/editor>
 	pub r#editor: Vec<EditorProperty>,
+	/// <https://schema.org/educationalAlignment>
 	pub r#educational_alignment: Vec<EducationalAlignmentProperty>,
+	/// <https://schema.org/educationalLevel>
 	pub r#educational_level: Vec<EducationalLevelProperty>,
+	/// <https://schema.org/educationalUse>
 	pub r#educational_use: Vec<EducationalUseProperty>,
+	/// <https://schema.org/encoding>
 	pub r#encoding: Vec<EncodingProperty>,
+	/// <https://schema.org/encodingFormat>
 	pub r#encoding_format: Vec<EncodingFormatProperty>,
+	/// <https://schema.org/encodings>
 	pub r#encodings: Vec<EncodingsProperty>,
+	/// <https://schema.org/exampleOfWork>
 	pub r#example_of_work: Vec<ExampleOfWorkProperty>,
+	/// <https://schema.org/expires>
 	pub r#expires: Vec<ExpiresProperty>,
+	/// <https://schema.org/fileFormat>
 	pub r#file_format: Vec<FileFormatProperty>,
+	/// <https://schema.org/funder>
 	pub r#funder: Vec<FunderProperty>,
+	/// <https://schema.org/funding>
 	pub r#funding: Vec<FundingProperty>,
+	/// <https://schema.org/genre>
 	pub r#genre: Vec<GenreProperty>,
+	/// <https://schema.org/hasPart>
 	pub r#has_part: Vec<HasPartProperty>,
+	/// <https://schema.org/headline>
 	pub r#headline: Vec<HeadlineProperty>,
+	/// <https://schema.org/inLanguage>
 	pub r#in_language: Vec<InLanguageProperty>,
+	/// <https://schema.org/interactionStatistic>
 	pub r#interaction_statistic: Vec<InteractionStatisticProperty>,
+	/// <https://schema.org/interactivityType>
 	pub r#interactivity_type: Vec<InteractivityTypeProperty>,
+	/// <https://schema.org/interpretedAsClaim>
 	pub r#interpreted_as_claim: Vec<InterpretedAsClaimProperty>,
+	/// <https://schema.org/isAccessibleForFree>
 	pub r#is_accessible_for_free: Vec<IsAccessibleForFreeProperty>,
+	/// <https://schema.org/isBasedOn>
 	pub r#is_based_on: Vec<IsBasedOnProperty>,
+	/// <https://schema.org/isBasedOnUrl>
 	pub r#is_based_on_url: Vec<IsBasedOnUrlProperty>,
+	/// <https://schema.org/isFamilyFriendly>
 	pub r#is_family_friendly: Vec<IsFamilyFriendlyProperty>,
+	/// <https://schema.org/isPartOf>
 	pub r#is_part_of: Vec<IsPartOfProperty>,
+	/// <https://schema.org/keywords>
 	pub r#keywords: Vec<KeywordsProperty>,
+	/// <https://schema.org/learningResourceType>
 	pub r#learning_resource_type: Vec<LearningResourceTypeProperty>,
+	/// <https://schema.org/license>
 	pub r#license: Vec<LicenseProperty>,
+	/// <https://schema.org/locationCreated>
 	pub r#location_created: Vec<LocationCreatedProperty>,
+	/// <https://schema.org/mainEntity>
 	pub r#main_entity: Vec<MainEntityProperty>,
+	/// <https://schema.org/maintainer>
 	pub r#maintainer: Vec<MaintainerProperty>,
+	/// <https://schema.org/material>
 	pub r#material: Vec<MaterialProperty>,
+	/// <https://schema.org/materialExtent>
 	pub r#material_extent: Vec<MaterialExtentProperty>,
+	/// <https://schema.org/mentions>
 	pub r#mentions: Vec<MentionsProperty>,
+	/// <https://schema.org/offers>
 	pub r#offers: Vec<OffersProperty>,
+	/// <https://schema.org/pattern>
 	pub r#pattern: Vec<PatternProperty>,
+	/// <https://schema.org/position>
 	pub r#position: Vec<PositionProperty>,
+	/// <https://schema.org/producer>
 	pub r#producer: Vec<ProducerProperty>,
+	/// <https://schema.org/provider>
 	pub r#provider: Vec<ProviderProperty>,
+	/// <https://schema.org/publication>
 	pub r#publication: Vec<PublicationProperty>,
+	/// <https://schema.org/publisher>
 	pub r#publisher: Vec<PublisherProperty>,
+	/// <https://schema.org/publisherImprint>
 	pub r#publisher_imprint: Vec<PublisherImprintProperty>,
+	/// <https://schema.org/publishingPrinciples>
 	pub r#publishing_principles: Vec<PublishingPrinciplesProperty>,
+	/// <https://schema.org/recordedAt>
 	pub r#recorded_at: Vec<RecordedAtProperty>,
+	/// <https://schema.org/releasedEvent>
 	pub r#released_event: Vec<ReleasedEventProperty>,
+	/// <https://schema.org/review>
 	pub r#review: Vec<ReviewProperty>,
+	/// <https://schema.org/reviews>
 	pub r#reviews: Vec<ReviewsProperty>,
+	/// <https://schema.org/schemaVersion>
 	pub r#schema_version: Vec<SchemaVersionProperty>,
+	/// <https://schema.org/sdDatePublished>
 	pub r#sd_date_published: Vec<SdDatePublishedProperty>,
+	/// <https://schema.org/sdLicense>
 	pub r#sd_license: Vec<SdLicenseProperty>,
+	/// <https://schema.org/sdPublisher>
 	pub r#sd_publisher: Vec<SdPublisherProperty>,
+	/// <https://schema.org/size>
 	pub r#size: Vec<SizeProperty>,
+	/// <https://schema.org/sourceOrganization>
 	pub r#source_organization: Vec<SourceOrganizationProperty>,
+	/// <https://schema.org/spatial>
 	pub r#spatial: Vec<SpatialProperty>,
+	/// <https://schema.org/spatialCoverage>
 	pub r#spatial_coverage: Vec<SpatialCoverageProperty>,
+	/// <https://schema.org/sponsor>
 	pub r#sponsor: Vec<SponsorProperty>,
+	/// <https://schema.org/teaches>
 	pub r#teaches: Vec<TeachesProperty>,
+	/// <https://schema.org/temporal>
 	pub r#temporal: Vec<TemporalProperty>,
+	/// <https://schema.org/temporalCoverage>
 	pub r#temporal_coverage: Vec<TemporalCoverageProperty>,
+	/// <https://schema.org/text>
 	pub r#text: Vec<TextProperty>,
+	/// <https://schema.org/thumbnail>
 	pub r#thumbnail: Vec<ThumbnailProperty>,
+	/// <https://schema.org/thumbnailUrl>
 	pub r#thumbnail_url: Vec<ThumbnailUrlProperty>,
+	/// <https://schema.org/timeRequired>
 	pub r#time_required: Vec<TimeRequiredProperty>,
+	/// <https://schema.org/translationOfWork>
 	pub r#translation_of_work: Vec<TranslationOfWorkProperty>,
+	/// <https://schema.org/translator>
 	pub r#translator: Vec<TranslatorProperty>,
+	/// <https://schema.org/typicalAgeRange>
 	pub r#typical_age_range: Vec<TypicalAgeRangeProperty>,
+	/// <https://schema.org/usageInfo>
 	pub r#usage_info: Vec<UsageInfoProperty>,
+	/// <https://schema.org/version>
 	pub r#version: Vec<VersionProperty>,
+	/// <https://schema.org/video>
 	pub r#video: Vec<VideoProperty>,
+	/// <https://schema.org/workExample>
 	pub r#work_example: Vec<WorkExampleProperty>,
+	/// <https://schema.org/workTranslation>
 	pub r#work_translation: Vec<WorkTranslationProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/SoftwareApplication>.
 pub trait SoftwareApplicationTrait {
+	/// Get <https://schema.org/applicationCategory> from [`Self`] as borrowed slice.
 	fn get_application_category(&self) -> &[ApplicationCategoryProperty];
+	/// Take <https://schema.org/applicationCategory> from [`Self`] as owned vector.
 	fn take_application_category(&mut self) -> Vec<ApplicationCategoryProperty>;
+	/// Get <https://schema.org/applicationSubCategory> from [`Self`] as borrowed slice.
 	fn get_application_sub_category(&self) -> &[ApplicationSubCategoryProperty];
+	/// Take <https://schema.org/applicationSubCategory> from [`Self`] as owned vector.
 	fn take_application_sub_category(&mut self) -> Vec<ApplicationSubCategoryProperty>;
+	/// Get <https://schema.org/applicationSuite> from [`Self`] as borrowed slice.
 	fn get_application_suite(&self) -> &[ApplicationSuiteProperty];
+	/// Take <https://schema.org/applicationSuite> from [`Self`] as owned vector.
 	fn take_application_suite(&mut self) -> Vec<ApplicationSuiteProperty>;
+	/// Get <https://schema.org/availableOnDevice> from [`Self`] as borrowed slice.
 	fn get_available_on_device(&self) -> &[AvailableOnDeviceProperty];
+	/// Take <https://schema.org/availableOnDevice> from [`Self`] as owned vector.
 	fn take_available_on_device(&mut self) -> Vec<AvailableOnDeviceProperty>;
+	/// Get <https://schema.org/countriesNotSupported> from [`Self`] as borrowed slice.
 	fn get_countries_not_supported(&self) -> &[CountriesNotSupportedProperty];
+	/// Take <https://schema.org/countriesNotSupported> from [`Self`] as owned vector.
 	fn take_countries_not_supported(&mut self) -> Vec<CountriesNotSupportedProperty>;
+	/// Get <https://schema.org/countriesSupported> from [`Self`] as borrowed slice.
 	fn get_countries_supported(&self) -> &[CountriesSupportedProperty];
+	/// Take <https://schema.org/countriesSupported> from [`Self`] as owned vector.
 	fn take_countries_supported(&mut self) -> Vec<CountriesSupportedProperty>;
+	/// Get <https://schema.org/device> from [`Self`] as borrowed slice.
 	fn get_device(&self) -> &[DeviceProperty];
+	/// Take <https://schema.org/device> from [`Self`] as owned vector.
 	fn take_device(&mut self) -> Vec<DeviceProperty>;
+	/// Get <https://schema.org/downloadUrl> from [`Self`] as borrowed slice.
 	fn get_download_url(&self) -> &[DownloadUrlProperty];
+	/// Take <https://schema.org/downloadUrl> from [`Self`] as owned vector.
 	fn take_download_url(&mut self) -> Vec<DownloadUrlProperty>;
+	/// Get <https://schema.org/featureList> from [`Self`] as borrowed slice.
 	fn get_feature_list(&self) -> &[FeatureListProperty];
+	/// Take <https://schema.org/featureList> from [`Self`] as owned vector.
 	fn take_feature_list(&mut self) -> Vec<FeatureListProperty>;
+	/// Get <https://schema.org/fileSize> from [`Self`] as borrowed slice.
 	fn get_file_size(&self) -> &[FileSizeProperty];
+	/// Take <https://schema.org/fileSize> from [`Self`] as owned vector.
 	fn take_file_size(&mut self) -> Vec<FileSizeProperty>;
+	/// Get <https://schema.org/installUrl> from [`Self`] as borrowed slice.
 	fn get_install_url(&self) -> &[InstallUrlProperty];
+	/// Take <https://schema.org/installUrl> from [`Self`] as owned vector.
 	fn take_install_url(&mut self) -> Vec<InstallUrlProperty>;
+	/// Get <https://schema.org/memoryRequirements> from [`Self`] as borrowed slice.
 	fn get_memory_requirements(&self) -> &[MemoryRequirementsProperty];
+	/// Take <https://schema.org/memoryRequirements> from [`Self`] as owned vector.
 	fn take_memory_requirements(&mut self) -> Vec<MemoryRequirementsProperty>;
+	/// Get <https://schema.org/operatingSystem> from [`Self`] as borrowed slice.
 	fn get_operating_system(&self) -> &[OperatingSystemProperty];
+	/// Take <https://schema.org/operatingSystem> from [`Self`] as owned vector.
 	fn take_operating_system(&mut self) -> Vec<OperatingSystemProperty>;
+	/// Get <https://schema.org/permissions> from [`Self`] as borrowed slice.
 	fn get_permissions(&self) -> &[PermissionsProperty];
+	/// Take <https://schema.org/permissions> from [`Self`] as owned vector.
 	fn take_permissions(&mut self) -> Vec<PermissionsProperty>;
+	/// Get <https://schema.org/processorRequirements> from [`Self`] as borrowed slice.
 	fn get_processor_requirements(&self) -> &[ProcessorRequirementsProperty];
+	/// Take <https://schema.org/processorRequirements> from [`Self`] as owned vector.
 	fn take_processor_requirements(&mut self) -> Vec<ProcessorRequirementsProperty>;
+	/// Get <https://schema.org/releaseNotes> from [`Self`] as borrowed slice.
 	fn get_release_notes(&self) -> &[ReleaseNotesProperty];
+	/// Take <https://schema.org/releaseNotes> from [`Self`] as owned vector.
 	fn take_release_notes(&mut self) -> Vec<ReleaseNotesProperty>;
+	/// Get <https://schema.org/requirements> from [`Self`] as borrowed slice.
 	fn get_requirements(&self) -> &[RequirementsProperty];
+	/// Take <https://schema.org/requirements> from [`Self`] as owned vector.
 	fn take_requirements(&mut self) -> Vec<RequirementsProperty>;
+	/// Get <https://schema.org/screenshot> from [`Self`] as borrowed slice.
 	fn get_screenshot(&self) -> &[ScreenshotProperty];
+	/// Take <https://schema.org/screenshot> from [`Self`] as owned vector.
 	fn take_screenshot(&mut self) -> Vec<ScreenshotProperty>;
+	/// Get <https://schema.org/softwareAddOn> from [`Self`] as borrowed slice.
 	fn get_software_add_on(&self) -> &[SoftwareAddOnProperty];
+	/// Take <https://schema.org/softwareAddOn> from [`Self`] as owned vector.
 	fn take_software_add_on(&mut self) -> Vec<SoftwareAddOnProperty>;
+	/// Get <https://schema.org/softwareHelp> from [`Self`] as borrowed slice.
 	fn get_software_help(&self) -> &[SoftwareHelpProperty];
+	/// Take <https://schema.org/softwareHelp> from [`Self`] as owned vector.
 	fn take_software_help(&mut self) -> Vec<SoftwareHelpProperty>;
+	/// Get <https://schema.org/softwareRequirements> from [`Self`] as borrowed slice.
 	fn get_software_requirements(&self) -> &[SoftwareRequirementsProperty];
+	/// Take <https://schema.org/softwareRequirements> from [`Self`] as owned vector.
 	fn take_software_requirements(&mut self) -> Vec<SoftwareRequirementsProperty>;
+	/// Get <https://schema.org/softwareVersion> from [`Self`] as borrowed slice.
 	fn get_software_version(&self) -> &[SoftwareVersionProperty];
+	/// Take <https://schema.org/softwareVersion> from [`Self`] as owned vector.
 	fn take_software_version(&mut self) -> Vec<SoftwareVersionProperty>;
+	/// Get <https://schema.org/storageRequirements> from [`Self`] as borrowed slice.
 	fn get_storage_requirements(&self) -> &[StorageRequirementsProperty];
+	/// Take <https://schema.org/storageRequirements> from [`Self`] as owned vector.
 	fn take_storage_requirements(&mut self) -> Vec<StorageRequirementsProperty>;
+	/// Get <https://schema.org/supportingData> from [`Self`] as borrowed slice.
 	fn get_supporting_data(&self) -> &[SupportingDataProperty];
+	/// Take <https://schema.org/supportingData> from [`Self`] as owned vector.
 	fn take_supporting_data(&mut self) -> Vec<SupportingDataProperty>;
 }
 impl SoftwareApplicationTrait for SoftwareApplication {

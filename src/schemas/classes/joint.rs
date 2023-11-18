@@ -3,44 +3,82 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct Joint {
+	/// <https://schema.org/biomechnicalClass>
 	pub r#biomechnical_class: Vec<BiomechnicalClassProperty>,
+	/// <https://schema.org/functionalClass>
 	pub r#functional_class: Vec<FunctionalClassProperty>,
+	/// <https://schema.org/structuralClass>
 	pub r#structural_class: Vec<StructuralClassProperty>,
+	/// <https://schema.org/associatedPathophysiology>
 	pub r#associated_pathophysiology: Vec<AssociatedPathophysiologyProperty>,
+	/// <https://schema.org/bodyLocation>
 	pub r#body_location: Vec<BodyLocationProperty>,
+	/// <https://schema.org/connectedTo>
 	pub r#connected_to: Vec<ConnectedToProperty>,
+	/// <https://schema.org/diagram>
 	pub r#diagram: Vec<DiagramProperty>,
+	/// <https://schema.org/partOfSystem>
 	pub r#part_of_system: Vec<PartOfSystemProperty>,
+	/// <https://schema.org/relatedCondition>
 	pub r#related_condition: Vec<RelatedConditionProperty>,
+	/// <https://schema.org/relatedTherapy>
 	pub r#related_therapy: Vec<RelatedTherapyProperty>,
+	/// <https://schema.org/subStructure>
 	pub r#sub_structure: Vec<SubStructureProperty>,
+	/// <https://schema.org/code>
 	pub r#code: Vec<CodeProperty>,
+	/// <https://schema.org/funding>
 	pub r#funding: Vec<FundingProperty>,
+	/// <https://schema.org/guideline>
 	pub r#guideline: Vec<GuidelineProperty>,
+	/// <https://schema.org/legalStatus>
 	pub r#legal_status: Vec<LegalStatusProperty>,
+	/// <https://schema.org/medicineSystem>
 	pub r#medicine_system: Vec<MedicineSystemProperty>,
+	/// <https://schema.org/recognizingAuthority>
 	pub r#recognizing_authority: Vec<RecognizingAuthorityProperty>,
+	/// <https://schema.org/relevantSpecialty>
 	pub r#relevant_specialty: Vec<RelevantSpecialtyProperty>,
+	/// <https://schema.org/study>
 	pub r#study: Vec<StudyProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/Joint>.
 pub trait JointTrait {
+	/// Get <https://schema.org/biomechnicalClass> from [`Self`] as borrowed slice.
 	fn get_biomechnical_class(&self) -> &[BiomechnicalClassProperty];
+	/// Take <https://schema.org/biomechnicalClass> from [`Self`] as owned vector.
 	fn take_biomechnical_class(&mut self) -> Vec<BiomechnicalClassProperty>;
+	/// Get <https://schema.org/functionalClass> from [`Self`] as borrowed slice.
 	fn get_functional_class(&self) -> &[FunctionalClassProperty];
+	/// Take <https://schema.org/functionalClass> from [`Self`] as owned vector.
 	fn take_functional_class(&mut self) -> Vec<FunctionalClassProperty>;
+	/// Get <https://schema.org/structuralClass> from [`Self`] as borrowed slice.
 	fn get_structural_class(&self) -> &[StructuralClassProperty];
+	/// Take <https://schema.org/structuralClass> from [`Self`] as owned vector.
 	fn take_structural_class(&mut self) -> Vec<StructuralClassProperty>;
 }
 impl JointTrait for Joint {

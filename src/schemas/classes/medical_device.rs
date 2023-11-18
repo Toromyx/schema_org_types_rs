@@ -3,45 +3,84 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct MedicalDevice {
+	/// <https://schema.org/adverseOutcome>
 	pub r#adverse_outcome: Vec<AdverseOutcomeProperty>,
+	/// <https://schema.org/contraindication>
 	pub r#contraindication: Vec<ContraindicationProperty>,
+	/// <https://schema.org/postOp>
 	pub r#post_op: Vec<PostOpProperty>,
+	/// <https://schema.org/preOp>
 	pub r#pre_op: Vec<PreOpProperty>,
+	/// <https://schema.org/procedure>
 	pub r#procedure: Vec<ProcedureProperty>,
+	/// <https://schema.org/seriousAdverseOutcome>
 	pub r#serious_adverse_outcome: Vec<SeriousAdverseOutcomeProperty>,
+	/// <https://schema.org/code>
 	pub r#code: Vec<CodeProperty>,
+	/// <https://schema.org/funding>
 	pub r#funding: Vec<FundingProperty>,
+	/// <https://schema.org/guideline>
 	pub r#guideline: Vec<GuidelineProperty>,
+	/// <https://schema.org/legalStatus>
 	pub r#legal_status: Vec<LegalStatusProperty>,
+	/// <https://schema.org/medicineSystem>
 	pub r#medicine_system: Vec<MedicineSystemProperty>,
+	/// <https://schema.org/recognizingAuthority>
 	pub r#recognizing_authority: Vec<RecognizingAuthorityProperty>,
+	/// <https://schema.org/relevantSpecialty>
 	pub r#relevant_specialty: Vec<RelevantSpecialtyProperty>,
+	/// <https://schema.org/study>
 	pub r#study: Vec<StudyProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/MedicalDevice>.
 pub trait MedicalDeviceTrait {
+	/// Get <https://schema.org/adverseOutcome> from [`Self`] as borrowed slice.
 	fn get_adverse_outcome(&self) -> &[AdverseOutcomeProperty];
+	/// Take <https://schema.org/adverseOutcome> from [`Self`] as owned vector.
 	fn take_adverse_outcome(&mut self) -> Vec<AdverseOutcomeProperty>;
+	/// Get <https://schema.org/contraindication> from [`Self`] as borrowed slice.
 	fn get_contraindication(&self) -> &[ContraindicationProperty];
+	/// Take <https://schema.org/contraindication> from [`Self`] as owned vector.
 	fn take_contraindication(&mut self) -> Vec<ContraindicationProperty>;
+	/// Get <https://schema.org/postOp> from [`Self`] as borrowed slice.
 	fn get_post_op(&self) -> &[PostOpProperty];
+	/// Take <https://schema.org/postOp> from [`Self`] as owned vector.
 	fn take_post_op(&mut self) -> Vec<PostOpProperty>;
+	/// Get <https://schema.org/preOp> from [`Self`] as borrowed slice.
 	fn get_pre_op(&self) -> &[PreOpProperty];
+	/// Take <https://schema.org/preOp> from [`Self`] as owned vector.
 	fn take_pre_op(&mut self) -> Vec<PreOpProperty>;
+	/// Get <https://schema.org/procedure> from [`Self`] as borrowed slice.
 	fn get_procedure(&self) -> &[ProcedureProperty];
+	/// Take <https://schema.org/procedure> from [`Self`] as owned vector.
 	fn take_procedure(&mut self) -> Vec<ProcedureProperty>;
+	/// Get <https://schema.org/seriousAdverseOutcome> from [`Self`] as borrowed slice.
 	fn get_serious_adverse_outcome(&self) -> &[SeriousAdverseOutcomeProperty];
+	/// Take <https://schema.org/seriousAdverseOutcome> from [`Self`] as owned vector.
 	fn take_serious_adverse_outcome(&mut self) -> Vec<SeriousAdverseOutcomeProperty>;
 }
 impl MedicalDeviceTrait for MedicalDevice {

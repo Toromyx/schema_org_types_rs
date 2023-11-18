@@ -3,91 +3,176 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct Service {
+	/// <https://schema.org/aggregateRating>
 	pub r#aggregate_rating: Vec<AggregateRatingProperty>,
+	/// <https://schema.org/areaServed>
 	pub r#area_served: Vec<AreaServedProperty>,
+	/// <https://schema.org/audience>
 	pub r#audience: Vec<AudienceProperty>,
+	/// <https://schema.org/availableChannel>
 	pub r#available_channel: Vec<AvailableChannelProperty>,
+	/// <https://schema.org/award>
 	pub r#award: Vec<AwardProperty>,
+	/// <https://schema.org/brand>
 	pub r#brand: Vec<BrandProperty>,
+	/// <https://schema.org/broker>
 	pub r#broker: Vec<BrokerProperty>,
+	/// <https://schema.org/category>
 	pub r#category: Vec<CategoryProperty>,
+	/// <https://schema.org/hasOfferCatalog>
 	pub r#has_offer_catalog: Vec<HasOfferCatalogProperty>,
+	/// <https://schema.org/hoursAvailable>
 	pub r#hours_available: Vec<HoursAvailableProperty>,
+	/// <https://schema.org/isRelatedTo>
 	pub r#is_related_to: Vec<IsRelatedToProperty>,
+	/// <https://schema.org/isSimilarTo>
 	pub r#is_similar_to: Vec<IsSimilarToProperty>,
+	/// <https://schema.org/logo>
 	pub r#logo: Vec<LogoProperty>,
+	/// <https://schema.org/offers>
 	pub r#offers: Vec<OffersProperty>,
+	/// <https://schema.org/produces>
 	pub r#produces: Vec<ProducesProperty>,
+	/// <https://schema.org/provider>
 	pub r#provider: Vec<ProviderProperty>,
+	/// <https://schema.org/providerMobility>
 	pub r#provider_mobility: Vec<ProviderMobilityProperty>,
+	/// <https://schema.org/review>
 	pub r#review: Vec<ReviewProperty>,
+	/// <https://schema.org/serviceArea>
 	pub r#service_area: Vec<ServiceAreaProperty>,
+	/// <https://schema.org/serviceAudience>
 	pub r#service_audience: Vec<ServiceAudienceProperty>,
+	/// <https://schema.org/serviceOutput>
 	pub r#service_output: Vec<ServiceOutputProperty>,
+	/// <https://schema.org/serviceType>
 	pub r#service_type: Vec<ServiceTypeProperty>,
+	/// <https://schema.org/slogan>
 	pub r#slogan: Vec<SloganProperty>,
+	/// <https://schema.org/termsOfService>
 	pub r#terms_of_service: Vec<TermsOfServiceProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/Service>.
 pub trait ServiceTrait {
+	/// Get <https://schema.org/aggregateRating> from [`Self`] as borrowed slice.
 	fn get_aggregate_rating(&self) -> &[AggregateRatingProperty];
+	/// Take <https://schema.org/aggregateRating> from [`Self`] as owned vector.
 	fn take_aggregate_rating(&mut self) -> Vec<AggregateRatingProperty>;
+	/// Get <https://schema.org/areaServed> from [`Self`] as borrowed slice.
 	fn get_area_served(&self) -> &[AreaServedProperty];
+	/// Take <https://schema.org/areaServed> from [`Self`] as owned vector.
 	fn take_area_served(&mut self) -> Vec<AreaServedProperty>;
+	/// Get <https://schema.org/audience> from [`Self`] as borrowed slice.
 	fn get_audience(&self) -> &[AudienceProperty];
+	/// Take <https://schema.org/audience> from [`Self`] as owned vector.
 	fn take_audience(&mut self) -> Vec<AudienceProperty>;
+	/// Get <https://schema.org/availableChannel> from [`Self`] as borrowed slice.
 	fn get_available_channel(&self) -> &[AvailableChannelProperty];
+	/// Take <https://schema.org/availableChannel> from [`Self`] as owned vector.
 	fn take_available_channel(&mut self) -> Vec<AvailableChannelProperty>;
+	/// Get <https://schema.org/award> from [`Self`] as borrowed slice.
 	fn get_award(&self) -> &[AwardProperty];
+	/// Take <https://schema.org/award> from [`Self`] as owned vector.
 	fn take_award(&mut self) -> Vec<AwardProperty>;
+	/// Get <https://schema.org/brand> from [`Self`] as borrowed slice.
 	fn get_brand(&self) -> &[BrandProperty];
+	/// Take <https://schema.org/brand> from [`Self`] as owned vector.
 	fn take_brand(&mut self) -> Vec<BrandProperty>;
+	/// Get <https://schema.org/broker> from [`Self`] as borrowed slice.
 	fn get_broker(&self) -> &[BrokerProperty];
+	/// Take <https://schema.org/broker> from [`Self`] as owned vector.
 	fn take_broker(&mut self) -> Vec<BrokerProperty>;
+	/// Get <https://schema.org/category> from [`Self`] as borrowed slice.
 	fn get_category(&self) -> &[CategoryProperty];
+	/// Take <https://schema.org/category> from [`Self`] as owned vector.
 	fn take_category(&mut self) -> Vec<CategoryProperty>;
+	/// Get <https://schema.org/hasOfferCatalog> from [`Self`] as borrowed slice.
 	fn get_has_offer_catalog(&self) -> &[HasOfferCatalogProperty];
+	/// Take <https://schema.org/hasOfferCatalog> from [`Self`] as owned vector.
 	fn take_has_offer_catalog(&mut self) -> Vec<HasOfferCatalogProperty>;
+	/// Get <https://schema.org/hoursAvailable> from [`Self`] as borrowed slice.
 	fn get_hours_available(&self) -> &[HoursAvailableProperty];
+	/// Take <https://schema.org/hoursAvailable> from [`Self`] as owned vector.
 	fn take_hours_available(&mut self) -> Vec<HoursAvailableProperty>;
+	/// Get <https://schema.org/isRelatedTo> from [`Self`] as borrowed slice.
 	fn get_is_related_to(&self) -> &[IsRelatedToProperty];
+	/// Take <https://schema.org/isRelatedTo> from [`Self`] as owned vector.
 	fn take_is_related_to(&mut self) -> Vec<IsRelatedToProperty>;
+	/// Get <https://schema.org/isSimilarTo> from [`Self`] as borrowed slice.
 	fn get_is_similar_to(&self) -> &[IsSimilarToProperty];
+	/// Take <https://schema.org/isSimilarTo> from [`Self`] as owned vector.
 	fn take_is_similar_to(&mut self) -> Vec<IsSimilarToProperty>;
+	/// Get <https://schema.org/logo> from [`Self`] as borrowed slice.
 	fn get_logo(&self) -> &[LogoProperty];
+	/// Take <https://schema.org/logo> from [`Self`] as owned vector.
 	fn take_logo(&mut self) -> Vec<LogoProperty>;
+	/// Get <https://schema.org/offers> from [`Self`] as borrowed slice.
 	fn get_offers(&self) -> &[OffersProperty];
+	/// Take <https://schema.org/offers> from [`Self`] as owned vector.
 	fn take_offers(&mut self) -> Vec<OffersProperty>;
+	/// Get <https://schema.org/produces> from [`Self`] as borrowed slice.
 	fn get_produces(&self) -> &[ProducesProperty];
+	/// Take <https://schema.org/produces> from [`Self`] as owned vector.
 	fn take_produces(&mut self) -> Vec<ProducesProperty>;
+	/// Get <https://schema.org/provider> from [`Self`] as borrowed slice.
 	fn get_provider(&self) -> &[ProviderProperty];
+	/// Take <https://schema.org/provider> from [`Self`] as owned vector.
 	fn take_provider(&mut self) -> Vec<ProviderProperty>;
+	/// Get <https://schema.org/providerMobility> from [`Self`] as borrowed slice.
 	fn get_provider_mobility(&self) -> &[ProviderMobilityProperty];
+	/// Take <https://schema.org/providerMobility> from [`Self`] as owned vector.
 	fn take_provider_mobility(&mut self) -> Vec<ProviderMobilityProperty>;
+	/// Get <https://schema.org/review> from [`Self`] as borrowed slice.
 	fn get_review(&self) -> &[ReviewProperty];
+	/// Take <https://schema.org/review> from [`Self`] as owned vector.
 	fn take_review(&mut self) -> Vec<ReviewProperty>;
+	/// Get <https://schema.org/serviceArea> from [`Self`] as borrowed slice.
 	fn get_service_area(&self) -> &[ServiceAreaProperty];
+	/// Take <https://schema.org/serviceArea> from [`Self`] as owned vector.
 	fn take_service_area(&mut self) -> Vec<ServiceAreaProperty>;
+	/// Get <https://schema.org/serviceAudience> from [`Self`] as borrowed slice.
 	fn get_service_audience(&self) -> &[ServiceAudienceProperty];
+	/// Take <https://schema.org/serviceAudience> from [`Self`] as owned vector.
 	fn take_service_audience(&mut self) -> Vec<ServiceAudienceProperty>;
+	/// Get <https://schema.org/serviceOutput> from [`Self`] as borrowed slice.
 	fn get_service_output(&self) -> &[ServiceOutputProperty];
+	/// Take <https://schema.org/serviceOutput> from [`Self`] as owned vector.
 	fn take_service_output(&mut self) -> Vec<ServiceOutputProperty>;
+	/// Get <https://schema.org/serviceType> from [`Self`] as borrowed slice.
 	fn get_service_type(&self) -> &[ServiceTypeProperty];
+	/// Take <https://schema.org/serviceType> from [`Self`] as owned vector.
 	fn take_service_type(&mut self) -> Vec<ServiceTypeProperty>;
+	/// Get <https://schema.org/slogan> from [`Self`] as borrowed slice.
 	fn get_slogan(&self) -> &[SloganProperty];
+	/// Take <https://schema.org/slogan> from [`Self`] as owned vector.
 	fn take_slogan(&mut self) -> Vec<SloganProperty>;
+	/// Get <https://schema.org/termsOfService> from [`Self`] as borrowed slice.
 	fn get_terms_of_service(&self) -> &[TermsOfServiceProperty];
+	/// Take <https://schema.org/termsOfService> from [`Self`] as owned vector.
 	fn take_terms_of_service(&mut self) -> Vec<TermsOfServiceProperty>;
 }
 impl ServiceTrait for Service {

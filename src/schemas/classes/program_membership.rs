@@ -3,37 +3,68 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct ProgramMembership {
+	/// <https://schema.org/hostingOrganization>
 	pub r#hosting_organization: Vec<HostingOrganizationProperty>,
+	/// <https://schema.org/member>
 	pub r#member: Vec<MemberProperty>,
+	/// <https://schema.org/members>
 	pub r#members: Vec<MembersProperty>,
+	/// <https://schema.org/membershipNumber>
 	pub r#membership_number: Vec<MembershipNumberProperty>,
+	/// <https://schema.org/membershipPointsEarned>
 	pub r#membership_points_earned: Vec<MembershipPointsEarnedProperty>,
+	/// <https://schema.org/programName>
 	pub r#program_name: Vec<ProgramNameProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/ProgramMembership>.
 pub trait ProgramMembershipTrait {
+	/// Get <https://schema.org/hostingOrganization> from [`Self`] as borrowed slice.
 	fn get_hosting_organization(&self) -> &[HostingOrganizationProperty];
+	/// Take <https://schema.org/hostingOrganization> from [`Self`] as owned vector.
 	fn take_hosting_organization(&mut self) -> Vec<HostingOrganizationProperty>;
+	/// Get <https://schema.org/member> from [`Self`] as borrowed slice.
 	fn get_member(&self) -> &[MemberProperty];
+	/// Take <https://schema.org/member> from [`Self`] as owned vector.
 	fn take_member(&mut self) -> Vec<MemberProperty>;
+	/// Get <https://schema.org/members> from [`Self`] as borrowed slice.
 	fn get_members(&self) -> &[MembersProperty];
+	/// Take <https://schema.org/members> from [`Self`] as owned vector.
 	fn take_members(&mut self) -> Vec<MembersProperty>;
+	/// Get <https://schema.org/membershipNumber> from [`Self`] as borrowed slice.
 	fn get_membership_number(&self) -> &[MembershipNumberProperty];
+	/// Take <https://schema.org/membershipNumber> from [`Self`] as owned vector.
 	fn take_membership_number(&mut self) -> Vec<MembershipNumberProperty>;
+	/// Get <https://schema.org/membershipPointsEarned> from [`Self`] as borrowed slice.
 	fn get_membership_points_earned(&self) -> &[MembershipPointsEarnedProperty];
+	/// Take <https://schema.org/membershipPointsEarned> from [`Self`] as owned vector.
 	fn take_membership_points_earned(&mut self) -> Vec<MembershipPointsEarnedProperty>;
+	/// Get <https://schema.org/programName> from [`Self`] as borrowed slice.
 	fn get_program_name(&self) -> &[ProgramNameProperty];
+	/// Take <https://schema.org/programName> from [`Self`] as owned vector.
 	fn take_program_name(&mut self) -> Vec<ProgramNameProperty>;
 }
 impl ProgramMembershipTrait for ProgramMembership {

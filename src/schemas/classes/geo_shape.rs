@@ -3,43 +3,80 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct GeoShape {
+	/// <https://schema.org/address>
 	pub r#address: Vec<AddressProperty>,
+	/// <https://schema.org/addressCountry>
 	pub r#address_country: Vec<AddressCountryProperty>,
+	/// <https://schema.org/box>
 	pub r#box: Vec<BoxProperty>,
+	/// <https://schema.org/circle>
 	pub r#circle: Vec<CircleProperty>,
+	/// <https://schema.org/elevation>
 	pub r#elevation: Vec<ElevationProperty>,
+	/// <https://schema.org/line>
 	pub r#line: Vec<LineProperty>,
+	/// <https://schema.org/polygon>
 	pub r#polygon: Vec<PolygonProperty>,
+	/// <https://schema.org/postalCode>
 	pub r#postal_code: Vec<PostalCodeProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/GeoShape>.
 pub trait GeoShapeTrait {
+	/// Get <https://schema.org/address> from [`Self`] as borrowed slice.
 	fn get_address(&self) -> &[AddressProperty];
+	/// Take <https://schema.org/address> from [`Self`] as owned vector.
 	fn take_address(&mut self) -> Vec<AddressProperty>;
+	/// Get <https://schema.org/addressCountry> from [`Self`] as borrowed slice.
 	fn get_address_country(&self) -> &[AddressCountryProperty];
+	/// Take <https://schema.org/addressCountry> from [`Self`] as owned vector.
 	fn take_address_country(&mut self) -> Vec<AddressCountryProperty>;
+	/// Get <https://schema.org/box> from [`Self`] as borrowed slice.
 	fn get_box(&self) -> &[BoxProperty];
+	/// Take <https://schema.org/box> from [`Self`] as owned vector.
 	fn take_box(&mut self) -> Vec<BoxProperty>;
+	/// Get <https://schema.org/circle> from [`Self`] as borrowed slice.
 	fn get_circle(&self) -> &[CircleProperty];
+	/// Take <https://schema.org/circle> from [`Self`] as owned vector.
 	fn take_circle(&mut self) -> Vec<CircleProperty>;
+	/// Get <https://schema.org/elevation> from [`Self`] as borrowed slice.
 	fn get_elevation(&self) -> &[ElevationProperty];
+	/// Take <https://schema.org/elevation> from [`Self`] as owned vector.
 	fn take_elevation(&mut self) -> Vec<ElevationProperty>;
+	/// Get <https://schema.org/line> from [`Self`] as borrowed slice.
 	fn get_line(&self) -> &[LineProperty];
+	/// Take <https://schema.org/line> from [`Self`] as owned vector.
 	fn take_line(&mut self) -> Vec<LineProperty>;
+	/// Get <https://schema.org/polygon> from [`Self`] as borrowed slice.
 	fn get_polygon(&self) -> &[PolygonProperty];
+	/// Take <https://schema.org/polygon> from [`Self`] as owned vector.
 	fn take_polygon(&mut self) -> Vec<PolygonProperty>;
+	/// Get <https://schema.org/postalCode> from [`Self`] as borrowed slice.
 	fn get_postal_code(&self) -> &[PostalCodeProperty];
+	/// Take <https://schema.org/postalCode> from [`Self`] as owned vector.
 	fn take_postal_code(&mut self) -> Vec<PostalCodeProperty>;
 }
 impl GeoShapeTrait for GeoShape {

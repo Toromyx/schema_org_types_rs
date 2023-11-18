@@ -3,28 +3,50 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct MonetaryAmountDistribution {
+	/// <https://schema.org/currency>
 	pub r#currency: Vec<CurrencyProperty>,
+	/// <https://schema.org/duration>
 	pub r#duration: Vec<DurationProperty>,
+	/// <https://schema.org/median>
 	pub r#median: Vec<MedianProperty>,
+	/// <https://schema.org/percentile10>
 	pub r#percentile_10: Vec<Percentile10Property>,
+	/// <https://schema.org/percentile25>
 	pub r#percentile_25: Vec<Percentile25Property>,
+	/// <https://schema.org/percentile75>
 	pub r#percentile_75: Vec<Percentile75Property>,
+	/// <https://schema.org/percentile90>
 	pub r#percentile_90: Vec<Percentile90Property>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/MonetaryAmountDistribution>.
 pub trait MonetaryAmountDistributionTrait {
+	/// Get <https://schema.org/currency> from [`Self`] as borrowed slice.
 	fn get_currency(&self) -> &[CurrencyProperty];
+	/// Take <https://schema.org/currency> from [`Self`] as owned vector.
 	fn take_currency(&mut self) -> Vec<CurrencyProperty>;
 }
 impl MonetaryAmountDistributionTrait for MonetaryAmountDistribution {

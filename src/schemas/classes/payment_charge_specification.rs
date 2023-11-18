@@ -3,34 +3,62 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct PaymentChargeSpecification {
+	/// <https://schema.org/appliesToDeliveryMethod>
 	pub r#applies_to_delivery_method: Vec<AppliesToDeliveryMethodProperty>,
+	/// <https://schema.org/appliesToPaymentMethod>
 	pub r#applies_to_payment_method: Vec<AppliesToPaymentMethodProperty>,
+	/// <https://schema.org/eligibleQuantity>
 	pub r#eligible_quantity: Vec<EligibleQuantityProperty>,
+	/// <https://schema.org/eligibleTransactionVolume>
 	pub r#eligible_transaction_volume: Vec<EligibleTransactionVolumeProperty>,
+	/// <https://schema.org/maxPrice>
 	pub r#max_price: Vec<MaxPriceProperty>,
+	/// <https://schema.org/minPrice>
 	pub r#min_price: Vec<MinPriceProperty>,
+	/// <https://schema.org/price>
 	pub r#price: Vec<PriceProperty>,
+	/// <https://schema.org/priceCurrency>
 	pub r#price_currency: Vec<PriceCurrencyProperty>,
+	/// <https://schema.org/validFrom>
 	pub r#valid_from: Vec<ValidFromProperty>,
+	/// <https://schema.org/validThrough>
 	pub r#valid_through: Vec<ValidThroughProperty>,
+	/// <https://schema.org/valueAddedTaxIncluded>
 	pub r#value_added_tax_included: Vec<ValueAddedTaxIncludedProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/PaymentChargeSpecification>.
 pub trait PaymentChargeSpecificationTrait {
+	/// Get <https://schema.org/appliesToDeliveryMethod> from [`Self`] as borrowed slice.
 	fn get_applies_to_delivery_method(&self) -> &[AppliesToDeliveryMethodProperty];
+	/// Take <https://schema.org/appliesToDeliveryMethod> from [`Self`] as owned vector.
 	fn take_applies_to_delivery_method(&mut self) -> Vec<AppliesToDeliveryMethodProperty>;
+	/// Get <https://schema.org/appliesToPaymentMethod> from [`Self`] as borrowed slice.
 	fn get_applies_to_payment_method(&self) -> &[AppliesToPaymentMethodProperty];
+	/// Take <https://schema.org/appliesToPaymentMethod> from [`Self`] as owned vector.
 	fn take_applies_to_payment_method(&mut self) -> Vec<AppliesToPaymentMethodProperty>;
 }
 impl PaymentChargeSpecificationTrait for PaymentChargeSpecification {

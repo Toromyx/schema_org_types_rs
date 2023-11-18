@@ -3,38 +3,70 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct AskAction {
+	/// <https://schema.org/question>
 	pub r#question: Vec<QuestionProperty>,
+	/// <https://schema.org/actionStatus>
 	pub r#action_status: Vec<ActionStatusProperty>,
+	/// <https://schema.org/agent>
 	pub r#agent: Vec<AgentProperty>,
+	/// <https://schema.org/endTime>
 	pub r#end_time: Vec<EndTimeProperty>,
+	/// <https://schema.org/error>
 	pub r#error: Vec<ErrorProperty>,
+	/// <https://schema.org/instrument>
 	pub r#instrument: Vec<InstrumentProperty>,
+	/// <https://schema.org/location>
 	pub r#location: Vec<LocationProperty>,
+	/// <https://schema.org/object>
 	pub r#object: Vec<ObjectProperty>,
+	/// <https://schema.org/participant>
 	pub r#participant: Vec<ParticipantProperty>,
+	/// <https://schema.org/provider>
 	pub r#provider: Vec<ProviderProperty>,
+	/// <https://schema.org/result>
 	pub r#result: Vec<ResultProperty>,
+	/// <https://schema.org/startTime>
 	pub r#start_time: Vec<StartTimeProperty>,
+	/// <https://schema.org/target>
 	pub r#target: Vec<TargetProperty>,
+	/// <https://schema.org/about>
 	pub r#about: Vec<AboutProperty>,
+	/// <https://schema.org/inLanguage>
 	pub r#in_language: Vec<InLanguageProperty>,
+	/// <https://schema.org/language>
 	pub r#language: Vec<LanguageProperty>,
+	/// <https://schema.org/recipient>
 	pub r#recipient: Vec<RecipientProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/AskAction>.
 pub trait AskActionTrait {
+	/// Get <https://schema.org/question> from [`Self`] as borrowed slice.
 	fn get_question(&self) -> &[QuestionProperty];
+	/// Take <https://schema.org/question> from [`Self`] as owned vector.
 	fn take_question(&mut self) -> Vec<QuestionProperty>;
 }
 impl AskActionTrait for AskAction {

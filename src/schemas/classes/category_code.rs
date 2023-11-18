@@ -3,27 +3,48 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct CategoryCode {
+	/// <https://schema.org/codeValue>
 	pub r#code_value: Vec<CodeValueProperty>,
+	/// <https://schema.org/inCodeSet>
 	pub r#in_code_set: Vec<InCodeSetProperty>,
+	/// <https://schema.org/inDefinedTermSet>
 	pub r#in_defined_term_set: Vec<InDefinedTermSetProperty>,
+	/// <https://schema.org/termCode>
 	pub r#term_code: Vec<TermCodeProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/CategoryCode>.
 pub trait CategoryCodeTrait {
+	/// Get <https://schema.org/codeValue> from [`Self`] as borrowed slice.
 	fn get_code_value(&self) -> &[CodeValueProperty];
+	/// Take <https://schema.org/codeValue> from [`Self`] as owned vector.
 	fn take_code_value(&mut self) -> Vec<CodeValueProperty>;
+	/// Get <https://schema.org/inCodeSet> from [`Self`] as borrowed slice.
 	fn get_in_code_set(&self) -> &[InCodeSetProperty];
+	/// Take <https://schema.org/inCodeSet> from [`Self`] as owned vector.
 	fn take_in_code_set(&mut self) -> Vec<InCodeSetProperty>;
 }
 impl CategoryCodeTrait for CategoryCode {

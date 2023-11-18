@@ -3,58 +3,110 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct Reservation {
+	/// <https://schema.org/bookingAgent>
 	pub r#booking_agent: Vec<BookingAgentProperty>,
+	/// <https://schema.org/bookingTime>
 	pub r#booking_time: Vec<BookingTimeProperty>,
+	/// <https://schema.org/broker>
 	pub r#broker: Vec<BrokerProperty>,
+	/// <https://schema.org/modifiedTime>
 	pub r#modified_time: Vec<ModifiedTimeProperty>,
+	/// <https://schema.org/priceCurrency>
 	pub r#price_currency: Vec<PriceCurrencyProperty>,
+	/// <https://schema.org/programMembershipUsed>
 	pub r#program_membership_used: Vec<ProgramMembershipUsedProperty>,
+	/// <https://schema.org/provider>
 	pub r#provider: Vec<ProviderProperty>,
+	/// <https://schema.org/reservationFor>
 	pub r#reservation_for: Vec<ReservationForProperty>,
+	/// <https://schema.org/reservationId>
 	pub r#reservation_id: Vec<ReservationIdProperty>,
+	/// <https://schema.org/reservationStatus>
 	pub r#reservation_status: Vec<ReservationStatusProperty>,
+	/// <https://schema.org/reservedTicket>
 	pub r#reserved_ticket: Vec<ReservedTicketProperty>,
+	/// <https://schema.org/totalPrice>
 	pub r#total_price: Vec<TotalPriceProperty>,
+	/// <https://schema.org/underName>
 	pub r#under_name: Vec<UnderNameProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/Reservation>.
 pub trait ReservationTrait {
+	/// Get <https://schema.org/bookingAgent> from [`Self`] as borrowed slice.
 	fn get_booking_agent(&self) -> &[BookingAgentProperty];
+	/// Take <https://schema.org/bookingAgent> from [`Self`] as owned vector.
 	fn take_booking_agent(&mut self) -> Vec<BookingAgentProperty>;
+	/// Get <https://schema.org/bookingTime> from [`Self`] as borrowed slice.
 	fn get_booking_time(&self) -> &[BookingTimeProperty];
+	/// Take <https://schema.org/bookingTime> from [`Self`] as owned vector.
 	fn take_booking_time(&mut self) -> Vec<BookingTimeProperty>;
+	/// Get <https://schema.org/broker> from [`Self`] as borrowed slice.
 	fn get_broker(&self) -> &[BrokerProperty];
+	/// Take <https://schema.org/broker> from [`Self`] as owned vector.
 	fn take_broker(&mut self) -> Vec<BrokerProperty>;
+	/// Get <https://schema.org/modifiedTime> from [`Self`] as borrowed slice.
 	fn get_modified_time(&self) -> &[ModifiedTimeProperty];
+	/// Take <https://schema.org/modifiedTime> from [`Self`] as owned vector.
 	fn take_modified_time(&mut self) -> Vec<ModifiedTimeProperty>;
+	/// Get <https://schema.org/priceCurrency> from [`Self`] as borrowed slice.
 	fn get_price_currency(&self) -> &[PriceCurrencyProperty];
+	/// Take <https://schema.org/priceCurrency> from [`Self`] as owned vector.
 	fn take_price_currency(&mut self) -> Vec<PriceCurrencyProperty>;
+	/// Get <https://schema.org/programMembershipUsed> from [`Self`] as borrowed slice.
 	fn get_program_membership_used(&self) -> &[ProgramMembershipUsedProperty];
+	/// Take <https://schema.org/programMembershipUsed> from [`Self`] as owned vector.
 	fn take_program_membership_used(&mut self) -> Vec<ProgramMembershipUsedProperty>;
+	/// Get <https://schema.org/provider> from [`Self`] as borrowed slice.
 	fn get_provider(&self) -> &[ProviderProperty];
+	/// Take <https://schema.org/provider> from [`Self`] as owned vector.
 	fn take_provider(&mut self) -> Vec<ProviderProperty>;
+	/// Get <https://schema.org/reservationFor> from [`Self`] as borrowed slice.
 	fn get_reservation_for(&self) -> &[ReservationForProperty];
+	/// Take <https://schema.org/reservationFor> from [`Self`] as owned vector.
 	fn take_reservation_for(&mut self) -> Vec<ReservationForProperty>;
+	/// Get <https://schema.org/reservationId> from [`Self`] as borrowed slice.
 	fn get_reservation_id(&self) -> &[ReservationIdProperty];
+	/// Take <https://schema.org/reservationId> from [`Self`] as owned vector.
 	fn take_reservation_id(&mut self) -> Vec<ReservationIdProperty>;
+	/// Get <https://schema.org/reservationStatus> from [`Self`] as borrowed slice.
 	fn get_reservation_status(&self) -> &[ReservationStatusProperty];
+	/// Take <https://schema.org/reservationStatus> from [`Self`] as owned vector.
 	fn take_reservation_status(&mut self) -> Vec<ReservationStatusProperty>;
+	/// Get <https://schema.org/reservedTicket> from [`Self`] as borrowed slice.
 	fn get_reserved_ticket(&self) -> &[ReservedTicketProperty];
+	/// Take <https://schema.org/reservedTicket> from [`Self`] as owned vector.
 	fn take_reserved_ticket(&mut self) -> Vec<ReservedTicketProperty>;
+	/// Get <https://schema.org/totalPrice> from [`Self`] as borrowed slice.
 	fn get_total_price(&self) -> &[TotalPriceProperty];
+	/// Take <https://schema.org/totalPrice> from [`Self`] as owned vector.
 	fn take_total_price(&mut self) -> Vec<TotalPriceProperty>;
+	/// Get <https://schema.org/underName> from [`Self`] as borrowed slice.
 	fn get_under_name(&self) -> &[UnderNameProperty];
+	/// Take <https://schema.org/underName> from [`Self`] as owned vector.
 	fn take_under_name(&mut self) -> Vec<UnderNameProperty>;
 }
 impl ReservationTrait for Reservation {

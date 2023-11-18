@@ -3,46 +3,86 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct PriceSpecification {
+	/// <https://schema.org/eligibleQuantity>
 	pub r#eligible_quantity: Vec<EligibleQuantityProperty>,
+	/// <https://schema.org/eligibleTransactionVolume>
 	pub r#eligible_transaction_volume: Vec<EligibleTransactionVolumeProperty>,
+	/// <https://schema.org/maxPrice>
 	pub r#max_price: Vec<MaxPriceProperty>,
+	/// <https://schema.org/minPrice>
 	pub r#min_price: Vec<MinPriceProperty>,
+	/// <https://schema.org/price>
 	pub r#price: Vec<PriceProperty>,
+	/// <https://schema.org/priceCurrency>
 	pub r#price_currency: Vec<PriceCurrencyProperty>,
+	/// <https://schema.org/validFrom>
 	pub r#valid_from: Vec<ValidFromProperty>,
+	/// <https://schema.org/validThrough>
 	pub r#valid_through: Vec<ValidThroughProperty>,
+	/// <https://schema.org/valueAddedTaxIncluded>
 	pub r#value_added_tax_included: Vec<ValueAddedTaxIncludedProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/PriceSpecification>.
 pub trait PriceSpecificationTrait {
+	/// Get <https://schema.org/eligibleQuantity> from [`Self`] as borrowed slice.
 	fn get_eligible_quantity(&self) -> &[EligibleQuantityProperty];
+	/// Take <https://schema.org/eligibleQuantity> from [`Self`] as owned vector.
 	fn take_eligible_quantity(&mut self) -> Vec<EligibleQuantityProperty>;
+	/// Get <https://schema.org/eligibleTransactionVolume> from [`Self`] as borrowed slice.
 	fn get_eligible_transaction_volume(&self) -> &[EligibleTransactionVolumeProperty];
+	/// Take <https://schema.org/eligibleTransactionVolume> from [`Self`] as owned vector.
 	fn take_eligible_transaction_volume(&mut self) -> Vec<EligibleTransactionVolumeProperty>;
+	/// Get <https://schema.org/maxPrice> from [`Self`] as borrowed slice.
 	fn get_max_price(&self) -> &[MaxPriceProperty];
+	/// Take <https://schema.org/maxPrice> from [`Self`] as owned vector.
 	fn take_max_price(&mut self) -> Vec<MaxPriceProperty>;
+	/// Get <https://schema.org/minPrice> from [`Self`] as borrowed slice.
 	fn get_min_price(&self) -> &[MinPriceProperty];
+	/// Take <https://schema.org/minPrice> from [`Self`] as owned vector.
 	fn take_min_price(&mut self) -> Vec<MinPriceProperty>;
+	/// Get <https://schema.org/price> from [`Self`] as borrowed slice.
 	fn get_price(&self) -> &[PriceProperty];
+	/// Take <https://schema.org/price> from [`Self`] as owned vector.
 	fn take_price(&mut self) -> Vec<PriceProperty>;
+	/// Get <https://schema.org/priceCurrency> from [`Self`] as borrowed slice.
 	fn get_price_currency(&self) -> &[PriceCurrencyProperty];
+	/// Take <https://schema.org/priceCurrency> from [`Self`] as owned vector.
 	fn take_price_currency(&mut self) -> Vec<PriceCurrencyProperty>;
+	/// Get <https://schema.org/validFrom> from [`Self`] as borrowed slice.
 	fn get_valid_from(&self) -> &[ValidFromProperty];
+	/// Take <https://schema.org/validFrom> from [`Self`] as owned vector.
 	fn take_valid_from(&mut self) -> Vec<ValidFromProperty>;
+	/// Get <https://schema.org/validThrough> from [`Self`] as borrowed slice.
 	fn get_valid_through(&self) -> &[ValidThroughProperty];
+	/// Take <https://schema.org/validThrough> from [`Self`] as owned vector.
 	fn take_valid_through(&mut self) -> Vec<ValidThroughProperty>;
+	/// Get <https://schema.org/valueAddedTaxIncluded> from [`Self`] as borrowed slice.
 	fn get_value_added_tax_included(&self) -> &[ValueAddedTaxIncludedProperty];
+	/// Take <https://schema.org/valueAddedTaxIncluded> from [`Self`] as owned vector.
 	fn take_value_added_tax_included(&mut self) -> Vec<ValueAddedTaxIncludedProperty>;
 }
 impl PriceSpecificationTrait for PriceSpecification {

@@ -3,72 +3,138 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct ExerciseAction {
+	/// <https://schema.org/course>
 	pub r#course: Vec<CourseProperty>,
+	/// <https://schema.org/diet>
 	pub r#diet: Vec<DietProperty>,
+	/// <https://schema.org/distance>
 	pub r#distance: Vec<DistanceProperty>,
+	/// <https://schema.org/exerciseCourse>
 	pub r#exercise_course: Vec<ExerciseCourseProperty>,
+	/// <https://schema.org/exercisePlan>
 	pub r#exercise_plan: Vec<ExercisePlanProperty>,
+	/// <https://schema.org/exerciseRelatedDiet>
 	pub r#exercise_related_diet: Vec<ExerciseRelatedDietProperty>,
+	/// <https://schema.org/exerciseType>
 	pub r#exercise_type: Vec<ExerciseTypeProperty>,
+	/// <https://schema.org/fromLocation>
 	pub r#from_location: Vec<FromLocationProperty>,
+	/// <https://schema.org/opponent>
 	pub r#opponent: Vec<OpponentProperty>,
+	/// <https://schema.org/sportsActivityLocation>
 	pub r#sports_activity_location: Vec<SportsActivityLocationProperty>,
+	/// <https://schema.org/sportsEvent>
 	pub r#sports_event: Vec<SportsEventProperty>,
+	/// <https://schema.org/sportsTeam>
 	pub r#sports_team: Vec<SportsTeamProperty>,
+	/// <https://schema.org/toLocation>
 	pub r#to_location: Vec<ToLocationProperty>,
+	/// <https://schema.org/actionStatus>
 	pub r#action_status: Vec<ActionStatusProperty>,
+	/// <https://schema.org/agent>
 	pub r#agent: Vec<AgentProperty>,
+	/// <https://schema.org/endTime>
 	pub r#end_time: Vec<EndTimeProperty>,
+	/// <https://schema.org/error>
 	pub r#error: Vec<ErrorProperty>,
+	/// <https://schema.org/instrument>
 	pub r#instrument: Vec<InstrumentProperty>,
+	/// <https://schema.org/location>
 	pub r#location: Vec<LocationProperty>,
+	/// <https://schema.org/object>
 	pub r#object: Vec<ObjectProperty>,
+	/// <https://schema.org/participant>
 	pub r#participant: Vec<ParticipantProperty>,
+	/// <https://schema.org/provider>
 	pub r#provider: Vec<ProviderProperty>,
+	/// <https://schema.org/result>
 	pub r#result: Vec<ResultProperty>,
+	/// <https://schema.org/startTime>
 	pub r#start_time: Vec<StartTimeProperty>,
+	/// <https://schema.org/target>
 	pub r#target: Vec<TargetProperty>,
+	/// <https://schema.org/audience>
 	pub r#audience: Vec<AudienceProperty>,
+	/// <https://schema.org/event>
 	pub r#event: Vec<EventProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/ExerciseAction>.
 pub trait ExerciseActionTrait {
+	/// Get <https://schema.org/course> from [`Self`] as borrowed slice.
 	fn get_course(&self) -> &[CourseProperty];
+	/// Take <https://schema.org/course> from [`Self`] as owned vector.
 	fn take_course(&mut self) -> Vec<CourseProperty>;
+	/// Get <https://schema.org/diet> from [`Self`] as borrowed slice.
 	fn get_diet(&self) -> &[DietProperty];
+	/// Take <https://schema.org/diet> from [`Self`] as owned vector.
 	fn take_diet(&mut self) -> Vec<DietProperty>;
+	/// Get <https://schema.org/distance> from [`Self`] as borrowed slice.
 	fn get_distance(&self) -> &[DistanceProperty];
+	/// Take <https://schema.org/distance> from [`Self`] as owned vector.
 	fn take_distance(&mut self) -> Vec<DistanceProperty>;
+	/// Get <https://schema.org/exerciseCourse> from [`Self`] as borrowed slice.
 	fn get_exercise_course(&self) -> &[ExerciseCourseProperty];
+	/// Take <https://schema.org/exerciseCourse> from [`Self`] as owned vector.
 	fn take_exercise_course(&mut self) -> Vec<ExerciseCourseProperty>;
+	/// Get <https://schema.org/exercisePlan> from [`Self`] as borrowed slice.
 	fn get_exercise_plan(&self) -> &[ExercisePlanProperty];
+	/// Take <https://schema.org/exercisePlan> from [`Self`] as owned vector.
 	fn take_exercise_plan(&mut self) -> Vec<ExercisePlanProperty>;
+	/// Get <https://schema.org/exerciseRelatedDiet> from [`Self`] as borrowed slice.
 	fn get_exercise_related_diet(&self) -> &[ExerciseRelatedDietProperty];
+	/// Take <https://schema.org/exerciseRelatedDiet> from [`Self`] as owned vector.
 	fn take_exercise_related_diet(&mut self) -> Vec<ExerciseRelatedDietProperty>;
+	/// Get <https://schema.org/exerciseType> from [`Self`] as borrowed slice.
 	fn get_exercise_type(&self) -> &[ExerciseTypeProperty];
+	/// Take <https://schema.org/exerciseType> from [`Self`] as owned vector.
 	fn take_exercise_type(&mut self) -> Vec<ExerciseTypeProperty>;
+	/// Get <https://schema.org/fromLocation> from [`Self`] as borrowed slice.
 	fn get_from_location(&self) -> &[FromLocationProperty];
+	/// Take <https://schema.org/fromLocation> from [`Self`] as owned vector.
 	fn take_from_location(&mut self) -> Vec<FromLocationProperty>;
+	/// Get <https://schema.org/opponent> from [`Self`] as borrowed slice.
 	fn get_opponent(&self) -> &[OpponentProperty];
+	/// Take <https://schema.org/opponent> from [`Self`] as owned vector.
 	fn take_opponent(&mut self) -> Vec<OpponentProperty>;
+	/// Get <https://schema.org/sportsActivityLocation> from [`Self`] as borrowed slice.
 	fn get_sports_activity_location(&self) -> &[SportsActivityLocationProperty];
+	/// Take <https://schema.org/sportsActivityLocation> from [`Self`] as owned vector.
 	fn take_sports_activity_location(&mut self) -> Vec<SportsActivityLocationProperty>;
+	/// Get <https://schema.org/sportsEvent> from [`Self`] as borrowed slice.
 	fn get_sports_event(&self) -> &[SportsEventProperty];
+	/// Take <https://schema.org/sportsEvent> from [`Self`] as owned vector.
 	fn take_sports_event(&mut self) -> Vec<SportsEventProperty>;
+	/// Get <https://schema.org/sportsTeam> from [`Self`] as borrowed slice.
 	fn get_sports_team(&self) -> &[SportsTeamProperty];
+	/// Take <https://schema.org/sportsTeam> from [`Self`] as owned vector.
 	fn take_sports_team(&mut self) -> Vec<SportsTeamProperty>;
+	/// Get <https://schema.org/toLocation> from [`Self`] as borrowed slice.
 	fn get_to_location(&self) -> &[ToLocationProperty];
+	/// Take <https://schema.org/toLocation> from [`Self`] as owned vector.
 	fn take_to_location(&mut self) -> Vec<ToLocationProperty>;
 }
 impl ExerciseActionTrait for ExerciseAction {

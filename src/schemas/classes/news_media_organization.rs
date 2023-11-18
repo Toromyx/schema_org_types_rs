@@ -3,115 +3,222 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct NewsMediaOrganization {
+	/// <https://schema.org/actionableFeedbackPolicy>
 	pub r#actionable_feedback_policy: Vec<ActionableFeedbackPolicyProperty>,
+	/// <https://schema.org/correctionsPolicy>
 	pub r#corrections_policy: Vec<CorrectionsPolicyProperty>,
+	/// <https://schema.org/diversityPolicy>
 	pub r#diversity_policy: Vec<DiversityPolicyProperty>,
+	/// <https://schema.org/diversityStaffingReport>
 	pub r#diversity_staffing_report: Vec<DiversityStaffingReportProperty>,
+	/// <https://schema.org/ethicsPolicy>
 	pub r#ethics_policy: Vec<EthicsPolicyProperty>,
+	/// <https://schema.org/masthead>
 	pub r#masthead: Vec<MastheadProperty>,
+	/// <https://schema.org/missionCoveragePrioritiesPolicy>
 	pub r#mission_coverage_priorities_policy: Vec<MissionCoveragePrioritiesPolicyProperty>,
+	/// <https://schema.org/noBylinesPolicy>
 	pub r#no_bylines_policy: Vec<NoBylinesPolicyProperty>,
+	/// <https://schema.org/ownershipFundingInfo>
 	pub r#ownership_funding_info: Vec<OwnershipFundingInfoProperty>,
+	/// <https://schema.org/unnamedSourcesPolicy>
 	pub r#unnamed_sources_policy: Vec<UnnamedSourcesPolicyProperty>,
+	/// <https://schema.org/verificationFactCheckingPolicy>
 	pub r#verification_fact_checking_policy: Vec<VerificationFactCheckingPolicyProperty>,
+	/// <https://schema.org/address>
 	pub r#address: Vec<AddressProperty>,
+	/// <https://schema.org/agentInteractionStatistic>
 	pub r#agent_interaction_statistic: Vec<AgentInteractionStatisticProperty>,
+	/// <https://schema.org/aggregateRating>
 	pub r#aggregate_rating: Vec<AggregateRatingProperty>,
+	/// <https://schema.org/alumni>
 	pub r#alumni: Vec<AlumniProperty>,
+	/// <https://schema.org/areaServed>
 	pub r#area_served: Vec<AreaServedProperty>,
+	/// <https://schema.org/award>
 	pub r#award: Vec<AwardProperty>,
+	/// <https://schema.org/awards>
 	pub r#awards: Vec<AwardsProperty>,
+	/// <https://schema.org/brand>
 	pub r#brand: Vec<BrandProperty>,
+	/// <https://schema.org/contactPoint>
 	pub r#contact_point: Vec<ContactPointProperty>,
+	/// <https://schema.org/contactPoints>
 	pub r#contact_points: Vec<ContactPointsProperty>,
+	/// <https://schema.org/department>
 	pub r#department: Vec<DepartmentProperty>,
+	/// <https://schema.org/dissolutionDate>
 	pub r#dissolution_date: Vec<DissolutionDateProperty>,
+	/// <https://schema.org/duns>
 	pub r#duns: Vec<DunsProperty>,
+	/// <https://schema.org/email>
 	pub r#email: Vec<EmailProperty>,
+	/// <https://schema.org/employee>
 	pub r#employee: Vec<EmployeeProperty>,
+	/// <https://schema.org/employees>
 	pub r#employees: Vec<EmployeesProperty>,
+	/// <https://schema.org/event>
 	pub r#event: Vec<EventProperty>,
+	/// <https://schema.org/events>
 	pub r#events: Vec<EventsProperty>,
+	/// <https://schema.org/faxNumber>
 	pub r#fax_number: Vec<FaxNumberProperty>,
+	/// <https://schema.org/founder>
 	pub r#founder: Vec<FounderProperty>,
+	/// <https://schema.org/founders>
 	pub r#founders: Vec<FoundersProperty>,
+	/// <https://schema.org/foundingDate>
 	pub r#founding_date: Vec<FoundingDateProperty>,
+	/// <https://schema.org/foundingLocation>
 	pub r#founding_location: Vec<FoundingLocationProperty>,
+	/// <https://schema.org/funder>
 	pub r#funder: Vec<FunderProperty>,
+	/// <https://schema.org/funding>
 	pub r#funding: Vec<FundingProperty>,
+	/// <https://schema.org/globalLocationNumber>
 	pub r#global_location_number: Vec<GlobalLocationNumberProperty>,
+	/// <https://schema.org/hasCredential>
 	pub r#has_credential: Vec<HasCredentialProperty>,
+	/// <https://schema.org/hasMerchantReturnPolicy>
 	pub r#has_merchant_return_policy: Vec<HasMerchantReturnPolicyProperty>,
+	/// <https://schema.org/hasOfferCatalog>
 	pub r#has_offer_catalog: Vec<HasOfferCatalogProperty>,
+	/// <https://schema.org/hasPOS>
 	pub r#has_pos: Vec<HasPosProperty>,
+	/// <https://schema.org/hasProductReturnPolicy>
 	pub r#has_product_return_policy: Vec<HasProductReturnPolicyProperty>,
+	/// <https://schema.org/interactionStatistic>
 	pub r#interaction_statistic: Vec<InteractionStatisticProperty>,
+	/// <https://schema.org/isicV4>
 	pub r#isic_v_4: Vec<IsicV4Property>,
+	/// <https://schema.org/iso6523Code>
 	pub r#iso_6523_code: Vec<Iso6523CodeProperty>,
+	/// <https://schema.org/keywords>
 	pub r#keywords: Vec<KeywordsProperty>,
+	/// <https://schema.org/knowsAbout>
 	pub r#knows_about: Vec<KnowsAboutProperty>,
+	/// <https://schema.org/knowsLanguage>
 	pub r#knows_language: Vec<KnowsLanguageProperty>,
+	/// <https://schema.org/legalName>
 	pub r#legal_name: Vec<LegalNameProperty>,
+	/// <https://schema.org/leiCode>
 	pub r#lei_code: Vec<LeiCodeProperty>,
+	/// <https://schema.org/location>
 	pub r#location: Vec<LocationProperty>,
+	/// <https://schema.org/logo>
 	pub r#logo: Vec<LogoProperty>,
+	/// <https://schema.org/makesOffer>
 	pub r#makes_offer: Vec<MakesOfferProperty>,
+	/// <https://schema.org/member>
 	pub r#member: Vec<MemberProperty>,
+	/// <https://schema.org/memberOf>
 	pub r#member_of: Vec<MemberOfProperty>,
+	/// <https://schema.org/members>
 	pub r#members: Vec<MembersProperty>,
+	/// <https://schema.org/naics>
 	pub r#naics: Vec<NaicsProperty>,
+	/// <https://schema.org/nonprofitStatus>
 	pub r#nonprofit_status: Vec<NonprofitStatusProperty>,
+	/// <https://schema.org/numberOfEmployees>
 	pub r#number_of_employees: Vec<NumberOfEmployeesProperty>,
+	/// <https://schema.org/owns>
 	pub r#owns: Vec<OwnsProperty>,
+	/// <https://schema.org/parentOrganization>
 	pub r#parent_organization: Vec<ParentOrganizationProperty>,
+	/// <https://schema.org/publishingPrinciples>
 	pub r#publishing_principles: Vec<PublishingPrinciplesProperty>,
+	/// <https://schema.org/review>
 	pub r#review: Vec<ReviewProperty>,
+	/// <https://schema.org/reviews>
 	pub r#reviews: Vec<ReviewsProperty>,
+	/// <https://schema.org/seeks>
 	pub r#seeks: Vec<SeeksProperty>,
+	/// <https://schema.org/serviceArea>
 	pub r#service_area: Vec<ServiceAreaProperty>,
+	/// <https://schema.org/slogan>
 	pub r#slogan: Vec<SloganProperty>,
+	/// <https://schema.org/sponsor>
 	pub r#sponsor: Vec<SponsorProperty>,
+	/// <https://schema.org/subOrganization>
 	pub r#sub_organization: Vec<SubOrganizationProperty>,
+	/// <https://schema.org/taxID>
 	pub r#tax_id: Vec<TaxIdProperty>,
+	/// <https://schema.org/telephone>
 	pub r#telephone: Vec<TelephoneProperty>,
+	/// <https://schema.org/vatID>
 	pub r#vat_id: Vec<VatIdProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/NewsMediaOrganization>.
 pub trait NewsMediaOrganizationTrait {
+	/// Get <https://schema.org/actionableFeedbackPolicy> from [`Self`] as borrowed slice.
 	fn get_actionable_feedback_policy(&self) -> &[ActionableFeedbackPolicyProperty];
+	/// Take <https://schema.org/actionableFeedbackPolicy> from [`Self`] as owned vector.
 	fn take_actionable_feedback_policy(&mut self) -> Vec<ActionableFeedbackPolicyProperty>;
+	/// Get <https://schema.org/correctionsPolicy> from [`Self`] as borrowed slice.
 	fn get_corrections_policy(&self) -> &[CorrectionsPolicyProperty];
+	/// Take <https://schema.org/correctionsPolicy> from [`Self`] as owned vector.
 	fn take_corrections_policy(&mut self) -> Vec<CorrectionsPolicyProperty>;
+	/// Get <https://schema.org/diversityPolicy> from [`Self`] as borrowed slice.
 	fn get_diversity_policy(&self) -> &[DiversityPolicyProperty];
+	/// Take <https://schema.org/diversityPolicy> from [`Self`] as owned vector.
 	fn take_diversity_policy(&mut self) -> Vec<DiversityPolicyProperty>;
+	/// Get <https://schema.org/diversityStaffingReport> from [`Self`] as borrowed slice.
 	fn get_diversity_staffing_report(&self) -> &[DiversityStaffingReportProperty];
+	/// Take <https://schema.org/diversityStaffingReport> from [`Self`] as owned vector.
 	fn take_diversity_staffing_report(&mut self) -> Vec<DiversityStaffingReportProperty>;
+	/// Get <https://schema.org/ethicsPolicy> from [`Self`] as borrowed slice.
 	fn get_ethics_policy(&self) -> &[EthicsPolicyProperty];
+	/// Take <https://schema.org/ethicsPolicy> from [`Self`] as owned vector.
 	fn take_ethics_policy(&mut self) -> Vec<EthicsPolicyProperty>;
+	/// Get <https://schema.org/masthead> from [`Self`] as borrowed slice.
 	fn get_masthead(&self) -> &[MastheadProperty];
+	/// Take <https://schema.org/masthead> from [`Self`] as owned vector.
 	fn take_masthead(&mut self) -> Vec<MastheadProperty>;
+	/// Get <https://schema.org/missionCoveragePrioritiesPolicy> from [`Self`] as borrowed slice.
 	fn get_mission_coverage_priorities_policy(&self) -> &[MissionCoveragePrioritiesPolicyProperty];
+	/// Take <https://schema.org/missionCoveragePrioritiesPolicy> from [`Self`] as owned vector.
 	fn take_mission_coverage_priorities_policy(
 		&mut self,
 	) -> Vec<MissionCoveragePrioritiesPolicyProperty>;
+	/// Get <https://schema.org/noBylinesPolicy> from [`Self`] as borrowed slice.
 	fn get_no_bylines_policy(&self) -> &[NoBylinesPolicyProperty];
+	/// Take <https://schema.org/noBylinesPolicy> from [`Self`] as owned vector.
 	fn take_no_bylines_policy(&mut self) -> Vec<NoBylinesPolicyProperty>;
+	/// Get <https://schema.org/ownershipFundingInfo> from [`Self`] as borrowed slice.
 	fn get_ownership_funding_info(&self) -> &[OwnershipFundingInfoProperty];
+	/// Take <https://schema.org/ownershipFundingInfo> from [`Self`] as owned vector.
 	fn take_ownership_funding_info(&mut self) -> Vec<OwnershipFundingInfoProperty>;
+	/// Get <https://schema.org/unnamedSourcesPolicy> from [`Self`] as borrowed slice.
 	fn get_unnamed_sources_policy(&self) -> &[UnnamedSourcesPolicyProperty];
+	/// Take <https://schema.org/unnamedSourcesPolicy> from [`Self`] as owned vector.
 	fn take_unnamed_sources_policy(&mut self) -> Vec<UnnamedSourcesPolicyProperty>;
+	/// Get <https://schema.org/verificationFactCheckingPolicy> from [`Self`] as borrowed slice.
 	fn get_verification_fact_checking_policy(&self) -> &[VerificationFactCheckingPolicyProperty];
+	/// Take <https://schema.org/verificationFactCheckingPolicy> from [`Self`] as owned vector.
 	fn take_verification_fact_checking_policy(
 		&mut self,
 	) -> Vec<VerificationFactCheckingPolicyProperty>;

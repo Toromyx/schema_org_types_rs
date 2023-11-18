@@ -3,28 +3,50 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct GameServer {
+	/// <https://schema.org/game>
 	pub r#game: Vec<GameProperty>,
+	/// <https://schema.org/playersOnline>
 	pub r#players_online: Vec<PlayersOnlineProperty>,
+	/// <https://schema.org/serverStatus>
 	pub r#server_status: Vec<ServerStatusProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/GameServer>.
 pub trait GameServerTrait {
+	/// Get <https://schema.org/game> from [`Self`] as borrowed slice.
 	fn get_game(&self) -> &[GameProperty];
+	/// Take <https://schema.org/game> from [`Self`] as owned vector.
 	fn take_game(&mut self) -> Vec<GameProperty>;
+	/// Get <https://schema.org/playersOnline> from [`Self`] as borrowed slice.
 	fn get_players_online(&self) -> &[PlayersOnlineProperty];
+	/// Take <https://schema.org/playersOnline> from [`Self`] as owned vector.
 	fn take_players_online(&mut self) -> Vec<PlayersOnlineProperty>;
+	/// Get <https://schema.org/serverStatus> from [`Self`] as borrowed slice.
 	fn get_server_status(&self) -> &[ServerStatusProperty];
+	/// Take <https://schema.org/serverStatus> from [`Self`] as owned vector.
 	fn take_server_status(&mut self) -> Vec<ServerStatusProperty>;
 }
 impl GameServerTrait for GameServer {

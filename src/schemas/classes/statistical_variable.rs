@@ -3,42 +3,78 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct StatisticalVariable {
+	/// <https://schema.org/measuredProperty>
 	pub r#measured_property: Vec<MeasuredPropertyProperty>,
+	/// <https://schema.org/measurementDenominator>
 	pub r#measurement_denominator: Vec<MeasurementDenominatorProperty>,
+	/// <https://schema.org/measurementMethod>
 	pub r#measurement_method: Vec<MeasurementMethodProperty>,
+	/// <https://schema.org/measurementQualifier>
 	pub r#measurement_qualifier: Vec<MeasurementQualifierProperty>,
+	/// <https://schema.org/measurementTechnique>
 	pub r#measurement_technique: Vec<MeasurementTechniqueProperty>,
+	/// <https://schema.org/populationType>
 	pub r#population_type: Vec<PopulationTypeProperty>,
+	/// <https://schema.org/statType>
 	pub r#stat_type: Vec<StatTypeProperty>,
+	/// <https://schema.org/constraintProperty>
 	pub r#constraint_property: Vec<ConstraintPropertyProperty>,
+	/// <https://schema.org/numConstraints>
 	pub r#num_constraints: Vec<NumConstraintsProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/StatisticalVariable>.
 pub trait StatisticalVariableTrait {
+	/// Get <https://schema.org/measuredProperty> from [`Self`] as borrowed slice.
 	fn get_measured_property(&self) -> &[MeasuredPropertyProperty];
+	/// Take <https://schema.org/measuredProperty> from [`Self`] as owned vector.
 	fn take_measured_property(&mut self) -> Vec<MeasuredPropertyProperty>;
+	/// Get <https://schema.org/measurementDenominator> from [`Self`] as borrowed slice.
 	fn get_measurement_denominator(&self) -> &[MeasurementDenominatorProperty];
+	/// Take <https://schema.org/measurementDenominator> from [`Self`] as owned vector.
 	fn take_measurement_denominator(&mut self) -> Vec<MeasurementDenominatorProperty>;
+	/// Get <https://schema.org/measurementMethod> from [`Self`] as borrowed slice.
 	fn get_measurement_method(&self) -> &[MeasurementMethodProperty];
+	/// Take <https://schema.org/measurementMethod> from [`Self`] as owned vector.
 	fn take_measurement_method(&mut self) -> Vec<MeasurementMethodProperty>;
+	/// Get <https://schema.org/measurementQualifier> from [`Self`] as borrowed slice.
 	fn get_measurement_qualifier(&self) -> &[MeasurementQualifierProperty];
+	/// Take <https://schema.org/measurementQualifier> from [`Self`] as owned vector.
 	fn take_measurement_qualifier(&mut self) -> Vec<MeasurementQualifierProperty>;
+	/// Get <https://schema.org/measurementTechnique> from [`Self`] as borrowed slice.
 	fn get_measurement_technique(&self) -> &[MeasurementTechniqueProperty];
+	/// Take <https://schema.org/measurementTechnique> from [`Self`] as owned vector.
 	fn take_measurement_technique(&mut self) -> Vec<MeasurementTechniqueProperty>;
+	/// Get <https://schema.org/populationType> from [`Self`] as borrowed slice.
 	fn get_population_type(&self) -> &[PopulationTypeProperty];
+	/// Take <https://schema.org/populationType> from [`Self`] as owned vector.
 	fn take_population_type(&mut self) -> Vec<PopulationTypeProperty>;
+	/// Get <https://schema.org/statType> from [`Self`] as borrowed slice.
 	fn get_stat_type(&self) -> &[StatTypeProperty];
+	/// Take <https://schema.org/statType> from [`Self`] as owned vector.
 	fn take_stat_type(&mut self) -> Vec<StatTypeProperty>;
 }
 impl StatisticalVariableTrait for StatisticalVariable {

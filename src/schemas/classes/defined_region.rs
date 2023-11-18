@@ -3,34 +3,62 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct DefinedRegion {
+	/// <https://schema.org/addressCountry>
 	pub r#address_country: Vec<AddressCountryProperty>,
+	/// <https://schema.org/addressRegion>
 	pub r#address_region: Vec<AddressRegionProperty>,
+	/// <https://schema.org/postalCode>
 	pub r#postal_code: Vec<PostalCodeProperty>,
+	/// <https://schema.org/postalCodePrefix>
 	pub r#postal_code_prefix: Vec<PostalCodePrefixProperty>,
+	/// <https://schema.org/postalCodeRange>
 	pub r#postal_code_range: Vec<PostalCodeRangeProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/DefinedRegion>.
 pub trait DefinedRegionTrait {
+	/// Get <https://schema.org/addressCountry> from [`Self`] as borrowed slice.
 	fn get_address_country(&self) -> &[AddressCountryProperty];
+	/// Take <https://schema.org/addressCountry> from [`Self`] as owned vector.
 	fn take_address_country(&mut self) -> Vec<AddressCountryProperty>;
+	/// Get <https://schema.org/addressRegion> from [`Self`] as borrowed slice.
 	fn get_address_region(&self) -> &[AddressRegionProperty];
+	/// Take <https://schema.org/addressRegion> from [`Self`] as owned vector.
 	fn take_address_region(&mut self) -> Vec<AddressRegionProperty>;
+	/// Get <https://schema.org/postalCode> from [`Self`] as borrowed slice.
 	fn get_postal_code(&self) -> &[PostalCodeProperty];
+	/// Take <https://schema.org/postalCode> from [`Self`] as owned vector.
 	fn take_postal_code(&mut self) -> Vec<PostalCodeProperty>;
+	/// Get <https://schema.org/postalCodePrefix> from [`Self`] as borrowed slice.
 	fn get_postal_code_prefix(&self) -> &[PostalCodePrefixProperty];
+	/// Take <https://schema.org/postalCodePrefix> from [`Self`] as owned vector.
 	fn take_postal_code_prefix(&mut self) -> Vec<PostalCodePrefixProperty>;
+	/// Get <https://schema.org/postalCodeRange> from [`Self`] as borrowed slice.
 	fn get_postal_code_range(&self) -> &[PostalCodeRangeProperty];
+	/// Take <https://schema.org/postalCodeRange> from [`Self`] as owned vector.
 	fn take_postal_code_range(&mut self) -> Vec<PostalCodeRangeProperty>;
 }
 impl DefinedRegionTrait for DefinedRegion {

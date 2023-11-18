@@ -3,55 +3,104 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct ParcelDelivery {
+	/// <https://schema.org/carrier>
 	pub r#carrier: Vec<CarrierProperty>,
+	/// <https://schema.org/deliveryAddress>
 	pub r#delivery_address: Vec<DeliveryAddressProperty>,
+	/// <https://schema.org/deliveryStatus>
 	pub r#delivery_status: Vec<DeliveryStatusProperty>,
+	/// <https://schema.org/expectedArrivalFrom>
 	pub r#expected_arrival_from: Vec<ExpectedArrivalFromProperty>,
+	/// <https://schema.org/expectedArrivalUntil>
 	pub r#expected_arrival_until: Vec<ExpectedArrivalUntilProperty>,
+	/// <https://schema.org/hasDeliveryMethod>
 	pub r#has_delivery_method: Vec<HasDeliveryMethodProperty>,
+	/// <https://schema.org/itemShipped>
 	pub r#item_shipped: Vec<ItemShippedProperty>,
+	/// <https://schema.org/originAddress>
 	pub r#origin_address: Vec<OriginAddressProperty>,
+	/// <https://schema.org/partOfOrder>
 	pub r#part_of_order: Vec<PartOfOrderProperty>,
+	/// <https://schema.org/provider>
 	pub r#provider: Vec<ProviderProperty>,
+	/// <https://schema.org/trackingNumber>
 	pub r#tracking_number: Vec<TrackingNumberProperty>,
+	/// <https://schema.org/trackingUrl>
 	pub r#tracking_url: Vec<TrackingUrlProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/ParcelDelivery>.
 pub trait ParcelDeliveryTrait {
+	/// Get <https://schema.org/carrier> from [`Self`] as borrowed slice.
 	fn get_carrier(&self) -> &[CarrierProperty];
+	/// Take <https://schema.org/carrier> from [`Self`] as owned vector.
 	fn take_carrier(&mut self) -> Vec<CarrierProperty>;
+	/// Get <https://schema.org/deliveryAddress> from [`Self`] as borrowed slice.
 	fn get_delivery_address(&self) -> &[DeliveryAddressProperty];
+	/// Take <https://schema.org/deliveryAddress> from [`Self`] as owned vector.
 	fn take_delivery_address(&mut self) -> Vec<DeliveryAddressProperty>;
+	/// Get <https://schema.org/deliveryStatus> from [`Self`] as borrowed slice.
 	fn get_delivery_status(&self) -> &[DeliveryStatusProperty];
+	/// Take <https://schema.org/deliveryStatus> from [`Self`] as owned vector.
 	fn take_delivery_status(&mut self) -> Vec<DeliveryStatusProperty>;
+	/// Get <https://schema.org/expectedArrivalFrom> from [`Self`] as borrowed slice.
 	fn get_expected_arrival_from(&self) -> &[ExpectedArrivalFromProperty];
+	/// Take <https://schema.org/expectedArrivalFrom> from [`Self`] as owned vector.
 	fn take_expected_arrival_from(&mut self) -> Vec<ExpectedArrivalFromProperty>;
+	/// Get <https://schema.org/expectedArrivalUntil> from [`Self`] as borrowed slice.
 	fn get_expected_arrival_until(&self) -> &[ExpectedArrivalUntilProperty];
+	/// Take <https://schema.org/expectedArrivalUntil> from [`Self`] as owned vector.
 	fn take_expected_arrival_until(&mut self) -> Vec<ExpectedArrivalUntilProperty>;
+	/// Get <https://schema.org/hasDeliveryMethod> from [`Self`] as borrowed slice.
 	fn get_has_delivery_method(&self) -> &[HasDeliveryMethodProperty];
+	/// Take <https://schema.org/hasDeliveryMethod> from [`Self`] as owned vector.
 	fn take_has_delivery_method(&mut self) -> Vec<HasDeliveryMethodProperty>;
+	/// Get <https://schema.org/itemShipped> from [`Self`] as borrowed slice.
 	fn get_item_shipped(&self) -> &[ItemShippedProperty];
+	/// Take <https://schema.org/itemShipped> from [`Self`] as owned vector.
 	fn take_item_shipped(&mut self) -> Vec<ItemShippedProperty>;
+	/// Get <https://schema.org/originAddress> from [`Self`] as borrowed slice.
 	fn get_origin_address(&self) -> &[OriginAddressProperty];
+	/// Take <https://schema.org/originAddress> from [`Self`] as owned vector.
 	fn take_origin_address(&mut self) -> Vec<OriginAddressProperty>;
+	/// Get <https://schema.org/partOfOrder> from [`Self`] as borrowed slice.
 	fn get_part_of_order(&self) -> &[PartOfOrderProperty];
+	/// Take <https://schema.org/partOfOrder> from [`Self`] as owned vector.
 	fn take_part_of_order(&mut self) -> Vec<PartOfOrderProperty>;
+	/// Get <https://schema.org/provider> from [`Self`] as borrowed slice.
 	fn get_provider(&self) -> &[ProviderProperty];
+	/// Take <https://schema.org/provider> from [`Self`] as owned vector.
 	fn take_provider(&mut self) -> Vec<ProviderProperty>;
+	/// Get <https://schema.org/trackingNumber> from [`Self`] as borrowed slice.
 	fn get_tracking_number(&self) -> &[TrackingNumberProperty];
+	/// Take <https://schema.org/trackingNumber> from [`Self`] as owned vector.
 	fn take_tracking_number(&mut self) -> Vec<TrackingNumberProperty>;
+	/// Get <https://schema.org/trackingUrl> from [`Self`] as borrowed slice.
 	fn get_tracking_url(&self) -> &[TrackingUrlProperty];
+	/// Take <https://schema.org/trackingUrl> from [`Self`] as owned vector.
 	fn take_tracking_url(&mut self) -> Vec<TrackingUrlProperty>;
 }
 impl ParcelDeliveryTrait for ParcelDelivery {

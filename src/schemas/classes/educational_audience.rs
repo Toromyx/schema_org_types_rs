@@ -3,24 +3,42 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct EducationalAudience {
+	/// <https://schema.org/educationalRole>
 	pub r#educational_role: Vec<EducationalRoleProperty>,
+	/// <https://schema.org/audienceType>
 	pub r#audience_type: Vec<AudienceTypeProperty>,
+	/// <https://schema.org/geographicArea>
 	pub r#geographic_area: Vec<GeographicAreaProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/EducationalAudience>.
 pub trait EducationalAudienceTrait {
+	/// Get <https://schema.org/educationalRole> from [`Self`] as borrowed slice.
 	fn get_educational_role(&self) -> &[EducationalRoleProperty];
+	/// Take <https://schema.org/educationalRole> from [`Self`] as owned vector.
 	fn take_educational_role(&mut self) -> Vec<EducationalRoleProperty>;
 }
 impl EducationalAudienceTrait for EducationalAudience {

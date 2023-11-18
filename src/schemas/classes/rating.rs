@@ -3,37 +3,68 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct Rating {
+	/// <https://schema.org/author>
 	pub r#author: Vec<AuthorProperty>,
+	/// <https://schema.org/bestRating>
 	pub r#best_rating: Vec<BestRatingProperty>,
+	/// <https://schema.org/ratingExplanation>
 	pub r#rating_explanation: Vec<RatingExplanationProperty>,
+	/// <https://schema.org/ratingValue>
 	pub r#rating_value: Vec<RatingValueProperty>,
+	/// <https://schema.org/reviewAspect>
 	pub r#review_aspect: Vec<ReviewAspectProperty>,
+	/// <https://schema.org/worstRating>
 	pub r#worst_rating: Vec<WorstRatingProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/Rating>.
 pub trait RatingTrait {
+	/// Get <https://schema.org/author> from [`Self`] as borrowed slice.
 	fn get_author(&self) -> &[AuthorProperty];
+	/// Take <https://schema.org/author> from [`Self`] as owned vector.
 	fn take_author(&mut self) -> Vec<AuthorProperty>;
+	/// Get <https://schema.org/bestRating> from [`Self`] as borrowed slice.
 	fn get_best_rating(&self) -> &[BestRatingProperty];
+	/// Take <https://schema.org/bestRating> from [`Self`] as owned vector.
 	fn take_best_rating(&mut self) -> Vec<BestRatingProperty>;
+	/// Get <https://schema.org/ratingExplanation> from [`Self`] as borrowed slice.
 	fn get_rating_explanation(&self) -> &[RatingExplanationProperty];
+	/// Take <https://schema.org/ratingExplanation> from [`Self`] as owned vector.
 	fn take_rating_explanation(&mut self) -> Vec<RatingExplanationProperty>;
+	/// Get <https://schema.org/ratingValue> from [`Self`] as borrowed slice.
 	fn get_rating_value(&self) -> &[RatingValueProperty];
+	/// Take <https://schema.org/ratingValue> from [`Self`] as owned vector.
 	fn take_rating_value(&mut self) -> Vec<RatingValueProperty>;
+	/// Get <https://schema.org/reviewAspect> from [`Self`] as borrowed slice.
 	fn get_review_aspect(&self) -> &[ReviewAspectProperty];
+	/// Take <https://schema.org/reviewAspect> from [`Self`] as owned vector.
 	fn take_review_aspect(&mut self) -> Vec<ReviewAspectProperty>;
+	/// Get <https://schema.org/worstRating> from [`Self`] as borrowed slice.
 	fn get_worst_rating(&self) -> &[WorstRatingProperty];
+	/// Take <https://schema.org/worstRating> from [`Self`] as owned vector.
 	fn take_worst_rating(&mut self) -> Vec<WorstRatingProperty>;
 }
 impl RatingTrait for Rating {

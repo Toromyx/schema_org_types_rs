@@ -3,33 +3,60 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct GeoCircle {
+	/// <https://schema.org/geoMidpoint>
 	pub r#geo_midpoint: Vec<GeoMidpointProperty>,
+	/// <https://schema.org/geoRadius>
 	pub r#geo_radius: Vec<GeoRadiusProperty>,
+	/// <https://schema.org/address>
 	pub r#address: Vec<AddressProperty>,
+	/// <https://schema.org/addressCountry>
 	pub r#address_country: Vec<AddressCountryProperty>,
+	/// <https://schema.org/box>
 	pub r#box: Vec<BoxProperty>,
+	/// <https://schema.org/circle>
 	pub r#circle: Vec<CircleProperty>,
+	/// <https://schema.org/elevation>
 	pub r#elevation: Vec<ElevationProperty>,
+	/// <https://schema.org/line>
 	pub r#line: Vec<LineProperty>,
+	/// <https://schema.org/polygon>
 	pub r#polygon: Vec<PolygonProperty>,
+	/// <https://schema.org/postalCode>
 	pub r#postal_code: Vec<PostalCodeProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/GeoCircle>.
 pub trait GeoCircleTrait {
+	/// Get <https://schema.org/geoMidpoint> from [`Self`] as borrowed slice.
 	fn get_geo_midpoint(&self) -> &[GeoMidpointProperty];
+	/// Take <https://schema.org/geoMidpoint> from [`Self`] as owned vector.
 	fn take_geo_midpoint(&mut self) -> Vec<GeoMidpointProperty>;
+	/// Get <https://schema.org/geoRadius> from [`Self`] as borrowed slice.
 	fn get_geo_radius(&self) -> &[GeoRadiusProperty];
+	/// Take <https://schema.org/geoRadius> from [`Self`] as owned vector.
 	fn take_geo_radius(&mut self) -> Vec<GeoRadiusProperty>;
 }
 impl GeoCircleTrait for GeoCircle {

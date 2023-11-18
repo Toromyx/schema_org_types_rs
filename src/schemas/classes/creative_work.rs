@@ -3,358 +3,710 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct CreativeWork {
+	/// <https://schema.org/about>
 	pub r#about: Vec<AboutProperty>,
+	/// <https://schema.org/abstract>
 	pub r#abstract: Vec<AbstractProperty>,
+	/// <https://schema.org/accessMode>
 	pub r#access_mode: Vec<AccessModeProperty>,
+	/// <https://schema.org/accessModeSufficient>
 	pub r#access_mode_sufficient: Vec<AccessModeSufficientProperty>,
+	/// <https://schema.org/accessibilityAPI>
 	pub r#accessibility_api: Vec<AccessibilityApiProperty>,
+	/// <https://schema.org/accessibilityControl>
 	pub r#accessibility_control: Vec<AccessibilityControlProperty>,
+	/// <https://schema.org/accessibilityFeature>
 	pub r#accessibility_feature: Vec<AccessibilityFeatureProperty>,
+	/// <https://schema.org/accessibilityHazard>
 	pub r#accessibility_hazard: Vec<AccessibilityHazardProperty>,
+	/// <https://schema.org/accessibilitySummary>
 	pub r#accessibility_summary: Vec<AccessibilitySummaryProperty>,
+	/// <https://schema.org/accountablePerson>
 	pub r#accountable_person: Vec<AccountablePersonProperty>,
+	/// <https://schema.org/acquireLicensePage>
 	pub r#acquire_license_page: Vec<AcquireLicensePageProperty>,
+	/// <https://schema.org/aggregateRating>
 	pub r#aggregate_rating: Vec<AggregateRatingProperty>,
+	/// <https://schema.org/alternativeHeadline>
 	pub r#alternative_headline: Vec<AlternativeHeadlineProperty>,
+	/// <https://schema.org/archivedAt>
 	pub r#archived_at: Vec<ArchivedAtProperty>,
+	/// <https://schema.org/assesses>
 	pub r#assesses: Vec<AssessesProperty>,
+	/// <https://schema.org/associatedMedia>
 	pub r#associated_media: Vec<AssociatedMediaProperty>,
+	/// <https://schema.org/audience>
 	pub r#audience: Vec<AudienceProperty>,
+	/// <https://schema.org/audio>
 	pub r#audio: Vec<AudioProperty>,
+	/// <https://schema.org/author>
 	pub r#author: Vec<AuthorProperty>,
+	/// <https://schema.org/award>
 	pub r#award: Vec<AwardProperty>,
+	/// <https://schema.org/awards>
 	pub r#awards: Vec<AwardsProperty>,
+	/// <https://schema.org/character>
 	pub r#character: Vec<CharacterProperty>,
+	/// <https://schema.org/citation>
 	pub r#citation: Vec<CitationProperty>,
+	/// <https://schema.org/comment>
 	pub r#comment: Vec<CommentProperty>,
+	/// <https://schema.org/commentCount>
 	pub r#comment_count: Vec<CommentCountProperty>,
+	/// <https://schema.org/conditionsOfAccess>
 	pub r#conditions_of_access: Vec<ConditionsOfAccessProperty>,
+	/// <https://schema.org/contentLocation>
 	pub r#content_location: Vec<ContentLocationProperty>,
+	/// <https://schema.org/contentRating>
 	pub r#content_rating: Vec<ContentRatingProperty>,
+	/// <https://schema.org/contentReferenceTime>
 	pub r#content_reference_time: Vec<ContentReferenceTimeProperty>,
+	/// <https://schema.org/contributor>
 	pub r#contributor: Vec<ContributorProperty>,
+	/// <https://schema.org/copyrightHolder>
 	pub r#copyright_holder: Vec<CopyrightHolderProperty>,
+	/// <https://schema.org/copyrightNotice>
 	pub r#copyright_notice: Vec<CopyrightNoticeProperty>,
+	/// <https://schema.org/copyrightYear>
 	pub r#copyright_year: Vec<CopyrightYearProperty>,
+	/// <https://schema.org/correction>
 	pub r#correction: Vec<CorrectionProperty>,
+	/// <https://schema.org/countryOfOrigin>
 	pub r#country_of_origin: Vec<CountryOfOriginProperty>,
+	/// <https://schema.org/creativeWorkStatus>
 	pub r#creative_work_status: Vec<CreativeWorkStatusProperty>,
+	/// <https://schema.org/creator>
 	pub r#creator: Vec<CreatorProperty>,
+	/// <https://schema.org/creditText>
 	pub r#credit_text: Vec<CreditTextProperty>,
+	/// <https://schema.org/dateCreated>
 	pub r#date_created: Vec<DateCreatedProperty>,
+	/// <https://schema.org/dateModified>
 	pub r#date_modified: Vec<DateModifiedProperty>,
+	/// <https://schema.org/datePublished>
 	pub r#date_published: Vec<DatePublishedProperty>,
+	/// <https://schema.org/discussionUrl>
 	pub r#discussion_url: Vec<DiscussionUrlProperty>,
+	/// <https://schema.org/editEIDR>
 	pub r#edit_eidr: Vec<EditEidrProperty>,
+	/// <https://schema.org/editor>
 	pub r#editor: Vec<EditorProperty>,
+	/// <https://schema.org/educationalAlignment>
 	pub r#educational_alignment: Vec<EducationalAlignmentProperty>,
+	/// <https://schema.org/educationalLevel>
 	pub r#educational_level: Vec<EducationalLevelProperty>,
+	/// <https://schema.org/educationalUse>
 	pub r#educational_use: Vec<EducationalUseProperty>,
+	/// <https://schema.org/encoding>
 	pub r#encoding: Vec<EncodingProperty>,
+	/// <https://schema.org/encodingFormat>
 	pub r#encoding_format: Vec<EncodingFormatProperty>,
+	/// <https://schema.org/encodings>
 	pub r#encodings: Vec<EncodingsProperty>,
+	/// <https://schema.org/exampleOfWork>
 	pub r#example_of_work: Vec<ExampleOfWorkProperty>,
+	/// <https://schema.org/expires>
 	pub r#expires: Vec<ExpiresProperty>,
+	/// <https://schema.org/fileFormat>
 	pub r#file_format: Vec<FileFormatProperty>,
+	/// <https://schema.org/funder>
 	pub r#funder: Vec<FunderProperty>,
+	/// <https://schema.org/funding>
 	pub r#funding: Vec<FundingProperty>,
+	/// <https://schema.org/genre>
 	pub r#genre: Vec<GenreProperty>,
+	/// <https://schema.org/hasPart>
 	pub r#has_part: Vec<HasPartProperty>,
+	/// <https://schema.org/headline>
 	pub r#headline: Vec<HeadlineProperty>,
+	/// <https://schema.org/inLanguage>
 	pub r#in_language: Vec<InLanguageProperty>,
+	/// <https://schema.org/interactionStatistic>
 	pub r#interaction_statistic: Vec<InteractionStatisticProperty>,
+	/// <https://schema.org/interactivityType>
 	pub r#interactivity_type: Vec<InteractivityTypeProperty>,
+	/// <https://schema.org/interpretedAsClaim>
 	pub r#interpreted_as_claim: Vec<InterpretedAsClaimProperty>,
+	/// <https://schema.org/isAccessibleForFree>
 	pub r#is_accessible_for_free: Vec<IsAccessibleForFreeProperty>,
+	/// <https://schema.org/isBasedOn>
 	pub r#is_based_on: Vec<IsBasedOnProperty>,
+	/// <https://schema.org/isBasedOnUrl>
 	pub r#is_based_on_url: Vec<IsBasedOnUrlProperty>,
+	/// <https://schema.org/isFamilyFriendly>
 	pub r#is_family_friendly: Vec<IsFamilyFriendlyProperty>,
+	/// <https://schema.org/isPartOf>
 	pub r#is_part_of: Vec<IsPartOfProperty>,
+	/// <https://schema.org/keywords>
 	pub r#keywords: Vec<KeywordsProperty>,
+	/// <https://schema.org/learningResourceType>
 	pub r#learning_resource_type: Vec<LearningResourceTypeProperty>,
+	/// <https://schema.org/license>
 	pub r#license: Vec<LicenseProperty>,
+	/// <https://schema.org/locationCreated>
 	pub r#location_created: Vec<LocationCreatedProperty>,
+	/// <https://schema.org/mainEntity>
 	pub r#main_entity: Vec<MainEntityProperty>,
+	/// <https://schema.org/maintainer>
 	pub r#maintainer: Vec<MaintainerProperty>,
+	/// <https://schema.org/material>
 	pub r#material: Vec<MaterialProperty>,
+	/// <https://schema.org/materialExtent>
 	pub r#material_extent: Vec<MaterialExtentProperty>,
+	/// <https://schema.org/mentions>
 	pub r#mentions: Vec<MentionsProperty>,
+	/// <https://schema.org/offers>
 	pub r#offers: Vec<OffersProperty>,
+	/// <https://schema.org/pattern>
 	pub r#pattern: Vec<PatternProperty>,
+	/// <https://schema.org/position>
 	pub r#position: Vec<PositionProperty>,
+	/// <https://schema.org/producer>
 	pub r#producer: Vec<ProducerProperty>,
+	/// <https://schema.org/provider>
 	pub r#provider: Vec<ProviderProperty>,
+	/// <https://schema.org/publication>
 	pub r#publication: Vec<PublicationProperty>,
+	/// <https://schema.org/publisher>
 	pub r#publisher: Vec<PublisherProperty>,
+	/// <https://schema.org/publisherImprint>
 	pub r#publisher_imprint: Vec<PublisherImprintProperty>,
+	/// <https://schema.org/publishingPrinciples>
 	pub r#publishing_principles: Vec<PublishingPrinciplesProperty>,
+	/// <https://schema.org/recordedAt>
 	pub r#recorded_at: Vec<RecordedAtProperty>,
+	/// <https://schema.org/releasedEvent>
 	pub r#released_event: Vec<ReleasedEventProperty>,
+	/// <https://schema.org/review>
 	pub r#review: Vec<ReviewProperty>,
+	/// <https://schema.org/reviews>
 	pub r#reviews: Vec<ReviewsProperty>,
+	/// <https://schema.org/schemaVersion>
 	pub r#schema_version: Vec<SchemaVersionProperty>,
+	/// <https://schema.org/sdDatePublished>
 	pub r#sd_date_published: Vec<SdDatePublishedProperty>,
+	/// <https://schema.org/sdLicense>
 	pub r#sd_license: Vec<SdLicenseProperty>,
+	/// <https://schema.org/sdPublisher>
 	pub r#sd_publisher: Vec<SdPublisherProperty>,
+	/// <https://schema.org/size>
 	pub r#size: Vec<SizeProperty>,
+	/// <https://schema.org/sourceOrganization>
 	pub r#source_organization: Vec<SourceOrganizationProperty>,
+	/// <https://schema.org/spatial>
 	pub r#spatial: Vec<SpatialProperty>,
+	/// <https://schema.org/spatialCoverage>
 	pub r#spatial_coverage: Vec<SpatialCoverageProperty>,
+	/// <https://schema.org/sponsor>
 	pub r#sponsor: Vec<SponsorProperty>,
+	/// <https://schema.org/teaches>
 	pub r#teaches: Vec<TeachesProperty>,
+	/// <https://schema.org/temporal>
 	pub r#temporal: Vec<TemporalProperty>,
+	/// <https://schema.org/temporalCoverage>
 	pub r#temporal_coverage: Vec<TemporalCoverageProperty>,
+	/// <https://schema.org/text>
 	pub r#text: Vec<TextProperty>,
+	/// <https://schema.org/thumbnail>
 	pub r#thumbnail: Vec<ThumbnailProperty>,
+	/// <https://schema.org/thumbnailUrl>
 	pub r#thumbnail_url: Vec<ThumbnailUrlProperty>,
+	/// <https://schema.org/timeRequired>
 	pub r#time_required: Vec<TimeRequiredProperty>,
+	/// <https://schema.org/translationOfWork>
 	pub r#translation_of_work: Vec<TranslationOfWorkProperty>,
+	/// <https://schema.org/translator>
 	pub r#translator: Vec<TranslatorProperty>,
+	/// <https://schema.org/typicalAgeRange>
 	pub r#typical_age_range: Vec<TypicalAgeRangeProperty>,
+	/// <https://schema.org/usageInfo>
 	pub r#usage_info: Vec<UsageInfoProperty>,
+	/// <https://schema.org/version>
 	pub r#version: Vec<VersionProperty>,
+	/// <https://schema.org/video>
 	pub r#video: Vec<VideoProperty>,
+	/// <https://schema.org/workExample>
 	pub r#work_example: Vec<WorkExampleProperty>,
+	/// <https://schema.org/workTranslation>
 	pub r#work_translation: Vec<WorkTranslationProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/CreativeWork>.
 pub trait CreativeWorkTrait {
+	/// Get <https://schema.org/about> from [`Self`] as borrowed slice.
 	fn get_about(&self) -> &[AboutProperty];
+	/// Take <https://schema.org/about> from [`Self`] as owned vector.
 	fn take_about(&mut self) -> Vec<AboutProperty>;
+	/// Get <https://schema.org/abstract> from [`Self`] as borrowed slice.
 	fn get_abstract(&self) -> &[AbstractProperty];
+	/// Take <https://schema.org/abstract> from [`Self`] as owned vector.
 	fn take_abstract(&mut self) -> Vec<AbstractProperty>;
+	/// Get <https://schema.org/accessMode> from [`Self`] as borrowed slice.
 	fn get_access_mode(&self) -> &[AccessModeProperty];
+	/// Take <https://schema.org/accessMode> from [`Self`] as owned vector.
 	fn take_access_mode(&mut self) -> Vec<AccessModeProperty>;
+	/// Get <https://schema.org/accessModeSufficient> from [`Self`] as borrowed slice.
 	fn get_access_mode_sufficient(&self) -> &[AccessModeSufficientProperty];
+	/// Take <https://schema.org/accessModeSufficient> from [`Self`] as owned vector.
 	fn take_access_mode_sufficient(&mut self) -> Vec<AccessModeSufficientProperty>;
+	/// Get <https://schema.org/accessibilityAPI> from [`Self`] as borrowed slice.
 	fn get_accessibility_api(&self) -> &[AccessibilityApiProperty];
+	/// Take <https://schema.org/accessibilityAPI> from [`Self`] as owned vector.
 	fn take_accessibility_api(&mut self) -> Vec<AccessibilityApiProperty>;
+	/// Get <https://schema.org/accessibilityControl> from [`Self`] as borrowed slice.
 	fn get_accessibility_control(&self) -> &[AccessibilityControlProperty];
+	/// Take <https://schema.org/accessibilityControl> from [`Self`] as owned vector.
 	fn take_accessibility_control(&mut self) -> Vec<AccessibilityControlProperty>;
+	/// Get <https://schema.org/accessibilityFeature> from [`Self`] as borrowed slice.
 	fn get_accessibility_feature(&self) -> &[AccessibilityFeatureProperty];
+	/// Take <https://schema.org/accessibilityFeature> from [`Self`] as owned vector.
 	fn take_accessibility_feature(&mut self) -> Vec<AccessibilityFeatureProperty>;
+	/// Get <https://schema.org/accessibilityHazard> from [`Self`] as borrowed slice.
 	fn get_accessibility_hazard(&self) -> &[AccessibilityHazardProperty];
+	/// Take <https://schema.org/accessibilityHazard> from [`Self`] as owned vector.
 	fn take_accessibility_hazard(&mut self) -> Vec<AccessibilityHazardProperty>;
+	/// Get <https://schema.org/accessibilitySummary> from [`Self`] as borrowed slice.
 	fn get_accessibility_summary(&self) -> &[AccessibilitySummaryProperty];
+	/// Take <https://schema.org/accessibilitySummary> from [`Self`] as owned vector.
 	fn take_accessibility_summary(&mut self) -> Vec<AccessibilitySummaryProperty>;
+	/// Get <https://schema.org/accountablePerson> from [`Self`] as borrowed slice.
 	fn get_accountable_person(&self) -> &[AccountablePersonProperty];
+	/// Take <https://schema.org/accountablePerson> from [`Self`] as owned vector.
 	fn take_accountable_person(&mut self) -> Vec<AccountablePersonProperty>;
+	/// Get <https://schema.org/acquireLicensePage> from [`Self`] as borrowed slice.
 	fn get_acquire_license_page(&self) -> &[AcquireLicensePageProperty];
+	/// Take <https://schema.org/acquireLicensePage> from [`Self`] as owned vector.
 	fn take_acquire_license_page(&mut self) -> Vec<AcquireLicensePageProperty>;
+	/// Get <https://schema.org/aggregateRating> from [`Self`] as borrowed slice.
 	fn get_aggregate_rating(&self) -> &[AggregateRatingProperty];
+	/// Take <https://schema.org/aggregateRating> from [`Self`] as owned vector.
 	fn take_aggregate_rating(&mut self) -> Vec<AggregateRatingProperty>;
+	/// Get <https://schema.org/alternativeHeadline> from [`Self`] as borrowed slice.
 	fn get_alternative_headline(&self) -> &[AlternativeHeadlineProperty];
+	/// Take <https://schema.org/alternativeHeadline> from [`Self`] as owned vector.
 	fn take_alternative_headline(&mut self) -> Vec<AlternativeHeadlineProperty>;
+	/// Get <https://schema.org/archivedAt> from [`Self`] as borrowed slice.
 	fn get_archived_at(&self) -> &[ArchivedAtProperty];
+	/// Take <https://schema.org/archivedAt> from [`Self`] as owned vector.
 	fn take_archived_at(&mut self) -> Vec<ArchivedAtProperty>;
+	/// Get <https://schema.org/assesses> from [`Self`] as borrowed slice.
 	fn get_assesses(&self) -> &[AssessesProperty];
+	/// Take <https://schema.org/assesses> from [`Self`] as owned vector.
 	fn take_assesses(&mut self) -> Vec<AssessesProperty>;
+	/// Get <https://schema.org/associatedMedia> from [`Self`] as borrowed slice.
 	fn get_associated_media(&self) -> &[AssociatedMediaProperty];
+	/// Take <https://schema.org/associatedMedia> from [`Self`] as owned vector.
 	fn take_associated_media(&mut self) -> Vec<AssociatedMediaProperty>;
+	/// Get <https://schema.org/audience> from [`Self`] as borrowed slice.
 	fn get_audience(&self) -> &[AudienceProperty];
+	/// Take <https://schema.org/audience> from [`Self`] as owned vector.
 	fn take_audience(&mut self) -> Vec<AudienceProperty>;
+	/// Get <https://schema.org/audio> from [`Self`] as borrowed slice.
 	fn get_audio(&self) -> &[AudioProperty];
+	/// Take <https://schema.org/audio> from [`Self`] as owned vector.
 	fn take_audio(&mut self) -> Vec<AudioProperty>;
+	/// Get <https://schema.org/author> from [`Self`] as borrowed slice.
 	fn get_author(&self) -> &[AuthorProperty];
+	/// Take <https://schema.org/author> from [`Self`] as owned vector.
 	fn take_author(&mut self) -> Vec<AuthorProperty>;
+	/// Get <https://schema.org/award> from [`Self`] as borrowed slice.
 	fn get_award(&self) -> &[AwardProperty];
+	/// Take <https://schema.org/award> from [`Self`] as owned vector.
 	fn take_award(&mut self) -> Vec<AwardProperty>;
+	/// Get <https://schema.org/awards> from [`Self`] as borrowed slice.
 	fn get_awards(&self) -> &[AwardsProperty];
+	/// Take <https://schema.org/awards> from [`Self`] as owned vector.
 	fn take_awards(&mut self) -> Vec<AwardsProperty>;
+	/// Get <https://schema.org/character> from [`Self`] as borrowed slice.
 	fn get_character(&self) -> &[CharacterProperty];
+	/// Take <https://schema.org/character> from [`Self`] as owned vector.
 	fn take_character(&mut self) -> Vec<CharacterProperty>;
+	/// Get <https://schema.org/citation> from [`Self`] as borrowed slice.
 	fn get_citation(&self) -> &[CitationProperty];
+	/// Take <https://schema.org/citation> from [`Self`] as owned vector.
 	fn take_citation(&mut self) -> Vec<CitationProperty>;
+	/// Get <https://schema.org/comment> from [`Self`] as borrowed slice.
 	fn get_comment(&self) -> &[CommentProperty];
+	/// Take <https://schema.org/comment> from [`Self`] as owned vector.
 	fn take_comment(&mut self) -> Vec<CommentProperty>;
+	/// Get <https://schema.org/commentCount> from [`Self`] as borrowed slice.
 	fn get_comment_count(&self) -> &[CommentCountProperty];
+	/// Take <https://schema.org/commentCount> from [`Self`] as owned vector.
 	fn take_comment_count(&mut self) -> Vec<CommentCountProperty>;
+	/// Get <https://schema.org/conditionsOfAccess> from [`Self`] as borrowed slice.
 	fn get_conditions_of_access(&self) -> &[ConditionsOfAccessProperty];
+	/// Take <https://schema.org/conditionsOfAccess> from [`Self`] as owned vector.
 	fn take_conditions_of_access(&mut self) -> Vec<ConditionsOfAccessProperty>;
+	/// Get <https://schema.org/contentLocation> from [`Self`] as borrowed slice.
 	fn get_content_location(&self) -> &[ContentLocationProperty];
+	/// Take <https://schema.org/contentLocation> from [`Self`] as owned vector.
 	fn take_content_location(&mut self) -> Vec<ContentLocationProperty>;
+	/// Get <https://schema.org/contentRating> from [`Self`] as borrowed slice.
 	fn get_content_rating(&self) -> &[ContentRatingProperty];
+	/// Take <https://schema.org/contentRating> from [`Self`] as owned vector.
 	fn take_content_rating(&mut self) -> Vec<ContentRatingProperty>;
+	/// Get <https://schema.org/contentReferenceTime> from [`Self`] as borrowed slice.
 	fn get_content_reference_time(&self) -> &[ContentReferenceTimeProperty];
+	/// Take <https://schema.org/contentReferenceTime> from [`Self`] as owned vector.
 	fn take_content_reference_time(&mut self) -> Vec<ContentReferenceTimeProperty>;
+	/// Get <https://schema.org/contributor> from [`Self`] as borrowed slice.
 	fn get_contributor(&self) -> &[ContributorProperty];
+	/// Take <https://schema.org/contributor> from [`Self`] as owned vector.
 	fn take_contributor(&mut self) -> Vec<ContributorProperty>;
+	/// Get <https://schema.org/copyrightHolder> from [`Self`] as borrowed slice.
 	fn get_copyright_holder(&self) -> &[CopyrightHolderProperty];
+	/// Take <https://schema.org/copyrightHolder> from [`Self`] as owned vector.
 	fn take_copyright_holder(&mut self) -> Vec<CopyrightHolderProperty>;
+	/// Get <https://schema.org/copyrightNotice> from [`Self`] as borrowed slice.
 	fn get_copyright_notice(&self) -> &[CopyrightNoticeProperty];
+	/// Take <https://schema.org/copyrightNotice> from [`Self`] as owned vector.
 	fn take_copyright_notice(&mut self) -> Vec<CopyrightNoticeProperty>;
+	/// Get <https://schema.org/copyrightYear> from [`Self`] as borrowed slice.
 	fn get_copyright_year(&self) -> &[CopyrightYearProperty];
+	/// Take <https://schema.org/copyrightYear> from [`Self`] as owned vector.
 	fn take_copyright_year(&mut self) -> Vec<CopyrightYearProperty>;
+	/// Get <https://schema.org/correction> from [`Self`] as borrowed slice.
 	fn get_correction(&self) -> &[CorrectionProperty];
+	/// Take <https://schema.org/correction> from [`Self`] as owned vector.
 	fn take_correction(&mut self) -> Vec<CorrectionProperty>;
+	/// Get <https://schema.org/countryOfOrigin> from [`Self`] as borrowed slice.
 	fn get_country_of_origin(&self) -> &[CountryOfOriginProperty];
+	/// Take <https://schema.org/countryOfOrigin> from [`Self`] as owned vector.
 	fn take_country_of_origin(&mut self) -> Vec<CountryOfOriginProperty>;
+	/// Get <https://schema.org/creativeWorkStatus> from [`Self`] as borrowed slice.
 	fn get_creative_work_status(&self) -> &[CreativeWorkStatusProperty];
+	/// Take <https://schema.org/creativeWorkStatus> from [`Self`] as owned vector.
 	fn take_creative_work_status(&mut self) -> Vec<CreativeWorkStatusProperty>;
+	/// Get <https://schema.org/creator> from [`Self`] as borrowed slice.
 	fn get_creator(&self) -> &[CreatorProperty];
+	/// Take <https://schema.org/creator> from [`Self`] as owned vector.
 	fn take_creator(&mut self) -> Vec<CreatorProperty>;
+	/// Get <https://schema.org/creditText> from [`Self`] as borrowed slice.
 	fn get_credit_text(&self) -> &[CreditTextProperty];
+	/// Take <https://schema.org/creditText> from [`Self`] as owned vector.
 	fn take_credit_text(&mut self) -> Vec<CreditTextProperty>;
+	/// Get <https://schema.org/dateCreated> from [`Self`] as borrowed slice.
 	fn get_date_created(&self) -> &[DateCreatedProperty];
+	/// Take <https://schema.org/dateCreated> from [`Self`] as owned vector.
 	fn take_date_created(&mut self) -> Vec<DateCreatedProperty>;
+	/// Get <https://schema.org/dateModified> from [`Self`] as borrowed slice.
 	fn get_date_modified(&self) -> &[DateModifiedProperty];
+	/// Take <https://schema.org/dateModified> from [`Self`] as owned vector.
 	fn take_date_modified(&mut self) -> Vec<DateModifiedProperty>;
+	/// Get <https://schema.org/datePublished> from [`Self`] as borrowed slice.
 	fn get_date_published(&self) -> &[DatePublishedProperty];
+	/// Take <https://schema.org/datePublished> from [`Self`] as owned vector.
 	fn take_date_published(&mut self) -> Vec<DatePublishedProperty>;
+	/// Get <https://schema.org/discussionUrl> from [`Self`] as borrowed slice.
 	fn get_discussion_url(&self) -> &[DiscussionUrlProperty];
+	/// Take <https://schema.org/discussionUrl> from [`Self`] as owned vector.
 	fn take_discussion_url(&mut self) -> Vec<DiscussionUrlProperty>;
+	/// Get <https://schema.org/editEIDR> from [`Self`] as borrowed slice.
 	fn get_edit_eidr(&self) -> &[EditEidrProperty];
+	/// Take <https://schema.org/editEIDR> from [`Self`] as owned vector.
 	fn take_edit_eidr(&mut self) -> Vec<EditEidrProperty>;
+	/// Get <https://schema.org/editor> from [`Self`] as borrowed slice.
 	fn get_editor(&self) -> &[EditorProperty];
+	/// Take <https://schema.org/editor> from [`Self`] as owned vector.
 	fn take_editor(&mut self) -> Vec<EditorProperty>;
+	/// Get <https://schema.org/educationalAlignment> from [`Self`] as borrowed slice.
 	fn get_educational_alignment(&self) -> &[EducationalAlignmentProperty];
+	/// Take <https://schema.org/educationalAlignment> from [`Self`] as owned vector.
 	fn take_educational_alignment(&mut self) -> Vec<EducationalAlignmentProperty>;
+	/// Get <https://schema.org/educationalLevel> from [`Self`] as borrowed slice.
 	fn get_educational_level(&self) -> &[EducationalLevelProperty];
+	/// Take <https://schema.org/educationalLevel> from [`Self`] as owned vector.
 	fn take_educational_level(&mut self) -> Vec<EducationalLevelProperty>;
+	/// Get <https://schema.org/educationalUse> from [`Self`] as borrowed slice.
 	fn get_educational_use(&self) -> &[EducationalUseProperty];
+	/// Take <https://schema.org/educationalUse> from [`Self`] as owned vector.
 	fn take_educational_use(&mut self) -> Vec<EducationalUseProperty>;
+	/// Get <https://schema.org/encoding> from [`Self`] as borrowed slice.
 	fn get_encoding(&self) -> &[EncodingProperty];
+	/// Take <https://schema.org/encoding> from [`Self`] as owned vector.
 	fn take_encoding(&mut self) -> Vec<EncodingProperty>;
+	/// Get <https://schema.org/encodingFormat> from [`Self`] as borrowed slice.
 	fn get_encoding_format(&self) -> &[EncodingFormatProperty];
+	/// Take <https://schema.org/encodingFormat> from [`Self`] as owned vector.
 	fn take_encoding_format(&mut self) -> Vec<EncodingFormatProperty>;
+	/// Get <https://schema.org/encodings> from [`Self`] as borrowed slice.
 	fn get_encodings(&self) -> &[EncodingsProperty];
+	/// Take <https://schema.org/encodings> from [`Self`] as owned vector.
 	fn take_encodings(&mut self) -> Vec<EncodingsProperty>;
+	/// Get <https://schema.org/exampleOfWork> from [`Self`] as borrowed slice.
 	fn get_example_of_work(&self) -> &[ExampleOfWorkProperty];
+	/// Take <https://schema.org/exampleOfWork> from [`Self`] as owned vector.
 	fn take_example_of_work(&mut self) -> Vec<ExampleOfWorkProperty>;
+	/// Get <https://schema.org/expires> from [`Self`] as borrowed slice.
 	fn get_expires(&self) -> &[ExpiresProperty];
+	/// Take <https://schema.org/expires> from [`Self`] as owned vector.
 	fn take_expires(&mut self) -> Vec<ExpiresProperty>;
+	/// Get <https://schema.org/fileFormat> from [`Self`] as borrowed slice.
 	fn get_file_format(&self) -> &[FileFormatProperty];
+	/// Take <https://schema.org/fileFormat> from [`Self`] as owned vector.
 	fn take_file_format(&mut self) -> Vec<FileFormatProperty>;
+	/// Get <https://schema.org/funder> from [`Self`] as borrowed slice.
 	fn get_funder(&self) -> &[FunderProperty];
+	/// Take <https://schema.org/funder> from [`Self`] as owned vector.
 	fn take_funder(&mut self) -> Vec<FunderProperty>;
+	/// Get <https://schema.org/funding> from [`Self`] as borrowed slice.
 	fn get_funding(&self) -> &[FundingProperty];
+	/// Take <https://schema.org/funding> from [`Self`] as owned vector.
 	fn take_funding(&mut self) -> Vec<FundingProperty>;
+	/// Get <https://schema.org/genre> from [`Self`] as borrowed slice.
 	fn get_genre(&self) -> &[GenreProperty];
+	/// Take <https://schema.org/genre> from [`Self`] as owned vector.
 	fn take_genre(&mut self) -> Vec<GenreProperty>;
+	/// Get <https://schema.org/hasPart> from [`Self`] as borrowed slice.
 	fn get_has_part(&self) -> &[HasPartProperty];
+	/// Take <https://schema.org/hasPart> from [`Self`] as owned vector.
 	fn take_has_part(&mut self) -> Vec<HasPartProperty>;
+	/// Get <https://schema.org/headline> from [`Self`] as borrowed slice.
 	fn get_headline(&self) -> &[HeadlineProperty];
+	/// Take <https://schema.org/headline> from [`Self`] as owned vector.
 	fn take_headline(&mut self) -> Vec<HeadlineProperty>;
+	/// Get <https://schema.org/inLanguage> from [`Self`] as borrowed slice.
 	fn get_in_language(&self) -> &[InLanguageProperty];
+	/// Take <https://schema.org/inLanguage> from [`Self`] as owned vector.
 	fn take_in_language(&mut self) -> Vec<InLanguageProperty>;
+	/// Get <https://schema.org/interactionStatistic> from [`Self`] as borrowed slice.
 	fn get_interaction_statistic(&self) -> &[InteractionStatisticProperty];
+	/// Take <https://schema.org/interactionStatistic> from [`Self`] as owned vector.
 	fn take_interaction_statistic(&mut self) -> Vec<InteractionStatisticProperty>;
+	/// Get <https://schema.org/interactivityType> from [`Self`] as borrowed slice.
 	fn get_interactivity_type(&self) -> &[InteractivityTypeProperty];
+	/// Take <https://schema.org/interactivityType> from [`Self`] as owned vector.
 	fn take_interactivity_type(&mut self) -> Vec<InteractivityTypeProperty>;
+	/// Get <https://schema.org/interpretedAsClaim> from [`Self`] as borrowed slice.
 	fn get_interpreted_as_claim(&self) -> &[InterpretedAsClaimProperty];
+	/// Take <https://schema.org/interpretedAsClaim> from [`Self`] as owned vector.
 	fn take_interpreted_as_claim(&mut self) -> Vec<InterpretedAsClaimProperty>;
+	/// Get <https://schema.org/isAccessibleForFree> from [`Self`] as borrowed slice.
 	fn get_is_accessible_for_free(&self) -> &[IsAccessibleForFreeProperty];
+	/// Take <https://schema.org/isAccessibleForFree> from [`Self`] as owned vector.
 	fn take_is_accessible_for_free(&mut self) -> Vec<IsAccessibleForFreeProperty>;
+	/// Get <https://schema.org/isBasedOn> from [`Self`] as borrowed slice.
 	fn get_is_based_on(&self) -> &[IsBasedOnProperty];
+	/// Take <https://schema.org/isBasedOn> from [`Self`] as owned vector.
 	fn take_is_based_on(&mut self) -> Vec<IsBasedOnProperty>;
+	/// Get <https://schema.org/isBasedOnUrl> from [`Self`] as borrowed slice.
 	fn get_is_based_on_url(&self) -> &[IsBasedOnUrlProperty];
+	/// Take <https://schema.org/isBasedOnUrl> from [`Self`] as owned vector.
 	fn take_is_based_on_url(&mut self) -> Vec<IsBasedOnUrlProperty>;
+	/// Get <https://schema.org/isFamilyFriendly> from [`Self`] as borrowed slice.
 	fn get_is_family_friendly(&self) -> &[IsFamilyFriendlyProperty];
+	/// Take <https://schema.org/isFamilyFriendly> from [`Self`] as owned vector.
 	fn take_is_family_friendly(&mut self) -> Vec<IsFamilyFriendlyProperty>;
+	/// Get <https://schema.org/isPartOf> from [`Self`] as borrowed slice.
 	fn get_is_part_of(&self) -> &[IsPartOfProperty];
+	/// Take <https://schema.org/isPartOf> from [`Self`] as owned vector.
 	fn take_is_part_of(&mut self) -> Vec<IsPartOfProperty>;
+	/// Get <https://schema.org/keywords> from [`Self`] as borrowed slice.
 	fn get_keywords(&self) -> &[KeywordsProperty];
+	/// Take <https://schema.org/keywords> from [`Self`] as owned vector.
 	fn take_keywords(&mut self) -> Vec<KeywordsProperty>;
+	/// Get <https://schema.org/learningResourceType> from [`Self`] as borrowed slice.
 	fn get_learning_resource_type(&self) -> &[LearningResourceTypeProperty];
+	/// Take <https://schema.org/learningResourceType> from [`Self`] as owned vector.
 	fn take_learning_resource_type(&mut self) -> Vec<LearningResourceTypeProperty>;
+	/// Get <https://schema.org/license> from [`Self`] as borrowed slice.
 	fn get_license(&self) -> &[LicenseProperty];
+	/// Take <https://schema.org/license> from [`Self`] as owned vector.
 	fn take_license(&mut self) -> Vec<LicenseProperty>;
+	/// Get <https://schema.org/locationCreated> from [`Self`] as borrowed slice.
 	fn get_location_created(&self) -> &[LocationCreatedProperty];
+	/// Take <https://schema.org/locationCreated> from [`Self`] as owned vector.
 	fn take_location_created(&mut self) -> Vec<LocationCreatedProperty>;
+	/// Get <https://schema.org/mainEntity> from [`Self`] as borrowed slice.
 	fn get_main_entity(&self) -> &[MainEntityProperty];
+	/// Take <https://schema.org/mainEntity> from [`Self`] as owned vector.
 	fn take_main_entity(&mut self) -> Vec<MainEntityProperty>;
+	/// Get <https://schema.org/maintainer> from [`Self`] as borrowed slice.
 	fn get_maintainer(&self) -> &[MaintainerProperty];
+	/// Take <https://schema.org/maintainer> from [`Self`] as owned vector.
 	fn take_maintainer(&mut self) -> Vec<MaintainerProperty>;
+	/// Get <https://schema.org/material> from [`Self`] as borrowed slice.
 	fn get_material(&self) -> &[MaterialProperty];
+	/// Take <https://schema.org/material> from [`Self`] as owned vector.
 	fn take_material(&mut self) -> Vec<MaterialProperty>;
+	/// Get <https://schema.org/materialExtent> from [`Self`] as borrowed slice.
 	fn get_material_extent(&self) -> &[MaterialExtentProperty];
+	/// Take <https://schema.org/materialExtent> from [`Self`] as owned vector.
 	fn take_material_extent(&mut self) -> Vec<MaterialExtentProperty>;
+	/// Get <https://schema.org/mentions> from [`Self`] as borrowed slice.
 	fn get_mentions(&self) -> &[MentionsProperty];
+	/// Take <https://schema.org/mentions> from [`Self`] as owned vector.
 	fn take_mentions(&mut self) -> Vec<MentionsProperty>;
+	/// Get <https://schema.org/offers> from [`Self`] as borrowed slice.
 	fn get_offers(&self) -> &[OffersProperty];
+	/// Take <https://schema.org/offers> from [`Self`] as owned vector.
 	fn take_offers(&mut self) -> Vec<OffersProperty>;
+	/// Get <https://schema.org/pattern> from [`Self`] as borrowed slice.
 	fn get_pattern(&self) -> &[PatternProperty];
+	/// Take <https://schema.org/pattern> from [`Self`] as owned vector.
 	fn take_pattern(&mut self) -> Vec<PatternProperty>;
+	/// Get <https://schema.org/position> from [`Self`] as borrowed slice.
 	fn get_position(&self) -> &[PositionProperty];
+	/// Take <https://schema.org/position> from [`Self`] as owned vector.
 	fn take_position(&mut self) -> Vec<PositionProperty>;
+	/// Get <https://schema.org/producer> from [`Self`] as borrowed slice.
 	fn get_producer(&self) -> &[ProducerProperty];
+	/// Take <https://schema.org/producer> from [`Self`] as owned vector.
 	fn take_producer(&mut self) -> Vec<ProducerProperty>;
+	/// Get <https://schema.org/provider> from [`Self`] as borrowed slice.
 	fn get_provider(&self) -> &[ProviderProperty];
+	/// Take <https://schema.org/provider> from [`Self`] as owned vector.
 	fn take_provider(&mut self) -> Vec<ProviderProperty>;
+	/// Get <https://schema.org/publication> from [`Self`] as borrowed slice.
 	fn get_publication(&self) -> &[PublicationProperty];
+	/// Take <https://schema.org/publication> from [`Self`] as owned vector.
 	fn take_publication(&mut self) -> Vec<PublicationProperty>;
+	/// Get <https://schema.org/publisher> from [`Self`] as borrowed slice.
 	fn get_publisher(&self) -> &[PublisherProperty];
+	/// Take <https://schema.org/publisher> from [`Self`] as owned vector.
 	fn take_publisher(&mut self) -> Vec<PublisherProperty>;
+	/// Get <https://schema.org/publisherImprint> from [`Self`] as borrowed slice.
 	fn get_publisher_imprint(&self) -> &[PublisherImprintProperty];
+	/// Take <https://schema.org/publisherImprint> from [`Self`] as owned vector.
 	fn take_publisher_imprint(&mut self) -> Vec<PublisherImprintProperty>;
+	/// Get <https://schema.org/publishingPrinciples> from [`Self`] as borrowed slice.
 	fn get_publishing_principles(&self) -> &[PublishingPrinciplesProperty];
+	/// Take <https://schema.org/publishingPrinciples> from [`Self`] as owned vector.
 	fn take_publishing_principles(&mut self) -> Vec<PublishingPrinciplesProperty>;
+	/// Get <https://schema.org/recordedAt> from [`Self`] as borrowed slice.
 	fn get_recorded_at(&self) -> &[RecordedAtProperty];
+	/// Take <https://schema.org/recordedAt> from [`Self`] as owned vector.
 	fn take_recorded_at(&mut self) -> Vec<RecordedAtProperty>;
+	/// Get <https://schema.org/releasedEvent> from [`Self`] as borrowed slice.
 	fn get_released_event(&self) -> &[ReleasedEventProperty];
+	/// Take <https://schema.org/releasedEvent> from [`Self`] as owned vector.
 	fn take_released_event(&mut self) -> Vec<ReleasedEventProperty>;
+	/// Get <https://schema.org/review> from [`Self`] as borrowed slice.
 	fn get_review(&self) -> &[ReviewProperty];
+	/// Take <https://schema.org/review> from [`Self`] as owned vector.
 	fn take_review(&mut self) -> Vec<ReviewProperty>;
+	/// Get <https://schema.org/reviews> from [`Self`] as borrowed slice.
 	fn get_reviews(&self) -> &[ReviewsProperty];
+	/// Take <https://schema.org/reviews> from [`Self`] as owned vector.
 	fn take_reviews(&mut self) -> Vec<ReviewsProperty>;
+	/// Get <https://schema.org/schemaVersion> from [`Self`] as borrowed slice.
 	fn get_schema_version(&self) -> &[SchemaVersionProperty];
+	/// Take <https://schema.org/schemaVersion> from [`Self`] as owned vector.
 	fn take_schema_version(&mut self) -> Vec<SchemaVersionProperty>;
+	/// Get <https://schema.org/sdDatePublished> from [`Self`] as borrowed slice.
 	fn get_sd_date_published(&self) -> &[SdDatePublishedProperty];
+	/// Take <https://schema.org/sdDatePublished> from [`Self`] as owned vector.
 	fn take_sd_date_published(&mut self) -> Vec<SdDatePublishedProperty>;
+	/// Get <https://schema.org/sdLicense> from [`Self`] as borrowed slice.
 	fn get_sd_license(&self) -> &[SdLicenseProperty];
+	/// Take <https://schema.org/sdLicense> from [`Self`] as owned vector.
 	fn take_sd_license(&mut self) -> Vec<SdLicenseProperty>;
+	/// Get <https://schema.org/sdPublisher> from [`Self`] as borrowed slice.
 	fn get_sd_publisher(&self) -> &[SdPublisherProperty];
+	/// Take <https://schema.org/sdPublisher> from [`Self`] as owned vector.
 	fn take_sd_publisher(&mut self) -> Vec<SdPublisherProperty>;
+	/// Get <https://schema.org/size> from [`Self`] as borrowed slice.
 	fn get_size(&self) -> &[SizeProperty];
+	/// Take <https://schema.org/size> from [`Self`] as owned vector.
 	fn take_size(&mut self) -> Vec<SizeProperty>;
+	/// Get <https://schema.org/sourceOrganization> from [`Self`] as borrowed slice.
 	fn get_source_organization(&self) -> &[SourceOrganizationProperty];
+	/// Take <https://schema.org/sourceOrganization> from [`Self`] as owned vector.
 	fn take_source_organization(&mut self) -> Vec<SourceOrganizationProperty>;
+	/// Get <https://schema.org/spatial> from [`Self`] as borrowed slice.
 	fn get_spatial(&self) -> &[SpatialProperty];
+	/// Take <https://schema.org/spatial> from [`Self`] as owned vector.
 	fn take_spatial(&mut self) -> Vec<SpatialProperty>;
+	/// Get <https://schema.org/spatialCoverage> from [`Self`] as borrowed slice.
 	fn get_spatial_coverage(&self) -> &[SpatialCoverageProperty];
+	/// Take <https://schema.org/spatialCoverage> from [`Self`] as owned vector.
 	fn take_spatial_coverage(&mut self) -> Vec<SpatialCoverageProperty>;
+	/// Get <https://schema.org/sponsor> from [`Self`] as borrowed slice.
 	fn get_sponsor(&self) -> &[SponsorProperty];
+	/// Take <https://schema.org/sponsor> from [`Self`] as owned vector.
 	fn take_sponsor(&mut self) -> Vec<SponsorProperty>;
+	/// Get <https://schema.org/teaches> from [`Self`] as borrowed slice.
 	fn get_teaches(&self) -> &[TeachesProperty];
+	/// Take <https://schema.org/teaches> from [`Self`] as owned vector.
 	fn take_teaches(&mut self) -> Vec<TeachesProperty>;
+	/// Get <https://schema.org/temporal> from [`Self`] as borrowed slice.
 	fn get_temporal(&self) -> &[TemporalProperty];
+	/// Take <https://schema.org/temporal> from [`Self`] as owned vector.
 	fn take_temporal(&mut self) -> Vec<TemporalProperty>;
+	/// Get <https://schema.org/temporalCoverage> from [`Self`] as borrowed slice.
 	fn get_temporal_coverage(&self) -> &[TemporalCoverageProperty];
+	/// Take <https://schema.org/temporalCoverage> from [`Self`] as owned vector.
 	fn take_temporal_coverage(&mut self) -> Vec<TemporalCoverageProperty>;
+	/// Get <https://schema.org/text> from [`Self`] as borrowed slice.
 	fn get_text(&self) -> &[TextProperty];
+	/// Take <https://schema.org/text> from [`Self`] as owned vector.
 	fn take_text(&mut self) -> Vec<TextProperty>;
+	/// Get <https://schema.org/thumbnail> from [`Self`] as borrowed slice.
 	fn get_thumbnail(&self) -> &[ThumbnailProperty];
+	/// Take <https://schema.org/thumbnail> from [`Self`] as owned vector.
 	fn take_thumbnail(&mut self) -> Vec<ThumbnailProperty>;
+	/// Get <https://schema.org/thumbnailUrl> from [`Self`] as borrowed slice.
 	fn get_thumbnail_url(&self) -> &[ThumbnailUrlProperty];
+	/// Take <https://schema.org/thumbnailUrl> from [`Self`] as owned vector.
 	fn take_thumbnail_url(&mut self) -> Vec<ThumbnailUrlProperty>;
+	/// Get <https://schema.org/timeRequired> from [`Self`] as borrowed slice.
 	fn get_time_required(&self) -> &[TimeRequiredProperty];
+	/// Take <https://schema.org/timeRequired> from [`Self`] as owned vector.
 	fn take_time_required(&mut self) -> Vec<TimeRequiredProperty>;
+	/// Get <https://schema.org/translationOfWork> from [`Self`] as borrowed slice.
 	fn get_translation_of_work(&self) -> &[TranslationOfWorkProperty];
+	/// Take <https://schema.org/translationOfWork> from [`Self`] as owned vector.
 	fn take_translation_of_work(&mut self) -> Vec<TranslationOfWorkProperty>;
+	/// Get <https://schema.org/translator> from [`Self`] as borrowed slice.
 	fn get_translator(&self) -> &[TranslatorProperty];
+	/// Take <https://schema.org/translator> from [`Self`] as owned vector.
 	fn take_translator(&mut self) -> Vec<TranslatorProperty>;
+	/// Get <https://schema.org/typicalAgeRange> from [`Self`] as borrowed slice.
 	fn get_typical_age_range(&self) -> &[TypicalAgeRangeProperty];
+	/// Take <https://schema.org/typicalAgeRange> from [`Self`] as owned vector.
 	fn take_typical_age_range(&mut self) -> Vec<TypicalAgeRangeProperty>;
+	/// Get <https://schema.org/usageInfo> from [`Self`] as borrowed slice.
 	fn get_usage_info(&self) -> &[UsageInfoProperty];
+	/// Take <https://schema.org/usageInfo> from [`Self`] as owned vector.
 	fn take_usage_info(&mut self) -> Vec<UsageInfoProperty>;
+	/// Get <https://schema.org/version> from [`Self`] as borrowed slice.
 	fn get_version(&self) -> &[VersionProperty];
+	/// Take <https://schema.org/version> from [`Self`] as owned vector.
 	fn take_version(&mut self) -> Vec<VersionProperty>;
+	/// Get <https://schema.org/video> from [`Self`] as borrowed slice.
 	fn get_video(&self) -> &[VideoProperty];
+	/// Take <https://schema.org/video> from [`Self`] as owned vector.
 	fn take_video(&mut self) -> Vec<VideoProperty>;
+	/// Get <https://schema.org/workExample> from [`Self`] as borrowed slice.
 	fn get_work_example(&self) -> &[WorkExampleProperty];
+	/// Take <https://schema.org/workExample> from [`Self`] as owned vector.
 	fn take_work_example(&mut self) -> Vec<WorkExampleProperty>;
+	/// Get <https://schema.org/workTranslation> from [`Self`] as borrowed slice.
 	fn get_work_translation(&self) -> &[WorkTranslationProperty];
+	/// Take <https://schema.org/workTranslation> from [`Self`] as owned vector.
 	fn take_work_translation(&mut self) -> Vec<WorkTranslationProperty>;
 }
 impl CreativeWorkTrait for CreativeWork {

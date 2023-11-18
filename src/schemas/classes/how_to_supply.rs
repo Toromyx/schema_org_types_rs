@@ -3,27 +3,48 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct HowToSupply {
+	/// <https://schema.org/estimatedCost>
 	pub r#estimated_cost: Vec<EstimatedCostProperty>,
+	/// <https://schema.org/requiredQuantity>
 	pub r#required_quantity: Vec<RequiredQuantityProperty>,
+	/// <https://schema.org/item>
 	pub r#item: Vec<ItemProperty>,
+	/// <https://schema.org/nextItem>
 	pub r#next_item: Vec<NextItemProperty>,
+	/// <https://schema.org/position>
 	pub r#position: Vec<PositionProperty>,
+	/// <https://schema.org/previousItem>
 	pub r#previous_item: Vec<PreviousItemProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/HowToSupply>.
 pub trait HowToSupplyTrait {
+	/// Get <https://schema.org/estimatedCost> from [`Self`] as borrowed slice.
 	fn get_estimated_cost(&self) -> &[EstimatedCostProperty];
+	/// Take <https://schema.org/estimatedCost> from [`Self`] as owned vector.
 	fn take_estimated_cost(&mut self) -> Vec<EstimatedCostProperty>;
 }
 impl HowToSupplyTrait for HowToSupply {

@@ -3,34 +3,62 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct TypeAndQuantityNode {
+	/// <https://schema.org/amountOfThisGood>
 	pub r#amount_of_this_good: Vec<AmountOfThisGoodProperty>,
+	/// <https://schema.org/businessFunction>
 	pub r#business_function: Vec<BusinessFunctionProperty>,
+	/// <https://schema.org/typeOfGood>
 	pub r#type_of_good: Vec<TypeOfGoodProperty>,
+	/// <https://schema.org/unitCode>
 	pub r#unit_code: Vec<UnitCodeProperty>,
+	/// <https://schema.org/unitText>
 	pub r#unit_text: Vec<UnitTextProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/TypeAndQuantityNode>.
 pub trait TypeAndQuantityNodeTrait {
+	/// Get <https://schema.org/amountOfThisGood> from [`Self`] as borrowed slice.
 	fn get_amount_of_this_good(&self) -> &[AmountOfThisGoodProperty];
+	/// Take <https://schema.org/amountOfThisGood> from [`Self`] as owned vector.
 	fn take_amount_of_this_good(&mut self) -> Vec<AmountOfThisGoodProperty>;
+	/// Get <https://schema.org/businessFunction> from [`Self`] as borrowed slice.
 	fn get_business_function(&self) -> &[BusinessFunctionProperty];
+	/// Take <https://schema.org/businessFunction> from [`Self`] as owned vector.
 	fn take_business_function(&mut self) -> Vec<BusinessFunctionProperty>;
+	/// Get <https://schema.org/typeOfGood> from [`Self`] as borrowed slice.
 	fn get_type_of_good(&self) -> &[TypeOfGoodProperty];
+	/// Take <https://schema.org/typeOfGood> from [`Self`] as owned vector.
 	fn take_type_of_good(&mut self) -> Vec<TypeOfGoodProperty>;
+	/// Get <https://schema.org/unitCode> from [`Self`] as borrowed slice.
 	fn get_unit_code(&self) -> &[UnitCodeProperty];
+	/// Take <https://schema.org/unitCode> from [`Self`] as owned vector.
 	fn take_unit_code(&mut self) -> Vec<UnitCodeProperty>;
+	/// Get <https://schema.org/unitText> from [`Self`] as borrowed slice.
 	fn get_unit_text(&self) -> &[UnitTextProperty];
+	/// Take <https://schema.org/unitText> from [`Self`] as owned vector.
 	fn take_unit_text(&mut self) -> Vec<UnitTextProperty>;
 }
 impl TypeAndQuantityNodeTrait for TypeAndQuantityNode {

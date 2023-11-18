@@ -3,25 +3,44 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct MediaSubscription {
+	/// <https://schema.org/authenticator>
 	pub r#authenticator: Vec<AuthenticatorProperty>,
+	/// <https://schema.org/expectsAcceptanceOf>
 	pub r#expects_acceptance_of: Vec<ExpectsAcceptanceOfProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/MediaSubscription>.
 pub trait MediaSubscriptionTrait {
+	/// Get <https://schema.org/authenticator> from [`Self`] as borrowed slice.
 	fn get_authenticator(&self) -> &[AuthenticatorProperty];
+	/// Take <https://schema.org/authenticator> from [`Self`] as owned vector.
 	fn take_authenticator(&mut self) -> Vec<AuthenticatorProperty>;
+	/// Get <https://schema.org/expectsAcceptanceOf> from [`Self`] as borrowed slice.
 	fn get_expects_acceptance_of(&self) -> &[ExpectsAcceptanceOfProperty];
+	/// Take <https://schema.org/expectsAcceptanceOf> from [`Self`] as owned vector.
 	fn take_expects_acceptance_of(&mut self) -> Vec<ExpectsAcceptanceOfProperty>;
 }
 impl MediaSubscriptionTrait for MediaSubscription {

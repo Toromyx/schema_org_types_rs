@@ -3,62 +3,114 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct BioChemEntity {
+	/// <https://schema.org/associatedDisease>
 	pub r#associated_disease: Vec<AssociatedDiseaseProperty>,
+	/// <https://schema.org/bioChemInteraction>
 	pub r#bio_chem_interaction: Vec<BioChemInteractionProperty>,
+	/// <https://schema.org/bioChemSimilarity>
 	pub r#bio_chem_similarity: Vec<BioChemSimilarityProperty>,
+	/// <https://schema.org/biologicalRole>
 	pub r#biological_role: Vec<BiologicalRoleProperty>,
+	/// <https://schema.org/funding>
 	pub r#funding: Vec<FundingProperty>,
+	/// <https://schema.org/hasBioChemEntityPart>
 	pub r#has_bio_chem_entity_part: Vec<HasBioChemEntityPartProperty>,
+	/// <https://schema.org/hasMolecularFunction>
 	pub r#has_molecular_function: Vec<HasMolecularFunctionProperty>,
+	/// <https://schema.org/hasRepresentation>
 	pub r#has_representation: Vec<HasRepresentationProperty>,
+	/// <https://schema.org/isEncodedByBioChemEntity>
 	pub r#is_encoded_by_bio_chem_entity: Vec<IsEncodedByBioChemEntityProperty>,
+	/// <https://schema.org/isInvolvedInBiologicalProcess>
 	pub r#is_involved_in_biological_process: Vec<IsInvolvedInBiologicalProcessProperty>,
+	/// <https://schema.org/isLocatedInSubcellularLocation>
 	pub r#is_located_in_subcellular_location: Vec<IsLocatedInSubcellularLocationProperty>,
+	/// <https://schema.org/isPartOfBioChemEntity>
 	pub r#is_part_of_bio_chem_entity: Vec<IsPartOfBioChemEntityProperty>,
+	/// <https://schema.org/taxonomicRange>
 	pub r#taxonomic_range: Vec<TaxonomicRangeProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/BioChemEntity>.
 pub trait BioChemEntityTrait {
+	/// Get <https://schema.org/associatedDisease> from [`Self`] as borrowed slice.
 	fn get_associated_disease(&self) -> &[AssociatedDiseaseProperty];
+	/// Take <https://schema.org/associatedDisease> from [`Self`] as owned vector.
 	fn take_associated_disease(&mut self) -> Vec<AssociatedDiseaseProperty>;
+	/// Get <https://schema.org/bioChemInteraction> from [`Self`] as borrowed slice.
 	fn get_bio_chem_interaction(&self) -> &[BioChemInteractionProperty];
+	/// Take <https://schema.org/bioChemInteraction> from [`Self`] as owned vector.
 	fn take_bio_chem_interaction(&mut self) -> Vec<BioChemInteractionProperty>;
+	/// Get <https://schema.org/bioChemSimilarity> from [`Self`] as borrowed slice.
 	fn get_bio_chem_similarity(&self) -> &[BioChemSimilarityProperty];
+	/// Take <https://schema.org/bioChemSimilarity> from [`Self`] as owned vector.
 	fn take_bio_chem_similarity(&mut self) -> Vec<BioChemSimilarityProperty>;
+	/// Get <https://schema.org/biologicalRole> from [`Self`] as borrowed slice.
 	fn get_biological_role(&self) -> &[BiologicalRoleProperty];
+	/// Take <https://schema.org/biologicalRole> from [`Self`] as owned vector.
 	fn take_biological_role(&mut self) -> Vec<BiologicalRoleProperty>;
+	/// Get <https://schema.org/funding> from [`Self`] as borrowed slice.
 	fn get_funding(&self) -> &[FundingProperty];
+	/// Take <https://schema.org/funding> from [`Self`] as owned vector.
 	fn take_funding(&mut self) -> Vec<FundingProperty>;
+	/// Get <https://schema.org/hasBioChemEntityPart> from [`Self`] as borrowed slice.
 	fn get_has_bio_chem_entity_part(&self) -> &[HasBioChemEntityPartProperty];
+	/// Take <https://schema.org/hasBioChemEntityPart> from [`Self`] as owned vector.
 	fn take_has_bio_chem_entity_part(&mut self) -> Vec<HasBioChemEntityPartProperty>;
+	/// Get <https://schema.org/hasMolecularFunction> from [`Self`] as borrowed slice.
 	fn get_has_molecular_function(&self) -> &[HasMolecularFunctionProperty];
+	/// Take <https://schema.org/hasMolecularFunction> from [`Self`] as owned vector.
 	fn take_has_molecular_function(&mut self) -> Vec<HasMolecularFunctionProperty>;
+	/// Get <https://schema.org/hasRepresentation> from [`Self`] as borrowed slice.
 	fn get_has_representation(&self) -> &[HasRepresentationProperty];
+	/// Take <https://schema.org/hasRepresentation> from [`Self`] as owned vector.
 	fn take_has_representation(&mut self) -> Vec<HasRepresentationProperty>;
+	/// Get <https://schema.org/isEncodedByBioChemEntity> from [`Self`] as borrowed slice.
 	fn get_is_encoded_by_bio_chem_entity(&self) -> &[IsEncodedByBioChemEntityProperty];
+	/// Take <https://schema.org/isEncodedByBioChemEntity> from [`Self`] as owned vector.
 	fn take_is_encoded_by_bio_chem_entity(&mut self) -> Vec<IsEncodedByBioChemEntityProperty>;
+	/// Get <https://schema.org/isInvolvedInBiologicalProcess> from [`Self`] as borrowed slice.
 	fn get_is_involved_in_biological_process(&self) -> &[IsInvolvedInBiologicalProcessProperty];
+	/// Take <https://schema.org/isInvolvedInBiologicalProcess> from [`Self`] as owned vector.
 	fn take_is_involved_in_biological_process(
 		&mut self,
 	) -> Vec<IsInvolvedInBiologicalProcessProperty>;
+	/// Get <https://schema.org/isLocatedInSubcellularLocation> from [`Self`] as borrowed slice.
 	fn get_is_located_in_subcellular_location(&self) -> &[IsLocatedInSubcellularLocationProperty];
+	/// Take <https://schema.org/isLocatedInSubcellularLocation> from [`Self`] as owned vector.
 	fn take_is_located_in_subcellular_location(
 		&mut self,
 	) -> Vec<IsLocatedInSubcellularLocationProperty>;
+	/// Get <https://schema.org/isPartOfBioChemEntity> from [`Self`] as borrowed slice.
 	fn get_is_part_of_bio_chem_entity(&self) -> &[IsPartOfBioChemEntityProperty];
+	/// Take <https://schema.org/isPartOfBioChemEntity> from [`Self`] as owned vector.
 	fn take_is_part_of_bio_chem_entity(&mut self) -> Vec<IsPartOfBioChemEntityProperty>;
+	/// Get <https://schema.org/taxonomicRange> from [`Self`] as borrowed slice.
 	fn get_taxonomic_range(&self) -> &[TaxonomicRangeProperty];
+	/// Take <https://schema.org/taxonomicRange> from [`Self`] as owned vector.
 	fn take_taxonomic_range(&mut self) -> Vec<TaxonomicRangeProperty>;
 }
 impl BioChemEntityTrait for BioChemEntity {

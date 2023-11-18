@@ -3,172 +3,338 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct Offer {
+	/// <https://schema.org/acceptedPaymentMethod>
 	pub r#accepted_payment_method: Vec<AcceptedPaymentMethodProperty>,
+	/// <https://schema.org/addOn>
 	pub r#add_on: Vec<AddOnProperty>,
+	/// <https://schema.org/advanceBookingRequirement>
 	pub r#advance_booking_requirement: Vec<AdvanceBookingRequirementProperty>,
+	/// <https://schema.org/aggregateRating>
 	pub r#aggregate_rating: Vec<AggregateRatingProperty>,
+	/// <https://schema.org/areaServed>
 	pub r#area_served: Vec<AreaServedProperty>,
+	/// <https://schema.org/asin>
 	pub r#asin: Vec<AsinProperty>,
+	/// <https://schema.org/availability>
 	pub r#availability: Vec<AvailabilityProperty>,
+	/// <https://schema.org/availabilityEnds>
 	pub r#availability_ends: Vec<AvailabilityEndsProperty>,
+	/// <https://schema.org/availabilityStarts>
 	pub r#availability_starts: Vec<AvailabilityStartsProperty>,
+	/// <https://schema.org/availableAtOrFrom>
 	pub r#available_at_or_from: Vec<AvailableAtOrFromProperty>,
+	/// <https://schema.org/availableDeliveryMethod>
 	pub r#available_delivery_method: Vec<AvailableDeliveryMethodProperty>,
+	/// <https://schema.org/businessFunction>
 	pub r#business_function: Vec<BusinessFunctionProperty>,
+	/// <https://schema.org/category>
 	pub r#category: Vec<CategoryProperty>,
+	/// <https://schema.org/checkoutPageURLTemplate>
 	pub r#checkout_page_url_template: Vec<CheckoutPageUrlTemplateProperty>,
+	/// <https://schema.org/deliveryLeadTime>
 	pub r#delivery_lead_time: Vec<DeliveryLeadTimeProperty>,
+	/// <https://schema.org/eligibleCustomerType>
 	pub r#eligible_customer_type: Vec<EligibleCustomerTypeProperty>,
+	/// <https://schema.org/eligibleDuration>
 	pub r#eligible_duration: Vec<EligibleDurationProperty>,
+	/// <https://schema.org/eligibleQuantity>
 	pub r#eligible_quantity: Vec<EligibleQuantityProperty>,
+	/// <https://schema.org/eligibleRegion>
 	pub r#eligible_region: Vec<EligibleRegionProperty>,
+	/// <https://schema.org/eligibleTransactionVolume>
 	pub r#eligible_transaction_volume: Vec<EligibleTransactionVolumeProperty>,
+	/// <https://schema.org/gtin>
 	pub r#gtin: Vec<GtinProperty>,
+	/// <https://schema.org/gtin12>
 	pub r#gtin_12: Vec<Gtin12Property>,
+	/// <https://schema.org/gtin13>
 	pub r#gtin_13: Vec<Gtin13Property>,
+	/// <https://schema.org/gtin14>
 	pub r#gtin_14: Vec<Gtin14Property>,
+	/// <https://schema.org/gtin8>
 	pub r#gtin_8: Vec<Gtin8Property>,
+	/// <https://schema.org/hasAdultConsideration>
 	pub r#has_adult_consideration: Vec<HasAdultConsiderationProperty>,
+	/// <https://schema.org/hasMeasurement>
 	pub r#has_measurement: Vec<HasMeasurementProperty>,
+	/// <https://schema.org/hasMerchantReturnPolicy>
 	pub r#has_merchant_return_policy: Vec<HasMerchantReturnPolicyProperty>,
+	/// <https://schema.org/includesObject>
 	pub r#includes_object: Vec<IncludesObjectProperty>,
+	/// <https://schema.org/ineligibleRegion>
 	pub r#ineligible_region: Vec<IneligibleRegionProperty>,
+	/// <https://schema.org/inventoryLevel>
 	pub r#inventory_level: Vec<InventoryLevelProperty>,
+	/// <https://schema.org/isFamilyFriendly>
 	pub r#is_family_friendly: Vec<IsFamilyFriendlyProperty>,
+	/// <https://schema.org/itemCondition>
 	pub r#item_condition: Vec<ItemConditionProperty>,
+	/// <https://schema.org/itemOffered>
 	pub r#item_offered: Vec<ItemOfferedProperty>,
+	/// <https://schema.org/leaseLength>
 	pub r#lease_length: Vec<LeaseLengthProperty>,
+	/// <https://schema.org/mobileUrl>
 	pub r#mobile_url: Vec<MobileUrlProperty>,
+	/// <https://schema.org/mpn>
 	pub r#mpn: Vec<MpnProperty>,
+	/// <https://schema.org/offeredBy>
 	pub r#offered_by: Vec<OfferedByProperty>,
+	/// <https://schema.org/price>
 	pub r#price: Vec<PriceProperty>,
+	/// <https://schema.org/priceCurrency>
 	pub r#price_currency: Vec<PriceCurrencyProperty>,
+	/// <https://schema.org/priceSpecification>
 	pub r#price_specification: Vec<PriceSpecificationProperty>,
+	/// <https://schema.org/priceValidUntil>
 	pub r#price_valid_until: Vec<PriceValidUntilProperty>,
+	/// <https://schema.org/review>
 	pub r#review: Vec<ReviewProperty>,
+	/// <https://schema.org/reviews>
 	pub r#reviews: Vec<ReviewsProperty>,
+	/// <https://schema.org/seller>
 	pub r#seller: Vec<SellerProperty>,
+	/// <https://schema.org/serialNumber>
 	pub r#serial_number: Vec<SerialNumberProperty>,
+	/// <https://schema.org/shippingDetails>
 	pub r#shipping_details: Vec<ShippingDetailsProperty>,
+	/// <https://schema.org/sku>
 	pub r#sku: Vec<SkuProperty>,
+	/// <https://schema.org/validFrom>
 	pub r#valid_from: Vec<ValidFromProperty>,
+	/// <https://schema.org/validThrough>
 	pub r#valid_through: Vec<ValidThroughProperty>,
+	/// <https://schema.org/warranty>
 	pub r#warranty: Vec<WarrantyProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/Offer>.
 pub trait OfferTrait {
+	/// Get <https://schema.org/acceptedPaymentMethod> from [`Self`] as borrowed slice.
 	fn get_accepted_payment_method(&self) -> &[AcceptedPaymentMethodProperty];
+	/// Take <https://schema.org/acceptedPaymentMethod> from [`Self`] as owned vector.
 	fn take_accepted_payment_method(&mut self) -> Vec<AcceptedPaymentMethodProperty>;
+	/// Get <https://schema.org/addOn> from [`Self`] as borrowed slice.
 	fn get_add_on(&self) -> &[AddOnProperty];
+	/// Take <https://schema.org/addOn> from [`Self`] as owned vector.
 	fn take_add_on(&mut self) -> Vec<AddOnProperty>;
+	/// Get <https://schema.org/advanceBookingRequirement> from [`Self`] as borrowed slice.
 	fn get_advance_booking_requirement(&self) -> &[AdvanceBookingRequirementProperty];
+	/// Take <https://schema.org/advanceBookingRequirement> from [`Self`] as owned vector.
 	fn take_advance_booking_requirement(&mut self) -> Vec<AdvanceBookingRequirementProperty>;
+	/// Get <https://schema.org/aggregateRating> from [`Self`] as borrowed slice.
 	fn get_aggregate_rating(&self) -> &[AggregateRatingProperty];
+	/// Take <https://schema.org/aggregateRating> from [`Self`] as owned vector.
 	fn take_aggregate_rating(&mut self) -> Vec<AggregateRatingProperty>;
+	/// Get <https://schema.org/areaServed> from [`Self`] as borrowed slice.
 	fn get_area_served(&self) -> &[AreaServedProperty];
+	/// Take <https://schema.org/areaServed> from [`Self`] as owned vector.
 	fn take_area_served(&mut self) -> Vec<AreaServedProperty>;
+	/// Get <https://schema.org/asin> from [`Self`] as borrowed slice.
 	fn get_asin(&self) -> &[AsinProperty];
+	/// Take <https://schema.org/asin> from [`Self`] as owned vector.
 	fn take_asin(&mut self) -> Vec<AsinProperty>;
+	/// Get <https://schema.org/availability> from [`Self`] as borrowed slice.
 	fn get_availability(&self) -> &[AvailabilityProperty];
+	/// Take <https://schema.org/availability> from [`Self`] as owned vector.
 	fn take_availability(&mut self) -> Vec<AvailabilityProperty>;
+	/// Get <https://schema.org/availabilityEnds> from [`Self`] as borrowed slice.
 	fn get_availability_ends(&self) -> &[AvailabilityEndsProperty];
+	/// Take <https://schema.org/availabilityEnds> from [`Self`] as owned vector.
 	fn take_availability_ends(&mut self) -> Vec<AvailabilityEndsProperty>;
+	/// Get <https://schema.org/availabilityStarts> from [`Self`] as borrowed slice.
 	fn get_availability_starts(&self) -> &[AvailabilityStartsProperty];
+	/// Take <https://schema.org/availabilityStarts> from [`Self`] as owned vector.
 	fn take_availability_starts(&mut self) -> Vec<AvailabilityStartsProperty>;
+	/// Get <https://schema.org/availableAtOrFrom> from [`Self`] as borrowed slice.
 	fn get_available_at_or_from(&self) -> &[AvailableAtOrFromProperty];
+	/// Take <https://schema.org/availableAtOrFrom> from [`Self`] as owned vector.
 	fn take_available_at_or_from(&mut self) -> Vec<AvailableAtOrFromProperty>;
+	/// Get <https://schema.org/availableDeliveryMethod> from [`Self`] as borrowed slice.
 	fn get_available_delivery_method(&self) -> &[AvailableDeliveryMethodProperty];
+	/// Take <https://schema.org/availableDeliveryMethod> from [`Self`] as owned vector.
 	fn take_available_delivery_method(&mut self) -> Vec<AvailableDeliveryMethodProperty>;
+	/// Get <https://schema.org/businessFunction> from [`Self`] as borrowed slice.
 	fn get_business_function(&self) -> &[BusinessFunctionProperty];
+	/// Take <https://schema.org/businessFunction> from [`Self`] as owned vector.
 	fn take_business_function(&mut self) -> Vec<BusinessFunctionProperty>;
+	/// Get <https://schema.org/category> from [`Self`] as borrowed slice.
 	fn get_category(&self) -> &[CategoryProperty];
+	/// Take <https://schema.org/category> from [`Self`] as owned vector.
 	fn take_category(&mut self) -> Vec<CategoryProperty>;
+	/// Get <https://schema.org/checkoutPageURLTemplate> from [`Self`] as borrowed slice.
 	fn get_checkout_page_url_template(&self) -> &[CheckoutPageUrlTemplateProperty];
+	/// Take <https://schema.org/checkoutPageURLTemplate> from [`Self`] as owned vector.
 	fn take_checkout_page_url_template(&mut self) -> Vec<CheckoutPageUrlTemplateProperty>;
+	/// Get <https://schema.org/deliveryLeadTime> from [`Self`] as borrowed slice.
 	fn get_delivery_lead_time(&self) -> &[DeliveryLeadTimeProperty];
+	/// Take <https://schema.org/deliveryLeadTime> from [`Self`] as owned vector.
 	fn take_delivery_lead_time(&mut self) -> Vec<DeliveryLeadTimeProperty>;
+	/// Get <https://schema.org/eligibleCustomerType> from [`Self`] as borrowed slice.
 	fn get_eligible_customer_type(&self) -> &[EligibleCustomerTypeProperty];
+	/// Take <https://schema.org/eligibleCustomerType> from [`Self`] as owned vector.
 	fn take_eligible_customer_type(&mut self) -> Vec<EligibleCustomerTypeProperty>;
+	/// Get <https://schema.org/eligibleDuration> from [`Self`] as borrowed slice.
 	fn get_eligible_duration(&self) -> &[EligibleDurationProperty];
+	/// Take <https://schema.org/eligibleDuration> from [`Self`] as owned vector.
 	fn take_eligible_duration(&mut self) -> Vec<EligibleDurationProperty>;
+	/// Get <https://schema.org/eligibleQuantity> from [`Self`] as borrowed slice.
 	fn get_eligible_quantity(&self) -> &[EligibleQuantityProperty];
+	/// Take <https://schema.org/eligibleQuantity> from [`Self`] as owned vector.
 	fn take_eligible_quantity(&mut self) -> Vec<EligibleQuantityProperty>;
+	/// Get <https://schema.org/eligibleRegion> from [`Self`] as borrowed slice.
 	fn get_eligible_region(&self) -> &[EligibleRegionProperty];
+	/// Take <https://schema.org/eligibleRegion> from [`Self`] as owned vector.
 	fn take_eligible_region(&mut self) -> Vec<EligibleRegionProperty>;
+	/// Get <https://schema.org/eligibleTransactionVolume> from [`Self`] as borrowed slice.
 	fn get_eligible_transaction_volume(&self) -> &[EligibleTransactionVolumeProperty];
+	/// Take <https://schema.org/eligibleTransactionVolume> from [`Self`] as owned vector.
 	fn take_eligible_transaction_volume(&mut self) -> Vec<EligibleTransactionVolumeProperty>;
+	/// Get <https://schema.org/gtin> from [`Self`] as borrowed slice.
 	fn get_gtin(&self) -> &[GtinProperty];
+	/// Take <https://schema.org/gtin> from [`Self`] as owned vector.
 	fn take_gtin(&mut self) -> Vec<GtinProperty>;
+	/// Get <https://schema.org/gtin12> from [`Self`] as borrowed slice.
 	fn get_gtin_12(&self) -> &[Gtin12Property];
+	/// Take <https://schema.org/gtin12> from [`Self`] as owned vector.
 	fn take_gtin_12(&mut self) -> Vec<Gtin12Property>;
+	/// Get <https://schema.org/gtin13> from [`Self`] as borrowed slice.
 	fn get_gtin_13(&self) -> &[Gtin13Property];
+	/// Take <https://schema.org/gtin13> from [`Self`] as owned vector.
 	fn take_gtin_13(&mut self) -> Vec<Gtin13Property>;
+	/// Get <https://schema.org/gtin14> from [`Self`] as borrowed slice.
 	fn get_gtin_14(&self) -> &[Gtin14Property];
+	/// Take <https://schema.org/gtin14> from [`Self`] as owned vector.
 	fn take_gtin_14(&mut self) -> Vec<Gtin14Property>;
+	/// Get <https://schema.org/gtin8> from [`Self`] as borrowed slice.
 	fn get_gtin_8(&self) -> &[Gtin8Property];
+	/// Take <https://schema.org/gtin8> from [`Self`] as owned vector.
 	fn take_gtin_8(&mut self) -> Vec<Gtin8Property>;
+	/// Get <https://schema.org/hasAdultConsideration> from [`Self`] as borrowed slice.
 	fn get_has_adult_consideration(&self) -> &[HasAdultConsiderationProperty];
+	/// Take <https://schema.org/hasAdultConsideration> from [`Self`] as owned vector.
 	fn take_has_adult_consideration(&mut self) -> Vec<HasAdultConsiderationProperty>;
+	/// Get <https://schema.org/hasMeasurement> from [`Self`] as borrowed slice.
 	fn get_has_measurement(&self) -> &[HasMeasurementProperty];
+	/// Take <https://schema.org/hasMeasurement> from [`Self`] as owned vector.
 	fn take_has_measurement(&mut self) -> Vec<HasMeasurementProperty>;
+	/// Get <https://schema.org/hasMerchantReturnPolicy> from [`Self`] as borrowed slice.
 	fn get_has_merchant_return_policy(&self) -> &[HasMerchantReturnPolicyProperty];
+	/// Take <https://schema.org/hasMerchantReturnPolicy> from [`Self`] as owned vector.
 	fn take_has_merchant_return_policy(&mut self) -> Vec<HasMerchantReturnPolicyProperty>;
+	/// Get <https://schema.org/includesObject> from [`Self`] as borrowed slice.
 	fn get_includes_object(&self) -> &[IncludesObjectProperty];
+	/// Take <https://schema.org/includesObject> from [`Self`] as owned vector.
 	fn take_includes_object(&mut self) -> Vec<IncludesObjectProperty>;
+	/// Get <https://schema.org/ineligibleRegion> from [`Self`] as borrowed slice.
 	fn get_ineligible_region(&self) -> &[IneligibleRegionProperty];
+	/// Take <https://schema.org/ineligibleRegion> from [`Self`] as owned vector.
 	fn take_ineligible_region(&mut self) -> Vec<IneligibleRegionProperty>;
+	/// Get <https://schema.org/inventoryLevel> from [`Self`] as borrowed slice.
 	fn get_inventory_level(&self) -> &[InventoryLevelProperty];
+	/// Take <https://schema.org/inventoryLevel> from [`Self`] as owned vector.
 	fn take_inventory_level(&mut self) -> Vec<InventoryLevelProperty>;
+	/// Get <https://schema.org/isFamilyFriendly> from [`Self`] as borrowed slice.
 	fn get_is_family_friendly(&self) -> &[IsFamilyFriendlyProperty];
+	/// Take <https://schema.org/isFamilyFriendly> from [`Self`] as owned vector.
 	fn take_is_family_friendly(&mut self) -> Vec<IsFamilyFriendlyProperty>;
+	/// Get <https://schema.org/itemCondition> from [`Self`] as borrowed slice.
 	fn get_item_condition(&self) -> &[ItemConditionProperty];
+	/// Take <https://schema.org/itemCondition> from [`Self`] as owned vector.
 	fn take_item_condition(&mut self) -> Vec<ItemConditionProperty>;
+	/// Get <https://schema.org/itemOffered> from [`Self`] as borrowed slice.
 	fn get_item_offered(&self) -> &[ItemOfferedProperty];
+	/// Take <https://schema.org/itemOffered> from [`Self`] as owned vector.
 	fn take_item_offered(&mut self) -> Vec<ItemOfferedProperty>;
+	/// Get <https://schema.org/leaseLength> from [`Self`] as borrowed slice.
 	fn get_lease_length(&self) -> &[LeaseLengthProperty];
+	/// Take <https://schema.org/leaseLength> from [`Self`] as owned vector.
 	fn take_lease_length(&mut self) -> Vec<LeaseLengthProperty>;
+	/// Get <https://schema.org/mobileUrl> from [`Self`] as borrowed slice.
 	fn get_mobile_url(&self) -> &[MobileUrlProperty];
+	/// Take <https://schema.org/mobileUrl> from [`Self`] as owned vector.
 	fn take_mobile_url(&mut self) -> Vec<MobileUrlProperty>;
+	/// Get <https://schema.org/mpn> from [`Self`] as borrowed slice.
 	fn get_mpn(&self) -> &[MpnProperty];
+	/// Take <https://schema.org/mpn> from [`Self`] as owned vector.
 	fn take_mpn(&mut self) -> Vec<MpnProperty>;
+	/// Get <https://schema.org/offeredBy> from [`Self`] as borrowed slice.
 	fn get_offered_by(&self) -> &[OfferedByProperty];
+	/// Take <https://schema.org/offeredBy> from [`Self`] as owned vector.
 	fn take_offered_by(&mut self) -> Vec<OfferedByProperty>;
+	/// Get <https://schema.org/price> from [`Self`] as borrowed slice.
 	fn get_price(&self) -> &[PriceProperty];
+	/// Take <https://schema.org/price> from [`Self`] as owned vector.
 	fn take_price(&mut self) -> Vec<PriceProperty>;
+	/// Get <https://schema.org/priceCurrency> from [`Self`] as borrowed slice.
 	fn get_price_currency(&self) -> &[PriceCurrencyProperty];
+	/// Take <https://schema.org/priceCurrency> from [`Self`] as owned vector.
 	fn take_price_currency(&mut self) -> Vec<PriceCurrencyProperty>;
+	/// Get <https://schema.org/priceSpecification> from [`Self`] as borrowed slice.
 	fn get_price_specification(&self) -> &[PriceSpecificationProperty];
+	/// Take <https://schema.org/priceSpecification> from [`Self`] as owned vector.
 	fn take_price_specification(&mut self) -> Vec<PriceSpecificationProperty>;
+	/// Get <https://schema.org/priceValidUntil> from [`Self`] as borrowed slice.
 	fn get_price_valid_until(&self) -> &[PriceValidUntilProperty];
+	/// Take <https://schema.org/priceValidUntil> from [`Self`] as owned vector.
 	fn take_price_valid_until(&mut self) -> Vec<PriceValidUntilProperty>;
+	/// Get <https://schema.org/review> from [`Self`] as borrowed slice.
 	fn get_review(&self) -> &[ReviewProperty];
+	/// Take <https://schema.org/review> from [`Self`] as owned vector.
 	fn take_review(&mut self) -> Vec<ReviewProperty>;
+	/// Get <https://schema.org/reviews> from [`Self`] as borrowed slice.
 	fn get_reviews(&self) -> &[ReviewsProperty];
+	/// Take <https://schema.org/reviews> from [`Self`] as owned vector.
 	fn take_reviews(&mut self) -> Vec<ReviewsProperty>;
+	/// Get <https://schema.org/seller> from [`Self`] as borrowed slice.
 	fn get_seller(&self) -> &[SellerProperty];
+	/// Take <https://schema.org/seller> from [`Self`] as owned vector.
 	fn take_seller(&mut self) -> Vec<SellerProperty>;
+	/// Get <https://schema.org/serialNumber> from [`Self`] as borrowed slice.
 	fn get_serial_number(&self) -> &[SerialNumberProperty];
+	/// Take <https://schema.org/serialNumber> from [`Self`] as owned vector.
 	fn take_serial_number(&mut self) -> Vec<SerialNumberProperty>;
+	/// Get <https://schema.org/shippingDetails> from [`Self`] as borrowed slice.
 	fn get_shipping_details(&self) -> &[ShippingDetailsProperty];
+	/// Take <https://schema.org/shippingDetails> from [`Self`] as owned vector.
 	fn take_shipping_details(&mut self) -> Vec<ShippingDetailsProperty>;
+	/// Get <https://schema.org/sku> from [`Self`] as borrowed slice.
 	fn get_sku(&self) -> &[SkuProperty];
+	/// Take <https://schema.org/sku> from [`Self`] as owned vector.
 	fn take_sku(&mut self) -> Vec<SkuProperty>;
+	/// Get <https://schema.org/validFrom> from [`Self`] as borrowed slice.
 	fn get_valid_from(&self) -> &[ValidFromProperty];
+	/// Take <https://schema.org/validFrom> from [`Self`] as owned vector.
 	fn take_valid_from(&mut self) -> Vec<ValidFromProperty>;
+	/// Get <https://schema.org/validThrough> from [`Self`] as borrowed slice.
 	fn get_valid_through(&self) -> &[ValidThroughProperty];
+	/// Take <https://schema.org/validThrough> from [`Self`] as owned vector.
 	fn take_valid_through(&mut self) -> Vec<ValidThroughProperty>;
+	/// Get <https://schema.org/warranty> from [`Self`] as borrowed slice.
 	fn get_warranty(&self) -> &[WarrantyProperty];
+	/// Take <https://schema.org/warranty> from [`Self`] as owned vector.
 	fn take_warranty(&mut self) -> Vec<WarrantyProperty>;
 }
 impl OfferTrait for Offer {

@@ -3,44 +3,82 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct FlightReservation {
+	/// <https://schema.org/boardingGroup>
 	pub r#boarding_group: Vec<BoardingGroupProperty>,
+	/// <https://schema.org/passengerPriorityStatus>
 	pub r#passenger_priority_status: Vec<PassengerPriorityStatusProperty>,
+	/// <https://schema.org/passengerSequenceNumber>
 	pub r#passenger_sequence_number: Vec<PassengerSequenceNumberProperty>,
+	/// <https://schema.org/securityScreening>
 	pub r#security_screening: Vec<SecurityScreeningProperty>,
+	/// <https://schema.org/bookingAgent>
 	pub r#booking_agent: Vec<BookingAgentProperty>,
+	/// <https://schema.org/bookingTime>
 	pub r#booking_time: Vec<BookingTimeProperty>,
+	/// <https://schema.org/broker>
 	pub r#broker: Vec<BrokerProperty>,
+	/// <https://schema.org/modifiedTime>
 	pub r#modified_time: Vec<ModifiedTimeProperty>,
+	/// <https://schema.org/priceCurrency>
 	pub r#price_currency: Vec<PriceCurrencyProperty>,
+	/// <https://schema.org/programMembershipUsed>
 	pub r#program_membership_used: Vec<ProgramMembershipUsedProperty>,
+	/// <https://schema.org/provider>
 	pub r#provider: Vec<ProviderProperty>,
+	/// <https://schema.org/reservationFor>
 	pub r#reservation_for: Vec<ReservationForProperty>,
+	/// <https://schema.org/reservationId>
 	pub r#reservation_id: Vec<ReservationIdProperty>,
+	/// <https://schema.org/reservationStatus>
 	pub r#reservation_status: Vec<ReservationStatusProperty>,
+	/// <https://schema.org/reservedTicket>
 	pub r#reserved_ticket: Vec<ReservedTicketProperty>,
+	/// <https://schema.org/totalPrice>
 	pub r#total_price: Vec<TotalPriceProperty>,
+	/// <https://schema.org/underName>
 	pub r#under_name: Vec<UnderNameProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/FlightReservation>.
 pub trait FlightReservationTrait {
+	/// Get <https://schema.org/boardingGroup> from [`Self`] as borrowed slice.
 	fn get_boarding_group(&self) -> &[BoardingGroupProperty];
+	/// Take <https://schema.org/boardingGroup> from [`Self`] as owned vector.
 	fn take_boarding_group(&mut self) -> Vec<BoardingGroupProperty>;
+	/// Get <https://schema.org/passengerPriorityStatus> from [`Self`] as borrowed slice.
 	fn get_passenger_priority_status(&self) -> &[PassengerPriorityStatusProperty];
+	/// Take <https://schema.org/passengerPriorityStatus> from [`Self`] as owned vector.
 	fn take_passenger_priority_status(&mut self) -> Vec<PassengerPriorityStatusProperty>;
+	/// Get <https://schema.org/passengerSequenceNumber> from [`Self`] as borrowed slice.
 	fn get_passenger_sequence_number(&self) -> &[PassengerSequenceNumberProperty];
+	/// Take <https://schema.org/passengerSequenceNumber> from [`Self`] as owned vector.
 	fn take_passenger_sequence_number(&mut self) -> Vec<PassengerSequenceNumberProperty>;
+	/// Get <https://schema.org/securityScreening> from [`Self`] as borrowed slice.
 	fn get_security_screening(&self) -> &[SecurityScreeningProperty];
+	/// Take <https://schema.org/securityScreening> from [`Self`] as owned vector.
 	fn take_security_screening(&mut self) -> Vec<SecurityScreeningProperty>;
 }
 impl FlightReservationTrait for FlightReservation {

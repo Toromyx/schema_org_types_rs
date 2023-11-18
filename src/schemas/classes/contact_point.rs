@@ -3,49 +3,92 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct ContactPoint {
+	/// <https://schema.org/areaServed>
 	pub r#area_served: Vec<AreaServedProperty>,
+	/// <https://schema.org/availableLanguage>
 	pub r#available_language: Vec<AvailableLanguageProperty>,
+	/// <https://schema.org/contactOption>
 	pub r#contact_option: Vec<ContactOptionProperty>,
+	/// <https://schema.org/contactType>
 	pub r#contact_type: Vec<ContactTypeProperty>,
+	/// <https://schema.org/email>
 	pub r#email: Vec<EmailProperty>,
+	/// <https://schema.org/faxNumber>
 	pub r#fax_number: Vec<FaxNumberProperty>,
+	/// <https://schema.org/hoursAvailable>
 	pub r#hours_available: Vec<HoursAvailableProperty>,
+	/// <https://schema.org/productSupported>
 	pub r#product_supported: Vec<ProductSupportedProperty>,
+	/// <https://schema.org/serviceArea>
 	pub r#service_area: Vec<ServiceAreaProperty>,
+	/// <https://schema.org/telephone>
 	pub r#telephone: Vec<TelephoneProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/ContactPoint>.
 pub trait ContactPointTrait {
+	/// Get <https://schema.org/areaServed> from [`Self`] as borrowed slice.
 	fn get_area_served(&self) -> &[AreaServedProperty];
+	/// Take <https://schema.org/areaServed> from [`Self`] as owned vector.
 	fn take_area_served(&mut self) -> Vec<AreaServedProperty>;
+	/// Get <https://schema.org/availableLanguage> from [`Self`] as borrowed slice.
 	fn get_available_language(&self) -> &[AvailableLanguageProperty];
+	/// Take <https://schema.org/availableLanguage> from [`Self`] as owned vector.
 	fn take_available_language(&mut self) -> Vec<AvailableLanguageProperty>;
+	/// Get <https://schema.org/contactOption> from [`Self`] as borrowed slice.
 	fn get_contact_option(&self) -> &[ContactOptionProperty];
+	/// Take <https://schema.org/contactOption> from [`Self`] as owned vector.
 	fn take_contact_option(&mut self) -> Vec<ContactOptionProperty>;
+	/// Get <https://schema.org/contactType> from [`Self`] as borrowed slice.
 	fn get_contact_type(&self) -> &[ContactTypeProperty];
+	/// Take <https://schema.org/contactType> from [`Self`] as owned vector.
 	fn take_contact_type(&mut self) -> Vec<ContactTypeProperty>;
+	/// Get <https://schema.org/email> from [`Self`] as borrowed slice.
 	fn get_email(&self) -> &[EmailProperty];
+	/// Take <https://schema.org/email> from [`Self`] as owned vector.
 	fn take_email(&mut self) -> Vec<EmailProperty>;
+	/// Get <https://schema.org/faxNumber> from [`Self`] as borrowed slice.
 	fn get_fax_number(&self) -> &[FaxNumberProperty];
+	/// Take <https://schema.org/faxNumber> from [`Self`] as owned vector.
 	fn take_fax_number(&mut self) -> Vec<FaxNumberProperty>;
+	/// Get <https://schema.org/hoursAvailable> from [`Self`] as borrowed slice.
 	fn get_hours_available(&self) -> &[HoursAvailableProperty];
+	/// Take <https://schema.org/hoursAvailable> from [`Self`] as owned vector.
 	fn take_hours_available(&mut self) -> Vec<HoursAvailableProperty>;
+	/// Get <https://schema.org/productSupported> from [`Self`] as borrowed slice.
 	fn get_product_supported(&self) -> &[ProductSupportedProperty];
+	/// Take <https://schema.org/productSupported> from [`Self`] as owned vector.
 	fn take_product_supported(&mut self) -> Vec<ProductSupportedProperty>;
+	/// Get <https://schema.org/serviceArea> from [`Self`] as borrowed slice.
 	fn get_service_area(&self) -> &[ServiceAreaProperty];
+	/// Take <https://schema.org/serviceArea> from [`Self`] as owned vector.
 	fn take_service_area(&mut self) -> Vec<ServiceAreaProperty>;
+	/// Get <https://schema.org/telephone> from [`Self`] as borrowed slice.
 	fn get_telephone(&self) -> &[TelephoneProperty];
+	/// Take <https://schema.org/telephone> from [`Self`] as owned vector.
 	fn take_telephone(&mut self) -> Vec<TelephoneProperty>;
 }
 impl ContactPointTrait for ContactPoint {

@@ -3,31 +3,56 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct ListItem {
+	/// <https://schema.org/item>
 	pub r#item: Vec<ItemProperty>,
+	/// <https://schema.org/nextItem>
 	pub r#next_item: Vec<NextItemProperty>,
+	/// <https://schema.org/position>
 	pub r#position: Vec<PositionProperty>,
+	/// <https://schema.org/previousItem>
 	pub r#previous_item: Vec<PreviousItemProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/ListItem>.
 pub trait ListItemTrait {
+	/// Get <https://schema.org/item> from [`Self`] as borrowed slice.
 	fn get_item(&self) -> &[ItemProperty];
+	/// Take <https://schema.org/item> from [`Self`] as owned vector.
 	fn take_item(&mut self) -> Vec<ItemProperty>;
+	/// Get <https://schema.org/nextItem> from [`Self`] as borrowed slice.
 	fn get_next_item(&self) -> &[NextItemProperty];
+	/// Take <https://schema.org/nextItem> from [`Self`] as owned vector.
 	fn take_next_item(&mut self) -> Vec<NextItemProperty>;
+	/// Get <https://schema.org/position> from [`Self`] as borrowed slice.
 	fn get_position(&self) -> &[PositionProperty];
+	/// Take <https://schema.org/position> from [`Self`] as owned vector.
 	fn take_position(&mut self) -> Vec<PositionProperty>;
+	/// Get <https://schema.org/previousItem> from [`Self`] as borrowed slice.
 	fn get_previous_item(&self) -> &[PreviousItemProperty];
+	/// Take <https://schema.org/previousItem> from [`Self`] as owned vector.
 	fn take_previous_item(&mut self) -> Vec<PreviousItemProperty>;
 }
 impl ListItemTrait for ListItem {

@@ -3,52 +3,98 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct InfectiousDisease {
+	/// <https://schema.org/infectiousAgent>
 	pub r#infectious_agent: Vec<InfectiousAgentProperty>,
+	/// <https://schema.org/infectiousAgentClass>
 	pub r#infectious_agent_class: Vec<InfectiousAgentClassProperty>,
+	/// <https://schema.org/transmissionMethod>
 	pub r#transmission_method: Vec<TransmissionMethodProperty>,
+	/// <https://schema.org/associatedAnatomy>
 	pub r#associated_anatomy: Vec<AssociatedAnatomyProperty>,
+	/// <https://schema.org/differentialDiagnosis>
 	pub r#differential_diagnosis: Vec<DifferentialDiagnosisProperty>,
+	/// <https://schema.org/drug>
 	pub r#drug: Vec<DrugProperty>,
+	/// <https://schema.org/epidemiology>
 	pub r#epidemiology: Vec<EpidemiologyProperty>,
+	/// <https://schema.org/expectedPrognosis>
 	pub r#expected_prognosis: Vec<ExpectedPrognosisProperty>,
+	/// <https://schema.org/naturalProgression>
 	pub r#natural_progression: Vec<NaturalProgressionProperty>,
+	/// <https://schema.org/pathophysiology>
 	pub r#pathophysiology: Vec<PathophysiologyProperty>,
+	/// <https://schema.org/possibleComplication>
 	pub r#possible_complication: Vec<PossibleComplicationProperty>,
+	/// <https://schema.org/possibleTreatment>
 	pub r#possible_treatment: Vec<PossibleTreatmentProperty>,
+	/// <https://schema.org/primaryPrevention>
 	pub r#primary_prevention: Vec<PrimaryPreventionProperty>,
+	/// <https://schema.org/riskFactor>
 	pub r#risk_factor: Vec<RiskFactorProperty>,
+	/// <https://schema.org/secondaryPrevention>
 	pub r#secondary_prevention: Vec<SecondaryPreventionProperty>,
+	/// <https://schema.org/signOrSymptom>
 	pub r#sign_or_symptom: Vec<SignOrSymptomProperty>,
+	/// <https://schema.org/stage>
 	pub r#stage: Vec<StageProperty>,
+	/// <https://schema.org/status>
 	pub r#status: Vec<StatusProperty>,
+	/// <https://schema.org/typicalTest>
 	pub r#typical_test: Vec<TypicalTestProperty>,
+	/// <https://schema.org/code>
 	pub r#code: Vec<CodeProperty>,
+	/// <https://schema.org/funding>
 	pub r#funding: Vec<FundingProperty>,
+	/// <https://schema.org/guideline>
 	pub r#guideline: Vec<GuidelineProperty>,
+	/// <https://schema.org/legalStatus>
 	pub r#legal_status: Vec<LegalStatusProperty>,
+	/// <https://schema.org/medicineSystem>
 	pub r#medicine_system: Vec<MedicineSystemProperty>,
+	/// <https://schema.org/recognizingAuthority>
 	pub r#recognizing_authority: Vec<RecognizingAuthorityProperty>,
+	/// <https://schema.org/relevantSpecialty>
 	pub r#relevant_specialty: Vec<RelevantSpecialtyProperty>,
+	/// <https://schema.org/study>
 	pub r#study: Vec<StudyProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/InfectiousDisease>.
 pub trait InfectiousDiseaseTrait {
+	/// Get <https://schema.org/infectiousAgent> from [`Self`] as borrowed slice.
 	fn get_infectious_agent(&self) -> &[InfectiousAgentProperty];
+	/// Take <https://schema.org/infectiousAgent> from [`Self`] as owned vector.
 	fn take_infectious_agent(&mut self) -> Vec<InfectiousAgentProperty>;
+	/// Get <https://schema.org/infectiousAgentClass> from [`Self`] as borrowed slice.
 	fn get_infectious_agent_class(&self) -> &[InfectiousAgentClassProperty];
+	/// Take <https://schema.org/infectiousAgentClass> from [`Self`] as owned vector.
 	fn take_infectious_agent_class(&mut self) -> Vec<InfectiousAgentClassProperty>;
+	/// Get <https://schema.org/transmissionMethod> from [`Self`] as borrowed slice.
 	fn get_transmission_method(&self) -> &[TransmissionMethodProperty];
+	/// Take <https://schema.org/transmissionMethod> from [`Self`] as owned vector.
 	fn take_transmission_method(&mut self) -> Vec<TransmissionMethodProperty>;
 }
 impl InfectiousDiseaseTrait for InfectiousDisease {

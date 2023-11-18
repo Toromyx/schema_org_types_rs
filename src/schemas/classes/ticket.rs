@@ -3,43 +3,80 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct Ticket {
+	/// <https://schema.org/dateIssued>
 	pub r#date_issued: Vec<DateIssuedProperty>,
+	/// <https://schema.org/issuedBy>
 	pub r#issued_by: Vec<IssuedByProperty>,
+	/// <https://schema.org/priceCurrency>
 	pub r#price_currency: Vec<PriceCurrencyProperty>,
+	/// <https://schema.org/ticketNumber>
 	pub r#ticket_number: Vec<TicketNumberProperty>,
+	/// <https://schema.org/ticketToken>
 	pub r#ticket_token: Vec<TicketTokenProperty>,
+	/// <https://schema.org/ticketedSeat>
 	pub r#ticketed_seat: Vec<TicketedSeatProperty>,
+	/// <https://schema.org/totalPrice>
 	pub r#total_price: Vec<TotalPriceProperty>,
+	/// <https://schema.org/underName>
 	pub r#under_name: Vec<UnderNameProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/Ticket>.
 pub trait TicketTrait {
+	/// Get <https://schema.org/dateIssued> from [`Self`] as borrowed slice.
 	fn get_date_issued(&self) -> &[DateIssuedProperty];
+	/// Take <https://schema.org/dateIssued> from [`Self`] as owned vector.
 	fn take_date_issued(&mut self) -> Vec<DateIssuedProperty>;
+	/// Get <https://schema.org/issuedBy> from [`Self`] as borrowed slice.
 	fn get_issued_by(&self) -> &[IssuedByProperty];
+	/// Take <https://schema.org/issuedBy> from [`Self`] as owned vector.
 	fn take_issued_by(&mut self) -> Vec<IssuedByProperty>;
+	/// Get <https://schema.org/priceCurrency> from [`Self`] as borrowed slice.
 	fn get_price_currency(&self) -> &[PriceCurrencyProperty];
+	/// Take <https://schema.org/priceCurrency> from [`Self`] as owned vector.
 	fn take_price_currency(&mut self) -> Vec<PriceCurrencyProperty>;
+	/// Get <https://schema.org/ticketNumber> from [`Self`] as borrowed slice.
 	fn get_ticket_number(&self) -> &[TicketNumberProperty];
+	/// Take <https://schema.org/ticketNumber> from [`Self`] as owned vector.
 	fn take_ticket_number(&mut self) -> Vec<TicketNumberProperty>;
+	/// Get <https://schema.org/ticketToken> from [`Self`] as borrowed slice.
 	fn get_ticket_token(&self) -> &[TicketTokenProperty];
+	/// Take <https://schema.org/ticketToken> from [`Self`] as owned vector.
 	fn take_ticket_token(&mut self) -> Vec<TicketTokenProperty>;
+	/// Get <https://schema.org/ticketedSeat> from [`Self`] as borrowed slice.
 	fn get_ticketed_seat(&self) -> &[TicketedSeatProperty];
+	/// Take <https://schema.org/ticketedSeat> from [`Self`] as owned vector.
 	fn take_ticketed_seat(&mut self) -> Vec<TicketedSeatProperty>;
+	/// Get <https://schema.org/totalPrice> from [`Self`] as borrowed slice.
 	fn get_total_price(&self) -> &[TotalPriceProperty];
+	/// Take <https://schema.org/totalPrice> from [`Self`] as owned vector.
 	fn take_total_price(&mut self) -> Vec<TotalPriceProperty>;
+	/// Get <https://schema.org/underName> from [`Self`] as borrowed slice.
 	fn get_under_name(&self) -> &[UnderNameProperty];
+	/// Take <https://schema.org/underName> from [`Self`] as owned vector.
 	fn take_under_name(&mut self) -> Vec<UnderNameProperty>;
 }
 impl TicketTrait for Ticket {

@@ -3,42 +3,78 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct MedicalTest {
+	/// <https://schema.org/affectedBy>
 	pub r#affected_by: Vec<AffectedByProperty>,
+	/// <https://schema.org/normalRange>
 	pub r#normal_range: Vec<NormalRangeProperty>,
+	/// <https://schema.org/signDetected>
 	pub r#sign_detected: Vec<SignDetectedProperty>,
+	/// <https://schema.org/usedToDiagnose>
 	pub r#used_to_diagnose: Vec<UsedToDiagnoseProperty>,
+	/// <https://schema.org/usesDevice>
 	pub r#uses_device: Vec<UsesDeviceProperty>,
+	/// <https://schema.org/code>
 	pub r#code: Vec<CodeProperty>,
+	/// <https://schema.org/funding>
 	pub r#funding: Vec<FundingProperty>,
+	/// <https://schema.org/guideline>
 	pub r#guideline: Vec<GuidelineProperty>,
+	/// <https://schema.org/legalStatus>
 	pub r#legal_status: Vec<LegalStatusProperty>,
+	/// <https://schema.org/medicineSystem>
 	pub r#medicine_system: Vec<MedicineSystemProperty>,
+	/// <https://schema.org/recognizingAuthority>
 	pub r#recognizing_authority: Vec<RecognizingAuthorityProperty>,
+	/// <https://schema.org/relevantSpecialty>
 	pub r#relevant_specialty: Vec<RelevantSpecialtyProperty>,
+	/// <https://schema.org/study>
 	pub r#study: Vec<StudyProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/MedicalTest>.
 pub trait MedicalTestTrait {
+	/// Get <https://schema.org/affectedBy> from [`Self`] as borrowed slice.
 	fn get_affected_by(&self) -> &[AffectedByProperty];
+	/// Take <https://schema.org/affectedBy> from [`Self`] as owned vector.
 	fn take_affected_by(&mut self) -> Vec<AffectedByProperty>;
+	/// Get <https://schema.org/normalRange> from [`Self`] as borrowed slice.
 	fn get_normal_range(&self) -> &[NormalRangeProperty];
+	/// Take <https://schema.org/normalRange> from [`Self`] as owned vector.
 	fn take_normal_range(&mut self) -> Vec<NormalRangeProperty>;
+	/// Get <https://schema.org/signDetected> from [`Self`] as borrowed slice.
 	fn get_sign_detected(&self) -> &[SignDetectedProperty];
+	/// Take <https://schema.org/signDetected> from [`Self`] as owned vector.
 	fn take_sign_detected(&mut self) -> Vec<SignDetectedProperty>;
+	/// Get <https://schema.org/usedToDiagnose> from [`Self`] as borrowed slice.
 	fn get_used_to_diagnose(&self) -> &[UsedToDiagnoseProperty];
+	/// Take <https://schema.org/usedToDiagnose> from [`Self`] as owned vector.
 	fn take_used_to_diagnose(&mut self) -> Vec<UsedToDiagnoseProperty>;
+	/// Get <https://schema.org/usesDevice> from [`Self`] as borrowed slice.
 	fn get_uses_device(&self) -> &[UsesDeviceProperty];
+	/// Take <https://schema.org/usesDevice> from [`Self`] as owned vector.
 	fn take_uses_device(&mut self) -> Vec<UsesDeviceProperty>;
 }
 impl MedicalTestTrait for MedicalTest {

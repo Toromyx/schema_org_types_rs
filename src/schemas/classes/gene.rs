@@ -3,44 +3,82 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct Gene {
+	/// <https://schema.org/alternativeOf>
 	pub r#alternative_of: Vec<AlternativeOfProperty>,
+	/// <https://schema.org/encodesBioChemEntity>
 	pub r#encodes_bio_chem_entity: Vec<EncodesBioChemEntityProperty>,
+	/// <https://schema.org/expressedIn>
 	pub r#expressed_in: Vec<ExpressedInProperty>,
+	/// <https://schema.org/hasBioPolymerSequence>
 	pub r#has_bio_polymer_sequence: Vec<HasBioPolymerSequenceProperty>,
+	/// <https://schema.org/associatedDisease>
 	pub r#associated_disease: Vec<AssociatedDiseaseProperty>,
+	/// <https://schema.org/bioChemInteraction>
 	pub r#bio_chem_interaction: Vec<BioChemInteractionProperty>,
+	/// <https://schema.org/bioChemSimilarity>
 	pub r#bio_chem_similarity: Vec<BioChemSimilarityProperty>,
+	/// <https://schema.org/biologicalRole>
 	pub r#biological_role: Vec<BiologicalRoleProperty>,
+	/// <https://schema.org/funding>
 	pub r#funding: Vec<FundingProperty>,
+	/// <https://schema.org/hasBioChemEntityPart>
 	pub r#has_bio_chem_entity_part: Vec<HasBioChemEntityPartProperty>,
+	/// <https://schema.org/hasMolecularFunction>
 	pub r#has_molecular_function: Vec<HasMolecularFunctionProperty>,
+	/// <https://schema.org/hasRepresentation>
 	pub r#has_representation: Vec<HasRepresentationProperty>,
+	/// <https://schema.org/isEncodedByBioChemEntity>
 	pub r#is_encoded_by_bio_chem_entity: Vec<IsEncodedByBioChemEntityProperty>,
+	/// <https://schema.org/isInvolvedInBiologicalProcess>
 	pub r#is_involved_in_biological_process: Vec<IsInvolvedInBiologicalProcessProperty>,
+	/// <https://schema.org/isLocatedInSubcellularLocation>
 	pub r#is_located_in_subcellular_location: Vec<IsLocatedInSubcellularLocationProperty>,
+	/// <https://schema.org/isPartOfBioChemEntity>
 	pub r#is_part_of_bio_chem_entity: Vec<IsPartOfBioChemEntityProperty>,
+	/// <https://schema.org/taxonomicRange>
 	pub r#taxonomic_range: Vec<TaxonomicRangeProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/Gene>.
 pub trait GeneTrait {
+	/// Get <https://schema.org/alternativeOf> from [`Self`] as borrowed slice.
 	fn get_alternative_of(&self) -> &[AlternativeOfProperty];
+	/// Take <https://schema.org/alternativeOf> from [`Self`] as owned vector.
 	fn take_alternative_of(&mut self) -> Vec<AlternativeOfProperty>;
+	/// Get <https://schema.org/encodesBioChemEntity> from [`Self`] as borrowed slice.
 	fn get_encodes_bio_chem_entity(&self) -> &[EncodesBioChemEntityProperty];
+	/// Take <https://schema.org/encodesBioChemEntity> from [`Self`] as owned vector.
 	fn take_encodes_bio_chem_entity(&mut self) -> Vec<EncodesBioChemEntityProperty>;
+	/// Get <https://schema.org/expressedIn> from [`Self`] as borrowed slice.
 	fn get_expressed_in(&self) -> &[ExpressedInProperty];
+	/// Take <https://schema.org/expressedIn> from [`Self`] as owned vector.
 	fn take_expressed_in(&mut self) -> Vec<ExpressedInProperty>;
+	/// Get <https://schema.org/hasBioPolymerSequence> from [`Self`] as borrowed slice.
 	fn get_has_bio_polymer_sequence(&self) -> &[HasBioPolymerSequenceProperty];
+	/// Take <https://schema.org/hasBioPolymerSequence> from [`Self`] as owned vector.
 	fn take_has_bio_polymer_sequence(&mut self) -> Vec<HasBioPolymerSequenceProperty>;
 }
 impl GeneTrait for Gene {

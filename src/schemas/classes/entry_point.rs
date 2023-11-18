@@ -3,40 +3,74 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct EntryPoint {
+	/// <https://schema.org/actionApplication>
 	pub r#action_application: Vec<ActionApplicationProperty>,
+	/// <https://schema.org/actionPlatform>
 	pub r#action_platform: Vec<ActionPlatformProperty>,
+	/// <https://schema.org/application>
 	pub r#application: Vec<ApplicationProperty>,
+	/// <https://schema.org/contentType>
 	pub r#content_type: Vec<ContentTypeProperty>,
+	/// <https://schema.org/encodingType>
 	pub r#encoding_type: Vec<EncodingTypeProperty>,
+	/// <https://schema.org/httpMethod>
 	pub r#http_method: Vec<HttpMethodProperty>,
+	/// <https://schema.org/urlTemplate>
 	pub r#url_template: Vec<UrlTemplateProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/EntryPoint>.
 pub trait EntryPointTrait {
+	/// Get <https://schema.org/actionApplication> from [`Self`] as borrowed slice.
 	fn get_action_application(&self) -> &[ActionApplicationProperty];
+	/// Take <https://schema.org/actionApplication> from [`Self`] as owned vector.
 	fn take_action_application(&mut self) -> Vec<ActionApplicationProperty>;
+	/// Get <https://schema.org/actionPlatform> from [`Self`] as borrowed slice.
 	fn get_action_platform(&self) -> &[ActionPlatformProperty];
+	/// Take <https://schema.org/actionPlatform> from [`Self`] as owned vector.
 	fn take_action_platform(&mut self) -> Vec<ActionPlatformProperty>;
+	/// Get <https://schema.org/application> from [`Self`] as borrowed slice.
 	fn get_application(&self) -> &[ApplicationProperty];
+	/// Take <https://schema.org/application> from [`Self`] as owned vector.
 	fn take_application(&mut self) -> Vec<ApplicationProperty>;
+	/// Get <https://schema.org/contentType> from [`Self`] as borrowed slice.
 	fn get_content_type(&self) -> &[ContentTypeProperty];
+	/// Take <https://schema.org/contentType> from [`Self`] as owned vector.
 	fn take_content_type(&mut self) -> Vec<ContentTypeProperty>;
+	/// Get <https://schema.org/encodingType> from [`Self`] as borrowed slice.
 	fn get_encoding_type(&self) -> &[EncodingTypeProperty];
+	/// Take <https://schema.org/encodingType> from [`Self`] as owned vector.
 	fn take_encoding_type(&mut self) -> Vec<EncodingTypeProperty>;
+	/// Get <https://schema.org/httpMethod> from [`Self`] as borrowed slice.
 	fn get_http_method(&self) -> &[HttpMethodProperty];
+	/// Take <https://schema.org/httpMethod> from [`Self`] as owned vector.
 	fn take_http_method(&mut self) -> Vec<HttpMethodProperty>;
+	/// Get <https://schema.org/urlTemplate> from [`Self`] as borrowed slice.
 	fn get_url_template(&self) -> &[UrlTemplateProperty];
+	/// Take <https://schema.org/urlTemplate> from [`Self`] as owned vector.
 	fn take_url_template(&mut self) -> Vec<UrlTemplateProperty>;
 }
 impl EntryPointTrait for EntryPoint {

@@ -3,28 +3,50 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct BroadcastFrequencySpecification {
+	/// <https://schema.org/broadcastFrequencyValue>
 	pub r#broadcast_frequency_value: Vec<BroadcastFrequencyValueProperty>,
+	/// <https://schema.org/broadcastSignalModulation>
 	pub r#broadcast_signal_modulation: Vec<BroadcastSignalModulationProperty>,
+	/// <https://schema.org/broadcastSubChannel>
 	pub r#broadcast_sub_channel: Vec<BroadcastSubChannelProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/BroadcastFrequencySpecification>.
 pub trait BroadcastFrequencySpecificationTrait {
+	/// Get <https://schema.org/broadcastFrequencyValue> from [`Self`] as borrowed slice.
 	fn get_broadcast_frequency_value(&self) -> &[BroadcastFrequencyValueProperty];
+	/// Take <https://schema.org/broadcastFrequencyValue> from [`Self`] as owned vector.
 	fn take_broadcast_frequency_value(&mut self) -> Vec<BroadcastFrequencyValueProperty>;
+	/// Get <https://schema.org/broadcastSignalModulation> from [`Self`] as borrowed slice.
 	fn get_broadcast_signal_modulation(&self) -> &[BroadcastSignalModulationProperty];
+	/// Take <https://schema.org/broadcastSignalModulation> from [`Self`] as owned vector.
 	fn take_broadcast_signal_modulation(&mut self) -> Vec<BroadcastSignalModulationProperty>;
+	/// Get <https://schema.org/broadcastSubChannel> from [`Self`] as borrowed slice.
 	fn get_broadcast_sub_channel(&self) -> &[BroadcastSubChannelProperty];
+	/// Take <https://schema.org/broadcastSubChannel> from [`Self`] as owned vector.
 	fn take_broadcast_sub_channel(&mut self) -> Vec<BroadcastSubChannelProperty>;
 }
 impl BroadcastFrequencySpecificationTrait for BroadcastFrequencySpecification {

@@ -3,39 +3,72 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct MedicalGuideline {
+	/// <https://schema.org/evidenceLevel>
 	pub r#evidence_level: Vec<EvidenceLevelProperty>,
+	/// <https://schema.org/evidenceOrigin>
 	pub r#evidence_origin: Vec<EvidenceOriginProperty>,
+	/// <https://schema.org/guidelineDate>
 	pub r#guideline_date: Vec<GuidelineDateProperty>,
+	/// <https://schema.org/guidelineSubject>
 	pub r#guideline_subject: Vec<GuidelineSubjectProperty>,
+	/// <https://schema.org/code>
 	pub r#code: Vec<CodeProperty>,
+	/// <https://schema.org/funding>
 	pub r#funding: Vec<FundingProperty>,
+	/// <https://schema.org/guideline>
 	pub r#guideline: Vec<GuidelineProperty>,
+	/// <https://schema.org/legalStatus>
 	pub r#legal_status: Vec<LegalStatusProperty>,
+	/// <https://schema.org/medicineSystem>
 	pub r#medicine_system: Vec<MedicineSystemProperty>,
+	/// <https://schema.org/recognizingAuthority>
 	pub r#recognizing_authority: Vec<RecognizingAuthorityProperty>,
+	/// <https://schema.org/relevantSpecialty>
 	pub r#relevant_specialty: Vec<RelevantSpecialtyProperty>,
+	/// <https://schema.org/study>
 	pub r#study: Vec<StudyProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/MedicalGuideline>.
 pub trait MedicalGuidelineTrait {
+	/// Get <https://schema.org/evidenceLevel> from [`Self`] as borrowed slice.
 	fn get_evidence_level(&self) -> &[EvidenceLevelProperty];
+	/// Take <https://schema.org/evidenceLevel> from [`Self`] as owned vector.
 	fn take_evidence_level(&mut self) -> Vec<EvidenceLevelProperty>;
+	/// Get <https://schema.org/evidenceOrigin> from [`Self`] as borrowed slice.
 	fn get_evidence_origin(&self) -> &[EvidenceOriginProperty];
+	/// Take <https://schema.org/evidenceOrigin> from [`Self`] as owned vector.
 	fn take_evidence_origin(&mut self) -> Vec<EvidenceOriginProperty>;
+	/// Get <https://schema.org/guidelineDate> from [`Self`] as borrowed slice.
 	fn get_guideline_date(&self) -> &[GuidelineDateProperty];
+	/// Take <https://schema.org/guidelineDate> from [`Self`] as owned vector.
 	fn take_guideline_date(&mut self) -> Vec<GuidelineDateProperty>;
+	/// Get <https://schema.org/guidelineSubject> from [`Self`] as borrowed slice.
 	fn get_guideline_subject(&self) -> &[GuidelineSubjectProperty];
+	/// Take <https://schema.org/guidelineSubject> from [`Self`] as owned vector.
 	fn take_guideline_subject(&mut self) -> Vec<GuidelineSubjectProperty>;
 }
 impl MedicalGuidelineTrait for MedicalGuideline {

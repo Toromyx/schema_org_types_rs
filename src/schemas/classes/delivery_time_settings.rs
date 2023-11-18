@@ -3,31 +3,56 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct DeliveryTimeSettings {
+	/// <https://schema.org/deliveryTime>
 	pub r#delivery_time: Vec<DeliveryTimeProperty>,
+	/// <https://schema.org/isUnlabelledFallback>
 	pub r#is_unlabelled_fallback: Vec<IsUnlabelledFallbackProperty>,
+	/// <https://schema.org/shippingDestination>
 	pub r#shipping_destination: Vec<ShippingDestinationProperty>,
+	/// <https://schema.org/transitTimeLabel>
 	pub r#transit_time_label: Vec<TransitTimeLabelProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/DeliveryTimeSettings>.
 pub trait DeliveryTimeSettingsTrait {
+	/// Get <https://schema.org/deliveryTime> from [`Self`] as borrowed slice.
 	fn get_delivery_time(&self) -> &[DeliveryTimeProperty];
+	/// Take <https://schema.org/deliveryTime> from [`Self`] as owned vector.
 	fn take_delivery_time(&mut self) -> Vec<DeliveryTimeProperty>;
+	/// Get <https://schema.org/isUnlabelledFallback> from [`Self`] as borrowed slice.
 	fn get_is_unlabelled_fallback(&self) -> &[IsUnlabelledFallbackProperty];
+	/// Take <https://schema.org/isUnlabelledFallback> from [`Self`] as owned vector.
 	fn take_is_unlabelled_fallback(&mut self) -> Vec<IsUnlabelledFallbackProperty>;
+	/// Get <https://schema.org/shippingDestination> from [`Self`] as borrowed slice.
 	fn get_shipping_destination(&self) -> &[ShippingDestinationProperty];
+	/// Take <https://schema.org/shippingDestination> from [`Self`] as owned vector.
 	fn take_shipping_destination(&mut self) -> Vec<ShippingDestinationProperty>;
+	/// Get <https://schema.org/transitTimeLabel> from [`Self`] as borrowed slice.
 	fn get_transit_time_label(&self) -> &[TransitTimeLabelProperty];
+	/// Take <https://schema.org/transitTimeLabel> from [`Self`] as owned vector.
 	fn take_transit_time_label(&mut self) -> Vec<TransitTimeLabelProperty>;
 }
 impl DeliveryTimeSettingsTrait for DeliveryTimeSettings {

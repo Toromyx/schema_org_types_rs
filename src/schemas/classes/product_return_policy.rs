@@ -3,25 +3,44 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct ProductReturnPolicy {
+	/// <https://schema.org/productReturnDays>
 	pub r#product_return_days: Vec<ProductReturnDaysProperty>,
+	/// <https://schema.org/productReturnLink>
 	pub r#product_return_link: Vec<ProductReturnLinkProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/ProductReturnPolicy>.
 pub trait ProductReturnPolicyTrait {
+	/// Get <https://schema.org/productReturnDays> from [`Self`] as borrowed slice.
 	fn get_product_return_days(&self) -> &[ProductReturnDaysProperty];
+	/// Take <https://schema.org/productReturnDays> from [`Self`] as owned vector.
 	fn take_product_return_days(&mut self) -> Vec<ProductReturnDaysProperty>;
+	/// Get <https://schema.org/productReturnLink> from [`Self`] as borrowed slice.
 	fn get_product_return_link(&self) -> &[ProductReturnLinkProperty];
+	/// Take <https://schema.org/productReturnLink> from [`Self`] as owned vector.
 	fn take_product_return_link(&mut self) -> Vec<ProductReturnLinkProperty>;
 }
 impl ProductReturnPolicyTrait for ProductReturnPolicy {

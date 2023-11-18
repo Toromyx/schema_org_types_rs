@@ -3,34 +3,62 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct OrderItem {
+	/// <https://schema.org/orderDelivery>
 	pub r#order_delivery: Vec<OrderDeliveryProperty>,
+	/// <https://schema.org/orderItemNumber>
 	pub r#order_item_number: Vec<OrderItemNumberProperty>,
+	/// <https://schema.org/orderItemStatus>
 	pub r#order_item_status: Vec<OrderItemStatusProperty>,
+	/// <https://schema.org/orderQuantity>
 	pub r#order_quantity: Vec<OrderQuantityProperty>,
+	/// <https://schema.org/orderedItem>
 	pub r#ordered_item: Vec<OrderedItemProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/OrderItem>.
 pub trait OrderItemTrait {
+	/// Get <https://schema.org/orderDelivery> from [`Self`] as borrowed slice.
 	fn get_order_delivery(&self) -> &[OrderDeliveryProperty];
+	/// Take <https://schema.org/orderDelivery> from [`Self`] as owned vector.
 	fn take_order_delivery(&mut self) -> Vec<OrderDeliveryProperty>;
+	/// Get <https://schema.org/orderItemNumber> from [`Self`] as borrowed slice.
 	fn get_order_item_number(&self) -> &[OrderItemNumberProperty];
+	/// Take <https://schema.org/orderItemNumber> from [`Self`] as owned vector.
 	fn take_order_item_number(&mut self) -> Vec<OrderItemNumberProperty>;
+	/// Get <https://schema.org/orderItemStatus> from [`Self`] as borrowed slice.
 	fn get_order_item_status(&self) -> &[OrderItemStatusProperty];
+	/// Take <https://schema.org/orderItemStatus> from [`Self`] as owned vector.
 	fn take_order_item_status(&mut self) -> Vec<OrderItemStatusProperty>;
+	/// Get <https://schema.org/orderQuantity> from [`Self`] as borrowed slice.
 	fn get_order_quantity(&self) -> &[OrderQuantityProperty];
+	/// Take <https://schema.org/orderQuantity> from [`Self`] as owned vector.
 	fn take_order_quantity(&mut self) -> Vec<OrderQuantityProperty>;
+	/// Get <https://schema.org/orderedItem> from [`Self`] as borrowed slice.
 	fn get_ordered_item(&self) -> &[OrderedItemProperty];
+	/// Take <https://schema.org/orderedItem> from [`Self`] as owned vector.
 	fn take_ordered_item(&mut self) -> Vec<OrderedItemProperty>;
 }
 impl OrderItemTrait for OrderItem {

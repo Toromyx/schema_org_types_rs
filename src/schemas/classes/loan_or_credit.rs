@@ -3,73 +3,140 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct LoanOrCredit {
+	/// <https://schema.org/amount>
 	pub r#amount: Vec<AmountProperty>,
+	/// <https://schema.org/currency>
 	pub r#currency: Vec<CurrencyProperty>,
+	/// <https://schema.org/gracePeriod>
 	pub r#grace_period: Vec<GracePeriodProperty>,
+	/// <https://schema.org/loanRepaymentForm>
 	pub r#loan_repayment_form: Vec<LoanRepaymentFormProperty>,
+	/// <https://schema.org/loanTerm>
 	pub r#loan_term: Vec<LoanTermProperty>,
+	/// <https://schema.org/loanType>
 	pub r#loan_type: Vec<LoanTypeProperty>,
+	/// <https://schema.org/recourseLoan>
 	pub r#recourse_loan: Vec<RecourseLoanProperty>,
+	/// <https://schema.org/renegotiableLoan>
 	pub r#renegotiable_loan: Vec<RenegotiableLoanProperty>,
+	/// <https://schema.org/requiredCollateral>
 	pub r#required_collateral: Vec<RequiredCollateralProperty>,
+	/// <https://schema.org/annualPercentageRate>
 	pub r#annual_percentage_rate: Vec<AnnualPercentageRateProperty>,
+	/// <https://schema.org/feesAndCommissionsSpecification>
 	pub r#fees_and_commissions_specification: Vec<FeesAndCommissionsSpecificationProperty>,
+	/// <https://schema.org/interestRate>
 	pub r#interest_rate: Vec<InterestRateProperty>,
+	/// <https://schema.org/aggregateRating>
 	pub r#aggregate_rating: Vec<AggregateRatingProperty>,
+	/// <https://schema.org/areaServed>
 	pub r#area_served: Vec<AreaServedProperty>,
+	/// <https://schema.org/audience>
 	pub r#audience: Vec<AudienceProperty>,
+	/// <https://schema.org/availableChannel>
 	pub r#available_channel: Vec<AvailableChannelProperty>,
+	/// <https://schema.org/award>
 	pub r#award: Vec<AwardProperty>,
+	/// <https://schema.org/brand>
 	pub r#brand: Vec<BrandProperty>,
+	/// <https://schema.org/broker>
 	pub r#broker: Vec<BrokerProperty>,
+	/// <https://schema.org/category>
 	pub r#category: Vec<CategoryProperty>,
+	/// <https://schema.org/hasOfferCatalog>
 	pub r#has_offer_catalog: Vec<HasOfferCatalogProperty>,
+	/// <https://schema.org/hoursAvailable>
 	pub r#hours_available: Vec<HoursAvailableProperty>,
+	/// <https://schema.org/isRelatedTo>
 	pub r#is_related_to: Vec<IsRelatedToProperty>,
+	/// <https://schema.org/isSimilarTo>
 	pub r#is_similar_to: Vec<IsSimilarToProperty>,
+	/// <https://schema.org/logo>
 	pub r#logo: Vec<LogoProperty>,
+	/// <https://schema.org/offers>
 	pub r#offers: Vec<OffersProperty>,
+	/// <https://schema.org/produces>
 	pub r#produces: Vec<ProducesProperty>,
+	/// <https://schema.org/provider>
 	pub r#provider: Vec<ProviderProperty>,
+	/// <https://schema.org/providerMobility>
 	pub r#provider_mobility: Vec<ProviderMobilityProperty>,
+	/// <https://schema.org/review>
 	pub r#review: Vec<ReviewProperty>,
+	/// <https://schema.org/serviceArea>
 	pub r#service_area: Vec<ServiceAreaProperty>,
+	/// <https://schema.org/serviceAudience>
 	pub r#service_audience: Vec<ServiceAudienceProperty>,
+	/// <https://schema.org/serviceOutput>
 	pub r#service_output: Vec<ServiceOutputProperty>,
+	/// <https://schema.org/serviceType>
 	pub r#service_type: Vec<ServiceTypeProperty>,
+	/// <https://schema.org/slogan>
 	pub r#slogan: Vec<SloganProperty>,
+	/// <https://schema.org/termsOfService>
 	pub r#terms_of_service: Vec<TermsOfServiceProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/LoanOrCredit>.
 pub trait LoanOrCreditTrait {
+	/// Get <https://schema.org/amount> from [`Self`] as borrowed slice.
 	fn get_amount(&self) -> &[AmountProperty];
+	/// Take <https://schema.org/amount> from [`Self`] as owned vector.
 	fn take_amount(&mut self) -> Vec<AmountProperty>;
+	/// Get <https://schema.org/currency> from [`Self`] as borrowed slice.
 	fn get_currency(&self) -> &[CurrencyProperty];
+	/// Take <https://schema.org/currency> from [`Self`] as owned vector.
 	fn take_currency(&mut self) -> Vec<CurrencyProperty>;
+	/// Get <https://schema.org/gracePeriod> from [`Self`] as borrowed slice.
 	fn get_grace_period(&self) -> &[GracePeriodProperty];
+	/// Take <https://schema.org/gracePeriod> from [`Self`] as owned vector.
 	fn take_grace_period(&mut self) -> Vec<GracePeriodProperty>;
+	/// Get <https://schema.org/loanRepaymentForm> from [`Self`] as borrowed slice.
 	fn get_loan_repayment_form(&self) -> &[LoanRepaymentFormProperty];
+	/// Take <https://schema.org/loanRepaymentForm> from [`Self`] as owned vector.
 	fn take_loan_repayment_form(&mut self) -> Vec<LoanRepaymentFormProperty>;
+	/// Get <https://schema.org/loanTerm> from [`Self`] as borrowed slice.
 	fn get_loan_term(&self) -> &[LoanTermProperty];
+	/// Take <https://schema.org/loanTerm> from [`Self`] as owned vector.
 	fn take_loan_term(&mut self) -> Vec<LoanTermProperty>;
+	/// Get <https://schema.org/loanType> from [`Self`] as borrowed slice.
 	fn get_loan_type(&self) -> &[LoanTypeProperty];
+	/// Take <https://schema.org/loanType> from [`Self`] as owned vector.
 	fn take_loan_type(&mut self) -> Vec<LoanTypeProperty>;
+	/// Get <https://schema.org/recourseLoan> from [`Self`] as borrowed slice.
 	fn get_recourse_loan(&self) -> &[RecourseLoanProperty];
+	/// Take <https://schema.org/recourseLoan> from [`Self`] as owned vector.
 	fn take_recourse_loan(&mut self) -> Vec<RecourseLoanProperty>;
+	/// Get <https://schema.org/renegotiableLoan> from [`Self`] as borrowed slice.
 	fn get_renegotiable_loan(&self) -> &[RenegotiableLoanProperty];
+	/// Take <https://schema.org/renegotiableLoan> from [`Self`] as owned vector.
 	fn take_renegotiable_loan(&mut self) -> Vec<RenegotiableLoanProperty>;
+	/// Get <https://schema.org/requiredCollateral> from [`Self`] as borrowed slice.
 	fn get_required_collateral(&self) -> &[RequiredCollateralProperty];
+	/// Take <https://schema.org/requiredCollateral> from [`Self`] as owned vector.
 	fn take_required_collateral(&mut self) -> Vec<RequiredCollateralProperty>;
 }
 impl LoanOrCreditTrait for LoanOrCredit {

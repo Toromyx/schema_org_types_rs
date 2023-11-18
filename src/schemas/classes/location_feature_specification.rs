@@ -3,37 +3,68 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct LocationFeatureSpecification {
+	/// <https://schema.org/hoursAvailable>
 	pub r#hours_available: Vec<HoursAvailableProperty>,
+	/// <https://schema.org/validFrom>
 	pub r#valid_from: Vec<ValidFromProperty>,
+	/// <https://schema.org/validThrough>
 	pub r#valid_through: Vec<ValidThroughProperty>,
+	/// <https://schema.org/maxValue>
 	pub r#max_value: Vec<MaxValueProperty>,
+	/// <https://schema.org/measurementMethod>
 	pub r#measurement_method: Vec<MeasurementMethodProperty>,
+	/// <https://schema.org/measurementTechnique>
 	pub r#measurement_technique: Vec<MeasurementTechniqueProperty>,
+	/// <https://schema.org/minValue>
 	pub r#min_value: Vec<MinValueProperty>,
+	/// <https://schema.org/propertyID>
 	pub r#property_id: Vec<PropertyIdProperty>,
+	/// <https://schema.org/unitCode>
 	pub r#unit_code: Vec<UnitCodeProperty>,
+	/// <https://schema.org/unitText>
 	pub r#unit_text: Vec<UnitTextProperty>,
+	/// <https://schema.org/value>
 	pub r#value: Vec<ValueProperty>,
+	/// <https://schema.org/valueReference>
 	pub r#value_reference: Vec<ValueReferenceProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/LocationFeatureSpecification>.
 pub trait LocationFeatureSpecificationTrait {
+	/// Get <https://schema.org/hoursAvailable> from [`Self`] as borrowed slice.
 	fn get_hours_available(&self) -> &[HoursAvailableProperty];
+	/// Take <https://schema.org/hoursAvailable> from [`Self`] as owned vector.
 	fn take_hours_available(&mut self) -> Vec<HoursAvailableProperty>;
+	/// Get <https://schema.org/validFrom> from [`Self`] as borrowed slice.
 	fn get_valid_from(&self) -> &[ValidFromProperty];
+	/// Take <https://schema.org/validFrom> from [`Self`] as owned vector.
 	fn take_valid_from(&mut self) -> Vec<ValidFromProperty>;
+	/// Get <https://schema.org/validThrough> from [`Self`] as borrowed slice.
 	fn get_valid_through(&self) -> &[ValidThroughProperty];
+	/// Take <https://schema.org/validThrough> from [`Self`] as owned vector.
 	fn take_valid_through(&mut self) -> Vec<ValidThroughProperty>;
 }
 impl LocationFeatureSpecificationTrait for LocationFeatureSpecification {

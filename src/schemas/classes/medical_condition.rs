@@ -3,75 +3,144 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct MedicalCondition {
+	/// <https://schema.org/associatedAnatomy>
 	pub r#associated_anatomy: Vec<AssociatedAnatomyProperty>,
+	/// <https://schema.org/differentialDiagnosis>
 	pub r#differential_diagnosis: Vec<DifferentialDiagnosisProperty>,
+	/// <https://schema.org/drug>
 	pub r#drug: Vec<DrugProperty>,
+	/// <https://schema.org/epidemiology>
 	pub r#epidemiology: Vec<EpidemiologyProperty>,
+	/// <https://schema.org/expectedPrognosis>
 	pub r#expected_prognosis: Vec<ExpectedPrognosisProperty>,
+	/// <https://schema.org/naturalProgression>
 	pub r#natural_progression: Vec<NaturalProgressionProperty>,
+	/// <https://schema.org/pathophysiology>
 	pub r#pathophysiology: Vec<PathophysiologyProperty>,
+	/// <https://schema.org/possibleComplication>
 	pub r#possible_complication: Vec<PossibleComplicationProperty>,
+	/// <https://schema.org/possibleTreatment>
 	pub r#possible_treatment: Vec<PossibleTreatmentProperty>,
+	/// <https://schema.org/primaryPrevention>
 	pub r#primary_prevention: Vec<PrimaryPreventionProperty>,
+	/// <https://schema.org/riskFactor>
 	pub r#risk_factor: Vec<RiskFactorProperty>,
+	/// <https://schema.org/secondaryPrevention>
 	pub r#secondary_prevention: Vec<SecondaryPreventionProperty>,
+	/// <https://schema.org/signOrSymptom>
 	pub r#sign_or_symptom: Vec<SignOrSymptomProperty>,
+	/// <https://schema.org/stage>
 	pub r#stage: Vec<StageProperty>,
+	/// <https://schema.org/status>
 	pub r#status: Vec<StatusProperty>,
+	/// <https://schema.org/typicalTest>
 	pub r#typical_test: Vec<TypicalTestProperty>,
+	/// <https://schema.org/code>
 	pub r#code: Vec<CodeProperty>,
+	/// <https://schema.org/funding>
 	pub r#funding: Vec<FundingProperty>,
+	/// <https://schema.org/guideline>
 	pub r#guideline: Vec<GuidelineProperty>,
+	/// <https://schema.org/legalStatus>
 	pub r#legal_status: Vec<LegalStatusProperty>,
+	/// <https://schema.org/medicineSystem>
 	pub r#medicine_system: Vec<MedicineSystemProperty>,
+	/// <https://schema.org/recognizingAuthority>
 	pub r#recognizing_authority: Vec<RecognizingAuthorityProperty>,
+	/// <https://schema.org/relevantSpecialty>
 	pub r#relevant_specialty: Vec<RelevantSpecialtyProperty>,
+	/// <https://schema.org/study>
 	pub r#study: Vec<StudyProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/MedicalCondition>.
 pub trait MedicalConditionTrait {
+	/// Get <https://schema.org/associatedAnatomy> from [`Self`] as borrowed slice.
 	fn get_associated_anatomy(&self) -> &[AssociatedAnatomyProperty];
+	/// Take <https://schema.org/associatedAnatomy> from [`Self`] as owned vector.
 	fn take_associated_anatomy(&mut self) -> Vec<AssociatedAnatomyProperty>;
+	/// Get <https://schema.org/differentialDiagnosis> from [`Self`] as borrowed slice.
 	fn get_differential_diagnosis(&self) -> &[DifferentialDiagnosisProperty];
+	/// Take <https://schema.org/differentialDiagnosis> from [`Self`] as owned vector.
 	fn take_differential_diagnosis(&mut self) -> Vec<DifferentialDiagnosisProperty>;
+	/// Get <https://schema.org/drug> from [`Self`] as borrowed slice.
 	fn get_drug(&self) -> &[DrugProperty];
+	/// Take <https://schema.org/drug> from [`Self`] as owned vector.
 	fn take_drug(&mut self) -> Vec<DrugProperty>;
+	/// Get <https://schema.org/epidemiology> from [`Self`] as borrowed slice.
 	fn get_epidemiology(&self) -> &[EpidemiologyProperty];
+	/// Take <https://schema.org/epidemiology> from [`Self`] as owned vector.
 	fn take_epidemiology(&mut self) -> Vec<EpidemiologyProperty>;
+	/// Get <https://schema.org/expectedPrognosis> from [`Self`] as borrowed slice.
 	fn get_expected_prognosis(&self) -> &[ExpectedPrognosisProperty];
+	/// Take <https://schema.org/expectedPrognosis> from [`Self`] as owned vector.
 	fn take_expected_prognosis(&mut self) -> Vec<ExpectedPrognosisProperty>;
+	/// Get <https://schema.org/naturalProgression> from [`Self`] as borrowed slice.
 	fn get_natural_progression(&self) -> &[NaturalProgressionProperty];
+	/// Take <https://schema.org/naturalProgression> from [`Self`] as owned vector.
 	fn take_natural_progression(&mut self) -> Vec<NaturalProgressionProperty>;
+	/// Get <https://schema.org/pathophysiology> from [`Self`] as borrowed slice.
 	fn get_pathophysiology(&self) -> &[PathophysiologyProperty];
+	/// Take <https://schema.org/pathophysiology> from [`Self`] as owned vector.
 	fn take_pathophysiology(&mut self) -> Vec<PathophysiologyProperty>;
+	/// Get <https://schema.org/possibleComplication> from [`Self`] as borrowed slice.
 	fn get_possible_complication(&self) -> &[PossibleComplicationProperty];
+	/// Take <https://schema.org/possibleComplication> from [`Self`] as owned vector.
 	fn take_possible_complication(&mut self) -> Vec<PossibleComplicationProperty>;
+	/// Get <https://schema.org/possibleTreatment> from [`Self`] as borrowed slice.
 	fn get_possible_treatment(&self) -> &[PossibleTreatmentProperty];
+	/// Take <https://schema.org/possibleTreatment> from [`Self`] as owned vector.
 	fn take_possible_treatment(&mut self) -> Vec<PossibleTreatmentProperty>;
+	/// Get <https://schema.org/primaryPrevention> from [`Self`] as borrowed slice.
 	fn get_primary_prevention(&self) -> &[PrimaryPreventionProperty];
+	/// Take <https://schema.org/primaryPrevention> from [`Self`] as owned vector.
 	fn take_primary_prevention(&mut self) -> Vec<PrimaryPreventionProperty>;
+	/// Get <https://schema.org/riskFactor> from [`Self`] as borrowed slice.
 	fn get_risk_factor(&self) -> &[RiskFactorProperty];
+	/// Take <https://schema.org/riskFactor> from [`Self`] as owned vector.
 	fn take_risk_factor(&mut self) -> Vec<RiskFactorProperty>;
+	/// Get <https://schema.org/secondaryPrevention> from [`Self`] as borrowed slice.
 	fn get_secondary_prevention(&self) -> &[SecondaryPreventionProperty];
+	/// Take <https://schema.org/secondaryPrevention> from [`Self`] as owned vector.
 	fn take_secondary_prevention(&mut self) -> Vec<SecondaryPreventionProperty>;
+	/// Get <https://schema.org/signOrSymptom> from [`Self`] as borrowed slice.
 	fn get_sign_or_symptom(&self) -> &[SignOrSymptomProperty];
+	/// Take <https://schema.org/signOrSymptom> from [`Self`] as owned vector.
 	fn take_sign_or_symptom(&mut self) -> Vec<SignOrSymptomProperty>;
+	/// Get <https://schema.org/stage> from [`Self`] as borrowed slice.
 	fn get_stage(&self) -> &[StageProperty];
+	/// Take <https://schema.org/stage> from [`Self`] as owned vector.
 	fn take_stage(&mut self) -> Vec<StageProperty>;
+	/// Get <https://schema.org/status> from [`Self`] as borrowed slice.
 	fn get_status(&self) -> &[StatusProperty];
+	/// Take <https://schema.org/status> from [`Self`] as owned vector.
 	fn take_status(&mut self) -> Vec<StatusProperty>;
+	/// Get <https://schema.org/typicalTest> from [`Self`] as borrowed slice.
 	fn get_typical_test(&self) -> &[TypicalTestProperty];
+	/// Take <https://schema.org/typicalTest> from [`Self`] as owned vector.
 	fn take_typical_test(&mut self) -> Vec<TypicalTestProperty>;
 }
 impl MedicalConditionTrait for MedicalCondition {

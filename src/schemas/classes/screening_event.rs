@@ -3,69 +3,132 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct ScreeningEvent {
+	/// <https://schema.org/subtitleLanguage>
 	pub r#subtitle_language: Vec<SubtitleLanguageProperty>,
+	/// <https://schema.org/videoFormat>
 	pub r#video_format: Vec<VideoFormatProperty>,
+	/// <https://schema.org/workPresented>
 	pub r#work_presented: Vec<WorkPresentedProperty>,
+	/// <https://schema.org/about>
 	pub r#about: Vec<AboutProperty>,
+	/// <https://schema.org/actor>
 	pub r#actor: Vec<ActorProperty>,
+	/// <https://schema.org/aggregateRating>
 	pub r#aggregate_rating: Vec<AggregateRatingProperty>,
+	/// <https://schema.org/attendee>
 	pub r#attendee: Vec<AttendeeProperty>,
+	/// <https://schema.org/attendees>
 	pub r#attendees: Vec<AttendeesProperty>,
+	/// <https://schema.org/audience>
 	pub r#audience: Vec<AudienceProperty>,
+	/// <https://schema.org/composer>
 	pub r#composer: Vec<ComposerProperty>,
+	/// <https://schema.org/contributor>
 	pub r#contributor: Vec<ContributorProperty>,
+	/// <https://schema.org/director>
 	pub r#director: Vec<DirectorProperty>,
+	/// <https://schema.org/doorTime>
 	pub r#door_time: Vec<DoorTimeProperty>,
+	/// <https://schema.org/duration>
 	pub r#duration: Vec<DurationProperty>,
+	/// <https://schema.org/endDate>
 	pub r#end_date: Vec<EndDateProperty>,
+	/// <https://schema.org/eventAttendanceMode>
 	pub r#event_attendance_mode: Vec<EventAttendanceModeProperty>,
+	/// <https://schema.org/eventSchedule>
 	pub r#event_schedule: Vec<EventScheduleProperty>,
+	/// <https://schema.org/eventStatus>
 	pub r#event_status: Vec<EventStatusProperty>,
+	/// <https://schema.org/funder>
 	pub r#funder: Vec<FunderProperty>,
+	/// <https://schema.org/funding>
 	pub r#funding: Vec<FundingProperty>,
+	/// <https://schema.org/inLanguage>
 	pub r#in_language: Vec<InLanguageProperty>,
+	/// <https://schema.org/isAccessibleForFree>
 	pub r#is_accessible_for_free: Vec<IsAccessibleForFreeProperty>,
+	/// <https://schema.org/keywords>
 	pub r#keywords: Vec<KeywordsProperty>,
+	/// <https://schema.org/location>
 	pub r#location: Vec<LocationProperty>,
+	/// <https://schema.org/maximumAttendeeCapacity>
 	pub r#maximum_attendee_capacity: Vec<MaximumAttendeeCapacityProperty>,
+	/// <https://schema.org/maximumPhysicalAttendeeCapacity>
 	pub r#maximum_physical_attendee_capacity: Vec<MaximumPhysicalAttendeeCapacityProperty>,
+	/// <https://schema.org/maximumVirtualAttendeeCapacity>
 	pub r#maximum_virtual_attendee_capacity: Vec<MaximumVirtualAttendeeCapacityProperty>,
+	/// <https://schema.org/offers>
 	pub r#offers: Vec<OffersProperty>,
+	/// <https://schema.org/organizer>
 	pub r#organizer: Vec<OrganizerProperty>,
+	/// <https://schema.org/performer>
 	pub r#performer: Vec<PerformerProperty>,
+	/// <https://schema.org/performers>
 	pub r#performers: Vec<PerformersProperty>,
+	/// <https://schema.org/previousStartDate>
 	pub r#previous_start_date: Vec<PreviousStartDateProperty>,
+	/// <https://schema.org/recordedIn>
 	pub r#recorded_in: Vec<RecordedInProperty>,
+	/// <https://schema.org/remainingAttendeeCapacity>
 	pub r#remaining_attendee_capacity: Vec<RemainingAttendeeCapacityProperty>,
+	/// <https://schema.org/review>
 	pub r#review: Vec<ReviewProperty>,
+	/// <https://schema.org/sponsor>
 	pub r#sponsor: Vec<SponsorProperty>,
+	/// <https://schema.org/startDate>
 	pub r#start_date: Vec<StartDateProperty>,
+	/// <https://schema.org/subEvent>
 	pub r#sub_event: Vec<SubEventProperty>,
+	/// <https://schema.org/subEvents>
 	pub r#sub_events: Vec<SubEventsProperty>,
+	/// <https://schema.org/superEvent>
 	pub r#super_event: Vec<SuperEventProperty>,
+	/// <https://schema.org/translator>
 	pub r#translator: Vec<TranslatorProperty>,
+	/// <https://schema.org/typicalAgeRange>
 	pub r#typical_age_range: Vec<TypicalAgeRangeProperty>,
+	/// <https://schema.org/workFeatured>
 	pub r#work_featured: Vec<WorkFeaturedProperty>,
+	/// <https://schema.org/workPerformed>
 	pub r#work_performed: Vec<WorkPerformedProperty>,
+	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
+	/// <https://schema.org/alternateName>
 	pub r#alternate_name: Vec<AlternateNameProperty>,
+	/// <https://schema.org/description>
 	pub r#description: Vec<DescriptionProperty>,
+	/// <https://schema.org/disambiguatingDescription>
 	pub r#disambiguating_description: Vec<DisambiguatingDescriptionProperty>,
+	/// <https://schema.org/identifier>
 	pub r#identifier: Vec<IdentifierProperty>,
+	/// <https://schema.org/image>
 	pub r#image: Vec<ImageProperty>,
+	/// <https://schema.org/mainEntityOfPage>
 	pub r#main_entity_of_page: Vec<MainEntityOfPageProperty>,
+	/// <https://schema.org/name>
 	pub r#name: Vec<NameProperty>,
+	/// <https://schema.org/potentialAction>
 	pub r#potential_action: Vec<PotentialActionProperty>,
+	/// <https://schema.org/sameAs>
 	pub r#same_as: Vec<SameAsProperty>,
+	/// <https://schema.org/subjectOf>
 	pub r#subject_of: Vec<SubjectOfProperty>,
+	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 }
+/// This trait is for properties from <https://schema.org/ScreeningEvent>.
 pub trait ScreeningEventTrait {
+	/// Get <https://schema.org/subtitleLanguage> from [`Self`] as borrowed slice.
 	fn get_subtitle_language(&self) -> &[SubtitleLanguageProperty];
+	/// Take <https://schema.org/subtitleLanguage> from [`Self`] as owned vector.
 	fn take_subtitle_language(&mut self) -> Vec<SubtitleLanguageProperty>;
+	/// Get <https://schema.org/videoFormat> from [`Self`] as borrowed slice.
 	fn get_video_format(&self) -> &[VideoFormatProperty];
+	/// Take <https://schema.org/videoFormat> from [`Self`] as owned vector.
 	fn take_video_format(&mut self) -> Vec<VideoFormatProperty>;
+	/// Get <https://schema.org/workPresented> from [`Self`] as borrowed slice.
 	fn get_work_presented(&self) -> &[WorkPresentedProperty];
+	/// Take <https://schema.org/workPresented> from [`Self`] as owned vector.
 	fn take_work_presented(&mut self) -> Vec<WorkPresentedProperty>;
 }
 impl ScreeningEventTrait for ScreeningEvent {
