@@ -15,10 +15,8 @@ jobs:
       - uses: actions-rs/toolchain@v1
         id: toolchain
         with:
-          toolchain: stable
-      - uses: actions-rs/install@v0.1
-        with:
-          crate: cargo-msrv
+          # keep synchronized with Cargo.toml
+          toolchain: 1.66
       - uses: actions/cache@v3
         with:
           key: rust-${{ steps.toolchain.outputs.rustc_hash }}-${{ hashFiles('src/**') }}-${{ hashFiles('Cargo.toml') }}
@@ -29,12 +27,4 @@ jobs:
           path: |
             target
             ~/.cargo
-      - uses: actions/cache@v3
-        with:
-          key: rustup-msrv-check-${{ steps.toolchain.outputs.rustc_hash }}-${{ hashFiles('Cargo.toml') }}
-          restore-keys: |
-            rustup-msrv-check-${{ steps.toolchain.outputs.rustc_hash }}-
-            rustup-msrv-check-
-          path: |
-            ~/.rustup/toolchains
-      - run: cargo msrv verify -- cargo check --all-features
+      - run: cargo check --all-features
