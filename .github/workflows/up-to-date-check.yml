@@ -16,6 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: actions-rs/toolchain@v1
+        id: toolchain
         with:
           toolchain: stable
       - uses: actions-rs/toolchain@v1
@@ -24,10 +25,12 @@ jobs:
           components: rustfmt
       - uses: actions/cache@v3
         with:
-          key: rust-generator-${{ hashFiles('generator/Cargo.lock') }}-${{ hashFiles('generator/Cargo.toml', 'generator/src/**') }}
+          key: rust-${{ steps.toolchain.outputs.rustc_hash }}-generator-${{ hashFiles('generator/Cargo.lock') }}-${{ hashFiles('generator/src/**') }}-${{ hashFiles('generator/Cargo.toml') }}
           restore-keys: |
-            rust-generator-${{ hashFiles('generator/Cargo.lock') }}-
-            rust-generator-
+            rust-${{ steps.toolchain.outputs.rustc_hash }}-generator-${{ hashFiles('generator/Cargo.lock') }}-${{ hashFiles('generator/src/**') }}-
+            rust-${{ steps.toolchain.outputs.rustc_hash }}-generator-${{ hashFiles('generator/Cargo.lock') }}-
+            rust-${{ steps.toolchain.outputs.rustc_hash }}-generator-
+            rust-${{ steps.toolchain.outputs.rustc_hash }}-
             rust-
           path: |
             generator/target

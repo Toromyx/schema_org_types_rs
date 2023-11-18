@@ -8,6 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: actions-rs/toolchain@v1
+        id: toolchain
         with:
           toolchain: stable
       - uses: actions-rs/install@v0.1
@@ -15,9 +16,10 @@ jobs:
           crate: cargo-msrv
       - uses: actions/cache@v3
         with:
-          key: rust-${{ hashFiles('Cargo.lock') }}-${{ hashFiles('Cargo.toml', 'src/**') }}
+          key: rust-${{ steps.toolchain.outputs.rustc_hash }}-${{ hashFiles('src/**') }}-${{ hashFiles('Cargo.toml') }}
           restore-keys: |
-            rust-${{ hashFiles('Cargo.lock') }}-
+            rust-${{ steps.toolchain.outputs.rustc_hash }}-${{ hashFiles('src/**') }}-
+            rust-${{ steps.toolchain.outputs.rustc_hash }}-
             rust-
           path: |
             target
