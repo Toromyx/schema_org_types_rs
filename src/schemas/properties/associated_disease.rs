@@ -3,8 +3,11 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum AssociatedDiseaseProperty {
+	/// <https://schema.org/MedicalCondition>
 	MedicalCondition(MedicalCondition),
+	/// <https://schema.org/PropertyValue>
 	PropertyValue(PropertyValue),
+	/// <https://schema.org/URL>
 	Url(Url),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),

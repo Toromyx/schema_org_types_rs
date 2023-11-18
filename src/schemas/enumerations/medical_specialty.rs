@@ -11,6 +11,7 @@ pub enum MedicalSpecialty {
 	/// <https://schema.org/Dentistry>
 	Dentistry,
 	/// <https://schema.org/Dermatologic>
+	#[deprecated = "This schema is superseded by <https://schema.org/Dermatology>."]
 	Dermatologic,
 	/// <https://schema.org/Dermatology>
 	Dermatology,

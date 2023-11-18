@@ -10,10 +10,12 @@ pub struct SoftwareSourceCode {
 	/// <https://schema.org/programmingLanguage>
 	pub r#programming_language: Vec<ProgrammingLanguageProperty>,
 	/// <https://schema.org/runtime>
+	#[deprecated = "This schema is superseded by <https://schema.org/runtimePlatform>."]
 	pub r#runtime: Vec<RuntimeProperty>,
 	/// <https://schema.org/runtimePlatform>
 	pub r#runtime_platform: Vec<RuntimePlatformProperty>,
 	/// <https://schema.org/sampleType>
+	#[deprecated = "This schema is superseded by <https://schema.org/codeSampleType>."]
 	pub r#sample_type: Vec<SampleTypeProperty>,
 	/// <https://schema.org/targetProduct>
 	pub r#target_product: Vec<TargetProductProperty>,
@@ -58,6 +60,7 @@ pub struct SoftwareSourceCode {
 	/// <https://schema.org/award>
 	pub r#award: Vec<AwardProperty>,
 	/// <https://schema.org/awards>
+	#[deprecated = "This schema is superseded by <https://schema.org/award>."]
 	pub r#awards: Vec<AwardsProperty>,
 	/// <https://schema.org/character>
 	pub r#character: Vec<CharacterProperty>,
@@ -116,12 +119,14 @@ pub struct SoftwareSourceCode {
 	/// <https://schema.org/encodingFormat>
 	pub r#encoding_format: Vec<EncodingFormatProperty>,
 	/// <https://schema.org/encodings>
+	#[deprecated = "This schema is superseded by <https://schema.org/encoding>."]
 	pub r#encodings: Vec<EncodingsProperty>,
 	/// <https://schema.org/exampleOfWork>
 	pub r#example_of_work: Vec<ExampleOfWorkProperty>,
 	/// <https://schema.org/expires>
 	pub r#expires: Vec<ExpiresProperty>,
 	/// <https://schema.org/fileFormat>
+	#[deprecated = "This schema is superseded by <https://schema.org/encodingFormat>."]
 	pub r#file_format: Vec<FileFormatProperty>,
 	/// <https://schema.org/funder>
 	pub r#funder: Vec<FunderProperty>,
@@ -146,6 +151,7 @@ pub struct SoftwareSourceCode {
 	/// <https://schema.org/isBasedOn>
 	pub r#is_based_on: Vec<IsBasedOnProperty>,
 	/// <https://schema.org/isBasedOnUrl>
+	#[deprecated = "This schema is superseded by <https://schema.org/isBasedOn>."]
 	pub r#is_based_on_url: Vec<IsBasedOnUrlProperty>,
 	/// <https://schema.org/isFamilyFriendly>
 	pub r#is_family_friendly: Vec<IsFamilyFriendlyProperty>,
@@ -194,6 +200,7 @@ pub struct SoftwareSourceCode {
 	/// <https://schema.org/review>
 	pub r#review: Vec<ReviewProperty>,
 	/// <https://schema.org/reviews>
+	#[deprecated = "This schema is superseded by <https://schema.org/review>."]
 	pub r#reviews: Vec<ReviewsProperty>,
 	/// <https://schema.org/schemaVersion>
 	pub r#schema_version: Vec<SchemaVersionProperty>,
@@ -283,16 +290,20 @@ pub trait SoftwareSourceCodeTrait {
 	/// Take <https://schema.org/programmingLanguage> from [`Self`] as owned vector.
 	fn take_programming_language(&mut self) -> Vec<ProgrammingLanguageProperty>;
 	/// Get <https://schema.org/runtime> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/runtimePlatform>."]
 	fn get_runtime(&self) -> &[RuntimeProperty];
 	/// Take <https://schema.org/runtime> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/runtimePlatform>."]
 	fn take_runtime(&mut self) -> Vec<RuntimeProperty>;
 	/// Get <https://schema.org/runtimePlatform> from [`Self`] as borrowed slice.
 	fn get_runtime_platform(&self) -> &[RuntimePlatformProperty];
 	/// Take <https://schema.org/runtimePlatform> from [`Self`] as owned vector.
 	fn take_runtime_platform(&mut self) -> Vec<RuntimePlatformProperty>;
 	/// Get <https://schema.org/sampleType> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/codeSampleType>."]
 	fn get_sample_type(&self) -> &[SampleTypeProperty];
 	/// Take <https://schema.org/sampleType> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/codeSampleType>."]
 	fn take_sample_type(&mut self) -> Vec<SampleTypeProperty>;
 	/// Get <https://schema.org/targetProduct> from [`Self`] as borrowed slice.
 	fn get_target_product(&self) -> &[TargetProductProperty];

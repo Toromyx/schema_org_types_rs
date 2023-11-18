@@ -4,6 +4,7 @@ use super::*;
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct RadioBroadcastService {
 	/// <https://schema.org/area>
+	#[deprecated = "This schema is superseded by <https://schema.org/serviceArea>."]
 	pub r#area: Vec<AreaProperty>,
 	/// <https://schema.org/broadcastAffiliateOf>
 	pub r#broadcast_affiliate_of: Vec<BroadcastAffiliateOfProperty>,
@@ -54,6 +55,7 @@ pub struct RadioBroadcastService {
 	/// <https://schema.org/offers>
 	pub r#offers: Vec<OffersProperty>,
 	/// <https://schema.org/produces>
+	#[deprecated = "This schema is superseded by <https://schema.org/serviceOutput>."]
 	pub r#produces: Vec<ProducesProperty>,
 	/// <https://schema.org/provider>
 	pub r#provider: Vec<ProviderProperty>,
@@ -62,8 +64,10 @@ pub struct RadioBroadcastService {
 	/// <https://schema.org/review>
 	pub r#review: Vec<ReviewProperty>,
 	/// <https://schema.org/serviceArea>
+	#[deprecated = "This schema is superseded by <https://schema.org/areaServed>."]
 	pub r#service_area: Vec<ServiceAreaProperty>,
 	/// <https://schema.org/serviceAudience>
+	#[deprecated = "This schema is superseded by <https://schema.org/audience>."]
 	pub r#service_audience: Vec<ServiceAudienceProperty>,
 	/// <https://schema.org/serviceOutput>
 	pub r#service_output: Vec<ServiceOutputProperty>,

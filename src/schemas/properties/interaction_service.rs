@@ -3,7 +3,9 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum InteractionServiceProperty {
+	/// <https://schema.org/SoftwareApplication>
 	SoftwareApplication(SoftwareApplication),
+	/// <https://schema.org/WebSite>
 	WebSite(WebSite),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),

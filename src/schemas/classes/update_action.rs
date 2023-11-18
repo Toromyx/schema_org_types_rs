@@ -4,6 +4,7 @@ use super::*;
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct UpdateAction {
 	/// <https://schema.org/collection>
+	#[deprecated = "This schema is superseded by <https://schema.org/targetCollection>."]
 	pub r#collection: Vec<CollectionProperty>,
 	/// <https://schema.org/targetCollection>
 	pub r#target_collection: Vec<TargetCollectionProperty>,
@@ -59,8 +60,10 @@ pub struct UpdateAction {
 /// This trait is for properties from <https://schema.org/UpdateAction>.
 pub trait UpdateActionTrait {
 	/// Get <https://schema.org/collection> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/targetCollection>."]
 	fn get_collection(&self) -> &[CollectionProperty];
 	/// Take <https://schema.org/collection> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/targetCollection>."]
 	fn take_collection(&mut self) -> Vec<CollectionProperty>;
 	/// Get <https://schema.org/targetCollection> from [`Self`] as borrowed slice.
 	fn get_target_collection(&self) -> &[TargetCollectionProperty];

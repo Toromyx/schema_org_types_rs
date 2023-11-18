@@ -10,6 +10,7 @@ pub struct JobPosting {
 	/// <https://schema.org/baseSalary>
 	pub r#base_salary: Vec<BaseSalaryProperty>,
 	/// <https://schema.org/benefits>
+	#[deprecated = "This schema is superseded by <https://schema.org/jobBenefits>."]
 	pub r#benefits: Vec<BenefitsProperty>,
 	/// <https://schema.org/datePosted>
 	pub r#date_posted: Vec<DatePostedProperty>,
@@ -36,6 +37,7 @@ pub struct JobPosting {
 	/// <https://schema.org/incentiveCompensation>
 	pub r#incentive_compensation: Vec<IncentiveCompensationProperty>,
 	/// <https://schema.org/incentives>
+	#[deprecated = "This schema is superseded by <https://schema.org/incentiveCompensation>."]
 	pub r#incentives: Vec<IncentivesProperty>,
 	/// <https://schema.org/industry>
 	pub r#industry: Vec<IndustryProperty>,
@@ -119,8 +121,10 @@ pub trait JobPostingTrait {
 	/// Take <https://schema.org/baseSalary> from [`Self`] as owned vector.
 	fn take_base_salary(&mut self) -> Vec<BaseSalaryProperty>;
 	/// Get <https://schema.org/benefits> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/jobBenefits>."]
 	fn get_benefits(&self) -> &[BenefitsProperty];
 	/// Take <https://schema.org/benefits> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/jobBenefits>."]
 	fn take_benefits(&mut self) -> Vec<BenefitsProperty>;
 	/// Get <https://schema.org/datePosted> from [`Self`] as borrowed slice.
 	fn get_date_posted(&self) -> &[DatePostedProperty];
@@ -174,8 +178,10 @@ pub trait JobPostingTrait {
 	/// Take <https://schema.org/incentiveCompensation> from [`Self`] as owned vector.
 	fn take_incentive_compensation(&mut self) -> Vec<IncentiveCompensationProperty>;
 	/// Get <https://schema.org/incentives> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/incentiveCompensation>."]
 	fn get_incentives(&self) -> &[IncentivesProperty];
 	/// Take <https://schema.org/incentives> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/incentiveCompensation>."]
 	fn take_incentives(&mut self) -> Vec<IncentivesProperty>;
 	/// Get <https://schema.org/industry> from [`Self`] as borrowed slice.
 	fn get_industry(&self) -> &[IndustryProperty];

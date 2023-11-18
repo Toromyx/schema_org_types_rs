@@ -10,6 +10,7 @@ pub struct FoodEstablishmentReservation {
 	/// <https://schema.org/startTime>
 	pub r#start_time: Vec<StartTimeProperty>,
 	/// <https://schema.org/bookingAgent>
+	#[deprecated = "This schema is superseded by <https://schema.org/broker>."]
 	pub r#booking_agent: Vec<BookingAgentProperty>,
 	/// <https://schema.org/bookingTime>
 	pub r#booking_time: Vec<BookingTimeProperty>,

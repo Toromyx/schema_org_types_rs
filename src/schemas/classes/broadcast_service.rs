@@ -4,6 +4,7 @@ use super::*;
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct BroadcastService {
 	/// <https://schema.org/area>
+	#[deprecated = "This schema is superseded by <https://schema.org/serviceArea>."]
 	pub r#area: Vec<AreaProperty>,
 	/// <https://schema.org/broadcastAffiliateOf>
 	pub r#broadcast_affiliate_of: Vec<BroadcastAffiliateOfProperty>,
@@ -54,6 +55,7 @@ pub struct BroadcastService {
 	/// <https://schema.org/offers>
 	pub r#offers: Vec<OffersProperty>,
 	/// <https://schema.org/produces>
+	#[deprecated = "This schema is superseded by <https://schema.org/serviceOutput>."]
 	pub r#produces: Vec<ProducesProperty>,
 	/// <https://schema.org/provider>
 	pub r#provider: Vec<ProviderProperty>,
@@ -62,8 +64,10 @@ pub struct BroadcastService {
 	/// <https://schema.org/review>
 	pub r#review: Vec<ReviewProperty>,
 	/// <https://schema.org/serviceArea>
+	#[deprecated = "This schema is superseded by <https://schema.org/areaServed>."]
 	pub r#service_area: Vec<ServiceAreaProperty>,
 	/// <https://schema.org/serviceAudience>
+	#[deprecated = "This schema is superseded by <https://schema.org/audience>."]
 	pub r#service_audience: Vec<ServiceAudienceProperty>,
 	/// <https://schema.org/serviceOutput>
 	pub r#service_output: Vec<ServiceOutputProperty>,
@@ -101,8 +105,10 @@ pub struct BroadcastService {
 /// This trait is for properties from <https://schema.org/BroadcastService>.
 pub trait BroadcastServiceTrait {
 	/// Get <https://schema.org/area> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/serviceArea>."]
 	fn get_area(&self) -> &[AreaProperty];
 	/// Take <https://schema.org/area> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/serviceArea>."]
 	fn take_area(&mut self) -> Vec<AreaProperty>;
 	/// Get <https://schema.org/broadcastAffiliateOf> from [`Self`] as borrowed slice.
 	fn get_broadcast_affiliate_of(&self) -> &[BroadcastAffiliateOfProperty];

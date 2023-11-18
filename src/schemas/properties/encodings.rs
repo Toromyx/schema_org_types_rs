@@ -2,7 +2,9 @@ use super::*;
 /// <https://schema.org/encodings>
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
+#[deprecated = "This schema is superseded by <https://schema.org/encoding>."]
 pub enum EncodingsProperty {
+	/// <https://schema.org/MediaObject>
 	MediaObject(MediaObject),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),

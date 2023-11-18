@@ -20,6 +20,7 @@ pub struct ContactPoint {
 	/// <https://schema.org/productSupported>
 	pub r#product_supported: Vec<ProductSupportedProperty>,
 	/// <https://schema.org/serviceArea>
+	#[deprecated = "This schema is superseded by <https://schema.org/areaServed>."]
 	pub r#service_area: Vec<ServiceAreaProperty>,
 	/// <https://schema.org/telephone>
 	pub r#telephone: Vec<TelephoneProperty>,
@@ -83,8 +84,10 @@ pub trait ContactPointTrait {
 	/// Take <https://schema.org/productSupported> from [`Self`] as owned vector.
 	fn take_product_supported(&mut self) -> Vec<ProductSupportedProperty>;
 	/// Get <https://schema.org/serviceArea> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/areaServed>."]
 	fn get_service_area(&self) -> &[ServiceAreaProperty];
 	/// Take <https://schema.org/serviceArea> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/areaServed>."]
 	fn take_service_area(&mut self) -> Vec<ServiceAreaProperty>;
 	/// Get <https://schema.org/telephone> from [`Self`] as borrowed slice.
 	fn get_telephone(&self) -> &[TelephoneProperty];

@@ -2,7 +2,9 @@ use super::*;
 /// <https://schema.org/area>
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
+#[deprecated = "This schema is superseded by <https://schema.org/serviceArea>."]
 pub enum AreaProperty {
+	/// <https://schema.org/Place>
 	Place(Place),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),

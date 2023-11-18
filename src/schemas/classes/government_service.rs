@@ -36,6 +36,7 @@ pub struct GovernmentService {
 	/// <https://schema.org/offers>
 	pub r#offers: Vec<OffersProperty>,
 	/// <https://schema.org/produces>
+	#[deprecated = "This schema is superseded by <https://schema.org/serviceOutput>."]
 	pub r#produces: Vec<ProducesProperty>,
 	/// <https://schema.org/provider>
 	pub r#provider: Vec<ProviderProperty>,
@@ -44,8 +45,10 @@ pub struct GovernmentService {
 	/// <https://schema.org/review>
 	pub r#review: Vec<ReviewProperty>,
 	/// <https://schema.org/serviceArea>
+	#[deprecated = "This schema is superseded by <https://schema.org/areaServed>."]
 	pub r#service_area: Vec<ServiceAreaProperty>,
 	/// <https://schema.org/serviceAudience>
+	#[deprecated = "This schema is superseded by <https://schema.org/audience>."]
 	pub r#service_audience: Vec<ServiceAudienceProperty>,
 	/// <https://schema.org/serviceOutput>
 	pub r#service_output: Vec<ServiceOutputProperty>,

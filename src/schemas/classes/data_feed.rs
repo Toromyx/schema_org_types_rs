@@ -46,6 +46,7 @@ pub struct DataFeed {
 	/// <https://schema.org/award>
 	pub r#award: Vec<AwardProperty>,
 	/// <https://schema.org/awards>
+	#[deprecated = "This schema is superseded by <https://schema.org/award>."]
 	pub r#awards: Vec<AwardsProperty>,
 	/// <https://schema.org/character>
 	pub r#character: Vec<CharacterProperty>,
@@ -104,12 +105,14 @@ pub struct DataFeed {
 	/// <https://schema.org/encodingFormat>
 	pub r#encoding_format: Vec<EncodingFormatProperty>,
 	/// <https://schema.org/encodings>
+	#[deprecated = "This schema is superseded by <https://schema.org/encoding>."]
 	pub r#encodings: Vec<EncodingsProperty>,
 	/// <https://schema.org/exampleOfWork>
 	pub r#example_of_work: Vec<ExampleOfWorkProperty>,
 	/// <https://schema.org/expires>
 	pub r#expires: Vec<ExpiresProperty>,
 	/// <https://schema.org/fileFormat>
+	#[deprecated = "This schema is superseded by <https://schema.org/encodingFormat>."]
 	pub r#file_format: Vec<FileFormatProperty>,
 	/// <https://schema.org/funder>
 	pub r#funder: Vec<FunderProperty>,
@@ -134,6 +137,7 @@ pub struct DataFeed {
 	/// <https://schema.org/isBasedOn>
 	pub r#is_based_on: Vec<IsBasedOnProperty>,
 	/// <https://schema.org/isBasedOnUrl>
+	#[deprecated = "This schema is superseded by <https://schema.org/isBasedOn>."]
 	pub r#is_based_on_url: Vec<IsBasedOnUrlProperty>,
 	/// <https://schema.org/isFamilyFriendly>
 	pub r#is_family_friendly: Vec<IsFamilyFriendlyProperty>,
@@ -182,6 +186,7 @@ pub struct DataFeed {
 	/// <https://schema.org/review>
 	pub r#review: Vec<ReviewProperty>,
 	/// <https://schema.org/reviews>
+	#[deprecated = "This schema is superseded by <https://schema.org/review>."]
 	pub r#reviews: Vec<ReviewsProperty>,
 	/// <https://schema.org/schemaVersion>
 	pub r#schema_version: Vec<SchemaVersionProperty>,
@@ -232,12 +237,15 @@ pub struct DataFeed {
 	/// <https://schema.org/workTranslation>
 	pub r#work_translation: Vec<WorkTranslationProperty>,
 	/// <https://schema.org/catalog>
+	#[deprecated = "This schema is superseded by <https://schema.org/includedInDataCatalog>."]
 	pub r#catalog: Vec<CatalogProperty>,
 	/// <https://schema.org/datasetTimeInterval>
+	#[deprecated = "This schema is superseded by <https://schema.org/temporalCoverage>."]
 	pub r#dataset_time_interval: Vec<DatasetTimeIntervalProperty>,
 	/// <https://schema.org/distribution>
 	pub r#distribution: Vec<DistributionProperty>,
 	/// <https://schema.org/includedDataCatalog>
+	#[deprecated = "This schema is superseded by <https://schema.org/includedInDataCatalog>."]
 	pub r#included_data_catalog: Vec<IncludedDataCatalogProperty>,
 	/// <https://schema.org/includedInDataCatalog>
 	pub r#included_in_data_catalog: Vec<IncludedInDataCatalogProperty>,
@@ -250,6 +258,7 @@ pub struct DataFeed {
 	/// <https://schema.org/variableMeasured>
 	pub r#variable_measured: Vec<VariableMeasuredProperty>,
 	/// <https://schema.org/variablesMeasured>
+	#[deprecated = "This schema is archived, see <https://schema.org/docs/attic.home.html>."]
 	pub r#variables_measured: Vec<VariablesMeasuredProperty>,
 	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,

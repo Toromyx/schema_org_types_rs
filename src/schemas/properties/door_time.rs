@@ -3,7 +3,9 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum DoorTimeProperty {
+	/// <https://schema.org/Time>
 	Time(Time),
+	/// <https://schema.org/DateTime>
 	DateTime(DateTime),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),

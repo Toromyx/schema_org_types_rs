@@ -42,6 +42,7 @@ pub struct Patient {
 	/// <https://schema.org/award>
 	pub r#award: Vec<AwardProperty>,
 	/// <https://schema.org/awards>
+	#[deprecated = "This schema is superseded by <https://schema.org/award>."]
 	pub r#awards: Vec<AwardsProperty>,
 	/// <https://schema.org/birthDate>
 	pub r#birth_date: Vec<BirthDateProperty>,
@@ -56,10 +57,12 @@ pub struct Patient {
 	/// <https://schema.org/colleague>
 	pub r#colleague: Vec<ColleagueProperty>,
 	/// <https://schema.org/colleagues>
+	#[deprecated = "This schema is superseded by <https://schema.org/colleague>."]
 	pub r#colleagues: Vec<ColleaguesProperty>,
 	/// <https://schema.org/contactPoint>
 	pub r#contact_point: Vec<ContactPointProperty>,
 	/// <https://schema.org/contactPoints>
+	#[deprecated = "This schema is superseded by <https://schema.org/contactPoint>."]
 	pub r#contact_points: Vec<ContactPointsProperty>,
 	/// <https://schema.org/deathDate>
 	pub r#death_date: Vec<DeathDateProperty>,
@@ -128,6 +131,7 @@ pub struct Patient {
 	/// <https://schema.org/parent>
 	pub r#parent: Vec<ParentProperty>,
 	/// <https://schema.org/parents>
+	#[deprecated = "This schema is superseded by <https://schema.org/parent>."]
 	pub r#parents: Vec<ParentsProperty>,
 	/// <https://schema.org/performerIn>
 	pub r#performer_in: Vec<PerformerInProperty>,
@@ -140,6 +144,7 @@ pub struct Patient {
 	/// <https://schema.org/sibling>
 	pub r#sibling: Vec<SiblingProperty>,
 	/// <https://schema.org/siblings>
+	#[deprecated = "This schema is superseded by <https://schema.org/sibling>."]
 	pub r#siblings: Vec<SiblingsProperty>,
 	/// <https://schema.org/sponsor>
 	pub r#sponsor: Vec<SponsorProperty>,

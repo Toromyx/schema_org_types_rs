@@ -3,12 +3,19 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum ItemOfferedProperty {
+	/// <https://schema.org/AggregateOffer>
 	AggregateOffer(AggregateOffer),
+	/// <https://schema.org/CreativeWork>
 	CreativeWork(CreativeWork),
+	/// <https://schema.org/Event>
 	Event(Event),
+	/// <https://schema.org/MenuItem>
 	MenuItem(MenuItem),
+	/// <https://schema.org/Product>
 	Product(Product),
+	/// <https://schema.org/Service>
 	Service(Service),
+	/// <https://schema.org/Trip>
 	Trip(Trip),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),

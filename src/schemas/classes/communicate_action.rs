@@ -8,6 +8,7 @@ pub struct CommunicateAction {
 	/// <https://schema.org/inLanguage>
 	pub r#in_language: Vec<InLanguageProperty>,
 	/// <https://schema.org/language>
+	#[deprecated = "This schema is superseded by <https://schema.org/inLanguage>."]
 	pub r#language: Vec<LanguageProperty>,
 	/// <https://schema.org/recipient>
 	pub r#recipient: Vec<RecipientProperty>,
@@ -71,8 +72,10 @@ pub trait CommunicateActionTrait {
 	/// Take <https://schema.org/inLanguage> from [`Self`] as owned vector.
 	fn take_in_language(&mut self) -> Vec<InLanguageProperty>;
 	/// Get <https://schema.org/language> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/inLanguage>."]
 	fn get_language(&self) -> &[LanguageProperty];
 	/// Take <https://schema.org/language> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/inLanguage>."]
 	fn take_language(&mut self) -> Vec<LanguageProperty>;
 	/// Get <https://schema.org/recipient> from [`Self`] as borrowed slice.
 	fn get_recipient(&self) -> &[RecipientProperty];

@@ -4,6 +4,7 @@ use super::*;
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct PublicationEvent {
 	/// <https://schema.org/free>
+	#[deprecated = "This schema is superseded by <https://schema.org/isAccessibleForFree>."]
 	pub r#free: Vec<FreeProperty>,
 	/// <https://schema.org/publishedBy>
 	pub r#published_by: Vec<PublishedByProperty>,
@@ -18,6 +19,7 @@ pub struct PublicationEvent {
 	/// <https://schema.org/attendee>
 	pub r#attendee: Vec<AttendeeProperty>,
 	/// <https://schema.org/attendees>
+	#[deprecated = "This schema is superseded by <https://schema.org/attendee>."]
 	pub r#attendees: Vec<AttendeesProperty>,
 	/// <https://schema.org/audience>
 	pub r#audience: Vec<AudienceProperty>,
@@ -64,6 +66,7 @@ pub struct PublicationEvent {
 	/// <https://schema.org/performer>
 	pub r#performer: Vec<PerformerProperty>,
 	/// <https://schema.org/performers>
+	#[deprecated = "This schema is superseded by <https://schema.org/performer>."]
 	pub r#performers: Vec<PerformersProperty>,
 	/// <https://schema.org/previousStartDate>
 	pub r#previous_start_date: Vec<PreviousStartDateProperty>,
@@ -80,6 +83,7 @@ pub struct PublicationEvent {
 	/// <https://schema.org/subEvent>
 	pub r#sub_event: Vec<SubEventProperty>,
 	/// <https://schema.org/subEvents>
+	#[deprecated = "This schema is superseded by <https://schema.org/subEvent>."]
 	pub r#sub_events: Vec<SubEventsProperty>,
 	/// <https://schema.org/superEvent>
 	pub r#super_event: Vec<SuperEventProperty>,
@@ -119,8 +123,10 @@ pub struct PublicationEvent {
 /// This trait is for properties from <https://schema.org/PublicationEvent>.
 pub trait PublicationEventTrait {
 	/// Get <https://schema.org/free> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/isAccessibleForFree>."]
 	fn get_free(&self) -> &[FreeProperty];
 	/// Take <https://schema.org/free> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/isAccessibleForFree>."]
 	fn take_free(&mut self) -> Vec<FreeProperty>;
 	/// Get <https://schema.org/publishedBy> from [`Self`] as borrowed slice.
 	fn get_published_by(&self) -> &[PublishedByProperty];

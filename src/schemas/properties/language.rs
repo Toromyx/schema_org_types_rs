@@ -2,7 +2,9 @@ use super::*;
 /// <https://schema.org/language>
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
+#[deprecated = "This schema is superseded by <https://schema.org/inLanguage>."]
 pub enum LanguageProperty {
+	/// <https://schema.org/Language>
 	Language(Language),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),

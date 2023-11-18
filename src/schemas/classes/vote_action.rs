@@ -32,6 +32,7 @@ pub struct VoteAction {
 	/// <https://schema.org/actionOption>
 	pub r#action_option: Vec<ActionOptionProperty>,
 	/// <https://schema.org/option>
+	#[deprecated = "This schema is superseded by <https://schema.org/actionOption>."]
 	pub r#option: Vec<OptionProperty>,
 	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,

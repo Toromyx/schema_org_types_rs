@@ -6,6 +6,7 @@ pub struct ChooseAction {
 	/// <https://schema.org/actionOption>
 	pub r#action_option: Vec<ActionOptionProperty>,
 	/// <https://schema.org/option>
+	#[deprecated = "This schema is superseded by <https://schema.org/actionOption>."]
 	pub r#option: Vec<OptionProperty>,
 	/// <https://schema.org/actionStatus>
 	pub r#action_status: Vec<ActionStatusProperty>,
@@ -63,8 +64,10 @@ pub trait ChooseActionTrait {
 	/// Take <https://schema.org/actionOption> from [`Self`] as owned vector.
 	fn take_action_option(&mut self) -> Vec<ActionOptionProperty>;
 	/// Get <https://schema.org/option> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/actionOption>."]
 	fn get_option(&self) -> &[OptionProperty];
 	/// Take <https://schema.org/option> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/actionOption>."]
 	fn take_option(&mut self) -> Vec<OptionProperty>;
 }
 impl ChooseActionTrait for ChooseAction {

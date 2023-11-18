@@ -6,14 +6,17 @@ pub struct MusicGroup {
 	/// <https://schema.org/album>
 	pub r#album: Vec<AlbumProperty>,
 	/// <https://schema.org/albums>
+	#[deprecated = "This schema is superseded by <https://schema.org/album>."]
 	pub r#albums: Vec<AlbumsProperty>,
 	/// <https://schema.org/genre>
 	pub r#genre: Vec<GenreProperty>,
 	/// <https://schema.org/musicGroupMember>
+	#[deprecated = "This schema is superseded by <https://schema.org/member>."]
 	pub r#music_group_member: Vec<MusicGroupMemberProperty>,
 	/// <https://schema.org/track>
 	pub r#track: Vec<TrackProperty>,
 	/// <https://schema.org/tracks>
+	#[deprecated = "This schema is superseded by <https://schema.org/track>."]
 	pub r#tracks: Vec<TracksProperty>,
 	/// <https://schema.org/actionableFeedbackPolicy>
 	pub r#actionable_feedback_policy: Vec<ActionableFeedbackPolicyProperty>,
@@ -30,12 +33,14 @@ pub struct MusicGroup {
 	/// <https://schema.org/award>
 	pub r#award: Vec<AwardProperty>,
 	/// <https://schema.org/awards>
+	#[deprecated = "This schema is superseded by <https://schema.org/award>."]
 	pub r#awards: Vec<AwardsProperty>,
 	/// <https://schema.org/brand>
 	pub r#brand: Vec<BrandProperty>,
 	/// <https://schema.org/contactPoint>
 	pub r#contact_point: Vec<ContactPointProperty>,
 	/// <https://schema.org/contactPoints>
+	#[deprecated = "This schema is superseded by <https://schema.org/contactPoint>."]
 	pub r#contact_points: Vec<ContactPointsProperty>,
 	/// <https://schema.org/correctionsPolicy>
 	pub r#corrections_policy: Vec<CorrectionsPolicyProperty>,
@@ -54,18 +59,21 @@ pub struct MusicGroup {
 	/// <https://schema.org/employee>
 	pub r#employee: Vec<EmployeeProperty>,
 	/// <https://schema.org/employees>
+	#[deprecated = "This schema is superseded by <https://schema.org/employee>."]
 	pub r#employees: Vec<EmployeesProperty>,
 	/// <https://schema.org/ethicsPolicy>
 	pub r#ethics_policy: Vec<EthicsPolicyProperty>,
 	/// <https://schema.org/event>
 	pub r#event: Vec<EventProperty>,
 	/// <https://schema.org/events>
+	#[deprecated = "This schema is superseded by <https://schema.org/event>."]
 	pub r#events: Vec<EventsProperty>,
 	/// <https://schema.org/faxNumber>
 	pub r#fax_number: Vec<FaxNumberProperty>,
 	/// <https://schema.org/founder>
 	pub r#founder: Vec<FounderProperty>,
 	/// <https://schema.org/founders>
+	#[deprecated = "This schema is superseded by <https://schema.org/founder>."]
 	pub r#founders: Vec<FoundersProperty>,
 	/// <https://schema.org/foundingDate>
 	pub r#founding_date: Vec<FoundingDateProperty>,
@@ -86,6 +94,7 @@ pub struct MusicGroup {
 	/// <https://schema.org/hasPOS>
 	pub r#has_pos: Vec<HasPosProperty>,
 	/// <https://schema.org/hasProductReturnPolicy>
+	#[deprecated = "This schema is archived, see <https://schema.org/docs/attic.home.html>. This schema is superseded by <https://schema.org/hasMerchantReturnPolicy>."]
 	pub r#has_product_return_policy: Vec<HasProductReturnPolicyProperty>,
 	/// <https://schema.org/interactionStatistic>
 	pub r#interaction_statistic: Vec<InteractionStatisticProperty>,
@@ -114,6 +123,7 @@ pub struct MusicGroup {
 	/// <https://schema.org/memberOf>
 	pub r#member_of: Vec<MemberOfProperty>,
 	/// <https://schema.org/members>
+	#[deprecated = "This schema is superseded by <https://schema.org/member>."]
 	pub r#members: Vec<MembersProperty>,
 	/// <https://schema.org/naics>
 	pub r#naics: Vec<NaicsProperty>,
@@ -132,10 +142,12 @@ pub struct MusicGroup {
 	/// <https://schema.org/review>
 	pub r#review: Vec<ReviewProperty>,
 	/// <https://schema.org/reviews>
+	#[deprecated = "This schema is superseded by <https://schema.org/review>."]
 	pub r#reviews: Vec<ReviewsProperty>,
 	/// <https://schema.org/seeks>
 	pub r#seeks: Vec<SeeksProperty>,
 	/// <https://schema.org/serviceArea>
+	#[deprecated = "This schema is superseded by <https://schema.org/areaServed>."]
 	pub r#service_area: Vec<ServiceAreaProperty>,
 	/// <https://schema.org/slogan>
 	pub r#slogan: Vec<SloganProperty>,
@@ -183,24 +195,30 @@ pub trait MusicGroupTrait {
 	/// Take <https://schema.org/album> from [`Self`] as owned vector.
 	fn take_album(&mut self) -> Vec<AlbumProperty>;
 	/// Get <https://schema.org/albums> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/album>."]
 	fn get_albums(&self) -> &[AlbumsProperty];
 	/// Take <https://schema.org/albums> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/album>."]
 	fn take_albums(&mut self) -> Vec<AlbumsProperty>;
 	/// Get <https://schema.org/genre> from [`Self`] as borrowed slice.
 	fn get_genre(&self) -> &[GenreProperty];
 	/// Take <https://schema.org/genre> from [`Self`] as owned vector.
 	fn take_genre(&mut self) -> Vec<GenreProperty>;
 	/// Get <https://schema.org/musicGroupMember> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/member>."]
 	fn get_music_group_member(&self) -> &[MusicGroupMemberProperty];
 	/// Take <https://schema.org/musicGroupMember> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/member>."]
 	fn take_music_group_member(&mut self) -> Vec<MusicGroupMemberProperty>;
 	/// Get <https://schema.org/track> from [`Self`] as borrowed slice.
 	fn get_track(&self) -> &[TrackProperty];
 	/// Take <https://schema.org/track> from [`Self`] as owned vector.
 	fn take_track(&mut self) -> Vec<TrackProperty>;
 	/// Get <https://schema.org/tracks> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/track>."]
 	fn get_tracks(&self) -> &[TracksProperty];
 	/// Take <https://schema.org/tracks> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/track>."]
 	fn take_tracks(&mut self) -> Vec<TracksProperty>;
 }
 impl MusicGroupTrait for MusicGroup {

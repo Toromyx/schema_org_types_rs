@@ -2,7 +2,9 @@ use super::*;
 /// <https://schema.org/catalog>
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
+#[deprecated = "This schema is superseded by <https://schema.org/includedInDataCatalog>."]
 pub enum CatalogProperty {
+	/// <https://schema.org/DataCatalog>
 	DataCatalog(DataCatalog),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),

@@ -8,6 +8,7 @@ pub struct ProgramMembership {
 	/// <https://schema.org/member>
 	pub r#member: Vec<MemberProperty>,
 	/// <https://schema.org/members>
+	#[deprecated = "This schema is superseded by <https://schema.org/member>."]
 	pub r#members: Vec<MembersProperty>,
 	/// <https://schema.org/membershipNumber>
 	pub r#membership_number: Vec<MembershipNumberProperty>,
@@ -51,8 +52,10 @@ pub trait ProgramMembershipTrait {
 	/// Take <https://schema.org/member> from [`Self`] as owned vector.
 	fn take_member(&mut self) -> Vec<MemberProperty>;
 	/// Get <https://schema.org/members> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/member>."]
 	fn get_members(&self) -> &[MembersProperty];
 	/// Take <https://schema.org/members> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/member>."]
 	fn take_members(&mut self) -> Vec<MembersProperty>;
 	/// Get <https://schema.org/membershipNumber> from [`Self`] as borrowed slice.
 	fn get_membership_number(&self) -> &[MembershipNumberProperty];

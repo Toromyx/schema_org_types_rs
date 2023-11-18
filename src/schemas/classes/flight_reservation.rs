@@ -12,6 +12,7 @@ pub struct FlightReservation {
 	/// <https://schema.org/securityScreening>
 	pub r#security_screening: Vec<SecurityScreeningProperty>,
 	/// <https://schema.org/bookingAgent>
+	#[deprecated = "This schema is superseded by <https://schema.org/broker>."]
 	pub r#booking_agent: Vec<BookingAgentProperty>,
 	/// <https://schema.org/bookingTime>
 	pub r#booking_time: Vec<BookingTimeProperty>,

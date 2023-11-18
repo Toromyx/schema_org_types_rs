@@ -6,10 +6,12 @@ pub struct MovieSeries {
 	/// <https://schema.org/actor>
 	pub r#actor: Vec<ActorProperty>,
 	/// <https://schema.org/actors>
+	#[deprecated = "This schema is superseded by <https://schema.org/actor>."]
 	pub r#actors: Vec<ActorsProperty>,
 	/// <https://schema.org/director>
 	pub r#director: Vec<DirectorProperty>,
 	/// <https://schema.org/directors>
+	#[deprecated = "This schema is superseded by <https://schema.org/director>."]
 	pub r#directors: Vec<DirectorsProperty>,
 	/// <https://schema.org/musicBy>
 	pub r#music_by: Vec<MusicByProperty>,
@@ -58,6 +60,7 @@ pub struct MovieSeries {
 	/// <https://schema.org/award>
 	pub r#award: Vec<AwardProperty>,
 	/// <https://schema.org/awards>
+	#[deprecated = "This schema is superseded by <https://schema.org/award>."]
 	pub r#awards: Vec<AwardsProperty>,
 	/// <https://schema.org/character>
 	pub r#character: Vec<CharacterProperty>,
@@ -116,12 +119,14 @@ pub struct MovieSeries {
 	/// <https://schema.org/encodingFormat>
 	pub r#encoding_format: Vec<EncodingFormatProperty>,
 	/// <https://schema.org/encodings>
+	#[deprecated = "This schema is superseded by <https://schema.org/encoding>."]
 	pub r#encodings: Vec<EncodingsProperty>,
 	/// <https://schema.org/exampleOfWork>
 	pub r#example_of_work: Vec<ExampleOfWorkProperty>,
 	/// <https://schema.org/expires>
 	pub r#expires: Vec<ExpiresProperty>,
 	/// <https://schema.org/fileFormat>
+	#[deprecated = "This schema is superseded by <https://schema.org/encodingFormat>."]
 	pub r#file_format: Vec<FileFormatProperty>,
 	/// <https://schema.org/funder>
 	pub r#funder: Vec<FunderProperty>,
@@ -146,6 +151,7 @@ pub struct MovieSeries {
 	/// <https://schema.org/isBasedOn>
 	pub r#is_based_on: Vec<IsBasedOnProperty>,
 	/// <https://schema.org/isBasedOnUrl>
+	#[deprecated = "This schema is superseded by <https://schema.org/isBasedOn>."]
 	pub r#is_based_on_url: Vec<IsBasedOnUrlProperty>,
 	/// <https://schema.org/isFamilyFriendly>
 	pub r#is_family_friendly: Vec<IsFamilyFriendlyProperty>,
@@ -194,6 +200,7 @@ pub struct MovieSeries {
 	/// <https://schema.org/review>
 	pub r#review: Vec<ReviewProperty>,
 	/// <https://schema.org/reviews>
+	#[deprecated = "This schema is superseded by <https://schema.org/review>."]
 	pub r#reviews: Vec<ReviewsProperty>,
 	/// <https://schema.org/schemaVersion>
 	pub r#schema_version: Vec<SchemaVersionProperty>,
@@ -281,16 +288,20 @@ pub trait MovieSeriesTrait {
 	/// Take <https://schema.org/actor> from [`Self`] as owned vector.
 	fn take_actor(&mut self) -> Vec<ActorProperty>;
 	/// Get <https://schema.org/actors> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/actor>."]
 	fn get_actors(&self) -> &[ActorsProperty];
 	/// Take <https://schema.org/actors> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/actor>."]
 	fn take_actors(&mut self) -> Vec<ActorsProperty>;
 	/// Get <https://schema.org/director> from [`Self`] as borrowed slice.
 	fn get_director(&self) -> &[DirectorProperty];
 	/// Take <https://schema.org/director> from [`Self`] as owned vector.
 	fn take_director(&mut self) -> Vec<DirectorProperty>;
 	/// Get <https://schema.org/directors> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/director>."]
 	fn get_directors(&self) -> &[DirectorsProperty];
 	/// Take <https://schema.org/directors> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/director>."]
 	fn take_directors(&mut self) -> Vec<DirectorsProperty>;
 	/// Get <https://schema.org/musicBy> from [`Self`] as borrowed slice.
 	fn get_music_by(&self) -> &[MusicByProperty];

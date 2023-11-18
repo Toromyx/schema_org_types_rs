@@ -2,6 +2,7 @@ use super::*;
 /// <https://schema.org/DatedMoneySpecification>
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
+#[deprecated = "This schema is superseded by <https://schema.org/MonetaryAmount>."]
 pub struct DatedMoneySpecification {
 	/// <https://schema.org/amount>
 	pub r#amount: Vec<AmountProperty>,
@@ -37,6 +38,7 @@ pub struct DatedMoneySpecification {
 	pub r#url: Vec<UrlProperty>,
 }
 /// This trait is for properties from <https://schema.org/DatedMoneySpecification>.
+#[deprecated = "This schema is superseded by <https://schema.org/MonetaryAmount>."]
 pub trait DatedMoneySpecificationTrait {
 	/// Get <https://schema.org/amount> from [`Self`] as borrowed slice.
 	fn get_amount(&self) -> &[AmountProperty];

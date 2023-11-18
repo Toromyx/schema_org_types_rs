@@ -90,6 +90,7 @@ pub struct Offer {
 	/// <https://schema.org/review>
 	pub r#review: Vec<ReviewProperty>,
 	/// <https://schema.org/reviews>
+	#[deprecated = "This schema is superseded by <https://schema.org/review>."]
 	pub r#reviews: Vec<ReviewsProperty>,
 	/// <https://schema.org/seller>
 	pub r#seller: Vec<SellerProperty>,
@@ -305,8 +306,10 @@ pub trait OfferTrait {
 	/// Take <https://schema.org/review> from [`Self`] as owned vector.
 	fn take_review(&mut self) -> Vec<ReviewProperty>;
 	/// Get <https://schema.org/reviews> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/review>."]
 	fn get_reviews(&self) -> &[ReviewsProperty];
 	/// Take <https://schema.org/reviews> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/review>."]
 	fn take_reviews(&mut self) -> Vec<ReviewsProperty>;
 	/// Get <https://schema.org/seller> from [`Self`] as borrowed slice.
 	fn get_seller(&self) -> &[SellerProperty];

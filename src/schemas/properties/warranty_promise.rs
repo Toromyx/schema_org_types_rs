@@ -2,7 +2,9 @@ use super::*;
 /// <https://schema.org/warrantyPromise>
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
+#[deprecated = "This schema is superseded by <https://schema.org/warranty>."]
 pub enum WarrantyPromiseProperty {
+	/// <https://schema.org/WarrantyPromise>
 	WarrantyPromise(WarrantyPromise),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),

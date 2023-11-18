@@ -14,6 +14,7 @@ pub struct Place {
 	/// <https://schema.org/branchCode>
 	pub r#branch_code: Vec<BranchCodeProperty>,
 	/// <https://schema.org/containedIn>
+	#[deprecated = "This schema is superseded by <https://schema.org/containedInPlace>."]
 	pub r#contained_in: Vec<ContainedInProperty>,
 	/// <https://schema.org/containedInPlace>
 	pub r#contained_in_place: Vec<ContainedInPlaceProperty>,
@@ -22,6 +23,7 @@ pub struct Place {
 	/// <https://schema.org/event>
 	pub r#event: Vec<EventProperty>,
 	/// <https://schema.org/events>
+	#[deprecated = "This schema is superseded by <https://schema.org/event>."]
 	pub r#events: Vec<EventsProperty>,
 	/// <https://schema.org/faxNumber>
 	pub r#fax_number: Vec<FaxNumberProperty>,
@@ -66,8 +68,10 @@ pub struct Place {
 	/// <https://schema.org/longitude>
 	pub r#longitude: Vec<LongitudeProperty>,
 	/// <https://schema.org/map>
+	#[deprecated = "This schema is superseded by <https://schema.org/hasMap>."]
 	pub r#map: Vec<MapProperty>,
 	/// <https://schema.org/maps>
+	#[deprecated = "This schema is superseded by <https://schema.org/hasMap>."]
 	pub r#maps: Vec<MapsProperty>,
 	/// <https://schema.org/maximumAttendeeCapacity>
 	pub r#maximum_attendee_capacity: Vec<MaximumAttendeeCapacityProperty>,
@@ -76,12 +80,14 @@ pub struct Place {
 	/// <https://schema.org/photo>
 	pub r#photo: Vec<PhotoProperty>,
 	/// <https://schema.org/photos>
+	#[deprecated = "This schema is superseded by <https://schema.org/photo>."]
 	pub r#photos: Vec<PhotosProperty>,
 	/// <https://schema.org/publicAccess>
 	pub r#public_access: Vec<PublicAccessProperty>,
 	/// <https://schema.org/review>
 	pub r#review: Vec<ReviewProperty>,
 	/// <https://schema.org/reviews>
+	#[deprecated = "This schema is superseded by <https://schema.org/review>."]
 	pub r#reviews: Vec<ReviewsProperty>,
 	/// <https://schema.org/slogan>
 	pub r#slogan: Vec<SloganProperty>,
@@ -141,8 +147,10 @@ pub trait PlaceTrait {
 	/// Take <https://schema.org/branchCode> from [`Self`] as owned vector.
 	fn take_branch_code(&mut self) -> Vec<BranchCodeProperty>;
 	/// Get <https://schema.org/containedIn> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/containedInPlace>."]
 	fn get_contained_in(&self) -> &[ContainedInProperty];
 	/// Take <https://schema.org/containedIn> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/containedInPlace>."]
 	fn take_contained_in(&mut self) -> Vec<ContainedInProperty>;
 	/// Get <https://schema.org/containedInPlace> from [`Self`] as borrowed slice.
 	fn get_contained_in_place(&self) -> &[ContainedInPlaceProperty];
@@ -157,8 +165,10 @@ pub trait PlaceTrait {
 	/// Take <https://schema.org/event> from [`Self`] as owned vector.
 	fn take_event(&mut self) -> Vec<EventProperty>;
 	/// Get <https://schema.org/events> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/event>."]
 	fn get_events(&self) -> &[EventsProperty];
 	/// Take <https://schema.org/events> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/event>."]
 	fn take_events(&mut self) -> Vec<EventsProperty>;
 	/// Get <https://schema.org/faxNumber> from [`Self`] as borrowed slice.
 	fn get_fax_number(&self) -> &[FaxNumberProperty];
@@ -245,12 +255,16 @@ pub trait PlaceTrait {
 	/// Take <https://schema.org/longitude> from [`Self`] as owned vector.
 	fn take_longitude(&mut self) -> Vec<LongitudeProperty>;
 	/// Get <https://schema.org/map> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/hasMap>."]
 	fn get_map(&self) -> &[MapProperty];
 	/// Take <https://schema.org/map> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/hasMap>."]
 	fn take_map(&mut self) -> Vec<MapProperty>;
 	/// Get <https://schema.org/maps> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/hasMap>."]
 	fn get_maps(&self) -> &[MapsProperty];
 	/// Take <https://schema.org/maps> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/hasMap>."]
 	fn take_maps(&mut self) -> Vec<MapsProperty>;
 	/// Get <https://schema.org/maximumAttendeeCapacity> from [`Self`] as borrowed slice.
 	fn get_maximum_attendee_capacity(&self) -> &[MaximumAttendeeCapacityProperty];
@@ -265,8 +279,10 @@ pub trait PlaceTrait {
 	/// Take <https://schema.org/photo> from [`Self`] as owned vector.
 	fn take_photo(&mut self) -> Vec<PhotoProperty>;
 	/// Get <https://schema.org/photos> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/photo>."]
 	fn get_photos(&self) -> &[PhotosProperty];
 	/// Take <https://schema.org/photos> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/photo>."]
 	fn take_photos(&mut self) -> Vec<PhotosProperty>;
 	/// Get <https://schema.org/publicAccess> from [`Self`] as borrowed slice.
 	fn get_public_access(&self) -> &[PublicAccessProperty];
@@ -277,8 +293,10 @@ pub trait PlaceTrait {
 	/// Take <https://schema.org/review> from [`Self`] as owned vector.
 	fn take_review(&mut self) -> Vec<ReviewProperty>;
 	/// Get <https://schema.org/reviews> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/review>."]
 	fn get_reviews(&self) -> &[ReviewsProperty];
 	/// Take <https://schema.org/reviews> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/review>."]
 	fn take_reviews(&mut self) -> Vec<ReviewsProperty>;
 	/// Get <https://schema.org/slogan> from [`Self`] as borrowed slice.
 	fn get_slogan(&self) -> &[SloganProperty];

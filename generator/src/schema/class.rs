@@ -8,6 +8,7 @@ use oxigraph::store::Store;
 use quote::{__private::TokenStream, quote, ToTokens, TokenStreamExt};
 
 use crate::{
+	deprecated_attribute::DeprecatedAttribute,
 	doc_lines::{strings_as_doc_lines, DocLines},
 	schema::{class::serde::serde_mod, map_schema_name, ReferencedSchema, Schema},
 	sparql::{node_type::NodeType, SchemaQueries, SchemaQuerySolution},
@@ -26,6 +27,10 @@ pub struct Class {
 	pub properties: Vec<ReferencedSchema>,
 	#[derivative(PartialEq = "ignore", PartialOrd = "ignore", Ord = "ignore")]
 	parents: Vec<ReferencedClassSchema>,
+	#[derivative(PartialEq = "ignore", PartialOrd = "ignore", Ord = "ignore")]
+	pub superseded_by: Vec<ReferencedSchema>,
+	#[derivative(PartialEq = "ignore", PartialOrd = "ignore", Ord = "ignore")]
+	pub in_attic: bool,
 }
 
 impl Class {
@@ -71,7 +76,7 @@ impl Schema for Class {
 		let mut properties: Vec<_> = store
 			.get_properties_of_class(&solution.iri)
 			.into_iter()
-			.map(ReferencedSchema::from)
+			.map(|solution| ReferencedSchema::from_solution(store, solution))
 			.collect();
 		properties.sort_unstable();
 		let mut parents: Vec<_> = store
@@ -82,7 +87,7 @@ impl Schema for Class {
 				let mut parent_properties: Vec<_> = store
 					.get_properties_of_class(&solution.iri)
 					.into_iter()
-					.map(ReferencedSchema::from)
+					.map(|solution| ReferencedSchema::from_solution(store, solution))
 					.collect();
 				parent_properties.sort_unstable();
 				ReferencedClassSchema {
@@ -92,12 +97,29 @@ impl Schema for Class {
 			})
 			.collect();
 		parents.sort_unstable();
+		let superseded_by = store
+			.get_superseded_by(&solution.iri)
+			.into_iter()
+			.map(|solution| ReferencedSchema::from_solution(store, solution))
+			.collect();
 		Class {
 			iri: solution.iri,
 			name: map_schema_name(solution.label),
 			properties,
 			parents,
+			superseded_by,
+			in_attic: solution.in_attic,
 		}
+	}
+}
+
+impl DeprecatedAttribute for Class {
+	fn in_attic(&self) -> bool {
+		self.in_attic
+	}
+
+	fn superseded_by(&self) -> &[ReferencedSchema] {
+		self.superseded_by.as_slice()
 	}
 }
 
@@ -136,9 +158,11 @@ fn get_trait_name(name: &str) -> TokenStream {
 impl ToTokens for Class {
 	fn to_tokens(&self, tokens: &mut TokenStream) {
 		let doc_lines = self.doc_lines_token_stream();
+		let deprecated_attribute = self.deprecated_attribute();
 		let name = TokenStream::from_str(&self.name.to_case(Case::UpperCamel)).unwrap();
 		let fields = self.get_all_properties_iter().map(|referenced_schema| {
 			let doc_lines = strings_as_doc_lines(&[format!("<{}>", referenced_schema.iri)]);
+			let deprecated_attribute = referenced_schema.deprecated_attribute();
 			let property = TokenStream::from_str(&format!(
 				"pub {}: {}",
 				get_property_name(referenced_schema),
@@ -147,6 +171,7 @@ impl ToTokens for Class {
 			.unwrap();
 			quote!(
 				#doc_lines
+				#deprecated_attribute
 				#property,
 			)
 		});
@@ -185,10 +210,13 @@ impl ToTokens for Class {
 				referenced_schema.iri
 			)]);
 			let take_function_signature = get_take_function_signature(referenced_schema);
+			let deprecated_attribute = referenced_schema.deprecated_attribute();
 			quote!(
 				#get_function_doc_lines
+				#deprecated_attribute
 				#get_function_signature;
 				#take_function_doc_lines
+				#deprecated_attribute
 				#take_function_signature;
 			)
 		});
@@ -228,10 +256,12 @@ impl ToTokens for Class {
 			#doc_lines
 			#[cfg_attr(feature = "derive-debug", derive(Debug))]
 			#[cfg_attr(feature = "derive-clone", derive(Clone))]
+			#deprecated_attribute
 			pub struct #name {
 				#(#fields)*
 			}
 			#trait_doc_lines
+			#deprecated_attribute
 			pub trait #trait_name {
 				#(#trait_functions)*
 			}

@@ -4,12 +4,15 @@ use super::*;
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct Dataset {
 	/// <https://schema.org/catalog>
+	#[deprecated = "This schema is superseded by <https://schema.org/includedInDataCatalog>."]
 	pub r#catalog: Vec<CatalogProperty>,
 	/// <https://schema.org/datasetTimeInterval>
+	#[deprecated = "This schema is superseded by <https://schema.org/temporalCoverage>."]
 	pub r#dataset_time_interval: Vec<DatasetTimeIntervalProperty>,
 	/// <https://schema.org/distribution>
 	pub r#distribution: Vec<DistributionProperty>,
 	/// <https://schema.org/includedDataCatalog>
+	#[deprecated = "This schema is superseded by <https://schema.org/includedInDataCatalog>."]
 	pub r#included_data_catalog: Vec<IncludedDataCatalogProperty>,
 	/// <https://schema.org/includedInDataCatalog>
 	pub r#included_in_data_catalog: Vec<IncludedInDataCatalogProperty>,
@@ -22,6 +25,7 @@ pub struct Dataset {
 	/// <https://schema.org/variableMeasured>
 	pub r#variable_measured: Vec<VariableMeasuredProperty>,
 	/// <https://schema.org/variablesMeasured>
+	#[deprecated = "This schema is archived, see <https://schema.org/docs/attic.home.html>."]
 	pub r#variables_measured: Vec<VariablesMeasuredProperty>,
 	/// <https://schema.org/about>
 	pub r#about: Vec<AboutProperty>,
@@ -64,6 +68,7 @@ pub struct Dataset {
 	/// <https://schema.org/award>
 	pub r#award: Vec<AwardProperty>,
 	/// <https://schema.org/awards>
+	#[deprecated = "This schema is superseded by <https://schema.org/award>."]
 	pub r#awards: Vec<AwardsProperty>,
 	/// <https://schema.org/character>
 	pub r#character: Vec<CharacterProperty>,
@@ -122,12 +127,14 @@ pub struct Dataset {
 	/// <https://schema.org/encodingFormat>
 	pub r#encoding_format: Vec<EncodingFormatProperty>,
 	/// <https://schema.org/encodings>
+	#[deprecated = "This schema is superseded by <https://schema.org/encoding>."]
 	pub r#encodings: Vec<EncodingsProperty>,
 	/// <https://schema.org/exampleOfWork>
 	pub r#example_of_work: Vec<ExampleOfWorkProperty>,
 	/// <https://schema.org/expires>
 	pub r#expires: Vec<ExpiresProperty>,
 	/// <https://schema.org/fileFormat>
+	#[deprecated = "This schema is superseded by <https://schema.org/encodingFormat>."]
 	pub r#file_format: Vec<FileFormatProperty>,
 	/// <https://schema.org/funder>
 	pub r#funder: Vec<FunderProperty>,
@@ -152,6 +159,7 @@ pub struct Dataset {
 	/// <https://schema.org/isBasedOn>
 	pub r#is_based_on: Vec<IsBasedOnProperty>,
 	/// <https://schema.org/isBasedOnUrl>
+	#[deprecated = "This schema is superseded by <https://schema.org/isBasedOn>."]
 	pub r#is_based_on_url: Vec<IsBasedOnUrlProperty>,
 	/// <https://schema.org/isFamilyFriendly>
 	pub r#is_family_friendly: Vec<IsFamilyFriendlyProperty>,
@@ -200,6 +208,7 @@ pub struct Dataset {
 	/// <https://schema.org/review>
 	pub r#review: Vec<ReviewProperty>,
 	/// <https://schema.org/reviews>
+	#[deprecated = "This schema is superseded by <https://schema.org/review>."]
 	pub r#reviews: Vec<ReviewsProperty>,
 	/// <https://schema.org/schemaVersion>
 	pub r#schema_version: Vec<SchemaVersionProperty>,
@@ -277,20 +286,26 @@ pub struct Dataset {
 /// This trait is for properties from <https://schema.org/Dataset>.
 pub trait DatasetTrait {
 	/// Get <https://schema.org/catalog> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/includedInDataCatalog>."]
 	fn get_catalog(&self) -> &[CatalogProperty];
 	/// Take <https://schema.org/catalog> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/includedInDataCatalog>."]
 	fn take_catalog(&mut self) -> Vec<CatalogProperty>;
 	/// Get <https://schema.org/datasetTimeInterval> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/temporalCoverage>."]
 	fn get_dataset_time_interval(&self) -> &[DatasetTimeIntervalProperty];
 	/// Take <https://schema.org/datasetTimeInterval> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/temporalCoverage>."]
 	fn take_dataset_time_interval(&mut self) -> Vec<DatasetTimeIntervalProperty>;
 	/// Get <https://schema.org/distribution> from [`Self`] as borrowed slice.
 	fn get_distribution(&self) -> &[DistributionProperty];
 	/// Take <https://schema.org/distribution> from [`Self`] as owned vector.
 	fn take_distribution(&mut self) -> Vec<DistributionProperty>;
 	/// Get <https://schema.org/includedDataCatalog> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/includedInDataCatalog>."]
 	fn get_included_data_catalog(&self) -> &[IncludedDataCatalogProperty];
 	/// Take <https://schema.org/includedDataCatalog> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/includedInDataCatalog>."]
 	fn take_included_data_catalog(&mut self) -> Vec<IncludedDataCatalogProperty>;
 	/// Get <https://schema.org/includedInDataCatalog> from [`Self`] as borrowed slice.
 	fn get_included_in_data_catalog(&self) -> &[IncludedInDataCatalogProperty];
@@ -313,8 +328,10 @@ pub trait DatasetTrait {
 	/// Take <https://schema.org/variableMeasured> from [`Self`] as owned vector.
 	fn take_variable_measured(&mut self) -> Vec<VariableMeasuredProperty>;
 	/// Get <https://schema.org/variablesMeasured> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is archived, see <https://schema.org/docs/attic.home.html>."]
 	fn get_variables_measured(&self) -> &[VariablesMeasuredProperty];
 	/// Take <https://schema.org/variablesMeasured> from [`Self`] as owned vector.
+	#[deprecated = "This schema is archived, see <https://schema.org/docs/attic.home.html>."]
 	fn take_variables_measured(&mut self) -> Vec<VariablesMeasuredProperty>;
 }
 impl DatasetTrait for Dataset {

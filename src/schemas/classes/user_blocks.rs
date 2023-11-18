@@ -2,6 +2,7 @@ use super::*;
 /// <https://schema.org/UserBlocks>
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
+#[deprecated = "This schema is superseded by <https://schema.org/InteractionCounter>."]
 pub struct UserBlocks {
 	/// <https://schema.org/about>
 	pub r#about: Vec<AboutProperty>,
@@ -12,6 +13,7 @@ pub struct UserBlocks {
 	/// <https://schema.org/attendee>
 	pub r#attendee: Vec<AttendeeProperty>,
 	/// <https://schema.org/attendees>
+	#[deprecated = "This schema is superseded by <https://schema.org/attendee>."]
 	pub r#attendees: Vec<AttendeesProperty>,
 	/// <https://schema.org/audience>
 	pub r#audience: Vec<AudienceProperty>,
@@ -58,6 +60,7 @@ pub struct UserBlocks {
 	/// <https://schema.org/performer>
 	pub r#performer: Vec<PerformerProperty>,
 	/// <https://schema.org/performers>
+	#[deprecated = "This schema is superseded by <https://schema.org/performer>."]
 	pub r#performers: Vec<PerformersProperty>,
 	/// <https://schema.org/previousStartDate>
 	pub r#previous_start_date: Vec<PreviousStartDateProperty>,
@@ -74,6 +77,7 @@ pub struct UserBlocks {
 	/// <https://schema.org/subEvent>
 	pub r#sub_event: Vec<SubEventProperty>,
 	/// <https://schema.org/subEvents>
+	#[deprecated = "This schema is superseded by <https://schema.org/subEvent>."]
 	pub r#sub_events: Vec<SubEventsProperty>,
 	/// <https://schema.org/superEvent>
 	pub r#super_event: Vec<SuperEventProperty>,
@@ -111,6 +115,7 @@ pub struct UserBlocks {
 	pub r#url: Vec<UrlProperty>,
 }
 /// This trait is for properties from <https://schema.org/UserBlocks>.
+#[deprecated = "This schema is superseded by <https://schema.org/InteractionCounter>."]
 pub trait UserBlocksTrait {}
 impl UserBlocksTrait for UserBlocks {}
 impl EventTrait for UserBlocks {

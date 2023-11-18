@@ -3,6 +3,7 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum ReturnPolicyCategoryProperty {
+	/// <https://schema.org/MerchantReturnEnumeration>
 	MerchantReturnEnumeration(MerchantReturnEnumeration),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),

@@ -16,6 +16,7 @@ pub struct LodgingReservation {
 	/// <https://schema.org/numChildren>
 	pub r#num_children: Vec<NumChildrenProperty>,
 	/// <https://schema.org/bookingAgent>
+	#[deprecated = "This schema is superseded by <https://schema.org/broker>."]
 	pub r#booking_agent: Vec<BookingAgentProperty>,
 	/// <https://schema.org/bookingTime>
 	pub r#booking_time: Vec<BookingTimeProperty>,

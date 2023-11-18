@@ -6,6 +6,7 @@ pub struct SellAction {
 	/// <https://schema.org/buyer>
 	pub r#buyer: Vec<BuyerProperty>,
 	/// <https://schema.org/warrantyPromise>
+	#[deprecated = "This schema is superseded by <https://schema.org/warranty>."]
 	pub r#warranty_promise: Vec<WarrantyPromiseProperty>,
 	/// <https://schema.org/actionStatus>
 	pub r#action_status: Vec<ActionStatusProperty>,
@@ -69,8 +70,10 @@ pub trait SellActionTrait {
 	/// Take <https://schema.org/buyer> from [`Self`] as owned vector.
 	fn take_buyer(&mut self) -> Vec<BuyerProperty>;
 	/// Get <https://schema.org/warrantyPromise> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/warranty>."]
 	fn get_warranty_promise(&self) -> &[WarrantyPromiseProperty];
 	/// Take <https://schema.org/warrantyPromise> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/warranty>."]
 	fn take_warranty_promise(&mut self) -> Vec<WarrantyPromiseProperty>;
 }
 impl SellActionTrait for SellAction {

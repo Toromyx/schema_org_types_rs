@@ -4,6 +4,7 @@ use super::*;
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct MedicalWebPage {
 	/// <https://schema.org/aspect>
+	#[deprecated = "This schema is superseded by <https://schema.org/mainContentOfPage>."]
 	pub r#aspect: Vec<AspectProperty>,
 	/// <https://schema.org/medicalAudience>
 	pub r#medical_audience: Vec<MedicalAudienceProperty>,
@@ -48,6 +49,7 @@ pub struct MedicalWebPage {
 	/// <https://schema.org/award>
 	pub r#award: Vec<AwardProperty>,
 	/// <https://schema.org/awards>
+	#[deprecated = "This schema is superseded by <https://schema.org/award>."]
 	pub r#awards: Vec<AwardsProperty>,
 	/// <https://schema.org/character>
 	pub r#character: Vec<CharacterProperty>,
@@ -106,12 +108,14 @@ pub struct MedicalWebPage {
 	/// <https://schema.org/encodingFormat>
 	pub r#encoding_format: Vec<EncodingFormatProperty>,
 	/// <https://schema.org/encodings>
+	#[deprecated = "This schema is superseded by <https://schema.org/encoding>."]
 	pub r#encodings: Vec<EncodingsProperty>,
 	/// <https://schema.org/exampleOfWork>
 	pub r#example_of_work: Vec<ExampleOfWorkProperty>,
 	/// <https://schema.org/expires>
 	pub r#expires: Vec<ExpiresProperty>,
 	/// <https://schema.org/fileFormat>
+	#[deprecated = "This schema is superseded by <https://schema.org/encodingFormat>."]
 	pub r#file_format: Vec<FileFormatProperty>,
 	/// <https://schema.org/funder>
 	pub r#funder: Vec<FunderProperty>,
@@ -136,6 +140,7 @@ pub struct MedicalWebPage {
 	/// <https://schema.org/isBasedOn>
 	pub r#is_based_on: Vec<IsBasedOnProperty>,
 	/// <https://schema.org/isBasedOnUrl>
+	#[deprecated = "This schema is superseded by <https://schema.org/isBasedOn>."]
 	pub r#is_based_on_url: Vec<IsBasedOnUrlProperty>,
 	/// <https://schema.org/isFamilyFriendly>
 	pub r#is_family_friendly: Vec<IsFamilyFriendlyProperty>,
@@ -184,6 +189,7 @@ pub struct MedicalWebPage {
 	/// <https://schema.org/review>
 	pub r#review: Vec<ReviewProperty>,
 	/// <https://schema.org/reviews>
+	#[deprecated = "This schema is superseded by <https://schema.org/review>."]
 	pub r#reviews: Vec<ReviewsProperty>,
 	/// <https://schema.org/schemaVersion>
 	pub r#schema_version: Vec<SchemaVersionProperty>,
@@ -272,6 +278,7 @@ pub struct MedicalWebPage {
 	/// <https://schema.org/significantLink>
 	pub r#significant_link: Vec<SignificantLinkProperty>,
 	/// <https://schema.org/significantLinks>
+	#[deprecated = "This schema is superseded by <https://schema.org/significantLink>."]
 	pub r#significant_links: Vec<SignificantLinksProperty>,
 	/// <https://schema.org/speakable>
 	pub r#speakable: Vec<SpeakableProperty>,
@@ -281,8 +288,10 @@ pub struct MedicalWebPage {
 /// This trait is for properties from <https://schema.org/MedicalWebPage>.
 pub trait MedicalWebPageTrait {
 	/// Get <https://schema.org/aspect> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/mainContentOfPage>."]
 	fn get_aspect(&self) -> &[AspectProperty];
 	/// Take <https://schema.org/aspect> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/mainContentOfPage>."]
 	fn take_aspect(&mut self) -> Vec<AspectProperty>;
 	/// Get <https://schema.org/medicalAudience> from [`Self`] as borrowed slice.
 	fn get_medical_audience(&self) -> &[MedicalAudienceProperty];

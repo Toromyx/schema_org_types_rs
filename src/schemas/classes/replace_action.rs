@@ -56,6 +56,7 @@ pub struct ReplaceAction {
 	/// <https://schema.org/url>
 	pub r#url: Vec<UrlProperty>,
 	/// <https://schema.org/collection>
+	#[deprecated = "This schema is superseded by <https://schema.org/targetCollection>."]
 	pub r#collection: Vec<CollectionProperty>,
 	/// <https://schema.org/targetCollection>
 	pub r#target_collection: Vec<TargetCollectionProperty>,

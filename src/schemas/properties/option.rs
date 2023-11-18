@@ -2,8 +2,11 @@ use super::*;
 /// <https://schema.org/option>
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
+#[deprecated = "This schema is superseded by <https://schema.org/actionOption>."]
 pub enum OptionProperty {
+	/// <https://schema.org/Thing>
 	Thing(Thing),
+	/// <https://schema.org/Text>
 	Text(Text),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),

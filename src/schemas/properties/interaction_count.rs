@@ -2,6 +2,7 @@ use super::*;
 /// <https://schema.org/interactionCount>
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
+#[deprecated = "This schema is superseded by <https://schema.org/interactionStatistic>."]
 pub enum InteractionCountProperty {
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),

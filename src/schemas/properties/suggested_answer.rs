@@ -3,7 +3,9 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum SuggestedAnswerProperty {
+	/// <https://schema.org/Answer>
 	Answer(Answer),
+	/// <https://schema.org/ItemList>
 	ItemList(ItemList),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),

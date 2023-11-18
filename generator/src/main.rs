@@ -5,6 +5,7 @@ use indicatif::MultiProgress;
 use read::read;
 use write::write;
 
+mod deprecated_attribute;
 mod doc_lines;
 mod feature;
 mod read;

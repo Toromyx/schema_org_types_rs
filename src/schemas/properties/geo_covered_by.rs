@@ -3,7 +3,9 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum GeoCoveredByProperty {
+	/// <https://schema.org/GeospatialGeometry>
 	GeospatialGeometry(GeospatialGeometry),
+	/// <https://schema.org/Place>
 	Place(Place),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),

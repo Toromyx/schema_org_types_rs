@@ -2,7 +2,9 @@ use super::*;
 /// <https://schema.org/datasetTimeInterval>
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
+#[deprecated = "This schema is superseded by <https://schema.org/temporalCoverage>."]
 pub enum DatasetTimeIntervalProperty {
+	/// <https://schema.org/DateTime>
 	DateTime(DateTime),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),

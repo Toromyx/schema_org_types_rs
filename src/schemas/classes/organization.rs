@@ -18,12 +18,14 @@ pub struct Organization {
 	/// <https://schema.org/award>
 	pub r#award: Vec<AwardProperty>,
 	/// <https://schema.org/awards>
+	#[deprecated = "This schema is superseded by <https://schema.org/award>."]
 	pub r#awards: Vec<AwardsProperty>,
 	/// <https://schema.org/brand>
 	pub r#brand: Vec<BrandProperty>,
 	/// <https://schema.org/contactPoint>
 	pub r#contact_point: Vec<ContactPointProperty>,
 	/// <https://schema.org/contactPoints>
+	#[deprecated = "This schema is superseded by <https://schema.org/contactPoint>."]
 	pub r#contact_points: Vec<ContactPointsProperty>,
 	/// <https://schema.org/correctionsPolicy>
 	pub r#corrections_policy: Vec<CorrectionsPolicyProperty>,
@@ -42,18 +44,21 @@ pub struct Organization {
 	/// <https://schema.org/employee>
 	pub r#employee: Vec<EmployeeProperty>,
 	/// <https://schema.org/employees>
+	#[deprecated = "This schema is superseded by <https://schema.org/employee>."]
 	pub r#employees: Vec<EmployeesProperty>,
 	/// <https://schema.org/ethicsPolicy>
 	pub r#ethics_policy: Vec<EthicsPolicyProperty>,
 	/// <https://schema.org/event>
 	pub r#event: Vec<EventProperty>,
 	/// <https://schema.org/events>
+	#[deprecated = "This schema is superseded by <https://schema.org/event>."]
 	pub r#events: Vec<EventsProperty>,
 	/// <https://schema.org/faxNumber>
 	pub r#fax_number: Vec<FaxNumberProperty>,
 	/// <https://schema.org/founder>
 	pub r#founder: Vec<FounderProperty>,
 	/// <https://schema.org/founders>
+	#[deprecated = "This schema is superseded by <https://schema.org/founder>."]
 	pub r#founders: Vec<FoundersProperty>,
 	/// <https://schema.org/foundingDate>
 	pub r#founding_date: Vec<FoundingDateProperty>,
@@ -74,6 +79,7 @@ pub struct Organization {
 	/// <https://schema.org/hasPOS>
 	pub r#has_pos: Vec<HasPosProperty>,
 	/// <https://schema.org/hasProductReturnPolicy>
+	#[deprecated = "This schema is archived, see <https://schema.org/docs/attic.home.html>. This schema is superseded by <https://schema.org/hasMerchantReturnPolicy>."]
 	pub r#has_product_return_policy: Vec<HasProductReturnPolicyProperty>,
 	/// <https://schema.org/interactionStatistic>
 	pub r#interaction_statistic: Vec<InteractionStatisticProperty>,
@@ -102,6 +108,7 @@ pub struct Organization {
 	/// <https://schema.org/memberOf>
 	pub r#member_of: Vec<MemberOfProperty>,
 	/// <https://schema.org/members>
+	#[deprecated = "This schema is superseded by <https://schema.org/member>."]
 	pub r#members: Vec<MembersProperty>,
 	/// <https://schema.org/naics>
 	pub r#naics: Vec<NaicsProperty>,
@@ -120,10 +127,12 @@ pub struct Organization {
 	/// <https://schema.org/review>
 	pub r#review: Vec<ReviewProperty>,
 	/// <https://schema.org/reviews>
+	#[deprecated = "This schema is superseded by <https://schema.org/review>."]
 	pub r#reviews: Vec<ReviewsProperty>,
 	/// <https://schema.org/seeks>
 	pub r#seeks: Vec<SeeksProperty>,
 	/// <https://schema.org/serviceArea>
+	#[deprecated = "This schema is superseded by <https://schema.org/areaServed>."]
 	pub r#service_area: Vec<ServiceAreaProperty>,
 	/// <https://schema.org/slogan>
 	pub r#slogan: Vec<SloganProperty>,
@@ -195,8 +204,10 @@ pub trait OrganizationTrait {
 	/// Take <https://schema.org/award> from [`Self`] as owned vector.
 	fn take_award(&mut self) -> Vec<AwardProperty>;
 	/// Get <https://schema.org/awards> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/award>."]
 	fn get_awards(&self) -> &[AwardsProperty];
 	/// Take <https://schema.org/awards> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/award>."]
 	fn take_awards(&mut self) -> Vec<AwardsProperty>;
 	/// Get <https://schema.org/brand> from [`Self`] as borrowed slice.
 	fn get_brand(&self) -> &[BrandProperty];
@@ -207,8 +218,10 @@ pub trait OrganizationTrait {
 	/// Take <https://schema.org/contactPoint> from [`Self`] as owned vector.
 	fn take_contact_point(&mut self) -> Vec<ContactPointProperty>;
 	/// Get <https://schema.org/contactPoints> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/contactPoint>."]
 	fn get_contact_points(&self) -> &[ContactPointsProperty];
 	/// Take <https://schema.org/contactPoints> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/contactPoint>."]
 	fn take_contact_points(&mut self) -> Vec<ContactPointsProperty>;
 	/// Get <https://schema.org/correctionsPolicy> from [`Self`] as borrowed slice.
 	fn get_corrections_policy(&self) -> &[CorrectionsPolicyProperty];
@@ -243,8 +256,10 @@ pub trait OrganizationTrait {
 	/// Take <https://schema.org/employee> from [`Self`] as owned vector.
 	fn take_employee(&mut self) -> Vec<EmployeeProperty>;
 	/// Get <https://schema.org/employees> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/employee>."]
 	fn get_employees(&self) -> &[EmployeesProperty];
 	/// Take <https://schema.org/employees> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/employee>."]
 	fn take_employees(&mut self) -> Vec<EmployeesProperty>;
 	/// Get <https://schema.org/ethicsPolicy> from [`Self`] as borrowed slice.
 	fn get_ethics_policy(&self) -> &[EthicsPolicyProperty];
@@ -255,8 +270,10 @@ pub trait OrganizationTrait {
 	/// Take <https://schema.org/event> from [`Self`] as owned vector.
 	fn take_event(&mut self) -> Vec<EventProperty>;
 	/// Get <https://schema.org/events> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/event>."]
 	fn get_events(&self) -> &[EventsProperty];
 	/// Take <https://schema.org/events> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/event>."]
 	fn take_events(&mut self) -> Vec<EventsProperty>;
 	/// Get <https://schema.org/faxNumber> from [`Self`] as borrowed slice.
 	fn get_fax_number(&self) -> &[FaxNumberProperty];
@@ -267,8 +284,10 @@ pub trait OrganizationTrait {
 	/// Take <https://schema.org/founder> from [`Self`] as owned vector.
 	fn take_founder(&mut self) -> Vec<FounderProperty>;
 	/// Get <https://schema.org/founders> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/founder>."]
 	fn get_founders(&self) -> &[FoundersProperty];
 	/// Take <https://schema.org/founders> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/founder>."]
 	fn take_founders(&mut self) -> Vec<FoundersProperty>;
 	/// Get <https://schema.org/foundingDate> from [`Self`] as borrowed slice.
 	fn get_founding_date(&self) -> &[FoundingDateProperty];
@@ -307,8 +326,10 @@ pub trait OrganizationTrait {
 	/// Take <https://schema.org/hasPOS> from [`Self`] as owned vector.
 	fn take_has_pos(&mut self) -> Vec<HasPosProperty>;
 	/// Get <https://schema.org/hasProductReturnPolicy> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is archived, see <https://schema.org/docs/attic.home.html>. This schema is superseded by <https://schema.org/hasMerchantReturnPolicy>."]
 	fn get_has_product_return_policy(&self) -> &[HasProductReturnPolicyProperty];
 	/// Take <https://schema.org/hasProductReturnPolicy> from [`Self`] as owned vector.
+	#[deprecated = "This schema is archived, see <https://schema.org/docs/attic.home.html>. This schema is superseded by <https://schema.org/hasMerchantReturnPolicy>."]
 	fn take_has_product_return_policy(&mut self) -> Vec<HasProductReturnPolicyProperty>;
 	/// Get <https://schema.org/interactionStatistic> from [`Self`] as borrowed slice.
 	fn get_interaction_statistic(&self) -> &[InteractionStatisticProperty];
@@ -363,8 +384,10 @@ pub trait OrganizationTrait {
 	/// Take <https://schema.org/memberOf> from [`Self`] as owned vector.
 	fn take_member_of(&mut self) -> Vec<MemberOfProperty>;
 	/// Get <https://schema.org/members> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/member>."]
 	fn get_members(&self) -> &[MembersProperty];
 	/// Take <https://schema.org/members> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/member>."]
 	fn take_members(&mut self) -> Vec<MembersProperty>;
 	/// Get <https://schema.org/naics> from [`Self`] as borrowed slice.
 	fn get_naics(&self) -> &[NaicsProperty];
@@ -399,16 +422,20 @@ pub trait OrganizationTrait {
 	/// Take <https://schema.org/review> from [`Self`] as owned vector.
 	fn take_review(&mut self) -> Vec<ReviewProperty>;
 	/// Get <https://schema.org/reviews> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/review>."]
 	fn get_reviews(&self) -> &[ReviewsProperty];
 	/// Take <https://schema.org/reviews> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/review>."]
 	fn take_reviews(&mut self) -> Vec<ReviewsProperty>;
 	/// Get <https://schema.org/seeks> from [`Self`] as borrowed slice.
 	fn get_seeks(&self) -> &[SeeksProperty];
 	/// Take <https://schema.org/seeks> from [`Self`] as owned vector.
 	fn take_seeks(&mut self) -> Vec<SeeksProperty>;
 	/// Get <https://schema.org/serviceArea> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/areaServed>."]
 	fn get_service_area(&self) -> &[ServiceAreaProperty];
 	/// Take <https://schema.org/serviceArea> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/areaServed>."]
 	fn take_service_area(&mut self) -> Vec<ServiceAreaProperty>;
 	/// Get <https://schema.org/slogan> from [`Self`] as borrowed slice.
 	fn get_slogan(&self) -> &[SloganProperty];
