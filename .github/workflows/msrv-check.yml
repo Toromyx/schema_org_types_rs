@@ -1,0 +1,27 @@
+name: MSRV Check
+
+on: push
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions-rs/toolchain@v1
+        id: toolchain
+        with:
+          toolchain: stable
+      - uses: actions-rs/install@v0.1
+        with:
+          crate: cargo-msrv
+      - uses: actions/cache@v3
+        with:
+          key: rust-${{ steps.toolchain.outputs.rustc_hash }}-${{ hashFiles('src/**') }}-${{ hashFiles('Cargo.toml') }}
+          restore-keys: |
+            rust-${{ steps.toolchain.outputs.rustc_hash }}-${{ hashFiles('src/**') }}-
+            rust-${{ steps.toolchain.outputs.rustc_hash }}-
+            rust-
+          path: |
+            target
+            ~/.cargo
+      - run: cargo msrv verify -- cargo check --all-features

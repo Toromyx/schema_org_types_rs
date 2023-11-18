@@ -41,7 +41,7 @@ impl ToModuleString for &[SchemaModuleInfo] {
 			let module_name = TokenStream::from_str(&format!("r#{}", schema.name)).unwrap();
 			quote!(
 				mod #module_name;
-				pub use #module_name::*;
+				pub use self::#module_name::*;
 			)
 		});
 		quote!(
