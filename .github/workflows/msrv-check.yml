@@ -1,6 +1,9 @@
 name: MSRV Check
 
 on:
+  # the time and day of this schedule is randomly generated
+  schedule:
+    - cron: "12 6 * * 1"
   push:
     paths:
       - src/**
