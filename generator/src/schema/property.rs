@@ -35,10 +35,6 @@ impl Schema for Property {
 		"properties"
 	}
 
-	fn feature_name(&self) -> String {
-		format!("{}-property-schema", self.name.to_case(Case::Kebab))
-	}
-
 	fn name(&self) -> &String {
 		&self.name
 	}

@@ -33,10 +33,6 @@ impl Schema for Enumeration {
 		"enumerations"
 	}
 
-	fn feature_name(&self) -> String {
-		format!("{}-schema", self.name.to_case(Case::Kebab))
-	}
-
 	fn name(&self) -> &String {
 		&self.name
 	}

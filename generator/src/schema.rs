@@ -13,9 +13,6 @@ pub trait Schema {
 	/// Get the module name describing where to write this schema into.
 	fn parent_module_name() -> &'static str;
 
-	/// Get the feature name which gates the compilation of this schema.
-	fn feature_name(&self) -> String;
-
 	/// Get the name of this schema.
 	fn name(&self) -> &String;
 
