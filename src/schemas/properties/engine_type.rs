@@ -3,8 +3,11 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum EngineTypeProperty {
+	/// <https://schema.org/QualitativeValue>
 	QualitativeValue(QualitativeValue),
+	/// <https://schema.org/URL>
 	Url(Url),
+	/// <https://schema.org/Text>
 	Text(Text),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),

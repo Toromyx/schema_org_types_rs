@@ -8,7 +8,8 @@ use oxigraph::store::Store;
 use quote::{__private::TokenStream, quote, ToTokens, TokenStreamExt};
 
 use crate::{
-	doc_lines::DocLines,
+	deprecated_attribute::DeprecatedAttribute,
+	doc_lines::{strings_as_doc_lines, DocLines},
 	feature::Feature,
 	schema::{
 		data_type::rust_type::RustType, map_schema_name, property::serde::serde_mod,
@@ -28,6 +29,10 @@ pub struct Property {
 	pub name: String,
 	#[derivative(PartialEq = "ignore", PartialOrd = "ignore", Ord = "ignore")]
 	pub variants: Vec<ReferencedSchema>,
+	#[derivative(PartialEq = "ignore", PartialOrd = "ignore", Ord = "ignore")]
+	pub superseded_by: Vec<ReferencedSchema>,
+	#[derivative(PartialEq = "ignore", PartialOrd = "ignore", Ord = "ignore")]
+	pub in_attic: bool,
 }
 
 impl Schema for Property {
@@ -47,7 +52,7 @@ impl Schema for Property {
 		let mut variants: Vec<ReferencedSchema> = store
 			.get_variants_of_property(&solution.iri)
 			.into_iter()
-			.map(ReferencedSchema::from)
+			.map(|solution| ReferencedSchema::from_solution(store, solution))
 			.collect();
 
 		#[derive(PartialEq, Eq, PartialOrd, Ord)]
@@ -82,23 +87,46 @@ impl Schema for Property {
 				Ordering::Greater => Ordering::Greater,
 			}
 		});
+		let superseded_by = store
+			.get_superseded_by(&solution.iri)
+			.into_iter()
+			.map(|solution| ReferencedSchema::from_solution(store, solution))
+			.collect();
 		Self {
 			iri: solution.iri,
 			name: map_schema_name(solution.label),
 			variants,
+			superseded_by,
+			in_attic: solution.in_attic,
 		}
+	}
+}
+
+impl DeprecatedAttribute for Property {
+	fn in_attic(&self) -> bool {
+		self.in_attic
+	}
+
+	fn superseded_by(&self) -> &[ReferencedSchema] {
+		self.superseded_by.as_slice()
 	}
 }
 
 impl ToTokens for Property {
 	fn to_tokens(&self, tokens: &mut TokenStream) {
 		let doc_lines = self.doc_lines_token_stream();
+		let deprecated_attribute = self.deprecated_attribute();
 		let name =
 			TokenStream::from_str(&format!("{}Property", self.name.to_case(Case::UpperCamel)))
 				.unwrap();
-		let variants = self.variants.iter().map(|ReferencedSchema { name, .. }| {
-			let variant_name = TokenStream::from_str(&name.to_case(Case::UpperCamel)).unwrap();
+		let variants = self.variants.iter().map(|referenced_schema| {
+			let doc_lines = strings_as_doc_lines(&[format!("<{}>", referenced_schema.iri)]);
+			let deprecated_attribute = referenced_schema.deprecated_attribute();
+			let variant_name =
+				TokenStream::from_str(&referenced_schema.name.to_case(Case::UpperCamel)).unwrap();
 			quote!(
+				#doc_lines
+				#deprecated_attribute
 				#variant_name(#variant_name),
 			)
 		});
@@ -113,6 +141,7 @@ impl ToTokens for Property {
 			#doc_lines
 			#[cfg_attr(feature = "derive-debug", derive(Debug))]
 			#[cfg_attr(feature = "derive-clone", derive(Clone))]
+			#deprecated_attribute
 			pub enum #name {
 				#(#variants)*
 				#fallible_feature_gate

@@ -2,6 +2,7 @@ use super::*;
 /// <https://schema.org/Taxi>
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
+#[deprecated = "This schema is superseded by <https://schema.org/TaxiService>."]
 pub struct Taxi {
 	/// <https://schema.org/aggregateRating>
 	pub r#aggregate_rating: Vec<AggregateRatingProperty>,
@@ -32,6 +33,7 @@ pub struct Taxi {
 	/// <https://schema.org/offers>
 	pub r#offers: Vec<OffersProperty>,
 	/// <https://schema.org/produces>
+	#[deprecated = "This schema is superseded by <https://schema.org/serviceOutput>."]
 	pub r#produces: Vec<ProducesProperty>,
 	/// <https://schema.org/provider>
 	pub r#provider: Vec<ProviderProperty>,
@@ -40,8 +42,10 @@ pub struct Taxi {
 	/// <https://schema.org/review>
 	pub r#review: Vec<ReviewProperty>,
 	/// <https://schema.org/serviceArea>
+	#[deprecated = "This schema is superseded by <https://schema.org/areaServed>."]
 	pub r#service_area: Vec<ServiceAreaProperty>,
 	/// <https://schema.org/serviceAudience>
+	#[deprecated = "This schema is superseded by <https://schema.org/audience>."]
 	pub r#service_audience: Vec<ServiceAudienceProperty>,
 	/// <https://schema.org/serviceOutput>
 	pub r#service_output: Vec<ServiceOutputProperty>,
@@ -77,6 +81,7 @@ pub struct Taxi {
 	pub r#url: Vec<UrlProperty>,
 }
 /// This trait is for properties from <https://schema.org/Taxi>.
+#[deprecated = "This schema is superseded by <https://schema.org/TaxiService>."]
 pub trait TaxiTrait {}
 impl TaxiTrait for Taxi {}
 impl ServiceTrait for Taxi {

@@ -16,6 +16,7 @@ pub struct Person {
 	/// <https://schema.org/award>
 	pub r#award: Vec<AwardProperty>,
 	/// <https://schema.org/awards>
+	#[deprecated = "This schema is superseded by <https://schema.org/award>."]
 	pub r#awards: Vec<AwardsProperty>,
 	/// <https://schema.org/birthDate>
 	pub r#birth_date: Vec<BirthDateProperty>,
@@ -30,10 +31,12 @@ pub struct Person {
 	/// <https://schema.org/colleague>
 	pub r#colleague: Vec<ColleagueProperty>,
 	/// <https://schema.org/colleagues>
+	#[deprecated = "This schema is superseded by <https://schema.org/colleague>."]
 	pub r#colleagues: Vec<ColleaguesProperty>,
 	/// <https://schema.org/contactPoint>
 	pub r#contact_point: Vec<ContactPointProperty>,
 	/// <https://schema.org/contactPoints>
+	#[deprecated = "This schema is superseded by <https://schema.org/contactPoint>."]
 	pub r#contact_points: Vec<ContactPointsProperty>,
 	/// <https://schema.org/deathDate>
 	pub r#death_date: Vec<DeathDateProperty>,
@@ -102,6 +105,7 @@ pub struct Person {
 	/// <https://schema.org/parent>
 	pub r#parent: Vec<ParentProperty>,
 	/// <https://schema.org/parents>
+	#[deprecated = "This schema is superseded by <https://schema.org/parent>."]
 	pub r#parents: Vec<ParentsProperty>,
 	/// <https://schema.org/performerIn>
 	pub r#performer_in: Vec<PerformerInProperty>,
@@ -114,6 +118,7 @@ pub struct Person {
 	/// <https://schema.org/sibling>
 	pub r#sibling: Vec<SiblingProperty>,
 	/// <https://schema.org/siblings>
+	#[deprecated = "This schema is superseded by <https://schema.org/sibling>."]
 	pub r#siblings: Vec<SiblingsProperty>,
 	/// <https://schema.org/sponsor>
 	pub r#sponsor: Vec<SponsorProperty>,
@@ -183,8 +188,10 @@ pub trait PersonTrait {
 	/// Take <https://schema.org/award> from [`Self`] as owned vector.
 	fn take_award(&mut self) -> Vec<AwardProperty>;
 	/// Get <https://schema.org/awards> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/award>."]
 	fn get_awards(&self) -> &[AwardsProperty];
 	/// Take <https://schema.org/awards> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/award>."]
 	fn take_awards(&mut self) -> Vec<AwardsProperty>;
 	/// Get <https://schema.org/birthDate> from [`Self`] as borrowed slice.
 	fn get_birth_date(&self) -> &[BirthDateProperty];
@@ -211,16 +218,20 @@ pub trait PersonTrait {
 	/// Take <https://schema.org/colleague> from [`Self`] as owned vector.
 	fn take_colleague(&mut self) -> Vec<ColleagueProperty>;
 	/// Get <https://schema.org/colleagues> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/colleague>."]
 	fn get_colleagues(&self) -> &[ColleaguesProperty];
 	/// Take <https://schema.org/colleagues> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/colleague>."]
 	fn take_colleagues(&mut self) -> Vec<ColleaguesProperty>;
 	/// Get <https://schema.org/contactPoint> from [`Self`] as borrowed slice.
 	fn get_contact_point(&self) -> &[ContactPointProperty];
 	/// Take <https://schema.org/contactPoint> from [`Self`] as owned vector.
 	fn take_contact_point(&mut self) -> Vec<ContactPointProperty>;
 	/// Get <https://schema.org/contactPoints> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/contactPoint>."]
 	fn get_contact_points(&self) -> &[ContactPointsProperty];
 	/// Take <https://schema.org/contactPoints> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/contactPoint>."]
 	fn take_contact_points(&mut self) -> Vec<ContactPointsProperty>;
 	/// Get <https://schema.org/deathDate> from [`Self`] as borrowed slice.
 	fn get_death_date(&self) -> &[DeathDateProperty];
@@ -355,8 +366,10 @@ pub trait PersonTrait {
 	/// Take <https://schema.org/parent> from [`Self`] as owned vector.
 	fn take_parent(&mut self) -> Vec<ParentProperty>;
 	/// Get <https://schema.org/parents> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/parent>."]
 	fn get_parents(&self) -> &[ParentsProperty];
 	/// Take <https://schema.org/parents> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/parent>."]
 	fn take_parents(&mut self) -> Vec<ParentsProperty>;
 	/// Get <https://schema.org/performerIn> from [`Self`] as borrowed slice.
 	fn get_performer_in(&self) -> &[PerformerInProperty];
@@ -379,8 +392,10 @@ pub trait PersonTrait {
 	/// Take <https://schema.org/sibling> from [`Self`] as owned vector.
 	fn take_sibling(&mut self) -> Vec<SiblingProperty>;
 	/// Get <https://schema.org/siblings> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/sibling>."]
 	fn get_siblings(&self) -> &[SiblingsProperty];
 	/// Take <https://schema.org/siblings> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/sibling>."]
 	fn take_siblings(&mut self) -> Vec<SiblingsProperty>;
 	/// Get <https://schema.org/sponsor> from [`Self`] as borrowed slice.
 	fn get_sponsor(&self) -> &[SponsorProperty];

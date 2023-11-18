@@ -6,6 +6,7 @@ pub struct ReservationPackage {
 	/// <https://schema.org/subReservation>
 	pub r#sub_reservation: Vec<SubReservationProperty>,
 	/// <https://schema.org/bookingAgent>
+	#[deprecated = "This schema is superseded by <https://schema.org/broker>."]
 	pub r#booking_agent: Vec<BookingAgentProperty>,
 	/// <https://schema.org/bookingTime>
 	pub r#booking_time: Vec<BookingTimeProperty>,

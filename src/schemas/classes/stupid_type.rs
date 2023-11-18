@@ -2,8 +2,10 @@ use super::*;
 /// <https://schema.org/StupidType>
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
+#[deprecated = "This schema is archived, see <https://schema.org/docs/attic.home.html>."]
 pub struct StupidType {
 	/// <https://schema.org/stupidProperty>
+	#[deprecated = "This schema is archived, see <https://schema.org/docs/attic.home.html>."]
 	pub r#stupid_property: Vec<StupidPropertyProperty>,
 	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
@@ -31,10 +33,13 @@ pub struct StupidType {
 	pub r#url: Vec<UrlProperty>,
 }
 /// This trait is for properties from <https://schema.org/StupidType>.
+#[deprecated = "This schema is archived, see <https://schema.org/docs/attic.home.html>."]
 pub trait StupidTypeTrait {
 	/// Get <https://schema.org/stupidProperty> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is archived, see <https://schema.org/docs/attic.home.html>."]
 	fn get_stupid_property(&self) -> &[StupidPropertyProperty];
 	/// Take <https://schema.org/stupidProperty> from [`Self`] as owned vector.
+	#[deprecated = "This schema is archived, see <https://schema.org/docs/attic.home.html>."]
 	fn take_stupid_property(&mut self) -> Vec<StupidPropertyProperty>;
 }
 impl StupidTypeTrait for StupidType {

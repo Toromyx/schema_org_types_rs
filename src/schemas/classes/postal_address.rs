@@ -32,6 +32,7 @@ pub struct PostalAddress {
 	/// <https://schema.org/productSupported>
 	pub r#product_supported: Vec<ProductSupportedProperty>,
 	/// <https://schema.org/serviceArea>
+	#[deprecated = "This schema is superseded by <https://schema.org/areaServed>."]
 	pub r#service_area: Vec<ServiceAreaProperty>,
 	/// <https://schema.org/telephone>
 	pub r#telephone: Vec<TelephoneProperty>,

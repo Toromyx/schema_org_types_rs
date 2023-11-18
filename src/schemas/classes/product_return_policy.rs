@@ -2,10 +2,13 @@ use super::*;
 /// <https://schema.org/ProductReturnPolicy>
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
+#[deprecated = "This schema is archived, see <https://schema.org/docs/attic.home.html>. This schema is superseded by <https://schema.org/MerchantReturnPolicy>."]
 pub struct ProductReturnPolicy {
 	/// <https://schema.org/productReturnDays>
+	#[deprecated = "This schema is archived, see <https://schema.org/docs/attic.home.html>. This schema is superseded by <https://schema.org/merchantReturnDays>."]
 	pub r#product_return_days: Vec<ProductReturnDaysProperty>,
 	/// <https://schema.org/productReturnLink>
+	#[deprecated = "This schema is archived, see <https://schema.org/docs/attic.home.html>. This schema is superseded by <https://schema.org/merchantReturnLink>."]
 	pub r#product_return_link: Vec<ProductReturnLinkProperty>,
 	/// <https://schema.org/additionalType>
 	pub r#additional_type: Vec<AdditionalTypeProperty>,
@@ -33,14 +36,19 @@ pub struct ProductReturnPolicy {
 	pub r#url: Vec<UrlProperty>,
 }
 /// This trait is for properties from <https://schema.org/ProductReturnPolicy>.
+#[deprecated = "This schema is archived, see <https://schema.org/docs/attic.home.html>. This schema is superseded by <https://schema.org/MerchantReturnPolicy>."]
 pub trait ProductReturnPolicyTrait {
 	/// Get <https://schema.org/productReturnDays> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is archived, see <https://schema.org/docs/attic.home.html>. This schema is superseded by <https://schema.org/merchantReturnDays>."]
 	fn get_product_return_days(&self) -> &[ProductReturnDaysProperty];
 	/// Take <https://schema.org/productReturnDays> from [`Self`] as owned vector.
+	#[deprecated = "This schema is archived, see <https://schema.org/docs/attic.home.html>. This schema is superseded by <https://schema.org/merchantReturnDays>."]
 	fn take_product_return_days(&mut self) -> Vec<ProductReturnDaysProperty>;
 	/// Get <https://schema.org/productReturnLink> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is archived, see <https://schema.org/docs/attic.home.html>. This schema is superseded by <https://schema.org/merchantReturnLink>."]
 	fn get_product_return_link(&self) -> &[ProductReturnLinkProperty];
 	/// Take <https://schema.org/productReturnLink> from [`Self`] as owned vector.
+	#[deprecated = "This schema is archived, see <https://schema.org/docs/attic.home.html>. This schema is superseded by <https://schema.org/merchantReturnLink>."]
 	fn take_product_return_link(&mut self) -> Vec<ProductReturnLinkProperty>;
 }
 impl ProductReturnPolicyTrait for ProductReturnPolicy {

@@ -6,6 +6,7 @@ pub struct Role {
 	/// <https://schema.org/endDate>
 	pub r#end_date: Vec<EndDateProperty>,
 	/// <https://schema.org/namedPosition>
+	#[deprecated = "This schema is superseded by <https://schema.org/roleName>."]
 	pub r#named_position: Vec<NamedPositionProperty>,
 	/// <https://schema.org/roleName>
 	pub r#role_name: Vec<RoleNameProperty>,
@@ -43,8 +44,10 @@ pub trait RoleTrait {
 	/// Take <https://schema.org/endDate> from [`Self`] as owned vector.
 	fn take_end_date(&mut self) -> Vec<EndDateProperty>;
 	/// Get <https://schema.org/namedPosition> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/roleName>."]
 	fn get_named_position(&self) -> &[NamedPositionProperty];
 	/// Take <https://schema.org/namedPosition> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/roleName>."]
 	fn take_named_position(&mut self) -> Vec<NamedPositionProperty>;
 	/// Get <https://schema.org/roleName> from [`Self`] as borrowed slice.
 	fn get_role_name(&self) -> &[RoleNameProperty];

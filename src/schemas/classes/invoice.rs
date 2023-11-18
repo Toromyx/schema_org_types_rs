@@ -18,6 +18,7 @@ pub struct Invoice {
 	/// <https://schema.org/minimumPaymentDue>
 	pub r#minimum_payment_due: Vec<MinimumPaymentDueProperty>,
 	/// <https://schema.org/paymentDue>
+	#[deprecated = "This schema is superseded by <https://schema.org/paymentDueDate>."]
 	pub r#payment_due: Vec<PaymentDueProperty>,
 	/// <https://schema.org/paymentDueDate>
 	pub r#payment_due_date: Vec<PaymentDueDateProperty>,
@@ -91,8 +92,10 @@ pub trait InvoiceTrait {
 	/// Take <https://schema.org/minimumPaymentDue> from [`Self`] as owned vector.
 	fn take_minimum_payment_due(&mut self) -> Vec<MinimumPaymentDueProperty>;
 	/// Get <https://schema.org/paymentDue> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/paymentDueDate>."]
 	fn get_payment_due(&self) -> &[PaymentDueProperty];
 	/// Take <https://schema.org/paymentDue> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/paymentDueDate>."]
 	fn take_payment_due(&mut self) -> Vec<PaymentDueProperty>;
 	/// Get <https://schema.org/paymentDueDate> from [`Self`] as borrowed slice.
 	fn get_payment_due_date(&self) -> &[PaymentDueDateProperty];

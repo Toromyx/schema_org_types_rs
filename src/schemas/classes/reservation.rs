@@ -4,6 +4,7 @@ use super::*;
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct Reservation {
 	/// <https://schema.org/bookingAgent>
+	#[deprecated = "This schema is superseded by <https://schema.org/broker>."]
 	pub r#booking_agent: Vec<BookingAgentProperty>,
 	/// <https://schema.org/bookingTime>
 	pub r#booking_time: Vec<BookingTimeProperty>,
@@ -57,8 +58,10 @@ pub struct Reservation {
 /// This trait is for properties from <https://schema.org/Reservation>.
 pub trait ReservationTrait {
 	/// Get <https://schema.org/bookingAgent> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/broker>."]
 	fn get_booking_agent(&self) -> &[BookingAgentProperty];
 	/// Take <https://schema.org/bookingAgent> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/broker>."]
 	fn take_booking_agent(&mut self) -> Vec<BookingAgentProperty>;
 	/// Get <https://schema.org/bookingTime> from [`Self`] as borrowed slice.
 	fn get_booking_time(&self) -> &[BookingTimeProperty];

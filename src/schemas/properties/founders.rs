@@ -2,7 +2,9 @@ use super::*;
 /// <https://schema.org/founders>
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
+#[deprecated = "This schema is superseded by <https://schema.org/founder>."]
 pub enum FoundersProperty {
+	/// <https://schema.org/Person>
 	Person(Person),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),

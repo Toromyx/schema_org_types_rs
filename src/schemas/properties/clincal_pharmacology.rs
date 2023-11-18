@@ -2,7 +2,9 @@ use super::*;
 /// <https://schema.org/clincalPharmacology>
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
+#[deprecated = "This schema is superseded by <https://schema.org/clinicalPharmacology>."]
 pub enum ClincalPharmacologyProperty {
+	/// <https://schema.org/Text>
 	Text(Text),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),

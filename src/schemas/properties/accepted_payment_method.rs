@@ -3,7 +3,9 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum AcceptedPaymentMethodProperty {
+	/// <https://schema.org/LoanOrCredit>
 	LoanOrCredit(LoanOrCredit),
+	/// <https://schema.org/PaymentMethod>
 	PaymentMethod(PaymentMethod),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),

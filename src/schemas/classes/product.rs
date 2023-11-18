@@ -14,6 +14,7 @@ pub struct Product {
 	/// <https://schema.org/award>
 	pub r#award: Vec<AwardProperty>,
 	/// <https://schema.org/awards>
+	#[deprecated = "This schema is superseded by <https://schema.org/award>."]
 	pub r#awards: Vec<AwardsProperty>,
 	/// <https://schema.org/brand>
 	pub r#brand: Vec<BrandProperty>,
@@ -50,6 +51,7 @@ pub struct Product {
 	/// <https://schema.org/hasMerchantReturnPolicy>
 	pub r#has_merchant_return_policy: Vec<HasMerchantReturnPolicyProperty>,
 	/// <https://schema.org/hasProductReturnPolicy>
+	#[deprecated = "This schema is archived, see <https://schema.org/docs/attic.home.html>. This schema is superseded by <https://schema.org/hasMerchantReturnPolicy>."]
 	pub r#has_product_return_policy: Vec<HasProductReturnPolicyProperty>,
 	/// <https://schema.org/height>
 	pub r#height: Vec<HeightProperty>,
@@ -104,6 +106,7 @@ pub struct Product {
 	/// <https://schema.org/review>
 	pub r#review: Vec<ReviewProperty>,
 	/// <https://schema.org/reviews>
+	#[deprecated = "This schema is superseded by <https://schema.org/review>."]
 	pub r#reviews: Vec<ReviewsProperty>,
 	/// <https://schema.org/size>
 	pub r#size: Vec<SizeProperty>,
@@ -163,8 +166,10 @@ pub trait ProductTrait {
 	/// Take <https://schema.org/award> from [`Self`] as owned vector.
 	fn take_award(&mut self) -> Vec<AwardProperty>;
 	/// Get <https://schema.org/awards> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/award>."]
 	fn get_awards(&self) -> &[AwardsProperty];
 	/// Take <https://schema.org/awards> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/award>."]
 	fn take_awards(&mut self) -> Vec<AwardsProperty>;
 	/// Get <https://schema.org/brand> from [`Self`] as borrowed slice.
 	fn get_brand(&self) -> &[BrandProperty];
@@ -235,8 +240,10 @@ pub trait ProductTrait {
 	/// Take <https://schema.org/hasMerchantReturnPolicy> from [`Self`] as owned vector.
 	fn take_has_merchant_return_policy(&mut self) -> Vec<HasMerchantReturnPolicyProperty>;
 	/// Get <https://schema.org/hasProductReturnPolicy> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is archived, see <https://schema.org/docs/attic.home.html>. This schema is superseded by <https://schema.org/hasMerchantReturnPolicy>."]
 	fn get_has_product_return_policy(&self) -> &[HasProductReturnPolicyProperty];
 	/// Take <https://schema.org/hasProductReturnPolicy> from [`Self`] as owned vector.
+	#[deprecated = "This schema is archived, see <https://schema.org/docs/attic.home.html>. This schema is superseded by <https://schema.org/hasMerchantReturnPolicy>."]
 	fn take_has_product_return_policy(&mut self) -> Vec<HasProductReturnPolicyProperty>;
 	/// Get <https://schema.org/height> from [`Self`] as borrowed slice.
 	fn get_height(&self) -> &[HeightProperty];
@@ -343,8 +350,10 @@ pub trait ProductTrait {
 	/// Take <https://schema.org/review> from [`Self`] as owned vector.
 	fn take_review(&mut self) -> Vec<ReviewProperty>;
 	/// Get <https://schema.org/reviews> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/review>."]
 	fn get_reviews(&self) -> &[ReviewsProperty];
 	/// Take <https://schema.org/reviews> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/review>."]
 	fn take_reviews(&mut self) -> Vec<ReviewsProperty>;
 	/// Get <https://schema.org/size> from [`Self`] as borrowed slice.
 	fn get_size(&self) -> &[SizeProperty];

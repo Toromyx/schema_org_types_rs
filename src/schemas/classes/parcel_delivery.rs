@@ -4,6 +4,7 @@ use super::*;
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct ParcelDelivery {
 	/// <https://schema.org/carrier>
+	#[deprecated = "This schema is superseded by <https://schema.org/provider>."]
 	pub r#carrier: Vec<CarrierProperty>,
 	/// <https://schema.org/deliveryAddress>
 	pub r#delivery_address: Vec<DeliveryAddressProperty>,
@@ -55,8 +56,10 @@ pub struct ParcelDelivery {
 /// This trait is for properties from <https://schema.org/ParcelDelivery>.
 pub trait ParcelDeliveryTrait {
 	/// Get <https://schema.org/carrier> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/provider>."]
 	fn get_carrier(&self) -> &[CarrierProperty];
 	/// Take <https://schema.org/carrier> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/provider>."]
 	fn take_carrier(&mut self) -> Vec<CarrierProperty>;
 	/// Get <https://schema.org/deliveryAddress> from [`Self`] as borrowed slice.
 	fn get_delivery_address(&self) -> &[DeliveryAddressProperty];

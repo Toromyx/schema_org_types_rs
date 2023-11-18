@@ -32,6 +32,7 @@ pub struct Service {
 	/// <https://schema.org/offers>
 	pub r#offers: Vec<OffersProperty>,
 	/// <https://schema.org/produces>
+	#[deprecated = "This schema is superseded by <https://schema.org/serviceOutput>."]
 	pub r#produces: Vec<ProducesProperty>,
 	/// <https://schema.org/provider>
 	pub r#provider: Vec<ProviderProperty>,
@@ -40,8 +41,10 @@ pub struct Service {
 	/// <https://schema.org/review>
 	pub r#review: Vec<ReviewProperty>,
 	/// <https://schema.org/serviceArea>
+	#[deprecated = "This schema is superseded by <https://schema.org/areaServed>."]
 	pub r#service_area: Vec<ServiceAreaProperty>,
 	/// <https://schema.org/serviceAudience>
+	#[deprecated = "This schema is superseded by <https://schema.org/audience>."]
 	pub r#service_audience: Vec<ServiceAudienceProperty>,
 	/// <https://schema.org/serviceOutput>
 	pub r#service_output: Vec<ServiceOutputProperty>,
@@ -135,8 +138,10 @@ pub trait ServiceTrait {
 	/// Take <https://schema.org/offers> from [`Self`] as owned vector.
 	fn take_offers(&mut self) -> Vec<OffersProperty>;
 	/// Get <https://schema.org/produces> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/serviceOutput>."]
 	fn get_produces(&self) -> &[ProducesProperty];
 	/// Take <https://schema.org/produces> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/serviceOutput>."]
 	fn take_produces(&mut self) -> Vec<ProducesProperty>;
 	/// Get <https://schema.org/provider> from [`Self`] as borrowed slice.
 	fn get_provider(&self) -> &[ProviderProperty];
@@ -151,12 +156,16 @@ pub trait ServiceTrait {
 	/// Take <https://schema.org/review> from [`Self`] as owned vector.
 	fn take_review(&mut self) -> Vec<ReviewProperty>;
 	/// Get <https://schema.org/serviceArea> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/areaServed>."]
 	fn get_service_area(&self) -> &[ServiceAreaProperty];
 	/// Take <https://schema.org/serviceArea> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/areaServed>."]
 	fn take_service_area(&mut self) -> Vec<ServiceAreaProperty>;
 	/// Get <https://schema.org/serviceAudience> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/audience>."]
 	fn get_service_audience(&self) -> &[ServiceAudienceProperty];
 	/// Take <https://schema.org/serviceAudience> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/audience>."]
 	fn take_service_audience(&mut self) -> Vec<ServiceAudienceProperty>;
 	/// Get <https://schema.org/serviceOutput> from [`Self`] as borrowed slice.
 	fn get_service_output(&self) -> &[ServiceOutputProperty];

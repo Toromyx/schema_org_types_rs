@@ -14,6 +14,7 @@ pub struct Flight {
 	/// <https://schema.org/boardingPolicy>
 	pub r#boarding_policy: Vec<BoardingPolicyProperty>,
 	/// <https://schema.org/carrier>
+	#[deprecated = "This schema is superseded by <https://schema.org/provider>."]
 	pub r#carrier: Vec<CarrierProperty>,
 	/// <https://schema.org/departureAirport>
 	pub r#departure_airport: Vec<DepartureAirportProperty>,
@@ -97,8 +98,10 @@ pub trait FlightTrait {
 	/// Take <https://schema.org/boardingPolicy> from [`Self`] as owned vector.
 	fn take_boarding_policy(&mut self) -> Vec<BoardingPolicyProperty>;
 	/// Get <https://schema.org/carrier> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/provider>."]
 	fn get_carrier(&self) -> &[CarrierProperty];
 	/// Take <https://schema.org/carrier> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/provider>."]
 	fn take_carrier(&mut self) -> Vec<CarrierProperty>;
 	/// Get <https://schema.org/departureAirport> from [`Self`] as borrowed slice.
 	fn get_departure_airport(&self) -> &[DepartureAirportProperty];

@@ -3,9 +3,13 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum ExpressedInProperty {
+	/// <https://schema.org/AnatomicalStructure>
 	AnatomicalStructure(AnatomicalStructure),
+	/// <https://schema.org/AnatomicalSystem>
 	AnatomicalSystem(AnatomicalSystem),
+	/// <https://schema.org/BioChemEntity>
 	BioChemEntity(BioChemEntity),
+	/// <https://schema.org/DefinedTerm>
 	DefinedTerm(DefinedTerm),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),

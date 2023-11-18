@@ -10,6 +10,7 @@ pub struct LinkRole {
 	/// <https://schema.org/endDate>
 	pub r#end_date: Vec<EndDateProperty>,
 	/// <https://schema.org/namedPosition>
+	#[deprecated = "This schema is superseded by <https://schema.org/roleName>."]
 	pub r#named_position: Vec<NamedPositionProperty>,
 	/// <https://schema.org/roleName>
 	pub r#role_name: Vec<RoleNameProperty>,

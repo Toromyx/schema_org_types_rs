@@ -10,6 +10,7 @@ pub struct TaxiReservation {
 	/// <https://schema.org/pickupTime>
 	pub r#pickup_time: Vec<PickupTimeProperty>,
 	/// <https://schema.org/bookingAgent>
+	#[deprecated = "This schema is superseded by <https://schema.org/broker>."]
 	pub r#booking_agent: Vec<BookingAgentProperty>,
 	/// <https://schema.org/bookingTime>
 	pub r#booking_time: Vec<BookingTimeProperty>,

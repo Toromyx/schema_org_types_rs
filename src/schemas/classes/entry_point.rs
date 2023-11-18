@@ -8,6 +8,7 @@ pub struct EntryPoint {
 	/// <https://schema.org/actionPlatform>
 	pub r#action_platform: Vec<ActionPlatformProperty>,
 	/// <https://schema.org/application>
+	#[deprecated = "This schema is superseded by <https://schema.org/actionApplication>."]
 	pub r#application: Vec<ApplicationProperty>,
 	/// <https://schema.org/contentType>
 	pub r#content_type: Vec<ContentTypeProperty>,
@@ -53,8 +54,10 @@ pub trait EntryPointTrait {
 	/// Take <https://schema.org/actionPlatform> from [`Self`] as owned vector.
 	fn take_action_platform(&mut self) -> Vec<ActionPlatformProperty>;
 	/// Get <https://schema.org/application> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/actionApplication>."]
 	fn get_application(&self) -> &[ApplicationProperty];
 	/// Take <https://schema.org/application> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/actionApplication>."]
 	fn take_application(&mut self) -> Vec<ApplicationProperty>;
 	/// Get <https://schema.org/contentType> from [`Self`] as borrowed slice.
 	fn get_content_type(&self) -> &[ContentTypeProperty];

@@ -16,6 +16,7 @@ pub struct SoftwareApplication {
 	/// <https://schema.org/countriesSupported>
 	pub r#countries_supported: Vec<CountriesSupportedProperty>,
 	/// <https://schema.org/device>
+	#[deprecated = "This schema is superseded by <https://schema.org/availableOnDevice>."]
 	pub r#device: Vec<DeviceProperty>,
 	/// <https://schema.org/downloadUrl>
 	pub r#download_url: Vec<DownloadUrlProperty>,
@@ -36,6 +37,7 @@ pub struct SoftwareApplication {
 	/// <https://schema.org/releaseNotes>
 	pub r#release_notes: Vec<ReleaseNotesProperty>,
 	/// <https://schema.org/requirements>
+	#[deprecated = "This schema is superseded by <https://schema.org/softwareRequirements>."]
 	pub r#requirements: Vec<RequirementsProperty>,
 	/// <https://schema.org/screenshot>
 	pub r#screenshot: Vec<ScreenshotProperty>,
@@ -92,6 +94,7 @@ pub struct SoftwareApplication {
 	/// <https://schema.org/award>
 	pub r#award: Vec<AwardProperty>,
 	/// <https://schema.org/awards>
+	#[deprecated = "This schema is superseded by <https://schema.org/award>."]
 	pub r#awards: Vec<AwardsProperty>,
 	/// <https://schema.org/character>
 	pub r#character: Vec<CharacterProperty>,
@@ -150,12 +153,14 @@ pub struct SoftwareApplication {
 	/// <https://schema.org/encodingFormat>
 	pub r#encoding_format: Vec<EncodingFormatProperty>,
 	/// <https://schema.org/encodings>
+	#[deprecated = "This schema is superseded by <https://schema.org/encoding>."]
 	pub r#encodings: Vec<EncodingsProperty>,
 	/// <https://schema.org/exampleOfWork>
 	pub r#example_of_work: Vec<ExampleOfWorkProperty>,
 	/// <https://schema.org/expires>
 	pub r#expires: Vec<ExpiresProperty>,
 	/// <https://schema.org/fileFormat>
+	#[deprecated = "This schema is superseded by <https://schema.org/encodingFormat>."]
 	pub r#file_format: Vec<FileFormatProperty>,
 	/// <https://schema.org/funder>
 	pub r#funder: Vec<FunderProperty>,
@@ -180,6 +185,7 @@ pub struct SoftwareApplication {
 	/// <https://schema.org/isBasedOn>
 	pub r#is_based_on: Vec<IsBasedOnProperty>,
 	/// <https://schema.org/isBasedOnUrl>
+	#[deprecated = "This schema is superseded by <https://schema.org/isBasedOn>."]
 	pub r#is_based_on_url: Vec<IsBasedOnUrlProperty>,
 	/// <https://schema.org/isFamilyFriendly>
 	pub r#is_family_friendly: Vec<IsFamilyFriendlyProperty>,
@@ -228,6 +234,7 @@ pub struct SoftwareApplication {
 	/// <https://schema.org/review>
 	pub r#review: Vec<ReviewProperty>,
 	/// <https://schema.org/reviews>
+	#[deprecated = "This schema is superseded by <https://schema.org/review>."]
 	pub r#reviews: Vec<ReviewsProperty>,
 	/// <https://schema.org/schemaVersion>
 	pub r#schema_version: Vec<SchemaVersionProperty>,
@@ -329,8 +336,10 @@ pub trait SoftwareApplicationTrait {
 	/// Take <https://schema.org/countriesSupported> from [`Self`] as owned vector.
 	fn take_countries_supported(&mut self) -> Vec<CountriesSupportedProperty>;
 	/// Get <https://schema.org/device> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/availableOnDevice>."]
 	fn get_device(&self) -> &[DeviceProperty];
 	/// Take <https://schema.org/device> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/availableOnDevice>."]
 	fn take_device(&mut self) -> Vec<DeviceProperty>;
 	/// Get <https://schema.org/downloadUrl> from [`Self`] as borrowed slice.
 	fn get_download_url(&self) -> &[DownloadUrlProperty];
@@ -369,8 +378,10 @@ pub trait SoftwareApplicationTrait {
 	/// Take <https://schema.org/releaseNotes> from [`Self`] as owned vector.
 	fn take_release_notes(&mut self) -> Vec<ReleaseNotesProperty>;
 	/// Get <https://schema.org/requirements> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/softwareRequirements>."]
 	fn get_requirements(&self) -> &[RequirementsProperty];
 	/// Take <https://schema.org/requirements> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/softwareRequirements>."]
 	fn take_requirements(&mut self) -> Vec<RequirementsProperty>;
 	/// Get <https://schema.org/screenshot> from [`Self`] as borrowed slice.
 	fn get_screenshot(&self) -> &[ScreenshotProperty];

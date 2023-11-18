@@ -56,6 +56,7 @@ pub struct Vehicle {
 	/// <https://schema.org/steeringPosition>
 	pub r#steering_position: Vec<SteeringPositionProperty>,
 	/// <https://schema.org/stupidProperty>
+	#[deprecated = "This schema is archived, see <https://schema.org/docs/attic.home.html>."]
 	pub r#stupid_property: Vec<StupidPropertyProperty>,
 	/// <https://schema.org/tongueWeight>
 	pub r#tongue_weight: Vec<TongueWeightProperty>,
@@ -94,6 +95,7 @@ pub struct Vehicle {
 	/// <https://schema.org/award>
 	pub r#award: Vec<AwardProperty>,
 	/// <https://schema.org/awards>
+	#[deprecated = "This schema is superseded by <https://schema.org/award>."]
 	pub r#awards: Vec<AwardsProperty>,
 	/// <https://schema.org/brand>
 	pub r#brand: Vec<BrandProperty>,
@@ -130,6 +132,7 @@ pub struct Vehicle {
 	/// <https://schema.org/hasMerchantReturnPolicy>
 	pub r#has_merchant_return_policy: Vec<HasMerchantReturnPolicyProperty>,
 	/// <https://schema.org/hasProductReturnPolicy>
+	#[deprecated = "This schema is archived, see <https://schema.org/docs/attic.home.html>. This schema is superseded by <https://schema.org/hasMerchantReturnPolicy>."]
 	pub r#has_product_return_policy: Vec<HasProductReturnPolicyProperty>,
 	/// <https://schema.org/height>
 	pub r#height: Vec<HeightProperty>,
@@ -180,6 +183,7 @@ pub struct Vehicle {
 	/// <https://schema.org/review>
 	pub r#review: Vec<ReviewProperty>,
 	/// <https://schema.org/reviews>
+	#[deprecated = "This schema is superseded by <https://schema.org/review>."]
 	pub r#reviews: Vec<ReviewsProperty>,
 	/// <https://schema.org/size>
 	pub r#size: Vec<SizeProperty>,
@@ -323,8 +327,10 @@ pub trait VehicleTrait {
 	/// Take <https://schema.org/steeringPosition> from [`Self`] as owned vector.
 	fn take_steering_position(&mut self) -> Vec<SteeringPositionProperty>;
 	/// Get <https://schema.org/stupidProperty> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is archived, see <https://schema.org/docs/attic.home.html>."]
 	fn get_stupid_property(&self) -> &[StupidPropertyProperty];
 	/// Take <https://schema.org/stupidProperty> from [`Self`] as owned vector.
+	#[deprecated = "This schema is archived, see <https://schema.org/docs/attic.home.html>."]
 	fn take_stupid_property(&mut self) -> Vec<StupidPropertyProperty>;
 	/// Get <https://schema.org/tongueWeight> from [`Self`] as borrowed slice.
 	fn get_tongue_weight(&self) -> &[TongueWeightProperty];

@@ -2,7 +2,10 @@ use convert_case::{Case, Casing};
 use derivative::Derivative;
 use oxigraph::store::Store;
 
-use crate::sparql::SchemaQuerySolution;
+use crate::{
+	deprecated_attribute::DeprecatedAttribute,
+	sparql::{SchemaQueries, SchemaQuerySolution},
+};
 
 pub mod class;
 pub mod data_type;
@@ -34,14 +37,35 @@ pub struct ReferencedSchema {
 	#[derivative(PartialEq = "ignore", PartialOrd = "ignore", Ord = "ignore")]
 	pub iri: String,
 	pub name: String,
+	#[derivative(PartialEq = "ignore", PartialOrd = "ignore", Ord = "ignore")]
+	pub superseded_by: Vec<ReferencedSchema>,
+	#[derivative(PartialEq = "ignore", PartialOrd = "ignore", Ord = "ignore")]
+	pub in_attic: bool,
 }
 
-impl From<SchemaQuerySolution> for ReferencedSchema {
-	fn from(value: SchemaQuerySolution) -> Self {
+impl ReferencedSchema {
+	fn from_solution(store: &Store, value: SchemaQuerySolution) -> Self {
+		let superseded_by = store
+			.get_superseded_by(&value.iri)
+			.into_iter()
+			.map(|solution| ReferencedSchema::from_solution(store, solution))
+			.collect();
 		Self {
 			iri: value.iri,
 			name: value.label,
+			superseded_by,
+			in_attic: value.in_attic,
 		}
+	}
+}
+
+impl DeprecatedAttribute for ReferencedSchema {
+	fn in_attic(&self) -> bool {
+		self.in_attic
+	}
+
+	fn superseded_by(&self) -> &[ReferencedSchema] {
+		self.superseded_by.as_slice()
 	}
 }
 

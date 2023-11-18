@@ -1,14 +1,19 @@
 /// <https://schema.org/ProductReturnEnumeration>
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
+#[deprecated = "This schema is archived, see <https://schema.org/docs/attic.home.html>. This schema is superseded by <https://schema.org/MerchantReturnEnumeration>."]
 pub enum ProductReturnEnumeration {
 	/// <https://schema.org/ProductReturnFiniteReturnWindow>
+	#[deprecated = "This schema is archived, see <https://schema.org/docs/attic.home.html>. This schema is superseded by <https://schema.org/MerchantReturnFiniteReturnWindow>."]
 	ProductReturnFiniteReturnWindow,
 	/// <https://schema.org/ProductReturnNotPermitted>
+	#[deprecated = "This schema is archived, see <https://schema.org/docs/attic.home.html>. This schema is superseded by <https://schema.org/MerchantReturnNotPermitted>."]
 	ProductReturnNotPermitted,
 	/// <https://schema.org/ProductReturnUnlimitedWindow>
+	#[deprecated = "This schema is archived, see <https://schema.org/docs/attic.home.html>. This schema is superseded by <https://schema.org/MerchantReturnUnlimitedWindow>."]
 	ProductReturnUnlimitedWindow,
 	/// <https://schema.org/ProductReturnUnspecified>
+	#[deprecated = "This schema is archived, see <https://schema.org/docs/attic.home.html>. This schema is superseded by <https://schema.org/MerchantReturnUnspecified>."]
 	ProductReturnUnspecified,
 }
 #[cfg(feature = "serde")]

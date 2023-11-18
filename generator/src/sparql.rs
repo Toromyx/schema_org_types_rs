@@ -58,10 +58,17 @@ fn label_from_solution(solution: &QuerySolution) -> String {
 		.to_string()
 }
 
+fn in_attic_from_solution(solution: &QuerySolution) -> bool {
+	solution
+		.get("section")
+		.is_some_and(|term| term.as_named_node().as_str() == "https://attic.schema.org")
+}
+
 #[derive(Debug, Clone)]
 pub struct SchemaQuerySolution {
 	pub iri: String,
 	pub label: String,
+	pub in_attic: bool,
 }
 
 impl From<&QuerySolution> for SchemaQuerySolution {
@@ -69,6 +76,7 @@ impl From<&QuerySolution> for SchemaQuerySolution {
 		Self {
 			iri: iri_from_solution(value),
 			label: label_from_solution(value),
+			in_attic: in_attic_from_solution(value),
 		}
 	}
 }
@@ -76,6 +84,7 @@ impl From<&QuerySolution> for SchemaQuerySolution {
 pub struct EnumerationVariantSolution {
 	pub iri: String,
 	pub label: String,
+	pub in_attic: bool,
 }
 
 impl From<&QuerySolution> for EnumerationVariantSolution {
@@ -83,6 +92,7 @@ impl From<&QuerySolution> for EnumerationVariantSolution {
 		Self {
 			iri: iri_from_solution(value),
 			label: label_from_solution(value),
+			in_attic: in_attic_from_solution(value),
 		}
 	}
 }
@@ -134,6 +144,9 @@ pub trait SchemaQueries {
 	///
 	/// The data type needs to be transformable to a [`crate::serde_attributes::data_type::RustType`].
 	fn get_transformable_data_type_label_of_data_type(&self, data_type_iri: &str) -> String;
+
+	/// Query for schemas superseding the schema.
+	fn get_superseded_by(&self, iri: &str) -> Vec<SchemaQuerySolution>;
 }
 
 impl SchemaQueries for Store {
@@ -144,9 +157,11 @@ impl SchemaQueries for Store {
 SELECT
 	?node
 	?label
+	?section
 WHERE {{
 	{}
 	?node rdfs:label ?label .
+	OPTIONAL {{ ?node schema:isPartOf ?section . }}
 }}
 "#,
 			PREFIXES, IGNORED_SCHEMAS_FILTER
@@ -234,10 +249,12 @@ WHERE {{
 SELECT
 	?node
 	?label
+	?section
 WHERE {{
 	{}
 	?node schema:domainIncludes <{}> .
 	?node rdfs:label ?label .
+	OPTIONAL {{ ?node schema:isPartOf ?section . }}
 }}
 "#,
 			PREFIXES, IGNORED_SCHEMAS_FILTER, class_iri
@@ -257,10 +274,12 @@ WHERE {{
 SELECT DISTINCT
 	?node
 	?label
+	?section
 WHERE {{
 	{}
 	<{}> rdfs:subClassOf*/rdfs:subClassOf ?node .
 	?node rdfs:label ?label .
+	OPTIONAL {{ ?node schema:isPartOf ?section . }}
 }}
 "#,
 			PREFIXES, IGNORED_SCHEMAS_FILTER, class_iri
@@ -280,10 +299,12 @@ WHERE {{
 SELECT
 	?node
 	?label
+	?section
 WHERE {{
 	{}
 	<{}> schema:rangeIncludes ?node .
 	?node rdfs:label ?label .
+	OPTIONAL {{ ?node schema:isPartOf ?section . }}
 }}
 "#,
 			PREFIXES, IGNORED_SCHEMAS_FILTER, property_iri
@@ -306,10 +327,12 @@ WHERE {{
 SELECT
 	?node
 	?label
+	?section
 WHERE {{
 	{}
 	?node a <{}> .
 	?node rdfs:label ?label .
+	OPTIONAL {{ ?node schema:isPartOf ?section . }}
 }}
 "#,
 			PREFIXES, IGNORED_SCHEMAS_FILTER, enumeration_iri
@@ -354,5 +377,30 @@ LIMIT 1
 			);
 		});
 		label_from_solution(solution)
+	}
+
+	fn get_superseded_by(&self, iri: &str) -> Vec<SchemaQuerySolution> {
+		let query = format!(
+			r#"
+{}
+SELECT
+	?node
+	?label
+	?section
+WHERE {{
+	{}
+	<{}> schema:supersededBy ?node .
+	?node rdfs:label ?label .
+	OPTIONAL {{ ?node schema:isPartOf ?section . }}
+}}
+"#,
+			PREFIXES, IGNORED_SCHEMAS_FILTER, iri
+		);
+		self.query(&query)
+			.unwrap()
+			.into_solutions()
+			.iter()
+			.map(SchemaQuerySolution::from)
+			.collect()
 	}
 }

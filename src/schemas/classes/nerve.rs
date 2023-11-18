@@ -4,6 +4,7 @@ use super::*;
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct Nerve {
 	/// <https://schema.org/branch>
+	#[deprecated = "This schema is superseded by <https://schema.org/arterialBranch>."]
 	pub r#branch: Vec<BranchProperty>,
 	/// <https://schema.org/nerveMotor>
 	pub r#nerve_motor: Vec<NerveMotorProperty>,
@@ -71,8 +72,10 @@ pub struct Nerve {
 /// This trait is for properties from <https://schema.org/Nerve>.
 pub trait NerveTrait {
 	/// Get <https://schema.org/branch> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/arterialBranch>."]
 	fn get_branch(&self) -> &[BranchProperty];
 	/// Take <https://schema.org/branch> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/arterialBranch>."]
 	fn take_branch(&mut self) -> Vec<BranchProperty>;
 	/// Get <https://schema.org/nerveMotor> from [`Self`] as borrowed slice.
 	fn get_nerve_motor(&self) -> &[NerveMotorProperty];

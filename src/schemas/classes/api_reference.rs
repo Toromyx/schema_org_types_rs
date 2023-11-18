@@ -4,6 +4,7 @@ use super::*;
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct ApiReference {
 	/// <https://schema.org/assembly>
+	#[deprecated = "This schema is superseded by <https://schema.org/executableLibraryName>."]
 	pub r#assembly: Vec<AssemblyProperty>,
 	/// <https://schema.org/assemblyVersion>
 	pub r#assembly_version: Vec<AssemblyVersionProperty>,
@@ -70,6 +71,7 @@ pub struct ApiReference {
 	/// <https://schema.org/award>
 	pub r#award: Vec<AwardProperty>,
 	/// <https://schema.org/awards>
+	#[deprecated = "This schema is superseded by <https://schema.org/award>."]
 	pub r#awards: Vec<AwardsProperty>,
 	/// <https://schema.org/character>
 	pub r#character: Vec<CharacterProperty>,
@@ -128,12 +130,14 @@ pub struct ApiReference {
 	/// <https://schema.org/encodingFormat>
 	pub r#encoding_format: Vec<EncodingFormatProperty>,
 	/// <https://schema.org/encodings>
+	#[deprecated = "This schema is superseded by <https://schema.org/encoding>."]
 	pub r#encodings: Vec<EncodingsProperty>,
 	/// <https://schema.org/exampleOfWork>
 	pub r#example_of_work: Vec<ExampleOfWorkProperty>,
 	/// <https://schema.org/expires>
 	pub r#expires: Vec<ExpiresProperty>,
 	/// <https://schema.org/fileFormat>
+	#[deprecated = "This schema is superseded by <https://schema.org/encodingFormat>."]
 	pub r#file_format: Vec<FileFormatProperty>,
 	/// <https://schema.org/funder>
 	pub r#funder: Vec<FunderProperty>,
@@ -158,6 +162,7 @@ pub struct ApiReference {
 	/// <https://schema.org/isBasedOn>
 	pub r#is_based_on: Vec<IsBasedOnProperty>,
 	/// <https://schema.org/isBasedOnUrl>
+	#[deprecated = "This schema is superseded by <https://schema.org/isBasedOn>."]
 	pub r#is_based_on_url: Vec<IsBasedOnUrlProperty>,
 	/// <https://schema.org/isFamilyFriendly>
 	pub r#is_family_friendly: Vec<IsFamilyFriendlyProperty>,
@@ -206,6 +211,7 @@ pub struct ApiReference {
 	/// <https://schema.org/review>
 	pub r#review: Vec<ReviewProperty>,
 	/// <https://schema.org/reviews>
+	#[deprecated = "This schema is superseded by <https://schema.org/review>."]
 	pub r#reviews: Vec<ReviewsProperty>,
 	/// <https://schema.org/schemaVersion>
 	pub r#schema_version: Vec<SchemaVersionProperty>,
@@ -287,8 +293,10 @@ pub struct ApiReference {
 /// This trait is for properties from <https://schema.org/APIReference>.
 pub trait ApiReferenceTrait {
 	/// Get <https://schema.org/assembly> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/executableLibraryName>."]
 	fn get_assembly(&self) -> &[AssemblyProperty];
 	/// Take <https://schema.org/assembly> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/executableLibraryName>."]
 	fn take_assembly(&mut self) -> Vec<AssemblyProperty>;
 	/// Get <https://schema.org/assemblyVersion> from [`Self`] as borrowed slice.
 	fn get_assembly_version(&self) -> &[AssemblyVersionProperty];

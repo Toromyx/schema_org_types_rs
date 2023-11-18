@@ -3,8 +3,11 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum DataFeedElementProperty {
+	/// <https://schema.org/DataFeedItem>
 	DataFeedItem(DataFeedItem),
+	/// <https://schema.org/Thing>
 	Thing(Thing),
+	/// <https://schema.org/Text>
 	Text(Text),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),

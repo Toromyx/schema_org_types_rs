@@ -22,6 +22,7 @@ pub struct Order {
 	/// <https://schema.org/isGift>
 	pub r#is_gift: Vec<IsGiftProperty>,
 	/// <https://schema.org/merchant>
+	#[deprecated = "This schema is superseded by <https://schema.org/seller>."]
 	pub r#merchant: Vec<MerchantProperty>,
 	/// <https://schema.org/orderDate>
 	pub r#order_date: Vec<OrderDateProperty>,
@@ -36,6 +37,7 @@ pub struct Order {
 	/// <https://schema.org/partOfInvoice>
 	pub r#part_of_invoice: Vec<PartOfInvoiceProperty>,
 	/// <https://schema.org/paymentDue>
+	#[deprecated = "This schema is superseded by <https://schema.org/paymentDueDate>."]
 	pub r#payment_due: Vec<PaymentDueProperty>,
 	/// <https://schema.org/paymentDueDate>
 	pub r#payment_due_date: Vec<PaymentDueDateProperty>,
@@ -111,8 +113,10 @@ pub trait OrderTrait {
 	/// Take <https://schema.org/isGift> from [`Self`] as owned vector.
 	fn take_is_gift(&mut self) -> Vec<IsGiftProperty>;
 	/// Get <https://schema.org/merchant> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/seller>."]
 	fn get_merchant(&self) -> &[MerchantProperty];
 	/// Take <https://schema.org/merchant> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/seller>."]
 	fn take_merchant(&mut self) -> Vec<MerchantProperty>;
 	/// Get <https://schema.org/orderDate> from [`Self`] as borrowed slice.
 	fn get_order_date(&self) -> &[OrderDateProperty];
@@ -139,8 +143,10 @@ pub trait OrderTrait {
 	/// Take <https://schema.org/partOfInvoice> from [`Self`] as owned vector.
 	fn take_part_of_invoice(&mut self) -> Vec<PartOfInvoiceProperty>;
 	/// Get <https://schema.org/paymentDue> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/paymentDueDate>."]
 	fn get_payment_due(&self) -> &[PaymentDueProperty];
 	/// Take <https://schema.org/paymentDue> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/paymentDueDate>."]
 	fn take_payment_due(&mut self) -> Vec<PaymentDueProperty>;
 	/// Get <https://schema.org/paymentDueDate> from [`Self`] as borrowed slice.
 	fn get_payment_due_date(&self) -> &[PaymentDueDateProperty];

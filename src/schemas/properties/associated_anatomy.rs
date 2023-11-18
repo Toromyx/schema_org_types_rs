@@ -3,8 +3,11 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum AssociatedAnatomyProperty {
+	/// <https://schema.org/AnatomicalStructure>
 	AnatomicalStructure(AnatomicalStructure),
+	/// <https://schema.org/AnatomicalSystem>
 	AnatomicalSystem(AnatomicalSystem),
+	/// <https://schema.org/SuperficialAnatomy>
 	SuperficialAnatomy(SuperficialAnatomy),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),

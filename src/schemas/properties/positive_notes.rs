@@ -3,9 +3,13 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum PositiveNotesProperty {
+	/// <https://schema.org/ItemList>
 	ItemList(ItemList),
+	/// <https://schema.org/ListItem>
 	ListItem(ListItem),
+	/// <https://schema.org/WebContent>
 	WebContent(WebContent),
+	/// <https://schema.org/Text>
 	Text(Text),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),

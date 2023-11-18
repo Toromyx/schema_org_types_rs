@@ -44,6 +44,7 @@ pub struct CreativeWork {
 	/// <https://schema.org/award>
 	pub r#award: Vec<AwardProperty>,
 	/// <https://schema.org/awards>
+	#[deprecated = "This schema is superseded by <https://schema.org/award>."]
 	pub r#awards: Vec<AwardsProperty>,
 	/// <https://schema.org/character>
 	pub r#character: Vec<CharacterProperty>,
@@ -102,12 +103,14 @@ pub struct CreativeWork {
 	/// <https://schema.org/encodingFormat>
 	pub r#encoding_format: Vec<EncodingFormatProperty>,
 	/// <https://schema.org/encodings>
+	#[deprecated = "This schema is superseded by <https://schema.org/encoding>."]
 	pub r#encodings: Vec<EncodingsProperty>,
 	/// <https://schema.org/exampleOfWork>
 	pub r#example_of_work: Vec<ExampleOfWorkProperty>,
 	/// <https://schema.org/expires>
 	pub r#expires: Vec<ExpiresProperty>,
 	/// <https://schema.org/fileFormat>
+	#[deprecated = "This schema is superseded by <https://schema.org/encodingFormat>."]
 	pub r#file_format: Vec<FileFormatProperty>,
 	/// <https://schema.org/funder>
 	pub r#funder: Vec<FunderProperty>,
@@ -132,6 +135,7 @@ pub struct CreativeWork {
 	/// <https://schema.org/isBasedOn>
 	pub r#is_based_on: Vec<IsBasedOnProperty>,
 	/// <https://schema.org/isBasedOnUrl>
+	#[deprecated = "This schema is superseded by <https://schema.org/isBasedOn>."]
 	pub r#is_based_on_url: Vec<IsBasedOnUrlProperty>,
 	/// <https://schema.org/isFamilyFriendly>
 	pub r#is_family_friendly: Vec<IsFamilyFriendlyProperty>,
@@ -180,6 +184,7 @@ pub struct CreativeWork {
 	/// <https://schema.org/review>
 	pub r#review: Vec<ReviewProperty>,
 	/// <https://schema.org/reviews>
+	#[deprecated = "This schema is superseded by <https://schema.org/review>."]
 	pub r#reviews: Vec<ReviewsProperty>,
 	/// <https://schema.org/schemaVersion>
 	pub r#schema_version: Vec<SchemaVersionProperty>,
@@ -337,8 +342,10 @@ pub trait CreativeWorkTrait {
 	/// Take <https://schema.org/award> from [`Self`] as owned vector.
 	fn take_award(&mut self) -> Vec<AwardProperty>;
 	/// Get <https://schema.org/awards> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/award>."]
 	fn get_awards(&self) -> &[AwardsProperty];
 	/// Take <https://schema.org/awards> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/award>."]
 	fn take_awards(&mut self) -> Vec<AwardsProperty>;
 	/// Get <https://schema.org/character> from [`Self`] as borrowed slice.
 	fn get_character(&self) -> &[CharacterProperty];
@@ -453,8 +460,10 @@ pub trait CreativeWorkTrait {
 	/// Take <https://schema.org/encodingFormat> from [`Self`] as owned vector.
 	fn take_encoding_format(&mut self) -> Vec<EncodingFormatProperty>;
 	/// Get <https://schema.org/encodings> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/encoding>."]
 	fn get_encodings(&self) -> &[EncodingsProperty];
 	/// Take <https://schema.org/encodings> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/encoding>."]
 	fn take_encodings(&mut self) -> Vec<EncodingsProperty>;
 	/// Get <https://schema.org/exampleOfWork> from [`Self`] as borrowed slice.
 	fn get_example_of_work(&self) -> &[ExampleOfWorkProperty];
@@ -465,8 +474,10 @@ pub trait CreativeWorkTrait {
 	/// Take <https://schema.org/expires> from [`Self`] as owned vector.
 	fn take_expires(&mut self) -> Vec<ExpiresProperty>;
 	/// Get <https://schema.org/fileFormat> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/encodingFormat>."]
 	fn get_file_format(&self) -> &[FileFormatProperty];
 	/// Take <https://schema.org/fileFormat> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/encodingFormat>."]
 	fn take_file_format(&mut self) -> Vec<FileFormatProperty>;
 	/// Get <https://schema.org/funder> from [`Self`] as borrowed slice.
 	fn get_funder(&self) -> &[FunderProperty];
@@ -513,8 +524,10 @@ pub trait CreativeWorkTrait {
 	/// Take <https://schema.org/isBasedOn> from [`Self`] as owned vector.
 	fn take_is_based_on(&mut self) -> Vec<IsBasedOnProperty>;
 	/// Get <https://schema.org/isBasedOnUrl> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/isBasedOn>."]
 	fn get_is_based_on_url(&self) -> &[IsBasedOnUrlProperty];
 	/// Take <https://schema.org/isBasedOnUrl> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/isBasedOn>."]
 	fn take_is_based_on_url(&mut self) -> Vec<IsBasedOnUrlProperty>;
 	/// Get <https://schema.org/isFamilyFriendly> from [`Self`] as borrowed slice.
 	fn get_is_family_friendly(&self) -> &[IsFamilyFriendlyProperty];
@@ -609,8 +622,10 @@ pub trait CreativeWorkTrait {
 	/// Take <https://schema.org/review> from [`Self`] as owned vector.
 	fn take_review(&mut self) -> Vec<ReviewProperty>;
 	/// Get <https://schema.org/reviews> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/review>."]
 	fn get_reviews(&self) -> &[ReviewsProperty];
 	/// Take <https://schema.org/reviews> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/review>."]
 	fn take_reviews(&mut self) -> Vec<ReviewsProperty>;
 	/// Get <https://schema.org/schemaVersion> from [`Self`] as borrowed slice.
 	fn get_schema_version(&self) -> &[SchemaVersionProperty];

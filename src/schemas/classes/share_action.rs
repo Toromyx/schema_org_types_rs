@@ -32,6 +32,7 @@ pub struct ShareAction {
 	/// <https://schema.org/inLanguage>
 	pub r#in_language: Vec<InLanguageProperty>,
 	/// <https://schema.org/language>
+	#[deprecated = "This schema is superseded by <https://schema.org/inLanguage>."]
 	pub r#language: Vec<LanguageProperty>,
 	/// <https://schema.org/recipient>
 	pub r#recipient: Vec<RecipientProperty>,

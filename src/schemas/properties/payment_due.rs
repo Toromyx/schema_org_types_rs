@@ -2,7 +2,9 @@ use super::*;
 /// <https://schema.org/paymentDue>
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
+#[deprecated = "This schema is superseded by <https://schema.org/paymentDueDate>."]
 pub enum PaymentDueProperty {
+	/// <https://schema.org/DateTime>
 	DateTime(DateTime),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),

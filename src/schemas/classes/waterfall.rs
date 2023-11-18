@@ -14,6 +14,7 @@ pub struct Waterfall {
 	/// <https://schema.org/branchCode>
 	pub r#branch_code: Vec<BranchCodeProperty>,
 	/// <https://schema.org/containedIn>
+	#[deprecated = "This schema is superseded by <https://schema.org/containedInPlace>."]
 	pub r#contained_in: Vec<ContainedInProperty>,
 	/// <https://schema.org/containedInPlace>
 	pub r#contained_in_place: Vec<ContainedInPlaceProperty>,
@@ -22,6 +23,7 @@ pub struct Waterfall {
 	/// <https://schema.org/event>
 	pub r#event: Vec<EventProperty>,
 	/// <https://schema.org/events>
+	#[deprecated = "This schema is superseded by <https://schema.org/event>."]
 	pub r#events: Vec<EventsProperty>,
 	/// <https://schema.org/faxNumber>
 	pub r#fax_number: Vec<FaxNumberProperty>,
@@ -66,8 +68,10 @@ pub struct Waterfall {
 	/// <https://schema.org/longitude>
 	pub r#longitude: Vec<LongitudeProperty>,
 	/// <https://schema.org/map>
+	#[deprecated = "This schema is superseded by <https://schema.org/hasMap>."]
 	pub r#map: Vec<MapProperty>,
 	/// <https://schema.org/maps>
+	#[deprecated = "This schema is superseded by <https://schema.org/hasMap>."]
 	pub r#maps: Vec<MapsProperty>,
 	/// <https://schema.org/maximumAttendeeCapacity>
 	pub r#maximum_attendee_capacity: Vec<MaximumAttendeeCapacityProperty>,
@@ -76,12 +80,14 @@ pub struct Waterfall {
 	/// <https://schema.org/photo>
 	pub r#photo: Vec<PhotoProperty>,
 	/// <https://schema.org/photos>
+	#[deprecated = "This schema is superseded by <https://schema.org/photo>."]
 	pub r#photos: Vec<PhotosProperty>,
 	/// <https://schema.org/publicAccess>
 	pub r#public_access: Vec<PublicAccessProperty>,
 	/// <https://schema.org/review>
 	pub r#review: Vec<ReviewProperty>,
 	/// <https://schema.org/reviews>
+	#[deprecated = "This schema is superseded by <https://schema.org/review>."]
 	pub r#reviews: Vec<ReviewsProperty>,
 	/// <https://schema.org/slogan>
 	pub r#slogan: Vec<SloganProperty>,

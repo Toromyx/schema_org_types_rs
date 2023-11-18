@@ -3,9 +3,13 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum LocationProperty {
+	/// <https://schema.org/Place>
 	Place(Place),
+	/// <https://schema.org/PostalAddress>
 	PostalAddress(PostalAddress),
+	/// <https://schema.org/VirtualLocation>
 	VirtualLocation(VirtualLocation),
+	/// <https://schema.org/Text>
 	Text(Text),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
 	SerdeFail(crate::fallible::FailValue),

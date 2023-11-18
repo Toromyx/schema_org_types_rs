@@ -12,6 +12,7 @@ pub struct Event {
 	/// <https://schema.org/attendee>
 	pub r#attendee: Vec<AttendeeProperty>,
 	/// <https://schema.org/attendees>
+	#[deprecated = "This schema is superseded by <https://schema.org/attendee>."]
 	pub r#attendees: Vec<AttendeesProperty>,
 	/// <https://schema.org/audience>
 	pub r#audience: Vec<AudienceProperty>,
@@ -58,6 +59,7 @@ pub struct Event {
 	/// <https://schema.org/performer>
 	pub r#performer: Vec<PerformerProperty>,
 	/// <https://schema.org/performers>
+	#[deprecated = "This schema is superseded by <https://schema.org/performer>."]
 	pub r#performers: Vec<PerformersProperty>,
 	/// <https://schema.org/previousStartDate>
 	pub r#previous_start_date: Vec<PreviousStartDateProperty>,
@@ -74,6 +76,7 @@ pub struct Event {
 	/// <https://schema.org/subEvent>
 	pub r#sub_event: Vec<SubEventProperty>,
 	/// <https://schema.org/subEvents>
+	#[deprecated = "This schema is superseded by <https://schema.org/subEvent>."]
 	pub r#sub_events: Vec<SubEventsProperty>,
 	/// <https://schema.org/superEvent>
 	pub r#super_event: Vec<SuperEventProperty>,
@@ -129,8 +132,10 @@ pub trait EventTrait {
 	/// Take <https://schema.org/attendee> from [`Self`] as owned vector.
 	fn take_attendee(&mut self) -> Vec<AttendeeProperty>;
 	/// Get <https://schema.org/attendees> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/attendee>."]
 	fn get_attendees(&self) -> &[AttendeesProperty];
 	/// Take <https://schema.org/attendees> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/attendee>."]
 	fn take_attendees(&mut self) -> Vec<AttendeesProperty>;
 	/// Get <https://schema.org/audience> from [`Self`] as borrowed slice.
 	fn get_audience(&self) -> &[AudienceProperty];
@@ -225,8 +230,10 @@ pub trait EventTrait {
 	/// Take <https://schema.org/performer> from [`Self`] as owned vector.
 	fn take_performer(&mut self) -> Vec<PerformerProperty>;
 	/// Get <https://schema.org/performers> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/performer>."]
 	fn get_performers(&self) -> &[PerformersProperty];
 	/// Take <https://schema.org/performers> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/performer>."]
 	fn take_performers(&mut self) -> Vec<PerformersProperty>;
 	/// Get <https://schema.org/previousStartDate> from [`Self`] as borrowed slice.
 	fn get_previous_start_date(&self) -> &[PreviousStartDateProperty];
@@ -257,8 +264,10 @@ pub trait EventTrait {
 	/// Take <https://schema.org/subEvent> from [`Self`] as owned vector.
 	fn take_sub_event(&mut self) -> Vec<SubEventProperty>;
 	/// Get <https://schema.org/subEvents> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/subEvent>."]
 	fn get_sub_events(&self) -> &[SubEventsProperty];
 	/// Take <https://schema.org/subEvents> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/subEvent>."]
 	fn take_sub_events(&mut self) -> Vec<SubEventsProperty>;
 	/// Get <https://schema.org/superEvent> from [`Self`] as borrowed slice.
 	fn get_super_event(&self) -> &[SuperEventProperty];

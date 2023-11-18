@@ -4,6 +4,7 @@ use super::*;
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub struct ExerciseAction {
 	/// <https://schema.org/course>
+	#[deprecated = "This schema is superseded by <https://schema.org/exerciseCourse>."]
 	pub r#course: Vec<CourseProperty>,
 	/// <https://schema.org/diet>
 	pub r#diet: Vec<DietProperty>,
@@ -85,8 +86,10 @@ pub struct ExerciseAction {
 /// This trait is for properties from <https://schema.org/ExerciseAction>.
 pub trait ExerciseActionTrait {
 	/// Get <https://schema.org/course> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/exerciseCourse>."]
 	fn get_course(&self) -> &[CourseProperty];
 	/// Take <https://schema.org/course> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/exerciseCourse>."]
 	fn take_course(&mut self) -> Vec<CourseProperty>;
 	/// Get <https://schema.org/diet> from [`Self`] as borrowed slice.
 	fn get_diet(&self) -> &[DietProperty];

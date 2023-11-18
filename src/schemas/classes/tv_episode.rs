@@ -6,6 +6,7 @@ pub struct TvEpisode {
 	/// <https://schema.org/countryOfOrigin>
 	pub r#country_of_origin: Vec<CountryOfOriginProperty>,
 	/// <https://schema.org/partOfTVSeries>
+	#[deprecated = "This schema is superseded by <https://schema.org/partOfSeries>."]
 	pub r#part_of_tv_series: Vec<PartOfTvSeriesProperty>,
 	/// <https://schema.org/subtitleLanguage>
 	pub r#subtitle_language: Vec<SubtitleLanguageProperty>,
@@ -52,6 +53,7 @@ pub struct TvEpisode {
 	/// <https://schema.org/award>
 	pub r#award: Vec<AwardProperty>,
 	/// <https://schema.org/awards>
+	#[deprecated = "This schema is superseded by <https://schema.org/award>."]
 	pub r#awards: Vec<AwardsProperty>,
 	/// <https://schema.org/character>
 	pub r#character: Vec<CharacterProperty>,
@@ -108,12 +110,14 @@ pub struct TvEpisode {
 	/// <https://schema.org/encodingFormat>
 	pub r#encoding_format: Vec<EncodingFormatProperty>,
 	/// <https://schema.org/encodings>
+	#[deprecated = "This schema is superseded by <https://schema.org/encoding>."]
 	pub r#encodings: Vec<EncodingsProperty>,
 	/// <https://schema.org/exampleOfWork>
 	pub r#example_of_work: Vec<ExampleOfWorkProperty>,
 	/// <https://schema.org/expires>
 	pub r#expires: Vec<ExpiresProperty>,
 	/// <https://schema.org/fileFormat>
+	#[deprecated = "This schema is superseded by <https://schema.org/encodingFormat>."]
 	pub r#file_format: Vec<FileFormatProperty>,
 	/// <https://schema.org/funder>
 	pub r#funder: Vec<FunderProperty>,
@@ -138,6 +142,7 @@ pub struct TvEpisode {
 	/// <https://schema.org/isBasedOn>
 	pub r#is_based_on: Vec<IsBasedOnProperty>,
 	/// <https://schema.org/isBasedOnUrl>
+	#[deprecated = "This schema is superseded by <https://schema.org/isBasedOn>."]
 	pub r#is_based_on_url: Vec<IsBasedOnUrlProperty>,
 	/// <https://schema.org/isFamilyFriendly>
 	pub r#is_family_friendly: Vec<IsFamilyFriendlyProperty>,
@@ -186,6 +191,7 @@ pub struct TvEpisode {
 	/// <https://schema.org/review>
 	pub r#review: Vec<ReviewProperty>,
 	/// <https://schema.org/reviews>
+	#[deprecated = "This schema is superseded by <https://schema.org/review>."]
 	pub r#reviews: Vec<ReviewsProperty>,
 	/// <https://schema.org/schemaVersion>
 	pub r#schema_version: Vec<SchemaVersionProperty>,
@@ -238,10 +244,12 @@ pub struct TvEpisode {
 	/// <https://schema.org/actor>
 	pub r#actor: Vec<ActorProperty>,
 	/// <https://schema.org/actors>
+	#[deprecated = "This schema is superseded by <https://schema.org/actor>."]
 	pub r#actors: Vec<ActorsProperty>,
 	/// <https://schema.org/director>
 	pub r#director: Vec<DirectorProperty>,
 	/// <https://schema.org/directors>
+	#[deprecated = "This schema is superseded by <https://schema.org/director>."]
 	pub r#directors: Vec<DirectorsProperty>,
 	/// <https://schema.org/duration>
 	pub r#duration: Vec<DurationProperty>,
@@ -289,8 +297,10 @@ pub trait TvEpisodeTrait {
 	/// Take <https://schema.org/countryOfOrigin> from [`Self`] as owned vector.
 	fn take_country_of_origin(&mut self) -> Vec<CountryOfOriginProperty>;
 	/// Get <https://schema.org/partOfTVSeries> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/partOfSeries>."]
 	fn get_part_of_tv_series(&self) -> &[PartOfTvSeriesProperty];
 	/// Take <https://schema.org/partOfTVSeries> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/partOfSeries>."]
 	fn take_part_of_tv_series(&mut self) -> Vec<PartOfTvSeriesProperty>;
 	/// Get <https://schema.org/subtitleLanguage> from [`Self`] as borrowed slice.
 	fn get_subtitle_language(&self) -> &[SubtitleLanguageProperty];

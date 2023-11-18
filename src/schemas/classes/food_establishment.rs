@@ -8,12 +8,14 @@ pub struct FoodEstablishment {
 	/// <https://schema.org/hasMenu>
 	pub r#has_menu: Vec<HasMenuProperty>,
 	/// <https://schema.org/menu>
+	#[deprecated = "This schema is superseded by <https://schema.org/hasMenu>."]
 	pub r#menu: Vec<MenuProperty>,
 	/// <https://schema.org/servesCuisine>
 	pub r#serves_cuisine: Vec<ServesCuisineProperty>,
 	/// <https://schema.org/starRating>
 	pub r#star_rating: Vec<StarRatingProperty>,
 	/// <https://schema.org/branchOf>
+	#[deprecated = "This schema is superseded by <https://schema.org/parentOrganization>."]
 	pub r#branch_of: Vec<BranchOfProperty>,
 	/// <https://schema.org/currenciesAccepted>
 	pub r#currencies_accepted: Vec<CurrenciesAcceptedProperty>,
@@ -38,12 +40,14 @@ pub struct FoodEstablishment {
 	/// <https://schema.org/award>
 	pub r#award: Vec<AwardProperty>,
 	/// <https://schema.org/awards>
+	#[deprecated = "This schema is superseded by <https://schema.org/award>."]
 	pub r#awards: Vec<AwardsProperty>,
 	/// <https://schema.org/brand>
 	pub r#brand: Vec<BrandProperty>,
 	/// <https://schema.org/contactPoint>
 	pub r#contact_point: Vec<ContactPointProperty>,
 	/// <https://schema.org/contactPoints>
+	#[deprecated = "This schema is superseded by <https://schema.org/contactPoint>."]
 	pub r#contact_points: Vec<ContactPointsProperty>,
 	/// <https://schema.org/correctionsPolicy>
 	pub r#corrections_policy: Vec<CorrectionsPolicyProperty>,
@@ -62,18 +66,21 @@ pub struct FoodEstablishment {
 	/// <https://schema.org/employee>
 	pub r#employee: Vec<EmployeeProperty>,
 	/// <https://schema.org/employees>
+	#[deprecated = "This schema is superseded by <https://schema.org/employee>."]
 	pub r#employees: Vec<EmployeesProperty>,
 	/// <https://schema.org/ethicsPolicy>
 	pub r#ethics_policy: Vec<EthicsPolicyProperty>,
 	/// <https://schema.org/event>
 	pub r#event: Vec<EventProperty>,
 	/// <https://schema.org/events>
+	#[deprecated = "This schema is superseded by <https://schema.org/event>."]
 	pub r#events: Vec<EventsProperty>,
 	/// <https://schema.org/faxNumber>
 	pub r#fax_number: Vec<FaxNumberProperty>,
 	/// <https://schema.org/founder>
 	pub r#founder: Vec<FounderProperty>,
 	/// <https://schema.org/founders>
+	#[deprecated = "This schema is superseded by <https://schema.org/founder>."]
 	pub r#founders: Vec<FoundersProperty>,
 	/// <https://schema.org/foundingDate>
 	pub r#founding_date: Vec<FoundingDateProperty>,
@@ -94,6 +101,7 @@ pub struct FoodEstablishment {
 	/// <https://schema.org/hasPOS>
 	pub r#has_pos: Vec<HasPosProperty>,
 	/// <https://schema.org/hasProductReturnPolicy>
+	#[deprecated = "This schema is archived, see <https://schema.org/docs/attic.home.html>. This schema is superseded by <https://schema.org/hasMerchantReturnPolicy>."]
 	pub r#has_product_return_policy: Vec<HasProductReturnPolicyProperty>,
 	/// <https://schema.org/interactionStatistic>
 	pub r#interaction_statistic: Vec<InteractionStatisticProperty>,
@@ -122,6 +130,7 @@ pub struct FoodEstablishment {
 	/// <https://schema.org/memberOf>
 	pub r#member_of: Vec<MemberOfProperty>,
 	/// <https://schema.org/members>
+	#[deprecated = "This schema is superseded by <https://schema.org/member>."]
 	pub r#members: Vec<MembersProperty>,
 	/// <https://schema.org/naics>
 	pub r#naics: Vec<NaicsProperty>,
@@ -140,10 +149,12 @@ pub struct FoodEstablishment {
 	/// <https://schema.org/review>
 	pub r#review: Vec<ReviewProperty>,
 	/// <https://schema.org/reviews>
+	#[deprecated = "This schema is superseded by <https://schema.org/review>."]
 	pub r#reviews: Vec<ReviewsProperty>,
 	/// <https://schema.org/seeks>
 	pub r#seeks: Vec<SeeksProperty>,
 	/// <https://schema.org/serviceArea>
+	#[deprecated = "This schema is superseded by <https://schema.org/areaServed>."]
 	pub r#service_area: Vec<ServiceAreaProperty>,
 	/// <https://schema.org/slogan>
 	pub r#slogan: Vec<SloganProperty>,
@@ -166,6 +177,7 @@ pub struct FoodEstablishment {
 	/// <https://schema.org/branchCode>
 	pub r#branch_code: Vec<BranchCodeProperty>,
 	/// <https://schema.org/containedIn>
+	#[deprecated = "This schema is superseded by <https://schema.org/containedInPlace>."]
 	pub r#contained_in: Vec<ContainedInProperty>,
 	/// <https://schema.org/containedInPlace>
 	pub r#contained_in_place: Vec<ContainedInPlaceProperty>,
@@ -204,8 +216,10 @@ pub struct FoodEstablishment {
 	/// <https://schema.org/longitude>
 	pub r#longitude: Vec<LongitudeProperty>,
 	/// <https://schema.org/map>
+	#[deprecated = "This schema is superseded by <https://schema.org/hasMap>."]
 	pub r#map: Vec<MapProperty>,
 	/// <https://schema.org/maps>
+	#[deprecated = "This schema is superseded by <https://schema.org/hasMap>."]
 	pub r#maps: Vec<MapsProperty>,
 	/// <https://schema.org/maximumAttendeeCapacity>
 	pub r#maximum_attendee_capacity: Vec<MaximumAttendeeCapacityProperty>,
@@ -214,6 +228,7 @@ pub struct FoodEstablishment {
 	/// <https://schema.org/photo>
 	pub r#photo: Vec<PhotoProperty>,
 	/// <https://schema.org/photos>
+	#[deprecated = "This schema is superseded by <https://schema.org/photo>."]
 	pub r#photos: Vec<PhotosProperty>,
 	/// <https://schema.org/publicAccess>
 	pub r#public_access: Vec<PublicAccessProperty>,
@@ -259,8 +274,10 @@ pub trait FoodEstablishmentTrait {
 	/// Take <https://schema.org/hasMenu> from [`Self`] as owned vector.
 	fn take_has_menu(&mut self) -> Vec<HasMenuProperty>;
 	/// Get <https://schema.org/menu> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/hasMenu>."]
 	fn get_menu(&self) -> &[MenuProperty];
 	/// Take <https://schema.org/menu> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/hasMenu>."]
 	fn take_menu(&mut self) -> Vec<MenuProperty>;
 	/// Get <https://schema.org/servesCuisine> from [`Self`] as borrowed slice.
 	fn get_serves_cuisine(&self) -> &[ServesCuisineProperty];

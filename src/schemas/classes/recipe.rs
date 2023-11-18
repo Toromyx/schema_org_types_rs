@@ -8,6 +8,7 @@ pub struct Recipe {
 	/// <https://schema.org/cookingMethod>
 	pub r#cooking_method: Vec<CookingMethodProperty>,
 	/// <https://schema.org/ingredients>
+	#[deprecated = "This schema is superseded by <https://schema.org/recipeIngredient>."]
 	pub r#ingredients: Vec<IngredientsProperty>,
 	/// <https://schema.org/nutrition>
 	pub r#nutrition: Vec<NutritionProperty>,
@@ -64,6 +65,7 @@ pub struct Recipe {
 	/// <https://schema.org/award>
 	pub r#award: Vec<AwardProperty>,
 	/// <https://schema.org/awards>
+	#[deprecated = "This schema is superseded by <https://schema.org/award>."]
 	pub r#awards: Vec<AwardsProperty>,
 	/// <https://schema.org/character>
 	pub r#character: Vec<CharacterProperty>,
@@ -122,12 +124,14 @@ pub struct Recipe {
 	/// <https://schema.org/encodingFormat>
 	pub r#encoding_format: Vec<EncodingFormatProperty>,
 	/// <https://schema.org/encodings>
+	#[deprecated = "This schema is superseded by <https://schema.org/encoding>."]
 	pub r#encodings: Vec<EncodingsProperty>,
 	/// <https://schema.org/exampleOfWork>
 	pub r#example_of_work: Vec<ExampleOfWorkProperty>,
 	/// <https://schema.org/expires>
 	pub r#expires: Vec<ExpiresProperty>,
 	/// <https://schema.org/fileFormat>
+	#[deprecated = "This schema is superseded by <https://schema.org/encodingFormat>."]
 	pub r#file_format: Vec<FileFormatProperty>,
 	/// <https://schema.org/funder>
 	pub r#funder: Vec<FunderProperty>,
@@ -152,6 +156,7 @@ pub struct Recipe {
 	/// <https://schema.org/isBasedOn>
 	pub r#is_based_on: Vec<IsBasedOnProperty>,
 	/// <https://schema.org/isBasedOnUrl>
+	#[deprecated = "This schema is superseded by <https://schema.org/isBasedOn>."]
 	pub r#is_based_on_url: Vec<IsBasedOnUrlProperty>,
 	/// <https://schema.org/isFamilyFriendly>
 	pub r#is_family_friendly: Vec<IsFamilyFriendlyProperty>,
@@ -200,6 +205,7 @@ pub struct Recipe {
 	/// <https://schema.org/review>
 	pub r#review: Vec<ReviewProperty>,
 	/// <https://schema.org/reviews>
+	#[deprecated = "This schema is superseded by <https://schema.org/review>."]
 	pub r#reviews: Vec<ReviewsProperty>,
 	/// <https://schema.org/schemaVersion>
 	pub r#schema_version: Vec<SchemaVersionProperty>,
@@ -258,6 +264,7 @@ pub struct Recipe {
 	/// <https://schema.org/step>
 	pub r#step: Vec<StepProperty>,
 	/// <https://schema.org/steps>
+	#[deprecated = "This schema is superseded by <https://schema.org/step>."]
 	pub r#steps: Vec<StepsProperty>,
 	/// <https://schema.org/supply>
 	pub r#supply: Vec<SupplyProperty>,
@@ -303,8 +310,10 @@ pub trait RecipeTrait {
 	/// Take <https://schema.org/cookingMethod> from [`Self`] as owned vector.
 	fn take_cooking_method(&mut self) -> Vec<CookingMethodProperty>;
 	/// Get <https://schema.org/ingredients> from [`Self`] as borrowed slice.
+	#[deprecated = "This schema is superseded by <https://schema.org/recipeIngredient>."]
 	fn get_ingredients(&self) -> &[IngredientsProperty];
 	/// Take <https://schema.org/ingredients> from [`Self`] as owned vector.
+	#[deprecated = "This schema is superseded by <https://schema.org/recipeIngredient>."]
 	fn take_ingredients(&mut self) -> Vec<IngredientsProperty>;
 	/// Get <https://schema.org/nutrition> from [`Self`] as borrowed slice.
 	fn get_nutrition(&self) -> &[NutritionProperty];
