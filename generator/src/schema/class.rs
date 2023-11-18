@@ -25,7 +25,7 @@ pub struct Class {
 	#[derivative(PartialEq = "ignore", PartialOrd = "ignore", Ord = "ignore")]
 	pub properties: Vec<ReferencedSchema>,
 	#[derivative(PartialEq = "ignore", PartialOrd = "ignore", Ord = "ignore")]
-	pub parents: Vec<ReferencedClassSchema>,
+	parents: Vec<ReferencedClassSchema>,
 }
 
 impl Class {
@@ -49,11 +49,9 @@ impl Class {
 #[derive(Debug, Clone, Derivative)]
 #[derivative(PartialEq, Eq, PartialOrd, Ord)]
 struct ReferencedClassSchema {
+	name: String,
 	#[derivative(PartialEq = "ignore", PartialOrd = "ignore", Ord = "ignore")]
-	pub iri: String,
-	pub name: String,
-	#[derivative(PartialEq = "ignore", PartialOrd = "ignore", Ord = "ignore")]
-	pub properties: Vec<ReferencedSchema>,
+	properties: Vec<ReferencedSchema>,
 }
 
 impl Schema for Class {
@@ -104,7 +102,6 @@ impl Schema for Class {
 					.collect();
 				parent_properties.sort_unstable();
 				ReferencedClassSchema {
-					iri: solution.iri,
 					name: solution.label,
 					properties: parent_properties,
 				}
