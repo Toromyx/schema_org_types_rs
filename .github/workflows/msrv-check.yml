@@ -21,10 +21,12 @@ jobs:
         with:
           # keep synchronized with Cargo.toml
           toolchain: 1.66
+      - run: cargo update --dry-run
       - uses: actions/cache@v3
         with:
-          key: rust-${{ steps.toolchain.outputs.rustc_hash }}-${{ hashFiles('src/**') }}-${{ hashFiles('Cargo.toml') }}
+          key: rust-${{ steps.toolchain.outputs.rustc_hash }}-${{ hashFiles('src/**') }}-${{ hashFiles('Cargo.toml') }}-${{ hashFiles('~/.cargo/registry/index') }}
           restore-keys: |
+            rust-${{ steps.toolchain.outputs.rustc_hash }}-${{ hashFiles('src/**') }}-${{ hashFiles('Cargo.toml') }}
             rust-${{ steps.toolchain.outputs.rustc_hash }}-${{ hashFiles('src/**') }}-
             rust-${{ steps.toolchain.outputs.rustc_hash }}-
             rust-
