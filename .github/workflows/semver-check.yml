@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - src/**
+      - Cargo.toml
       - .github/workflows/semver-check.yml
 
 jobs:
