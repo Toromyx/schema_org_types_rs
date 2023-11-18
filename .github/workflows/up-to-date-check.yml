@@ -10,6 +10,7 @@ on:
       - generator/Cargo.lock
       - generator/src/**
       - generator/Cargo.toml
+      - src/schemas/**
       - .github/workflows/up-to-date-check.yml
 
 jobs:
