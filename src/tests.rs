@@ -123,3 +123,33 @@ fn test_answer_count_serde() {
 	let rating_count_value = serde_json::to_value(rating_count).unwrap();
 	assert_eq!(rating_count_value, target_json);
 }
+
+/// Test that unknown fields are denied so the correct property variant is deserialized.
+/// <https://github.com/Toromyx/schema_org_types_rs/issues/14>
+#[test]
+fn test_deny_unknown_fields() {
+	let source_json = json!({
+		"name": "item list name",
+		"description": "This is an item list because it has list items. But as recipe instructions, it will first be tried to be deserialized as creative work.",
+		"itemListElement": [
+			{
+				"text": "list item 1 text."
+			},
+			{
+				"text": "list item 2 text."
+			}
+		]
+	});
+	let recipe_instructions: RecipeInstructionsProperty =
+		serde_json::from_value(source_json).unwrap();
+	match recipe_instructions {
+		RecipeInstructionsProperty::ItemList(_) => {
+			// deserialized correctly
+		}
+		_ => {
+			panic!(
+				"A property variant is not correctly deserialized, probably because unknown fields are not denied."
+			);
+		}
+	};
+}

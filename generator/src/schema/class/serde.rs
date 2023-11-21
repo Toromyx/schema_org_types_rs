@@ -182,7 +182,6 @@ pub fn serde_mod(class: &Class) -> TokenStream {
 			{
 				enum Field {
 					#(#field_enum_variants)*
-					Ignore,
 				}
 
 				struct FieldVisitor;
@@ -206,7 +205,7 @@ pub fn serde_mod(class: &Class) -> TokenStream {
 					{
 						match value {
 							#(#visit_str_match_arms)*
-							_ => Ok(Field::Ignore),
+							_ => Err(de::Error::unknown_field(value, FIELDS)),
 						}
 					}
 
@@ -219,7 +218,10 @@ pub fn serde_mod(class: &Class) -> TokenStream {
 					{
 						match value {
 							#(#visit_bytes_match_arms)*
-							_ => Ok(Field::Ignore),
+							_ => {
+								let value = &String::from_utf8_lossy(value);
+								Err(de::Error::unknown_field(value, FIELDS))
+							},
 						}
 					}
 				}
@@ -258,9 +260,6 @@ pub fn serde_mod(class: &Class) -> TokenStream {
 						while let Some(key) = map.next_key::<Field>()? {
 							match key {
 								#(#visit_map_next_key_match_arms)*
-								_ => {
-									let _ = map.next_value::<de::IgnoredAny>()?;
-								}
 							}
 						}
 						Ok(#name {
