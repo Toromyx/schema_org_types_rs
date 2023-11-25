@@ -143,7 +143,9 @@ fn test_deny_unknown_fields() {
 	let recipe_instructions: RecipeInstructionsProperty =
 		serde_json::from_value(source_json).unwrap();
 	match recipe_instructions {
-		RecipeInstructionsProperty::ItemList(_) => {
+		RecipeInstructionsProperty::ItemList(_)
+		| RecipeInstructionsProperty::HowToSection(_)
+		| RecipeInstructionsProperty::HowToStep(_) => {
 			// deserialized correctly
 		}
 		_ => {

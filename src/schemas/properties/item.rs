@@ -3,6 +3,10 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum ItemProperty {
+	/// <https://schema.org/HowToSection>
+	HowToSection(HowToSection),
+	/// <https://schema.org/HowToStep>
+	HowToStep(HowToStep),
 	/// <https://schema.org/Thing>
 	Thing(Thing),
 	#[cfg(any(all(feature = "fallible", feature = "serde"), doc))]
@@ -23,6 +27,8 @@ mod serde {
 			S: Serializer,
 		{
 			match *self {
+				ItemProperty::HowToSection(ref inner) => inner.serialize(serializer),
+				ItemProperty::HowToStep(ref inner) => inner.serialize(serializer),
 				ItemProperty::Thing(ref inner) => inner.serialize(serializer),
 				#[cfg(all(feature = "fallible", feature = "serde"))]
 				ItemProperty::SerdeFail(ref inner) => inner.serialize(serializer),
@@ -38,6 +44,18 @@ mod serde {
 				<::serde::__private::de::Content as Deserialize>::deserialize(deserializer)?;
 			let deserializer =
 				::serde::__private::de::ContentRefDeserializer::<D::Error>::new(&content);
+			if let Ok(ok) = Result::map(
+				<HowToSection as Deserialize>::deserialize(deserializer),
+				ItemProperty::HowToSection,
+			) {
+				return Ok(ok);
+			}
+			if let Ok(ok) = Result::map(
+				<HowToStep as Deserialize>::deserialize(deserializer),
+				ItemProperty::HowToStep,
+			) {
+				return Ok(ok);
+			}
 			if let Ok(ok) = Result::map(
 				<Thing as Deserialize>::deserialize(deserializer),
 				ItemProperty::Thing,

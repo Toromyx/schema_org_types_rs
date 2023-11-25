@@ -3,6 +3,10 @@ use super::*;
 #[cfg_attr(feature = "derive-debug", derive(Debug))]
 #[cfg_attr(feature = "derive-clone", derive(Clone))]
 pub enum ItemListElementProperty {
+	/// <https://schema.org/HowToSection>
+	HowToSection(HowToSection),
+	/// <https://schema.org/HowToStep>
+	HowToStep(HowToStep),
 	/// <https://schema.org/ListItem>
 	ListItem(ListItem),
 	/// <https://schema.org/Thing>
@@ -27,6 +31,8 @@ mod serde {
 			S: Serializer,
 		{
 			match *self {
+				ItemListElementProperty::HowToSection(ref inner) => inner.serialize(serializer),
+				ItemListElementProperty::HowToStep(ref inner) => inner.serialize(serializer),
 				ItemListElementProperty::ListItem(ref inner) => inner.serialize(serializer),
 				ItemListElementProperty::Thing(ref inner) => inner.serialize(serializer),
 				ItemListElementProperty::Text(ref inner) => inner.serialize(serializer),
@@ -44,6 +50,18 @@ mod serde {
 				<::serde::__private::de::Content as Deserialize>::deserialize(deserializer)?;
 			let deserializer =
 				::serde::__private::de::ContentRefDeserializer::<D::Error>::new(&content);
+			if let Ok(ok) = Result::map(
+				<HowToSection as Deserialize>::deserialize(deserializer),
+				ItemListElementProperty::HowToSection,
+			) {
+				return Ok(ok);
+			}
+			if let Ok(ok) = Result::map(
+				<HowToStep as Deserialize>::deserialize(deserializer),
+				ItemListElementProperty::HowToStep,
+			) {
+				return Ok(ok);
+			}
 			if let Ok(ok) = Result::map(
 				<ListItem as Deserialize>::deserialize(deserializer),
 				ItemListElementProperty::ListItem,

@@ -5,6 +5,10 @@ use super::*;
 pub enum RecipeInstructionsProperty {
 	/// <https://schema.org/CreativeWork>
 	CreativeWork(CreativeWork),
+	/// <https://schema.org/HowToSection>
+	HowToSection(HowToSection),
+	/// <https://schema.org/HowToStep>
+	HowToStep(HowToStep),
 	/// <https://schema.org/ItemList>
 	ItemList(ItemList),
 	/// <https://schema.org/Text>
@@ -28,6 +32,8 @@ mod serde {
 		{
 			match *self {
 				RecipeInstructionsProperty::CreativeWork(ref inner) => inner.serialize(serializer),
+				RecipeInstructionsProperty::HowToSection(ref inner) => inner.serialize(serializer),
+				RecipeInstructionsProperty::HowToStep(ref inner) => inner.serialize(serializer),
 				RecipeInstructionsProperty::ItemList(ref inner) => inner.serialize(serializer),
 				RecipeInstructionsProperty::Text(ref inner) => inner.serialize(serializer),
 				#[cfg(all(feature = "fallible", feature = "serde"))]
@@ -47,6 +53,18 @@ mod serde {
 			if let Ok(ok) = Result::map(
 				<CreativeWork as Deserialize>::deserialize(deserializer),
 				RecipeInstructionsProperty::CreativeWork,
+			) {
+				return Ok(ok);
+			}
+			if let Ok(ok) = Result::map(
+				<HowToSection as Deserialize>::deserialize(deserializer),
+				RecipeInstructionsProperty::HowToSection,
+			) {
+				return Ok(ok);
+			}
+			if let Ok(ok) = Result::map(
+				<HowToStep as Deserialize>::deserialize(deserializer),
+				RecipeInstructionsProperty::HowToStep,
 			) {
 				return Ok(ok);
 			}
