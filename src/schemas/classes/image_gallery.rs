@@ -3830,6 +3830,7 @@ mod serde {
 				SignificantLinks,
 				Speakable,
 				Specialty,
+				Ignore,
 			}
 			struct FieldVisitor;
 			impl<'de> Visitor<'de> for FieldVisitor {
@@ -3977,6 +3978,7 @@ mod serde {
 						"significantLinks" => Ok(Field::SignificantLinks),
 						"speakable" => Ok(Field::Speakable),
 						"specialty" => Ok(Field::Specialty),
+						"id" | "type" => Ok(Field::Ignore),
 						_ => Err(de::Error::unknown_field(value, FIELDS)),
 					}
 				}
@@ -4120,6 +4122,7 @@ mod serde {
 						b"significantLinks" => Ok(Field::SignificantLinks),
 						b"speakable" => Ok(Field::Speakable),
 						b"specialty" => Ok(Field::Specialty),
+						b"id" | b"type" => Ok(Field::Ignore),
 						_ => {
 							let value = &String::from_utf8_lossy(value);
 							Err(de::Error::unknown_field(value, FIELDS))
@@ -7757,6 +7760,9 @@ mod serde {
 										}
 									}
 								});
+							}
+							Field::Ignore => {
+								let _ = map.next_value::<de::IgnoredAny>()?;
 							}
 						}
 					}

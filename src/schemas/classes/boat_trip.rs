@@ -665,6 +665,7 @@ mod serde {
 				Provider,
 				SubTrip,
 				TripOrigin,
+				Ignore,
 			}
 			struct FieldVisitor;
 			impl<'de> Visitor<'de> for FieldVisitor {
@@ -699,6 +700,7 @@ mod serde {
 						"provider" => Ok(Field::Provider),
 						"subTrip" => Ok(Field::SubTrip),
 						"tripOrigin" => Ok(Field::TripOrigin),
+						"id" | "type" => Ok(Field::Ignore),
 						_ => Err(de::Error::unknown_field(value, FIELDS)),
 					}
 				}
@@ -729,6 +731,7 @@ mod serde {
 						b"provider" => Ok(Field::Provider),
 						b"subTrip" => Ok(Field::SubTrip),
 						b"tripOrigin" => Ok(Field::TripOrigin),
+						b"id" | b"type" => Ok(Field::Ignore),
 						_ => {
 							let value = &String::from_utf8_lossy(value);
 							Err(de::Error::unknown_field(value, FIELDS))
@@ -1339,6 +1342,9 @@ mod serde {
 										}
 									}
 								});
+							}
+							Field::Ignore => {
+								let _ = map.next_value::<de::IgnoredAny>()?;
 							}
 						}
 					}
