@@ -3911,6 +3911,7 @@ mod serde {
 				Penciler,
 				Surface,
 				Width,
+				Ignore,
 			}
 			struct FieldVisitor;
 			impl<'de> Visitor<'de> for FieldVisitor {
@@ -4061,6 +4062,7 @@ mod serde {
 						"penciler" => Ok(Field::Penciler),
 						"surface" => Ok(Field::Surface),
 						"width" => Ok(Field::Width),
+						"id" | "type" => Ok(Field::Ignore),
 						_ => Err(de::Error::unknown_field(value, FIELDS)),
 					}
 				}
@@ -4207,6 +4209,7 @@ mod serde {
 						b"penciler" => Ok(Field::Penciler),
 						b"surface" => Ok(Field::Surface),
 						b"width" => Ok(Field::Width),
+						b"id" | b"type" => Ok(Field::Ignore),
 						_ => {
 							let value = &String::from_utf8_lossy(value);
 							Err(de::Error::unknown_field(value, FIELDS))
@@ -7915,6 +7918,9 @@ mod serde {
 										}
 									}
 								});
+							}
+							Field::Ignore => {
+								let _ = map.next_value::<de::IgnoredAny>()?;
 							}
 						}
 					}

@@ -3602,6 +3602,7 @@ mod serde {
 				Url,
 				CssSelector,
 				Xpath,
+				Ignore,
 			}
 			struct FieldVisitor;
 			impl<'de> Visitor<'de> for FieldVisitor {
@@ -3741,6 +3742,7 @@ mod serde {
 						"url" => Ok(Field::Url),
 						"cssSelector" => Ok(Field::CssSelector),
 						"xpath" => Ok(Field::Xpath),
+						"id" | "type" => Ok(Field::Ignore),
 						_ => Err(de::Error::unknown_field(value, FIELDS)),
 					}
 				}
@@ -3876,6 +3878,7 @@ mod serde {
 						b"url" => Ok(Field::Url),
 						b"cssSelector" => Ok(Field::CssSelector),
 						b"xpath" => Ok(Field::Xpath),
+						b"id" | b"type" => Ok(Field::Ignore),
 						_ => {
 							let value = &String::from_utf8_lossy(value);
 							Err(de::Error::unknown_field(value, FIELDS))
@@ -7295,6 +7298,9 @@ mod serde {
 										}
 									}
 								});
+							}
+							Field::Ignore => {
+								let _ = map.next_value::<de::IgnoredAny>()?;
 							}
 						}
 					}

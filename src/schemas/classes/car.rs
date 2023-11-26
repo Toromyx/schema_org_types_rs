@@ -3091,6 +3091,7 @@ mod serde {
 				VehicleTransmission,
 				WeightTotal,
 				Wheelbase,
+				Ignore,
 			}
 			struct FieldVisitor;
 			impl<'de> Visitor<'de> for FieldVisitor {
@@ -3211,6 +3212,7 @@ mod serde {
 						"vehicleTransmission" => Ok(Field::VehicleTransmission),
 						"weightTotal" => Ok(Field::WeightTotal),
 						"wheelbase" => Ok(Field::Wheelbase),
+						"id" | "type" => Ok(Field::Ignore),
 						_ => Err(de::Error::unknown_field(value, FIELDS)),
 					}
 				}
@@ -3327,6 +3329,7 @@ mod serde {
 						b"vehicleTransmission" => Ok(Field::VehicleTransmission),
 						b"weightTotal" => Ok(Field::WeightTotal),
 						b"wheelbase" => Ok(Field::Wheelbase),
+						b"id" | b"type" => Ok(Field::Ignore),
 						_ => {
 							let value = &String::from_utf8_lossy(value);
 							Err(de::Error::unknown_field(value, FIELDS))
@@ -6217,6 +6220,9 @@ mod serde {
 										}
 									}
 								});
+							}
+							Field::Ignore => {
+								let _ = map.next_value::<de::IgnoredAny>()?;
 							}
 						}
 					}

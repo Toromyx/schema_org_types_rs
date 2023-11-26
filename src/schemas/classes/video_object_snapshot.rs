@@ -4347,6 +4347,7 @@ mod serde {
 				Transcript,
 				VideoFrameSize,
 				VideoQuality,
+				Ignore,
 			}
 			struct FieldVisitor;
 			impl<'de> Visitor<'de> for FieldVisitor {
@@ -4512,6 +4513,7 @@ mod serde {
 						"transcript" => Ok(Field::Transcript),
 						"videoFrameSize" => Ok(Field::VideoFrameSize),
 						"videoQuality" => Ok(Field::VideoQuality),
+						"id" | "type" => Ok(Field::Ignore),
 						_ => Err(de::Error::unknown_field(value, FIELDS)),
 					}
 				}
@@ -4673,6 +4675,7 @@ mod serde {
 						b"transcript" => Ok(Field::Transcript),
 						b"videoFrameSize" => Ok(Field::VideoFrameSize),
 						b"videoQuality" => Ok(Field::VideoQuality),
+						b"id" | b"type" => Ok(Field::Ignore),
 						_ => {
 							let value = &String::from_utf8_lossy(value);
 							Err(de::Error::unknown_field(value, FIELDS))
@@ -8786,6 +8789,9 @@ mod serde {
 										}
 									}
 								});
+							}
+							Field::Ignore => {
+								let _ = map.next_value::<de::IgnoredAny>()?;
 							}
 						}
 					}
